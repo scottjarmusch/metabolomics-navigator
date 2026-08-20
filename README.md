@@ -2,7 +2,7 @@
 
 A community-maintained, Wikipedia-style catalogue of software, databases, spectral libraries, repositories, web services, and workflow resources used in metabolomics.
 
-The site is built from small YAML records. Researchers can submit a tool through a short GitHub form; automation converts the submission into a draft entry and opens a pull request for editorial review.
+The site is built from small YAML records. Researchers can submit a tool through a short GitHub form; automation converts the submission into a draft entry and opens a pull request for editorial review. 
 
 ## What is included
 
@@ -74,3 +74,4 @@ The original idea was inspired by the open, collaborative publishing model of th
 
 - Code: MIT License, see `LICENSE-CODE`
 - Catalogue text and metadata: CC BY 4.0, see `LICENSE-CONTENT`
+
