@@ -1,0 +1,54 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms-dial
+name: MS-DIAL
+summary: A graphical and command-line workbench for untargeted metabolomics and lipidomics data processing across multiple chromatography and mass spectrometry platforms.
+links:
+  primary: https://systemsomicslab.github.io/compms/msdial/main
+  homepage: https://systemsomicslab.github.io/compms/msdial/main
+  repository: https://github.com/systemsomicslab/MsdialWorkbench
+  documentation: https://systemsomicslab.github.io/msdial5tutorial/
+resource_types: [software_application]
+functions:
+  primary: preprocessing
+  secondary: [normalization, annotation_identification, spectral_analysis, statistics, visualization_reporting]
+  capabilities: [peak_detection, spectral_deconvolution, retention_time_alignment, gap_filling, adduct_isotope_grouping, library_matching, multivariate_statistics]
+platforms: [lc_ms, gc_ms, ce_ms, direct_infusion_ms, maldi_ms]
+analysis_types: [untargeted, lipidomics, stable_isotope_tracing, metabolite_profiling]
+interfaces: [desktop_gui, command_line]
+access:
+  model: source_available
+  notes: The software, source, and associated libraries are publicly accessible; users should confirm the license and terms that apply to the specific component and version they use.
+technical:
+  operating_systems: [windows]
+  programming_languages: [C#]
+  api_available: false
+data:
+  input_types: [raw_instrument_data, spectra, spectral_library]
+  output_types: [feature_table, spectra, compound_list, statistical_results]
+  input_formats: [vendor_raw, mzml, netcdf, msp]
+  output_formats: [csv_tsv, msp, mgf, mztab_m]
+publications:
+  - doi: 10.1038/s41587-020-0531-2
+    type: methods
+common_uses:
+  - Process untargeted LC-MS, GC-MS, and lipidomics datasets through a graphical workflow.
+  - Deconvolute data-independent MS/MS spectra and match features against spectral libraries.
+strengths: []
+limitations: []
+related_tools:
+  - slug: mzmine
+    relationship: alternative
+  - slug: gnps
+    relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-04'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: unreviewed
+  created_at: '2026-08-04'
+  updated_at: '2026-08-04'

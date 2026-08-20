@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Browse categories · {{ site.title }}{% endblock %}
+{% block content %}
+<section class="page-hero compact"><div class="section-wrap"><p class="eyebrow">Controlled vocabulary</p><h1>Browse the catalogue</h1><p>Explore tools by scientific function, analytical platform, interface, or resource type.</p></div></section>
+<section class="section-wrap browse-sections">
+  {% for section in sections %}
+  <div class="browse-section">
+    <div class="section-heading"><div><h2>{{ section.title }}</h2><p>{{ section.description }}</p></div></div>
+    <div class="browse-list">
+      {% for item in section['items'] %}<a href="{{ url('tools/') }}?{{ section.param }}={{ item.id }}"><span><strong>{{ item.label }}</strong>{% if item.description %}<small>{{ item.description }}</small>{% endif %}</span><span>{{ item.count }}</span></a>{% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

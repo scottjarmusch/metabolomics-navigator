@@ -1,0 +1,76 @@
+$schema: ../../schemas/tool.schema.json
+slug: massql
+name: MassQL
+summary: An open-source domain-specific query language for expressing and running searches over mass spectrometry data using MS-focused syntax.
+links:
+  primary: https://mwang87.github.io/MassQueryLanguage_Documentation/
+  documentation: https://mwang87.github.io/MassQueryLanguage_Documentation/
+  repository: https://github.com/mwang87/MassQueryLanguage
+resource_types:
+- programming_package
+- api_service
+functions:
+  primary: spectral_analysis
+  secondary:
+  - reference_data_search
+  - data_management_sharing
+  capabilities: []
+platforms:
+- platform_independent
+analysis_types:
+- targeted
+- untargeted
+- metabolite_profiling
+interfaces:
+- command_line
+- python_package
+- api
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  programming_languages:
+  - Python
+  package_managers:
+  - PyPI
+  api_available: true
+data:
+  input_types:
+  - spectra
+  - raw_instrument_data
+  output_types:
+  - spectra
+  - feature_table
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  - mgf
+  output_formats:
+  - csv_tsv
+publications: []
+common_uses:
+- Search local or repository-scale mass spectrometry datasets for precursor, fragment, neutral-loss, and intensity patterns.
+- Express reusable MS queries in a human-readable text format.
+strengths: []
+limitations: []
+related_tools:
+- slug: gnps
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-04'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: unreviewed
+  created_at: '2026-08-04'
+  updated_at: '2026-08-04'

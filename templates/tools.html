@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Find metabolomics tools · {{ site.title }}{% endblock %}
+{% block description %}Search and filter the Metabolomics Tool Atlas by scientific function, analytical platform, interface, resource type, and access model.{% endblock %}
+{% block content %}
+<section class="page-hero compact">
+  <div class="section-wrap">
+    <p class="eyebrow">Tool finder</p>
+    <h1>Find metabolomics tools</h1>
+    <p>Filter the catalogue by the scientific task you need to complete and the way you prefer to work.</p>
+  </div>
+</section>
+
+<section class="catalogue-layout section-wrap" data-catalogue>
+  <aside class="filter-panel" aria-label="Tool filters">
+    <div class="filter-heading"><h2>Filters</h2><button type="button" class="link-button" data-reset>Reset</button></div>
+    <label class="field-label" for="catalogue-search">Search</label>
+    <input id="catalogue-search" data-search type="search" placeholder="Name, task, platform, format…">
+
+    {% for filter in filters %}
+    <label class="field-label" for="filter-{{ filter.key }}">{{ filter.label }}</label>
+    <select id="filter-{{ filter.key }}" data-filter="{{ filter.key }}">
+      <option value="">All {{ filter.all_label }}</option>
+      {% for option in filter.options %}<option value="{{ option.id }}">{{ option.label }} ({{ option.count }})</option>{% endfor %}
+    </select>
+    {% endfor %}
+  </aside>
+
+  <div class="catalogue-results">
+    <div class="results-toolbar">
+      <p aria-live="polite"><strong data-result-count>{{ tools|length }}</strong> tools</p>
+      <label for="sort-tools">Sort <select id="sort-tools" data-sort><option value="az">A–Z</option><option value="newest">Recently added</option><option value="updated">Recently updated</option></select></label>
+    </div>
+    <div class="active-filters" data-active-filters hidden></div>
+    <div class="tool-grid" data-tool-grid>
+      {% for tool in tools %}
+      <article class="tool-card" data-tool-card
+        data-name="{{ tool.name|lower }}"
+        data-search-text="{{ tool.search_text|e }}"
+        data-function="{{ tool.functions.primary }}"
+        data-platforms="{{ tool.platforms|join(' ') }}"
+        data-interfaces="{{ tool.interfaces|join(' ') }}"
+        data-access="{{ tool.access.model }}"
+        data-resource-types="{{ tool.resource_types|join(' ') }}"
+        data-created="{{ tool.created_at }}"
+        data-updated="{{ tool.updated_at }}">
+        <div class="tool-card-top">
+          <div>
+            <p class="tool-kicker">{{ tool.primary_function_label }}</p>
+            <h2><a href="{{ url('tools/' + tool.slug + '/') }}">{{ tool.name }}</a></h2>
+          </div>
+          {% if tool.acronym %}<span class="acronym">{{ tool.acronym }}</span>{% endif %}
+        </div>
+        <p>{{ tool.summary }}</p>
+        <div class="badge-row">
+          {% for badge in tool.card_badges %}<span class="badge">{{ badge }}</span>{% endfor %}
+        </div>
+        <div class="tool-card-footer">
+          <span>{{ tool.provenance_label }}</span>
+          <a href="{{ url('tools/' + tool.slug + '/') }}">View entry <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="empty-state" data-empty hidden>
+      <h2>No tools match these filters</h2>
+      <p>Try removing one filter or using a broader search term.</p>
+      <button type="button" class="button secondary" data-reset>Reset filters</button>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url('assets/catalogue.js') }}" defer></script>{% endblock %}

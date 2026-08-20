@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}{{ tool.name }} · {{ site.title }}{% endblock %}
+{% block description %}{{ tool.summary }}{% endblock %}
+{% block head %}<link rel="canonical" href="{{ absolute_url('tools/' + tool.slug + '/') }}">{% endblock %}
+{% block content %}
+<section class="tool-hero">
+  <div class="section-wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ url('') }}">Home</a><span>›</span><a href="{{ url('tools/') }}">Tools</a><span>›</span><span>{{ tool.name }}</span></nav>
+    <div class="tool-title-grid">
+      <div>
+        <p class="eyebrow">{{ tool.primary_function_label }}</p>
+        <h1>{{ tool.name }}{% if tool.acronym %} <span class="title-acronym">{{ tool.acronym }}</span>{% endif %}</h1>
+        <p class="tool-summary">{{ tool.summary }}</p>
+        <div class="badge-row large">
+          {% for badge in tool.page_badges %}<span class="badge">{{ badge }}</span>{% endfor %}
+        </div>
+      </div>
+      <div class="tool-actions">
+        <a class="button primary" href="{{ tool.links.primary }}">Access tool</a>
+        <a class="button secondary" href="{{ update_url }}">Suggest an update</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tool-page section-wrap">
+  <aside class="tool-facts" aria-label="Tool facts">
+    <h2>At a glance</h2>
+    <dl>
+      <div><dt>Resource type</dt><dd>{{ tool.resource_type_labels|join(', ') }}</dd></div>
+      <div><dt>Primary function</dt><dd>{{ tool.primary_function_label }}</dd></div>
+      <div><dt>Platforms</dt><dd>{{ tool.platform_labels|join(', ') }}</dd></div>
+      <div><dt>Interfaces</dt><dd>{{ tool.interface_labels|join(', ') }}</dd></div>
+      <div><dt>Access</dt><dd>{{ tool.access_label }}</dd></div>
+      <div><dt>Maintenance</dt><dd>{{ tool.maintenance_label }}</dd></div>
+      <div><dt>Entry status</dt><dd>{{ tool.entry_status_label }}</dd></div>
+      <div><dt>Last updated</dt><dd>{{ tool.updated_display }}</dd></div>
+    </dl>
+    <div class="source-box">
+      <strong>Page provenance</strong>
+      <p>{{ tool.provenance_label }}{% if tool.provenance.developer_verified %}; developer verified{% endif %}.</p>
+      <a href="{{ source_url }}">View YAML source</a>
+    </div>
+  </aside>
+
+  <article class="tool-article">
+    <section>
+      <h2>Overview</h2>
+      <p>{{ tool.description or tool.summary }}</p>
+    </section>
+
+    {% if tool.common_uses %}<section><h2>Common uses</h2><ul>{% for item in tool.common_uses %}<li>{{ item }}</li>{% endfor %}</ul></section>{% endif %}
+
+    <section>
+      <h2>Functions and capabilities</h2>
+      <div class="definition-grid">
+        <div><h3>Primary function</h3><p>{{ tool.primary_function_label }}</p></div>
+        {% if tool.secondary_function_labels %}<div><h3>Other functions</h3><p>{{ tool.secondary_function_labels|join(', ') }}</p></div>{% endif %}
+        {% if tool.capability_labels %}<div><h3>Capabilities</h3><p>{{ tool.capability_labels|join(', ') }}</p></div>{% endif %}
+        {% if tool.analysis_type_labels %}<div><h3>Analysis types</h3><p>{{ tool.analysis_type_labels|join(', ') }}</p></div>{% endif %}
+      </div>
+    </section>
+
+    {% if tool.data %}<section>
+      <h2>Data compatibility</h2>
+      <div class="definition-grid">
+        {% if tool.input_type_labels %}<div><h3>Inputs</h3><p>{{ tool.input_type_labels|join(', ') }}</p></div>{% endif %}
+        {% if tool.output_type_labels %}<div><h3>Outputs</h3><p>{{ tool.output_type_labels|join(', ') }}</p></div>{% endif %}
+        {% if tool.input_format_labels %}<div><h3>Input formats</h3><p>{{ tool.input_format_labels|join(', ') }}</p></div>{% endif %}
+        {% if tool.output_format_labels %}<div><h3>Output formats</h3><p>{{ tool.output_format_labels|join(', ') }}</p></div>{% endif %}
+      </div>
+    </section>{% endif %}
+
+    <section>
+      <h2>Access and documentation</h2>
+      <div class="link-list">
+        {% for label, href in tool.display_links %}<a href="{{ href }}"><span>{{ label }}</span><span aria-hidden="true">↗</span></a>{% endfor %}
+      </div>
+      {% if tool.access.notes %}<p class="note">{{ tool.access.notes }}</p>{% endif %}
+      {% if tool.access.license %}<p><strong>License:</strong> {{ tool.access.license }}</p>{% endif %}
+    </section>
+
+    {% if tool.strengths or tool.limitations %}<section>
+      <h2>Documented strengths and limitations</h2>
+      <div class="comparison-grid">
+        {% if tool.strengths %}<div><h3>Strengths</h3><ul>{% for item in tool.strengths %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}
+        {% if tool.limitations %}<div><h3>Limitations</h3><ul>{% for item in tool.limitations %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}
+      </div>
+    </section>{% endif %}
+
+    {% if tool.publications %}<section>
+      <h2>Publications</h2>
+      <ol class="publication-list">
+        {% for pub in tool.publications %}
+        <li>{% if pub.citation %}{{ pub.citation }}{% else %}{{ pub.type|title }} publication{% endif %}{% if pub.doi %} <a href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a>{% endif %}{% if pub.pmid %} <a href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/">PMID {{ pub.pmid }}</a>{% endif %}</li>
+        {% endfor %}
+      </ol>
+    </section>{% endif %}
+
+    {% if related_tools %}<section>
+      <h2>Related tools</h2>
+      <div class="related-grid">
+        {% for related in related_tools %}<a href="{{ url('tools/' + related.slug + '/') }}"><strong>{{ related.name }}</strong><span>{{ related.summary }}</span></a>{% endfor %}
+      </div>
+    </section>{% endif %}
+  </article>
+</div>
+{% endblock %}

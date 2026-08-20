@@ -1,0 +1,91 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps
+name: GNPS
+summary: A web-based ecosystem for sharing, searching, annotating, and organizing tandem mass spectrometry data, including spectral-library search and molecular networking.
+links:
+  primary: https://gnps2.org/
+  web_app: https://gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/
+  repository: https://github.com/CCMS-UCSD
+resource_types:
+- web_service
+- spectral_library
+- database_knowledgebase
+- workflow_platform
+functions:
+  primary: molecular_networking
+  secondary:
+  - annotation_identification
+  - spectral_analysis
+  - reference_data_search
+  - data_management_sharing
+  - workflow_reproducibility
+  capabilities:
+  - library_matching
+  - provenance_tracking
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+- lipidomics
+interfaces:
+- web_app
+- api
+- workflow_language
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+  - browser
+  api_available: true
+data:
+  input_types:
+  - spectra
+  - feature_table
+  - sample_metadata
+  output_types:
+  - spectra
+  - compound_list
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  - mgf
+  - msp
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+  - mgf
+  - msp
+  - json
+publications:
+- doi: 10.1038/nbt.3597
+  type: primary
+- doi: 10.1038/s41592-020-0933-6
+  type: methods
+common_uses:
+- Search experimental MS/MS spectra against community spectral libraries.
+- Build classical or feature-based molecular networks.
+- Share datasets, libraries, workflows, and analysis results with collaborators or the public.
+strengths: []
+limitations: []
+related_tools:
+- slug: mzmine
+  relationship: integration
+- slug: ms-dial
+  relationship: integration
+- slug: massql
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-04'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: unreviewed
+  created_at: '2026-08-04'
+  updated_at: '2026-08-04'

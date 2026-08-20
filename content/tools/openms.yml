@@ -1,0 +1,106 @@
+$schema: ../../schemas/tool.schema.json
+slug: openms
+name: OpenMS
+summary: An open-source C++ library, command-line toolkit, and Python interface for reproducible mass spectrometry data processing in metabolomics and proteomics.
+links:
+  primary: https://openms.de/
+  homepage: https://openms.de/
+  repository: https://github.com/OpenMS/OpenMS
+  documentation: https://openms.readthedocs.io/
+  tutorial: https://pyopenms.readthedocs.io/
+resource_types:
+- programming_package
+- software_application
+- workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+  - data_conversion
+  - preprocessing
+  - quantification
+  - annotation_identification
+  - visualization_reporting
+  capabilities:
+  - peak_detection
+  - retention_time_alignment
+  - gap_filling
+  - provenance_tracking
+platforms:
+- lc_ms
+analysis_types:
+- targeted
+- untargeted
+- metabolite_profiling
+interfaces:
+- command_line
+- python_package
+- desktop_gui
+- knime
+- workflow_language
+access:
+  model: open_source
+  license: BSD-3-Clause
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  - containers
+  programming_languages:
+  - C++
+  - Python
+  package_managers:
+  - Conda
+  - PyPI
+  containers:
+  - Docker
+  api_available: true
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - spectra
+  - compound_list
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  - mgf
+  - csv_tsv
+  output_formats:
+  - mzml
+  - mztab_m
+  - csv_tsv
+  other_input_formats:
+  - mzData
+  other_output_formats:
+  - featureXML
+  - consensusXML
+publications: []
+common_uses:
+- Assemble reproducible command-line or Python workflows for LC-MS data processing.
+- Convert, inspect, detect, align, quantify, and annotate mass spectrometry features.
+strengths: []
+limitations: []
+related_tools:
+- slug: xcms
+  relationship: alternative
+- slug: gnps
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-04'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: unreviewed
+  created_at: '2026-08-04'
+  updated_at: '2026-08-04'

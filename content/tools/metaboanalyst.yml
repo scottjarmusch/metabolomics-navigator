@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: metaboanalyst
+name: MetaboAnalyst
+summary: A web platform and associated R package for metabolomics data processing, statistical analysis, visualization, functional interpretation, and multi-omics integration.
+links:
+  primary: https://www.metaboanalyst.ca/
+  web_app: https://www.metaboanalyst.ca/
+  documentation: https://www.metaboanalyst.ca/docs/
+  repository: https://github.com/xia-lab/MetaboAnalystR
+  tutorial: https://www.metaboanalyst.ca/docs/RTutorial.xhtml
+resource_types:
+- web_service
+- programming_package
+functions:
+  primary: statistics
+  secondary:
+  - normalization
+  - visualization_reporting
+  - pathway_interpretation
+  - multiomics_integration
+  - preprocessing
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+  - feature_selection
+  - pathway_enrichment
+  - interactive_dashboard
+platforms:
+- multi_platform
+- platform_independent
+analysis_types:
+- targeted
+- untargeted
+- metabolite_profiling
+- lipidomics
+- multiomics
+interfaces:
+- web_app
+- r_package
+- api
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+  programming_languages:
+  - R
+  api_available: true
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  - sample_metadata
+  - statistical_results
+  output_types:
+  - statistical_results
+  - pathway_data
+  - report
+  input_formats:
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+  other_output_formats:
+  - PNG
+  - PDF
+  - SVG
+publications:
+- doi: 10.1093/nar/gkab382
+  type: methods
+common_uses:
+- Perform exploratory and inferential statistics on metabolomics data tables.
+- Generate visualizations and pathway-level interpretations.
+- Integrate metabolomics with transcriptomics or other omics results.
+strengths: []
+limitations: []
+related_tools: []
+maintenance:
+  status: active
+  last_checked: '2026-08-04'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: unreviewed
+  created_at: '2026-08-04'
+  updated_at: '2026-08-04'

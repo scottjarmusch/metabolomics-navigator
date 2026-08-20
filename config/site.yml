@@ -1,0 +1,8 @@
+title: Metabolomics Tool Atlas
+short_title: Tool Atlas
+tagline: Find the right tool for each stage of metabolomics research.
+description: A community-maintained catalogue of software, databases, spectral libraries, repositories, services, and workflows used in metabolomics.
+repository_url: https://github.com/scottjarmusch/metabolomics-tool-atlas
+contact_email: ''
+license_text: CC BY 4.0
+footer_note: Community-maintained and openly versioned on GitHub.

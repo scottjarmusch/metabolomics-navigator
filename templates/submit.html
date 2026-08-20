@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Submit a tool · {{ site.title }}{% endblock %}
+{% block content %}
+<section class="page-hero compact"><div class="section-wrap"><p class="eyebrow">Community submission</p><h1>Add a metabolomics tool</h1><p>A basic entry should take about two minutes. Researchers do not need to write YAML or open a pull request.</p></div></section>
+<section class="section-wrap submit-layout">
+  <div class="submit-main">
+    <h2>What you need</h2>
+    <div class="required-grid">
+      {% for item in required_fields %}<div><span>{{ loop.index }}</span><p>{{ item }}</p></div>{% endfor %}
+    </div>
+    <h2>What happens next</h2>
+    <ol class="process-list"><li><strong>You complete the form.</strong><span>Only the information required to create and categorize a stub is mandatory.</span></li><li><strong>Automation creates a draft.</strong><span>The issue is converted into a structured YAML record and pull request.</span></li><li><strong>An editor reviews it.</strong><span>We check scope, categorization, links, provenance, and neutral wording.</span></li><li><strong>The entry is published.</strong><span>The site rebuilds automatically and the tool receives a permanent page.</span></li></ol>
+    <a class="button primary large-button" href="{{ submission_url }}">Open the submission form</a>
+    <p class="small-note">Submitting through GitHub currently requires a free GitHub account.</p>
+  </div>
+  <aside class="submit-aside">
+    <h2>Optional details</h2>
+    <p>You can also provide publications, documentation, source code, licenses, formats, versions, limitations, or attribution information.</p>
+    <h2>Developer submissions</h2>
+    <p>Developers are encouraged to submit their own tools. The page will clearly identify its provenance, and independent benchmarks remain separate from developer-provided information.</p>
+    <h2>Already listed?</h2>
+    <p>Use the update form to correct, expand, verify, archive, or replace an existing entry.</p>
+    <a class="text-link" href="{{ update_form_url }}">Update an existing tool</a>
+  </aside>
+</section>
+{% endblock %}
