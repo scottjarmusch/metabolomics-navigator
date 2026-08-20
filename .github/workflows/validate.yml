@@ -1,0 +1,23 @@
+name: Validate catalogue
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python scripts/validate_tools.py
+      - run: python scripts/check_form_sync.py
+      - run: python scripts/build_site.py --strict

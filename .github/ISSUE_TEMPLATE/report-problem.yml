@@ -1,0 +1,32 @@
+name: Report a catalogue or website problem
+description: Report a broken page, incorrect behavior, accessibility problem, or catalogue issue.
+title: "[Problem]: "
+labels:
+  - needs-triage
+body:
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: What kind of problem is this?
+      options:
+        - Broken link or unavailable page
+        - Search or filter problem
+        - Accessibility problem
+        - Incorrect catalogue information
+        - Duplicate entry
+        - Build or automation problem
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page or tool entry
+      placeholder: https://...
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: Include the expected result and any evidence that helps us correct it.
+    validations:
+      required: true

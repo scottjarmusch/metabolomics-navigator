@@ -1,0 +1,61 @@
+name: Create draft entry from submission
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  create-draft:
+    if: contains(github.event.issue.labels.*.name, 'tool-submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Convert issue to YAML
+        id: convert
+        run: python scripts/issue_to_tool.py --event "$GITHUB_EVENT_PATH"
+      - run: python scripts/validate_tools.py
+      - name: Commit generated draft
+        env:
+          BRANCH: automation/tool-submission-${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "${{ steps.convert.outputs.path }}"
+          git commit -m "Add draft entry for ${{ steps.convert.outputs.name }}"
+          git push --set-upstream origin "$BRANCH"
+      - name: Open pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: automation/tool-submission-${{ github.event.issue.number }}
+          TOOL_NAME: ${{ steps.convert.outputs.name }}
+          SOURCE_ISSUE: ${{ github.event.issue.html_url }}
+        run: |
+          PR_BODY=$(printf 'Automated draft generated from %s.\n\nEditorial review is required before publication.' "$SOURCE_ISSUE")
+          PR_URL=$(gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Add $TOOL_NAME" \
+            --label "automated-draft,needs-triage" \
+            --body "$PR_BODY")
+          echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
+      - name: Comment on submission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ steps.pr.outputs.url }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" \
+            --body "Thank you. A structured draft entry has been created for editorial review: $PR_URL"

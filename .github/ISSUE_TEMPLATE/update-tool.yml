@@ -1,0 +1,50 @@
+name: Update an existing tool
+description: Correct, expand, verify, archive, or update an existing catalogue entry.
+title: "[Tool update]: "
+labels:
+  - tool-update
+  - needs-triage
+body:
+  - type: input
+    id: entry-url
+    attributes:
+      label: Catalogue entry
+      placeholder: https://.../tools/tool-name/
+    validations:
+      required: true
+  - type: dropdown
+    id: update-type
+    attributes:
+      label: What should change?
+      multiple: true
+      options:
+        - Description or categorization
+        - Homepage, documentation, or repository links
+        - Version or maintenance status
+        - Access model or license
+        - Supported platforms or interfaces
+        - Publication or citation
+        - Developer verification
+        - Tool is deprecated, superseded, or unavailable
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Proposed update
+      description: State the corrected or new information and include a source when possible.
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Name or ORCID for attribution
+      description: Optional unless you are requesting developer verification.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: To the best of my knowledge, the proposed update is accurate.
+          required: true
