@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,12 +13,18 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
           cache: pip
-      - run: pip install -r requirements.txt
-      - run: python scripts/validate_tools.py
-      - run: python scripts/check_form_sync.py
-      - run: python scripts/build_site.py --strict
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate tools, protocols, and cross-links
+        run: python scripts/validate_catalogue.py
+      - name: Check form and vocabulary stay synchronized
+        run: python scripts/check_form_sync.py
+      - name: Test full static-site build
+        run: python scripts/build_site.py --strict

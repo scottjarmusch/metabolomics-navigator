@@ -1,229 +1,215 @@
 name: Submit a metabolomics tool
 description: Add a tool, database, library, service, repository, or workflow to the Metabolomics Tool Atlas.
-title: "[Tool submission]: "
+title: '[Tool submission]: '
 labels:
-  - tool-submission
-  - needs-triage
+- tool-submission
+- needs-triage
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thank you for contributing. The required section is designed to take about two minutes. A maintainer can enrich the entry later.
+- type: markdown
+  attributes:
+    value: 'Thank you for contributing. The required section is designed to take about two minutes. A maintainer can enrich the entry later.
 
-  - type: checkboxes
-    id: duplicate-check
-    attributes:
-      label: Existing entry
-      options:
-        - label: I searched the catalogue and did not find an existing entry for this tool.
-          required: true
-
-  - type: input
-    id: tool-name
-    attributes:
-      label: Tool name
-      placeholder: e.g., MZmine
-    validations:
+      '
+- type: checkboxes
+  id: duplicate-check
+  attributes:
+    label: Existing entry
+    options:
+    - label: I searched the catalogue and did not find an existing entry for this tool.
       required: true
+- type: input
+  id: tool-name
+  attributes:
+    label: Tool name
+    placeholder: e.g., MZmine
+  validations:
+    required: true
+- type: input
+  id: primary-link
+  attributes:
+    label: Best link for the tool
+    description: Homepage, web application, documentation, repository, or download page.
+    placeholder: https://...
+  validations:
+    required: true
+- type: textarea
+  id: summary
+  attributes:
+    label: What does the tool do?
+    description: Give a neutral one- or two-sentence description. Avoid unsupported claims such as “best” or “most accurate.”
+    placeholder: This tool helps researchers...
+  validations:
+    required: true
+- type: dropdown
+  id: resource-types
+  attributes:
+    label: What kind of resource is it?
+    multiple: true
+    options:
+    - Software application
+    - Programming package or library
+    - Web application or service
+    - Database or knowledgebase
+    - Spectral library
+    - Data repository
+    - Workflow or pipeline
+    - Workflow platform
+    - API or programmatic service
+    - Instrument-vendor suite
+  validations:
+    required: true
+- type: dropdown
+  id: primary-function
+  attributes:
+    label: What is its main function?
+    options:
+    - Data acquisition and instrument control
+    - Data conversion and import
+    - Preprocessing and feature extraction
+    - Quality control and filtering
+    - Normalization and batch correction
+    - Quantification and targeted analysis
+    - Metabolite annotation and identification
+    - Spectral processing and comparison
+    - Molecular networking and chemical similarity
+    - Statistical analysis
+    - Machine learning and prediction
+    - Pathway and biological interpretation
+    - Isotope tracing and flux analysis
+    - Visualization and reporting
+    - Data management and sharing
+    - Workflow management and reproducibility
+    - Reference data and database search
+    - Multi-omics integration
+  validations:
+    required: true
+- type: dropdown
+  id: secondary-functions
+  attributes:
+    label: Other functions
+    description: Optional. Select any other major tasks the tool supports.
+    multiple: true
+    options:
+    - Data acquisition and instrument control
+    - Data conversion and import
+    - Preprocessing and feature extraction
+    - Quality control and filtering
+    - Normalization and batch correction
+    - Quantification and targeted analysis
+    - Metabolite annotation and identification
+    - Spectral processing and comparison
+    - Molecular networking and chemical similarity
+    - Statistical analysis
+    - Machine learning and prediction
+    - Pathway and biological interpretation
+    - Isotope tracing and flux analysis
+    - Visualization and reporting
+    - Data management and sharing
+    - Workflow management and reproducibility
+    - Reference data and database search
+    - Multi-omics integration
+- type: dropdown
+  id: platforms
+  attributes:
+    label: Which analytical platforms does it support?
+    multiple: true
+    options:
+    - LC-MS
+    - GC-MS
+    - CE-MS
+    - Direct-infusion MS
+    - MALDI-MS
+    - Imaging mass spectrometry
+    - NMR
+    - Infrared or Raman spectroscopy
+    - Multiple analytical platforms
+    - Platform-independent
+  validations:
+    required: true
+- type: dropdown
+  id: interfaces
+  attributes:
+    label: How do researchers use it?
+    multiple: true
+    options:
+    - Web application
+    - Desktop graphical interface
+    - Command line
+    - R package
+    - Python package
+    - MATLAB
+    - Notebook
+    - API
+    - Galaxy
+    - KNIME
+    - Workflow language or engine
+    - Instrument-vendor integration
+  validations:
+    required: true
+- type: dropdown
+  id: access-model
+  attributes:
+    label: How is it accessed?
+    options:
+    - Open source
+    - Source available with restrictions
+    - Free web service
+    - Free for academic use
+    - Freemium
+    - Commercial
+    - Institutional access required
+    - Access model unclear
+  validations:
+    required: true
+- type: dropdown
+  id: submitter-role
+  attributes:
+    label: What is your relationship to the tool?
+    options:
+    - Developer or author
+    - Current maintainer
+    - Tool user
+    - Database or community curator
+    - Other contributor
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: '### Optional details
 
-  - type: input
-    id: primary-link
-    attributes:
-      label: Best link for the tool
-      description: Homepage, web application, documentation, repository, or download page.
-      placeholder: https://...
-    validations:
+      These help us publish a richer entry, but you may leave them blank.
+
+      '
+- type: input
+  id: publication
+  attributes:
+    label: Primary publication or DOI
+    placeholder: 10.xxxx/xxxxx or full citation
+- type: textarea
+  id: additional-links
+  attributes:
+    label: Additional links
+    description: Documentation, repository, web app, tutorials, datasets, issue tracker, bio.tools, or WorkflowHub.
+    placeholder: 'Documentation: https://...
+
+      Repository: https://...
+
+      '
+- type: input
+  id: contact
+  attributes:
+    label: Name or ORCID for attribution
+    description: Optional. Add this if you would like attribution or are willing to answer questions.
+    placeholder: Name; 0000-0000-0000-0000
+- type: textarea
+  id: notes
+  attributes:
+    label: Anything else we should know?
+    description: Versions, licenses, supported formats, limitations, related tools, or other useful context.
+- type: checkboxes
+  id: confirmation
+  attributes:
+    label: Submission confirmation
+    options:
+    - label: To the best of my knowledge, the information is accurate and suitable for public display.
       required: true
-
-  - type: textarea
-    id: summary
-    attributes:
-      label: What does the tool do?
-      description: Give a neutral one- or two-sentence description. Avoid unsupported claims such as “best” or “most accurate.”
-      placeholder: This tool helps researchers...
-    validations:
-      required: true
-
-  - type: dropdown
-    id: resource-types
-    attributes:
-      label: What kind of resource is it?
-      multiple: true
-      options:
-        - Software application
-        - Programming package or library
-        - Web application or service
-        - Database or knowledgebase
-        - Spectral library
-        - Data repository
-        - Workflow or pipeline
-        - Workflow platform
-        - API or programmatic service
-        - Instrument-vendor suite
-    validations:
-      required: true
-
-  - type: dropdown
-    id: primary-function
-    attributes:
-      label: What is its main function?
-      options:
-        - Experimental design and study planning
-        - Data acquisition and instrument control
-        - Data conversion and import
-        - Preprocessing and feature extraction
-        - Quality control and filtering
-        - Normalization and batch correction
-        - Quantification and targeted analysis
-        - Metabolite annotation and identification
-        - Spectral processing and comparison
-        - Molecular networking and chemical similarity
-        - Statistical analysis
-        - Machine learning and prediction
-        - Pathway and biological interpretation
-        - Isotope tracing and flux analysis
-        - Visualization and reporting
-        - Data management and sharing
-        - Workflow management and reproducibility
-        - Reference data and database search
-        - Multi-omics integration
-    validations:
-      required: true
-
-  - type: dropdown
-    id: secondary-functions
-    attributes:
-      label: Other functions
-      description: Optional. Select any other major tasks the tool supports.
-      multiple: true
-      options:
-        - Experimental design and study planning
-        - Data acquisition and instrument control
-        - Data conversion and import
-        - Preprocessing and feature extraction
-        - Quality control and filtering
-        - Normalization and batch correction
-        - Quantification and targeted analysis
-        - Metabolite annotation and identification
-        - Spectral processing and comparison
-        - Molecular networking and chemical similarity
-        - Statistical analysis
-        - Machine learning and prediction
-        - Pathway and biological interpretation
-        - Isotope tracing and flux analysis
-        - Visualization and reporting
-        - Data management and sharing
-        - Workflow management and reproducibility
-        - Reference data and database search
-        - Multi-omics integration
-
-  - type: dropdown
-    id: platforms
-    attributes:
-      label: Which analytical platforms does it support?
-      multiple: true
-      options:
-        - LC-MS
-        - GC-MS
-        - CE-MS
-        - Direct-infusion MS
-        - MALDI-MS
-        - Imaging mass spectrometry
-        - NMR
-        - Infrared or Raman spectroscopy
-        - Multiple analytical platforms
-        - Platform-independent
-    validations:
-      required: true
-
-  - type: dropdown
-    id: interfaces
-    attributes:
-      label: How do researchers use it?
-      multiple: true
-      options:
-        - Web application
-        - Desktop graphical interface
-        - Command line
-        - R package
-        - Python package
-        - MATLAB
-        - Notebook
-        - API
-        - Galaxy
-        - KNIME
-        - Workflow language or engine
-        - Instrument-vendor integration
-    validations:
-      required: true
-
-  - type: dropdown
-    id: access-model
-    attributes:
-      label: How is it accessed?
-      options:
-        - Open source
-        - Source available with restrictions
-        - Free web service
-        - Free for academic use
-        - Freemium
-        - Commercial
-        - Institutional access required
-        - Access model unclear
-    validations:
-      required: true
-
-  - type: dropdown
-    id: submitter-role
-    attributes:
-      label: What is your relationship to the tool?
-      options:
-        - Developer or author
-        - Current maintainer
-        - Tool user
-        - Database or community curator
-        - Other contributor
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ### Optional details
-        These help us publish a richer entry, but you may leave them blank.
-
-  - type: input
-    id: publication
-    attributes:
-      label: Primary publication or DOI
-      placeholder: 10.xxxx/xxxxx or full citation
-
-  - type: textarea
-    id: additional-links
-    attributes:
-      label: Additional links
-      description: Documentation, repository, web app, tutorials, datasets, issue tracker, bio.tools, or WorkflowHub.
-      placeholder: |
-        Documentation: https://...
-        Repository: https://...
-
-  - type: input
-    id: contact
-    attributes:
-      label: Name or ORCID for attribution
-      description: Optional. Add this if you would like attribution or are willing to answer questions.
-      placeholder: Name; 0000-0000-0000-0000
-
-  - type: textarea
-    id: notes
-    attributes:
-      label: Anything else we should know?
-      description: Versions, licenses, supported formats, limitations, related tools, or other useful context.
-
-  - type: checkboxes
-    id: confirmation
-    attributes:
-      label: Submission confirmation
-      options:
-        - label: To the best of my knowledge, the information is accurate and suitable for public display.
-          required: true

@@ -24,7 +24,7 @@ jobs:
           python-version: '3.13'
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python scripts/validate_tools.py
+      - run: python scripts/validate_catalogue.py
       - run: python scripts/check_form_sync.py
       - run: python scripts/build_site.py --strict
       - uses: actions/configure-pages@v5
