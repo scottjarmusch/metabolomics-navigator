@@ -11,9 +11,8 @@ permissions:
 
 jobs:
   create-draft:
-    # The Issue Form always prefixes valid submissions with this text.
-    # We deliberately do not depend on labels because GitHub silently omits
-    # template labels that do not yet exist in a new repository.
+    # Issue Forms prefix tool submissions with this text. We deliberately do
+    # not depend on labels being present at issue-creation time.
     if: startsWith(github.event.issue.title, '[Tool submission]:')
     runs-on: ubuntu-latest
 
@@ -47,11 +46,9 @@ jobs:
         id: convert
         run: python scripts/issue_to_tool.py --event "$GITHUB_EVENT_PATH"
 
-      - name: Validate catalogue
-        run: |
-          python scripts/validate_tools.py
-          python scripts/check_form_sync.py
-
+      # Do not validate here. The dedicated Validate catalogue workflow runs
+      # automatically on the pull request. This ensures a content-quality
+      # problem creates a reviewable draft instead of aborting submission.
       - name: Create or refresh automation branch
         env:
           BRANCH: automation/tool-submission-${{ github.event.issue.number }}
@@ -67,7 +64,9 @@ jobs:
           else
             git commit -m "Add draft entry for $TOOL_NAME"
           fi
-          git push --force-with-lease --set-upstream origin "$BRANCH"
+          # This branch is owned exclusively by this issue automation, so a
+          # force push makes manual reruns deterministic and safe.
+          git push --force --set-upstream origin "$BRANCH"
 
       - name: Create or reuse pull request
         id: pr
@@ -79,7 +78,7 @@ jobs:
         run: |
           PR_URL=$(gh pr list --head "$BRANCH" --base main --state open --json url --jq '.[0].url // empty')
           if [ -z "$PR_URL" ]; then
-            PR_BODY=$(printf 'Automated draft generated from %s.\n\nEditorial review is required before publication.' "$SOURCE_ISSUE")
+            PR_BODY=$(printf 'Automated draft generated from %s.\n\nEditorial review is required before publication. Catalogue validation will run automatically on this pull request.' "$SOURCE_ISSUE")
             PR_URL=$(gh pr create \
               --base main \
               --head "$BRANCH" \
@@ -96,12 +95,12 @@ jobs:
           PR_URL: ${{ steps.pr.outputs.url }}
         run: |
           gh issue comment "${{ github.event.issue.number }}" \
-            --body "Thank you. A structured draft entry has been created for editorial review: $PR_URL"
+            --body "Thank you. A structured draft entry has been created for editorial review: $PR_URL. Automated catalogue validation will run on the pull request before it can be merged."
 
-      - name: Comment if automation fails
+      - name: Comment if draft generation fails
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh issue comment "${{ github.event.issue.number }}" \
-            --body "The automated draft could not be created. A maintainer should review the failed workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            --body "The automated draft could not be generated. A maintainer should review this workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
