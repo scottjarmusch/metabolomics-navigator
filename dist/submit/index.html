@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit · Metabolomics Tool Atlas</title>
+  <meta name="description" content="A community-maintained atlas of metabolomics tools and transferable published protocols, with structured metadata, provenance, and cross-linked workflows.">
+  <meta name="theme-color" content="#0f4a53">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/" aria-label="Metabolomics Tool Atlas home">
+        <svg class="brand-logo" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Tool Atlas</span></strong>
+          <small>Tools and protocols for the metabolomics community</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/about/">About</a>
+        <a class="nav-submit" href="/submit/" aria-current="page">Submit</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<section class="page-hero compact"><div class="section-wrap"><p class="eyebrow">Community submission</p><h1>Add to the Metabolomics Tool Atlas</h1><p>Choose the content type that best matches your contribution. Both forms are short; structured drafts and pull requests are generated automatically.</p></div></section>
+<section class="section-wrap submission-choices"><article id="tool" class="submission-choice"><span class="discovery-label">TOOLS</span><h2>Submit a tool</h2><p>For software, packages, databases, spectral libraries, web services, repositories, APIs, or executable workflows.</p><h3>Required information</h3><ul><li>Name and best link</li><li>Short neutral description</li><li>Main function and analytical platform</li><li>Interface and access model</li><li>Your relationship to the resource</li></ul><a class="button primary" href="https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/new?template=submit-tool.yml&amp;title=%5BTool+submission%5D%3A+">Open tool form</a><a class="text-link" href="https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+">Update an existing tool</a></article>
+<article id="protocol" class="submission-choice protocol-choice"><span class="discovery-label">PROTOCOLS</span><h2>Submit a protocol</h2><p>For a published, transferable experimental or computational strategy that combines metabolomics steps or tools to solve a defined problem.</p><h3>Required information</h3><ul><li>Protocol or method name</li><li>Publication DOI or URL</li><li>The problem it solves</li><li>Main analytical platform and objective</li><li>Tools/resources used</li><li>Your relationship to the work</li></ul><a class="button primary" href="https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/new?template=submit-protocol.yml&amp;title=%5BProtocol+submission%5D%3A+">Open protocol form</a><a class="text-link" href="https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/new?template=update-protocol.yml&amp;title=%5BProtocol+update%5D%3A+">Update an existing protocol</a></article></section>
+<section class="section-wrap process-section"><p class="eyebrow">What happens next</p><h2>One review pathway for both content types</h2><ol class="process-list"><li><strong>You complete a short form.</strong><span>No YAML, Git, or pull-request knowledge required.</span></li><li><strong>Automation creates a structured draft.</strong><span>Known tool names are cross-linked automatically in protocol submissions.</span></li><li><strong>Validation checks the record.</strong><span>Schema, categories, and cross-links are checked before merge.</span></li><li><strong>An editor reviews and merges it.</strong><span>The public site rebuilds automatically from the approved record.</span></li></ol><p class="small-note">Submitting through GitHub currently requires a free GitHub account.</p></section>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Tool Atlas</strong>
+        <p>Community-maintained and openly versioned on GitHub.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/about/">About</a>
+        <a href="/governance/">Governance</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-tool-atlas">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/tool-data.json">Tool data (JSON)</a>
+        <a href="/protocol-data.json">Protocol data (JSON)</a>
+        <a href="/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 21 August 2026</span></div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metabolomics protocols · Metabolomics Tool Atlas</title>
+  <meta name="description" content="Published, transferable metabolomics strategies linked to the tools and resources used to implement them.">
+  <meta name="theme-color" content="#0f4a53">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/" aria-label="Metabolomics Tool Atlas home">
+        <svg class="brand-logo" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Tool Atlas</span></strong>
+          <small>Tools and protocols for the metabolomics community</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/" aria-current="page">Protocols</a>
+        <a href="/about/">About</a>
+        <a class="nav-submit" href="/submit/">Submit</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<section class="page-hero compact protocol-hero"><div class="section-wrap"><p class="eyebrow">Protocol atlas</p><h1>Published strategies you can adapt</h1><p>Protocols are transferable experimental or computational approaches, not simply papers that happen to use metabolomics. Each page maps the scientific concept, workflow stages, tools, and reusable resources.</p></div></section>
+<section class="catalogue-layout section-wrap" data-catalogue><aside class="filter-panel" aria-label="Protocol filters"><div class="filter-heading"><h2>Filters</h2><button type="button" class="link-button" data-reset>Reset</button></div><label class="field-label" for="protocol-search">Search</label><input id="protocol-search" data-search type="search" placeholder="Question, method, tool, platform…"><label class="field-label" for="filter-objective">Scientific objective</label><select id="filter-objective" data-filter="objective"><option value="">All objectives</option><option value="metal_binding">Metal-binding compound discovery (1)</option><option value="reverse_metabolomics">Reverse metabolomics (1)</option></select><label class="field-label" for="filter-platforms">Analytical platform</label><select id="filter-platforms" data-filter="platforms"><option value="">All platforms</option><option value="lc_ms">LC-MS (2)</option></select><label class="field-label" for="filter-analysis-types">Analysis type</label><select id="filter-analysis-types" data-filter="analysis-types"><option value="">All analysis types</option><option value="untargeted">Untargeted metabolomics (2)</option><option value="metabolite_profiling">Metabolite profiling (2)</option></select><label class="field-label" for="filter-components">Protocol component</label><select id="filter-components" data-filter="components"><option value="">All components</option><option value="chromatography">Chromatography (1)</option><option value="post_column_modification">Post-column modification or infusion (1)</option><option value="data_acquisition">Data acquisition (2)</option><option value="preprocessing">Preprocessing and feature extraction (1)</option><option value="annotation">Annotation or identification (1)</option><option value="spectral_search">Spectral search (1)</option><option value="molecular_networking">Molecular networking (1)</option><option value="repository_mining">Repository-scale mining (1)</option><option value="metadata_analysis">Metadata analysis (1)</option><option value="biological_validation">Biological validation (1)</option><option value="data_sharing">Data and workflow sharing (2)</option></select></aside>
+<div class="catalogue-results"><div class="results-toolbar"><p aria-live="polite"><strong data-result-count>2</strong> protocols</p><label for="sort-records">Sort <select id="sort-records" data-sort><option value="az">A–Z</option><option value="newest">Recently added</option><option value="updated">Recently updated</option></select></label></div><div class="active-filters" data-active-filters hidden></div><div class="tool-grid protocol-grid" data-record-grid><article class="tool-card protocol-result" data-record-card data-name="native ms metabolomics for metal-binding compounds" data-search-text="native ms metabolomics for metal-binding compounds a transferable lc-ms strategy that combines post-column ph adjustment and metal infusion with ion identity molecular networking to discover small molecules that bind metals in complex biological samples. metal-binding compound discovery native metabolomics natural-product discovery lc-ms untargeted metabolomics metabolite profiling chromatography post-column modification or infusion data acquisition preprocessing and feature extraction annotation or identification molecular networking data and workflow sharing microbial cultures or communities marine samples environmental samples synthetic or analytical standards ms1 ms/ms full-scan ms data-dependent acquisition (dda) native electrospray ionization mzmine gnps massive cytoscape" data-objective="metal_binding" data-platforms="lc_ms" data-analysis-types="untargeted metabolite_profiling" data-components="chromatography post_column_modification data_acquisition preprocessing annotation molecular_networking data_sharing" data-created="2026-08-21" data-updated="2026-08-21"><div class="tool-card-top"><div><p class="tool-kicker">Metal-binding compound discovery</p><h2><a href="/protocols/native-ms-metal-binding/">Native MS metabolomics for metal-binding compounds</a></h2></div><span class="protocol-year">2022</span></div><p>A transferable LC-MS strategy that combines post-column pH adjustment and metal infusion with ion identity molecular networking to discover small molecules that bind metals in complex biological samples.</p><p class="capability-line"><strong>Uses:</strong> MZmine · GNPS · MassIVE · Cytoscape</p><div class="badge-row"><span class="badge">LC-MS</span><span class="badge">Untargeted metabolomics</span><span class="badge">Metabolite profiling</span><span class="badge">Metal-binding compound discovery</span></div><div class="tool-card-footer"><span>Nature Chemistry</span><a href="/protocols/native-ms-metal-binding/">View protocol →</a></div></article><article class="tool-card protocol-result" data-record-card data-name="reverse metabolomics" data-search-text="reverse metabolomics a discovery strategy that starts from a candidate chemical structure or reference ms/ms spectrum, searches public metabolomics repositories for matching spectra, and uses sample metadata to reveal biological or phenotypic associations. reverse metabolomics phenotype association molecular discovery metabolite annotation lc-ms untargeted metabolomics metabolite profiling data acquisition spectral search repository-scale mining metadata analysis biological validation data and workflow sharing human samples microbial cultures or communities synthetic or analytical standards other or broadly applicable ms/ms data-dependent acquisition (dda) targeted ms/ms flow injection msms-chooser masst redu gnps massive" data-objective="reverse_metabolomics" data-platforms="lc_ms" data-analysis-types="untargeted metabolite_profiling" data-components="data_acquisition spectral_search repository_mining metadata_analysis biological_validation data_sharing" data-created="2026-08-21" data-updated="2026-08-21"><div class="tool-card-top"><div><p class="tool-kicker">Reverse metabolomics</p><h2><a href="/protocols/reverse-metabolomics/">Reverse metabolomics</a></h2></div><span class="protocol-year">2024</span></div><p>A discovery strategy that starts from a candidate chemical structure or reference MS/MS spectrum, searches public metabolomics repositories for matching spectra, and uses sample metadata to reveal biological or phenotypic associations.</p><p class="capability-line"><strong>Uses:</strong> MSMS-Chooser · MASST · ReDU · GNPS</p><div class="badge-row"><span class="badge">LC-MS</span><span class="badge">Untargeted metabolomics</span><span class="badge">Metabolite profiling</span><span class="badge">Reverse metabolomics</span></div><div class="tool-card-footer"><span>Nature</span><a href="/protocols/reverse-metabolomics/">View protocol →</a></div></article></div><div class="empty-state" data-empty hidden><h2>No protocols match these filters</h2><p>Try removing one filter or using a broader search term.</p><button type="button" class="button secondary" data-reset>Reset filters</button></div></div></section>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Tool Atlas</strong>
+        <p>Community-maintained and openly versioned on GitHub.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/about/">About</a>
+        <a href="/governance/">Governance</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-tool-atlas">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/tool-data.json">Tool data (JSON)</a>
+        <a href="/protocol-data.json">Protocol data (JSON)</a>
+        <a href="/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 21 August 2026</span></div>
+  </footer>
+  <script src="/assets/site.js" defer></script><script src="/assets/catalogue.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/tools/</loc></url>
+  <url><loc>/protocols/</loc></url>
+  <url><loc>/browse/</loc></url>
+  <url><loc>/submit/</loc></url>
+  <url><loc>/about/</loc></url>
+  <url><loc>/contribute/</loc></url>
+  <url><loc>/governance/</loc></url>
+  <url><loc>/tools/gnps/</loc></url>
+  <url><loc>/tools/massive/</loc></url>
+  <url><loc>/tools/massql/</loc></url>
+  <url><loc>/tools/masst/</loc></url>
+  <url><loc>/tools/metaboanalyst/</loc></url>
+  <url><loc>/tools/ms-dial/</loc></url>
+  <url><loc>/tools/msms-chooser/</loc></url>
+  <url><loc>/tools/mzmine/</loc></url>
+  <url><loc>/tools/openms/</loc></url>
+  <url><loc>/tools/redu/</loc></url>
+  <url><loc>/tools/sirius/</loc></url>
+  <url><loc>/tools/xcms/</loc></url>
+  <url><loc>/protocols/native-ms-metal-binding/</loc></url>
+  <url><loc>/protocols/reverse-metabolomics/</loc></url>
+</urlset>

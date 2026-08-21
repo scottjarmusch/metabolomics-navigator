@@ -1,16 +1,93 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero"><div class="hero-inner">
-  <p class="eyebrow">Open metabolomics infrastructure</p>
-  <h1>Find the right tool. Follow a proven protocol.</h1>
-  <p class="hero-copy">Explore a living, community-maintained atlas of metabolomics software and the published experimental or computational strategies that connect those resources into research workflows.</p>
-  <div class="discovery-grid">
-    <form class="discovery-card" action="{{ url('tools/') }}" method="get"><span class="discovery-label">TOOLS</span><h2>What do you need to do?</h2><p>Find software, databases, libraries, repositories, and services by scientific function and data type.</p><label for="home-tool-search">Search tools</label><div class="search-row"><input id="home-tool-search" name="q" type="search" placeholder="feature detection, LC-MS, molecular networking…"><button type="submit">Search</button></div><a class="text-link" href="{{ url('tools/') }}">Browse all tools →</a></form>
-    <form class="discovery-card protocol-card" action="{{ url('protocols/') }}" method="get"><span class="discovery-label">PROTOCOLS</span><h2>What problem are you trying to solve?</h2><p>Find published, transferable strategies and see which tools, experimental steps, and public resources they use.</p><label for="home-protocol-search">Search protocols</label><div class="search-row"><input id="home-protocol-search" name="q" type="search" placeholder="metal binding, reverse metabolomics, isotope tracing…"><button type="submit">Search</button></div><a class="text-link" href="{{ url('protocols/') }}">Browse all protocols →</a></form>
+<section class="home-hero">
+  <div class="section-wrap home-hero-grid">
+    <div>
+      <p class="eyebrow">Community-maintained scientific infrastructure</p>
+      <h1>Metabolomics Tool Atlas</h1>
+      <p class="hero-copy">A community-maintained guide to the tools and published protocols used in metabolomics.</p>
+      <form class="home-search" action="{{ url('tools/') }}" method="get">
+        <label class="sr-only" for="home-search-input">Search the atlas</label>
+        <div class="search-row large">
+          <input id="home-search-input" name="q" type="search" placeholder="Search tools, protocols, functions, platforms…">
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <div class="search-tabs" aria-label="Search scopes">
+        <a class="active" href="{{ url('tools/') }}">All</a>
+        <a href="{{ url('tools/') }}">Tools</a>
+        <a href="{{ url('protocols/') }}">Protocols</a>
+      </div>
+      <div class="action-links">
+        <a href="{{ url('tools/') }}"><span class="action-icon">⌁</span> Browse tools <span aria-hidden="true">→</span></a>
+        <a class="protocol-link" href="{{ url('protocols/') }}"><span class="action-icon">⚗</span> Browse protocols <span aria-hidden="true">→</span></a>
+        <a href="{{ url('submit/') }}"><span class="action-icon">＋</span> Submit an entry <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-spectrum"></div>
+      <div class="hero-network">
+        <span style="--x:12%;--y:22%"></span><span style="--x:26%;--y:17%"></span><span style="--x:36%;--y:29%"></span><span style="--x:51%;--y:22%"></span><span style="--x:47%;--y:42%"></span><span style="--x:63%;--y:35%"></span><span style="--x:72%;--y:18%"></span><span style="--x:82%;--y:30%"></span><span style="--x:70%;--y:54%"></span><span style="--x:86%;--y:56%"></span>
+        <i style="--x1:12%;--y1:22%;--x2:26%;--y2:17%"></i><i style="--x1:26%;--y1:17%;--x2:36%;--y2:29%"></i><i style="--x1:36%;--y1:29%;--x2:51%;--y2:22%"></i><i style="--x1:36%;--y1:29%;--x2:47%;--y2:42%"></i><i style="--x1:47%;--y1:42%;--x2:63%;--y2:35%"></i><i style="--x1:51%;--y1:22%;--x2:72%;--y2:18%"></i><i style="--x1:72%;--y1:18%;--x2:82%;--y2:30%"></i><i style="--x1:63%;--y1:35%;--x2:70%;--y2:54%"></i><i style="--x1:70%;--y1:54%;--x2:86%;--y2:56%"></i>
+      </div>
+    </div>
   </div>
-</div></section>
-<section class="stats-band" aria-label="Catalogue statistics"><div><strong>{{ stats.tools }}</strong><span>tool entries</span></div><div><strong>{{ stats.protocols }}</strong><span>protocols</span></div><div><strong>{{ stats.functions }}</strong><span>tool functions</span></div><div><strong>{{ stats.verified }}</strong><span>developer/author verified</span></div></section>
-<section class="section-wrap"><div class="section-heading"><div><p class="eyebrow">Browse tools by task</p><h2>What do you need to do with the data?</h2></div><a href="{{ url('browse/') }}">View all categories</a></div><div class="category-grid">{% for item in featured_functions %}<a class="category-card" href="{{ url('tools/') }}?function={{ item.id }}"><span class="category-icon" aria-hidden="true">{{ item.icon }}</span><h3>{{ item.label }}</h3><p>{{ item.description }}</p><span class="category-count">{{ item.count }} tool{% if item.count != 1 %}s{% endif %}</span></a>{% endfor %}</div></section>
-<section class="section-wrap content-pair"><div><p class="eyebrow">Recently added tools</p><h2>Tool catalogue</h2><div class="compact-list">{% for tool in recent_tools %}<a href="{{ url('tools/' + tool.slug + '/') }}"><span><strong>{{ tool.name }}</strong><small>{{ tool.summary }}</small></span><span>{{ tool.updated_display }}</span></a>{% endfor %}</div><a class="text-link" href="{{ url('tools/') }}">Explore tools</a></div><div><p class="eyebrow">Published strategies</p><h2>Protocols</h2><div class="compact-list">{% for protocol in recent_protocols %}<a href="{{ url('protocols/' + protocol.slug + '/') }}"><span><strong>{{ protocol.name }}</strong><small>{{ protocol.summary }}</small></span><span>{{ protocol.publication.year or '' }}</span></a>{% endfor %}</div><a class="text-link" href="{{ url('protocols/') }}">Explore protocols</a></div></section>
-<section class="section-wrap contribution-wide"><div><p class="eyebrow">Built by the field</p><h2>Developed a tool or published a transferable method?</h2><p>Submission is intentionally lightweight. Give us the essential information; automation creates a structured draft and an editor reviews it before publication.</p></div><div class="hero-actions"><a class="button primary" href="{{ url('submit/') }}#tool">Submit a tool</a><a class="button secondary" href="{{ url('submit/') }}#protocol">Submit a protocol</a></div></section>
+</section>
+<section class="stats-strip section-wrap" aria-label="Catalogue statistics">
+  <div><strong>{{ stats.tools }}</strong><span>tools</span></div>
+  <div><strong>{{ stats.protocols }}</strong><span>protocols</span></div>
+  <div><strong>{{ stats.functions }}</strong><span>scientific functions</span></div>
+  <div><strong>Community</strong><span>maintained</span></div>
+</section>
+<section class="section-wrap home-main-grid">
+  <div>
+    <div class="section-heading simple"><h2>Explore the Atlas</h2></div>
+    <div class="home-panels">
+      <article class="atlas-panel tools-panel">
+        <h3>Tools</h3>
+        <p>Software, databases, libraries, repositories, and services for metabolomics.</p>
+        <p class="small-muted">Find resources for preprocessing, annotation, networking, statistics, and more.</p>
+        <a href="{{ url('tools/') }}">Browse tools →</a>
+      </article>
+      <article class="atlas-panel protocols-panel">
+        <h3>Protocols</h3>
+        <p>Published methods and transferable strategies that connect tools into workflows.</p>
+        <p class="small-muted">Discover experimental and computational approaches to solve specific metabolomics questions.</p>
+        <a href="{{ url('protocols/') }}">Browse protocols →</a>
+      </article>
+    </div>
+  </div>
+  <aside class="recent-panel">
+    <div class="section-heading simple">
+      <h2>Recently added</h2>
+      <a href="{{ url('tools/') }}">View all →</a>
+    </div>
+    <div class="recent-group">
+      <h3>Tools</h3>
+      <div class="recent-list">
+        {% for tool in recent_tools %}
+        <a href="{{ url('tools/' + tool.slug + '/') }}">
+          <span><strong>{{ tool.name }}</strong><small>{{ tool.summary }}</small></span>
+          <em>{{ tool.updated_display }}</em>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="recent-group">
+      <h3>Protocols</h3>
+      <div class="recent-list">
+        {% for protocol in recent_protocols %}
+        <a href="{{ url('protocols/' + protocol.slug + '/') }}">
+          <span><strong>{{ protocol.name }}</strong><small>{{ protocol.summary }}</small></span>
+          <em>{{ protocol.publication.year or protocol.updated_display }}</em>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </aside>
+</section>
+<section class="section-wrap contribution-bar">
+  <p><strong>Missing a tool or protocol?</strong> Help improve the Atlas.</p>
+  <a class="button secondary" href="{{ url('submit/') }}">Submit an entry</a>
+</section>
 {% endblock %}

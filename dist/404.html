@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ site.title }}{% endblock %}</title>
-  <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+  <title>Page not found · Metabolomics Tool Atlas</title>
+  <meta name="description" content="A community-maintained atlas of metabolomics tools and transferable published protocols, with structured metadata, provenance, and cross-linked workflows.">
   <meta name="theme-color" content="#0f4a53">
-  <link rel="stylesheet" href="{{ url('assets/site.css') }}">
-  <link rel="icon" href="{{ url('assets/favicon.svg') }}" type="image/svg+xml">
-  {% block head %}{% endblock %}
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner section-wrap">
-      <a class="brand" href="{{ url('') }}" aria-label="{{ site.title }} home">
+      <a class="brand" href="/" aria-label="Metabolomics Tool Atlas home">
         <svg class="brand-logo" viewBox="0 0 100 44" aria-hidden="true">
           <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
           <g class="brand-network">
@@ -39,41 +39,41 @@
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <a href="{{ url('tools/') }}"{% if active == 'tools' %} aria-current="page"{% endif %}>Tools</a>
-        <a href="{{ url('protocols/') }}"{% if active == 'protocols' %} aria-current="page"{% endif %}>Protocols</a>
-        <a href="{{ url('about/') }}"{% if active == 'about' %} aria-current="page"{% endif %}>About</a>
-        <a class="nav-submit" href="{{ url('submit/') }}"{% if active == 'submit' %} aria-current="page"{% endif %}>Submit</a>
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/about/">About</a>
+        <a class="nav-submit" href="/submit/">Submit</a>
       </nav>
     </div>
   </header>
-  <main id="main-content">{% block content %}{% endblock %}</main>
+  <main id="main-content"><section class="empty-page section-wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p>The page may have moved, or the tool or protocol entry may not yet exist.</p><div class="hero-actions"><a class="button primary" href="/tools/">Search tools</a><a class="button secondary" href="/protocols/">Browse protocols</a><a class="button secondary" href="/submit/">Submit a missing entry</a></div></section></main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
       <div>
-        <strong>{{ site.title }}</strong>
-        <p>{{ site.footer_note }}</p>
+        <strong>Metabolomics Tool Atlas</strong>
+        <p>Community-maintained and openly versioned on GitHub.</p>
       </div>
       <div>
         <h2>Explore</h2>
-        <a href="{{ url('tools/') }}">Tools</a>
-        <a href="{{ url('protocols/') }}">Protocols</a>
-        <a href="{{ url('browse/') }}">Browse categories</a>
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/browse/">Browse categories</a>
       </div>
       <div>
         <h2>Project</h2>
-        <a href="{{ url('about/') }}">About</a>
-        <a href="{{ url('governance/') }}">Governance</a>
-        <a href="{{ repository_url }}">GitHub repository</a>
+        <a href="/about/">About</a>
+        <a href="/governance/">Governance</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-tool-atlas">GitHub repository</a>
       </div>
       <div>
         <h2>Data</h2>
-        <a href="{{ url('tool-data.json') }}">Tool data (JSON)</a>
-        <a href="{{ url('protocol-data.json') }}">Protocol data (JSON)</a>
-        <a href="{{ url('catalogue-data.json') }}">Complete catalogue (JSON)</a>
+        <a href="/tool-data.json">Tool data (JSON)</a>
+        <a href="/protocol-data.json">Protocol data (JSON)</a>
+        <a href="/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>{{ site.license_text }}</span><span>Generated {{ generated_at }}</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 21 August 2026</span></div>
   </footer>
-  <script src="{{ url('assets/site.js') }}" defer></script>{% block scripts %}{% endblock %}
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

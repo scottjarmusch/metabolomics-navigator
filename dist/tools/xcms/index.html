@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xcms · Metabolomics Tool Atlas</title>
+  <meta name="description" content="An open-source Bioconductor package for chromatographic mass spectrometry data preprocessing, feature detection, alignment, grouping, and visualization.">
+  <meta name="theme-color" content="#0f4a53">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="/tools/xcms/">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/" aria-label="Metabolomics Tool Atlas home">
+        <svg class="brand-logo" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Tool Atlas</span></strong>
+          <small>Tools and protocols for the metabolomics community</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/tools/" aria-current="page">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/about/">About</a>
+        <a class="nav-submit" href="/submit/">Submit</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/tools/">Tools</a><span>›</span><span>xcms</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Preprocessing and feature extraction</p><h1>xcms</h1><p class="tool-summary">An open-source Bioconductor package for chromatographic mass spectrometry data preprocessing, feature detection, alignment, grouping, and visualization.</p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">GC-MS</span><span class="badge">Untargeted metabolomics</span><span class="badge">Metabolite profiling</span><span class="badge">R package</span><span class="badge">Open source</span></div></div><div class="tool-actions"><a class="button primary" href="https://bioconductor.org/packages/xcms/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+xcms">Suggest an update</a></div></div></div></section>
+<div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
+<div><dt>Primary use</dt><dd>Preprocessing and feature extraction</dd></div><div><dt>Platforms</dt><dd>LC-MS, GC-MS</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics, Metabolite profiling</dd></div><div><dt>Interface</dt><dd>R package</dd></div><div><dt>Operating systems</dt><dd>Windows, macOS, Linux, Cross-platform</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Entry last verified</dt><dd>21 August 2026</dd></div></dl>
+<div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-tool-atlas/blob/main/content/tools/xcms.yml">View YAML source</a></div></aside>
+<article class="tool-article"><section><h2>Overview</h2><p>xcms is a scriptable Bioconductor framework for processing chromatographically separated mass-spectrometry data in R. It provides algorithms for chromatographic peak detection, retention-time correction, correspondence/grouping across samples, filling missing feature intensities, and inspection of LC-MS and GC-MS datasets within reproducible analysis scripts.</p></section>
+<section class="capability-section"><p class="eyebrow">Detailed capability map</p><h2>What can this tool do?</h2><div class="capability-cloud"><span>Chromatogram building</span><span>Peak or feature detection</span><span>Retention-time alignment</span><span>Gap filling</span><span>Spectral deconvolution</span></div><h3>Common uses</h3><ul><li>Build scriptable preprocessing workflows for untargeted chromatographic MS data.</li><li>Detect chromatographic peaks and align retention times across samples.</li></ul></section>
+<section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Preprocessing and feature extraction</p></div><div><h3>Other functions</h3><p>Quality control and filtering, Normalization and batch correction, Visualization and reporting</p></div><div><h3>Analysis types</h3><p>Untargeted metabolomics, Metabolite profiling</p></div><div><h3>MS level</h3><p>MS1, MS/MS</p></div><div><h3>Acquisition</h3><p>Full-scan MS, Data-dependent acquisition (DDA), General or unspecified acquisition</p></div><div><h3>Ion mobility</h3><p>Not specified</p></div></div></section>
+<section><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Raw instrument data, Mass spectra, Sample metadata</p></div><div><h3>Outputs</h3><p>Feature or peak table, Statistical results</p></div><div><h3>Input formats</h3><p>mzML, mzXML, netCDF or CDF</p></div><div><h3>Output formats</h3><p>CSV or TSV</p></div></div></section>
+<section><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Reproducible, script-based preprocessing of LC-MS and GC-MS datasets in the R/Bioconductor ecosystem.</li></ul></div><div><h3>Important requirements</h3><ul><li>R and Bioconductor plus the package dependencies appropriate to the selected xcms release.</li></ul></div><div><h3>Considerations</h3><ul><li>The package is code oriented rather than a standalone point-and-click workflow, so users benefit from basic R familiarity.</li></ul></div></div></section>
+<section><h2>Access and documentation</h2><div class="link-list"><a href="https://bioconductor.org/packages/xcms/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://github.com/sneumann/xcms"><span>Source repository</span><span aria-hidden="true">↗</span></a><a href="https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms.html"><span>Documentation</span><span aria-hidden="true">↗</span></a></div><p><strong>License:</strong> Artistic-2.0</p></section>
+
+<section><h2>Publications</h2><ol class="publication-list"><li>Primary publication <a href="https://doi.org/10.1021/ac051437y">doi:10.1021/ac051437y</a></li></ol></section>
+<section><h2>Related tools</h2><div class="related-grid"><a href="/tools/openms/"><strong>OpenMS</strong><span>An open-source C++ library, command-line toolkit, and Python interface for reproducible mass spectrometry data processing in metabolomics and proteomics.</span></a><a href="/tools/mzmine/"><strong>MZmine</strong><span>An open-source desktop and command-line environment for processing, visualizing, and annotating mass spectrometry-based metabolomics data.</span></a></div></section>
+</article></div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Tool Atlas</strong>
+        <p>Community-maintained and openly versioned on GitHub.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/tools/">Tools</a>
+        <a href="/protocols/">Protocols</a>
+        <a href="/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/about/">About</a>
+        <a href="/governance/">Governance</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-tool-atlas">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/tool-data.json">Tool data (JSON)</a>
+        <a href="/protocol-data.json">Protocol data (JSON)</a>
+        <a href="/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 21 August 2026</span></div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
