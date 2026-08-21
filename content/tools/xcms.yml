@@ -7,49 +7,96 @@ links:
   homepage: https://bioconductor.org/packages/xcms/
   repository: https://github.com/sneumann/xcms
   documentation: https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms.html
-resource_types: [programming_package]
+resource_types:
+- programming_package
 functions:
   primary: preprocessing
-  secondary: [quality_control, normalization, visualization_reporting]
-  capabilities: [peak_detection, retention_time_alignment, gap_filling]
-platforms: [lc_ms, gc_ms]
-analysis_types: [untargeted, metabolite_profiling]
-interfaces: [r_package]
+  secondary:
+  - quality_control
+  - normalization
+  - visualization_reporting
+  capabilities:
+  - chromatogram_building
+  - peak_detection
+  - retention_time_alignment
+  - gap_filling
+  - spectral_deconvolution
+platforms:
+- lc_ms
+- gc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- r_package
 access:
   model: open_source
   license: Artistic-2.0
 technical:
-  operating_systems: [windows, macos, linux, cross_platform]
-  programming_languages: [R, C++]
-  package_managers: [Bioconductor]
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  programming_languages:
+  - R
+  - C++
+  package_managers:
+  - Bioconductor
   api_available: false
 data:
-  input_types: [raw_instrument_data, spectra, sample_metadata]
-  output_types: [feature_table, statistical_results]
-  input_formats: [mzml, mzxml, netcdf]
-  output_formats: [csv_tsv]
+  input_types:
+  - raw_instrument_data
+  - spectra
+  - sample_metadata
+  output_types:
+  - feature_table
+  - statistical_results
+  input_formats:
+  - mzml
+  - mzxml
+  - netcdf
+  output_formats:
+  - csv_tsv
 publications:
-  - doi: 10.1021/ac051437y
-    type: primary
+- doi: 10.1021/ac051437y
+  type: primary
 common_uses:
-  - Build scriptable preprocessing workflows for untargeted chromatographic MS data.
-  - Detect chromatographic peaks and align retention times across samples.
-strengths: []
-limitations: []
+- Build scriptable preprocessing workflows for untargeted chromatographic MS data.
+- Detect chromatographic peaks and align retention times across samples.
 related_tools:
-  - slug: openms
-    relationship: alternative
-  - slug: mzmine
-    relationship: alternative
+- slug: openms
+  relationship: alternative
+- slug: mzmine
+  relationship: alternative
 maintenance:
   status: active
-  last_checked: '2026-08-04'
+  last_checked: '2026-08-21'
 credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
 status:
   entry: published
-  review: unreviewed
+  review: editorially_reviewed
   created_at: '2026-08-04'
   updated_at: '2026-08-04'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'
+scope:
+  designed_for:
+  - Reproducible, script-based preprocessing of LC-MS and GC-MS datasets in the R/Bioconductor ecosystem.
+  requirements:
+  - R and Bioconductor plus the package dependencies appropriate to the selected xcms release.
+  considerations:
+  - The package is code oriented rather than a standalone point-and-click workflow, so users benefit from basic R familiarity.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - unspecified
+  ion_mobility: unspecified
+description: xcms is a scriptable Bioconductor framework for processing chromatographically separated mass-spectrometry data in R. It provides algorithms for chromatographic peak detection, retention-time correction, correspondence/grouping across samples, filling missing feature intensities, and inspection of LC-MS and GC-MS datasets within reproducible analysis scripts.

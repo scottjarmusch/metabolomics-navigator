@@ -1,55 +1,49 @@
 # Submission design
 
-## Objective
+## Principle
 
-A researcher should be able to create a useful stub entry in about two minutes without knowing Git, Markdown, YAML, EDAM, or SPDX.
+Contribution should be **stub first, enrichment later**. Researchers should not need to know Git, YAML, JSON Schema, or the Atlas taxonomy in depth.
 
-## Required public fields
+## Tool submission
+
+Required fields:
 
 1. Tool name
 2. Best link
 3. Neutral one- or two-sentence description
 4. Resource type
 5. Primary function
-6. Supported analytical platform or platform-independent status
-7. User interface or access route
+6. Analytical platform
+7. Interface
 8. Access model
 9. Submitter relationship
 
-These fields are sufficient to create a page, place it in the catalogue, and support the principal filters.
+Curators can later enrich capabilities, acquisition mode, formats, technical requirements, release metadata, scope, verification, and cross-links.
 
-## Optional public fields
+## Protocol submission
 
-- Secondary functions
-- Primary publication or DOI
-- Documentation, repository, tutorial, and dataset links
-- Submitter name or ORCID for attribution
-- Versions, licenses, data formats, limitations, and other notes
+A protocol is a **published, transferable experimental or computational strategy**, not simply any paper that uses metabolomics.
 
-## Curator-enriched fields
+Required fields:
 
-The following should not burden the initial submitter:
+1. Protocol/method name
+2. Publication DOI or URL
+3. Problem the protocol solves
+4. Main analytical platform
+5. Main scientific objective
+6. Tools or resources used
+7. Submitter relationship to the work
 
-- Stable slug
-- Fine-grained capabilities
-- Input and output data types
-- Controlled data formats
-- Operating systems and programming languages
-- Maintenance status and release metadata
-- External identifiers and EDAM mappings
-- Review status
-- Related-tool relationships
-- Link-check dates
+Curators can later reconstruct workflow steps, acquisition details, sample contexts, reusable data/code, requirements, considerations, and tool cross-links.
 
-## Provenance labels
+## Provenance
 
-Keep these separate rather than treating them as a single review hierarchy:
+Keep provenance signals distinct:
 
-- Developer submitted: `provenance.submitted_by` is `developer` or `maintainer`.
-- Developer verified: `provenance.developer_verified` is `true`.
-- Editorially reviewed: `status.review` is `editorially_reviewed`.
-- Independently benchmarked: one or more publications have `type: benchmark` and are clearly independent.
+- developer/maintainer/author submitted
+- community submitted
+- developer or author verified
+- editorially reviewed
+- independent benchmark linked
 
-## Neutrality policy
-
-Tool entries should describe purpose, access, compatibility, documented capabilities, and sourced limitations. Avoid unsourced superlatives, rankings, star ratings, and claims that a tool is universally superior.
+These signals are evidence about provenance and review, not an overall quality score.

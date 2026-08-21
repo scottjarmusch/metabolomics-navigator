@@ -2,56 +2,123 @@ $schema: ../../schemas/tool.schema.json
 slug: mzmine
 name: MZmine
 summary: An open-source desktop and command-line environment for processing, visualizing, and annotating mass spectrometry-based metabolomics data.
-description: MZmine provides modular workflows for feature detection, chromatographic processing, alignment, quality control, visualization, spectral-library matching, and export to downstream annotation and networking platforms.
+description: MZmine is a modular environment for mass-spectrometry data processing with graphical and batch interfaces. It supports workflows spanning raw-data import, chromatogram construction, feature detection and resolving, alignment, ion and isotope grouping, quality filtering, visualization, spectral-library matching, and export to downstream annotation or networking resources.
 links:
   primary: https://mzmine.github.io/
   homepage: https://mzmine.github.io/
   repository: https://github.com/mzmine/mzmine
   documentation: https://mzmine.github.io/mzmine_documentation/
   issue_tracker: https://github.com/mzmine/mzmine/issues
-resource_types: [software_application]
+resource_types:
+- software_application
 functions:
   primary: preprocessing
-  secondary: [quality_control, annotation_identification, spectral_analysis, visualization_reporting]
-  capabilities: [peak_detection, spectral_deconvolution, retention_time_alignment, gap_filling, adduct_isotope_grouping, blank_filtering, library_matching, interactive_dashboard]
-platforms: [lc_ms, direct_infusion_ms, maldi_ms, imaging_ms]
-analysis_types: [untargeted, targeted, lipidomics, spatial_metabolomics]
-interfaces: [desktop_gui, command_line]
+  secondary:
+  - quality_control
+  - annotation_identification
+  - spectral_analysis
+  - visualization_reporting
+  capabilities:
+  - chromatogram_building
+  - peak_detection
+  - spectral_deconvolution
+  - retention_time_alignment
+  - gap_filling
+  - adduct_isotope_grouping
+  - blank_filtering
+  - library_matching
+  - ion_identity_networking
+  - network_visualization
+  - interactive_dashboard
+platforms:
+- lc_ms
+- direct_infusion_ms
+- maldi_ms
+- imaging_ms
+analysis_types:
+- untargeted
+- targeted
+- lipidomics
+- spatial_metabolomics
+interfaces:
+- desktop_gui
+- command_line
 access:
   model: open_source
   license: MIT
 technical:
-  operating_systems: [windows, macos, linux, cross_platform]
-  programming_languages: [Java]
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  programming_languages:
+  - Java
   api_available: false
 data:
-  input_types: [raw_instrument_data, spectra]
-  output_types: [feature_table, spectra, compound_list, report]
-  input_formats: [vendor_raw, mzml, mzxml, netcdf, imzml]
-  output_formats: [csv_tsv, mgf, msp, mztab_m]
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - feature_table
+  - spectra
+  - compound_list
+  - report
+  input_formats:
+  - vendor_raw
+  - mzml
+  - mzxml
+  - netcdf
+  - imzml
+  output_formats:
+  - csv_tsv
+  - mgf
+  - msp
+  - mztab_m
 publications:
-  - doi: 10.1038/s41587-023-01690-2
-    type: primary
+- doi: 10.1038/s41587-023-01690-2
+  type: primary
 common_uses:
-  - Detect, align, and filter features in untargeted LC-MS datasets.
-  - Inspect chromatograms, spectra, ion-mobility data, and imaging-MS features.
-  - Export feature and spectral data to annotation and molecular-networking resources.
-strengths: []
-limitations: []
+- Detect, align, and filter features in untargeted LC-MS datasets.
+- Inspect chromatograms, spectra, ion-mobility data, and imaging-MS features.
+- Export feature and spectral data to annotation and molecular-networking resources.
 related_tools:
-  - slug: gnps
-    relationship: integration
-  - slug: sirius
-    relationship: integration
+- slug: gnps
+  relationship: integration
+- slug: sirius
+  relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-04'
+  last_checked: '2026-08-21'
+  latest_version: 4.10.6
+  latest_release_date: '2026-06-03'
 credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
 status:
   entry: published
-  review: unreviewed
+  review: editorially_reviewed
   created_at: '2026-08-04'
   updated_at: '2026-08-04'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'
+scope:
+  designed_for:
+  - Modular processing and inspection of untargeted LC-MS datasets, including feature-based workflows that retain links to MS/MS and ion-mobility information.
+  - Interactive and batch processing where users want a graphical environment with export to downstream annotation and molecular-networking tools.
+  not_designed_for:
+  - A replacement for every downstream structure-elucidation or statistical-analysis platform; specialist tools are commonly used after preprocessing.
+  requirements:
+  - Desktop installation; current releases bundle the runtime required to execute MZmine.
+  considerations:
+  - Parameter choices for feature detection, resolving, alignment, and filtering remain experiment dependent and should be documented in reproducible batch files.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - dia
+  ion_mobility: supported

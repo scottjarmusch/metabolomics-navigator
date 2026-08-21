@@ -233,8 +233,8 @@ def main() -> None:
         "access": {"model": access},
         "publications": publications,
         "common_uses": [],
-        "strengths": [],
-        "limitations": [],
+        "scope": {},
+        "acquisition": {},
         "related_tools": [],
         "maintenance": {
             "status": "unclear",
@@ -247,6 +247,7 @@ def main() -> None:
             "review": "unreviewed",
             "created_at": date_created,
             "updated_at": date_created,
+            "last_verified": date_created,
         },
     }
     if submitter_name and role in {"developer", "maintainer"}:
@@ -272,6 +273,7 @@ def main() -> None:
             handle.write(f"path={path.relative_to(ROOT).as_posix()}\n")
             handle.write(f"slug={slug}\n")
             handle.write(f"name={name}\n")
+            handle.write("type=tool\n")
     print(path.relative_to(ROOT))
 
 

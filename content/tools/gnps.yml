@@ -22,6 +22,9 @@ functions:
   - workflow_reproducibility
   capabilities:
   - library_matching
+  - repository_scale_search
+  - metadata_contextualization
+  - network_visualization
   - provenance_tracking
 platforms:
 - multi_platform
@@ -68,8 +71,6 @@ common_uses:
 - Search experimental MS/MS spectra against community spectral libraries.
 - Build classical or feature-based molecular networks.
 - Share datasets, libraries, workflows, and analysis results with collaborators or the public.
-strengths: []
-limitations: []
 related_tools:
 - slug: mzmine
   relationship: integration
@@ -79,13 +80,33 @@ related_tools:
   relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-04'
+  last_checked: '2026-08-21'
 credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
 status:
   entry: published
-  review: unreviewed
+  review: editorially_reviewed
   created_at: '2026-08-04'
   updated_at: '2026-08-04'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'
+scope:
+  designed_for:
+  - MS/MS-centered annotation, molecular networking, public-data search, and community sharing of metabolomics and natural-products data.
+  requirements:
+  - Most workflows require centroided/open mass-spectrometry formats and appropriate metadata or feature tables for the selected analysis.
+  considerations:
+  - GNPS is an ecosystem rather than a single algorithm; users should cite and report the specific workflow, version or task URL used.
+acquisition:
+  ms_levels:
+  - ms2
+  - msn
+  strategies:
+  - dda
+  - dia
+  - targeted_msms
+  - unspecified
+  ion_mobility: supported
+description: GNPS is an open web ecosystem for community analysis, organization, searching, annotation, and sharing of tandem mass-spectrometry data. It hosts spectral libraries and multiple analysis workflows, including molecular networking and repository-scale search, and interoperates with public MassIVE datasets and structured sample metadata.

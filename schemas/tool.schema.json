@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://scottjarmusch.github.io/metabolomics-tool-atlas/schemas/tool.schema.json",
-  "title": "Metabolomics Tool Atlas entry",
-  "description": "Schema for a single tool, resource, service, database, library, repository, or workflow entry.",
+  "title": "Metabolomics Tool Atlas tool entry",
+  "description": "Schema for a tool, software resource, service, database, spectral library, repository, or executable workflow entry.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -344,26 +344,6 @@
       "uniqueItems": true,
       "default": []
     },
-    "strengths": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 500
-      },
-      "uniqueItems": true,
-      "default": []
-    },
-    "limitations": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 500
-      },
-      "uniqueItems": true,
-      "default": []
-    },
     "related_tools": {
       "type": "array",
       "items": {
@@ -529,6 +509,10 @@
         "last_editorial_review": {
           "type": "string",
           "format": "date"
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
         }
       }
     },
@@ -565,6 +549,71 @@
           "uniqueItems": true
         }
       }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "designed_for": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "not_designed_for": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "considerations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ms_levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ms_level"
+          },
+          "uniqueItems": true
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/acquisition_strategy"
+          },
+          "uniqueItems": true
+        },
+        "ion_mobility": {
+          "$ref": "#/$defs/ion_mobility_support"
+        }
+      }
     }
   },
   "$defs": {
@@ -586,7 +635,6 @@
     "function": {
       "type": "string",
       "enum": [
-        "experimental_design",
         "data_acquisition",
         "data_conversion",
         "preprocessing",
@@ -634,7 +682,17 @@
         "flux_estimation",
         "interactive_dashboard",
         "provenance_tracking",
-        "container_support"
+        "container_support",
+        "chromatogram_building",
+        "ms2_processing",
+        "ion_identity_networking",
+        "structure_database_search",
+        "compound_class_prediction",
+        "substructure_prediction",
+        "repository_scale_search",
+        "metadata_contextualization",
+        "reference_spectrum_selection",
+        "network_visualization"
       ]
     },
     "platform": {
@@ -783,6 +841,38 @@
         "pathway_data",
         "statistical_results",
         "report"
+      ]
+    },
+    "ms_level": {
+      "type": "string",
+      "enum": [
+        "ms1",
+        "ms2",
+        "msn"
+      ]
+    },
+    "acquisition_strategy": {
+      "type": "string",
+      "enum": [
+        "full_scan",
+        "dda",
+        "dia",
+        "targeted_msms",
+        "prm_mrm",
+        "all_ion",
+        "flow_injection",
+        "native_esi",
+        "unspecified"
+      ]
+    },
+    "ion_mobility_support": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "required",
+        "not_required",
+        "not_applicable",
+        "unspecified"
       ]
     }
   }

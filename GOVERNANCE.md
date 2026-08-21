@@ -1,31 +1,21 @@
 # Governance
 
+The Metabolomics Tool Atlas is a community-maintained scientific resource. Maintainers curate structure and metadata while preserving transparent attribution and Git history.
+
+## Editorial principles
+
+1. **Neutral description.** Entries explain scope, capabilities, requirements, and considerations without unsupported superiority claims.
+2. **Low-friction contribution.** Researchers can create useful stub entries without editing code.
+3. **Structured metadata.** Controlled vocabulary supports reliable searching and filtering.
+4. **Visible provenance.** Developer-submitted, community-submitted, developer-verified, and editorially reviewed information are distinguished where applicable.
+5. **Freshness.** Software release information, catalogue update dates, and information verification dates are treated as separate concepts.
+6. **Transferability for protocols.** Protocol entries must describe a reusable strategy rather than merely any study that happens to use metabolomics.
+7. **Review before publication.** New entries enter through pull requests; validation protects `main` and the public website.
+
 ## Scope
 
-The Metabolomics Tool Atlas documents tools and resources that directly support metabolomics experiments, data processing, annotation, interpretation, sharing, or reproducibility.
+### Tools
+Software, packages, web services, databases, libraries, repositories, commercial platforms, and workflow systems used in metabolomics.
 
-## Roles
-
-### Contributors
-Submit new tools, corrections, references, and structured metadata.
-
-### Tool developers and maintainers
-May submit or verify entries about their tools. Verification confirms that the page accurately represents the tool; it does not constitute an endorsement by the catalogue.
-
-### Editors
-Check scope, categorization, neutrality, provenance, link quality, and basic completeness before publication.
-
-### Repository maintainers
-Manage releases, automation, access, controlled vocabularies, and editorial appointments.
-
-## Decisions
-
-Routine entry changes are decided through pull-request review. Changes to the schema, controlled vocabulary, review labels, or project scope should remain open for community comment before merging.
-
-## Conflicts of interest
-
-Editors should not independently approve substantial promotional or evaluative claims about tools they develop. Another editor should review those changes.
-
-## Removal and archiving
-
-Tools are normally archived rather than deleted when they become unavailable, deprecated, or superseded. Entries may be removed when they are fraudulent, outside project scope, legally problematic, or impossible to document reliably.
+### Protocols
+Published experimental or computational strategies that use metabolomics tools, instrumentation, or data resources in a transferable sequence to address a defined analytical or biological problem.

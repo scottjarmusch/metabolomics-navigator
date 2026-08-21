@@ -7,47 +7,99 @@ links:
   homepage: https://www.bright-giant.com/sirius/
   repository: https://github.com/sirius-ms/sirius
   documentation: https://v6.docs.sirius-ms.io/
-resource_types: [software_application]
+resource_types:
+- software_application
 functions:
   primary: annotation_identification
-  secondary: [spectral_analysis, machine_learning]
-  capabilities: [molecular_formula_prediction, structure_elucidation, identification_confidence]
-platforms: [lc_ms, direct_infusion_ms]
-analysis_types: [untargeted, metabolite_profiling]
-interfaces: [desktop_gui, command_line]
+  secondary:
+  - spectral_analysis
+  - machine_learning
+  capabilities:
+  - molecular_formula_prediction
+  - structure_database_search
+  - structure_elucidation
+  - compound_class_prediction
+  - substructure_prediction
+  - identification_confidence
+  - ms2_processing
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- desktop_gui
+- command_line
 access:
   model: free_academic
   notes: Local features and webservice-backed features have different access and licensing conditions. The official documentation should be checked for the current academic and commercial terms.
 technical:
-  operating_systems: [windows, macos, linux, cross_platform]
-  programming_languages: [Java]
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  programming_languages:
+  - Java
   api_available: false
 data:
-  input_types: [spectra, feature_table]
-  output_types: [compound_list, molecular_structures, report]
-  input_formats: [mzml, mgf, msp]
-  output_formats: [csv_tsv, json]
+  input_types:
+  - spectra
+  - feature_table
+  output_types:
+  - compound_list
+  - molecular_structures
+  - report
+  input_formats:
+  - mzml
+  - mgf
+  - msp
+  output_formats:
+  - csv_tsv
+  - json
 publications:
-  - doi: 10.1038/s41592-019-0344-8
-    type: methods
+- doi: 10.1038/s41592-019-0344-8
+  type: methods
 common_uses:
-  - Rank candidate molecular formulas from isotope and fragmentation patterns.
-  - Search molecular-structure databases using predicted fingerprints.
-  - Predict compound classes for spectra without confident structure matches.
-strengths: []
-limitations: []
+- Rank candidate molecular formulas from isotope and fragmentation patterns.
+- Search molecular-structure databases using predicted fingerprints.
+- Predict compound classes for spectra without confident structure matches.
 related_tools:
-  - slug: mzmine
-    relationship: integration
+- slug: mzmine
+  relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-04'
+  last_checked: '2026-08-21'
+  latest_version: 6.3.12
+  latest_release_date: '2026-07-29'
 credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
 status:
   entry: published
-  review: unreviewed
+  review: editorially_reviewed
   created_at: '2026-08-04'
   updated_at: '2026-08-04'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'
+scope:
+  designed_for:
+  - Molecular-formula and structure-candidate annotation from accurate-mass MS/MS data, including compound-class prediction when exact structures remain uncertain.
+  not_designed_for:
+  - Primary chromatographic feature detection and alignment; SIRIUS usually receives spectra or feature-associated MS/MS from upstream processing tools.
+  requirements:
+  - Some functions rely on SIRIUS web services and current access terms; users should consult the official documentation for academic and commercial conditions.
+  considerations:
+  - Candidate rankings are annotations rather than automatic confirmations of chemical identity; confidence and supporting evidence should be reported.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+description: SIRIUS is a desktop and command-line framework for annotating small molecules from high-resolution MS and MS/MS data. It combines isotope-pattern and fragmentation-tree analysis with molecular-formula ranking, CSI:FingerID structure-database searching, compound-class prediction, and confidence estimation.

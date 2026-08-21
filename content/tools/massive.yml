@@ -1,0 +1,97 @@
+$schema: ../../schemas/tool.schema.json
+slug: massive
+name: MassIVE
+summary: A public repository for depositing, preserving, browsing, downloading, and reusing mass-spectrometry datasets, including datasets connected to GNPS analyses.
+description: MassIVE is a community repository for the public exchange of mass-spectrometry data. It stores raw and processed files, metadata and publication-associated datasets, and supports browsing, downloading, accessioned deposition, and reuse through GNPS and related services.
+links:
+  primary: https://massive.ucsd.edu/
+  homepage: https://massive.ucsd.edu/
+  documentation: https://ccms-ucsd.github.io/GNPSDocumentation/datasets/
+resource_types:
+- data_repository
+functions:
+  primary: data_management_sharing
+  secondary:
+  - reference_data_search
+  - workflow_reproducibility
+  capabilities:
+  - repository_scale_search
+  - provenance_tracking
+platforms:
+- multi_platform
+analysis_types:
+- targeted
+- untargeted
+- metabolite_profiling
+- lipidomics
+interfaces:
+- web_app
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+  - browser
+  api_available: false
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  - feature_table
+  - sample_metadata
+  output_types:
+  - raw_instrument_data
+  - spectra
+  - feature_table
+  - sample_metadata
+  input_formats:
+  - vendor_raw
+  - mzml
+  - mzxml
+  - mgf
+  - csv_tsv
+  output_formats:
+  - vendor_raw
+  - mzml
+  - mzxml
+  - mgf
+  - csv_tsv
+publications: []
+common_uses:
+- Deposit publication-associated mass-spectrometry datasets.
+- Browse and download public mass-spectrometry data for reuse and reanalysis.
+scope:
+  designed_for:
+  - Long-term deposition and public reuse of mass-spectrometry datasets.
+  requirements:
+  - Data and metadata must be uploaded and a dataset explicitly made public when public access is intended.
+  considerations:
+  - Dataset-level metadata quality affects downstream discoverability and reanalysis.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  - msn
+  strategies:
+  - unspecified
+  ion_mobility: supported
+related_tools:
+- slug: gnps
+  relationship: integration
+- slug: redu
+  relationship: integration
+- slug: masst
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-21'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-21'
+  updated_at: '2026-08-21'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'

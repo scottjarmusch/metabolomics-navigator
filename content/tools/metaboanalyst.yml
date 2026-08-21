@@ -72,8 +72,6 @@ common_uses:
 - Perform exploratory and inferential statistics on metabolomics data tables.
 - Generate visualizations and pathway-level interpretations.
 - Integrate metabolomics with transcriptomics or other omics results.
-strengths: []
-limitations: []
 related_tools: []
 maintenance:
   status: active
@@ -87,3 +85,6 @@ status:
   review: unreviewed
   created_at: '2026-08-04'
   updated_at: '2026-08-04'
+  last_verified: '2026-08-21'
+scope: {}
+acquisition: {}

@@ -57,8 +57,6 @@ publications: []
 common_uses:
 - Search local or repository-scale mass spectrometry datasets for precursor, fragment, neutral-loss, and intensity patterns.
 - Express reusable MS queries in a human-readable text format.
-strengths: []
-limitations: []
 related_tools:
 - slug: gnps
   relationship: integration
@@ -74,3 +72,6 @@ status:
   review: unreviewed
   created_at: '2026-08-04'
   updated_at: '2026-08-04'
+  last_verified: '2026-08-21'
+scope: {}
+acquisition: {}

@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: redu
+name: ReDU
+acronym: ReDU
+summary: A repository-scale interface for finding, filtering, contextualizing, and reusing public tandem mass-spectrometry data through standardized sample metadata.
+description: ReDU links standardized sample information with public tandem mass-spectrometry datasets, enabling researchers to locate public files by organism, biospecimen, phenotype, disease state, and other metadata and to select data for reanalysis or co-analysis through GNPS.
+links:
+  primary: https://redu.ucsd.edu/
+  web_app: https://redu.ucsd.edu/
+  documentation: https://ccms-ucsd.github.io/GNPSDocumentation/ReDU/
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: data_management_sharing
+  secondary:
+  - reference_data_search
+  capabilities:
+  - metadata_contextualization
+  - repository_scale_search
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+- multiomics
+interfaces:
+- web_app
+- api
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+  - browser
+  api_available: true
+data:
+  input_types:
+  - sample_metadata
+  output_types:
+  - sample_metadata
+  - report
+  input_formats:
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+publications: []
+common_uses:
+- Filter public mass-spectrometry data by sample metadata.
+- Select public datasets for GNPS reanalysis or co-analysis.
+scope:
+  designed_for:
+  - Contextualizing and reusing public tandem mass-spectrometry data using standardized metadata.
+  requirements:
+  - Repository records need sufficiently structured sample information to support the desired query.
+  considerations:
+  - Metadata completeness varies among historical public datasets.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - unspecified
+  ion_mobility: unspecified
+related_tools:
+- slug: gnps
+  relationship: integration
+- slug: masst
+  relationship: integration
+- slug: massive
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-21'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-21'
+  updated_at: '2026-08-21'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'

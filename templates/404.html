@@ -1,3 +1,3 @@
 {% extends "base.html" %}
 {% block title %}Page not found · {{ site.title }}{% endblock %}
-{% block content %}<section class="empty-page section-wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p>The page may have moved, or the tool entry may not yet exist.</p><div class="hero-actions"><a class="button primary" href="{{ url('tools/') }}">Search tools</a><a class="button secondary" href="{{ url('submit/') }}">Submit a missing tool</a></div></section>{% endblock %}
+{% block content %}<section class="empty-page section-wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p>The page may have moved, or the tool or protocol entry may not yet exist.</p><div class="hero-actions"><a class="button primary" href="{{ url('tools/') }}">Search tools</a><a class="button secondary" href="{{ url('protocols/') }}">Browse protocols</a><a class="button secondary" href="{{ url('submit/') }}">Submit a missing entry</a></div></section>{% endblock %}

@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: msms-chooser
+name: MSMS-Chooser
+summary: A GNPS workflow for automatically selecting candidate reference MS/MS spectra from LC-MS data of known standards using supplied molecular structures and expected precursor masses.
+links:
+  primary: https://ccms-ucsd.github.io/GNPSDocumentation/msmschooser/
+  documentation: https://ccms-ucsd.github.io/GNPSDocumentation/msmschooser/
+resource_types:
+- web_service
+- workflow_pipeline
+functions:
+  primary: spectral_analysis
+  secondary:
+  - annotation_identification
+  capabilities:
+  - reference_spectrum_selection
+  - ms2_processing
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- targeted
+- metabolite_profiling
+interfaces:
+- web_app
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+  - browser
+  api_available: false
+data:
+  input_types:
+  - spectra
+  - molecular_structures
+  output_types:
+  - spectra
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  - csv_tsv
+  - smiles_inchi
+  output_formats:
+  - csv_tsv
+publications: []
+common_uses:
+- Select MS/MS spectra corresponding to known standards from open-format data.
+- Prepare candidate reference spectra for validation and library contribution.
+scope:
+  designed_for:
+  - Extracting candidate reference MS/MS scans when structures or formulas of standards are known.
+  requirements:
+  - Open-format mzML or mzXML data plus the MSMS-Chooser submission template.
+  considerations:
+  - Automated selections should be visually reviewed and validated before use as reference spectra.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - targeted_msms
+  - flow_injection
+  - dda
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-21'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-21'
+  updated_at: '2026-08-21'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'

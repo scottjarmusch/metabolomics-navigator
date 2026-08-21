@@ -12,51 +12,22 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="{{ url('') }}" aria-label="{{ site.title }} home">
-        <span class="brand-mark" aria-hidden="true">M</span>
-        <span><strong>{{ site.title }}</strong><small>Community tool catalogue</small></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <a href="{{ url('tools/') }}"{% if active == 'tools' %} aria-current="page"{% endif %}>Find tools</a>
-        <a href="{{ url('browse/') }}"{% if active == 'browse' %} aria-current="page"{% endif %}>Browse</a>
-        <a href="{{ url('contribute/') }}"{% if active == 'contribute' %} aria-current="page"{% endif %}>Contribute</a>
-        <a class="nav-submit" href="{{ url('submit/') }}"{% if active == 'submit' %} aria-current="page"{% endif %}>Submit a tool</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    {% block content %}{% endblock %}
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <strong>{{ site.title }}</strong>
-        <p>{{ site.footer_note }}</p>
-      </div>
-      <div>
-        <h2>Project</h2>
-        <a href="{{ url('about/') }}">About</a>
-        <a href="{{ url('governance/') }}">Governance</a>
-        <a href="{{ repository_url }}">GitHub repository</a>
-      </div>
-      <div>
-        <h2>Data</h2>
-        <a href="{{ url('tool-data.json') }}">Download JSON</a>
-        <a href="{{ url('browse/') }}">Controlled categories</a>
-        <a href="{{ url('contribute/') }}">Contribution guide</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>Catalogue content: {{ site.license_text }}</span>
-      <span>Generated {{ generated_at }}</span>
-    </div>
-  </footer>
-  <script src="{{ url('assets/site.js') }}" defer></script>
-  {% block scripts %}{% endblock %}
-</body>
-</html>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="{{ url('') }}" aria-label="{{ site.title }} home"><span class="brand-mark" aria-hidden="true">M</span><span><strong>{{ site.title }}</strong><small>Tools + protocols</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <a href="{{ url('tools/') }}"{% if active == 'tools' %} aria-current="page"{% endif %}>Find tools</a>
+      <a href="{{ url('protocols/') }}"{% if active == 'protocols' %} aria-current="page"{% endif %}>Protocols</a>
+      <a href="{{ url('browse/') }}"{% if active == 'browse' %} aria-current="page"{% endif %}>Browse</a>
+      <a href="{{ url('contribute/') }}"{% if active == 'contribute' %} aria-current="page"{% endif %}>Contribute</a>
+      <a class="nav-submit" href="{{ url('submit/') }}"{% if active == 'submit' %} aria-current="page"{% endif %}>Submit</a>
+    </nav>
+  </div></header>
+  <main id="main-content">{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><div class="footer-grid">
+    <div><strong>{{ site.title }}</strong><p>{{ site.footer_note }}</p></div>
+    <div><h2>Project</h2><a href="{{ url('about/') }}">About</a><a href="{{ url('governance/') }}">Governance</a><a href="{{ repository_url }}">GitHub repository</a></div>
+    <div><h2>Data</h2><a href="{{ url('tool-data.json') }}">Tool data (JSON)</a><a href="{{ url('protocol-data.json') }}">Protocol data (JSON)</a><a href="{{ url('catalogue-data.json') }}">Complete catalogue (JSON)</a><a href="{{ url('browse/') }}">Controlled categories</a></div>
+  </div><div class="footer-bottom"><span>Catalogue content: {{ site.license_text }}</span><span>Generated {{ generated_at }}</span></div></footer>
+  <script src="{{ url('assets/site.js') }}" defer></script>{% block scripts %}{% endblock %}
+</body></html>

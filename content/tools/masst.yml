@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: masst
+name: MASST
+acronym: MASST
+summary: A GNPS web search tool that queries an MS/MS spectrum across public mass-spectrometry datasets and spectral libraries to identify where related spectra occur.
+description: MASST performs repository-scale searching of a query tandem mass spectrum against public GNPS/MassIVE data and spectral libraries. It is designed to place a spectrum in biological or environmental context by identifying datasets and files in which related fragmentation spectra occur.
+links:
+  primary: https://ccms-ucsd.github.io/GNPSDocumentation/masst/
+  documentation: https://ccms-ucsd.github.io/GNPSDocumentation/masst/
+  web_app: https://masst.gnps2.org/
+resource_types:
+- web_service
+functions:
+  primary: reference_data_search
+  secondary:
+  - spectral_analysis
+  - data_management_sharing
+  capabilities:
+  - repository_scale_search
+  - library_matching
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- web_app
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+  - browser
+  api_available: false
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  - sample_metadata
+  - report
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv
+publications: []
+common_uses:
+- Search a query MS/MS spectrum across public GNPS datasets.
+- Identify datasets, files, and public-library spectra related to a query spectrum.
+scope:
+  designed_for:
+  - Repository-scale contextualization of individual MS/MS spectra.
+  requirements:
+  - A centroided query MS/MS spectrum with precursor information.
+  considerations:
+  - Search tolerances and similarity thresholds affect which public matches are returned.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: integration
+- slug: redu
+  relationship: integration
+- slug: massive
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-21'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-21'
+  updated_at: '2026-08-21'
+  last_verified: '2026-08-21'
+  last_editorial_review: '2026-08-21'
