@@ -1,0 +1,35 @@
+$schema: ../../schemas/protocol.schema.json
+slug: testmetabolomics-protocol
+name: TESTmetabolomics PRotocol
+summary: TESTmetabolomics PRotocol is a way to evaluate the program script to see if it is working properly
+publication:
+  citation: 10.example.12345678
+purpose:
+  primary: dereplication
+  secondary: []
+platforms:
+- gc_ms
+analysis_types:
+- metabolite_profiling
+sample_contexts: []
+components:
+- post_column_modification
+workflow_steps: []
+tools:
+- slug: mzmine
+- slug: gnps
+- slug: sirius
+resources: {}
+scope: {}
+related_protocols: []
+provenance:
+  submitted_by: curator
+  source_issue: https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/5
+  author_verified: false
+  notes: Test to evaluate the submission portal protocol
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-08-21'
+  updated_at: '2026-08-21'
+  last_verified: '2026-08-21'
