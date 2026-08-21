@@ -1,0 +1,39 @@
+$schema: ../../schemas/tool.schema.json
+slug: atlastest
+name: AtlasTEST
+summary: AtlasTestMS3 is a fictional metabolomics annotation tool used only to test the catalogue submission and review system.
+links:
+  primary: htpps://example.com
+  homepage: htpps://example.com
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  secondary: []
+  capabilities: []
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- web_app
+access:
+  model: open_source
+publications: []
+common_uses: []
+strengths: []
+limitations: []
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-08-21'
+credits: []
+provenance:
+  submitted_by: user
+  source_issue: https://github.com/scottjarmusch/metabolomics-tool-atlas/issues/3
+  developer_verified: false
+  notes: This is a test for the workflow submission portal
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-08-21'
+  updated_at: '2026-08-21'
