@@ -2,12 +2,17 @@ $schema: ../../schemas/tool.schema.json
 slug: masst
 name: MASST
 acronym: MASST
-summary: A GNPS web search tool that queries an MS/MS spectrum across public mass-spectrometry datasets and spectral libraries to identify where related spectra occur.
-description: MASST performs repository-scale searching of a query tandem mass spectrum against public GNPS/MassIVE data and spectral libraries. It is designed to place a spectrum in biological or environmental context by identifying datasets and files in which related fragmentation spectra occur.
+summary: A GNPS repository-scale spectral search service for finding where a query MS/MS spectrum or related spectra
+  occur across public metabolomics data and spectral libraries.
+description: MASST (Mass Spectrometry Search Tool) searches a query tandem mass spectrum against public metabolomics
+  data and spectral libraries to identify datasets and files containing related fragmentation spectra. It can be
+  used to place a spectrum in biological, environmental, or clinical context and can be combined with standardized
+  metadata resources such as ReDU.
 links:
-  primary: https://ccms-ucsd.github.io/GNPSDocumentation/masst/
-  documentation: https://ccms-ucsd.github.io/GNPSDocumentation/masst/
+  primary: https://masst.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/masst/
   web_app: https://masst.gnps2.org/
+  repository: https://github.com/CCMS-UCSD/GNPS_Workflows/tree/master/search_single_spectrum
 resource_types:
 - web_service
 functions:
@@ -25,12 +30,13 @@ analysis_types:
 - metabolite_profiling
 interfaces:
 - web_app
+- api
 access:
   model: free_web_service
 technical:
   operating_systems:
   - browser
-  api_available: false
+  api_available: true
 data:
   input_types:
   - spectra
@@ -42,17 +48,27 @@ data:
   - mgf
   output_formats:
   - csv_tsv
-publications: []
+publications:
+- doi: 10.1038/s41587-019-0375-9
+  citation: Wang M, Jarmusch AK, Vargas F, et al. Mass spectrometry searches using MASST. Nature Biotechnology 38,
+    23–26 (2020).
+  type: primary
 common_uses:
-- Search a query MS/MS spectrum across public GNPS datasets.
-- Identify datasets, files, and public-library spectra related to a query spectrum.
+- Search a query MS/MS spectrum across public metabolomics datasets and spectral libraries.
+- Identify datasets, files, or sample contexts in which a molecule or close spectral analogue may occur.
+- Use repository-scale matches as a starting point for biological, environmental, natural-product, or reverse-metabolomics
+  hypotheses.
 scope:
   designed_for:
   - Repository-scale contextualization of individual MS/MS spectra.
   requirements:
   - A centroided query MS/MS spectrum with precursor information.
   considerations:
-  - Search tolerances and similarity thresholds affect which public matches are returned.
+  - Search tolerances, cosine/similarity thresholds, and repository composition affect which matches are returned.
+  - A spectral match indicates MS/MS similarity and possible occurrence; it is not by itself definitive structural
+    confirmation.
+  - The current GNPS2 implementation is substantially faster than the original MASST workflow and also supports
+    programmatic access described in the current documentation.
 acquisition:
   ms_levels:
   - ms2
@@ -70,7 +86,7 @@ related_tools:
   relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-21'
+  last_checked: '2026-08-24'
 credits: []
 provenance:
   submitted_by: curator
@@ -79,8 +95,8 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-08-21'
-  last_verified: '2026-08-21'
-  last_editorial_review: '2026-08-21'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
 aliases:
 - Mass Spectrometry Search Tool

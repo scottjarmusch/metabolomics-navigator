@@ -1,12 +1,13 @@
 $schema: ../../schemas/tool.schema.json
 slug: gnps
 name: GNPS
-summary: A web-based ecosystem for sharing, searching, annotating, and organizing tandem mass spectrometry data, including spectral-library search and molecular networking.
+summary: A web-based mass-spectrometry ecosystem for spectral-library search, molecular networking, repository-scale
+  search, visualization, and community analysis of MS/MS data.
 links:
   primary: https://gnps2.org/
   web_app: https://gnps2.org/
   documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/
-  repository: https://github.com/CCMS-UCSD
+  repository: https://github.com/CCMS-UCSD/GNPS_Workflows
 resource_types:
 - web_service
 - spectral_library
@@ -38,6 +39,8 @@ interfaces:
 - workflow_language
 access:
   model: free_web_service
+  notes: GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users
+    to contact the maintainers or UC Riverside Technology Transfer regarding organizational access.
 technical:
   operating_systems:
   - browser
@@ -64,13 +67,26 @@ data:
   - json
 publications:
 - doi: 10.1038/nbt.3597
+  citation: Wang M, Carver JJ, Phelan VV, et al. Sharing and community curation of mass spectrometry data with Global
+    Natural Products Social Molecular Networking. Nature Biotechnology 34, 828–837 (2016).
   type: primary
+- doi: 10.1038/s41596-020-0317-5
+  citation: Aron AT, Gentry EC, McPhail KL, et al. Reproducible molecular networking of untargeted mass spectrometry
+    data using GNPS. Nature Protocols 15, 1954–1991 (2020).
+  type: methods
 - doi: 10.1038/s41592-020-0933-6
+  citation: Nothias L-F, Petras D, Schmid R, et al. Feature-based molecular networking in the GNPS analysis environment.
+    Nature Methods 17, 905–908 (2020).
+  type: methods
+- doi: 10.1038/s41467-021-23953-9
+  citation: Schmid R, Petras D, Nothias L-F, et al. Ion identity molecular networking for mass spectrometry-based
+    metabolomics in the GNPS environment. Nature Communications 12, 3832 (2021).
   type: methods
 common_uses:
 - Search experimental MS/MS spectra against community spectral libraries.
-- Build classical or feature-based molecular networks.
-- Share datasets, libraries, workflows, and analysis results with collaborators or the public.
+- Build classical molecular networks directly from MS/MS data.
+- Build feature-based and ion-identity molecular networks from processed LC-MS/MS feature tables and spectra.
+- Run repository-scale or specialized web workflows and share analysis results with collaborators or the public.
 related_tools:
 - slug: mzmine
   relationship: integration
@@ -86,7 +102,7 @@ related_tools:
   note: MSMS-Chooser is a GNPS workflow for selecting reference MS/MS spectra.
 maintenance:
   status: active
-  last_checked: '2026-08-21'
+  last_checked: '2026-08-24'
 credits: []
 provenance:
   submitted_by: curator
@@ -95,16 +111,25 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-04'
-  last_verified: '2026-08-21'
-  last_editorial_review: '2026-08-21'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
 scope:
   designed_for:
-  - MS/MS-centered annotation, molecular networking, public-data search, and community sharing of metabolomics and natural-products data.
+  - MS/MS-centered annotation, molecular networking, public-data search, visualization, and community sharing of
+    metabolomics and natural-products data.
+  - Web-based workflows that integrate processed feature tables, spectra, sample metadata, and public mass-spectrometry
+    datasets.
   requirements:
-  - Most workflows require centroided/open mass-spectrometry formats and appropriate metadata or feature tables for the selected analysis.
+  - Inputs depend on the selected workflow; molecular-networking workflows generally require centroided MS/MS data,
+    while FBMN also requires a feature table and representative MS/MS spectra.
+  - Appropriate metadata, feature-processing parameters, and workflow settings should be recorded for reproducible
+    analysis.
   considerations:
-  - GNPS is an ecosystem rather than a single algorithm; users should cite and report the specific workflow, version or task URL used.
+  - GNPS is an ecosystem rather than a single algorithm; publications should report the specific workflow, parameters,
+    and task URL or identifier used.
+  - GNPS2 is actively evolving, and workflow interfaces or recommended settings can change; consult the current
+    documentation when reproducing older analyses.
 acquisition:
   ms_levels:
   - ms2
@@ -115,6 +140,10 @@ acquisition:
   - targeted_msms
   - unspecified
   ion_mobility: supported
-description: GNPS is an open web ecosystem for community analysis, organization, searching, annotation, and sharing of tandem mass-spectrometry data. It hosts spectral libraries and multiple analysis workflows, including molecular networking and repository-scale search, and interoperates with public MassIVE datasets and structured sample metadata.
+description: GNPS is a web-based ecosystem for analysis, organization, annotation, visualization, and sharing of
+  tandem mass-spectrometry data. The current GNPS2 infrastructure includes classical and feature-based molecular
+  networking, spectral-library searching, MASST and other web workflows, and it interoperates with public repositories
+  and feature-processing tools such as MZmine, MS-DIAL, XCMS, and OpenMS.
 aliases:
 - Global Natural Products Social Molecular Networking
+- GNPS2

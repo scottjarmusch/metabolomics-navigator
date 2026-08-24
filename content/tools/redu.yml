@@ -2,8 +2,11 @@ $schema: ../../schemas/tool.schema.json
 slug: redu
 name: ReDU
 acronym: ReDU
-summary: A repository-scale interface for finding, filtering, contextualizing, and reusing public tandem mass-spectrometry data through standardized sample metadata.
-description: ReDU links standardized sample information with public tandem mass-spectrometry datasets, enabling researchers to locate public files by organism, biospecimen, phenotype, disease state, and other metadata and to select data for reanalysis or co-analysis through GNPS.
+summary: A repository-scale interface for finding, filtering, contextualizing, and reusing public tandem mass-spectrometry
+  data through standardized sample metadata.
+description: ReDU links standardized sample information with public tandem mass-spectrometry datasets, enabling
+  researchers to locate public files by organism, biospecimen, phenotype, disease state, and other metadata and
+  to select data for reanalysis or co-analysis through GNPS.
 links:
   primary: https://redu.ucsd.edu/
   web_app: https://redu.ucsd.edu/
@@ -43,10 +46,15 @@ data:
   - csv_tsv
   output_formats:
   - csv_tsv
-publications: []
+publications:
+- doi: 10.1038/s41592-020-0916-7
+  citation: 'Jarmusch AK, Wang M, Aceves CM, et al. ReDU: a framework to find and reanalyze public mass spectrometry
+    data. Nature Methods 17, 901–904 (2020).'
+  type: primary
 common_uses:
-- Filter public mass-spectrometry data by sample metadata.
-- Select public datasets for GNPS reanalysis or co-analysis.
+- Filter public mass-spectrometry data by standardized organism, biospecimen, disease, phenotype, and other metadata.
+- Select public datasets for GNPS reanalysis, co-analysis, or repository-scale hypothesis generation.
+- Contextualize spectral matches from MASST or other public-data searches.
 scope:
   designed_for:
   - Contextualizing and reusing public tandem mass-spectrometry data using standardized metadata.
@@ -69,7 +77,7 @@ related_tools:
   relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-21'
+  last_checked: '2026-08-24'
 credits: []
 provenance:
   submitted_by: curator
@@ -78,6 +86,6 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-08-21'
-  last_verified: '2026-08-21'
-  last_editorial_review: '2026-08-21'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'

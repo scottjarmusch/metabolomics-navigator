@@ -1,7 +1,9 @@
 $schema: ../../schemas/tool.schema.json
 slug: sirius
 name: SIRIUS
-summary: A desktop and command-line framework for molecular-formula annotation, structure-database searching, compound-class prediction, and confidence estimation from tandem mass spectra.
+summary: A desktop, command-line, and programmatic framework for molecular-formula annotation, structure-database
+  searching, compound-class prediction, confidence scoring, and de novo structure generation from small-molecule
+  MS/MS data.
 links:
   primary: https://v6.docs.sirius-ms.io/
   homepage: https://www.bright-giant.com/sirius/
@@ -31,9 +33,11 @@ analysis_types:
 interfaces:
 - desktop_gui
 - command_line
+- api
 access:
   model: free_academic
-  notes: Local features and webservice-backed features have different access and licensing conditions. The official documentation should be checked for the current academic and commercial terms.
+  notes: Local features and webservice-backed features have different access and licensing conditions. The official
+    documentation should be checked for the current academic and commercial terms.
 technical:
   operating_systems:
   - windows
@@ -42,7 +46,7 @@ technical:
   - cross_platform
   programming_languages:
   - Java
-  api_available: false
+  api_available: true
 data:
   input_types:
   - spectra
@@ -55,22 +59,46 @@ data:
   - mzml
   - mgf
   - msp
+  - mzxml
   output_formats:
   - csv_tsv
   - json
 publications:
 - doi: 10.1038/s41592-019-0344-8
+  citation: 'Dührkop K, Fleischauer M, Ludwig M, et al. SIRIUS 4: a rapid tool for turning tandem mass spectra into
+    metabolite structure information. Nature Methods 16, 299–302 (2019).'
+  type: primary
+- doi: 10.1073/pnas.1509788112
+  citation: Dührkop K, Shen H, Meusel M, Rousu J, Böcker S. Searching molecular structure databases with tandem
+    mass spectra using CSI:FingerID. PNAS 112, 12580–12585 (2015).
+  type: methods
+- doi: 10.1038/s42256-020-00234-6
+  citation: Ludwig M, Nothias L-F, Dührkop K, et al. Database-independent molecular formula annotation using Gibbs
+    sampling through ZODIAC. Nature Machine Intelligence 2, 629–641 (2020).
+  type: methods
+- doi: 10.1038/s41587-020-0740-8
+  citation: Dührkop K, Nothias L-F, Fleischauer M, et al. Systematic classification of unknown metabolites using
+    high-resolution fragmentation mass spectra. Nature Biotechnology 39, 462–471 (2021).
+  type: methods
+- doi: 10.1038/s41587-021-01045-9
+  citation: Hoffmann MA, Nothias L-F, Ludwig M, et al. High-confidence structural annotation of metabolites absent
+    from spectral libraries. Nature Biotechnology 40, 411–421 (2022).
+  type: methods
+- doi: 10.1038/s41592-022-01486-3
+  citation: 'Stravs MA, Dührkop K, Böcker S, Zamboni N. MSNovelist: de novo structure generation from mass spectra.
+    Nature Methods 19, 865–870 (2022).'
   type: methods
 common_uses:
-- Rank candidate molecular formulas from isotope and fragmentation patterns.
-- Search molecular-structure databases using predicted fingerprints.
-- Predict compound classes for spectra without confident structure matches.
+- Annotate and rank molecular formulas using isotope patterns and fragmentation trees.
+- Search molecular-structure databases with CSI:FingerID and assess high-confidence candidates with COSMIC.
+- Predict compound classes with CANOPUS when exact structures cannot be confidently assigned.
+- Generate de novo structure candidates with MSNovelist for molecules poorly represented in structure databases.
 related_tools:
 - slug: mzmine
   relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-21'
+  last_checked: '2026-08-24'
   latest_version: 6.3.12
   latest_release_date: '2026-07-29'
 credits: []
@@ -81,18 +109,28 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-04'
-  last_verified: '2026-08-21'
-  last_editorial_review: '2026-08-21'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
 scope:
   designed_for:
-  - Molecular-formula and structure-candidate annotation from accurate-mass MS/MS data, including compound-class prediction when exact structures remain uncertain.
+  - Molecular-formula and structure-candidate annotation from accurate-mass MS/MS data, including compound-class
+    prediction when exact structures remain uncertain.
   not_designed_for:
-  - Primary chromatographic feature detection and alignment; SIRIUS usually receives spectra or feature-associated MS/MS from upstream processing tools.
+  - General-purpose raw vendor-file handling or fully configurable chromatographic preprocessing; dedicated tools
+    such as MZmine, OpenMS, XCMS, or MS-DIAL are often used upstream, although SIRIUS 6 can perform zero-parameter
+    feature detection/alignment from centroided mzML or mzXML runs.
   requirements:
-  - Some functions rely on SIRIUS web services and current access terms; users should consult the official documentation for academic and commercial conditions.
+  - Centroided high-resolution MS and preferably MS/MS data; accepted inputs include preprocessed .ms/.mgf/.msp/.mat-style
+    peak lists and centroided mzML/mzXML runs.
+  - A SIRIUS account/license and internet connection are required for webservice-based features including CSI:FingerID,
+    CANOPUS, and MSNovelist; these services are free for academic use under the current terms, with commercial access
+    provided separately.
   considerations:
-  - Candidate rankings are annotations rather than automatic confirmations of chemical identity; confidence and supporting evidence should be reported.
+  - Candidate formula, class, or structure rankings are computational annotations and should be interpreted together
+    with orthogonal evidence and appropriate confidence levels.
+  - Local and webservice-backed parts of SIRIUS have different access and licensing requirements; current terms
+    should be checked before deployment in non-academic settings.
 acquisition:
   ms_levels:
   - ms1
@@ -102,4 +140,8 @@ acquisition:
   - targeted_msms
   - unspecified
   ion_mobility: not_required
-description: SIRIUS is a desktop and command-line framework for annotating small molecules from high-resolution MS and MS/MS data. It combines isotope-pattern and fragmentation-tree analysis with molecular-formula ranking, CSI:FingerID structure-database searching, compound-class prediction, and confidence estimation.
+description: SIRIUS is a Java-based framework for small-molecule MS/MS analysis that integrates molecular-formula
+  annotation, ZODIAC formula re-ranking, CSI:FingerID molecular-fingerprint prediction and structure-database searching,
+  COSMIC confidence scoring, CANOPUS compound-class prediction, and MSNovelist de novo structure generation. SIRIUS
+  6 provides GUI, CLI, and API-oriented workflows and can import preprocessed spectra or centroided mzML/mzXML LC-MS
+  runs into a shared project space.

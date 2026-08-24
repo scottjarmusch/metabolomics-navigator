@@ -1,8 +1,13 @@
 $schema: ../../schemas/tool.schema.json
 slug: mzmine
 name: MZmine
-summary: An open-source desktop and command-line environment for processing, visualizing, and annotating mass spectrometry-based metabolomics data.
-description: MZmine is a modular environment for mass-spectrometry data processing with graphical and batch interfaces. It supports workflows spanning raw-data import, chromatogram construction, feature detection and resolving, alignment, ion and isotope grouping, quality filtering, visualization, spectral-library matching, and export to downstream annotation or networking resources.
+summary: An open-source desktop and command-line environment for feature detection, alignment, annotation, visualization,
+  normalization, molecular networking preparation, and multimodal mass-spectrometry data processing.
+description: MZmine is a modular open-source environment for mass-spectrometry data processing with graphical, batch,
+  and command-line workflows. It supports LC-MS and LC-IMS-MS feature detection, alignment, quality filtering, normalization,
+  ion and isotope grouping, spectral-library matching, lipid annotation, molecular/ion-identity networking, GC-EI-MS
+  spectral deconvolution, and MS-imaging workflows, with direct exports to resources including GNPS, SIRIUS, and
+  MetaboAnalyst.
 links:
   primary: https://mzmine.github.io/
   homepage: https://mzmine.github.io/
@@ -18,6 +23,7 @@ functions:
   - annotation_identification
   - spectral_analysis
   - visualization_reporting
+  - normalization
   capabilities:
   - chromatogram_building
   - peak_detection
@@ -30,16 +36,19 @@ functions:
   - ion_identity_networking
   - network_visualization
   - interactive_dashboard
+  - batch_effect_correction
 platforms:
 - lc_ms
 - direct_infusion_ms
 - maldi_ms
 - imaging_ms
+- gc_ms
 analysis_types:
 - untargeted
 - targeted
 - lipidomics
 - spatial_metabolomics
+- volatilomics
 interfaces:
 - desktop_gui
 - command_line
@@ -77,11 +86,19 @@ data:
   - mztab_m
 publications:
 - doi: 10.1038/s41587-023-01690-2
+  citation: Schmid R, Heuckeroth S, Korf A, et al. Integrative analysis of multimodal mass spectrometry data in
+    MZmine 3. Nature Biotechnology 41, 447–449 (2023).
   type: primary
+- doi: 10.1038/s41596-024-00996-y
+  citation: Heuckeroth S, Damiani T, Smirnov A, et al. Reproducible mass spectrometry data processing and compound
+    annotation in MZmine 3. Nature Protocols 19, 2597–2641 (2024).
+  type: methods
 common_uses:
-- Detect, align, and filter features in untargeted LC-MS datasets.
-- Inspect chromatograms, spectra, ion-mobility data, and imaging-MS features.
-- Export feature and spectral data to annotation and molecular-networking resources.
+- Detect, resolve, align, normalize, and filter features in untargeted LC-MS and LC-IMS-MS datasets.
+- Process GC-EI-MS data using spectral deconvolution and alignment workflows.
+- Process and visualize MS-imaging and ion-mobility data.
+- Perform spectral-library, lipid, ion-identity, and network-based annotation and export results to GNPS, SIRIUS,
+  or statistical tools.
 related_tools:
 - slug: gnps
   relationship: integration
@@ -89,7 +106,7 @@ related_tools:
   relationship: integration
 maintenance:
   status: active
-  last_checked: '2026-08-21'
+  last_checked: '2026-08-24'
   latest_version: 4.10.6
   latest_release_date: '2026-06-03'
 credits: []
@@ -100,19 +117,26 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-04'
-  last_verified: '2026-08-21'
-  last_editorial_review: '2026-08-21'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
 scope:
   designed_for:
-  - Modular processing and inspection of untargeted LC-MS datasets, including feature-based workflows that retain links to MS/MS and ion-mobility information.
-  - Interactive and batch processing where users want a graphical environment with export to downstream annotation and molecular-networking tools.
+  - Modular processing and inspection of untargeted LC-MS and LC-IMS-MS datasets, including feature-based workflows
+    that retain links to MS/MS and ion-mobility information.
+  - GC-EI-MS spectral deconvolution and alignment, MS-imaging workflows, and interactive or batch processing with
+    exports to downstream annotation and molecular-networking resources.
   not_designed_for:
-  - A replacement for every downstream structure-elucidation or statistical-analysis platform; specialist tools are commonly used after preprocessing.
+  - A replacement for every downstream structure-elucidation or statistical-analysis platform; specialist tools
+    are commonly used after preprocessing.
   requirements:
-  - Desktop installation; current releases bundle the runtime required to execute MZmine.
+  - Desktop installation; stable releases provide Windows, macOS, and Linux packages and include the required Java
+    runtime.
   considerations:
-  - Parameter choices for feature detection, resolving, alignment, and filtering remain experiment dependent and should be documented in reproducible batch files.
+  - Parameter choices for feature detection, resolving, alignment, normalization, and filtering remain experiment
+    dependent and should be documented in reproducible batch files.
+  - The 2024 Nature Protocols procedures were published for MZmine 3; current MZmine 4 workflows preserve the core
+    concepts but interfaces and available modules continue to evolve, so current documentation should be consulted.
 acquisition:
   ms_levels:
   - ms1

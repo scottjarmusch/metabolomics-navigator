@@ -1,0 +1,107 @@
+$schema: ../../schemas/protocol.schema.json
+slug: mzmine-gc-ms-processing
+name: GC-EI-MS processing and annotation with MZmine
+summary: A reproducible MZmine workflow for chromatogram construction, spectral deconvolution, alignment, and annotation
+  of untargeted GC-EI-MS metabolomics data.
+description: The GC-MS procedure in the MZmine Nature Protocols workflow converts GC-EI-MS data into deconvoluted
+  component spectra and aligned quantitative features. These outputs can be annotated against EI spectral libraries
+  and exported for downstream analysis or GNPS-compatible GC-MS workflows.
+publication:
+  title: Reproducible mass spectrometry data processing and compound annotation in MZmine 3
+  doi: 10.1038/s41596-024-00996-y
+  url: https://www.nature.com/articles/s41596-024-00996-y
+  citation: Heuckeroth S, Damiani T, Smirnov A, et al. Reproducible mass spectrometry data processing and compound
+    annotation in MZmine 3. Nature Protocols 19, 2597–2641 (2024).
+  journal: Nature Protocols
+  year: 2024
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - molecular_discovery
+  - dereplication
+platforms:
+- gc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+- volatilomics
+acquisition:
+  ms_levels:
+  - ms1
+  strategies:
+  - full_scan
+  ion_mobility: not_required
+components:
+- data_conversion
+- preprocessing
+- quality_control
+- annotation
+- spectral_search
+- data_sharing
+workflow_steps:
+- title: Import GC-EI-MS data
+  description: Load supported GC-MS data and configure mass detection and chromatogram construction for electron-ionization
+    spectra.
+  tool_slugs:
+  - mzmine
+- title: Detect chromatographic signals
+  description: Build ion chromatograms and detect chromatographic peaks using settings appropriate to peak width,
+    signal-to-noise, and the GC method.
+  tool_slugs:
+  - mzmine
+- title: Deconvolute EI mass spectra
+  description: Resolve overlapping chromatographic signals into representative component spectra using a spectral-deconvolution
+    workflow.
+  tool_slugs:
+  - mzmine
+- title: Align components across samples
+  description: Align deconvoluted features/spectra across the sample set and apply appropriate quality filters.
+  tool_slugs:
+  - mzmine
+- title: Annotate and export
+  description: Match deconvoluted EI spectra against suitable spectral libraries and export quantitative tables
+    and representative spectra for downstream analysis.
+  tool_slugs:
+  - mzmine
+  - gnps
+tools:
+- slug: mzmine
+  role: Primary GC-EI-MS chromatogram processing, spectral deconvolution, alignment, and export.
+- slug: gnps
+  role: Optional downstream GNPS GC-MS or spectral-network analysis.
+resources:
+  raw_data_available: true
+  raw_data_url: https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Study&StudyID=ST000981
+  code_available: true
+  code_url: https://github.com/mzmine/mzmine
+  protocol_available: true
+  protocol_url: https://www.nature.com/articles/s41596-024-00996-y
+scope:
+  designed_for:
+  - Untargeted GC-EI-MS data requiring chromatographic feature detection, spectral deconvolution, alignment, and
+    library-oriented annotation.
+  requirements:
+  - GC-EI-MS data of sufficient chromatographic resolution and signal quality for deconvolution.
+  considerations:
+  - Deconvolution quality strongly affects downstream spectral-library matching; chromatographic and spectral parameters
+    should be tuned to the instrument and sample complexity.
+  - The published procedure targets MZmine 3; current MZmine 4 documentation should be used to map the procedure
+    onto current modules.
+related_protocols:
+- mzmine-lc-ms-processing
+- mzmine-imaging-ms-processing
+provenance:
+  submitted_by: curator
+  author_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+sample_types:
+- other
+biological_contexts:
+- broadly_applicable
+organisms: []
