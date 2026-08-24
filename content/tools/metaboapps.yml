@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: metaboapps
+name: MetaboApps
+summary: A modular collection of browser-based downstream analysis applications that extend GNPS2 results with targeted
+  interpretation, statistics, metadata, and domain-specific readouts.
+description: MetaboApps is a GNPS2 collection of lightweight downstream applications built to make specialized post-processing
+  analyses accessible without bespoke scripting. The current collection includes applications for post-network MassQL,
+  multi-step MassQL, drug and food readouts, CMMC analysis, FBMN statistics, chemical proportionality, CorrOmics,
+  conjugated-metabolome exploration, and reverse-metabolomics-style analyses. Individual apps remain separate scientific
+  modules, while this Atlas entry represents the maintained collection as a discovery and launch layer.
+links:
+  primary: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapps_overview/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapps_overview/
+resource_types:
+- workflow_platform
+- web_service
+functions:
+  primary: workflow_reproducibility
+  secondary:
+  - visualization_reporting
+  - spectral_analysis
+  - statistics
+  - reference_data_search
+  capabilities:
+  - interactive_dashboard
+  - provenance_tracking
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- web_app
+access:
+  model: free_web_service
+publications: []
+common_uses:
+- Launch modular downstream analyses from GNPS2/molecular-networking outputs without writing custom scripts.
+- Explore statistics, chemical pattern queries, drug/food annotations, microbial knowledge, and other specialized
+  post-processing applications.
+- Provide a discoverable collection for rapidly evolving community analysis modules while keeping core GNPS2 workflows
+  separate.
+scope:
+  designed_for:
+  - Post-processing and interpretation of GNPS2 and related metabolomics analysis outputs using modular web applications.
+  requirements:
+  - Inputs vary by app and can include GNPS2 task identifiers, feature/network tables, spectra, or metadata.
+  considerations:
+  - MetaboApps is a collection rather than one analytical algorithm; users should cite and document the specific
+    app(s) used.
+  - Apps can evolve or be added more rapidly than peer-reviewed methodological publications.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - unspecified
+  ion_mobility: unspecified
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: massql
+  relationship: integration
+- slug: cmmc-kb
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  api_available: false

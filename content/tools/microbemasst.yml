@@ -1,0 +1,101 @@
+$schema: ../../schemas/tool.schema.json
+slug: microbemasst
+name: microbeMASST
+summary: A taxonomically informed GNPS search service that connects query MS/MS spectra to matching spectra from
+  curated bacterial, fungal, and archaeal monoculture datasets.
+description: microbeMASST is a domain-specific repository search resource that contextualizes known or unknown tandem
+  mass spectra against a curated reference collection of microbial monoculture extracts. Searches use accelerated
+  GNPS/FASST infrastructure and organize matches in taxonomic trees, helping users ask which cultured microorganisms
+  have produced a compound or a spectrally related molecule. Batch-search code is also available for larger analyses.
+links:
+  primary: https://masst.gnps2.org/microbemasst/
+  web_app: https://masst.gnps2.org/microbemasst/
+  repository: https://github.com/robinschmid/microbe_masst
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  secondary:
+  - spectral_analysis
+  - data_management_sharing
+  capabilities:
+  - repository_scale_search
+  - metadata_contextualization
+  - library_matching
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- web_app
+- python_package
+access:
+  model: free_web_service
+publications:
+- doi: 10.1038/s41564-023-01575-9
+  citation: 'Zuffa S, Schmid R, Bauermeister A, et al. microbeMASST: a taxonomically informed mass spectrometry
+    search tool for microbial metabolomics data. Nature Microbiology 9, 336–345 (2024).'
+  type: primary
+common_uses:
+- Associate unknown or known MS/MS spectra with potential microbial producers represented in monoculture reference
+  data.
+- Explore exact and analog spectral matches across bacterial, fungal, and archaeal taxonomy.
+- Batch-query many spectra to annotate microbial context in larger untargeted datasets.
+scope:
+  designed_for:
+  - Microbial-origin hypothesis generation and taxonomic contextualization of MS/MS features.
+  requirements:
+  - A query MS/MS spectrum provided as a USI, library identifier, peak list, or compatible batch input.
+  considerations:
+  - A spectral occurrence in a cultured microorganism supports producer/context hypotheses but does not establish
+    biosynthetic origin in every sample.
+  - Reference coverage is uneven across taxa and reflects community deposition and metadata curation.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: fasst
+  relationship: uses
+- slug: redu
+  relationship: uses
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+  programming_languages:
+  - Python
+  api_available: false
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  - sample_metadata
+  - report
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv

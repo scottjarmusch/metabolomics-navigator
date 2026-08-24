@@ -5,9 +5,9 @@ acronym: MASST
 summary: A GNPS repository-scale spectral search service for finding where a query MS/MS spectrum or related spectra
   occur across public metabolomics data and spectral libraries.
 description: MASST (Mass Spectrometry Search Tool) searches a query tandem mass spectrum against public metabolomics
-  data and spectral libraries to identify datasets and files containing related fragmentation spectra. It can be
-  used to place a spectrum in biological, environmental, or clinical context and can be combined with standardized
-  metadata resources such as ReDU.
+  data and spectral libraries to locate matching or related spectra and the files in which they occur. The current
+  GNPS2 implementation uses accelerated indexing and supports current pan-repository metabolomics indexes, programmatic
+  API access, command-line access, and GNPS2 workflow execution.
 links:
   primary: https://masst.gnps2.org/
   documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/masst/
@@ -21,8 +21,9 @@ functions:
   - spectral_analysis
   - data_management_sharing
   capabilities:
-  - repository_scale_search
   - library_matching
+  - metadata_contextualization
+  - repository_scale_search
 platforms:
 - multi_platform
 analysis_types:
@@ -53,6 +54,10 @@ publications:
   citation: Wang M, Jarmusch AK, Vargas F, et al. Mass spectrometry searches using MASST. Nature Biotechnology 38,
     23–26 (2020).
   type: primary
+- doi: 10.1038/s41587-023-01985-4
+  citation: Mongia M, Yasaka TM, Liu Y, et al. Fast mass spectrometry search and clustering of untargeted metabolomics
+    data. Nature Biotechnology 42, 1672–1677 (2024).
+  type: methods
 common_uses:
 - Search a query MS/MS spectrum across public metabolomics datasets and spectral libraries.
 - Identify datasets, files, or sample contexts in which a molecule or close spectral analogue may occur.
@@ -69,6 +74,8 @@ scope:
     confirmation.
   - The current GNPS2 implementation is substantially faster than the original MASST workflow and also supports
     programmatic access described in the current documentation.
+  - Current pan-repository indexes extend beyond the original GNPS/MassIVE-only implementation; the exact indexed
+    collections can change over time.
 acquisition:
   ms_levels:
   - ms2
@@ -84,6 +91,13 @@ related_tools:
   relationship: integration
 - slug: massive
   relationship: integration
+- slug: fasst
+  relationship: uses
+  note: Current GNPS2 MASST searching uses accelerated indexed search infrastructure.
+- slug: structuremasst
+  relationship: complementary
+  note: StructureMASST generalizes repository searching from a single reference spectrum to chemical structure or
+    substructure queries.
 maintenance:
   status: active
   last_checked: '2026-08-24'

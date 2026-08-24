@@ -1,0 +1,95 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-dashboard
+name: GNPS Dashboard
+summary: A browser-based interactive viewer for raw and public mass-spectrometry data, chromatograms, spectra, quantitative
+  traces, and GNPS-associated datasets without requiring local analysis software.
+description: GNPS Dashboard provides interactive browser-based exploration of mass-spectrometry files and public
+  repository data. It can render chromatographic and spectral views, inspect individual scans, generate TIC/XIC-style
+  traces, support targeted/SRM-style visualization, and link directly from GNPS analyses and public datasets. It
+  also helps users identify and share spectra through Universal Spectrum Identifiers and connect raw-data inspection
+  with downstream GNPS2 workflows.
+links:
+  primary: https://dashboard.gnps2.org/
+  web_app: https://dashboard.gnps2.org/
+  repository: https://github.com/Wang-Bioinformatics-Lab/GNPS_LCMSDashboard
+resource_types:
+- web_service
+functions:
+  primary: visualization_reporting
+  secondary:
+  - data_management_sharing
+  - preprocessing
+  capabilities:
+  - interactive_dashboard
+  - chromatogram_building
+  - provenance_tracking
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- targeted
+- metabolite_profiling
+interfaces:
+- web_app
+access:
+  model: free_web_service
+publications: []
+common_uses:
+- Interactively inspect raw/public LC-MS and other supported MS files in a browser.
+- Visualize chromatograms, extracted ion traces, spectra, and targeted transitions without installing local software.
+- Navigate from public repository files or GNPS2 analyses to individual scans and shareable spectrum identifiers.
+scope:
+  designed_for:
+  - Rapid visual inspection and collaborative exploration of raw or public mass-spectrometry data.
+  requirements:
+  - A supported public-file reference, repository dataset, or uploaded/accessible data source.
+  considerations:
+  - Dashboard visualization complements rather than replaces comprehensive quantitative preprocessing and statistical
+    workflows.
+  - Available plots and data access depend on file format and repository availability.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - dia
+  - prm_mrm
+  - unspecified
+  ion_mobility: supported
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: massive
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  api_available: false
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - spectra
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  output_formats:
+  - json

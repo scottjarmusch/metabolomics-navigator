@@ -1,0 +1,101 @@
+$schema: ../../schemas/tool.schema.json
+slug: fasst
+name: FASST
+summary: Accelerated indexed infrastructure for searching very large collections of tandem mass spectra, enabling
+  current GNPS2 repository-scale search services to return results at billion-spectrum scale.
+description: FASST provides fast, indexed tandem mass-spectral searching used by the current GNPS2 repository-search
+  ecosystem. The underlying fast-search approach was developed to overcome the scaling limits of earlier MASST and
+  networking implementations as public metabolomics repositories grew to hundreds of millions and billions of spectra.
+  FASST-based indexes now support MASST and domain-specific services, while FASST Records/FASSTrecords links large-scale
+  spectral matches with harmonized repository metadata for higher-level search applications such as StructureMASST.
+links:
+  primary: https://fasst.gnps2.org/fastsearch/
+  web_app: https://fasst.gnps2.org/fastsearch/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/api/
+resource_types:
+- web_service
+- api_service
+functions:
+  primary: reference_data_search
+  secondary:
+  - spectral_analysis
+  - data_management_sharing
+  capabilities:
+  - repository_scale_search
+  - library_matching
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- web_app
+- api
+access:
+  model: free_web_service
+publications:
+- doi: 10.1038/s41587-023-01985-4
+  citation: Mongia M, Yasaka TM, Liu Y, et al. Fast mass spectrometry search and clustering of untargeted metabolomics
+    data. Nature Biotechnology 42, 1672–1677 (2024).
+  type: primary
+common_uses:
+- Search indexed public MS/MS collections in seconds rather than scanning repositories serially.
+- Provide the fast-search backend used by MASST and domain-specific MASST applications.
+- Support programmatic repository-scale spectral search through GNPS2 services.
+scope:
+  designed_for:
+  - High-throughput exact/analog tandem mass-spectral searching across very large indexed collections.
+  requirements:
+  - A centroided query MS/MS spectrum or compatible query identifier and appropriate similarity/tolerance settings.
+  considerations:
+  - FASST is infrastructure as well as a user-facing search service; many researchers encounter it indirectly through
+    MASST-derived applications.
+  - The content and versions of public indexes change over time.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: masst
+  relationship: uses
+- slug: structuremasst
+  relationship: complementary
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+aliases:
+- Fast Search Tool
+- FASST Records
+- FASSTrecords
+technical:
+  operating_systems:
+  - browser
+  api_available: true
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  - sample_metadata
+  - report
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv

@@ -1,0 +1,99 @@
+$schema: ../../schemas/tool.schema.json
+slug: foodmasst
+name: foodMASST
+summary: A domain-specific GNPS search resource for identifying foods and beverages whose reference metabolomics
+  data contain spectra matching a query MS/MS spectrum.
+description: foodMASST contextualizes known or unknown tandem mass spectra against a reference collection of foods
+  and beverages assembled through public metabolomics data. Matching spectra are mapped to food/beverage items and
+  associated metadata, enabling researchers to explore potential dietary origins and occurrence patterns of compounds
+  in untargeted metabolomics.
+links:
+  primary: https://apps.gnps2.org/foodmasst
+  web_app: https://apps.gnps2.org/foodmasst
+  repository: https://github.com/robinschmid/microbe_masst
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  secondary:
+  - spectral_analysis
+  - data_management_sharing
+  capabilities:
+  - repository_scale_search
+  - metadata_contextualization
+  - library_matching
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+- exposomics
+interfaces:
+- web_app
+- python_package
+access:
+  model: free_web_service
+publications:
+- doi: 10.1038/s41538-022-00137-3
+  citation: West KA, Schmid R, Gauglitz JM, et al. foodMASST a mass spectrometry search tool for foods and beverages.
+    npj Science of Food 6, 22 (2022).
+  type: primary
+common_uses:
+- Search a query MS/MS spectrum against curated food and beverage reference data.
+- Generate hypotheses about dietary or food-associated origins of molecules detected in untargeted data.
+- Explore exact or related spectral occurrences across food categories and associated metadata.
+scope:
+  designed_for:
+  - Food- and beverage-contextualization of tandem mass spectra.
+  requirements:
+  - A query MS/MS spectrum or compatible spectrum identifier.
+  considerations:
+  - A match in food reference data supports an occurrence hypothesis but does not by itself establish dietary exposure
+    or provenance in a biological sample.
+  - Reference coverage depends on the foods and beverages deposited in the source collection.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: fasst
+  relationship: uses
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+  programming_languages:
+  - Python
+  api_available: false
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  - sample_metadata
+  - report
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv

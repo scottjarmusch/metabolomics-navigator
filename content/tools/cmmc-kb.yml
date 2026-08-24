@@ -1,0 +1,99 @@
+$schema: ../../schemas/tool.schema.json
+slug: cmmc-kb
+name: CMMC-KB
+summary: A community-curated knowledgebase for microbial metabolites that links reference MS/MS evidence, microbial
+  producers, annotations, and GNPS2 analysis resources.
+description: CMMC-KB is part of the Collaborative Microbial Metabolite Center infrastructure for community curation
+  of microbial small molecules. It is designed to consolidate evidence connecting microbial metabolites with spectra,
+  structures, producers, and contextual metadata, and to make that knowledge reusable in GNPS2 analyses such as
+  molecular-network enrichment and microbial contextualization. The associated scientific description is currently
+  a 2026 preprint.
+links:
+  primary: https://cmmc-kb.gnps2.org/
+  web_app: https://cmmc-kb.gnps2.org/
+resource_types:
+- database_knowledgebase
+- web_service
+functions:
+  primary: annotation_identification
+  secondary:
+  - reference_data_search
+  - data_management_sharing
+  capabilities:
+  - library_matching
+  - metadata_contextualization
+  - provenance_tracking
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- web_app
+access:
+  model: free_web_service
+publications:
+- doi: 10.64898/2026.01.24.701521
+  citation: Mannochio-Russo H, Gonçalves Nunes WD, Xing S, et al. Community Curation of Microbial Metabolites Enables
+    Biological Insights of Metabolomics Data. bioRxiv (2026), preprint.
+  type: primary
+common_uses:
+- Curate and retrieve microbial-metabolite knowledge linking spectra, chemical annotations, and producer context.
+- Enrich GNPS2 analyses with community-curated microbial metabolite evidence.
+- Support community deposition and validation of microbial metabolite annotations.
+scope:
+  designed_for:
+  - Community knowledge curation and downstream interpretation of microbial metabolomics data.
+  requirements:
+  - Curated metabolite/spectral evidence for deposition or GNPS2-compatible analysis results for downstream use.
+  considerations:
+  - The main scientific description is currently a preprint and the knowledgebase is actively expanding.
+  - Curated evidence can span different levels of structural and biological confidence; users should inspect supporting
+    evidence for individual annotations.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: microbemasst
+  relationship: complementary
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  api_available: false
+data:
+  input_types:
+  - spectra
+  - molecular_structures
+  - sample_metadata
+  output_types:
+  - spectra
+  - compound_list
+  - sample_metadata
+  - report
+  input_formats:
+  - mgf
+  - smiles_inchi
+  - csv_tsv
+  output_formats:
+  - csv_tsv

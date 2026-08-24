@@ -1,13 +1,15 @@
 $schema: ../../schemas/tool.schema.json
 slug: mzmine
 name: MZmine
-summary: An open-source desktop and command-line environment for feature detection, alignment, annotation, visualization,
-  normalization, molecular networking preparation, and multimodal mass-spectrometry data processing.
-description: MZmine is a modular open-source environment for mass-spectrometry data processing with graphical, batch,
-  and command-line workflows. It supports LC-MS and LC-IMS-MS feature detection, alignment, quality filtering, normalization,
-  ion and isotope grouping, spectral-library matching, lipid annotation, molecular/ion-identity networking, GC-EI-MS
-  spectral deconvolution, and MS-imaging workflows, with direct exports to resources including GNPS, SIRIUS, and
-  MetaboAnalyst.
+summary: A modular mass-spectrometry environment for raw-data import, feature detection/alignment, multimodal LC/IMS/GC/MSI
+  processing, molecular networking, annotation, lipid analysis, visualization, normalization, statistics, and downstream
+  exports.
+description: MZmine is a modular mass-spectrometry processing environment with graphical, batch, wizard-guided,
+  and command-line workflows. Current MZmine supports LC-MS/MS DDA and DIA, LC-IMS-MS, GC-EI/CI-MS, direct-infusion
+  and imaging workflows; feature detection, resolving, alignment and filtering; ion/isotope/adduct grouping; spectral-library
+  and lipid annotation; interactive molecular networking using classical/modified cosine and learned spectral-similarity
+  models; statistics and fragmentation dashboards; and direct exports/integrations with GNPS, SIRIUS, MetaboAnalyst,
+  and other downstream resources.
 links:
   primary: https://mzmine.github.io/
   homepage: https://mzmine.github.io/
@@ -19,24 +21,30 @@ resource_types:
 functions:
   primary: preprocessing
   secondary:
-  - quality_control
   - annotation_identification
-  - spectral_analysis
-  - visualization_reporting
+  - molecular_networking
   - normalization
+  - quality_control
+  - spectral_analysis
+  - statistics
+  - visualization_reporting
   capabilities:
-  - chromatogram_building
-  - peak_detection
-  - spectral_deconvolution
-  - retention_time_alignment
-  - gap_filling
   - adduct_isotope_grouping
-  - blank_filtering
-  - library_matching
-  - ion_identity_networking
-  - network_visualization
-  - interactive_dashboard
   - batch_effect_correction
+  - blank_filtering
+  - chromatogram_building
+  - gap_filling
+  - interactive_dashboard
+  - ion_identity_networking
+  - library_matching
+  - ms2_processing
+  - multivariate_statistics
+  - network_visualization
+  - peak_detection
+  - retention_time_alignment
+  - spectral_deconvolution
+  - structure_database_search
+  - univariate_statistics
 platforms:
 - lc_ms
 - direct_infusion_ms
@@ -44,16 +52,20 @@ platforms:
 - imaging_ms
 - gc_ms
 analysis_types:
-- untargeted
-- targeted
 - lipidomics
+- metabolite_profiling
 - spatial_metabolomics
+- targeted
+- untargeted
 - volatilomics
 interfaces:
 - desktop_gui
 - command_line
 access:
-  model: open_source
+  model: free_academic
+  notes: The current MZmine site provides the Community edition free of charge through an academic program for eligible
+    university users and also offers commercial/enterprise packages. Source code remains publicly available on GitHub;
+    users should verify current licensing terms for their use case.
   license: MIT
 technical:
   operating_systems:
@@ -93,12 +105,28 @@ publications:
   citation: Heuckeroth S, Damiani T, Smirnov A, et al. Reproducible mass spectrometry data processing and compound
     annotation in MZmine 3. Nature Protocols 19, 2597–2641 (2024).
   type: methods
+- doi: 10.1021/acs.analchem.8b05493
+  citation: Korf A, Jeck V, Schmid R, Helmer PO, Hayen H. Lipid Species Annotation at Double Bond Position Level
+    with Custom Databases by Extension of the MZmine 2 Open-Source Software Package. Analytical Chemistry 91, 5098–5105
+    (2019).
+  type: methods
+- doi: 10.1021/acs.analchem.4c05989
+  citation: Rudt E, Froning M, Heuckeroth S, et al. Rapid MALDI-MS/MS-Based Profiling of Lipid A Species from Gram-Negative
+    Bacteria Utilizing Trapped Ion Mobility Spectrometry and mzmine. Analytical Chemistry 97, 7781–7788 (2025).
+  type: methods
+- doi: 10.1038/s41592-025-02813-0
+  citation: 'Brungs C, Schmid R, Heuckeroth S, et al. MSnLib: efficient generation of open multi-stage fragmentation
+    mass spectral libraries. Nature Methods 22, 2028–2031 (2025).'
+  type: application
 common_uses:
-- Detect, resolve, align, normalize, and filter features in untargeted LC-MS and LC-IMS-MS datasets.
-- Process GC-EI-MS data using spectral deconvolution and alignment workflows.
-- Process and visualize MS-imaging and ion-mobility data.
-- Perform spectral-library, lipid, ion-identity, and network-based annotation and export results to GNPS, SIRIUS,
-  or statistical tools.
+- Process untargeted LC-MS/MS DDA/DIA and LC-IMS-MS data from raw files through aligned feature tables and annotations.
+- Perform GC-EI/CI-MS spectral deconvolution, MS-imaging processing, direct-infusion analyses, and specialized lipidomics
+  workflows.
+- Run interactive molecular/ion-identity networking locally using spectral similarity and machine-learning similarity
+  models.
+- Perform spectral-library and rule-based lipid annotation, interactive statistics/fragmentation review, and exports
+  to GNPS, SIRIUS, and downstream analysis tools.
+- Generate and curate reference spectral-library data using batch/wizard-assisted processing.
 related_tools:
 - slug: gnps
   relationship: integration
@@ -133,10 +161,12 @@ scope:
   - Desktop installation; stable releases provide Windows, macOS, and Linux packages and include the required Java
     runtime.
   considerations:
-  - Parameter choices for feature detection, resolving, alignment, normalization, and filtering remain experiment
-    dependent and should be documented in reproducible batch files.
-  - The 2024 Nature Protocols procedures were published for MZmine 3; current MZmine 4 workflows preserve the core
-    concepts but interfaces and available modules continue to evolve, so current documentation should be consulted.
+  - Parameter choices for feature detection, resolving, alignment, normalization, networking, and filtering remain
+    experiment dependent and should be preserved in batch files or wizard configurations.
+  - The 2024 Nature Protocols procedures were published for MZmine 3; current MZmine 4 workflows preserve core concepts
+    but interfaces, licensing, and available modules continue to evolve, so current documentation should be consulted.
+  - MZmine Community is available through an academic program, while current project pages also advertise enterprise/commercial
+    packages; users should verify current licensing for their setting.
 acquisition:
   ms_levels:
   - ms1

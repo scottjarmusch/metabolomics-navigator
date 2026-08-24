@@ -1,8 +1,8 @@
 $schema: ../../schemas/tool.schema.json
 slug: gnps
 name: GNPS
-summary: A web-based mass-spectrometry ecosystem for spectral-library search, molecular networking, repository-scale
-  search, visualization, and community analysis of MS/MS data.
+summary: A web-based mass-spectrometry ecosystem for molecular networking, spectral-library search, repository-scale
+  search, interactive visualization, knowledgebase curation, and public-data integration.
 links:
   primary: https://gnps2.org/
   web_app: https://gnps2.org/
@@ -22,11 +22,12 @@ functions:
   - data_management_sharing
   - workflow_reproducibility
   capabilities:
+  - interactive_dashboard
   - library_matching
-  - repository_scale_search
   - metadata_contextualization
   - network_visualization
   - provenance_tracking
+  - repository_scale_search
 platforms:
 - multi_platform
 analysis_types:
@@ -83,10 +84,11 @@ publications:
     metabolomics in the GNPS environment. Nature Communications 12, 3832 (2021).
   type: methods
 common_uses:
-- Search experimental MS/MS spectra against community spectral libraries.
-- Build classical molecular networks directly from MS/MS data.
-- Build feature-based and ion-identity molecular networks from processed LC-MS/MS feature tables and spectra.
-- Run repository-scale or specialized web workflows and share analysis results with collaborators or the public.
+- Search experimental MS/MS spectra against community and reference spectral libraries.
+- Build classical, feature-based, and ion-identity molecular networks for untargeted MS/MS datasets.
+- Search public metabolomics repositories using MASST, FASST-based services, and domain-specific MASST resources.
+- Visualize raw data and analysis results, harmonize metadata, curate knowledge resources, and launch downstream
+  GNPS2/MetaboApps analyses.
 related_tools:
 - slug: mzmine
   relationship: integration
@@ -100,6 +102,36 @@ related_tools:
 - slug: msms-chooser
   relationship: contains
   note: MSMS-Chooser is a GNPS workflow for selecting reference MS/MS spectra.
+- slug: fasst
+  relationship: contains
+  note: FASST provides the accelerated spectral-search infrastructure used by current GNPS2 repository-search services.
+- slug: structuremasst
+  relationship: contains
+  note: StructureMASST is a structure-centric pan-repository search service in the GNPS2 ecosystem.
+- slug: microbemasst
+  relationship: contains
+  note: microbeMASST contextualizes spectra against curated microbial monoculture data.
+- slug: plantmasst
+  relationship: contains
+  note: plantMASST contextualizes spectra against taxonomically defined plant data.
+- slug: foodmasst
+  relationship: contains
+  note: foodMASST contextualizes spectra against food and beverage reference data.
+- slug: microbiomemasst
+  relationship: contains
+  note: microbiomeMASST maps spectral matches across harmonized microbiome study metadata.
+- slug: modifinder
+  relationship: contains
+  note: ModiFinder localizes structural modification sites from paired MS/MS spectra.
+- slug: gnps-dashboard
+  relationship: contains
+  note: GNPS Dashboard provides interactive visualization and exploration of raw/public MS data.
+- slug: cmmc-kb
+  relationship: contains
+  note: CMMC-KB is a community-curated microbial metabolite knowledge resource in the GNPS2 ecosystem.
+- slug: metaboapps
+  relationship: contains
+  note: MetaboApps is a modular collection of downstream GNPS2 analysis applications.
 maintenance:
   status: active
   last_checked: '2026-08-24'
@@ -130,6 +162,8 @@ scope:
     and task URL or identifier used.
   - GNPS2 is actively evolving, and workflow interfaces or recommended settings can change; consult the current
     documentation when reproducing older analyses.
+  - Not every GNPS2 web utility is represented as a separate Atlas entry; dedicated entries are reserved for stable,
+    reusable resources with distinct scientific functions.
 acquisition:
   ms_levels:
   - ms2
@@ -140,10 +174,12 @@ acquisition:
   - targeted_msms
   - unspecified
   ion_mobility: supported
-description: GNPS is a web-based ecosystem for analysis, organization, annotation, visualization, and sharing of
-  tandem mass-spectrometry data. The current GNPS2 infrastructure includes classical and feature-based molecular
-  networking, spectral-library searching, MASST and other web workflows, and it interoperates with public repositories
-  and feature-processing tools such as MZmine, MS-DIAL, XCMS, and OpenMS.
+description: GNPS/GNPS2 is a web-based ecosystem for analysis, annotation, visualization, curation, and reuse of
+  tandem mass-spectrometry data. GNPS2 organizes its current infrastructure around computational workflows, interactive
+  visualization, mass-spectrometry knowledgebase curation, and large-scale data integration. The ecosystem includes
+  molecular networking, library searching, MASST/FASST-based public-data search, domain-specific MASST services,
+  MassQL, Pan-ReDU, GNPS Dashboard, CMMC resources, MetaboApps, and interoperable workflows with external processing
+  software.
 aliases:
 - Global Natural Products Social Molecular Networking
 - GNPS2

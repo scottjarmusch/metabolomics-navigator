@@ -1,0 +1,102 @@
+$schema: ../../schemas/tool.schema.json
+slug: microbiomemasst
+name: microbiomeMASST
+summary: A GNPS-associated metadata-network search resource for mapping query metabolites and MS/MS spectra across
+  microbiome metabolomics studies, sample contexts, hosts, and microbial metadata.
+description: microbiomeMASST extends domain-specific repository searching from curated monocultures to a harmonized
+  network of microbiome metabolomics datasets and metadata. It is designed to reveal where molecules occur across
+  host-associated and microbial study contexts and to make large public microbiome metabolomics collections searchable
+  through spectrum-to-metadata relationships. The scientific description is currently available as a 2026 preprint.
+links:
+  primary: https://apps.gnps2.org/microbiomemasst
+  web_app: https://apps.gnps2.org/microbiomemasst
+  repository: https://github.com/robinschmid/microbe_masst
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  secondary:
+  - data_management_sharing
+  - spectral_analysis
+  capabilities:
+  - repository_scale_search
+  - metadata_contextualization
+  - network_visualization
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+- multiomics
+interfaces:
+- web_app
+- python_package
+access:
+  model: free_web_service
+publications:
+- doi: 10.64898/2026.02.04.703849
+  citation: Charron-Lamoureux V, Xing S, Patan A, et al. A searchable metadata network graph for microbiome metabolomics.
+    bioRxiv (2026), preprint.
+  type: primary
+common_uses:
+- Map query spectra across harmonized microbiome metabolomics datasets and metadata contexts.
+- Explore host, sample, microbial, and experimental contexts associated with matching spectra.
+- Generate hypotheses about metabolite distributions across microbiome studies using public data.
+scope:
+  designed_for:
+  - Repository-scale contextualization of metabolites across microbiome metabolomics metadata networks.
+  requirements:
+  - Query MS/MS information and public-data metadata indexed by the current resource.
+  considerations:
+  - The primary scientific description is a preprint and the underlying metadata network is actively evolving.
+  - Associations from public-data co-occurrence are hypothesis-generating and can reflect sampling, deposition,
+    or study-design biases.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: fasst
+  relationship: uses
+- slug: redu
+  relationship: uses
+- slug: microbemasst
+  relationship: complementary
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+  programming_languages:
+  - Python
+  api_available: false
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  - sample_metadata
+  - report
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv

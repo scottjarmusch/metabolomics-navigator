@@ -1,0 +1,105 @@
+$schema: ../../schemas/tool.schema.json
+slug: msnovelist
+name: MSNovelist
+summary: A SIRIUS-integrated de novo structure-generation method that proposes molecular structures from a predicted
+  molecular formula and CSI:FingerID fingerprint when database search is insufficient.
+description: MSNovelist generates candidate chemical structures de novo from a molecular formula and predicted molecular
+  fingerprint derived from MS/MS data. The original standalone implementation and backend are end-of-life; since
+  2024, a retrained and expanded MSNovelist implementation has been integrated into SIRIUS 6 and is accessed through
+  the SIRIUS webservice workflow. It is designed to propose structures beyond the contents of conventional structure
+  databases.
+links:
+  primary: https://v6.docs.sirius-ms.io/
+  documentation: https://v6.docs.sirius-ms.io/methods-background/
+  repository: https://github.com/zamboni-lab/MSNovelist
+resource_types:
+- web_service
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - structure_elucidation
+  - substructure_prediction
+  - molecular_formula_prediction
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- desktop_gui
+- command_line
+- api
+access:
+  model: free_academic
+  notes: The current MSNovelist implementation is integrated into SIRIUS 6 and requires SIRIUS webservice access.
+    The linked standalone repository is archived and retained for historical reference.
+publications:
+- doi: 10.1038/s41592-022-01486-3
+  citation: 'Stravs MA, Dührkop K, Böcker S, Zamboni N. MSNovelist: de novo structure generation from mass spectra.
+    Nature Methods 19, 865–870 (2022).'
+  type: primary
+common_uses:
+- Generate de novo molecular-structure candidates when database search cannot provide a satisfactory candidate.
+- Explore plausible structures from SIRIUS molecular formulas and CSI:FingerID-predicted fingerprints.
+- Prioritize candidate structures for unknown metabolites that are poorly represented in existing structure databases.
+scope:
+  designed_for:
+  - De novo candidate generation from accurate-mass MS/MS data for small molecules.
+  requirements:
+  - SIRIUS molecular-formula/fingerprint results and access to the SIRIUS webservice.
+  considerations:
+  - Generated structures are hypotheses rather than definitive identifications and require substantial orthogonal
+    validation.
+  - The historical standalone MSNovelist repository is archived; current users should use the implementation integrated
+    into SIRIUS 6.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: sirius
+  relationship: part_of
+- slug: csi-fingerid
+  relationship: uses
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  api_available: true
+data:
+  input_types:
+  - spectra
+  output_types:
+  - molecular_structures
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  - mgf
+  - msp
+  output_formats:
+  - csv_tsv
+  - json

@@ -1,0 +1,103 @@
+$schema: ../../schemas/tool.schema.json
+slug: structuremasst
+name: StructureMASST
+summary: A GNPS2 web application for structure- and substructure-centric searching across public metabolomics repositories
+  using chemical names, SMILES, SMARTS, and matched reference spectra.
+description: StructureMASST changes the starting point of repository-scale metabolomics search from one expert-selected
+  MS/MS spectrum to a chemical structure or substructure. It retrieves relevant reference spectra, performs multi-spectrum
+  MASST searches, and uses precomputed FASST Records with harmonized metadata to map molecules and structural families
+  across public repositories, biological contexts, taxonomy, and environmental conditions. Searches can include
+  exact structures, substructures, and modification-tolerant relationships.
+links:
+  primary: https://structure-masst.gnps2.org/
+  web_app: https://structure-masst.gnps2.org/
+  repository: https://github.com/Wang-Bioinformatics-Lab/Structure_MASST_App
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  secondary:
+  - annotation_identification
+  - data_management_sharing
+  capabilities:
+  - repository_scale_search
+  - metadata_contextualization
+  - structure_database_search
+  - substructure_prediction
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+- exposomics
+interfaces:
+- web_app
+access:
+  model: free_web_service
+publications:
+- doi: 10.1038/s41587-026-03082-8
+  citation: Structure-centric searching enables global mapping of the public metabolome. Nature Biotechnology (2026).
+  type: primary
+common_uses:
+- Search public metabolomics data starting from a chemical name, SMILES, or SMARTS representation.
+- Map a structure or substructure across multiple reference spectra and public datasets rather than relying on one
+  query spectrum.
+- Explore exact, substructure, and modification-tolerant distributions across harmonized biological and environmental
+  metadata.
+scope:
+  designed_for:
+  - Structure-centric and substructure-centric exploration of public MS/MS repositories.
+  requirements:
+  - A chemical name or structure representation that can be mapped to reference spectra for repository searching.
+  considerations:
+  - Mass-spectral matching generally does not resolve stereochemistry, and coverage is limited by available reference
+    spectra and indexed public data.
+  - StructureMASST uses computational spectral matches as evidence of occurrence; important findings should be validated
+    with appropriate orthogonal evidence.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+related_tools:
+- slug: gnps
+  relationship: part_of
+- slug: fasst
+  relationship: uses
+- slug: masst
+  relationship: complementary
+- slug: redu
+  relationship: integration
+maintenance:
+  status: active
+  last_checked: '2026-08-24'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+technical:
+  operating_systems:
+  - browser
+  api_available: false
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - spectra
+  - sample_metadata
+  - report
+  input_formats:
+  - smiles_inchi
+  output_formats:
+  - csv_tsv

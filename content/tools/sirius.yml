@@ -1,9 +1,9 @@
 $schema: ../../schemas/tool.schema.json
 slug: sirius
 name: SIRIUS
-summary: A desktop, command-line, and programmatic framework for molecular-formula annotation, structure-database
-  searching, compound-class prediction, confidence scoring, and de novo structure generation from small-molecule
-  MS/MS data.
+summary: A cross-platform small-molecule MS/MS framework for LC-MS preprocessing, molecular-formula annotation,
+  spectral-library searching, structure-database searching, compound-class prediction, confidence scoring, and de
+  novo structure generation.
 links:
   primary: https://v6.docs.sirius-ms.io/
   homepage: https://www.bright-giant.com/sirius/
@@ -14,16 +14,22 @@ resource_types:
 functions:
   primary: annotation_identification
   secondary:
-  - spectral_analysis
   - machine_learning
+  - preprocessing
+  - reference_data_search
+  - spectral_analysis
   capabilities:
+  - chromatogram_building
+  - compound_class_prediction
+  - identification_confidence
+  - library_matching
   - molecular_formula_prediction
+  - ms2_processing
+  - peak_detection
+  - retention_time_alignment
   - structure_database_search
   - structure_elucidation
-  - compound_class_prediction
   - substructure_prediction
-  - identification_confidence
-  - ms2_processing
 platforms:
 - lc_ms
 - direct_infusion_ms
@@ -89,13 +95,23 @@ publications:
     Nature Methods 19, 865–870 (2022).'
   type: methods
 common_uses:
-- Annotate and rank molecular formulas using isotope patterns and fragmentation trees.
-- Search molecular-structure databases with CSI:FingerID and assess high-confidence candidates with COSMIC.
-- Predict compound classes with CANOPUS when exact structures cannot be confidently assigned.
-- Generate de novo structure candidates with MSNovelist for molecules poorly represented in structure databases.
+- Import centroided LC-MS mzML/mzXML files and perform feature detection/alignment into a SIRIUS project space.
+- Annotate molecular formulas using isotope patterns, fragmentation trees, and optional ZODIAC dataset-level re-ranking.
+- Perform identity and analog spectral-library searching, including custom spectral/structure databases.
+- Search molecular-structure databases with CSI:FingerID/COSMIC, predict compound classes with CANOPUS, and generate
+  de novo candidates with MSNovelist.
 related_tools:
 - slug: mzmine
   relationship: integration
+- slug: csi-fingerid
+  relationship: contains
+  note: CSI:FingerID provides molecular-fingerprint prediction and structure-database searching within SIRIUS.
+- slug: canopus
+  relationship: contains
+  note: CANOPUS provides compound-class prediction within SIRIUS.
+- slug: msnovelist
+  relationship: contains
+  note: MSNovelist provides de novo structure generation within SIRIUS.
 maintenance:
   status: active
   last_checked: '2026-08-24'
@@ -117,20 +133,18 @@ scope:
   - Molecular-formula and structure-candidate annotation from accurate-mass MS/MS data, including compound-class
     prediction when exact structures remain uncertain.
   not_designed_for:
-  - General-purpose raw vendor-file handling or fully configurable chromatographic preprocessing; dedicated tools
-    such as MZmine, OpenMS, XCMS, or MS-DIAL are often used upstream, although SIRIUS 6 can perform zero-parameter
-    feature detection/alignment from centroided mzML or mzXML runs.
+  - Peptides, polymers, or stereochemical elucidation; SIRIUS is designed primarily for accurate-mass small molecules,
+    usually below about 1000 Da.
   requirements:
-  - Centroided high-resolution MS and preferably MS/MS data; accepted inputs include preprocessed .ms/.mgf/.msp/.mat-style
-    peak lists and centroided mzML/mzXML runs.
-  - A SIRIUS account/license and internet connection are required for webservice-based features including CSI:FingerID,
-    CANOPUS, and MSNovelist; these services are free for academic use under the current terms, with commercial access
-    provided separately.
+  - High-mass-accuracy MS and preferably informative MS/MS data; the current documentation recommends mass deviations
+    within about 20 ppm.
+  - A SIRIUS account/license and internet connection are required for webservice-backed features such as CSI:FingerID,
+    CANOPUS, and MSNovelist; these remain free for academic use under current terms.
   considerations:
-  - Candidate formula, class, or structure rankings are computational annotations and should be interpreted together
-    with orthogonal evidence and appropriate confidence levels.
-  - Local and webservice-backed parts of SIRIUS have different access and licensing requirements; current terms
-    should be checked before deployment in non-academic settings.
+  - Formula, library, class, and structure results represent computational evidence and should be combined with
+    orthogonal evidence and appropriate metabolite-identification confidence levels.
+  - SIRIUS contains both local open-source analysis and proprietary/webservice-backed functions, so access requirements
+    differ among workflow components.
 acquisition:
   ms_levels:
   - ms1
@@ -140,8 +154,9 @@ acquisition:
   - targeted_msms
   - unspecified
   ion_mobility: not_required
-description: SIRIUS is a Java-based framework for small-molecule MS/MS analysis that integrates molecular-formula
-  annotation, ZODIAC formula re-ranking, CSI:FingerID molecular-fingerprint prediction and structure-database searching,
-  COSMIC confidence scoring, CANOPUS compound-class prediction, and MSNovelist de novo structure generation. SIRIUS
-  6 provides GUI, CLI, and API-oriented workflows and can import preprocessed spectra or centroided mzML/mzXML LC-MS
-  runs into a shared project space.
+description: SIRIUS is a Java-based small-molecule MS/MS framework integrating local and webservice-backed analysis.
+  Current SIRIUS 6 can import centroided mzML/mzXML runs, perform feature detection/alignment with lcms-align, search
+  spectral libraries by identity or analog similarity, annotate molecular formulas with fragmentation trees and
+  isotope patterns, re-rank formulas with ZODIAC, search structure databases through CSI:FingerID/COSMIC, predict
+  compound classes with CANOPUS, and generate de novo candidates with MSNovelist. GUI, CLI, and API-oriented project-space
+  workflows share a common analysis environment.
