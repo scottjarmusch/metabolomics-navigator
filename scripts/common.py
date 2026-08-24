@@ -45,8 +45,69 @@ def load_tools():
     return load_records(TOOLS_DIR)
 
 
+LEGACY_PROTOCOL_CONTEXT_TO_BIOLOGICAL = {
+    "human": "human",
+    "animal": "animal",
+    "microbial": "microbial",
+    "plant": "plant",
+    "marine": "marine",
+    "environmental": "environmental",
+    "food": "food_fermentation",
+    "synthetic_standards": "synthetic_reference",
+    "other": "broadly_applicable",
+}
+
+LEGACY_PROTOCOL_OBJECTIVES = {
+    "host_microbiome": "host_microbe_interaction",
+}
+
+def normalize_protocol_record(record):
+    """Normalize v5.2 protocol fields into the frozen v5.3 model.
+
+    This keeps old community-created records valid after the v5.3 schema freeze.
+    New records should use sample_types, biological_contexts, organisms and the
+    current protocol objective vocabulary directly.
+    """
+    record = dict(record)
+
+    # v5.2 used broad sample_contexts. Preserve their meaning as the closest
+    # v5.3 biological context, then remove the retired field before validation.
+    legacy_contexts = record.pop("sample_contexts", []) or []
+    if legacy_contexts:
+        biological = list(record.get("biological_contexts", []) or [])
+        for legacy in legacy_contexts:
+            mapped = LEGACY_PROTOCOL_CONTEXT_TO_BIOLOGICAL.get(legacy)
+            if mapped and mapped not in biological:
+                biological.append(mapped)
+        record["biological_contexts"] = biological
+
+        # Synthetic standards are the only legacy context that maps cleanly to
+        # a specific sample matrix without inventing information.
+        if "synthetic_standards" in legacy_contexts:
+            samples = list(record.get("sample_types", []) or [])
+            if "synthetic_standards" not in samples:
+                samples.append("synthetic_standards")
+            record["sample_types"] = samples
+
+    # v5.3 broadened host-microbiome to host-microbe interaction.
+    purpose = dict(record.get("purpose", {}) or {})
+    primary = purpose.get("primary")
+    if primary in LEGACY_PROTOCOL_OBJECTIVES:
+        purpose["primary"] = LEGACY_PROTOCOL_OBJECTIVES[primary]
+    secondary = []
+    for objective in purpose.get("secondary", []) or []:
+        mapped = LEGACY_PROTOCOL_OBJECTIVES.get(objective, objective)
+        if mapped not in secondary:
+            secondary.append(mapped)
+    if secondary or "secondary" in purpose:
+        purpose["secondary"] = secondary
+    if purpose:
+        record["purpose"] = purpose
+
+    return record
+
 def load_protocols():
-    return load_records(PROTOCOLS_DIR)
+    return [normalize_protocol_record(record) for record in load_records(PROTOCOLS_DIR)]
 
 
 def validator(kind: str = "tool"):
