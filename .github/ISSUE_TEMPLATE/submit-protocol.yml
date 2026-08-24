@@ -7,7 +7,9 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: Thank you for contributing. Protocols are published, transferable strategies that combine experimental and/or computational steps to solve a defined metabolomics problem. The required section is intentionally short; editors can enrich the workflow later.
+    value: Thank you for contributing. Protocols are published, transferable strategies that combine experimental and/or computational
+      steps to solve a defined metabolomics problem. The required section is intentionally short; editors can enrich the workflow
+      later.
 - type: checkboxes
   id: scope-check
   attributes:
@@ -73,8 +75,9 @@ body:
     - Enzyme-activity profiling
     - Biotransformation analysis
     - Phenotype association
+    - Disease-state comparison
     - Biomarker discovery
-    - Host–microbiome metabolomics
+    - Host–microbe interaction
     - Natural-product discovery
     - Environmental metabolomics
     - Stable-isotope tracing
@@ -90,7 +93,8 @@ body:
   id: tools
   attributes:
     label: Tools or resources used
-    description: List the main software, databases, repositories, or services. Names are enough; the Atlas will cross-link entries when possible.
+    description: List the main software, databases, repositories, or services. Names are enough; the Atlas will cross-link
+      entries when possible.
     placeholder: MZmine, GNPS, MassIVE
   validations:
     required: true
