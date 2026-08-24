@@ -31,3 +31,12 @@ Exclude ordinary application studies unless they introduce or clearly codify a r
 ## Retention policy
 
 Do not remove obsolete tools merely because they are old. Archive them when they remain necessary for reproducibility or historical interpretation. Link successors and predecessors when possible.
+
+
+## Protocol context fields
+
+Use `sample_types` for matrices, `biological_contexts` for broad systems, and `organisms` for optional organism names. Do not recreate the retired `sample_contexts` field. For infection or other cross-organism studies, **Host–microbe interaction** is preferred over the narrower former host–microbiome category. Use **Disease-state comparison** when comparison across clinical or pathological states is the primary study objective.
+
+## Tool relationships
+
+Declare a tool relationship once when a safe inverse exists. The site automatically derives reverse `alternative`, `complementary`, `integration`, `part_of`/`contains`, and `successor`/`predecessor` links. Do not manually duplicate those links simply to make both pages display the relationship.

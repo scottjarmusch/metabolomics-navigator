@@ -82,7 +82,6 @@ def label_maps(vocab):
         "ion_mobility_support": "ion_mobility_support",
         "protocol_objectives": "protocol_objectives",
         "protocol_components": "protocol_components",
-        "sample_contexts": "sample_contexts",
         "sample_types": "sample_types",
         "biological_contexts": "biological_contexts",
         "tool_relationships": "tool_relationships",

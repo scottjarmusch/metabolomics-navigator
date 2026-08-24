@@ -16,6 +16,60 @@ from common import (
 OUT=ROOT/'dist'
 
 
+INVERSE_TOOL_RELATIONSHIPS={
+    'alternative':'alternative',
+    'complementary':'complementary',
+    'integration':'integration',
+    'part_of':'contains',
+    'contains':'part_of',
+    'successor':'predecessor',
+    'predecessor':'successor',
+}
+
+def build_relationship_index(tools,tool_by_slug,labels):
+    """Return explicit + safely inferred inverse relationships for each tool.
+
+    Explicit declarations always win over inferred duplicates. Relationships
+    without a semantically safe inverse (dependency, hosted_by, uses, other)
+    remain one-directional.
+    """
+    graph={tool['slug']:{} for tool in tools}
+
+    def add(source,target,relationship,note='',inferred=False):
+        if source not in graph or target not in tool_by_slug or source==target:
+            return
+        key=target
+        current=graph[source].get(key)
+        item={
+            'tool':tool_by_slug[target],
+            'relationship':relationship,
+            'relationship_label':labels['tool_relationships'].get(relationship,'Related to'),
+            'note':note or '',
+            'inferred':inferred,
+        }
+        if current is None or (current.get('inferred') and not inferred):
+            graph[source][key]=item
+
+    # Explicit relationships first.
+    for tool in tools:
+        source=tool['slug']
+        for rel in tool.get('related_tools',[]):
+            add(source,rel['slug'],rel.get('relationship','other'),rel.get('note',''),False)
+
+    # Add only safe inverses, without overwriting an explicit reverse relation.
+    for tool in tools:
+        source=tool['slug']
+        for rel in tool.get('related_tools',[]):
+            inverse=INVERSE_TOOL_RELATIONSHIPS.get(rel.get('relationship','other'))
+            if inverse:
+                add(rel['slug'],source,inverse,'',True)
+
+    def sort_key(item):
+        # Explicit first, then relationship label and tool name for stable pages.
+        return (item.get('inferred',False),item['relationship_label'].casefold(),item['tool']['name'].casefold())
+    return {slug:sorted(items.values(),key=sort_key) for slug,items in graph.items()}
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--base-path',default=None)
@@ -62,6 +116,11 @@ def main():
         for slug in seen:
             if slug in tool_by_slug: tool_by_slug[slug]['protocols_using'].append(protocol)
 
+    # Tool relationships are stored once and rendered bidirectionally where the
+    # relationship has an unambiguous inverse. This keeps the catalogue graph
+    # consistent without forcing editors to maintain duplicate declarations.
+    relationship_index=build_relationship_index(tools,tool_by_slug,labels)
+
     prepare_output()
     copy_public_files()
     context={'site':site,'repository_url':repository_url,'generated_at':generated_at}
@@ -89,14 +148,11 @@ def main():
     render(env,'tools.html',OUT/'tools/index.html',**context,active='tools',tools=tools,filters=tool_filters)
 
     for tool in tools:
-        explicit=[]
-        for rel in tool.get('related_tools',[]):
-            if rel['slug'] in tool_by_slug:
-                explicit.append({'tool':tool_by_slug[rel['slug']], 'relationship':rel.get('relationship','other'), 'relationship_label':labels['tool_relationships'].get(rel.get('relationship','other'),'Related to'), 'note':rel.get('note','')})
+        explicit=relationship_index.get(tool['slug'],[])
         if explicit:
-            related=explicit[:6]
+            related=explicit[:8]
         else:
-            related=[{'tool':x,'relationship':'alternative','relationship_label':'Similar function','note':''} for x in tools if x['slug']!=tool['slug'] and x['functions']['primary']==tool['functions']['primary']][:4]
+            related=[{'tool':x,'relationship':'alternative','relationship_label':'Similar function','note':'','inferred':True} for x in tools if x['slug']!=tool['slug'] and x['functions']['primary']==tool['functions']['primary']][:4]
         update_query=urlencode({'template':'update-tool.yml','title':f"[Tool update]: {tool['name']}"})
         update_url=f"{repository_url}/issues/new?{update_query}"
         source_url=f"{repository_url}/blob/main/content/tools/{quote(tool['slug'])}.yml"
@@ -219,7 +275,7 @@ def enrich_protocol(record,labels,tool_by_slug):
     p=dict(record); status=p.get('status',{}); acquisition=p.get('acquisition') or {}; resources=p.get('resources') or {}
     p['created_at']=record_date(p,'created_at'); p['updated_at']=record_date(p,'updated_at'); p['updated_display']=date_display(p['updated_at']); p['verified_display']=date_display(status.get('last_verified'))
     p['objective_label']=labels['protocol_objectives'].get(p['purpose']['primary'],p['purpose']['primary']); p['secondary_objective_labels']=list_labels(p['purpose'].get('secondary',[]),labels['protocol_objectives'])
-    p['platform_labels']=list_labels(p['platforms'],labels['platforms']); p['analysis_type_labels']=list_labels(p.get('analysis_types',[]),labels['analysis_types']); p['component_labels']=list_labels(p.get('components',[]),labels['protocol_components']); p['sample_context_labels']=list_labels(p.get('sample_contexts',[]),labels['sample_contexts']); p['sample_type_labels']=list_labels(p.get('sample_types',[]),labels['sample_types']); p['biological_context_labels']=list_labels(p.get('biological_contexts',[]),labels['biological_contexts'])
+    p['platform_labels']=list_labels(p['platforms'],labels['platforms']); p['analysis_type_labels']=list_labels(p.get('analysis_types',[]),labels['analysis_types']); p['component_labels']=list_labels(p.get('components',[]),labels['protocol_components']); p['sample_type_labels']=list_labels(p.get('sample_types',[]),labels['sample_types']); p['biological_context_labels']=list_labels(p.get('biological_contexts',[]),labels['biological_contexts'])
     p['ms_level_labels']=list_labels(acquisition.get('ms_levels',[]),labels['ms_levels']); p['acquisition_strategy_labels']=list_labels(acquisition.get('strategies',[]),labels['acquisition_strategies']); p['ion_mobility_label']=labels['ion_mobility_support'].get(acquisition.get('ion_mobility',''),'')
     p['resolved_tools']=[]
     for item in p.get('tools',[]):
@@ -239,7 +295,7 @@ def enrich_protocol(record,labels,tool_by_slug):
     p['availability_labels']=[]
     for key,label in [('raw_data_available','Raw data available'),('processed_data_available','Processed data available'),('code_available','Code available'),('protocol_available','Published method available')]:
         if resources.get(key): p['availability_labels'].append(label)
-    search=[p['name'],p['summary'],p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_context_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']]]
+    search=[p['name'],p['summary'],p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']]]
     p['search_text']=' '.join(map(str,search)).lower(); return p
 
 

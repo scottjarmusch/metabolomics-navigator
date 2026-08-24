@@ -44,6 +44,21 @@ Deprecated and unavailable tools are normally retained rather than deleted when 
 
 The Atlas normally maintains one canonical page per tool rather than one page per software version. The page records the latest known version and release date and may note scientifically important major-version changes. Separate entries should only be created when a successor is functionally a distinct resource.
 
+
+## Relationship graph
+
+Tool relationships are stored once wherever possible. The site automatically renders safe inverse relationships for symmetric or paired concepts: `alternative` ↔ `alternative`, `complementary` ↔ `complementary`, `integration` ↔ `integration`, `part_of` ↔ `contains`, and `successor` ↔ `predecessor`. Relationships whose inverse would be ambiguous, such as dependencies or generic “uses” links, remain directional. Editors should not add duplicate reverse declarations solely for display.
+
+## Protocol context model
+
+Protocol records use three complementary context fields:
+
+- **Sample types** record specific matrices such as plasma, sputum, tissue, microbial cultures, or environmental samples.
+- **Biological contexts** record broad systems such as human, microbial, plant, environmental, or host–microbe interaction.
+- **Organisms** provide optional free-text organism names when scientifically useful.
+
+The earlier `sample_contexts` field is retired. New records should use the three fields above. Protocol objectives distinguish the biological or analytical goal, including **Disease-state comparison** and **Host–microbe interaction**.
+
 ## Corrections and conflicts
 
 Corrections are accepted through update forms or pull requests. Editors may request citations, neutral wording, or clarification before merging. Conflicts of interest should be disclosed when a submitter is a developer, maintainer, author, vendor, or otherwise directly associated with an entry.

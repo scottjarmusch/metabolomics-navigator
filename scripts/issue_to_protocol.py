@@ -83,7 +83,7 @@ def main():
     record={
       '$schema':'../../schemas/protocol.schema.json','slug':slug,'name':name,'summary':summary,
       'publication':publication,'purpose':{'primary':objective,'secondary':[]},'platforms':platforms,
-      'analysis_types':analysis,'sample_types':sample_types,'biological_contexts':biological_contexts,'organisms':organisms,'sample_contexts':[],'components':components,'workflow_steps':[],
+      'analysis_types':analysis,'sample_types':sample_types,'biological_contexts':biological_contexts,'organisms':organisms,'components':components,'workflow_steps':[],
       'tools':tools,'resources':{},'scope':{},'related_protocols':[],'provenance':provenance,
       'status':{'entry':'stub','review':'unreviewed','created_at':date_created,'updated_at':date_created,'last_verified':date_created}
     }

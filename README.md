@@ -22,7 +22,7 @@ The Atlas is designed around two linked questions:
 
 Researchers can submit either a tool or a protocol through a GitHub Issue Form. The automation converts the form into a structured YAML draft and opens a pull request. A maintainer reviews the proposed entry; schema validation protects the live catalogue; merging to `main` automatically rebuilds GitHub Pages.
 
-Protocol and tool records are cross-linked. A protocol can list the tools it uses, while a tool page automatically lists protocols that use it.
+Protocol and tool records are cross-linked. A protocol can list the tools it uses, while a tool page automatically lists protocols that use it. Tool-to-tool relationships are stored once where possible and safe inverse relationships are generated automatically.
 
 ## Local validation and build
 
@@ -41,4 +41,4 @@ Code is licensed under `LICENSE-CODE`. Catalogue prose and structured content ar
 
 ## Pre-population hardening
 
-The current information model supports tool aliases and relationships, protocol sample types and biological contexts, explicit editorial inclusion/verification rules, and automated collision checking. A synthetic 500-tool stress test is available in `scripts/stress_test.py`; see `docs/scaling-test.md`.
+The v5.3 information model supports tool aliases and an automatically inverted relationship graph, protocol sample types, biological contexts, organisms, disease-state and host–microbe objectives, explicit editorial inclusion/verification rules, and automated collision checking. The legacy `sample_contexts` field has been retired. A synthetic 500-tool stress test is available in `scripts/stress_test.py`; see `docs/scaling-test.md`.

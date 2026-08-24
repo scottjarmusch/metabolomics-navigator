@@ -51,9 +51,16 @@ def main():
 
     for record in tools:
         path=record['_path']
+        seen_related=set()
         for related in record.get('related_tools',[]):
-            if related['slug'] not in tool_slugs:
-                failed=True; print(f"ERROR: {path}: related tool '{related['slug']}' does not exist")
+            target=related['slug']
+            if target not in tool_slugs:
+                failed=True; print(f"ERROR: {path}: related tool '{target}' does not exist")
+            if target == record.get('slug'):
+                failed=True; print(f"ERROR: {path}: a tool cannot relate to itself")
+            if target in seen_related:
+                failed=True; print(f"ERROR: {path}: duplicate related tool '{target}'")
+            seen_related.add(target)
         sup=record.get('maintenance',{}).get('superseded_by')
         if sup and sup not in tool_slugs:
             failed=True; print(f"ERROR: {path}: superseded_by tool '{sup}' does not exist")

@@ -3,13 +3,18 @@ slug: native-ms-metal-binding
 name: Native MS metabolomics for metal-binding compounds
 aliases:
 - Native spray metabolomics
-summary: A transferable LC-MS strategy that combines post-column pH adjustment and metal infusion with ion identity molecular networking to discover small molecules that bind metals in complex biological samples.
-description: This protocol adapts native electrospray concepts to metabolomics so that protonated and metal-bound forms of the same chromatographic analyte can be detected together. Post-column pH adjustment and infusion of a selected metal are coupled to feature processing and ion identity molecular networking, allowing candidate metal-binding molecules to be prioritized from characteristic mass offsets and shared chromatographic behavior.
+summary: A transferable LC-MS strategy that combines post-column pH adjustment and metal infusion with ion identity molecular
+  networking to discover small molecules that bind metals in complex biological samples.
+description: This protocol adapts native electrospray concepts to metabolomics so that protonated and metal-bound forms of
+  the same chromatographic analyte can be detected together. Post-column pH adjustment and infusion of a selected metal are
+  coupled to feature processing and ion identity molecular networking, allowing candidate metal-binding molecules to be prioritized
+  from characteristic mass offsets and shared chromatographic behavior.
 publication:
   title: Native mass spectrometry-based metabolomics identifies metal-binding compounds
   doi: 10.1038/s41557-021-00803-1
   url: https://www.nature.com/articles/s41557-021-00803-1
-  citation: Aron AT, Petras D, Schmid R, et al. Native mass spectrometry-based metabolomics identifies metal-binding compounds. Nature Chemistry 14, 100–109 (2022).
+  citation: Aron AT, Petras D, Schmid R, et al. Native mass spectrometry-based metabolomics identifies metal-binding compounds.
+    Nature Chemistry 14, 100–109 (2022).
   journal: Nature Chemistry
   year: 2022
 purpose:
@@ -31,11 +36,6 @@ acquisition:
   - dda
   - native_esi
   ion_mobility: not_required
-sample_contexts:
-- microbial
-- marine
-- environmental
-- synthetic_standards
 components:
 - chromatography
 - post_column_modification
@@ -46,17 +46,22 @@ components:
 - data_sharing
 workflow_steps:
 - title: Separate metabolites by LC
-  description: Analyze the extract using an LC-MS method suitable for retaining native-like metal-binding interactions after chromatographic separation.
+  description: Analyze the extract using an LC-MS method suitable for retaining native-like metal-binding interactions after
+    chromatographic separation.
 - title: Adjust post-column pH
-  description: Infuse a volatile base or buffer after the LC column to establish conditions compatible with observing metal complexes during electrospray.
+  description: Infuse a volatile base or buffer after the LC column to establish conditions compatible with observing metal
+    complexes during electrospray.
 - title: Infuse the metal of interest
-  description: Introduce a metal salt post-column so protonated and metal-bound forms of candidate ligands can be observed with matched retention behavior.
+  description: Introduce a metal salt post-column so protonated and metal-bound forms of candidate ligands can be observed
+    with matched retention behavior.
 - title: Process features and ion identities
-  description: Detect and align chromatographic features and group coeluting ion species with correlated peak shapes and expected mass relationships.
+  description: Detect and align chromatographic features and group coeluting ion species with correlated peak shapes and expected
+    mass relationships.
   tool_slugs:
   - mzmine
 - title: Build an ion identity molecular network
-  description: Use ion identity molecular networking to connect ion species and spectral relationships, highlighting candidate metal-binding compounds.
+  description: Use ion identity molecular networking to connect ion species and spectral relationships, highlighting candidate
+    metal-binding compounds.
   tool_slugs:
   - mzmine
   - gnps
@@ -64,7 +69,8 @@ workflow_steps:
   - name: Cytoscape
     url: https://cytoscape.org/
 - title: Prioritize and validate candidate binders
-  description: Interpret expected metal-adduct mass offsets, inspect spectra and chromatograms, and validate prioritized compounds with standards or orthogonal evidence where available.
+  description: Interpret expected metal-adduct mass offsets, inspect spectra and chromatograms, and validate prioritized compounds
+    with standards or orthogonal evidence where available.
 tools:
 - slug: mzmine
   role: Feature detection, ion grouping, and ion identity networking preparation.
@@ -92,7 +98,8 @@ scope:
   - LC-MS system with a post-column setup that permits pH adjustment and metal-salt infusion.
   - Appropriate blanks and controls to distinguish biologically relevant complexes from background or source-derived adducts.
   considerations:
-  - Metal identity, pH, salt concentration and electrospray conditions can alter complex formation and should be optimized and reported.
+  - Metal identity, pH, salt concentration and electrospray conditions can alter complex formation and should be optimized
+    and reported.
   - The network highlights candidate binding behavior; structural identity and biological relevance require additional evidence.
 related_protocols: []
 provenance:

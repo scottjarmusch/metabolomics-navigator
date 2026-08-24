@@ -464,10 +464,12 @@ protocol_objectives:
   label: Biotransformation analysis
 - id: phenotype_association
   label: Phenotype association
+- id: disease_state_comparison
+  label: Disease-state comparison
 - id: biomarker_discovery
   label: Biomarker discovery
-- id: host_microbiome
-  label: Host–microbiome metabolomics
+- id: host_microbe_interaction
+  label: Host–microbe interaction
 - id: natural_product_discovery
   label: Natural-product discovery
 - id: environmental_metabolomics
@@ -519,25 +521,6 @@ protocol_components:
   label: Biological validation
 - id: data_sharing
   label: Data and workflow sharing
-sample_contexts:
-- id: human
-  label: Human samples
-- id: animal
-  label: Animal samples
-- id: microbial
-  label: Microbial cultures or communities
-- id: plant
-  label: Plant samples
-- id: marine
-  label: Marine samples
-- id: environmental
-  label: Environmental samples
-- id: food
-  label: Food or fermentation samples
-- id: synthetic_standards
-  label: Synthetic or analytical standards
-- id: other
-  label: Other or broadly applicable
 protocol_submission_roles:
 - id: author
   label: Author of the publication or protocol
