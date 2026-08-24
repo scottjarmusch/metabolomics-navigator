@@ -100,3 +100,5 @@ acquisition:
   - unspecified
   ion_mobility: unspecified
 description: xcms is a scriptable Bioconductor framework for processing chromatographically separated mass-spectrometry data in R. It provides algorithms for chromatographic peak detection, retention-time correction, correspondence/grouping across samples, filling missing feature intensities, and inspection of LC-MS and GC-MS datasets within reproducible analysis scripts.
+aliases:
+- XCMS

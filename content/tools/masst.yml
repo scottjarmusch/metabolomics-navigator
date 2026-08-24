@@ -63,7 +63,7 @@ acquisition:
   ion_mobility: not_required
 related_tools:
 - slug: gnps
-  relationship: integration
+  relationship: part_of
 - slug: redu
   relationship: integration
 - slug: massive
@@ -82,3 +82,5 @@ status:
   updated_at: '2026-08-21'
   last_verified: '2026-08-21'
   last_editorial_review: '2026-08-21'
+aliases:
+- Mass Spectrometry Search Tool

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import sys
+import re
 from collections import Counter
 
 from common import load_protocols, load_tools, validator
@@ -28,6 +29,18 @@ def validate_records(records, kind):
         dup=[v for v,c in Counter(values).items() if v and c>1]
         if dup:
             failed=True; print(f"ERROR: duplicate {kind} {label}(s): {', '.join(dup)}")
+    if kind == 'tool':
+        def norm(value): return re.sub(r'[^a-z0-9]+','',(value or '').casefold())
+        seen={}
+        for record in records:
+            labels=[record.get('name',''), record.get('acronym',''), *record.get('aliases',[])]
+            for label in labels:
+                key=norm(label)
+                if not key: continue
+                previous=seen.get(key)
+                if previous and previous != record.get('slug'):
+                    failed=True; print(f"ERROR: tool name/alias collision '{label}' between '{previous}' and '{record.get('slug')}'")
+                else: seen[key]=record.get('slug')
     return failed, set(slugs)
 
 

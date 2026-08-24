@@ -75,3 +75,5 @@ status:
   last_verified: '2026-08-21'
 scope: {}
 acquisition: {}
+aliases:
+- Mass Query Language

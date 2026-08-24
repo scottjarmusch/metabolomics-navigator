@@ -78,6 +78,12 @@ related_tools:
   relationship: integration
 - slug: massql
   relationship: integration
+- slug: masst
+  relationship: contains
+  note: MASST is a repository-scale spectral search service within the GNPS ecosystem.
+- slug: msms-chooser
+  relationship: contains
+  note: MSMS-Chooser is a GNPS workflow for selecting reference MS/MS spectra.
 maintenance:
   status: active
   last_checked: '2026-08-21'
@@ -110,3 +116,5 @@ acquisition:
   - unspecified
   ion_mobility: supported
 description: GNPS is an open web ecosystem for community analysis, organization, searching, annotation, and sharing of tandem mass-spectrometry data. It hosts spectral libraries and multiple analysis workflows, including molecular networking and repository-scale search, and interoperates with public MassIVE datasets and structured sample metadata.
+aliases:
+- Global Natural Products Social Molecular Networking

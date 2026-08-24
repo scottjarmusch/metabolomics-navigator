@@ -113,3 +113,6 @@ acquisition:
   - all_ion
   ion_mobility: supported
 description: MS-DIAL is a metabolomics and lipidomics workbench designed for broad-spectrum processing of chromatography–mass-spectrometry datasets. It combines peak detection, deconvolution, alignment, spectral annotation, normalization, statistics, and visualization, with particular support for data-independent MS/MS processing and lipid annotation.
+aliases:
+- MSDIAL
+- MS Dial

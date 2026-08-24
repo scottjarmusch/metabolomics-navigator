@@ -1,5 +1,5 @@
-version: 0.2.0
-last_updated: '2026-08-21'
+version: 0.3.0
+last_updated: '2026-08-24'
 principles:
 - Use stable machine-readable IDs and editable human-readable labels.
 - Treat tools and protocols as separate first-class content types that cross-link to one another.
@@ -547,3 +547,100 @@ protocol_submission_roles:
   label: Database or community curator
 - id: other
   label: Other contributor
+tool_relationships:
+- id: alternative
+  label: Alternative to
+- id: complementary
+  label: Complementary to
+- id: dependency
+  label: Depends on
+- id: integration
+  label: Integrates with
+- id: part_of
+  label: Part of
+- id: contains
+  label: Contains or hosts
+- id: hosted_by
+  label: Hosted by
+- id: successor
+  label: Successor to
+- id: predecessor
+  label: Predecessor to
+- id: uses
+  label: Uses
+- id: other
+  label: Other relationship
+sample_types:
+- id: plasma
+  label: Plasma
+- id: serum
+  label: Serum
+- id: whole_blood
+  label: Whole blood
+- id: dried_blood_spot
+  label: Dried blood spot
+- id: urine
+  label: Urine
+- id: saliva
+  label: Saliva
+- id: sputum
+  label: Sputum
+- id: balf
+  label: Bronchoalveolar lavage fluid
+- id: csf
+  label: Cerebrospinal fluid
+- id: feces
+  label: Feces or stool
+- id: tissue
+  label: Tissue or biopsy
+- id: cells
+  label: Cells or cell pellets
+- id: cell_culture_media
+  label: Cell-culture medium or supernatant
+- id: microbial_culture
+  label: Microbial culture or biomass
+- id: microbial_supernatant
+  label: Microbial culture supernatant
+- id: biofilm
+  label: Biofilm
+- id: plant_tissue
+  label: Plant tissue
+- id: root_exudate
+  label: Root exudate
+- id: soil
+  label: Soil
+- id: water
+  label: Water or aquatic sample
+- id: food
+  label: Food
+- id: fermentation
+  label: Fermentation sample
+- id: synthetic_standards
+  label: Synthetic or analytical standards
+- id: other_biofluid
+  label: Other biofluid
+- id: other
+  label: Other or broadly applicable
+biological_contexts:
+- id: human
+  label: Human
+- id: animal
+  label: Animal
+- id: microbial
+  label: Microbial
+- id: plant
+  label: Plant
+- id: fungal
+  label: Fungal
+- id: marine
+  label: Marine
+- id: environmental
+  label: Environmental
+- id: food_fermentation
+  label: Food or fermentation
+- id: host_microbe
+  label: Host–microbe interaction
+- id: synthetic_reference
+  label: Synthetic or reference material
+- id: broadly_applicable
+  label: Broadly applicable

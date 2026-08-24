@@ -105,3 +105,14 @@ status:
   updated_at: '2026-08-21'
   last_verified: '2026-08-21'
   last_editorial_review: '2026-08-21'
+sample_types:
+- microbial_culture
+- water
+- synthetic_standards
+biological_contexts:
+- microbial
+- fungal
+- marine
+- environmental
+- synthetic_reference
+organisms: []

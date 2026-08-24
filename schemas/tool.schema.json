@@ -366,6 +366,10 @@
               "successor",
               "predecessor",
               "integration",
+              "part_of",
+              "contains",
+              "hosted_by",
+              "uses",
               "other"
             ]
           },

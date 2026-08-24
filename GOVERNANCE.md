@@ -1,21 +1,49 @@
-# Governance
+# Governance and editorial policy
 
-The Metabolomics Tool Atlas is a community-maintained scientific resource. Maintainers curate structure and metadata while preserving transparent attribution and Git history.
+The Metabolomics Tool Atlas is a community-maintained reference resource for metabolomics tools and transferable protocols. Inclusion records that an entry is within scope; it is not an endorsement, certification, performance ranking, or guarantee of scientific validity.
 
-## Editorial principles
-
-1. **Neutral description.** Entries explain scope, capabilities, requirements, and considerations without unsupported superiority claims.
-2. **Low-friction contribution.** Researchers can create useful stub entries without editing code.
-3. **Structured metadata.** Controlled vocabulary supports reliable searching and filtering.
-4. **Visible provenance.** Developer-submitted, community-submitted, developer-verified, and editorially reviewed information are distinguished where applicable.
-5. **Freshness.** Software release information, catalogue update dates, and information verification dates are treated as separate concepts.
-6. **Transferability for protocols.** Protocol entries must describe a reusable strategy rather than merely any study that happens to use metabolomics.
-7. **Review before publication.** New entries enter through pull requests; validation protects `main` and the public website.
-
-## Scope
+## Scope and inclusion
 
 ### Tools
-Software, packages, web services, databases, libraries, repositories, commercial platforms, and workflow systems used in metabolomics.
+
+A tool is in scope when it is a computational, data, analytical, or reference resource that is specifically useful for generating, processing, interpreting, storing, searching, or sharing metabolomics data. This includes software applications, packages, web services, databases, spectral libraries, repositories, workflow systems, APIs, and vendor software.
+
+Historically important or deprecated tools may remain in the catalogue when they are needed to interpret published studies.
 
 ### Protocols
-Published experimental or computational strategies that use metabolomics tools, instrumentation, or data resources in a transferable sequence to address a defined analytical or biological problem.
+
+A protocol is in scope when it is a published, transferable experimental or computational strategy that addresses a defined metabolomics problem and can reasonably be adapted by another researcher. A paper is not included merely because it used metabolomics; the methodological strategy must itself be reusable or distinctive.
+
+## Verification states
+
+- **Community submitted**: the entry was submitted by a user or community contributor.
+- **Developer verified**: a developer or official maintainer confirmed the current tool entry.
+- **Author verified**: an author of the underlying protocol publication confirmed the protocol entry.
+- **Editorially reviewed**: an Atlas editor checked scope, links, categorization, provenance, neutral wording, and basic metadata.
+
+Verification is not endorsement or independent benchmarking.
+
+## Claims and evidence
+
+Factual metadata, intended scope, requirements, and documented capabilities may be sourced from official documentation, publications, developers, authors, or curators. Comparative claims such as greater accuracy, sensitivity, speed, or superiority require an appropriate independent citation. Unsupported promotional claims are removed or rewritten neutrally.
+
+## Lifecycle and archiving
+
+Tool maintenance is recorded separately from Atlas entry status. Tool lifecycle values are:
+
+- **Actively maintained**
+- **Limited or infrequent maintenance**
+- **Maintenance status unclear**
+- **Archived**
+- **Deprecated or superseded**
+- **Currently unavailable**
+
+Deprecated and unavailable tools are normally retained rather than deleted when they remain relevant to published research. Successor/predecessor and part-of relationships should be recorded where known.
+
+## Versions
+
+The Atlas normally maintains one canonical page per tool rather than one page per software version. The page records the latest known version and release date and may note scientifically important major-version changes. Separate entries should only be created when a successor is functionally a distinct resource.
+
+## Corrections and conflicts
+
+Corrections are accepted through update forms or pull requests. Editors may request citations, neutral wording, or clarification before merging. Conflicts of interest should be disclosed when a submitter is a developer, maintainer, author, vendor, or otherwise directly associated with an entry.

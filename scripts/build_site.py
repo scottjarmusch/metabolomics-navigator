@@ -89,8 +89,14 @@ def main():
     render(env,'tools.html',OUT/'tools/index.html',**context,active='tools',tools=tools,filters=tool_filters)
 
     for tool in tools:
-        explicit=[tool_by_slug[x['slug']] for x in tool.get('related_tools',[]) if x['slug'] in tool_by_slug]
-        related=explicit[:4] if explicit else [x for x in tools if x['slug']!=tool['slug'] and x['functions']['primary']==tool['functions']['primary']][:4]
+        explicit=[]
+        for rel in tool.get('related_tools',[]):
+            if rel['slug'] in tool_by_slug:
+                explicit.append({'tool':tool_by_slug[rel['slug']], 'relationship':rel.get('relationship','other'), 'relationship_label':labels['tool_relationships'].get(rel.get('relationship','other'),'Related to'), 'note':rel.get('note','')})
+        if explicit:
+            related=explicit[:6]
+        else:
+            related=[{'tool':x,'relationship':'alternative','relationship_label':'Similar function','note':''} for x in tools if x['slug']!=tool['slug'] and x['functions']['primary']==tool['functions']['primary']][:4]
         update_query=urlencode({'template':'update-tool.yml','title':f"[Tool update]: {tool['name']}"})
         update_url=f"{repository_url}/issues/new?{update_query}"
         source_url=f"{repository_url}/blob/main/content/tools/{quote(tool['slug'])}.yml"
@@ -103,6 +109,8 @@ def main():
       make_filter('platforms','Analytical platform','platforms',vocab['platforms'],counts_for(protocols_raw,'platforms')),
       make_filter('analysis-types','Analysis type','analysis types',vocab['analysis_types'],counts_for(protocols_raw,'analysis_types')),
       make_filter('components','Protocol component','components',vocab['protocol_components'],counts_for(protocols_raw,'components')),
+      make_filter('sample-types','Sample type','sample types',vocab['sample_types'],counts_for(protocols_raw,'sample_types')),
+      make_filter('biological-contexts','Biological context','contexts',vocab['biological_contexts'],counts_for(protocols_raw,'biological_contexts')),
     ]
     render(env,'protocols.html',OUT/'protocols/index.html',**context,active='protocols',protocols=protocols,filters=protocol_filters)
     for protocol in protocols:
@@ -118,6 +126,8 @@ def main():
       browse_section('Tool platforms','Analytical technologies supported by tools.','tools/','platforms',vocab['platforms'],counts_for(tools_raw,'platforms')),
       browse_section('Protocol objectives','Scientific questions and transferable strategies represented by protocols.','protocols/','objective',vocab['protocol_objectives'],objective_counts),
       browse_section('Protocol components','Experimental and computational stages included in protocols.','protocols/','components',vocab['protocol_components'],counts_for(protocols_raw,'components')),
+      browse_section('Protocol sample types','Sample matrices represented by published protocols.','protocols/','sample-types',vocab['sample_types'],counts_for(protocols_raw,'sample_types')),
+      browse_section('Protocol biological contexts','Broad biological systems and study contexts represented by protocols.','protocols/','biological-contexts',vocab['biological_contexts'],counts_for(protocols_raw,'biological_contexts')),
     ]
     render(env,'browse.html',OUT/'browse/index.html',**context,active='browse',sections=sections)
 
@@ -201,7 +211,7 @@ def enrich_tool(record,labels):
     for key,href in t['links'].items():
         if href in seen: continue
         seen.add(href); t['display_links'].append((link_names.get(key,key.replace('_',' ').title()),href))
-    search=[t['name'],t.get('acronym',''),t['summary'],t['primary_function_label'],*t['secondary_function_labels'],*t['capability_labels'],*t['platform_labels'],*t['interface_labels'],*t['analysis_type_labels'],t['access_label'],*t['input_format_labels'],*t['output_format_labels'],*t['ms_level_labels'],*t['acquisition_strategy_labels']]
+    search=[t['name'],t.get('acronym',''),*t.get('aliases',[]),t['summary'],t['primary_function_label'],*t['secondary_function_labels'],*t['capability_labels'],*t['platform_labels'],*t['interface_labels'],*t['analysis_type_labels'],t['access_label'],*t['input_format_labels'],*t['output_format_labels'],*t['ms_level_labels'],*t['acquisition_strategy_labels']]
     t['search_text']=' '.join(map(str,search)).lower(); return t
 
 
@@ -209,7 +219,7 @@ def enrich_protocol(record,labels,tool_by_slug):
     p=dict(record); status=p.get('status',{}); acquisition=p.get('acquisition') or {}; resources=p.get('resources') or {}
     p['created_at']=record_date(p,'created_at'); p['updated_at']=record_date(p,'updated_at'); p['updated_display']=date_display(p['updated_at']); p['verified_display']=date_display(status.get('last_verified'))
     p['objective_label']=labels['protocol_objectives'].get(p['purpose']['primary'],p['purpose']['primary']); p['secondary_objective_labels']=list_labels(p['purpose'].get('secondary',[]),labels['protocol_objectives'])
-    p['platform_labels']=list_labels(p['platforms'],labels['platforms']); p['analysis_type_labels']=list_labels(p.get('analysis_types',[]),labels['analysis_types']); p['component_labels']=list_labels(p.get('components',[]),labels['protocol_components']); p['sample_context_labels']=list_labels(p.get('sample_contexts',[]),labels['sample_contexts'])
+    p['platform_labels']=list_labels(p['platforms'],labels['platforms']); p['analysis_type_labels']=list_labels(p.get('analysis_types',[]),labels['analysis_types']); p['component_labels']=list_labels(p.get('components',[]),labels['protocol_components']); p['sample_context_labels']=list_labels(p.get('sample_contexts',[]),labels['sample_contexts']); p['sample_type_labels']=list_labels(p.get('sample_types',[]),labels['sample_types']); p['biological_context_labels']=list_labels(p.get('biological_contexts',[]),labels['biological_contexts'])
     p['ms_level_labels']=list_labels(acquisition.get('ms_levels',[]),labels['ms_levels']); p['acquisition_strategy_labels']=list_labels(acquisition.get('strategies',[]),labels['acquisition_strategies']); p['ion_mobility_label']=labels['ion_mobility_support'].get(acquisition.get('ion_mobility',''),'')
     p['resolved_tools']=[]
     for item in p.get('tools',[]):
@@ -229,7 +239,7 @@ def enrich_protocol(record,labels,tool_by_slug):
     p['availability_labels']=[]
     for key,label in [('raw_data_available','Raw data available'),('processed_data_available','Processed data available'),('code_available','Code available'),('protocol_available','Published method available')]:
         if resources.get(key): p['availability_labels'].append(label)
-    search=[p['name'],p['summary'],p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_context_labels'],*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']]]
+    search=[p['name'],p['summary'],p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_context_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']]]
     p['search_text']=' '.join(map(str,search)).lower(); return p
 
 
@@ -242,9 +252,9 @@ def write_json(path,data):
 
 
 def static_pages(repository_url,url):
-    about=f'''<h2>Purpose</h2><p>The Metabolomics Tool Atlas is a living map of both the <strong>tools</strong> researchers use and the <strong>published, transferable protocols</strong> that combine those resources into practical strategies.</p><p>It supports two complementary questions: <strong>Which tool can perform this task?</strong> and <strong>How have researchers combined tools and experimental steps to solve this problem?</strong></p><h2>Two connected content types</h2><ul><li><strong>Tools:</strong> software, packages, services, databases, spectral libraries, repositories, and executable workflows.</li><li><strong>Protocols:</strong> published experimental or computational strategies that can be transferred beyond one application study.</li></ul><h2>What inclusion means</h2><p>Inclusion documents that a resource or protocol is within scope. It is not an endorsement, certification, or ranking.</p><p><a href="{repository_url}">View the repository on GitHub</a>.</p>'''
+    about=f'''<h2>Purpose</h2><p>The Metabolomics Tool Atlas is a living map of both the <strong>tools</strong> researchers use and the <strong>published, transferable protocols</strong> that combine those resources into practical strategies.</p><p>It supports two complementary questions: <strong>Which tool can perform this task?</strong> and <strong>How have researchers combined tools and experimental steps to solve this problem?</strong></p><h2>Two connected content types</h2><ul><li><strong>Tools:</strong> software, packages, services, databases, spectral libraries, repositories, and executable workflows.</li><li><strong>Protocols:</strong> published experimental or computational strategies that can be transferred beyond one application study.</li></ul><h2>What inclusion means</h2><p>Inclusion documents that a resource or protocol is within scope. It is not an endorsement, certification, performance ranking, or guarantee of scientific validity.</p><h2>Minimum inclusion standard</h2><p><strong>Tools</strong> must be computational, data, analytical, or reference resources useful for generating, processing, interpreting, storing, or sharing metabolomics data. <strong>Protocols</strong> must be published, transferable experimental or computational strategies that solve a defined metabolomics problem and can reasonably be adapted by another researcher.</p><p><a href="{repository_url}">View the repository on GitHub</a>.</p>'''
     contribute=f'''<h2>Submit a missing resource</h2><p>Researchers can add either a tool or a published protocol through short forms. Automation converts each submission into a structured draft pull request for editorial review.</p><p><a class="button primary" href="{url('submit/')}">Choose a submission form</a></p><h2>Improve existing pages</h2><p>Every tool and protocol page links to an update form. Corrections, capabilities, versions, workflow details, data availability, and verification are welcome.</p><h2>Review model</h2><p>Developer or author provenance, editorial review, and independent benchmarking are displayed separately. They represent different kinds of evidence and are not collapsed into a single score.</p><div class="callout"><strong>Neutrality:</strong> describe documented capabilities, scope, requirements, and considerations. Avoid promotional language and unsupported “best tool” claims.</div><p><a href="{repository_url}/blob/main/CONTRIBUTING.md">Read the full contribution guide</a>.</p>'''
-    governance=f'''<h2>Editorial model</h2><p>New tools and protocols enter through pull requests. Editors check scope, controlled categories, factual presentation, links, and conflicts of interest before publication.</p><h2>Verification</h2><p>Tool pages can be developer verified; protocol pages can be author verified. Editorial review is recorded separately. Software release dates and Atlas verification dates are also distinct.</p><h2>Archiving</h2><p>Unavailable or superseded tools are normally retained with an archived status so older publications remain interpretable. Protocol pages remain tied to their source publication while Atlas notes can be updated as resources change.</p><p><a href="{repository_url}/blob/main/GOVERNANCE.md">Read the repository governance file</a>.</p>'''
+    governance=f'''<h2>Editorial model</h2><p>New tools and protocols enter through pull requests. Editors check scope, controlled categories, factual presentation, links, and conflicts of interest before publication.</p><h2>Verification</h2><p><strong>Developer verified</strong> means a developer or official maintainer confirmed the current tool entry. <strong>Author verified</strong> means an author of the underlying protocol publication confirmed the entry. <strong>Editorially reviewed</strong> means an Atlas editor checked scope, links, categorization, provenance, and neutral presentation. Verification is not endorsement or independent benchmarking.</p><h2>Claims and evidence</h2><p>Factual metadata and documented scope may come from developers or authors. Comparative claims such as greater accuracy, sensitivity, or speed require an appropriate independent citation; unsupported promotional claims are excluded.</p><h2>Archiving</h2><p>Unavailable or superseded tools are normally retained with an archived status so older publications remain interpretable. Protocol pages remain tied to their source publication while Atlas notes can be updated as resources change.</p><p><a href="{repository_url}/blob/main/GOVERNANCE.md">Read the repository governance file</a>.</p>'''
     return {'about':{'title':'About the atlas','eyebrow':'Project','description':'A community-maintained map of metabolomics tools and transferable protocols.','body':about},'contribute':{'title':'Contribute','eyebrow':'Community','description':'Add a tool, submit a protocol, or improve an existing entry.','body':contribute,'active':'contribute'},'governance':{'title':'Governance and review','eyebrow':'Trust and transparency','description':'How entries are reviewed, attributed, verified, corrected, and archived.','body':governance}}
 
 

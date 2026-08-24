@@ -404,6 +404,35 @@
           "format": "date"
         }
       }
+    },
+    "sample_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/sample_type"
+      },
+      "default": [],
+      "description": "Specific sample matrices for which the protocol has been demonstrated or is directly applicable."
+    },
+    "biological_contexts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/biological_context"
+      },
+      "default": [],
+      "description": "Broad biological systems or study contexts relevant to the protocol."
+    },
+    "organisms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 180
+      },
+      "default": [],
+      "description": "Optional free-text organism names when scientifically useful."
     }
   },
   "$defs": {
@@ -555,6 +584,52 @@
       "enum": [
         "unreviewed",
         "editorially_reviewed"
+      ]
+    },
+    "sample_type": {
+      "type": "string",
+      "enum": [
+        "plasma",
+        "serum",
+        "whole_blood",
+        "dried_blood_spot",
+        "urine",
+        "saliva",
+        "sputum",
+        "balf",
+        "csf",
+        "feces",
+        "tissue",
+        "cells",
+        "cell_culture_media",
+        "microbial_culture",
+        "microbial_supernatant",
+        "biofilm",
+        "plant_tissue",
+        "root_exudate",
+        "soil",
+        "water",
+        "food",
+        "fermentation",
+        "synthetic_standards",
+        "other_biofluid",
+        "other"
+      ]
+    },
+    "biological_context": {
+      "type": "string",
+      "enum": [
+        "human",
+        "animal",
+        "microbial",
+        "plant",
+        "fungal",
+        "marine",
+        "environmental",
+        "food_fermentation",
+        "host_microbe",
+        "synthetic_reference",
+        "broadly_applicable"
       ]
     }
   }

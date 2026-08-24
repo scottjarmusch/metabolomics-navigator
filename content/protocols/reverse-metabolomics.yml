@@ -105,3 +105,18 @@ status:
   updated_at: '2026-08-21'
   last_verified: '2026-08-21'
   last_editorial_review: '2026-08-21'
+sample_types:
+- feces
+- tissue
+- microbial_culture
+- synthetic_standards
+- other
+biological_contexts:
+- human
+- animal
+- microbial
+- host_microbe
+- synthetic_reference
+- broadly_applicable
+organisms:
+- Homo sapiens

@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 
 import yaml
 
-from common import ROOT, TOOLS_DIR, load_vocab, reverse_label_maps, slugify
+from common import ROOT, TOOLS_DIR, load_tools, load_vocab, reverse_label_maps, slugify
 
 LABELS = {
     "name": "Tool name",
@@ -24,6 +24,7 @@ LABELS = {
     "interfaces": "How do researchers use it?",
     "access": "How is it accessed?",
     "role": "What is your relationship to the tool?",
+    "aliases": "Other names or aliases",
     "publication": "Primary publication or DOI",
     "additional_links": "Additional links",
     "contact": "Name or ORCID for attribution",
@@ -140,10 +141,20 @@ def main() -> None:
         raise ValueError("Tool name is missing")
     slug = slugify(name)
     path = TOOLS_DIR / f"{slug}.yml"
-    if path.exists():
-        raise ValueError(
-            f"An entry already exists at {path}. Use the update form instead."
-        )
+    aliases = selected(value("aliases"))
+
+    def normalized_name(text: str) -> str:
+        return re.sub(r"[^a-z0-9]+", "", text.casefold())
+
+    requested_names = {normalized_name(x) for x in [name, *aliases] if x}
+    collisions = []
+    for existing in load_tools():
+        candidates = [existing.get("name", ""), existing.get("acronym", ""), *existing.get("aliases", [])]
+        if requested_names & {normalized_name(x) for x in candidates if x}:
+            collisions.append(existing.get("name", existing.get("slug", "existing tool")))
+    if path.exists() or collisions:
+        detail = f" A matching entry may already exist: {', '.join(collisions)}." if collisions else ""
+        raise ValueError(f"A tool with this name or alias already exists.{detail} Use the update form instead.")
 
     summary = value("summary")
     if len(summary) > 500:
@@ -219,6 +230,7 @@ def main() -> None:
         "$schema": "../../schemas/tool.schema.json",
         "slug": slug,
         "name": name,
+        "aliases": aliases,
         "summary": summary,
         "links": links,
         "resource_types": resource_types,

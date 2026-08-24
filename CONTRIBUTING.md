@@ -1,27 +1,27 @@
 # Contributing
 
-The easiest contribution route is through the repository's **Issues → New issue** page.
+The Atlas is designed so that researchers can contribute without knowing Git, YAML, or the site architecture.
 
 ## Submit a tool
 
-Use **Submit a metabolomics tool** for software, packages, databases, spectral libraries, repositories, services, and workflow systems. Only a small set of fields is required. A structured draft is generated automatically for editorial review.
+Use the **Submit a metabolomics tool** issue form. A minimal submission needs a name, link, neutral description, resource type, primary function, analytical platform, interface, access model, and submitter relationship. Aliases and alternative spellings are optional but encouraged for discoverability and duplicate detection.
 
 ## Submit a protocol
 
-Use **Submit a metabolomics protocol** for a published, transferable experimental or computational strategy that combines metabolomics methods/tools to solve a defined problem. Protocols should be reusable beyond the single study in which they were introduced.
+Use the **Submit a metabolomics protocol** issue form. Protocols must be published and transferable, not simply application studies that happen to use metabolomics. Sample type and biological context are optional structured fields that improve discovery.
 
-## Suggest an update
+## What happens after submission
 
-Use the relevant update form when an existing entry is outdated or incomplete.
+1. GitHub Actions converts the form into a structured draft record.
+2. A pull request is opened for review.
+3. Automated checks validate the schema, controlled vocabulary, names/aliases, and cross-links.
+4. An editor checks scope and neutral presentation.
+5. Once merged, the site rebuilds automatically.
 
-## Direct pull requests
+## Entry quality
 
-Experienced contributors may edit YAML records directly. Before opening a pull request, run:
+A **stub** contains enough information to identify and categorize the resource. A **complete entry** should additionally document detailed capabilities, data compatibility, documentation, publication(s), version/freshness, scope and considerations, and provenance.
 
-```bash
-python scripts/validate_catalogue.py
-python scripts/check_form_sync.py
-python scripts/build_site.py --strict
-```
+## Neutrality
 
-Please describe tools and protocols neutrally. Performance claims should be supported by cited evidence. Developer-submitted information is welcome and is identified through provenance metadata rather than treated as independent endorsement.
+Describe documented functionality and scope. Avoid unsupported statements such as “best,” “most accurate,” or “superior.” Comparative performance claims should be supported by independent evidence.

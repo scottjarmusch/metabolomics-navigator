@@ -12,7 +12,7 @@ CHECKS={
   'platforms':'platforms','interfaces':'interfaces','access-model':'access_models','submitter-role':'submission_roles'},
  ROOT/'.github/ISSUE_TEMPLATE/submit-protocol.yml':{
   'platforms':'platforms','objective':'protocol_objectives','role':'protocol_submission_roles',
-  'analysis-types':'analysis_types','components':'protocol_components'}
+  'analysis-types':'analysis_types','components':'protocol_components','sample-types':'sample_types','biological-contexts':'biological_contexts'}
 }
 
 def main():

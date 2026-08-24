@@ -17,6 +17,9 @@ LABELS={
  'objective':'Main scientific objective',
  'tools':'Tools or resources used',
  'role':'What is your relationship to this work?',
+ 'sample_types':'Sample types',
+ 'biological_contexts':'Biological context',
+ 'organisms':'Specific organisms',
  'analysis_types':'Analysis type',
  'components':'Protocol components',
  'contact':'Name or ORCID for attribution',
@@ -47,6 +50,9 @@ def main():
     objective=map_values([value('objective')],reverse['protocol_objectives'],'protocol objective')[0]
     role=map_values([value('role')],reverse['protocol_submission_roles'],'submitter role')[0]
     analysis=map_values(selected(value('analysis_types')),reverse['analysis_types'],'analysis type') if value('analysis_types') else []
+    sample_types=map_values(selected(value('sample_types')),reverse['sample_types'],'sample type') if value('sample_types') else []
+    biological_contexts=map_values(selected(value('biological_contexts')),reverse['biological_contexts'],'biological context') if value('biological_contexts') else []
+    organisms=split_tools(value('organisms')) if value('organisms') else []
     components=map_values(selected(value('components')),reverse['protocol_components'],'protocol component') if value('components') else []
     if not components: components=['data_acquisition']
 
@@ -62,6 +68,7 @@ def main():
         lookup[(t.get('name') or '').casefold()]=t['slug']
         lookup[t['slug'].casefold()]=t['slug']
         if t.get('acronym'): lookup[t['acronym'].casefold()]=t['slug']
+        for alias in t.get('aliases',[]): lookup[alias.casefold()]=t['slug']
     tools=[]
     for item in split_tools(value('tools')):
         matched=lookup.get(item.casefold())
@@ -76,7 +83,7 @@ def main():
     record={
       '$schema':'../../schemas/protocol.schema.json','slug':slug,'name':name,'summary':summary,
       'publication':publication,'purpose':{'primary':objective,'secondary':[]},'platforms':platforms,
-      'analysis_types':analysis,'sample_contexts':[],'components':components,'workflow_steps':[],
+      'analysis_types':analysis,'sample_types':sample_types,'biological_contexts':biological_contexts,'organisms':organisms,'sample_contexts':[],'components':components,'workflow_steps':[],
       'tools':tools,'resources':{},'scope':{},'related_protocols':[],'provenance':provenance,
       'status':{'entry':'stub','review':'unreviewed','created_at':date_created,'updated_at':date_created,'last_verified':date_created}
     }

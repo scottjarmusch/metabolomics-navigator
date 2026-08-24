@@ -38,3 +38,7 @@ The generated static site is written to `dist/` and is intentionally not committ
 ## Licenses
 
 Code is licensed under `LICENSE-CODE`. Catalogue prose and structured content are licensed under `LICENSE-CONTENT` unless otherwise noted.
+
+## Pre-population hardening
+
+The current information model supports tool aliases and relationships, protocol sample types and biological contexts, explicit editorial inclusion/verification rules, and automated collision checking. A synthetic 500-tool stress test is available in `scripts/stress_test.py`; see `docs/scaling-test.md`.
