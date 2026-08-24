@@ -111,6 +111,62 @@ body:
 
       These help editors create a richer protocol page, but you may leave them blank.'
 - type: dropdown
+  id: sample-types
+  attributes:
+    label: Sample types
+    description: Optional. Select sample matrices for which the method has been demonstrated or is directly applicable.
+    multiple: true
+    options:
+    - Plasma
+    - Serum
+    - Whole blood
+    - Dried blood spot
+    - Urine
+    - Saliva
+    - Sputum
+    - Bronchoalveolar lavage fluid
+    - Cerebrospinal fluid
+    - Feces or stool
+    - Tissue or biopsy
+    - Cells or cell pellets
+    - Cell-culture medium or supernatant
+    - Microbial culture or biomass
+    - Microbial culture supernatant
+    - Biofilm
+    - Plant tissue
+    - Root exudate
+    - Soil
+    - Water or aquatic sample
+    - Food
+    - Fermentation sample
+    - Synthetic or analytical standards
+    - Other biofluid
+    - Other or broadly applicable
+- type: dropdown
+  id: biological-contexts
+  attributes:
+    label: Biological context
+    description: Optional. Select the broad biological systems or study contexts represented by the protocol.
+    multiple: true
+    options:
+    - Human
+    - Animal
+    - Microbial
+    - Plant
+    - Fungal
+    - Marine
+    - Environmental
+    - Food or fermentation
+    - Host–microbe interaction
+    - Synthetic or reference material
+    - Broadly applicable
+- type: input
+  id: organisms
+  attributes:
+    label: Specific organisms
+    description: Optional. Add specific organisms when useful, separated by commas.
+    placeholder: Pseudomonas aeruginosa, Homo sapiens
+- type: dropdown
   id: analysis-types
   attributes:
     label: Analysis type

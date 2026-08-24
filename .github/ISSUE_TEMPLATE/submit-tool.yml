@@ -181,6 +181,12 @@ body:
 
       '
 - type: input
+  id: aliases
+  attributes:
+    label: Other names or aliases
+    description: Optional. Add common alternative names, spelling variants, or previous names separated by commas.
+    placeholder: MSDIAL, MS Dial
+- type: input
   id: publication
   attributes:
     label: Primary publication or DOI
