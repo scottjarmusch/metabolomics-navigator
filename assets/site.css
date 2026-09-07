@@ -1,5 +1,5 @@
 :root {
-  --bg: #fcfbf8;
+  --bg: #f6f8fb;
   --surface: #ffffff;
   --surface-soft: #f5f7f7;
   --border: #d8e2e1;
@@ -629,3 +629,71 @@ details[open] summary { margin-bottom: .6rem; }
   .brand { gap: .45rem; }
   .topic-heading { column-gap: .65rem; }
 }
+
+/* Metabolomics Navigator: a quiet, task-first scientific reference. */
+:root { --bg: #f6f8fb; --text: #183246; --muted: #596c7c; --teal: #175970; }
+body { background: var(--bg); color: var(--text); }
+.site-header { background: #102c40; border-bottom: 1px solid #29485c; color: #fff; }
+.site-header a,.site-header .brand-text strong,.site-header .brand-text span { color: #f4f8fb; }
+.site-header .main-nav a { color: #d5e2eb; }
+.site-header .main-nav a:hover,.site-header .main-nav a[aria-current="page"] { color: #fff; background: #213e52; }
+.site-header .main-nav .nav-submit { border: 1px solid #627b8d; border-radius: 5px; padding: .55rem .8rem; }
+.brand-text strong { font-size: 1.2rem; letter-spacing: -.025em; }
+.site-header .brand-text small { color: #adc3d2; }
+.site-header .brand-chrom { stroke: #a6ccdf; }
+.site-header .brand-network circle { fill: #a6ccdf; }
+.site-header .main-nav a { padding: .4rem .55rem; border-radius: 4px; }
+.site-header .main-nav { gap: .45rem; }
+.section-wrap { max-width: 1180px; }
+.navigator-entrance { padding-top: clamp(2rem,5vw,4.5rem); padding-bottom: 3rem; }
+.entrance-header { margin-bottom: 2rem; }
+.entrance-header .eyebrow { color: #527087; font-size: .7rem; letter-spacing: .16em; margin-bottom: .65rem; }
+.entrance-header h1 { font-family: inherit; font-weight: 550; letter-spacing: -.045em; font-size: clamp(2rem,4vw,3.2rem); margin: 0; line-height: 1.15; }
+.category-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+.category-card { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; border: 1px solid #dce4ec; border-radius: 8px; background: #fff; color: var(--text); box-shadow: 0 2px 4px #102c4003; transition: border-color .15s,box-shadow .15s; }
+.category-card:hover { text-decoration: none; border-color: #7895aa; box-shadow: 0 5px 18px #102c400a; }
+.category-card:focus-visible { outline: 3px solid #327caa; outline-offset: 3px; }
+.category-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+.category-icon { display: inline-grid; place-items: center; width: 40px; height: 40px; flex: 0 0 40px; background: #eef4f8; border-radius: 7px; color: #285c79; }
+.category-icon .topic-icon { width: 22px; height: 22px; min-width: 22px; max-width: 22px; }
+.category-icon .topic-icon circle { fill: #eef4f8; }
+.category-number { color: #8395a4; font-size: .75rem; font-variant-numeric: tabular-nums; }
+.category-card h2 { font-family: inherit; font-size: 1.12rem; font-weight: 650; letter-spacing: -.02em; margin: 0 0 .4rem; line-height: 1.4; }
+.category-card p { margin: 0 0 1.6rem; font-size: .9rem; color: var(--muted); line-height: 1.6; }
+.category-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: .8rem; border-top: 1px solid #edf1f5; color: #577185; font-size: .75rem; }
+.category-bottom svg { flex: 0 0 18px; width: 18px; height: 18px; }
+.entrance-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; padding-bottom: 2rem; border-top: 1px solid #dce4ec; color: #677d8c; font-size: .78rem; }
+.entrance-footer nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.category-layout { display: grid; grid-template-columns: 220px minmax(0,1fr); gap: 3.5rem; padding-top: 2.5rem; padding-bottom: 4rem; }
+.category-sidebar h2 { font-family: inherit; font-size: .8rem; margin: 0 0 1rem; }
+.category-sidebar nav a { display: flex; align-items: center; gap: .7rem; padding: .75rem .6rem; font-size: .85rem; color: #526b7c; border-radius: 5px; }
+.category-sidebar nav a[aria-current="page"] { background: #e6eef5; color: #163e58; font-weight: 650; }
+.all-tools-link { display: block; font-size: .8rem; margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid #dce4ec; }
+.category-intro { margin-top: 1.75rem; }
+.category-intro h1 { font-family: inherit; letter-spacing: -.035em; font-size: clamp(1.8rem,3vw,2.6rem); margin: 1rem 0 .5rem; }
+.category-intro p { color: var(--muted); }
+.category-guidance { border-bottom: 1px solid #dce4ec; padding: .5rem 0 1rem; font-size: .92rem; }
+.category-guidance summary { color: #285c79; }
+.category-list-heading { display: flex; justify-content: space-between; align-items: center; margin: 2rem 0 1rem; }
+.category-list-heading h2 { font-family: inherit; font-size: 1rem; margin: 0; }
+.category-list-heading > span { font-size: .8rem; color: var(--muted); }
+.category-resources { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.category-resources li > a { display: block; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid #dce4ec; border-radius: 7px; color: var(--text); }
+.category-resources li > a:hover { border-color: #7895aa; text-decoration: none; }
+.resource-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.resource-heading h3 { font-family: inherit; font-size: 1.08rem; margin: 0; }
+.resource-access { color: #688092; font-size: .73rem; }
+.category-resources p { font-size: .9rem; margin: .55rem 0 .9rem; color: var(--muted); }
+.resource-bottom { display: flex; justify-content: space-between; color: #426c87; font-size: .78rem; }
+@media(max-width: 900px) { .category-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .category-layout { grid-template-columns: 180px minmax(0,1fr); gap: 2rem; } }
+@media(max-width: 680px) {
+ .site-header .main-nav { background: #102c40; }
+ .category-layout { display: block; padding-top: 1.5rem; }
+ .category-sidebar nav { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .category-sidebar h2 { grid-column: 1/-1; }
+ .category-sidebar nav a { font-size: .78rem; }
+ .category-content { margin-top: 2rem; }
+ .entrance-footer { align-items: flex-start; flex-direction: column; }
+ .resource-access { display: none; }
+}
+@media(max-width: 480px) { .category-grid { grid-template-columns: 1fr; gap: .75rem; } .category-card { padding: 1.15rem; } .category-top { margin-bottom: .75rem; } .category-card p { margin-bottom: 1rem; } }
