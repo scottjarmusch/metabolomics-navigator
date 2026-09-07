@@ -33,8 +33,10 @@ jobs:
       - name: Identify submission type
         id: kind
         shell: bash
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          if [[ "${{ github.event.issue.title }}" == "[Protocol submission]:"* ]]; then
+          if [[ "$ISSUE_TITLE" == "[Protocol submission]:"* ]]; then
             echo "type=protocol" >> "$GITHUB_OUTPUT"
             echo "label=protocol-submission" >> "$GITHUB_OUTPUT"
           else
