@@ -142,6 +142,8 @@ def main():
         if missing: raise SystemExit(f'Guide section {section["id"]} references unknown tools: {sorted(missing)}')
         section['tools']=[tool_by_slug[slug] for slug in section['slugs']]
     render(env,'home.html',OUT/'index.html',**context,active='home',stats=stats,guide_sections=guide_sections)
+    for group in guide_sections:
+        render(env,'guide.html',OUT/f"guide/{group['id']}/index.html",**context,active='guide',stats=stats,group=group,guide_sections=guide_sections)
 
     # Tool catalogue
     tool_filters=[
@@ -206,7 +208,7 @@ def main():
 
     write_json(OUT/'tool-data.json',tools_raw); write_json(OUT/'protocol-data.json',protocols_raw)
     write_json(OUT/'catalogue-data.json',{'tools':tools_raw,'protocols':protocols_raw})
-    write_sitemap(OUT,tools,protocols,absolute_url)
+    write_sitemap(OUT,tools,protocols,absolute_url,guide_sections)
     (OUT/'robots.txt').write_text(f"User-agent: *\nAllow: /\nSitemap: {absolute_url('sitemap.xml')}\n",encoding='utf-8')
     print(f"Built {len(tools)} tool pages and {len(protocols)} protocol pages in {OUT} with base path '{base_path or '/'}'.")
 
@@ -320,8 +322,9 @@ def static_pages(repository_url,url):
     return {'about':{'title':'About the catalogue','eyebrow':'Project','description':'A community-maintained map of metabolomics tools and transferable protocols.','body':about},'contribute':{'title':'Contribute','eyebrow':'Community','description':'Add a tool, submit a protocol, or improve an existing entry.','body':contribute,'active':'contribute'},'governance':{'title':'Governance and review','eyebrow':'Trust and transparency','description':'How entries are reviewed, attributed, verified, corrected, and archived.','body':governance}}
 
 
-def write_sitemap(out,tools,protocols,absolute_url):
+def write_sitemap(out,tools,protocols,absolute_url,guide_sections):
     paths=['','tools/','protocols/','browse/','submit/','about/','contribute/','governance/']+[f"tools/{x['slug']}/" for x in tools]+[f"protocols/{x['slug']}/" for x in protocols]
+    paths += [f"guide/{group['id']}/" for group in guide_sections]
     xml=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for path in paths: xml.append(f'  <url><loc>{html.escape(absolute_url(path))}</loc></url>')
     xml.append('</urlset>'); (out/'sitemap.xml').write_text('\n'.join(xml)+'\n',encoding='utf-8')
