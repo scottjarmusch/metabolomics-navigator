@@ -1,0 +1,71 @@
+$schema: ../../schemas/tool.schema.json
+slug: msconvert
+name: msconvert
+summary: Convert mass-spectrometry files into open formats for downstream analysis.
+description: Part of ProteoWizard, msconvert provides command-line conversion and optional spectral filters.
+  MSConvertGUI offers a graphical route through the same ecosystem.
+links:
+  primary: https://www.proteowizard.org/tools/msconvert.html
+  documentation: https://www.proteowizard.org/tools/msconvert.html
+resource_types:
+- software_application
+functions:
+  primary: data_conversion
+  capabilities:
+  - provenance_tracking
+platforms:
+- multi_platform
+interfaces:
+- command_line
+- desktop_gui
+access:
+  model: open_source
+  notes: ProteoWizard is open source; vendor reader components have their own distribution and platform terms.
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - spectra
+  input_formats:
+  - vendor_raw
+  - mzml
+  - mzxml
+  output_formats:
+  - mzml
+  - mzxml
+  - mgf
+publications:
+- citation: 'Kessner et al. ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics
+    (2008).'
+  type: primary
+  doi: 10.1093/bioinformatics/btn323
+common_uses:
+- Prepare mzML files for MZmine, XCMS or other compatible processors.
+- Automate conversion across an acquisition batch.
+scope:
+  designed_for:
+  - Prepare mzML files for MZmine, XCMS or other compatible processors.
+  not_designed_for:
+  - Producing an aligned metabolite abundance table by conversion alone.
+  requirements:
+  - A supported reader for the instrument format; some vendor readers require Windows.
+  considerations:
+  - 'Record centroiding and filtering choices, and retain original files: conversion settings can alter downstream
+    results.'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: mzmine
+  relationship: complementary
+- slug: xcms
+  relationship: complementary

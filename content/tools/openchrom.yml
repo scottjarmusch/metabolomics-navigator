@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: openchrom
+name: OpenChrom
+summary: Inspect and process chromatographic and mass-spectrometric data in a desktop workbench.
+description: OpenChrom provides an extensible graphical environment for chromatogram visualization, signal
+  processing and analytical data exchange, with a strong GC-MS heritage.
+links:
+  primary: https://github.com/Openchrom/openchrom
+  documentation: https://github.com/Openchrom/openchrom
+  repository: https://github.com/Openchrom/openchrom
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  capabilities:
+  - peak_detection
+platforms:
+- gc_ms
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  notes: Open-source core; check separate terms for commercial extensions.
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - spectra
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Chromatogram files via installed import plug-ins
+  other_output_formats:
+  - Processed chromatograms and analysis reports
+publications:
+- citation: 'Wenig and Odermatt. OpenChrom: a cross-platform open source software for the mass spectrometric
+    analysis of chromatographic data. BMC Bioinformatics 11, 405 (2010).'
+  type: primary
+  doi: 10.1186/1471-2105-11-405
+common_uses:
+- Review chromatograms interactively.
+- Build processing workflows using compatible extensions.
+scope:
+  designed_for:
+  - Review chromatograms interactively.
+  not_designed_for:
+  - Assuming that every vendor format or extension is included in the core installation.
+  requirements:
+  - A desktop installation with the appropriate import and processing plug-ins.
+  considerations:
+  - Confirm plug-in availability and format support before selecting the tool for an instrument workflow.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: ms-dial
+  relationship: complementary

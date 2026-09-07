@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: metabodiff
+name: MetaboDiff
+summary: Perform differential metabolomics analysis and explore metabolic correlation modules in R.
+description: MetaboDiff starts from metabolite measurement tables and supports the analysis of sample traits
+  through data-derived correlation networks.
+links:
+  primary: https://github.com/andreasmock/MetaboDiff
+  documentation: https://github.com/andreasmock/MetaboDiff
+  repository: https://github.com/andreasmock/MetaboDiff
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+platforms:
+- platform_independent
+interfaces:
+- r_package
+access:
+  model: source_available
+  notes: Public R source; consult package metadata for licensing. Some older hosted tutorial links may require
+    the repository vignettes instead.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Metabolite measurement and annotation tables
+  other_output_formats:
+  - R differential-analysis and network objects
+publications:
+- citation: 'Mock et al. MetaboDiff: an R package for differential metabolomic analysis. Bioinformatics 34,
+    3417–3418 (2018).'
+  type: primary
+  doi: 10.1093/bioinformatics/bty344
+common_uses:
+- Compare metabolite measurements between study groups.
+- Explore modules associated with sample traits.
+scope:
+  designed_for:
+  - Compare metabolite measurements between study groups.
+  not_designed_for:
+  - Using correlations to establish biochemical reactions or causality.
+  requirements:
+  - A metabolite abundance table and aligned sample/feature annotations.
+  considerations:
+  - Network estimates depend on sample size, missing-data handling and covariates; investigate sensitivity
+    before interpreting modules.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: ropls
+  relationship: complementary

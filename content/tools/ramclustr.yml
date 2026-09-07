@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: ramclustr
+name: RAMClustR
+summary: Cluster related mass-spectrometry features and export compound-level spectra and abundances.
+description: RAMClustR groups features using retention and abundance relationships. Its workflow supports feature
+  filtering, QC normalization and spectral export for subsequent annotation.
+links:
+  primary: https://github.com/cbroeckl/RAMClustR
+  documentation: https://github.com/cbroeckl/RAMClustR
+  repository: https://github.com/cbroeckl/RAMClustR
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  capabilities:
+  - spectral_deconvolution
+  - adduct_isotope_grouping
+platforms:
+- lc_ms
+interfaces:
+- r_package
+access:
+  model: source_available
+  notes: Source and environment specifications are public; review repository license terms before redistribution.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - spectra
+  - feature_table
+  input_formats:
+  - csv_tsv
+  output_formats:
+  - msp
+publications:
+- citation: 'Broeckling et al. RAMClust: a novel feature clustering method enables spectral-matching-based
+    annotation for metabolomics data. Analytical Chemistry 86, 6812–6817 (2014).'
+  type: primary
+  doi: 10.1021/ac501530d
+common_uses:
+- Reduce redundant features into compound-related clusters.
+- Export reconstructed spectra for library matching.
+scope:
+  designed_for:
+  - Reduce redundant features into compound-related clusters.
+  not_designed_for:
+  - Treating every cluster as a pure, independently identified metabolite.
+  requirements:
+  - A feature table with m/z, retention time and sample information, or supported XCMS objects.
+  considerations:
+  - Correlated coeluting compounds can merge; review clustering thresholds and reconstructed spectra.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: camera
+  relationship: complementary
+- slug: gnps
+  relationship: complementary

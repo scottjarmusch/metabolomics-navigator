@@ -1,0 +1,74 @@
+$schema: ../../schemas/tool.schema.json
+slug: molnetenhancer
+name: MolNetEnhancer
+summary: Combine molecular networking, substructure motifs and chemical classifications into annotated networks.
+description: MolNetEnhancer integrates outputs from GNPS networking, MS2LDA and supported in-silico annotation
+  tools to help interpret chemical families.
+links:
+  primary: https://ccms-ucsd.github.io/GNPSDocumentation/molnetenhancer/
+  documentation: https://ccms-ucsd.github.io/GNPSDocumentation/molnetenhancer/
+resource_types:
+- workflow_pipeline
+functions:
+  primary: molecular_networking
+  capabilities:
+  - network_visualization
+  - compound_class_prediction
+platforms:
+- lc_ms
+interfaces:
+- web_app
+- python_package
+- r_package
+access:
+  model: source_available
+  notes: Freely available workflow; component tools and chemical classification services have their own terms.
+data:
+  input_types:
+  - statistical_results
+  - compound_list
+  output_types:
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Networking jobs and annotation outputs
+  other_output_formats:
+  - Annotated molecular networks
+publications:
+- citation: 'Ernst et al. MolNetEnhancer: Enhanced Molecular Networks by Integrating Metabolome Mining and
+    Annotation Tools. Metabolites 9, 144 (2019).'
+  type: primary
+  doi: 10.3390/metabo9070144
+common_uses:
+- Add class and motif context to molecular networks.
+- Prioritize families for closer spectral inspection.
+scope:
+  designed_for:
+  - Add class and motif context to molecular networks.
+  not_designed_for:
+  - Converting propagated annotations into confirmed identities.
+  requirements:
+  - Compatible molecular-networking results and the identifiers required by the selected annotation inputs.
+  considerations:
+  - Inspect the evidence behind each node or family; incomplete or incorrect input annotations can propagate
+    through the overview.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: gnps
+  relationship: complementary
+- slug: ms2lda
+  relationship: complementary

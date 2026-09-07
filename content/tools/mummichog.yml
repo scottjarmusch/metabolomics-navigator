@@ -1,0 +1,71 @@
+$schema: ../../schemas/tool.schema.json
+slug: mummichog
+name: mummichog
+summary: Generate pathway and network hypotheses from untargeted metabolomics feature tables.
+description: mummichog tests patterns of candidate metabolite matches across metabolic networks, allowing functional
+  exploration before every feature has an identification.
+links:
+  primary: https://github.com/metabolomics-cloud/mummichog
+  documentation: https://github.com/metabolomics-cloud/mummichog
+  repository: https://github.com/metabolomics-cloud/mummichog
+resource_types:
+- software_application
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - pathway_enrichment
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- command_line
+access:
+  model: source_available
+  notes: Public source code; pin the intended release branch and consult its license.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Feature table with m/z and statistical results
+  other_output_formats:
+  - Pathway enrichment and network results
+publications:
+- citation: Li et al. Predicting network activity from high throughput metabolomics. PLOS Computational Biology
+    (2013).
+  type: primary
+common_uses:
+- Prioritize pathways associated with differential features.
+- Explore a feature table with a species-appropriate metabolic model.
+scope:
+  designed_for:
+  - Prioritize pathways associated with differential features.
+  not_designed_for:
+  - Confirming individual metabolite identities or measuring metabolic flux.
+  requirements:
+  - Feature masses, statistical results, acquisition information and a suitable metabolic model.
+  considerations:
+  - Background features and adduct assumptions affect enrichment. The current repository labels version 3 as
+    development and retains a version 2 branch.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metaboanalyst
+  relationship: complementary

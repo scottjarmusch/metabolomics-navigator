@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: coconut
+name: COCONUT
+summary: Search an aggregated, curated collection of natural-product structures and source records.
+description: COCONUT brings together natural-product collections with community curation and audit trails,
+  supporting candidate lookup and computational analyses.
+links:
+  primary: https://coconut.naturalproducts.net/
+  documentation: https://steinbeck-lab.github.io/coconut/introduction.html
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Open platform with downloadable data; review database and source-collection licenses.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - sdf
+  - other
+  other_input_formats:
+  - Text or structure queries
+  other_output_formats:
+  - Structure records and database exports
+publications:
+- citation: 'Chandrasekhar et al. COCONUT 2.0: a comprehensive overhaul and curation of the collection of open
+    natural products database. Nucleic Acids Research (2024 online).'
+  type: primary
+  doi: 10.1093/nar/gkae1063
+common_uses:
+- Search natural-product structures and related compounds.
+- Download a defined release for reproducible candidate screening.
+scope:
+  designed_for:
+  - Search natural-product structures and related compounds.
+  not_designed_for:
+  - A uniform set of experimentally validated spectral identifications.
+  requirements:
+  - A structure or text query, or a downloaded release for local use.
+  considerations:
+  - Source collections differ in provenance and detail; inspect source links and record the release used.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: lotus
+  relationship: complementary

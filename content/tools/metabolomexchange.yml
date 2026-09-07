@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: metabolomexchange
+name: MetabolomeXchange
+summary: Discover publicly released metabolomics studies across participating repositories.
+description: MetabolomeXchange aggregates dataset announcements and metadata to help researchers locate studies;
+  the underlying data remain with the originating repositories.
+links:
+  primary: https://leidenuniv-lacdr-abs.github.io/metabolomexchange/
+  documentation: https://leidenuniv-lacdr-abs.github.io/metabolomexchange/
+resource_types:
+- web_service
+functions:
+  primary: reference_data_search
+  capabilities:
+  - metadata_contextualization
+platforms:
+- multi_platform
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public dataset-discovery project. Source repository is linked from the official project page.
+data:
+  input_types:
+  - sample_metadata
+  output_types:
+  - sample_metadata
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Study keywords and repository metadata
+  other_output_formats:
+  - Study announcements and source-repository links
+publications: []
+common_uses:
+- Find studies for secondary analysis.
+- Follow links back to the repository that hosts a dataset.
+scope:
+  designed_for:
+  - Find studies for secondary analysis.
+  not_designed_for:
+  - Searching a query spectrum against all deposited raw files.
+  requirements:
+  - Search terms or study context; downloads depend on the originating repository.
+  considerations:
+  - Coverage depends on participating providers and feed updates. Check study metadata and availability at
+    the original repository.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed. No standalone publication
+    was confirmed in this pass; use the official project citation guidance.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metabolights
+  relationship: complementary
+- slug: metabolomics-workbench
+  relationship: complementary

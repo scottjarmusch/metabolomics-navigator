@@ -1,0 +1,75 @@
+$schema: ../../schemas/tool.schema.json
+slug: metaspace
+name: METASPACE
+summary: Annotate imaging mass-spectrometry datasets and explore community-contributed spatial metabolomes.
+description: METASPACE combines a cloud annotation engine with a public knowledgebase and interactive ion-image
+  exploration. Its Python client supports programmatic analysis of annotations.
+links:
+  primary: https://metaspace2020.org/
+  documentation: https://github.com/metaspace2020/metaspace
+  repository: https://github.com/metaspace2020/metaspace
+resource_types:
+- workflow_platform
+functions:
+  primary: reference_data_search
+  capabilities:
+  - metadata_contextualization
+  - interactive_dashboard
+platforms:
+- imaging_ms
+interfaces:
+- web_app
+- python_package
+- api
+access:
+  model: free_web_service
+  notes: Public platform with Apache-2.0 source code; dataset access and reuse depend on the individual deposit.
+data:
+  input_types:
+  - imaging_data
+  - sample_metadata
+  output_types:
+  - imaging_data
+  - compound_list
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Imaging-MS files and acquisition metadata
+  other_output_formats:
+  - Ion images and annotation records
+publications:
+- citation: 'Alexandrov et al. METASPACE: A community-populated knowledge base of spatial metabolomes in health
+    and disease. bioRxiv preprint (2019).'
+  type: primary
+  doi: 10.1101/539478
+common_uses:
+- Find public spatial metabolomics datasets.
+- Inspect molecular annotations alongside tissue ion images.
+scope:
+  designed_for:
+  - Find public spatial metabolomics datasets.
+  not_designed_for:
+  - Treating a spatial annotation as complete isomer or stereochemical confirmation.
+  requirements:
+  - For new analyses, compatible imaging-MS data and acquisition metadata; browsing public results is a separate
+    workflow.
+  considerations:
+  - Review annotation confidence, adduct assumptions and database choice; spatial colocalization does not by
+    itself imply a biological interaction.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metabolomics-workbench
+  relationship: complementary

@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: refmet
+name: RefMet
+summary: Map metabolite names to a standardized reference nomenclature for cross-study comparisons.
+description: RefMet includes both discrete chemical structures and less-resolved analytical species, including
+  lipid sum compositions, to preserve the level of information reported.
+links:
+  primary: https://www.metabolomicsworkbench.org/databases/refmet/index.php
+  documentation: https://www.metabolomicsworkbench.org/databases/refmet/index.php
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public Metabolomics Workbench service; follow its use and citation guidance.
+data:
+  input_types:
+  - compound_list
+  output_types:
+  - compound_list
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Metabolite names or name lists
+  other_output_formats:
+  - Standardized names and mapping metadata
+publications:
+- citation: 'Fahy and Subramaniam. RefMet: a reference nomenclature for metabolomics. Nature Methods 17, 1173–1174
+    (2020).'
+  type: primary
+  doi: 10.1038/s41592-020-01009-y
+common_uses:
+- Reconcile names across metabolomics tables.
+- Standardize lipid names without adding unsupported structural detail.
+scope:
+  designed_for:
+  - Reconcile names across metabolomics tables.
+  not_designed_for:
+  - Converting an ambiguous analytical species into a uniquely confirmed structure.
+  requirements:
+  - A metabolite name or list of names; unresolved mappings need manual review.
+  considerations:
+  - Keep original labels and mapping outcomes. Some names are unmapped or can refer to different structural
+    levels.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metabolomics-workbench
+  relationship: complementary
+- slug: lipid-maps
+  relationship: complementary

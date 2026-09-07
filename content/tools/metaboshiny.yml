@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: metaboshiny
+name: MetaboShiny
+summary: Explore mass-spectrometry metabolomics tables through an R/Shiny interface.
+description: MetaboShiny combines filtering, normalization, statistical exploration and database-assisted annotation,
+  with local project and database management.
+links:
+  primary: https://github.com/joannawolthuis/MetaboShiny
+  documentation: https://github.com/joannawolthuis/MetaboShiny
+  repository: https://github.com/joannawolthuis/MetaboShiny
+resource_types:
+- software_application
+functions:
+  primary: statistics
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+platforms:
+- lc_ms
+interfaces:
+- r_package
+- web_app
+access:
+  model: source_available
+  notes: Public research software and container instructions; database licensing is separate.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Feature peak lists and sample metadata
+  other_output_formats:
+  - Saved analysis sessions, tables and plots
+publications:
+- citation: 'Wolthuis et al. MetaboShiny: interactive analysis and metabolite annotation of mass spectrometry-based
+    metabolomics data. Metabolomics (2020).'
+  type: primary
+  doi: 10.1007/s11306-020-01717-8
+common_uses:
+- Explore feature abundances and sample groups interactively.
+- Generate mass-compatible compound candidates from selected databases.
+scope:
+  designed_for:
+  - Explore feature abundances and sample groups interactively.
+  not_designed_for:
+  - Treating m/z database matches as definitive compound identities.
+  requirements:
+  - Feature tables, sample metadata and a configured R or container installation.
+  considerations:
+  - Database snapshots require management; preserve normalization choices and check installation instructions
+    against current dependencies.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metaboanalyst
+  relationship: complementary

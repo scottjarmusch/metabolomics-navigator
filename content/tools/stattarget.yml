@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: stattarget
+name: statTarget
+summary: Correct signal drift and analyze molecular-profile data from single- or multi-batch studies.
+description: statTarget provides QC-based random-forest signal correction, batch handling and statistical analysis,
+  with graphical workflow options.
+links:
+  primary: https://bioconductor.org/packages/statTarget/
+  documentation: https://bioconductor.org/packages/statTarget/
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  capabilities:
+  - qc_drift_correction
+  - batch_effect_correction
+platforms:
+- platform_independent
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: LGPL-3-or-later package; see the package license and vignettes.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Abundance table, QC and injection metadata
+  other_output_formats:
+  - Corrected abundance tables and statistics
+publications:
+- citation: 'statTarget developers. statTarget: Statistical Analysis of Molecular Profiles. Bioconductor package
+    record.'
+  type: other
+  doi: 10.18129/B9.bioc.statTarget
+common_uses:
+- Evaluate analytical drift across injections.
+- Prepare corrected metabolomics tables for statistical comparisons.
+scope:
+  designed_for:
+  - Evaluate analytical drift across injections.
+  not_designed_for:
+  - Recovering a biological effect that is completely confounded with acquisition batch.
+  requirements:
+  - Abundance and sample metadata, including injection order and appropriate QC information for QC-based correction.
+  considerations:
+  - Inspect corrected QC behavior and retained biological variation; correction assumptions differ between
+    methods.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: noreva
+  relationship: complementary

@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: matchms
+name: matchms
+summary: Build Python workflows for spectral cleaning, metadata harmonization and MS/MS similarity scoring.
+description: matchms provides composable processing filters and similarity functions for spectral collections,
+  supporting reproducible comparison and downstream library-search workflows.
+links:
+  primary: https://matchms.readthedocs.io/en/latest/
+  documentation: https://matchms.readthedocs.io/en/latest/
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - library_matching
+  - ms2_processing
+platforms:
+- lc_ms
+interfaces:
+- python_package
+access:
+  model: open_source
+  notes: Open-source software; use the official installation, license and citation guidance for the selected
+    release.
+data:
+  input_types:
+  - spectra
+  - spectral_library
+  output_types:
+  - spectra
+  - statistical_results
+  input_formats:
+  - mgf
+  - msp
+  output_formats:
+  - other
+  other_output_formats:
+  - Spectra, similarity scores and pipeline reports
+publications:
+- citation: 'Huber et al. matchms: processing and similarity evaluation of mass spectrometry data. Journal
+    of Open Source Software (2020).'
+  type: primary
+  doi: 10.21105/joss.02411
+common_uses:
+- Harmonize spectral metadata before comparison.
+- Calculate similarity scores between query and reference spectra.
+scope:
+  designed_for:
+  - Harmonize spectral metadata before comparison.
+  not_designed_for:
+  - Equating a similarity score with an independently confirmed structure.
+  requirements:
+  - Python, supported spectral data and an explicitly configured preprocessing pipeline.
+  considerations:
+  - Precursor metadata, mass tolerance and peak filtering influence scores; retain the settings used for comparisons.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: spec2vec
+  relationship: complementary
+- slug: ms2deepscore
+  relationship: complementary

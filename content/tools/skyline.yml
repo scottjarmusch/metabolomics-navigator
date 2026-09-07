@@ -1,0 +1,66 @@
+$schema: ../../schemas/tool.schema.json
+slug: skyline
+name: Skyline
+summary: Develop and review targeted mass-spectrometry assays, including small-molecule quantification.
+description: Skyline supports chromatogram inspection, transition-based methods, calibration and quantitative
+  reporting. Dedicated tutorials cover metabolomics and lipidomics applications.
+links:
+  primary: https://skyline.ms/home/software/Skyline/wiki-page.view?name=tutorials-small-mol
+  documentation: https://skyline.ms/home/software/Skyline/wiki-page.view?name=tutorials-small-mol
+resource_types:
+- software_application
+functions:
+  primary: quantification
+  capabilities:
+  - calibration_curve
+  - chromatogram_building
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+access:
+  model: source_available
+  notes: Software source is distributed through ProteoWizard; consult component and vendor-reader terms.
+data:
+  input_types:
+  - raw_instrument_data
+  - compound_list
+  output_types:
+  - feature_table
+  - report
+  input_formats:
+  - vendor_raw
+  output_formats:
+  - csv_tsv
+publications:
+- citation: Skyline team. Small Molecule Quantification and Small Molecules tutorials. Official Skyline documentation.
+  type: other
+common_uses:
+- Review targeted small-molecule peak integration.
+- Quantify analytes using external calibration and internal standards.
+scope:
+  designed_for:
+  - Review targeted small-molecule peak integration.
+  not_designed_for:
+  - Unrestricted discovery of all unknown compounds in a raw file.
+  requirements:
+  - A compatible installation, assay targets and supported measurement files.
+  considerations:
+  - Confirm transition specificity, calibration range and internal-standard behavior before reporting concentrations.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: smartpeak
+  relationship: complementary
+- slug: lipidr
+  relationship: complementary

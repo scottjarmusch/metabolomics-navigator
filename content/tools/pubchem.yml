@@ -1,0 +1,68 @@
+$schema: ../../schemas/tool.schema.json
+slug: pubchem
+name: PubChem
+summary: Search chemical structures, identifiers, properties and contributed annotations.
+description: PubChem integrates substance submissions, standardized compound records and bioassay information.
+  It is useful for identifier reconciliation and candidate-reference lookup.
+links:
+  primary: https://pubchem.ncbi.nlm.nih.gov/
+  documentation: https://pubchem.ncbi.nlm.nih.gov/docs/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public NIH resource; attribution and reuse terms can vary across contributing data sources.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - sdf
+  - json
+  other_input_formats:
+  - Names, identifiers or structures
+publications:
+- citation: Kim et al. PubChem 2025 update. Nucleic Acids Research 53, D1516–D1525 (2025).
+  type: primary
+  doi: 10.1093/nar/gkae1059
+common_uses:
+- Resolve compound identifiers and synonyms.
+- Retrieve candidate structures for an annotation workflow.
+scope:
+  designed_for:
+  - Resolve compound identifiers and synonyms.
+  not_designed_for:
+  - Demonstrating that a compound is present in a biological sample.
+  requirements:
+  - A chemical name, identifier, structure or supported search query.
+  considerations:
+  - Check stereochemistry, charge and salt forms when matching records; contributed annotations retain source-specific
+    evidence.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: chebi
+  relationship: complementary

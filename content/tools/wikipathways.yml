@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: wikipathways
+name: WikiPathways
+summary: Find and contribute biological pathway diagrams and machine-readable pathway knowledge.
+description: WikiPathways supports community curation, review and versioned releases. Its pathway records can
+  connect metabolite measurements with other molecular data.
+links:
+  primary: https://www.wikipathways.org/
+  documentation: https://github.com/wikipathways/wikipathways-database
+  repository: https://github.com/wikipathways/wikipathways-database
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Open community pathway content; consult release and attribution guidance.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - pathway_data
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Pathway, species or identifier queries
+  other_output_formats:
+  - GPML, GMT, RDF and pathway images
+publications:
+- citation: 'Agrawal et al. WikiPathways 2024: next generation pathway database. Nucleic Acids Research 52,
+    D679–D689 (2024).'
+  type: primary
+  doi: 10.1093/nar/gkad960
+common_uses:
+- Locate a pathway map for interpretation.
+- Download pathway definitions for compatible enrichment tools.
+scope:
+  designed_for:
+  - Locate a pathway map for interpretation.
+  not_designed_for:
+  - Using pathway membership alone as proof of a mechanistic change.
+  requirements:
+  - A species and pathway or molecular identifiers appropriate to the question.
+  considerations:
+  - Inspect provenance, curation status and identifier coverage; pathway completeness differs between organisms
+    and topics.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: reactome
+  relationship: complementary

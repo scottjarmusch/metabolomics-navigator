@@ -1,0 +1,71 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipid-maps
+name: LIPID MAPS
+summary: Find lipid structures, classifications, nomenclature guidance and lipidomics analysis resources.
+description: LIPID MAPS brings together curated lipid databases, mass-search tools and educational material,
+  supporting consistent reporting and reference lookup.
+links:
+  primary: https://www.lipidmaps.org/
+  documentation: https://www.lipidmaps.org/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Free open-access resource; consult the terms for each database, tool or download.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Lipid names, identifiers, structures or mass queries
+  other_output_formats:
+  - Lipid records and selected database exports
+publications:
+- citation: 'LIPID MAPS consortium. LIPID MAPS: databases, classification, nomenclature and analysis tools.
+    Official resource documentation.'
+  type: other
+common_uses:
+- Check lipid abbreviations and structural classification.
+- Find mass-compatible lipid candidates and supporting references.
+scope:
+  designed_for:
+  - Check lipid abbreviations and structural classification.
+  not_designed_for:
+  - Resolving acyl-chain positions or double-bond locations from a mass-only match.
+  requirements:
+  - A lipid name, structure, identifier or appropriately specified mass query.
+  considerations:
+  - Report the structural level supported by the experiment; database structures can be more specific than
+    the measured evidence.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: lipidblast
+  relationship: complementary
+- slug: refmet
+  relationship: complementary

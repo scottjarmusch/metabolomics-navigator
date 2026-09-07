@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: peakbot
+name: PeakBot
+summary: Detect chromatographic peaks in profile-mode LC-HRMS data using machine learning.
+description: PeakBot learns local signal patterns to distinguish chromatographic peaks from background and
+  other structures in profile-mode mass-spectrometry data.
+links:
+  primary: https://github.com/christophuv/PeakBot
+  documentation: https://github.com/christophuv/PeakBot
+  repository: https://github.com/christophuv/PeakBot
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  capabilities:
+  - peak_detection
+platforms:
+- lc_ms
+interfaces:
+- python_package
+access:
+  model: source_available
+  notes: Code and example environments are public; consult the repository license and model terms.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - feature_table
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - LC-HRMS profile-mode data
+  other_output_formats:
+  - Peak detection results
+publications:
+- citation: 'Bueschl et al. PeakBot: machine-learning-based chromatographic peak picking. Bioinformatics 38,
+    3422–3428 (2022).'
+  type: primary
+  doi: 10.1093/bioinformatics/btac344
+common_uses:
+- Extract candidate peaks from profile-mode LC-HRMS runs.
+- Evaluate learned peak detection for a new chromatographic method.
+scope:
+  designed_for:
+  - Extract candidate peaks from profile-mode LC-HRMS runs.
+  not_designed_for:
+  - Direct use as a chemical-identification engine.
+  requirements:
+  - Profile-mode data, a compatible Python environment and an appropriate trained model.
+  considerations:
+  - Training data and instrument characteristics affect transferability; inspect predictions on representative
+    samples.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: asari
+  relationship: complementary
