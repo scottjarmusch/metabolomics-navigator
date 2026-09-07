@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.title }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
-  <meta name="theme-color" content="#0f4a53">
+  <meta name="theme-color" content="#102c40">
   <link rel="stylesheet" href="{{ url('assets/site.css') }}?v={{ asset_version }}">
   <link rel="icon" href="{{ url('assets/favicon.svg') }}" type="image/svg+xml">
   {% block head %}{% endblock %}
 </head>
-<body>
+<body class="{% if active == 'home' %}entrance-page{% endif %}">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner section-wrap">
@@ -39,7 +39,7 @@
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <a href="{{ url('') }}"{% if active == 'home' %} aria-current="page"{% endif %}>Guide</a>
+        <a href="{{ url('') }}"{% if active in ['home', 'guide'] %} aria-current="page"{% endif %}>Guide</a>
         <a href="{{ url('tools/') }}"{% if active == 'tools' %} aria-current="page"{% endif %}>Tools</a>
         <a href="{{ url('protocols/') }}"{% if active == 'protocols' %} aria-current="page"{% endif %}>Protocols</a>
         <a href="{{ url('about/') }}"{% if active == 'about' %} aria-current="page"{% endif %}>About</a>
@@ -48,6 +48,9 @@
     </div>
   </header>
   <main id="main-content">{% block content %}{% endblock %}</main>
+  {% if active == 'home' %}
+  <footer class="entrance-footer section-wrap"><span>Open knowledge. Community curated.</span><nav aria-label="Footer"><a href="{{ url('tools/') }}">All {{ stats.tools }} resources</a><a href="{{ url('governance/') }}">Editorial approach</a><a href="{{ repository_url }}">GitHub ↗</a></nav></footer>
+  {% else %}
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
       <div>
@@ -75,6 +78,7 @@
     </div>
     <div class="section-wrap footer-bottom"><span>{{ site.license_text }}</span><span>Generated {{ generated_at }}</span></div>
   </footer>
+  {% endif %}
   <script src="{{ url('assets/site.js') }}?v={{ asset_version }}" defer></script>{% block scripts %}{% endblock %}
 </body>
 </html>

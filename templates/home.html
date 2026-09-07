@@ -1,46 +1,17 @@
 {% extends "base.html" %}
-{% macro topic_icon(kind) %}
-<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-{% if kind == 'data-processing' %}<path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>
-{% elif kind == 'annotation' %}<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
-{% elif kind == 'spectral-analysis' %}<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
-{% elif kind == 'public-data' %}<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
-{% elif kind == 'reference-resources' %}<path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h5"/>
-{% else %}<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>{% endif %}
-</svg>
-{% endmacro %}
+{% from "icons.html" import topic_icon %}
+{% block head %}<link rel="canonical" href="{{ absolute_url('') }}">{% endblock %}
 {% block content %}
-<div class="section-wrap review-layout visual-guide">
-  <aside class="review-contents">
-    <nav aria-label="Guide contents">
-      <h2>Explore by task</h2>
-      {% for group in guide_sections %}<a class="topic-nav-link" href="#{{ group.id }}">{{ topic_icon(group.id) }}<span>{{ group.short_title }}</span></a>{% endfor %}
-    </nav>
-    <div class="contents-links"><a href="{{ url('tools/') }}">All {{ stats.tools }} tools</a><a href="{{ url('protocols/') }}">Published protocols</a><a href="#contributing">Contribute</a></div>
-  </aside>
-  <article class="review-body">
-    <header id="introduction" class="review-intro">
-      <h1>Metabolomics Navigator</h1>
-      <p class="review-lead">A community-maintained guide to metabolomics tools.</p>
-      <form class="home-search review-search" action="{{ url('tools/') }}" method="get">
-        <label class="sr-only" for="home-search-input">Search the tool collection</label>
-        <div class="search-row"><input id="home-search-input" name="q" type="search" placeholder="Search tools, tasks, or data formats"><button type="submit">Search</button></div>
-      </form>
-      <p class="review-meta"><a href="{{ url('tools/') }}">{{ stats.tools }} tools</a><a href="{{ url('protocols/') }}">{{ stats.protocols }} protocols</a><a href="{{ repository_url }}">Open-source · Community maintained</a></p>
-    </header>
+<section class="navigator-entrance section-wrap" aria-labelledby="entrance-title">
+  <header class="entrance-header"><p class="eyebrow">THE COMMUNITY TOOL GUIDE</p><h1 id="entrance-title">Explore metabolomics.</h1></header>
+  <div class="category-grid">
     {% for group in guide_sections %}
-    <section id="{{ group.id }}" class="review-section visual-topic">
-      <div class="topic-heading"><span class="topic-icon-box">{{ topic_icon(group.id) }}</span><div><h2>{{ group.title }}</h2><p>{{ group.caption }}</p></div><span class="topic-count" aria-label="{{ group.tools|length }} tools">{{ group.tools|length }}</span></div>
-      <ul class="navigator-cards">
-        {% for tool in group.tools %}<li><a href="{{ url('tools/' + tool.slug + '/') }}"><span class="navigator-card-name">{{ tool.name }}<svg class="card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span><span class="navigator-card-role">{{ group.tool_labels.get(tool.slug, tool.primary_function_label) }}</span></a></li>{% endfor %}
-      </ul>
-      <details class="topic-context"><summary>Choosing a tool for this task</summary><p>{{ group.introduction }}</p><p><strong>Consider:</strong> {{ group.selection }}</p></details>
-    </section>
+    <a class="category-card" id="{{ group.id }}" href="{{ url('guide/' + group.id + '/') }}">
+      <div class="category-top"><span class="category-icon">{{ topic_icon(group.id) }}</span><span class="category-number" aria-hidden="true">0{{ loop.index }}</span></div>
+      <h2>{{ group.short_title }}</h2><p>{{ group.caption }}</p>
+      <span class="category-bottom"><span>{{ group.tools|length }} resources</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
+    </a>
     {% endfor %}
-    <section id="contributing" class="review-section compact-contribution">
-      <div><h2>Built with the community</h2><p>Add a tool, improve an entry, or share a useful reference.</p></div><a class="button secondary" href="{{ url('submit/') }}">Contribute</a>
-      <details><summary>How contributions work</summary><p>Use <strong>Suggest an update</strong> on any tool page or submit a short form. Contributions are reviewed before publication; changes are recorded on GitHub. Individual tools have their own access and licensing terms.</p><p><a href="{{ url('governance/') }}">Editorial approach</a> · <a href="{{ url('about/') }}">About the collection</a></p><p class="note">Inspired by the community-authored <a href="https://jessegmeyerlab.github.io/proteomics-tutorial/">Comprehensive Overview of Bottom-Up Proteomics using Mass Spectrometry</a>.</p></details>
-    </section>
-  </article>
-</div>
+  </div>
+</section>
 {% endblock %}

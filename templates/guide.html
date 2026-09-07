@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "icons.html" import topic_icon %}
+{% block title %}{{ group.short_title }} · {{ site.title }}{% endblock %}
+{% block description %}{{ group.caption }}{% endblock %}
+{% block head %}<link rel="canonical" href="{{ absolute_url('guide/' + group.id + '/') }}">{% endblock %}
+{% block content %}
+<div class="section-wrap category-layout">
+ <aside class="category-sidebar"><nav aria-label="Explore by task"><h2>Explore by task</h2>{% for section in guide_sections %}<a href="{{ url('guide/' + section.id + '/') }}"{% if section.id == group.id %} aria-current="page"{% endif %}>{{ topic_icon(section.id) }}<span>{{ section.short_title }}</span></a>{% endfor %}</nav><a class="all-tools-link" href="{{ url('tools/') }}">Search all {{ stats.tools }} resources →</a></aside>
+ <article class="category-content"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ url('') }}">Guide</a><span>›</span><span>{{ group.short_title }}</span></nav><header class="category-intro"><span class="category-icon">{{ topic_icon(group.id) }}</span><h1>{{ group.title }}</h1><p>{{ group.caption }}</p></header>
+ <details class="category-guidance"><summary>How to choose a resource</summary><p>{{ group.introduction }}</p><p>{{ group.selection }}</p></details>
+ <div class="category-list-heading"><h2>Tools & resources</h2><span>{{ group.tools|length }} entries</span></div>
+ <ul class="category-resources">{% for tool in group.tools %}<li><a href="{{ url('tools/' + tool.slug + '/') }}"><div class="resource-heading"><h3>{{ tool.name }}</h3><span class="resource-access">{{ tool.access_label }}</span></div><p>{{ tool.summary }}</p><span class="resource-bottom">{{ group.tool_labels.get(tool.slug, tool.primary_function_label) }}<span aria-hidden="true">↗</span></span></a></li>{% endfor %}</ul>
+ </article>
+</div>
+{% endblock %}
