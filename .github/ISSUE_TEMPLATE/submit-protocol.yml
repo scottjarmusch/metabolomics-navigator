@@ -1,5 +1,5 @@
 name: Submit a metabolomics protocol
-description: Add a published, transferable experimental or computational metabolomics strategy to the Atlas.
+description: Add a published, transferable experimental or computational metabolomics strategy to Metabolomics Navigator.
 title: '[Protocol submission]: '
 labels:
 - protocol-submission
@@ -93,7 +93,7 @@ body:
   id: tools
   attributes:
     label: Tools or resources used
-    description: List the main software, databases, repositories, or services. Names are enough; the Atlas will cross-link
+    description: List the main software, databases, repositories, or services. Names are enough; Metabolomics Navigator will cross-link
       entries when possible.
     placeholder: MZmine, GNPS, MassIVE
   validations:

@@ -1,5 +1,5 @@
 name: Submit a metabolomics tool
-description: Add a tool, database, library, service, repository, or workflow to the Metabolomics Tool Atlas.
+description: Add a tool, database, library, service, repository, or workflow to the Metabolomics Navigator.
 title: '[Tool submission]: '
 labels:
 - tool-submission
