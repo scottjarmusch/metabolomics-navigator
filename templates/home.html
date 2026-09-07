@@ -1,113 +1,46 @@
 {% extends "base.html" %}
+{% macro topic_icon(kind) %}
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{% if kind == 'data-processing' %}<path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>
+{% elif kind == 'annotation' %}<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
+{% elif kind == 'spectral-analysis' %}<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
+{% elif kind == 'public-data' %}<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+{% elif kind == 'reference-resources' %}<path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h5"/>
+{% else %}<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>{% endif %}
+</svg>
+{% endmacro %}
 {% block content %}
-<section class="home-hero">
-  <div class="section-wrap home-hero-grid">
-    <div>
-      <p class="eyebrow">Community-maintained scientific infrastructure</p>
-      <h1>Metabolomics Tool Atlas</h1>
-      <p class="hero-copy">A community-maintained guide to the tools and published protocols used in metabolomics.</p>
-      <form class="home-search" action="{{ url('tools/') }}" method="get" data-atlas-search data-tools-action="{{ url('tools/') }}" data-protocols-action="{{ url('protocols/') }}">
-        <label class="sr-only" for="home-search-input">Search the atlas</label>
-        <div class="search-row large">
-          <input id="home-search-input" name="q" type="search" placeholder="Search tools, functions, platforms…">
-          <button type="submit">Search</button>
-        </div>
-        <div class="search-tabs" aria-label="Search scope">
-          <button class="active" type="button" data-search-scope="tools" aria-pressed="true">Tools</button>
-          <button type="button" data-search-scope="protocols" aria-pressed="false">Protocols</button>
-        </div>
-      </form>
-      <div class="action-links">
-        <a href="{{ url('tools/') }}"><span class="action-icon">⌁</span> Browse tools <span aria-hidden="true">→</span></a>
-        <a class="protocol-link" href="{{ url('protocols/') }}"><span class="action-icon">⚗</span> Browse protocols <span aria-hidden="true">→</span></a>
-        <a href="{{ url('submit/') }}"><span class="action-icon">＋</span> Submit an entry <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <svg class="spectrum-illustration" viewBox="0 0 560 245" role="img">
-        <line class="spectrum-axis" x1="22" y1="214" x2="538" y2="214" />
-        <g class="spectrum-peaks">
-          <line x1="42" y1="214" x2="42" y2="183" /><line x1="66" y1="214" x2="66" y2="132" />
-          <line x1="83" y1="214" x2="83" y2="198" /><line x1="103" y1="214" x2="103" y2="161" />
-          <line x1="127" y1="214" x2="127" y2="82" /><line x1="147" y1="214" x2="147" y2="192" />
-          <line x1="169" y1="214" x2="169" y2="146" /><line x1="196" y1="214" x2="196" y2="199" />
-          <line x1="218" y1="214" x2="218" y2="109" /><line x1="241" y1="214" x2="241" y2="173" />
-          <line x1="267" y1="214" x2="267" y2="55" /><line x1="288" y1="214" x2="288" y2="185" />
-          <line x1="315" y1="214" x2="315" y2="137" /><line x1="342" y1="214" x2="342" y2="196" />
-          <line x1="367" y1="214" x2="367" y2="92" /><line x1="389" y1="214" x2="389" y2="178" />
-          <line x1="414" y1="214" x2="414" y2="151" /><line x1="439" y1="214" x2="439" y2="201" />
-          <line x1="463" y1="214" x2="463" y2="121" /><line x1="489" y1="214" x2="489" y2="188" />
-        </g>
-        <text class="spectrum-label" x="506" y="235">m/z</text>
-        <g class="molecular-network">
-          <line x1="337" y1="56" x2="369" y2="38"/><line x1="369" y1="38" x2="401" y2="61"/>
-          <line x1="337" y1="56" x2="356" y2="91"/><line x1="356" y1="91" x2="401" y2="61"/>
-          <line x1="401" y1="61" x2="432" y2="82"/><line x1="356" y1="91" x2="389" y2="118"/>
-          <line x1="389" y1="118" x2="430" y2="108"/><line x1="430" y1="108" x2="454" y2="137"/>
-          <circle cx="337" cy="56" r="5"/><circle class="gold" cx="369" cy="38" r="5"/>
-          <circle cx="401" cy="61" r="5"/><circle cx="356" cy="91" r="5"/>
-          <circle cx="432" cy="82" r="5"/><circle cx="389" cy="118" r="5"/>
-          <circle class="gold" cx="430" cy="108" r="5"/><circle cx="454" cy="137" r="5"/>
-        </g>
-      </svg>
-    </div>
-  </div>
-</section>
-<section class="stats-strip section-wrap" aria-label="Catalogue statistics">
-  <div><strong>{{ stats.tools }}</strong><span>tools</span></div>
-  <div><strong>{{ stats.protocols }}</strong><span>protocols</span></div>
-  <div><strong>{{ stats.functions }}</strong><span>scientific functions</span></div>
-  <div><strong>Community</strong><span>maintained</span></div>
-</section>
-<section class="section-wrap home-main-grid">
-  <div>
-    <div class="section-heading simple"><h2>Explore the Atlas</h2></div>
-    <div class="home-panels">
-      <article class="atlas-panel tools-panel">
-        <h3>Tools</h3>
-        <p>Software, databases, libraries, repositories, and services for metabolomics.</p>
-        <p class="small-muted">Find resources for preprocessing, annotation, networking, statistics, and more.</p>
-        <a href="{{ url('tools/') }}">Browse tools →</a>
-      </article>
-      <article class="atlas-panel protocols-panel">
-        <h3>Protocols</h3>
-        <p>Published methods and transferable strategies that connect tools into workflows.</p>
-        <p class="small-muted">Discover experimental and computational approaches to solve specific metabolomics questions.</p>
-        <a href="{{ url('protocols/') }}">Browse protocols →</a>
-      </article>
-    </div>
-  </div>
-  <aside class="recent-panel">
-    <div class="section-heading simple">
-      <h2>Recently added</h2>
-      <a href="{{ url('tools/') }}">View all →</a>
-    </div>
-    <div class="recent-group">
-      <h3>Tools</h3>
-      <div class="recent-list">
-        {% for tool in recent_tools %}
-        <a href="{{ url('tools/' + tool.slug + '/') }}">
-          <span><strong>{{ tool.name }}</strong><small>{{ tool.summary }}</small></span>
-          <em>{{ tool.updated_display }}</em>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="recent-group">
-      <h3>Protocols</h3>
-      <div class="recent-list">
-        {% for protocol in recent_protocols %}
-        <a href="{{ url('protocols/' + protocol.slug + '/') }}">
-          <span><strong>{{ protocol.name }}</strong><small>{{ protocol.summary }}</small></span>
-          <em>{{ protocol.publication.year or protocol.updated_display }}</em>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
+<div class="section-wrap review-layout visual-guide">
+  <aside class="review-contents">
+    <nav aria-label="Guide contents">
+      <h2>Explore by task</h2>
+      {% for group in guide_sections %}<a class="topic-nav-link" href="#{{ group.id }}">{{ topic_icon(group.id) }}<span>{{ group.short_title }}</span></a>{% endfor %}
+    </nav>
+    <div class="contents-links"><a href="{{ url('tools/') }}">All {{ stats.tools }} tools</a><a href="{{ url('protocols/') }}">Published protocols</a><a href="#contributing">Contribute</a></div>
   </aside>
-</section>
-<section class="section-wrap contribution-bar">
-  <p><strong>Missing a tool or protocol?</strong> Help improve the Atlas.</p>
-  <a class="button secondary" href="{{ url('submit/') }}">Submit an entry</a>
-</section>
+  <article class="review-body">
+    <header id="introduction" class="review-intro">
+      <h1>Metabolomics Navigator</h1>
+      <p class="review-lead">A community-maintained guide to metabolomics tools.</p>
+      <form class="home-search review-search" action="{{ url('tools/') }}" method="get">
+        <label class="sr-only" for="home-search-input">Search the tool collection</label>
+        <div class="search-row"><input id="home-search-input" name="q" type="search" placeholder="Search tools, tasks, or data formats"><button type="submit">Search</button></div>
+      </form>
+      <p class="review-meta"><a href="{{ url('tools/') }}">{{ stats.tools }} tools</a><a href="{{ url('protocols/') }}">{{ stats.protocols }} protocols</a><a href="{{ repository_url }}">Open-source · Community maintained</a></p>
+    </header>
+    {% for group in guide_sections %}
+    <section id="{{ group.id }}" class="review-section visual-topic">
+      <div class="topic-heading"><span class="topic-icon-box">{{ topic_icon(group.id) }}</span><div><h2>{{ group.title }}</h2><p>{{ group.caption }}</p></div><span class="topic-count" aria-label="{{ group.tools|length }} tools">{{ group.tools|length }}</span></div>
+      <ul class="navigator-cards">
+        {% for tool in group.tools %}<li><a href="{{ url('tools/' + tool.slug + '/') }}"><span class="navigator-card-name">{{ tool.name }}<svg class="card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span><span class="navigator-card-role">{{ group.tool_labels.get(tool.slug, tool.primary_function_label) }}</span></a></li>{% endfor %}
+      </ul>
+      <details class="topic-context"><summary>Choosing a tool for this task</summary><p>{{ group.introduction }}</p><p><strong>Consider:</strong> {{ group.selection }}</p></details>
+    </section>
+    {% endfor %}
+    <section id="contributing" class="review-section compact-contribution">
+      <div><h2>Built with the community</h2><p>Add a tool, improve an entry, or share a useful reference.</p></div><a class="button secondary" href="{{ url('submit/') }}">Contribute</a>
+      <details><summary>How contributions work</summary><p>Use <strong>Suggest an update</strong> on any tool page or submit a short form. Contributions are reviewed before publication; changes are recorded on GitHub. Individual tools have their own access and licensing terms.</p><p><a href="{{ url('governance/') }}">Editorial approach</a> · <a href="{{ url('about/') }}">About the collection</a></p><p class="note">Inspired by the community-authored <a href="https://jessegmeyerlab.github.io/proteomics-tutorial/">Comprehensive Overview of Bottom-Up Proteomics using Mass Spectrometry</a>.</p></details>
+    </section>
+  </article>
+</div>
 {% endblock %}
