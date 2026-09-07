@@ -1,6 +1,6 @@
 # GitHub setup
 
-This repository is configured for `scottjarmusch/metabolomics-tool-atlas`.
+This repository is configured for `scottjarmusch/metabolomics-navigator`.
 
 ## Required repository settings
 
