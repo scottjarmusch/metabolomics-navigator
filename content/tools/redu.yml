@@ -33,6 +33,8 @@ interfaces:
 - api
 access:
   model: free_web_service
+  notes: Hosted access and any account or usage requirements should be checked at the linked service. Access to
+    a web service does not establish the license of its code or reference data.
 technical:
   operating_systems:
   - browser
@@ -61,6 +63,7 @@ common_uses:
 - Discover and download files across MetaboLights, Metabolomics Workbench/NMDR, and GNPS/MassIVE using a common
   metadata layer.
 - Contextualize MASST/FASST spectral matches across repositories and prepare public datasets for reanalysis or co-analysis.
+- Assemble a public-data cohort using sample metadata, then retrieve files for a documented reanalysis.
 scope:
   designed_for:
   - Pan-repository discovery, contextualization, and reuse of public mass-spectrometry data using harmonized metadata
@@ -71,6 +74,10 @@ scope:
   - Metadata completeness and harmonization quality remain dependent on the information available in the source
     repositories and historical submissions.
   - Repository coverage and indexed file counts evolve as Pan-ReDU is updated.
+  - Save the selected file identifiers and harmonized metadata with the analysis; harmonization does not make experimental
+    protocols equivalent.
+  not_designed_for:
+  - Replacing primary repository records or correcting every missing or inconsistent sample annotation.
 acquisition:
   ms_levels:
   - ms2
@@ -91,13 +98,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 aliases:
 - ReDU
 - Reanalysis of Data User Interface

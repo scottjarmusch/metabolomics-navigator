@@ -100,6 +100,8 @@ common_uses:
 - Perform identity and analog spectral-library searching, including custom spectral/structure databases.
 - Search molecular-structure databases with CSI:FingerID/COSMIC, predict compound classes with CANOPUS, and generate
   de novo candidates with MSNovelist.
+- Export formula, structure and class results while retaining feature identifiers for linking back to the abundance
+  table.
 related_tools:
 - slug: mzmine
   relationship: integration
@@ -121,13 +123,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 scope:
   designed_for:
   - Molecular-formula and structure-candidate annotation from accurate-mass MS/MS data, including compound-class
@@ -145,6 +150,8 @@ scope:
     orthogonal evidence and appropriate metabolite-identification confidence levels.
   - SIRIUS contains both local open-source analysis and proprietary/webservice-backed functions, so access requirements
     differ among workflow components.
+  - DIA spectra require prior deconvolution; the documented default workflow expects centroided, high-accuracy spectra
+    with little chimeric signal.
 acquisition:
   ms_levels:
   - ms1

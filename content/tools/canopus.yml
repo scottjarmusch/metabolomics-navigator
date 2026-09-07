@@ -52,6 +52,10 @@ scope:
     identifications.
   - Class confidence and resolution depend on the information contained in the spectrum and the trained classification
     hierarchy.
+  - Inspect predicted class probabilities and hierarchy alongside the spectrum; retain the SIRIUS project and class
+    export.
+  not_designed_for:
+  - Confirmation of an exact compound structure or discrimination of stereoisomers.
 acquisition:
   ms_levels:
   - ms2
@@ -72,13 +76,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 technical:
   operating_systems:
   - windows
@@ -100,3 +107,7 @@ data:
   output_formats:
   - csv_tsv
   - json
+  other_input_formats:
+  - SIRIUS project with predicted fingerprints
+  other_output_formats:
+  - SIRIUS class prediction tables

@@ -45,6 +45,7 @@ common_uses:
 - Rank molecular-structure database candidates from accurate-mass MS/MS spectra.
 - Predict molecular fingerprints that summarize structural properties inferred from fragmentation data.
 - Provide structure-candidate rankings used by the SIRIUS COSMIC workflow and downstream interpretation.
+- Prioritize database candidates for follow-up confirmation with standards or orthogonal measurements.
 scope:
   designed_for:
   - Database-backed candidate structure identification of small molecules from informative, high-accuracy MS/MS
@@ -56,6 +57,10 @@ scope:
   - CSI:FingerID does not determine stereochemistry and cannot identify structures absent from the searched databases.
   - Ranking accuracy depends on spectral information content, molecular-formula quality, and candidate-database
     composition.
+  - Record the candidate database and formula settings, and inspect competing structures before interpreting the
+    highest-ranked hit.
+  not_designed_for:
+  - Unrestricted de novo generation of structures absent from the searched candidate database.
 acquisition:
   ms_levels:
   - ms2
@@ -74,13 +79,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 technical:
   operating_systems:
   - windows
@@ -103,3 +111,7 @@ data:
   output_formats:
   - csv_tsv
   - json
+  other_input_formats:
+  - SIRIUS project with formula candidates
+  other_output_formats:
+  - SIRIUS structure-candidate tables

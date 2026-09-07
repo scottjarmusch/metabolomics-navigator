@@ -1,11 +1,12 @@
 $schema: ../../schemas/tool.schema.json
 slug: metaboanalyst
 name: MetaboAnalyst
-summary: A web platform and associated R package for metabolomics data processing, statistical analysis, visualization, functional interpretation, and multi-omics integration.
+summary: A web platform and associated R package for metabolomics data processing, statistical analysis, visualization,
+  functional interpretation, and multi-omics integration.
 links:
   primary: https://www.metaboanalyst.ca/
   web_app: https://www.metaboanalyst.ca/
-  documentation: https://www.metaboanalyst.ca/docs/
+  documentation: https://www.metaboanalyst.ca/docs/Tutorials.xhtml
   repository: https://github.com/xia-lab/MetaboAnalystR
   tutorial: https://www.metaboanalyst.ca/docs/RTutorial.xhtml
 resource_types:
@@ -40,6 +41,8 @@ interfaces:
 - api
 access:
   model: free_web_service
+  notes: A public web service is available. The project also offers commercial Pro deployments and training; MetaboAnalystR
+    has its own installation and licensing information.
 technical:
   operating_systems:
   - browser
@@ -53,12 +56,16 @@ data:
   - compound_list
   - sample_metadata
   - statistical_results
+  - spectra
   output_types:
   - statistical_results
   - pathway_data
   - report
   input_formats:
   - csv_tsv
+  - mzml
+  - mzxml
+  - msp
   output_formats:
   - csv_tsv
   other_output_formats:
@@ -68,10 +75,17 @@ data:
 publications:
 - doi: 10.1093/nar/gkab382
   type: methods
+  citation: 'Pang Z, Chong J, Zhou G, et al. MetaboAnalyst 5.0: narrowing the gap between raw spectra and functional
+    insights. Nucleic Acids Research 49, W388–W396 (2021).'
+- doi: 10.1093/nar/gkae253
+  citation: 'Pang Z, Lu Y, Zhou G, et al. MetaboAnalyst 6.0: towards a unified platform for metabolomics data processing,
+    analysis and interpretation. Nucleic Acids Research 52, W398–W406 (2024).'
+  type: primary
 common_uses:
 - Perform exploratory and inferential statistics on metabolomics data tables.
 - Generate visualizations and pathway-level interpretations.
 - Integrate metabolomics with transcriptomics or other omics results.
+- Save result tables and the analysis settings so statistical and pathway results can be reconstructed.
 related_tools: []
 maintenance:
   status: active
@@ -80,11 +94,43 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
-  review: unreviewed
+  review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-04'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-21'
-scope: {}
-acquisition: {}
+  last_editorial_review: '2026-09-06'
+scope:
+  designed_for:
+  - Exploratory and inferential analysis of metabolomics abundance tables with a defined study design.
+  - Pathway and metabolite-set analysis using annotated compounds or supported untargeted peak lists.
+  not_designed_for:
+  - Treating a predictive model or pathway association as experimentally established biological causation.
+  requirements:
+  - Prepare sample labels and covariates consistently with the selected statistical module.
+  - For pathway analysis, inspect identifier mapping and choose the relevant organism and background; raw-data modules
+    have separate input requirements.
+  considerations:
+  - Report missing-value handling, normalization, transformation, scaling and multiple-testing choices.
+  - Evaluate supervised models with appropriate validation; a separated score plot alone is insufficient evidence
+    of predictive performance.
+  - The public web service and optional commercial services have different limits and deployment options.
+  - Check the number of compounds that map to the selected pathway resource and report the background used for enrichment.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  - dia
+  ion_mobility: not_required
+description: MetaboAnalyst combines web modules for statistical analysis, functional interpretation and integration
+  of metabolomics results. Researchers can start with abundance tables and sample metadata, annotated metabolite
+  lists, or supported LC-MS spectra. MetaboAnalyst 6.0 includes MS/MS annotation, analysis with covariates, dose-response
+  analysis and genetic association-based causal analysis. MetaboAnalystR supports scripted workflows. Inputs and
+  outputs depend on the module, so users should identify the analysis performed rather than report only the platform
+  name.

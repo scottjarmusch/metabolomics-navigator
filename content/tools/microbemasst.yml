@@ -11,6 +11,7 @@ links:
   primary: https://masst.gnps2.org/microbemasst/
   web_app: https://masst.gnps2.org/microbemasst/
   repository: https://github.com/robinschmid/microbe_masst
+  documentation: https://github.com/robinschmid/microbe_masst
 resource_types:
 - web_service
 - database_knowledgebase
@@ -33,6 +34,8 @@ interfaces:
 - python_package
 access:
   model: free_web_service
+  notes: Hosted access and any account or usage requirements should be checked at the linked service. Access to
+    a web service does not establish the license of its code or reference data.
 publications:
 - doi: 10.1038/s41564-023-01575-9
   citation: 'Zuffa S, Schmid R, Bauermeister A, et al. microbeMASST: a taxonomically informed mass spectrometry
@@ -43,6 +46,7 @@ common_uses:
   data.
 - Explore exact and analog spectral matches across bacterial, fungal, and archaeal taxonomy.
 - Batch-query many spectra to annotate microbial context in larger untargeted datasets.
+- Use taxonomic matches to prioritize cultured organisms for targeted follow-up experiments.
 scope:
   designed_for:
   - Microbial-origin hypothesis generation and taxonomic contextualization of MS/MS features.
@@ -52,6 +56,10 @@ scope:
   - A spectral occurrence in a cultured microorganism supports producer/context hypotheses but does not establish
     biosynthetic origin in every sample.
   - Reference coverage is uneven across taxa and reflects community deposition and metadata curation.
+  - Inspect medium and blank controls in the source study; a cultured-organism association can include compounds
+    from growth media.
+  not_designed_for:
+  - Assigning the producer of a molecule in a mixed community solely from a monoculture spectral match.
 acquisition:
   ms_levels:
   - ms2
@@ -74,13 +82,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 technical:
   operating_systems:
   - browser
@@ -99,3 +110,5 @@ data:
   - mgf
   output_formats:
   - csv_tsv
+  other_input_formats:
+  - Universal Spectrum Identifier (USI) or peak list

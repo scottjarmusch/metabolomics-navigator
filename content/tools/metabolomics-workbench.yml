@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: metabolomics-workbench
+name: Metabolomics Workbench
+summary: Deposit, discover and retrieve metabolomics studies through the National Metabolomics Data Repository.
+description: Metabolomics Workbench hosts study data and metadata alongside analysis and reference resources. Its
+  repository supports different organisms and measurement platforms; REST access and the mwTab representation support
+  programmatic reuse of study information.
+links:
+  primary: https://www.metabolomicsworkbench.org/
+  homepage: https://www.metabolomicsworkbench.org/
+  documentation: https://www.metabolomicsworkbench.org/tools/mw_rest.php
+resource_types:
+- data_repository
+- web_service
+functions:
+  primary: data_management_sharing
+  capabilities:
+  - repository_scale_search
+  - metadata_contextualization
+  - provenance_tracking
+platforms:
+- multi_platform
+- nmr
+interfaces:
+- web_app
+- api
+access:
+  model: free_web_service
+  notes: Public study access is available through the website and REST service. Deposition requires registration
+    and compliance with repository submission guidance.
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  - sample_metadata
+  output_types:
+  - raw_instrument_data
+  - feature_table
+  - sample_metadata
+  other_input_formats:
+  - Repository submission templates and experimental files
+  output_formats:
+  - json
+  other_output_formats:
+  - mwTab study representation
+  - Submitted experimental files
+common_uses:
+- Deposit metabolomics data supporting a publication.
+- Retrieve study metadata and measurements for reproducible reanalysis.
+scope:
+  designed_for:
+  - Study-level sharing and discovery of MS and NMR metabolomics data.
+  not_designed_for:
+  - Guaranteeing that all deposited studies are directly comparable.
+  requirements:
+  - Provide experimental factors, sample identifiers, acquisition and processing details when submitting. For reuse,
+    check the files available for each analysis.
+  considerations:
+  - A project may contain several studies or analyses. Retain study and analysis identifiers and cite the project
+    data DOI where provided.
+publications:
+- doi: 10.1093/nar/gkv1042
+  citation: 'Sud M, Fahy E, Cotter D, et al. Metabolomics Workbench: An international repository for metabolomics
+    data and metadata, metabolite standards, protocols, tutorials and training, and analysis tools. Nucleic Acids
+    Research 44, D463–D470 (2016).'
+  type: primary
+related_tools:
+- slug: metabolights
+  relationship: alternative
+- slug: massive
+  relationship: alternative
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review on 7 September 2026 against official documentation and the sources listed here. Scope
+    and practical guidance are editorial synthesis; software execution and service availability were not validated.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+aliases:
+- NMDR
+- National Metabolomics Data Repository
