@@ -75,7 +75,7 @@ def main():
             (tools_dir / f"{record['slug']}.yml").write_text(yaml.safe_dump(record, sort_keys=False, allow_unicode=True, width=1000), encoding='utf-8')
 
         validate_time, validation = run(['python3', 'scripts/validate_catalogue.py'], target)
-        env = os.environ.copy(); env['BASE_PATH'] = '/metabolomics-tool-atlas'
+        env = os.environ.copy(); env['BASE_PATH'] = '/metabolomics-navigator'
         build_time, build = run(['python3', 'scripts/build_site.py', '--strict'], target, env=env)
         dist = target / 'dist'
         tools_html = dist / 'tools' / 'index.html'
