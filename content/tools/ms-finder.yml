@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms-finder
+name: MS-FINDER
+summary: Explore formula and structure candidates using fragmentation rules and EI-MS or MS/MS library searches.
+description: MS-FINDER combines formula prediction, fragment interpretation and structure ranking. Its graphical
+  and console interfaces support spectral-library searching and in silico prediction. It operates on prepared spectra,
+  making it a companion to upstream processing tools.
+links:
+  primary: https://systemsomicslab.github.io/compms/msfinder/main.html
+  homepage: https://systemsomicslab.github.io/compms/msfinder/main.html
+  documentation: https://systemsomicslab.github.io/compms/msfinder/consoleapp.html
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  capabilities:
+  - molecular_formula_prediction
+  - structure_elucidation
+  - library_matching
+platforms:
+- lc_ms
+- gc_ms
+interfaces:
+- desktop_gui
+- command_line
+access:
+  model: source_available
+  notes: Software and source are publicly accessible. Check the license for the chosen distribution and the separate
+    terms of bundled spectral libraries.
+data:
+  input_types:
+  - spectra
+  - spectral_library
+  output_types:
+  - compound_list
+  - report
+  input_formats:
+  - msp
+  other_input_formats:
+  - MS-FINDER MAT (spectral text format)
+  other_output_formats:
+  - MS-FINDER ASCII result files
+common_uses:
+- Rank candidate formulas and structures for unknown spectra.
+- Search EI-MS or MS/MS libraries through the GUI or a batch console job.
+scope:
+  designed_for:
+  - Interpretation of prepared small-molecule mass spectra.
+  not_designed_for:
+  - Replacing raw-data peak detection and alignment.
+  requirements:
+  - Prepare MSP or MS-FINDER MAT files and configure precursor and mass-error settings. Check distribution requirements
+    before installation.
+  considerations:
+  - Fragmentation rules and library coverage constrain the result; review ambiguous candidates and retain the parameter
+    file.
+publications:
+- doi: 10.1021/acs.analchem.6b00770
+  citation: 'Tsugawa H, Kind T, Nakabayashi R, et al. Hydrogen Rearrangement Rules: Computational MS/MS Fragmentation
+    and Structure Elucidation Using MS-FINDER Software. Analytical Chemistry 88, 7946–7958 (2016).'
+  type: primary
+related_tools:
+- slug: ms-dial
+  relationship: complementary
+- slug: metfrag
+  relationship: alternative
+- slug: massbank
+  relationship: uses
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review on 7 September 2026 against official documentation and the sources listed here. Scope
+    and practical guidance are editorial synthesis; software execution and service availability were not validated.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+aliases:
+- MSFINDER

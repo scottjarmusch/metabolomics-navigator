@@ -1,0 +1,128 @@
+- id: data-processing
+  title: Processing raw data
+  introduction: Raw mass-spectrometry files need to be processed before many downstream analyses can begin. Typical
+    steps include detecting chromatographic peaks, aligning them across samples, and assembling a table of feature
+    intensities. A feature is a measured signal; it is not necessarily an identified metabolite.
+  selection: Check your acquisition mode and file format, the quality-control steps available, and whether you prefer
+    a graphical or scripted workflow.
+  slugs:
+  - mzmine
+  - ms-dial
+  - xcms
+  - openms
+  short_title: Data processing
+  caption: Turn raw files into aligned features.
+  tool_labels:
+    mzmine: Multimodal feature processing
+    ms-dial: Deconvolution & lipid annotation
+    xcms: Scripted preprocessing in R
+    openms: Custom processing workflows
+- id: annotation
+  title: Annotating molecules
+  introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical
+    classes. These are different levels of information. A class prediction can be useful even when an exact structure
+    remains unknown; a ranked structure candidate still needs supporting evidence.
+  selection: 'Match the tool to the question you can answer with your data: formula, chemical class, database candidate,
+    or a possible modification of a known molecule.'
+  slugs:
+  - sirius
+  - csi-fingerid
+  - canopus
+  - msnovelist
+  - modifinder
+  - metfrag
+  - ms-finder
+  short_title: Molecular annotation
+  caption: Explore formulas, structures, and chemical classes.
+  tool_labels:
+    sirius: Formula & structure annotation
+    csi-fingerid: Structure database search
+    canopus: Chemical-class prediction
+    msnovelist: De novo structure candidates
+    modifinder: Modification-site localization
+    metfrag: Fragment-based structure ranking
+    ms-finder: Formula & structure interpretation
+- id: spectral-analysis
+  title: Exploring spectral relationships
+  introduction: Tandem mass spectra contain fragmentation information that can help investigate related molecules.
+    Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified
+    pattern. These approaches help prioritize signals for closer inspection.
+  selection: Decide whether you need to explore relationships across a dataset or test a specific spectral pattern.
+    Similarity or a query match alone does not establish a complete structure.
+  slugs:
+  - gnps
+  - massql
+  short_title: Spectral analysis
+  caption: Find relationships and patterns in spectra.
+  tool_labels:
+    gnps: Molecular networking & libraries
+    massql: Chemical-pattern queries
+- id: public-data
+  title: Finding context in public data
+  introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been observed.
+    Some resources begin with a query spectrum; others use a structure or sample metadata. Domain-specific collections
+    add context such as microbial taxonomy, plants, or foods.
+  selection: Check what is indexed and inspect the original study metadata. A match supports further investigation;
+    it does not by itself establish biological origin or absence from unmeasured samples.
+  slugs:
+  - masst
+  - fasst
+  - structuremasst
+  - microbemasst
+  - plantmasst
+  - foodmasst
+  - microbiomemasst
+  - redu
+  short_title: Public-data search
+  caption: Find where molecules have been observed.
+  tool_labels:
+    masst: Search by MS/MS spectrum
+    fasst: Fast indexed spectral search
+    structuremasst: Search by structure
+    microbemasst: Microbial reference context
+    plantmasst: Plant reference context
+    foodmasst: Food & beverage context
+    microbiomemasst: Microbiome study context
+    redu: Find datasets by metadata
+- id: reference-resources
+  title: Sharing data and reference knowledge
+  introduction: Repositories preserve experimental files, reference spectra support annotation, and knowledgebases
+    connect molecular evidence to its reported context. These resources serve different purposes, but all depend
+    on clear metadata and traceable evidence.
+  selection: Distinguish depositing a dataset from preparing a reference spectrum or contributing a biological annotation.
+    Keep the source files, identifiers, and supporting evidence connected.
+  slugs:
+  - massive
+  - msms-chooser
+  - cmmc-kb
+  - massbank
+  - mona
+  - metabolights
+  - metabolomics-workbench
+  short_title: Data & references
+  caption: Preserve data and connect reference evidence.
+  tool_labels:
+    massive: Deposit & access MS datasets
+    msms-chooser: Prepare reference spectra
+    cmmc-kb: Curated metabolite knowledge
+    massbank: Open reference mass spectra
+    mona: Aggregated spectral libraries
+    metabolights: Studies & structured metadata
+    metabolomics-workbench: Study repository & data access
+- id: interpretation
+  title: Inspecting and interpreting results
+  introduction: Once data have been processed, researchers need to inspect signals, analyze variation across samples,
+    and interpret results in biological context. An interactive viewer, a statistical platform, and a collection
+    of downstream applications provide different kinds of support.
+  selection: Start with your study design and the form of your input data. Preserve sample identifiers, preprocessing
+    decisions, and analysis settings when moving between tools.
+  slugs:
+  - gnps-dashboard
+  - metaboanalyst
+  - metaboapps
+  short_title: Interpretation
+  caption: Inspect signals and interpret study results.
+  tool_labels:
+    gnps-dashboard: Interactive raw-data inspection
+    metaboanalyst: Statistics & pathway analysis
+    metaboapps: Downstream analysis apps

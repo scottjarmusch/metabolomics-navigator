@@ -1,8 +1,8 @@
-title: Metabolomics Tool Atlas
-short_title: Tool Atlas
-tagline: Find the tools and published protocols that power modern metabolomics research.
-description: A community-maintained atlas of metabolomics tools and transferable published protocols, with structured metadata, provenance, and cross-linked workflows.
-repository_url: https://github.com/scottjarmusch/metabolomics-tool-atlas
+title: Metabolomics Navigator
+short_title: Navigator
+tagline: A community-maintained guide to metabolomics tools.
+description: An open, community-maintained reference to metabolomics tools, with practical explanations, documentation, publications, and published protocols.
+repository_url: https://github.com/scottjarmusch/metabolomics-navigator
 contact_email: ''
 license_text: CC BY 4.0
 footer_note: Community-maintained and openly versioned on GitHub.

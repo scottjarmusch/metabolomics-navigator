@@ -1,0 +1,80 @@
+$schema: ../../schemas/tool.schema.json
+slug: metabolights
+name: MetaboLights
+summary: Deposit and find metabolomics studies with experimental files and structured sample and assay metadata.
+description: MetaboLights is the EMBL-EBI repository for metabolomics experiments across organisms and analytical
+  techniques. Study records connect raw and derived files to sample and assay descriptions, supporting publication-associated
+  sharing and later reuse.
+links:
+  primary: https://www.ebi.ac.uk/metabolights/
+  homepage: https://www.ebi.ac.uk/metabolights/
+  documentation: https://ebi-metabolights.github.io/guides/
+resource_types:
+- data_repository
+functions:
+  primary: data_management_sharing
+  capabilities:
+  - metadata_contextualization
+  - provenance_tracking
+platforms:
+- multi_platform
+- nmr
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public studies can be accessed freely. Submission uses an account and the repository submission and curation
+    process.
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  - sample_metadata
+  output_types:
+  - raw_instrument_data
+  - feature_table
+  - sample_metadata
+  input_formats:
+  - isa_tab
+  output_formats:
+  - isa_tab
+  other_input_formats:
+  - Raw and derived assay files; accepted packaging depends on file type
+  other_output_formats:
+  - Submitted study files
+common_uses:
+- Deposit the files and metadata supporting a metabolomics publication.
+- Find studies by organism or analytical technology for reanalysis.
+scope:
+  designed_for:
+  - Structured sharing of complete metabolomics experiments, including MS and NMR.
+  not_designed_for:
+  - Automatic harmonization of measurements across unrelated studies.
+  requirements:
+  - Prepare sample-to-file mappings, assay details and metabolite identification tables following the submission
+    guide.
+  considerations:
+  - Inspect study design and processing history before combining datasets. Record the MTBLS accession and cite the
+    original study as well as the repository.
+publications:
+- doi: 10.1093/nar/gkad1045
+  citation: 'Yurekten O, Payne T, Tejera N, et al. MetaboLights: open data repository for metabolomics. Nucleic
+    Acids Research 52, D640–D646 (2024).'
+  type: primary
+related_tools:
+- slug: metabolomics-workbench
+  relationship: alternative
+- slug: massive
+  relationship: alternative
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review on 7 September 2026 against official documentation and the sources listed here. Scope
+    and practical guidance are editorial synthesis; software execution and service availability were not validated.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'

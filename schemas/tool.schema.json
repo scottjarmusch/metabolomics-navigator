@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://scottjarmusch.github.io/metabolomics-tool-atlas/schemas/tool.schema.json",
-  "title": "Metabolomics Tool Atlas tool entry",
+  "$id": "https://scottjarmusch.github.io/metabolomics-navigator/schemas/tool.schema.json",
+  "title": "Metabolomics Navigator tool entry",
   "description": "Schema for a tool, software resource, service, database, spectral library, repository, or executable workflow entry.",
   "type": "object",
   "additionalProperties": false,

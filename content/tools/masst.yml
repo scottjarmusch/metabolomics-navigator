@@ -34,6 +34,8 @@ interfaces:
 - api
 access:
   model: free_web_service
+  notes: Hosted access and any account or usage requirements should be checked at the linked service. Access to
+    a web service does not establish the license of its code or reference data.
 technical:
   operating_systems:
   - browser
@@ -49,6 +51,8 @@ data:
   - mgf
   output_formats:
   - csv_tsv
+  other_input_formats:
+  - Universal Spectrum Identifier (USI) or peak list
 publications:
 - doi: 10.1038/s41587-019-0375-9
   citation: Wang M, Jarmusch AK, Vargas F, et al. Mass spectrometry searches using MASST. Nature Biotechnology 38,
@@ -63,6 +67,7 @@ common_uses:
 - Identify datasets, files, or sample contexts in which a molecule or close spectral analogue may occur.
 - Use repository-scale matches as a starting point for biological, environmental, natural-product, or reverse-metabolomics
   hypotheses.
+- Locate public datasets containing spectra similar to an unknown feature for follow-up reanalysis.
 scope:
   designed_for:
   - Repository-scale contextualization of individual MS/MS spectra.
@@ -76,6 +81,10 @@ scope:
     programmatic access described in the current documentation.
   - Current pan-repository indexes extend beyond the original GNPS/MassIVE-only implementation; the exact indexed
     collections can change over time.
+  - Retain the query spectrum identifier and inspect matched files and their study metadata before drawing an occurrence
+    conclusion.
+  not_designed_for:
+  - Quantitative comparison across unrelated public studies or proof of biosynthetic origin.
 acquisition:
   ms_levels:
   - ms2
@@ -105,12 +114,15 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 aliases:
 - Mass Spectrometry Search Tool

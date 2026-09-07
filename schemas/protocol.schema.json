@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://scottjarmusch.github.io/metabolomics-tool-atlas/schemas/protocol.schema.json",
-  "title": "Metabolomics Tool Atlas protocol entry",
+  "$id": "https://scottjarmusch.github.io/metabolomics-navigator/schemas/protocol.schema.json",
+  "title": "Metabolomics Navigator protocol entry",
   "description": "Schema for a published, transferable experimental or computational metabolomics strategy.",
   "type": "object",
   "additionalProperties": false,

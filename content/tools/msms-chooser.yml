@@ -1,7 +1,8 @@
 $schema: ../../schemas/tool.schema.json
 slug: msms-chooser
 name: MSMS-Chooser
-summary: A GNPS workflow for automatically selecting candidate reference MS/MS spectra from LC-MS data of known standards using supplied molecular structures and expected precursor masses.
+summary: A GNPS workflow for automatically selecting candidate reference MS/MS spectra from LC-MS data of known
+  standards using supplied molecular structures and expected precursor masses.
 links:
   primary: https://ccms-ucsd.github.io/GNPSDocumentation/msmschooser/
   documentation: https://ccms-ucsd.github.io/GNPSDocumentation/msmschooser/
@@ -25,6 +26,8 @@ interfaces:
 - web_app
 access:
   model: free_web_service
+  notes: Hosted access and any account or usage requirements should be checked at the linked service. Access to
+    a web service does not establish the license of its code or reference data.
 technical:
   operating_systems:
   - browser
@@ -47,6 +50,7 @@ publications: []
 common_uses:
 - Select MS/MS spectra corresponding to known standards from open-format data.
 - Prepare candidate reference spectra for validation and library contribution.
+- Link the selected spectrum back to its source standard and acquisition metadata before library submission.
 scope:
   designed_for:
   - Extracting candidate reference MS/MS scans when structures or formulas of standards are known.
@@ -54,6 +58,10 @@ scope:
   - Open-format mzML or mzXML data plus the MSMS-Chooser submission template.
   considerations:
   - Automated selections should be visually reviewed and validated before use as reference spectra.
+  - Inspect precursor/adduct assignment and potential co-isolation or contamination before accepting a scan as a
+    reference spectrum.
+  not_designed_for:
+  - Untargeted identification of unknown compounds without prior standard information.
 acquisition:
   ms_levels:
   - ms2
@@ -72,12 +80,21 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed. The official workflow documentation is the direct reference. No
+    dedicated methods paper was identified in this pass; cite the GNPS platform and workflow details as applicable.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-08-21'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-21'
-  last_editorial_review: '2026-08-21'
+  last_editorial_review: '2026-09-06'
 aliases:
 - MS/MS-Chooser
+description: MSMS-Chooser extracts candidate reference tandem mass spectra from measurements of known standards.
+  A submission table connects files to molecular structures and expected precursor information; the GNPS workflow
+  finds candidate scans for subsequent inspection. Its role is reference-spectrum preparation. The identity and
+  purity of the starting material, precursor assignment and spectrum quality still require curator review before
+  library deposition.

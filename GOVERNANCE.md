@@ -1,6 +1,6 @@
 # Governance and editorial policy
 
-The Metabolomics Tool Atlas is a community-maintained reference resource for metabolomics tools and transferable protocols. Inclusion records that an entry is within scope; it is not an endorsement, certification, performance ranking, or guarantee of scientific validity.
+The Metabolomics Navigator is a community-maintained reference resource for metabolomics tools and transferable protocols. Inclusion records that an entry is within scope; it is not an endorsement, certification, performance ranking, or guarantee of scientific validity.
 
 ## Scope and inclusion
 
@@ -19,7 +19,7 @@ A protocol is in scope when it is a published, transferable experimental or comp
 - **Community submitted**: the entry was submitted by a user or community contributor.
 - **Developer verified**: a developer or official maintainer confirmed the current tool entry.
 - **Author verified**: an author of the underlying protocol publication confirmed the protocol entry.
-- **Editorially reviewed**: an Atlas editor checked scope, links, categorization, provenance, neutral wording, and basic metadata.
+- **Editorially reviewed**: a Navigator editor checked scope, links, categorization, provenance, neutral wording, and basic metadata.
 
 Verification is not endorsement or independent benchmarking.
 
@@ -29,7 +29,7 @@ Factual metadata, intended scope, requirements, and documented capabilities may 
 
 ## Lifecycle and archiving
 
-Tool maintenance is recorded separately from Atlas entry status. Tool lifecycle values are:
+Tool maintenance is recorded separately from Navigator entry status. Tool lifecycle values are:
 
 - **Actively maintained**
 - **Limited or infrequent maintenance**
@@ -42,7 +42,7 @@ Deprecated and unavailable tools are normally retained rather than deleted when 
 
 ## Versions
 
-The Atlas normally maintains one canonical page per tool rather than one page per software version. The page records the latest known version and release date and may note scientifically important major-version changes. Separate entries should only be created when a successor is functionally a distinct resource.
+Metabolomics Navigator normally maintains one canonical page per tool rather than one page per software version. The page records the latest known version and release date and may note scientifically important major-version changes. Separate entries should only be created when a successor is functionally a distinct resource.
 
 
 ## Relationship graph

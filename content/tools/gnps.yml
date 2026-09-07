@@ -89,6 +89,7 @@ common_uses:
 - Search public metabolomics repositories using MASST, FASST-based services, and domain-specific MASST resources.
 - Visualize raw data and analysis results, harmonize metadata, curate knowledge resources, and launch downstream
   GNPS2/MetaboApps analyses.
+- Connect feature abundances to spectral similarity networks and inspect library annotations in experimental context.
 related_tools:
 - slug: mzmine
   relationship: integration
@@ -139,13 +140,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 scope:
   designed_for:
   - MS/MS-centered annotation, molecular networking, public-data search, visualization, and community sharing of
@@ -162,8 +166,12 @@ scope:
     and task URL or identifier used.
   - GNPS2 is actively evolving, and workflow interfaces or recommended settings can change; consult the current
     documentation when reproducing older analyses.
-  - Not every GNPS2 web utility is represented as a separate Atlas entry; dedicated entries are reserved for stable,
-    reusable resources with distinct scientific functions.
+  - Not every GNPS2 web utility is represented as a separate Navigator entry; dedicated entries are reserved for
+    stable, reusable resources with distinct scientific functions.
+  - Preserve the task identifier, input feature IDs, metadata and library information so annotations can be traced
+    to the original data.
+  not_designed_for:
+  - Establishing a confirmed compound identity solely from a network edge or spectral-library score.
 acquisition:
   ms_levels:
   - ms2

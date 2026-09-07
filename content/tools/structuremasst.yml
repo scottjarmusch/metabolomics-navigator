@@ -12,6 +12,7 @@ links:
   primary: https://structure-masst.gnps2.org/
   web_app: https://structure-masst.gnps2.org/
   repository: https://github.com/Wang-Bioinformatics-Lab/Structure_MASST_App
+  documentation: https://github.com/Wang-Bioinformatics-Lab/Structure_MASST_App
 resource_types:
 - web_service
 - database_knowledgebase
@@ -35,6 +36,8 @@ interfaces:
 - web_app
 access:
   model: free_web_service
+  notes: Hosted access and any account or usage requirements should be checked at the linked service. Access to
+    a web service does not establish the license of its code or reference data.
 publications:
 - doi: 10.1038/s41587-026-03082-8
   citation: Structure-centric searching enables global mapping of the public metabolome. Nature Biotechnology (2026).
@@ -45,6 +48,7 @@ common_uses:
   query spectrum.
 - Explore exact, substructure, and modification-tolerant distributions across harmonized biological and environmental
   metadata.
+- Map a chemical family to public datasets and examine the metadata of individual matches.
 scope:
   designed_for:
   - Structure-centric and substructure-centric exploration of public MS/MS repositories.
@@ -55,6 +59,10 @@ scope:
     spectra and indexed public data.
   - StructureMASST uses computational spectral matches as evidence of occurrence; important findings should be validated
     with appropriate orthogonal evidence.
+  - Inspect the reference spectra behind a structure query and distinguish exact-structure, substructure and analog
+    matches.
+  not_designed_for:
+  - Searching all theoretically possible structures without corresponding reference spectral evidence.
 acquisition:
   ms_levels:
   - ms2
@@ -79,13 +87,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 technical:
   operating_systems:
   - browser

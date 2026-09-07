@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: massbank
+name: MassBank
+summary: Find and download open reference mass spectra with compound and acquisition metadata.
+description: MassBank is a community reference-spectra resource. Its European and Japanese services share records
+  maintained in a versioned data repository. Records connect peaks with chemical identifiers and measurement conditions,
+  supporting traceable library-based annotation.
+links:
+  primary: https://massbank.eu/
+  homepage: https://massbank.eu/
+  documentation: https://github.com/MassBank/MassBank-data
+resource_types:
+- spectral_library
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - library_matching
+  - provenance_tracking
+platforms:
+- multi_platform
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public reference records and downloadable releases are available. Preserve attribution and inspect the
+    license recorded with the data you reuse.
+data:
+  input_types:
+  - compound_list
+  - spectra
+  output_types:
+  - spectral_library
+  - spectra
+  other_input_formats:
+  - Web search fields and spectral queries
+  other_output_formats:
+  - MassBank record text
+  - Versioned MassBank data archive
+common_uses:
+- Inspect reference spectra and their acquisition conditions.
+- Select a reproducible library release for an annotation workflow.
+scope:
+  designed_for:
+  - Reference-spectrum discovery and reuse.
+  not_designed_for:
+  - Archiving complete experimental studies with sample-level abundance tables.
+  requirements:
+  - Choose records compatible with ionization, polarity and fragmentation conditions of your experiment.
+  considerations:
+  - Library matching depends on coverage and acquisition conditions. Save record accessions and the library release;
+    similarity alone may not distinguish isomers.
+publications:
+- doi: 10.1093/nar/gkaf1193
+  citation: 'Neumann S, Meier R, Wenk M, et al. MassBank: an open and FAIR mass spectral data resource. Nucleic
+    Acids Research (published online 2025).'
+  type: primary
+related_tools:
+- slug: mona
+  relationship: complementary
+- slug: ms-finder
+  relationship: complementary
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review on 7 September 2026 against official documentation and the sources listed here. Scope
+    and practical guidance are editorial synthesis; software execution and service availability were not validated.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+aliases:
+- MassBank Europe
+- MassBank Japan

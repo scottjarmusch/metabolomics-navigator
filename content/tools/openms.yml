@@ -1,7 +1,8 @@
 $schema: ../../schemas/tool.schema.json
 slug: openms
 name: OpenMS
-summary: An open-source C++ library, command-line toolkit, and Python interface for reproducible mass spectrometry data processing in metabolomics and proteomics.
+summary: An open-source C++ library, command-line toolkit, and Python interface for reproducible mass spectrometry
+  data processing in metabolomics and proteomics.
 links:
   primary: https://openms.de/
   homepage: https://openms.de/
@@ -40,6 +41,8 @@ interfaces:
 access:
   model: open_source
   license: BSD-3-Clause
+  notes: The software license applies to the code; separately acquired libraries, vendor readers and hosted services
+    may have their own terms.
 technical:
   operating_systems:
   - windows
@@ -81,10 +84,15 @@ data:
   other_output_formats:
   - featureXML
   - consensusXML
-publications: []
+publications:
+- doi: 10.1038/s41592-024-02197-7
+  citation: Pfeuffer J, Bielow C, Wein S, et al. OpenMS 3 enables reproducible analysis of large-scale mass spectrometry
+    data. Nature Methods 21, 365–367 (2024).
+  type: primary
 common_uses:
 - Assemble reproducible command-line or Python workflows for LC-MS data processing.
 - Convert, inspect, detect, align, quantify, and annotate mass spectrometry features.
+- Inspect featureXML or consensusXML intermediates and export a table for downstream interpretation.
 related_tools:
 - slug: xcms
   relationship: alternative
@@ -97,11 +105,43 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
-  review: unreviewed
+  review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-08-04'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-21'
-scope: {}
-acquisition: {}
+  last_editorial_review: '2026-09-06'
+scope:
+  designed_for:
+  - Reproducible LC-MS processing with explicit intermediate files and reusable workflow parameters.
+  - Custom pipelines that combine mass-spectrometry algorithms with Python or C++ analysis.
+  not_designed_for:
+  - A single automatic analysis with universally appropriate parameters for every metabolomics experiment.
+  requirements:
+  - Install OpenMS or pyOpenMS and the dependencies of the selected workflow; graphical workflow systems are separate
+    installations.
+  - Convert proprietary data to an accepted open format when the selected tool cannot read the original file.
+  considerations:
+  - Feature detection, alignment and grouping need parameters appropriate to chromatography, resolution and sample
+    complexity.
+  - Keep workflow files, parameter files, software versions and reference databases alongside the exported results.
+  - Select the metabolomics-specific workflow and inspect its intermediate results rather than applying proteomics
+    defaults unchanged.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - dia
+  ion_mobility: unspecified
+description: OpenMS is a modular framework for building mass-spectrometry workflows. Researchers can combine TOPP
+  command-line tools, inspect data with TOPPView, assemble graphical workflows, or use the C++ library and pyOpenMS
+  in their own software. Metabolomics workflows connect feature detection, retention-time alignment, feature grouping
+  and annotation; open formats allow intermediate results to move between tools. The selected workflow determines
+  the supported acquisition mode and outputs.

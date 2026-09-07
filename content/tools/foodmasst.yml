@@ -11,6 +11,7 @@ links:
   primary: https://apps.gnps2.org/foodmasst
   web_app: https://apps.gnps2.org/foodmasst
   repository: https://github.com/robinschmid/microbe_masst
+  documentation: https://github.com/robinschmid/microbe_masst
 resource_types:
 - web_service
 - database_knowledgebase
@@ -34,6 +35,8 @@ interfaces:
 - python_package
 access:
   model: free_web_service
+  notes: Hosted access and any account or usage requirements should be checked at the linked service. Access to
+    a web service does not establish the license of its code or reference data.
 publications:
 - doi: 10.1038/s41538-022-00137-3
   citation: West KA, Schmid R, Gauglitz JM, et al. foodMASST a mass spectrometry search tool for foods and beverages.
@@ -43,6 +46,7 @@ common_uses:
 - Search a query MS/MS spectrum against curated food and beverage reference data.
 - Generate hypotheses about dietary or food-associated origins of molecules detected in untargeted data.
 - Explore exact or related spectral occurrences across food categories and associated metadata.
+- Find food and beverage reference contexts for a spectrum observed in a biological sample.
 scope:
   designed_for:
   - Food- and beverage-contextualization of tandem mass spectra.
@@ -52,6 +56,10 @@ scope:
   - A match in food reference data supports an occurrence hypothesis but does not by itself establish dietary exposure
     or provenance in a biological sample.
   - Reference coverage depends on the foods and beverages deposited in the source collection.
+  - Inspect food labels and source datasets; shared ingredients and processing can produce matches across different
+    food categories.
+  not_designed_for:
+  - Estimating food intake or establishing that a dietary exposure caused a biological phenotype.
 acquisition:
   ms_levels:
   - ms2
@@ -72,13 +80,16 @@ credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
+  notes: 'Documentation-based editorial pass on 6 September 2026: scope, interpretation limits and practical use
+    reviewed against the linked official documentation and cited literature. Software execution, service availability
+    and developer verification were not assessed.'
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-08-24'
+  updated_at: '2026-09-06'
   last_verified: '2026-08-24'
-  last_editorial_review: '2026-08-24'
+  last_editorial_review: '2026-09-06'
 technical:
   operating_systems:
   - browser
@@ -97,3 +108,5 @@ data:
   - mgf
   output_formats:
   - csv_tsv
+  other_input_formats:
+  - Universal Spectrum Identifier (USI) or peak list

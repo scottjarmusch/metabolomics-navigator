@@ -1,0 +1,80 @@
+$schema: ../../schemas/tool.schema.json
+slug: metfrag
+name: MetFrag
+summary: Rank candidate molecular structures by comparing predicted fragments with an experimental MS/MS spectrum.
+description: MetFrag retrieves structures using precursor information and scores their in silico fragments against
+  measured peaks. Optional evidence scores can supplement fragmentation. Use it after extracting spectra when you
+  need a transparent, configurable candidate-ranking workflow.
+links:
+  primary: https://ipb-halle.github.io/MetFrag/
+  homepage: https://ipb-halle.github.io/MetFrag/
+  documentation: https://ipb-halle.github.io/MetFrag/projects/metfragcl/
+resource_types:
+- software_application
+- web_service
+functions:
+  primary: annotation_identification
+  capabilities:
+  - structure_database_search
+  - in_silico_spectra
+platforms:
+- lc_ms
+- direct_infusion_ms
+interfaces:
+- web_app
+- command_line
+- r_package
+access:
+  model: open_source
+  license: LGPL-2.1-or-later
+  notes: Available through the web interface, Java command line and R interface. External databases may have separate
+    access conditions.
+data:
+  input_types:
+  - spectra
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  other_input_formats:
+  - Text peak list (m/z and intensity)
+  - MetFrag parameter file
+  output_formats:
+  - sdf
+  - csv_tsv
+common_uses:
+- Prioritize structures for an unknown MS/MS spectrum.
+- Repeat annotation with an explicitly recorded candidate database and scoring configuration.
+scope:
+  designed_for:
+  - Database-constrained structure annotation from prepared spectra.
+  not_designed_for:
+  - Detecting or aligning chromatographic features from raw files.
+  requirements:
+  - Supply precursor mass or formula, ion/adduct settings, a peak list and mass tolerances; Java is needed for local
+    command-line use.
+  considerations:
+  - A correct structure must be represented in the candidate set. A high rank is supporting evidence, not confirmation
+    with an authentic standard.
+publications:
+- doi: 10.1186/s13321-016-0115-9
+  citation: 'Ruttkies C, Schymanski EL, Wolf S, Hollender J, Neumann S. MetFrag relaunched: incorporating strategies
+    beyond in silico fragmentation. Journal of Cheminformatics 8, 3 (2016).'
+  type: primary
+related_tools:
+- slug: csi-fingerid
+  relationship: alternative
+- slug: mona
+  relationship: complementary
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review on 7 September 2026 against official documentation and the sources listed here. Scope
+    and practical guidance are editorial synthesis; software execution and service availability were not validated.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'

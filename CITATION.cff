@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: If you use the Metabolomics Tool Atlas, please cite the project and the individual tools you rely on.
-title: Metabolomics Tool Atlas
+message: If you use the Metabolomics Navigator, please cite the project and the individual tools you rely on.
+title: Metabolomics Navigator
 type: software
 version: 0.1.0
 date-released: 2026-08-04
 license: MIT
-repository-code: https://github.com/scottjarmusch/metabolomics-tool-atlas
-url: https://scottjarmusch.github.io/metabolomics-tool-atlas/
+repository-code: https://github.com/scottjarmusch/metabolomics-navigator
+url: https://scottjarmusch.github.io/metabolomics-navigator/
 authors:
-- name: Metabolomics Tool Atlas contributors
+- name: Metabolomics Navigator contributors
