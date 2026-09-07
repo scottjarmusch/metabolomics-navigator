@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: patroon
+name: patRoon
+summary: Assemble reproducible non-target screening workflows for environmental mass spectrometry in R.
+description: patRoon connects feature extraction, suspect screening, formula and compound annotation, transformation-product
+  analysis and reporting through a common interface.
+links:
+  primary: https://github.com/rickhelmus/patRoon
+  documentation: https://github.com/rickhelmus/patRoon
+  repository: https://github.com/rickhelmus/patRoon
+resource_types:
+- workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  capabilities:
+  - provenance_tracking
+  - structure_database_search
+platforms:
+- lc_ms
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: GPL-3.0 platform; integrated software and databases retain their own terms.
+data:
+  input_types:
+  - spectra
+  - sample_metadata
+  output_types:
+  - feature_table
+  - compound_list
+  - report
+  input_formats:
+  - mzml
+  output_formats:
+  - csv_tsv
+publications:
+- citation: 'Helmus et al. patRoon: open source software platform for environmental mass spectrometry based
+    non-target screening. Journal of Cheminformatics 13, 1 (2021).'
+  type: primary
+common_uses:
+- Screen environmental samples for suspect compounds.
+- Compare alternative processing algorithms in a scripted workflow.
+scope:
+  designed_for:
+  - Screen environmental samples for suspect compounds.
+  not_designed_for:
+  - Guaranteeing identity or toxicity from a predicted candidate.
+  requirements:
+  - R plus the external programs required by the selected algorithms.
+  considerations:
+  - Record both patRoon and component versions; external annotation services can require separate accounts
+    or licenses.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: openms
+  relationship: complementary
+- slug: metfrag
+  relationship: complementary

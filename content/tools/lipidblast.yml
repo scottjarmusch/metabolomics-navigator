@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidblast
+name: LipidBlast
+summary: Use an in-silico tandem mass-spectral library to support lipid annotation.
+description: LipidBlast provides computer-generated spectra for lipid classes, designed for searching with
+  compatible spectral-library software.
+links:
+  primary: https://fiehnlab.ucdavis.edu/projects/LipidBlast
+  documentation: https://fiehnlab.ucdavis.edu/projects/LipidBlast
+resource_types:
+- spectral_library
+functions:
+  primary: reference_data_search
+  capabilities:
+  - library_matching
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+access:
+  model: free_web_service
+  notes: Downloadable reference library for use in a compatible external search engine. Check the distribution
+    terms of both before reuse.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  input_formats:
+  - mgf
+  output_formats:
+  - other
+  other_output_formats:
+  - Search-engine-dependent candidate matches
+publications:
+- citation: Kind et al. LipidBlast in silico tandem mass spectrometry database for lipid identification. Nature
+    Methods (2013).
+  type: primary
+  doi: 10.1038/nmeth.2551
+common_uses:
+- Compare lipid MS/MS spectra against predicted references.
+- Extend candidate coverage beyond available experimental standards.
+scope:
+  designed_for:
+  - Compare lipid MS/MS spectra against predicted references.
+  not_designed_for:
+  - Treating predicted reference spectra as measurements from authentic standards.
+  requirements:
+  - MS/MS spectra and a search tool that accepts the selected library distribution.
+  considerations:
+  - Class, adduct and fragmentation coverage are finite; match quality does not resolve all lipid structural
+    details.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: ms-dial
+  relationship: complementary
+- slug: lipid-maps
+  relationship: complementary

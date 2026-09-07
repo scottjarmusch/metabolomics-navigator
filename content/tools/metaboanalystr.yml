@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: metaboanalystr
+name: MetaboAnalystR
+summary: Run metabolomics processing, statistics and functional interpretation through R.
+description: MetaboAnalystR provides a programmable counterpart to the MetaboAnalyst ecosystem. Version 4 integrates
+  LC-MS processing, annotation and downstream analysis.
+links:
+  primary: https://github.com/xia-lab/MetaboAnalystR
+  documentation: https://github.com/xia-lab/MetaboAnalystR
+  repository: https://github.com/xia-lab/MetaboAnalystR
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+platforms:
+- platform_independent
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Open-source R framework; external databases and services have separate terms.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - R matrices and module-specific input files
+  other_output_formats:
+  - R analysis objects, tables and figures
+publications:
+- citation: 'Pang et al. MetaboAnalystR 4.0: a unified LC-MS workflow for global metabolomics. Nature Communications
+    15, 3675 (2024).'
+  type: primary
+  doi: 10.1038/s41467-024-48009-6
+common_uses:
+- Reproduce and extend analyses in R scripts.
+- Connect processed metabolite tables to statistical and pathway workflows.
+scope:
+  designed_for:
+  - Reproduce and extend analyses in R scripts.
+  not_designed_for:
+  - Replacing experimental validation of biomarkers or pathway mechanisms.
+  requirements:
+  - R and module-specific dependencies; raw-data workflows need additional computing and reference resources.
+  considerations:
+  - Keep package versions, parameters and database releases with the analysis. Local and web implementations
+    can differ.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metaboanalyst
+  relationship: complementary

@@ -1,0 +1,71 @@
+$schema: ../../schemas/tool.schema.json
+slug: nmrprocflow
+name: NMRProcFlow
+summary: Process and inspect one-dimensional NMR spectra through an interactive interface.
+description: NMRProcFlow supports spectral correction, chemical-shift calibration, alignment and integration
+  for metabolomics workflows that benefit from visual inspection.
+links:
+  primary: https://nmrprocflow.org/
+  documentation: https://nmrprocflow.org/b_introduction
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  capabilities:
+  - peak_detection
+platforms:
+- nmr
+interfaces:
+- web_app
+access:
+  model: open_source
+  notes: Open-source software with online and downloadable deployment options.
+data:
+  input_types:
+  - nmr_spectra
+  output_types:
+  - feature_table
+  - nmr_spectra
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - 1D NMR spectra prepared for the import workflow
+  other_output_formats:
+  - Integrated spectral-region matrices
+publications:
+- citation: 'Jacob et al. NMRProcFlow: a graphical and interactive tool dedicated to 1D spectra processing
+    for NMR-based metabolomics. Metabolomics 13, 36 (2017).'
+  type: primary
+  doi: 10.1007/s11306-017-1178-y
+common_uses:
+- Prepare 1D NMR spectra for fingerprinting.
+- Review and integrate spectral regions before statistical analysis.
+scope:
+  designed_for:
+  - Prepare 1D NMR spectra for fingerprinting.
+  not_designed_for:
+  - General multidimensional NMR structure elucidation.
+  requirements:
+  - Supported 1D NMR spectra and the online or locally installed application.
+  considerations:
+  - Overlapping resonances and variable baselines require expert review; a spectral region may contain several
+    metabolites.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: nmrglue
+  relationship: complementary
+- slug: metaboanalyst
+  relationship: complementary

@@ -5,7 +5,9 @@ An open, community-maintained guide to **metabolomics tools** and **published, t
 **Public website:** [Metabolomics Navigator](https://scottjarmusch.github.io/metabolomics-navigator/).
 The repository and site use the `metabolomics-navigator` name. The repository was renamed from `metabolomics-tool-atlas`; use the website link above for the current GitHub Pages address.
 
-The current beta contains **31 tools and resources** and **13 protocols**. See the [September expansion and sources](docs/expansion-2026-09.md).
+The homepage offers six task categories, each opening a dedicated guide. The searchable catalogue remains available under Tools.
+
+The current beta contains **81 tools and resources** and **13 protocols**. See the [September expansion and sources](docs/expansion-50-2026-09.md).
 
 Metabolomics Navigator is designed around two linked questions:
 

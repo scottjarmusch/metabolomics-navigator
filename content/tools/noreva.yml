@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: noreva
+name: NOREVA
+summary: Normalize metabolomics data and compare the performance of alternative normalization strategies.
+description: NOREVA evaluates normalization using multiple criteria. Version 2 extends the approach to time-course
+  and multi-class study designs.
+links:
+  primary: https://idrblab.org/noreva/
+  documentation: https://idrblab.org/noreva2020/NOREVA-Manual.pdf
+resource_types:
+- software_application
+functions:
+  primary: normalization
+  capabilities:
+  - batch_effect_correction
+platforms:
+- multi_platform
+interfaces:
+- web_app
+- r_package
+access:
+  model: free_web_service
+  notes: Web service and standalone R scripts are described in the official manual; review distribution terms.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Abundance matrices and study-design metadata
+  other_output_formats:
+  - Normalized matrices and evaluation results
+publications:
+- citation: 'Yang et al. NOREVA: enhanced normalization and evaluation of time-course and multi-class metabolomic
+    data. Nucleic Acids Research 48, W436–W448 (2020).'
+  type: primary
+  doi: 10.1093/nar/gkaa258
+common_uses:
+- Compare normalization choices before differential analysis.
+- Assess the sensitivity of results to preprocessing strategy.
+scope:
+  designed_for:
+  - Compare normalization choices before differential analysis.
+  not_designed_for:
+  - Selecting a universally optimal normalization solely from class separation.
+  requirements:
+  - A formatted abundance matrix, sample-group information and any reference or QC data required by the chosen
+    evaluation.
+  considerations:
+  - Avoid selecting methods using held-out outcome labels; assess biological plausibility and analytical QC
+    alongside evaluation scores.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: stattarget
+  relationship: complementary

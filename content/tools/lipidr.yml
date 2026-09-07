@@ -1,0 +1,74 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidr
+name: lipidr
+summary: Analyze lipid abundance tables and test patterns across lipid classes and structural properties.
+description: lipidr supports inspection, normalization, differential analysis and lipid-set enrichment, including
+  class, chain-length and unsaturation patterns.
+links:
+  primary: https://bioconductor.org/packages/lipidr/
+  documentation: https://bioconductor.org/packages/lipidr/
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+  - pathway_enrichment
+platforms:
+- platform_independent
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Bioconductor package; consult its license and the separate terms of imported public datasets.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Numeric matrix or Skyline export
+  other_output_formats:
+  - R lipid-analysis objects, statistics and plots
+publications:
+- citation: 'lipidr developers. lipidr: Data Mining and Analysis of Lipidomics Datasets. Bioconductor package
+    record.'
+  type: other
+  doi: 10.18129/B9.bioc.lipidr
+common_uses:
+- Analyze targeted or untargeted lipidomics tables.
+- Investigate coordinated changes among related lipid species.
+scope:
+  designed_for:
+  - Analyze targeted or untargeted lipidomics tables.
+  not_designed_for:
+  - Inferring positional lipid structures that were not resolved by the measurement.
+  requirements:
+  - A lipid abundance matrix or compatible Skyline export, with sample metadata and parseable lipid names.
+  considerations:
+  - Lipid naming and structural resolution determine the sets available for enrichment; review ambiguous or
+    unparsed entries.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: skyline
+  relationship: complementary
+- slug: lipid-maps
+  relationship: complementary

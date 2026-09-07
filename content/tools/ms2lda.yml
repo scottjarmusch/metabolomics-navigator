@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms2lda
+name: MS2LDA
+summary: Find recurring patterns of fragments and neutral losses across tandem mass spectra.
+description: MS2LDA represents recurring fragmentation patterns as Mass2Motifs, which can support substructure
+  interpretation across a dataset. The project now provides MS2LDA 2.0 and an updated visualization interface.
+links:
+  primary: https://ms2lda.org/
+  documentation: https://ms2lda.org/
+resource_types:
+- software_application
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - substructure_prediction
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- web_app
+access:
+  model: source_available
+  notes: Code and visualization services are public; consult the implementation license and hosted-service
+    limits.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  - statistical_results
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - MS/MS peak lists
+  other_output_formats:
+  - Mass2Motifs, associations and visualizations
+publications:
+- citation: van der Hooft et al. Topic modeling for untargeted substructure exploration in metabolomics. Proceedings
+    of the National Academy of Sciences (2016).
+  type: primary
+common_uses:
+- Discover shared fragmentation motifs.
+- Explore motif occurrences across molecular families.
+scope:
+  designed_for:
+  - Discover shared fragmentation motifs.
+  not_designed_for:
+  - Treating every motif as a uniquely established substructure.
+  requirements:
+  - Processed MS/MS spectra and a workflow compatible with the current MS2LDA implementation.
+  considerations:
+  - Motif interpretation depends on spectral coverage and annotation evidence; the official site flags retirement
+    of its legacy interface.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: gnps
+  relationship: complementary
+- slug: molnetenhancer
+  relationship: complementary

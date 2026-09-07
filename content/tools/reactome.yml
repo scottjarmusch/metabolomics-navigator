@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: reactome
+name: Reactome
+summary: Explore curated metabolic and signaling reactions with literature-linked pathway context.
+description: Reactome organizes molecules and reactions into pathways through expert curation and review. It
+  offers interactive maps, downloads and programmatic services.
+links:
+  primary: https://reactome.org/what-is-reactome
+  documentation: https://reactome.org/what-is-reactome
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Open-source, open-access resource; data and software license details are available on the site.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - pathway_data
+  - compound_list
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Molecular identifiers, pathways or species
+  other_output_formats:
+  - Pathway maps and downloadable reaction data
+publications:
+- citation: Reactome team. What is Reactome? Official database, evidence model and access documentation.
+  type: other
+common_uses:
+- Place annotated metabolites in reaction context.
+- Trace pathway assertions to supporting literature.
+scope:
+  designed_for:
+  - Place annotated metabolites in reaction context.
+  not_designed_for:
+  - Measuring pathway activity or metabolic flux from a database diagram.
+  requirements:
+  - Recognized molecular identifiers and an appropriate species context.
+  considerations:
+  - Check whether a pathway is directly curated or computationally inferred and preserve database-release information.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: wikipathways
+  relationship: complementary

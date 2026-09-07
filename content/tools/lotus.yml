@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: lotus
+name: LOTUS
+summary: Connect natural-product structures, organism occurrences and literature references.
+description: LOTUS harmonizes natural-product occurrence knowledge and makes it available through a dedicated
+  interface and Wikidata, supporting community curation.
+links:
+  primary: https://lotus.naturalproducts.net/
+  documentation: https://lotus.naturalproducts.net/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Open knowledge initiative; preserve provenance and consult the terms of the selected export.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Structures, taxa or occurrence queries
+  other_output_formats:
+  - Structure-organism-reference records
+publications:
+- citation: Rutz et al. The LOTUS initiative for open knowledge management in natural products research. eLife
+    11, e70780 (2022).
+  type: primary
+  doi: 10.7554/eLife.70780
+common_uses:
+- Explore reported natural products for a taxon.
+- Build candidate lists with traceable literature context.
+scope:
+  designed_for:
+  - Explore reported natural products for a taxon.
+  not_designed_for:
+  - Treating database absence as evidence that an organism cannot produce a molecule.
+  requirements:
+  - A chemical structure, taxon or other supported query.
+  considerations:
+  - Coverage reflects published and curated observations; taxonomic assignments and occurrence records need
+    source review.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: coconut
+  relationship: complementary
+- slug: natural-products-atlas
+  relationship: complementary

@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: metabosignal
+name: MetaboSignal
+summary: Explore relationships between genes and metabolites in combined metabolic and signaling networks.
+description: MetaboSignal merges and analyzes KEGG pathway information to study network topology and possible
+  connections to metabolic phenotypes.
+links:
+  primary: https://bioconductor.org/packages/MetaboSignal/
+  documentation: https://bioconductor.org/packages/MetaboSignal/
+resource_types:
+- programming_package
+functions:
+  primary: multiomics_integration
+  capabilities:
+  - network_visualization
+platforms:
+- platform_independent
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Bioconductor software; pathway-data licensing is separate.
+data:
+  input_types:
+  - compound_list
+  - pathway_data
+  output_types:
+  - pathway_data
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - KEGG pathways and gene/metabolite identifiers
+  other_output_formats:
+  - R graphs and network summaries
+publications:
+- citation: 'Rodriguez-Martinez et al. MetaboSignal: a network-based approach for topological analysis of metabotype
+    regulation via metabolic and signaling pathways. Bioinformatics 33, 773–775 (2017).'
+  type: primary
+  doi: 10.1093/bioinformatics/btw697
+common_uses:
+- Overlay metabolite and gene candidates on a shared network.
+- Investigate paths linking signaling genes to metabolites.
+scope:
+  designed_for:
+  - Overlay metabolite and gene candidates on a shared network.
+  not_designed_for:
+  - Interpreting network distance as demonstrated causal regulation.
+  requirements:
+  - R, compatible pathway access and recognized gene/metabolite identifiers.
+  considerations:
+  - Topology depends on the underlying knowledgebase and identifier mapping; KEGG access and reuse terms apply
+    separately.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: reactome
+  relationship: complementary
+- slug: omicspls
+  relationship: complementary

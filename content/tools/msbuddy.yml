@@ -1,0 +1,66 @@
+$schema: ../../schemas/tool.schema.json
+slug: msbuddy
+name: BUDDY / msbuddy
+summary: Generate and rank molecular formula annotations for small-molecule mass-spectrometry queries.
+description: msbuddy implements BUDDY formula analysis using precursor information and optional isotope patterns
+  and MS/MS evidence. It supports both ionization polarities.
+links:
+  primary: https://github.com/Philipbear/msbuddy
+  documentation: https://github.com/Philipbear/msbuddy
+  repository: https://github.com/Philipbear/msbuddy
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  capabilities:
+  - molecular_formula_prediction
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- command_line
+access:
+  model: open_source
+  notes: Apache-2.0 software.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv
+publications:
+- citation: 'Xing et al. BUDDY: molecular formula discovery via bottom-up MS/MS interrogation. Nature Methods
+    (2023).'
+  type: primary
+  doi: 10.1038/s41592-023-01850-x
+common_uses:
+- Annotate formulas for a batch of MGF spectra.
+- Inspect fragment subformula assignments for a proposed precursor formula.
+scope:
+  designed_for:
+  - Annotate formulas for a batch of MGF spectra.
+  not_designed_for:
+  - Distinguishing all structural isomers that share a formula.
+  requirements:
+  - At minimum an m/z value and polarity; accurate precursor and fragmentation data improve the available evidence.
+  considerations:
+  - Element constraints, adduct assumptions and mass tolerances affect candidates. The documented scope targets
+    molecules below 1500 Da.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: sirius
+  relationship: complementary

@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms2deepscore
+name: MS2DeepScore
+summary: Estimate molecular structural similarity from pairs of tandem mass spectra.
+description: MS2DeepScore uses a Siamese neural network to predict fingerprint-based similarity and generate
+  spectral embeddings. Model versions differ in supported ionization modes.
+links:
+  primary: https://github.com/matchms/ms2deepscore
+  documentation: https://github.com/matchms/ms2deepscore
+  repository: https://github.com/matchms/ms2deepscore
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - library_matching
+platforms:
+- lc_ms
+interfaces:
+- python_package
+access:
+  model: open_source
+  notes: Apache-2.0 software; trained models and training datasets may carry additional terms.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - statistical_results
+  input_formats:
+  - mgf
+  - msp
+  output_formats:
+  - other
+  other_output_formats:
+  - Predicted similarity matrices and embeddings
+publications:
+- citation: 'Huber et al. MS2DeepScore: a novel deep learning similarity measure to compare tandem mass spectra.
+    Journal of Cheminformatics 13, 84 (2021).'
+  type: primary
+  doi: 10.1186/s13321-021-00558-4
+common_uses:
+- Prioritize potentially related molecules from MS/MS spectra.
+- Explore spectral collections through learned embeddings.
+scope:
+  designed_for:
+  - Prioritize potentially related molecules from MS/MS spectra.
+  not_designed_for:
+  - Interpreting predicted similarity as an identification probability.
+  requirements:
+  - Python, cleaned spectra and a compatible model checkpoint.
+  considerations:
+  - Use a model appropriate to the ion mode and chemical domain; report model version and preprocessing.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: matchms
+  relationship: complementary

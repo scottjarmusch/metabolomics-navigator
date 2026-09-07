@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: camera
+name: CAMERA
+summary: Group and annotate related LC-MS signals after XCMS peak detection.
+description: CAMERA uses chromatographic relationships and isotope/adduct rules to organize peaks into compound-related
+  groups. This can reduce redundant signals before interpretation.
+links:
+  primary: https://bioconductor.org/packages/CAMERA/
+  documentation: https://bioconductor.org/packages/CAMERA/
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  capabilities:
+  - adduct_isotope_grouping
+platforms:
+- lc_ms
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Open-source software; use the official installation, license and citation guidance for the selected
+    release.
+data:
+  input_types:
+  - feature_table
+  - spectra
+  output_types:
+  - feature_table
+  - compound_list
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - XCMS peak-list objects
+  other_output_formats:
+  - R annotation tables and pseudospectra
+publications:
+- citation: 'Kuhl et al. CAMERA: an integrated strategy for compound spectra extraction and annotation of liquid
+    chromatography/mass spectrometry data sets. Analytical Chemistry 84, 283–289 (2012).'
+  type: primary
+  doi: 10.1021/ac202450g
+common_uses:
+- Annotate isotopes and adducts in XCMS peak lists.
+- Investigate groups of coeluting ion features.
+scope:
+  designed_for:
+  - Annotate isotopes and adducts in XCMS peak lists.
+  not_designed_for:
+  - Confirming a unique chemical structure from an adduct assignment.
+  requirements:
+  - XCMS-generated peak lists and compatible R/Bioconductor versions.
+  considerations:
+  - Coelution and correlation are imperfect evidence; inspect ambiguous groups and ionization-specific rules.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: xcms
+  relationship: complementary
+- slug: ramclustr
+  relationship: complementary

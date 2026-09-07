@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: mist
+name: MIST
+summary: Predict molecular fingerprints from tandem mass spectra and retrieve candidate structures.
+description: Metabolite Inference with Spectrum Transformers encodes chemical formula information associated
+  with fragments. Fingerprint and contrastive models support database-based structure ranking.
+links:
+  primary: https://github.com/samgoldman97/mist
+  documentation: https://github.com/samgoldman97/mist
+  repository: https://github.com/samgoldman97/mist
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  capabilities:
+  - structure_database_search
+  - substructure_prediction
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- command_line
+access:
+  model: source_available
+  notes: Research code and pretrained models are public; check code and dataset licenses separately.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  - statistical_results
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Peak lists and metadata in the quickstart layout
+  other_output_formats:
+  - Fingerprint predictions and retrieval results
+publications:
+- citation: Goldman et al. Annotating metabolite mass spectra with domain-inspired chemical formula transformers.
+    Nature Machine Intelligence (2023).
+  type: primary
+  doi: 10.1038/s42256-023-00708-3
+common_uses:
+- Generate fingerprint predictions for query spectra.
+- Benchmark candidate retrieval with supplied research workflows.
+scope:
+  designed_for:
+  - Generate fingerprint predictions for query spectra.
+  not_designed_for:
+  - Finding an absent database structure through retrieval alone.
+  requirements:
+  - Python, compatible model weights, spectral preprocessing and candidate data in the documented layout.
+  considerations:
+  - The repository notes changes from the published implementation and proprietary data in some benchmarks;
+    pin the code and evaluation set.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: csi-fingerid
+  relationship: complementary

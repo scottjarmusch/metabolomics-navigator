@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: foodb
+name: FooDB
+summary: Explore food constituents, chemical properties and reported dietary sources.
+description: FooDB links compounds with foods and literature-derived information, helping researchers contextualize
+  potential dietary metabolites.
+links:
+  primary: https://foodb.ca/
+  documentation: https://foodb.ca/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: CC BY-NC 4.0; commercial reuse requires permission under the stated terms.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Food, compound or structure queries
+  other_output_formats:
+  - Food-composition and compound records
+publications: []
+common_uses:
+- Investigate possible food sources for a candidate metabolite.
+- Cross-reference food compounds with other chemical databases.
+scope:
+  designed_for:
+  - Investigate possible food sources for a candidate metabolite.
+  not_designed_for:
+  - Assigning a unique dietary source from a compound match.
+  requirements:
+  - A food, compound name or compatible chemical query.
+  considerations:
+  - Food composition depends on processing and biological variation; inspect measurement sources before making
+    exposure inferences.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed. No standalone publication
+    was confirmed in this pass; use the official project citation guidance.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: foodmasst
+  relationship: complementary

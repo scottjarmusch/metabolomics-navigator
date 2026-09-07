@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: spec2vec
+name: Spec2Vec
+summary: Compare tandem mass spectra using embeddings learned from recurring peaks and neutral losses.
+description: Spec2Vec adapts Word2Vec to spectral data, representing spectra through learned relationships
+  between fragment patterns rather than only direct peak overlap.
+links:
+  primary: https://spec2vec.readthedocs.io/en/latest/
+  documentation: https://spec2vec.readthedocs.io/en/latest/
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - library_matching
+platforms:
+- lc_ms
+interfaces:
+- python_package
+access:
+  model: open_source
+  notes: Open-source software; use the official installation, license and citation guidance for the selected
+    release.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - statistical_results
+  input_formats:
+  - mgf
+  output_formats:
+  - other
+  other_output_formats:
+  - Spectral embeddings and similarity scores
+publications:
+- citation: 'Huber et al. Spec2Vec: Improved mass spectral similarity scoring through learning of structural
+    relationships. PLOS Computational Biology 17, e1008724 (2021).'
+  type: primary
+  doi: 10.1371/journal.pcbi.1008724
+common_uses:
+- Rank related spectra for exploratory analysis.
+- Compare embedding-based and conventional spectral similarity.
+scope:
+  designed_for:
+  - Rank related spectra for exploratory analysis.
+  not_designed_for:
+  - Assigning a unique structure from the embedding score alone.
+  requirements:
+  - Python, processed spectra and a pretrained or locally trained Word2Vec model.
+  considerations:
+  - 'Model coverage matters: peaks absent from training can weaken a score. Record the model and missing-peak
+    threshold.'
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: matchms
+  relationship: complementary

@@ -1,0 +1,71 @@
+$schema: ../../schemas/tool.schema.json
+slug: hmdb
+name: HMDB
+summary: Find chemical, biological and spectral reference information for human metabolites.
+description: The Human Metabolome Database links compound records to biological context and experimental or
+  predicted analytical information. Evidence types vary across entries.
+links:
+  primary: https://hmdb.ca/
+  documentation: https://hmdb.ca/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Publicly accessible database; check HMDB download and commercial-use terms before bulk reuse.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Names, identifiers, structures or spectral queries
+  other_output_formats:
+  - Metabolite records and selected downloads
+publications:
+- citation: 'Wishart et al. HMDB 5.0: the Human Metabolome Database for 2022. Nucleic Acids Research 50, D622–D631
+    (2022).'
+  type: primary
+common_uses:
+- Look up synonyms and structures for human metabolites.
+- Review available spectral and biological evidence for an annotation.
+scope:
+  designed_for:
+  - Look up synonyms and structures for human metabolites.
+  not_designed_for:
+  - Assuming every listed compound has been experimentally measured in the study population.
+  requirements:
+  - A compound name, identifier, structure or compatible analytical query.
+  considerations:
+  - Distinguish measured information from predictions and expected metabolites; inspect the source supporting
+    each field.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: pubchem
+  relationship: complementary
+- slug: chebi
+  relationship: complementary

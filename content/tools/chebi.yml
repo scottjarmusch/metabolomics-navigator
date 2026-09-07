@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: chebi
+name: ChEBI
+summary: Look up curated chemical entities, names and ontology relationships.
+description: ChEBI connects chemical structures to classes and biological roles through a maintained ontology,
+  supporting consistent naming and interoperability.
+links:
+  primary: https://www.ebi.ac.uk/chebi/
+  documentation: https://www.ebi.ac.uk/chebi/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Open-access EBI database; use the resource policies for redistribution.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - sdf
+  - other
+  other_input_formats:
+  - Text, formula or structure queries
+  other_output_formats:
+  - SDF and ontology downloads
+publications:
+- citation: 'ChEBI team. Chemical Entities of Biological Interest: database and ontology documentation. EMBL-EBI.'
+  type: other
+common_uses:
+- Map metabolite names to stable chemical identifiers.
+- Group compounds by chemical class or biological role.
+scope:
+  designed_for:
+  - Map metabolite names to stable chemical identifiers.
+  not_designed_for:
+  - Direct identification of a measured mass-spectrometry feature.
+  requirements:
+  - A chemical name, formula, identifier or structure query.
+  considerations:
+  - An ontology role describes curated knowledge, not evidence that a function occurs in the current experiment.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: pubchem
+  relationship: complementary
+- slug: reactome
+  relationship: complementary

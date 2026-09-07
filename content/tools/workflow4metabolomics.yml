@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: workflow4metabolomics
+name: Workflow4Metabolomics
+summary: Create and share metabolomics processing and analysis workflows in a Galaxy environment.
+description: Workflow4Metabolomics combines preprocessing, QC, normalization, statistics and annotation tools
+  for MS and NMR through a browser-based workflow system.
+links:
+  primary: https://workflow4metabolomics.org/
+  documentation: https://workflow4metabolomics.org/
+resource_types:
+- workflow_platform
+functions:
+  primary: workflow_reproducibility
+  capabilities:
+  - provenance_tracking
+platforms:
+- multi_platform
+interfaces:
+- web_app
+- galaxy
+access:
+  model: free_web_service
+  notes: Free account on the public instance; individual tools and datasets retain their licenses.
+data:
+  input_types:
+  - spectra
+  - nmr_spectra
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - compound_list
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Files accepted by the chosen Galaxy tools
+  other_output_formats:
+  - Galaxy datasets, histories and workflows
+publications:
+- citation: 'Delporte et al. Workflow4Metabolomics (W4M): A User-Friendly Metabolomics Platform for Analysis
+    of Mass Spectrometry and Nuclear Magnetic Resonance Data. Current Protocols 5, e70095 (2025).'
+  type: primary
+  doi: 10.1002/cpz1.70095
+common_uses:
+- Run a documented workflow without writing every analysis step.
+- Share analysis histories and parameters with collaborators.
+scope:
+  designed_for:
+  - Run a documented workflow without writing every analysis step.
+  not_designed_for:
+  - Making an analysis valid merely because the workflow is reproducible.
+  requirements:
+  - An account on a suitable Galaxy instance and data compatible with the chosen tools.
+  considerations:
+  - Record tool versions and histories; public-server quotas, installed tools and job availability vary by
+    instance.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: xcms
+  relationship: complementary
+- slug: camera
+  relationship: complementary

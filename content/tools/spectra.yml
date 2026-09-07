@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: spectra
+name: Spectra
+summary: Store, filter, process and compare mass spectra through a common R interface.
+description: Spectra separates analysis methods from storage backends, supporting both in-memory processing
+  and approaches suited to larger collections.
+links:
+  primary: https://bioconductor.org/packages/Spectra/
+  documentation: https://bioconductor.org/packages/Spectra/
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - ms2_processing
+platforms:
+- multi_platform
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Open-source software; use the official installation, license and citation guidance for the selected
+    release.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Spectra objects and backend-supported files
+  other_output_formats:
+  - Spectra objects and backend-supported exports
+publications:
+- citation: 'Spectra developers. Spectra: Spectra Infrastructure for Mass Spectrometry Data. Bioconductor package
+    record.'
+  type: other
+  doi: 10.18129/B9.bioc.Spectra
+common_uses:
+- Build reproducible spectral processing code.
+- Use compatible backends to work with large spectral datasets.
+scope:
+  designed_for:
+  - Build reproducible spectral processing code.
+  not_designed_for:
+  - Automatic compound identification without matching methods and reference data.
+  requirements:
+  - R/Bioconductor and a storage backend appropriate for the input data.
+  considerations:
+  - Backend capabilities differ; confirm which operations and export routes the selected backend supports.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metaboannotation
+  relationship: complementary
+- slug: msnbase
+  relationship: complementary

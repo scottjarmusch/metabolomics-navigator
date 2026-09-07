@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: tidymass
+name: TidyMass
+summary: Connect LC-MS processing, quality control, annotation and interpretation through an R package ecosystem.
+description: TidyMass uses shared objects and conventions to connect analysis stages while retaining data and
+  processing context. Individual modules can also be used separately.
+links:
+  primary: https://www.tidymass.org/
+  documentation: https://www.tidymass.org/
+resource_types:
+- workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  capabilities:
+  - provenance_tracking
+platforms:
+- lc_ms
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Open R ecosystem; inspect component and reference-data licenses.
+data:
+  input_types:
+  - spectra
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - compound_list
+  - statistical_results
+  - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - LC-MS files or TidyMass data objects
+  other_output_formats:
+  - TidyMass analysis objects and reports
+publications:
+- citation: Shen et al. TidyMass an object-oriented reproducible analysis framework for LC-MS data. Nature
+    Communications 13, 4365 (2022).
+  type: primary
+  doi: 10.1038/s41467-022-32155-w
+common_uses:
+- Build a consistent workflow from LC-MS data to interpretation.
+- Track processing across coordinated R packages.
+scope:
+  designed_for:
+  - Build a consistent workflow from LC-MS data to interpretation.
+  not_designed_for:
+  - Eliminating the need to evaluate preprocessing choices and annotation evidence.
+  requirements:
+  - R, compatible TidyMass package versions and module-specific data resources.
+  considerations:
+  - The ecosystem includes older and newer package documentation; keep a consistent set of versions and record
+    database snapshots.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: metid
+  relationship: complementary

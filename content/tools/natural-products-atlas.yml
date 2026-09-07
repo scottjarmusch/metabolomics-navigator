@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: natural-products-atlas
+name: Natural Products Atlas
+summary: Explore structures and literature for bacterial and fungal natural products.
+description: The Natural Products Atlas links microbial natural products to origins and references, with tools
+  for structural and chemical-space exploration.
+links:
+  primary: https://www.npatlas.org/
+  documentation: https://www.npatlas.org/
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - structure_database_search
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Database content is CC BY-NC 4.0; consult terms for commercial reuse.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - compound_list
+  - molecular_structures
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Names, molecular properties or structures
+  other_output_formats:
+  - Structures, origin records and references
+publications:
+- citation: 'Poynton et al. The Natural Products Atlas 3.0: Extending the Database of Microbially-Derived Natural
+    Products. Nucleic Acids Research (2024 online).'
+  type: primary
+  doi: 10.1093/nar/gkae1093
+common_uses:
+- Find related microbial natural-product scaffolds.
+- Trace a reported compound back to its isolation literature.
+scope:
+  designed_for:
+  - Find related microbial natural-product scaffolds.
+  not_designed_for:
+  - A complete reference for all plant, animal or synthetic compounds.
+  requirements:
+  - A compound name, molecular property or structure-based search.
+  considerations:
+  - Reported origin is contextual evidence; it does not establish that a compound in a new sample came from
+    the same organism.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
+    official sources; software execution and developer verification were not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-07'
+  updated_at: '2026-09-07'
+  last_editorial_review: '2026-09-07'
+related_tools:
+- slug: lotus
+  relationship: complementary
+- slug: coconut
+  relationship: complementary
