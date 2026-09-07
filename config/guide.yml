@@ -1,29 +1,57 @@
 - id: data-processing
-  title: Processing raw data
-  introduction: Raw mass-spectrometry files need to be processed before many downstream analyses can begin. Typical
-    steps include detecting chromatographic peaks, aligning them across samples, and assembling a table of feature
-    intensities. A feature is a measured signal; it is not necessarily an identified metabolite.
-  selection: Check your acquisition mode and file format, the quality-control steps available, and whether you prefer
-    a graphical or scripted workflow.
+  title: Processing analytical data
+  introduction: 'MS and NMR measurements need processing before comparison: detect signals, correct or align
+    spectra, and assemble quantitative tables. A feature or spectral region is not necessarily a single identified
+    metabolite.'
+  selection: Check your acquisition mode and file format, the quality-control steps available, and whether
+    you prefer a graphical or scripted workflow.
   slugs:
   - mzmine
   - ms-dial
   - xcms
   - openms
+  - msconvert
+  - asari
+  - patroon
+  - openchrom
+  - ipo
+  - camera
+  - ramclustr
+  - nmrglue
+  - nmrprocflow
+  - smartpeak
+  - peakbot
+  - msnbase
+  - spectra
+  - skyline
   short_title: Data processing
-  caption: Turn raw files into aligned features.
+  caption: Process spectra, extract features and quantify targets.
   tool_labels:
     mzmine: Multimodal feature processing
     ms-dial: Deconvolution & lipid annotation
     xcms: Scripted preprocessing in R
     openms: Custom processing workflows
+    msconvert: Convert instrument files
+    asari: High-resolution feature extraction
+    patroon: Environmental non-target workflows
+    openchrom: Graphical chromatogram analysis
+    ipo: Tune XCMS parameters
+    camera: Group isotopes and adducts
+    ramclustr: Cluster compound-related features
+    nmrglue: Scripted NMR processing
+    nmrprocflow: Interactive 1D NMR processing
+    smartpeak: Targeted peak integration
+    peakbot: Learned chromatographic peak detection
+    msnbase: R infrastructure for MS data
+    spectra: Scalable spectra objects in R
+    skyline: Targeted small-molecule quantification
 - id: annotation
   title: Annotating molecules
-  introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical
-    classes. These are different levels of information. A class prediction can be useful even when an exact structure
-    remains unknown; a ranked structure candidate still needs supporting evidence.
-  selection: 'Match the tool to the question you can answer with your data: formula, chemical class, database candidate,
-    or a possible modification of a known molecule.'
+  introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures,
+    or chemical classes. These are different levels of information. A class prediction can be useful even when
+    an exact structure remains unknown; a ranked structure candidate still needs supporting evidence.
+  selection: 'Match the tool to the question you can answer with your data: formula, chemical class, database
+    candidate, or a possible modification of a known molecule.'
   slugs:
   - sirius
   - csi-fingerid
@@ -32,6 +60,11 @@
   - modifinder
   - metfrag
   - ms-finder
+  - cfm-id
+  - metid
+  - mist
+  - msbuddy
+  - metaboannotation
   short_title: Molecular annotation
   caption: Explore formulas, structures, and chemical classes.
   tool_labels:
@@ -42,26 +75,41 @@
     modifinder: Modification-site localization
     metfrag: Fragment-based structure ranking
     ms-finder: Formula & structure interpretation
+    cfm-id: Predict spectra and rank structures
+    metid: Match mass, retention and MS/MS
+    mist: Fingerprint prediction from MS/MS
+    msbuddy: Molecular formula candidates
+    metaboannotation: Reproducible matching in R
 - id: spectral-analysis
   title: Exploring spectral relationships
   introduction: Tandem mass spectra contain fragmentation information that can help investigate related molecules.
-    Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified
-    pattern. These approaches help prioritize signals for closer inspection.
-  selection: Decide whether you need to explore relationships across a dataset or test a specific spectral pattern.
-    Similarity or a query match alone does not establish a complete structure.
+    Molecular networking organizes spectra by similarity, while a query language can find spectra containing
+    a specified pattern. These approaches help prioritize signals for closer inspection.
+  selection: Decide whether you need to explore relationships across a dataset or test a specific spectral
+    pattern. Similarity or a query match alone does not establish a complete structure.
   slugs:
   - gnps
   - massql
+  - matchms
+  - spec2vec
+  - ms2deepscore
+  - ms2lda
+  - molnetenhancer
   short_title: Spectral analysis
   caption: Find relationships and patterns in spectra.
   tool_labels:
     gnps: Molecular networking & libraries
     massql: Chemical-pattern queries
+    matchms: Clean and compare MS/MS spectra
+    spec2vec: Learned spectral similarity
+    ms2deepscore: Predict structural similarity
+    ms2lda: Discover recurring substructure motifs
+    molnetenhancer: Combine network annotation evidence
 - id: public-data
   title: Finding context in public data
-  introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been observed.
-    Some resources begin with a query spectrum; others use a structure or sample metadata. Domain-specific collections
-    add context such as microbial taxonomy, plants, or foods.
+  introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been
+    observed. Some resources begin with a query spectrum; others use a structure or sample metadata. Domain-specific
+    collections add context such as microbial taxonomy, plants, or foods.
   selection: Check what is indexed and inspect the original study metadata. A match supports further investigation;
     it does not by itself establish biological origin or absence from unmeasured samples.
   slugs:
@@ -73,6 +121,8 @@
   - foodmasst
   - microbiomemasst
   - redu
+  - metabolomexchange
+  - metaspace
   short_title: Public-data search
   caption: Find where molecules have been observed.
   tool_labels:
@@ -84,13 +134,15 @@
     foodmasst: Food & beverage context
     microbiomemasst: Microbiome study context
     redu: Find datasets by metadata
+    metabolomexchange: Discover public study releases
+    metaspace: Explore spatial metabolomics data
 - id: reference-resources
   title: Sharing data and reference knowledge
   introduction: Repositories preserve experimental files, reference spectra support annotation, and knowledgebases
     connect molecular evidence to its reported context. These resources serve different purposes, but all depend
     on clear metadata and traceable evidence.
-  selection: Distinguish depositing a dataset from preparing a reference spectrum or contributing a biological annotation.
-    Keep the source files, identifiers, and supporting evidence connected.
+  selection: Distinguish depositing a dataset from preparing a reference spectrum or contributing a biological
+    annotation. Keep the source files, identifiers, and supporting evidence connected.
   slugs:
   - massive
   - msms-chooser
@@ -99,6 +151,18 @@
   - mona
   - metabolights
   - metabolomics-workbench
+  - hmdb
+  - pubchem
+  - chebi
+  - reactome
+  - wikipathways
+  - lipid-maps
+  - lipidblast
+  - foodb
+  - natural-products-atlas
+  - lotus
+  - coconut
+  - refmet
   short_title: Data & references
   caption: Preserve data and connect reference evidence.
   tool_labels:
@@ -109,20 +173,56 @@
     mona: Aggregated spectral libraries
     metabolights: Studies & structured metadata
     metabolomics-workbench: Study repository & data access
+    hmdb: Human metabolite reference
+    pubchem: Chemical identities and cross-references
+    chebi: Chemical ontology and identifiers
+    reactome: Curated biological pathways
+    wikipathways: Community-curated pathway maps
+    lipid-maps: Lipid structures and nomenclature
+    lipidblast: Predicted lipid MS/MS library
+    foodb: Food compounds and dietary sources
+    natural-products-atlas: Microbial natural-product structures
+    lotus: Natural products and organism links
+    coconut: Aggregated natural-product reference
+    refmet: Standardize metabolite names
 - id: interpretation
   title: Inspecting and interpreting results
-  introduction: Once data have been processed, researchers need to inspect signals, analyze variation across samples,
-    and interpret results in biological context. An interactive viewer, a statistical platform, and a collection
-    of downstream applications provide different kinds of support.
+  introduction: Once data have been processed, researchers need to inspect signals, analyze variation across
+    samples, and interpret results in biological context. An interactive viewer, a statistical platform, and
+    a collection of downstream applications provide different kinds of support.
   selection: Start with your study design and the form of your input data. Preserve sample identifiers, preprocessing
     decisions, and analysis settings when moving between tools.
   slugs:
   - gnps-dashboard
   - metaboanalyst
   - metaboapps
+  - metaboanalystr
+  - mummichog
+  - metabosignal
+  - metaboshiny
+  - noreva
+  - stattarget
+  - metabodiff
+  - lipidr
+  - workflow4metabolomics
+  - tidymass
+  - omicspls
+  - ropls
   short_title: Interpretation
   caption: Inspect signals and interpret study results.
   tool_labels:
     gnps-dashboard: Interactive raw-data inspection
     metaboanalyst: Statistics & pathway analysis
     metaboapps: Downstream analysis apps
+    metaboanalystr: Scripted metabolomics analysis
+    mummichog: Pathway hypotheses from features
+    metabosignal: Connect metabolic and signaling networks
+    metaboshiny: Interactive feature-table exploration
+    noreva: Compare normalization strategies
+    stattarget: QC correction and statistics
+    metabodiff: Differential metabolites and correlations
+    lipidr: Lipid statistics and set enrichment
+    workflow4metabolomics: Shareable Galaxy workflows
+    tidymass: Connected LC-MS workflows in R
+    omicspls: Integrate paired omics datasets
+    ropls: PCA, PLS and OPLS models
