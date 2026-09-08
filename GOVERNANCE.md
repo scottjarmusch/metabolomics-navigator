@@ -62,3 +62,13 @@ The earlier `sample_contexts` field is retired. New records should use the three
 ## Corrections and conflicts
 
 Corrections are accepted through update forms or pull requests. Editors may request citations, neutral wording, or clarification before merging. Conflicts of interest should be disclosed when a submitter is a developer, maintainer, author, vendor, or otherwise directly associated with an entry.
+
+## Publication selection
+
+Tool `publications` contain only papers that introduce the named resource, substantially update it, or describe a method/protocol implemented within it. A shared author, compatible export, mention, or use in a biological study is insufficient. Distinct named components belong on their own tool/protocol pages, linked from the parent. Platform papers may be used when the official citation guidance explicitly covers the component; explain that exception in `note`.
+
+Exclude application-only studies, general reviews and papers introducing other resources from the core bibliography. Application-specific extensions can be evaluated as separate protocol candidates rather than automatically expanding a tool bibliography. Independent benchmarks can inform a qualified comparison, but are not core tool publications. Preserve original credit through links to the actual resource.
+
+Put package records and documentation in `resource_citations`, labelled `software` or `documentation`; a package DOI does not make the record a research article. Keep preprints visibly labelled. An empty scholarly bibliography is acceptable when no dedicated paper is established; explain the citation guidance without inventing a substitute. This is a selected bibliography, not a claim of exhaustive coverage. Protocol sources must introduce the transferable strategy described on that page.
+
+Editors must verify title, DOI, resource identity and the paper's actual contribution before accepting it. Schema validation checks structure and permitted types; it cannot determine scientific relevance.
