@@ -496,8 +496,6 @@
         "direct_infusion_ms",
         "maldi_ms",
         "imaging_ms",
-        "nmr",
-        "infrared_raman",
         "multi_platform",
         "platform_independent"
       ]
