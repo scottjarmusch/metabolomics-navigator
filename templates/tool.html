@@ -15,7 +15,27 @@
 {% if tool.scope %}<section id="scope"><h2>Scope and considerations</h2><div class="scope-grid">{% if tool.scope.designed_for %}<div><h3>Designed for</h3><ul>{% for item in tool.scope.designed_for %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}{% if tool.scope.not_designed_for %}<div><h3>Not designed for</h3><ul>{% for item in tool.scope.not_designed_for %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}{% if tool.scope.requirements %}<div><h3>Important requirements</h3><ul>{% for item in tool.scope.requirements %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}{% if tool.scope.considerations %}<div><h3>Considerations</h3><ul>{% for item in tool.scope.considerations %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}</div></section>{% endif %}
 <section id="resources"><h2>Access and documentation</h2><div class="link-list">{% for label,href in tool.display_links %}<a href="{{ href }}"><span>{{ label }}</span><span aria-hidden="true">↗</span></a>{% endfor %}</div>{% if tool.access.notes %}<p class="note">{{ tool.access.notes }}</p>{% endif %}{% if tool.access.license %}<p><strong>License:</strong> {{ tool.access.license }}</p>{% endif %}</section>
 {% if protocols_using %}<section class="protocol-links"><p class="eyebrow">From tool to strategy</p><h2>Protocols using {{ tool.name }}</h2><div class="related-grid">{% for protocol in protocols_using %}<a href="{{ url('protocols/' + protocol.slug + '/') }}"><strong>{{ protocol.name }}</strong><span>{{ protocol.objective_label }} · {{ protocol.publication.journal or protocol.publication.year }}</span></a>{% endfor %}</div></section>{% endif %}
-<section id="evidence"><h2>Evidence and review</h2>{% if tool.provenance.notes %}<p class="review-note">{{ tool.provenance.notes }}</p>{% endif %}{% if tool.publications %}<h3>Publications</h3><ol class="publication-list">{% for pub in tool.publications %}<li>{% if "preprint" in (pub.citation or "")|lower %}<span class="badge preprint-badge">Preprint · not peer reviewed</span> {% endif %}{% if pub.citation %}{{ pub.citation }}{% else %}{{ pub.type|title }} publication{% endif %}{% if pub.doi %} <a href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a>{% endif %}{% if pub.pmid %} <a href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/">PMID {{ pub.pmid }}</a>{% endif %}</li>{% endfor %}</ol>{% else %}<p class="note">Use the official documentation and the method-specific citation guidance above.</p>{% endif %}</section>
+<section id="evidence">
+  <h2>Evidence and review</h2>
+  {% if tool.provenance.notes %}<p class="review-note">{{ tool.provenance.notes }}</p>{% endif %}
+  {% if tool.publications %}
+  <h3>Core publications</h3>
+  <p class="note">Resource papers, direct updates and tool-specific methods. <a href="{{ url('governance/') }}#publication-selection">Selection policy</a>.</p>
+  <ol class="publication-list">
+    {% for pub in tool.publications %}
+    <li>{% if "preprint" in (pub.citation or "")|lower %}<span class="badge preprint-badge">Preprint · not peer reviewed</span> {% endif %}{{ pub.citation or (pub.type|title ~ ' publication') }}{% if pub.doi %} <a href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a>{% endif %}{% if pub.pmid %} <a href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/">PMID {{ pub.pmid }}</a>{% endif %}{% if pub.note %}<p class="note">{{ pub.note }}</p>{% endif %}</li>
+    {% endfor %}
+  </ol>
+  {% else %}<p class="note">No dedicated scholarly publication is listed. Follow the official documentation and resource-specific citation guidance.</p>{% endif %}
+  {% if tool.resource_citations %}
+  <h3>Software and documentation citations</h3>
+  <ul class="publication-list">
+    {% for source in tool.resource_citations %}
+    <li>{{ source.citation }}{% if source.doi %} <a href="https://doi.org/{{ source.doi }}">doi:{{ source.doi }}</a>{% endif %}{% if source.url %} <a href="{{ source.url }}">{{ source.type|title }}</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
 {% if related_tools %}<section><h2>Related tools</h2><div class="related-grid">{% for related in related_tools %}<a href="{{ url('tools/' + related.tool.slug + '/') }}"><strong>{{ related.tool.name }}</strong><span><b>{{ related.relationship_label }}</b>{% if related.note %} · {{ related.note }}{% else %} · {{ related.tool.summary }}{% endif %}</span></a>{% endfor %}</div></section>{% endif %}
 </article></div>
 {% endblock %}
