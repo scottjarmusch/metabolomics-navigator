@@ -120,8 +120,6 @@ body:
     - Direct-infusion MS
     - MALDI-MS
     - Imaging mass spectrometry
-    - NMR
-    - Infrared or Raman spectroscopy
     - Multiple analytical platforms
     - Platform-independent
   validations:
