@@ -18,7 +18,6 @@ functions:
   - provenance_tracking
 platforms:
 - multi_platform
-- nmr
 interfaces:
 - web_app
 access:
@@ -47,7 +46,7 @@ common_uses:
 - Find studies by organism or analytical technology for reanalysis.
 scope:
   designed_for:
-  - Structured sharing of complete metabolomics experiments, including MS and NMR.
+  - Structured sharing of complete metabolomics experiments, with this entry focused on MS-based studies.
   not_designed_for:
   - Automatic harmonization of measurements across unrelated studies.
   requirements:
