@@ -25,7 +25,7 @@ def gaps(record):
     if record.get('publications'):
         if any(not pub.get('citation') for pub in record['publications']):
             missing.append('human-readable publication citations')
-    elif not any(term in record.get('provenance', {}).get('notes', '').lower() for term in ('no dedicated', 'no single', 'no standalone')):
+    elif not record.get('resource_citations') and not any(term in record.get('provenance', {}).get('notes', '').lower() for term in ('no dedicated', 'no single', 'no standalone')):
         missing.append('publication or explicit citation exception')
     return missing
 
