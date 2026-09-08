@@ -1,13 +1,13 @@
 # Metabolomics Navigator
 
-An open, community-maintained guide to **metabolomics tools** and **published, transferable protocols**, with practical scope, data requirements, documentation and scientific sources.
+An open, community-maintained guide to **MS-based metabolomics tools** and **published, transferable protocols**, with practical scope, data requirements, documentation and scientific sources.
 
 **Public website:** [Metabolomics Navigator](https://scottjarmusch.github.io/metabolomics-navigator/).
 The repository and site use the `metabolomics-navigator` name. The repository was renamed from `metabolomics-tool-atlas`; use the website link above for the current GitHub Pages address.
 
 The homepage offers six task categories, each opening a dedicated guide. The searchable catalogue remains available under Tools.
 
-The current beta contains **81 tools and resources** and **13 protocols**. See the [September expansion and sources](docs/expansion-50-2026-09.md).
+The current beta contains **79 tools and resources** and **13 protocols**. See the [September expansion and sources](docs/expansion-50-2026-09.md).
 
 Metabolomics Navigator is designed around two linked questions:
 
@@ -60,3 +60,7 @@ The v5.3 information model supports tool aliases and an automatically inverted r
 ## Tool editorial baseline
 
 See [the tool editorial model](docs/tool-editorial-model.md) for the completion checklist, source trail, representative entries and validation commands.
+
+## Current analytical scope
+
+The Navigator currently covers mass-spectrometry-based metabolomics. NMR-only and other non-MS-only resources are outside scope. Shared databases, statistical tools and platforms remain eligible where they support MS metabolomics; entries describe their relevant use. The September expansion and publication-audit documents are historical snapshots. See [the MS scope update](docs/ms-scope-2026-09-08.md).

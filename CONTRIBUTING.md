@@ -4,6 +4,8 @@ Metabolomics Navigator is designed so that researchers can contribute without kn
 
 ## Submit a tool
 
+The current scope is **MS-based metabolomics**. NMR-only and other non-MS-only tools and protocols are outside scope. Shared reference databases, statistical tools and platforms remain eligible when they support MS metabolomics; entries should describe that use. A platform-independent label alone does not establish eligibility.
+
 Use the **Submit a metabolomics tool** issue form. A minimal submission needs a name, link, neutral description, resource type, primary function, analytical platform, interface, access model, and submitter relationship. Aliases and alternative spellings are optional but encouraged for discoverability and duplicate detection.
 
 ## Submit a protocol
