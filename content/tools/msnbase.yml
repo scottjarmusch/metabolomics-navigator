@@ -37,9 +37,15 @@ data:
   other_output_formats:
   - MSnbase spectral and quantitative objects
 publications:
+- doi: 10.1093/bioinformatics/btr645
+  citation: Gatto L, Lilley KS. MSnbase-an R/Bioconductor package for isobaric tagged mass spectrometry data
+    visualization, processing and quantitation. Bioinformatics 28, 288-289 (2012).
+  type: primary
+  note: Foundational MSnbase software paper; the original publication focuses on isobaric tagged mass spectrometry.
+resource_citations:
 - citation: 'MSnbase developers. MSnbase: Base Functions and Classes for Mass Spectrometry and Proteomics.
     Bioconductor package record.'
-  type: other
+  type: software
   doi: 10.18129/B9.bioc.MSnbase
 common_uses:
 - Inspect and manipulate spectra programmatically.
@@ -63,7 +69,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: spectra

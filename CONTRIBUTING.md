@@ -30,4 +30,8 @@ Describe documented functionality and scope. Avoid unsupported statements such a
 
 ## Writing complete entries
 
-Follow [the editorial model](docs/tool-editorial-model.md) for coverage, source selection, and verification. The homepage review is organized in `config/guide.yml`; when adding a tool, consider where it belongs in that guide as well as the searchable catalogue.
+Follow [the editorial model](docs/tool-editorial-model.md) for coverage, source selection, and verification. The task guide is organized in `config/guide.yml`; when adding a tool, consider where it belongs in that guide as well as the searchable catalogue.
+
+## Publication scope
+
+Include only the resource introduction, substantial updates, or directly implemented methods. Do not list papers merely because they use a tool, or credit a tool with a separate resource’s paper. Editors separate software/documentation citations from scholarly publications. See [publication selection](GOVERNANCE.md#publication-selection) and the [September 2026 audit](docs/publication-audit-2026-09-08.md).

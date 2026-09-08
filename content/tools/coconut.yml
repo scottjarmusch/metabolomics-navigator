@@ -37,8 +37,8 @@ data:
   other_output_formats:
   - Structure records and database exports
 publications:
-- citation: 'Chandrasekhar et al. COCONUT 2.0: a comprehensive overhaul and curation of the collection of open
-    natural products database. Nucleic Acids Research (2024 online).'
+- citation: 'Chandrasekhar V, Rajan K, Kanakam SRS, et al. COCONUT 2.0: a comprehensive overhaul and curation
+    of the collection of open natural products database. Nucleic Acids Res 53, D634-D643 (2025).'
   type: primary
   doi: 10.1093/nar/gkae1063
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: lotus

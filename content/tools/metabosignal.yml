@@ -36,8 +36,8 @@ data:
   other_output_formats:
   - R graphs and network summaries
 publications:
-- citation: 'Rodriguez-Martinez et al. MetaboSignal: a network-based approach for topological analysis of metabotype
-    regulation via metabolic and signaling pathways. Bioinformatics 33, 773–775 (2017).'
+- citation: 'Rodriguez-Martinez A, Ayala R, Posma JM, et al. MetaboSignal: a network-based approach for topological
+    analysis of metabotype regulation via metabolic and signaling pathways. Bioinformatics 33, 773-775 (2017).'
   type: primary
   doi: 10.1093/bioinformatics/btw697
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: reactome

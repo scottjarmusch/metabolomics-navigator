@@ -34,8 +34,8 @@ data:
   output_formats:
   - msp
 publications:
-- citation: 'Broeckling et al. RAMClust: a novel feature clustering method enables spectral-matching-based
-    annotation for metabolomics data. Analytical Chemistry 86, 6812–6817 (2014).'
+- citation: 'Broeckling CD, Afsar FA, Neumann S, et al. RAMClust: a novel feature clustering method enables
+    spectral-matching-based annotation for metabolomics data. Anal Chem 86, 6812-6817 (2014).'
   type: primary
   doi: 10.1021/ac501530d
 common_uses:
@@ -60,7 +60,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: camera

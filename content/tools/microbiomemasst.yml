@@ -39,8 +39,8 @@ access:
     a web service does not establish the license of its code or reference data.
 publications:
 - doi: 10.64898/2026.02.04.703849
-  citation: Charron-Lamoureux V, Xing S, Patan A, et al. A searchable metadata network graph for microbiome metabolomics.
-    bioRxiv (2026), preprint.
+  citation: Charron-Lamoureux V, Xing S, Patan A, et al. A searchable metadata network graph for microbiome
+    metabolomics. bioRxiv (2026). Preprint; not peer reviewed.
   type: primary
 common_uses:
 - Map query spectra across harmonized microbiome metabolomics datasets and metadata contexts.
@@ -90,7 +90,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

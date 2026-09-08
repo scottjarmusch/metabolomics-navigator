@@ -35,9 +35,10 @@ data:
   output_formats:
   - csv_tsv
 publications:
-- citation: 'Helmus et al. patRoon: open source software platform for environmental mass spectrometry based
-    non-target screening. Journal of Cheminformatics 13, 1 (2021).'
+- citation: 'Helmus R, Ter Laak TL, van Wezel AP, et al. patRoon: open source software platform for environmental
+    mass spectrometry based non-target screening. J Cheminform 13, 1 (2021).'
   type: primary
+  doi: 10.1186/s13321-020-00477-w
 common_uses:
 - Screen environmental samples for suspect compounds.
 - Compare alternative processing algorithms in a scripted workflow.
@@ -61,7 +62,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: openms

@@ -37,8 +37,8 @@ data:
   other_output_formats:
   - R compound-annotation objects
 publications:
-- citation: 'Shen et al. metID: a R package for automatable compound annotation for LC-MS-based data. Bioinformatics
-    (2021).'
+- citation: 'Shen X, Wu S, Liang L, et al. metID: an R package for automatable compound annotation for LC-MS-based
+    data. Bioinformatics 38, 568-569 (2022).'
   type: primary
   doi: 10.1093/bioinformatics/btab583
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: tidymass

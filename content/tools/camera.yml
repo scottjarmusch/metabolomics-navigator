@@ -37,8 +37,8 @@ data:
   other_output_formats:
   - R annotation tables and pseudospectra
 publications:
-- citation: 'Kuhl et al. CAMERA: an integrated strategy for compound spectra extraction and annotation of liquid
-    chromatography/mass spectrometry data sets. Analytical Chemistry 84, 283–289 (2012).'
+- citation: 'Kuhl C, Tautenhahn R, Böttcher C, et al. CAMERA: an integrated strategy for compound spectra extraction
+    and annotation of liquid chromatography/mass spectrometry data sets. Anal Chem 84, 283-289 (2012).'
   type: primary
   doi: 10.1021/ac202450g
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: xcms

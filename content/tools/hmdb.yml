@@ -36,9 +36,10 @@ data:
   other_output_formats:
   - Metabolite records and selected downloads
 publications:
-- citation: 'Wishart et al. HMDB 5.0: the Human Metabolome Database for 2022. Nucleic Acids Research 50, D622–D631
-    (2022).'
+- citation: 'Wishart DS, Guo A, Oler E, et al. HMDB 5.0: the Human Metabolome Database for 2022. Nucleic Acids
+    Res 50, D622-D631 (2022).'
   type: primary
+  doi: 10.1093/nar/gkab1062
 common_uses:
 - Look up synonyms and structures for human metabolites.
 - Review available spectral and biological evidence for an annotation.
@@ -62,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: pubchem

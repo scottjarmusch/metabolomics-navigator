@@ -37,9 +37,10 @@ data:
   other_output_formats:
   - Mass2Motifs, associations and visualizations
 publications:
-- citation: van der Hooft et al. Topic modeling for untargeted substructure exploration in metabolomics. Proceedings
-    of the National Academy of Sciences (2016).
+- citation: van der Hooft JJ, Wandy J, Barrett MP, et al. Topic modeling for untargeted substructure exploration
+    in metabolomics. Proc Natl Acad Sci U S A 113, 13738-13743 (2016).
   type: primary
+  doi: 10.1073/pnas.1608041113
 common_uses:
 - Discover shared fragmentation motifs.
 - Explore motif occurrences across molecular families.
@@ -63,7 +64,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: gnps

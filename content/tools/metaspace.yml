@@ -40,8 +40,8 @@ data:
   other_output_formats:
   - Ion images and annotation records
 publications:
-- citation: 'Alexandrov et al. METASPACE: A community-populated knowledge base of spatial metabolomes in health
-    and disease. bioRxiv preprint (2019).'
+- citation: 'Alexandrov T, Ovchinnikova K, Palmer A, et al. METASPACE: A community-populated knowledge base
+    of spatial metabolomes in health and disease. bioRxiv (2019). Preprint; not peer reviewed.'
   type: primary
   doi: 10.1101/539478
 common_uses:
@@ -68,7 +68,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metabolomics-workbench

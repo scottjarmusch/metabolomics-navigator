@@ -36,8 +36,8 @@ data:
   other_output_formats:
   - Structures, origin records and references
 publications:
-- citation: 'Poynton et al. The Natural Products Atlas 3.0: Extending the Database of Microbially-Derived Natural
-    Products. Nucleic Acids Research (2024 online).'
+- citation: 'Poynton EF, van Santen JA, Pin M, et al. The Natural Products Atlas 3.0: extending the database
+    of microbially derived natural products. Nucleic Acids Res 53, D691-D699 (2025).'
   type: primary
   doi: 10.1093/nar/gkae1093
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: lotus

@@ -39,8 +39,8 @@ data:
   other_output_formats:
   - Saved analysis sessions, tables and plots
 publications:
-- citation: 'Wolthuis et al. MetaboShiny: interactive analysis and metabolite annotation of mass spectrometry-based
-    metabolomics data. Metabolomics (2020).'
+- citation: 'Wolthuis JC, Magnusdottir S, Pras-Raves M, et al. MetaboShiny: interactive analysis and metabolite
+    annotation of mass spectrometry-based metabolomics data. Metabolomics 16, 99 (2020).'
   type: primary
   doi: 10.1007/s11306-020-01717-8
 common_uses:
@@ -66,7 +66,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metaboanalyst

@@ -38,8 +38,8 @@ access:
     use, with separate non-academic licensing.
 publications:
 - doi: 10.1073/pnas.1509788112
-  citation: Dührkop K, Shen H, Meusel M, Rousu J, Böcker S. Searching molecular structure databases with tandem
-    mass spectra using CSI:FingerID. Proceedings of the National Academy of Sciences 112, 12580–12585 (2015).
+  citation: Dührkop K, Shen H, Meusel M, et al. Searching molecular structure databases with tandem mass spectra
+    using CSI:FingerID. Proc Natl Acad Sci U S A 112, 12580-12585 (2015).
   type: primary
 common_uses:
 - Rank molecular-structure database candidates from accurate-mass MS/MS spectra.
@@ -86,7 +86,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

@@ -307,11 +307,13 @@
             "type": "string",
             "enum": [
               "primary",
-              "methods",
-              "benchmark",
-              "application",
-              "other"
+              "methods"
             ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
           }
         },
         "anyOf": [
@@ -616,6 +618,40 @@
         },
         "ion_mobility": {
           "$ref": "#/$defs/ion_mobility_support"
+        }
+      }
+    },
+    "resource_citations": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "citation",
+          "type"
+        ],
+        "properties": {
+          "citation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "software",
+              "documentation"
+            ]
+          },
+          "doi": {
+            "type": "string",
+            "pattern": "^10\\.\\d{4,9}/\\S+$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
         }
       }
     }

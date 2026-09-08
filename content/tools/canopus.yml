@@ -35,8 +35,8 @@ access:
     licensing terms.
 publications:
 - doi: 10.1038/s41587-020-0740-8
-  citation: Dührkop K, Nothias L-F, Fleischauer M, et al. Systematic classification of unknown metabolites using
-    high-resolution fragmentation mass spectra. Nature Biotechnology 39, 462–471 (2021).
+  citation: Dührkop K, Nothias LF, Fleischauer M, et al. Systematic classification of unknown metabolites using
+    high-resolution fragmentation mass spectra. Nat Biotechnol 39, 462-471 (2021).
   type: primary
 common_uses:
 - Assign hierarchical chemical classes to MS/MS features lacking confident exact structure annotations.
@@ -83,7 +83,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

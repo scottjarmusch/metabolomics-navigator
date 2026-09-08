@@ -36,8 +36,8 @@ data:
   other_output_formats:
   - R lists of optimized parameters and scores
 publications:
-- citation: 'Libiseller et al. IPO: a tool for automated optimization of XCMS parameters. BMC Bioinformatics
-    16, 118 (2015).'
+- citation: 'Libiseller G, Dvorzak M, Kleb U, et al. IPO: a tool for automated optimization of XCMS parameters.
+    BMC Bioinformatics 16, 118 (2015).'
   type: primary
   doi: 10.1186/s12859-015-0562-8
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: xcms

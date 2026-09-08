@@ -35,10 +35,11 @@ data:
   - mzxml
   - mgf
 publications:
-- citation: 'Kessner et al. ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics
-    (2008).'
+- citation: 'Kessner D, Chambers M, Burke R, et al. ProteoWizard: open source software for rapid proteomics
+    tools development. Bioinformatics 24, 2534-2536 (2008).'
   type: primary
   doi: 10.1093/bioinformatics/btn323
+  note: Official ProteoWizard platform citation covering msconvert; not a standalone msconvert paper.
 common_uses:
 - Prepare mzML files for MZmine, XCMS or other compatible processors.
 - Automate conversion across an acquisition batch.
@@ -62,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: mzmine

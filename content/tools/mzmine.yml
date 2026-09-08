@@ -98,26 +98,18 @@ data:
   - mztab_m
 publications:
 - doi: 10.1038/s41587-023-01690-2
-  citation: Schmid R, Heuckeroth S, Korf A, et al. Integrative analysis of multimodal mass spectrometry data in
-    MZmine 3. Nature Biotechnology 41, 447–449 (2023).
+  citation: Schmid R, Heuckeroth S, Korf A, et al. Integrative analysis of multimodal mass spectrometry data
+    in MZmine 3. Nat Biotechnol 41, 447-449 (2023).
   type: primary
 - doi: 10.1038/s41596-024-00996-y
   citation: Heuckeroth S, Damiani T, Smirnov A, et al. Reproducible mass spectrometry data processing and compound
-    annotation in MZmine 3. Nature Protocols 19, 2597–2641 (2024).
+    annotation in MZmine 3. Nat Protoc 19, 2597-2641 (2024).
   type: methods
 - doi: 10.1021/acs.analchem.8b05493
-  citation: Korf A, Jeck V, Schmid R, Helmer PO, Hayen H. Lipid Species Annotation at Double Bond Position Level
-    with Custom Databases by Extension of the MZmine 2 Open-Source Software Package. Analytical Chemistry 91, 5098–5105
-    (2019).
+  citation: Korf A, Jeck V, Schmid R, et al. Lipid Species Annotation at Double Bond Position Level with Custom
+    Databases by Extension of the MZmine 2 Open-Source Software Package. Anal Chem 91, 5098-5105 (2019).
   type: methods
-- doi: 10.1021/acs.analchem.4c05989
-  citation: Rudt E, Froning M, Heuckeroth S, et al. Rapid MALDI-MS/MS-Based Profiling of Lipid A Species from Gram-Negative
-    Bacteria Utilizing Trapped Ion Mobility Spectrometry and mzmine. Analytical Chemistry 97, 7781–7788 (2025).
-  type: methods
-- doi: 10.1038/s41592-025-02813-0
-  citation: 'Brungs C, Schmid R, Heuckeroth S, et al. MSnLib: efficient generation of open multi-stage fragmentation
-    mass spectral libraries. Nature Methods 22, 2028–2031 (2025).'
-  type: application
+  note: Introduces a lipid-annotation extension implemented within MZmine 2.
 common_uses:
 - Process untargeted LC-MS/MS DDA/DIA and LC-IMS-MS data from raw files through aligned feature tables and annotations.
 - Perform GC-EI/CI-MS spectral deconvolution, MS-imaging processing, direct-infusion analyses, and specialized lipidomics
@@ -149,7 +141,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 scope:

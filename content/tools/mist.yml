@@ -38,8 +38,8 @@ data:
   other_output_formats:
   - Fingerprint predictions and retrieval results
 publications:
-- citation: Goldman et al. Annotating metabolite mass spectra with domain-inspired chemical formula transformers.
-    Nature Machine Intelligence (2023).
+- citation: Goldman, Wohlwend, Stražar, et al. Annotating metabolite mass spectra with domain-inspired chemical
+    formula transformers. Nature Machine Intelligence 5, 965-979 (2023).
   type: primary
   doi: 10.1038/s42256-023-00708-3
 common_uses:
@@ -65,7 +65,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: csi-fingerid

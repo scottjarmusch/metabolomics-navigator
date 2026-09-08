@@ -36,8 +36,8 @@ data:
   other_output_formats:
   - GPML, GMT, RDF and pathway images
 publications:
-- citation: 'Agrawal et al. WikiPathways 2024: next generation pathway database. Nucleic Acids Research 52,
-    D679–D689 (2024).'
+- citation: 'Agrawal A, Balcı H, Hanspers K, et al. WikiPathways 2024: next generation pathway database. Nucleic
+    Acids Res 52, D679-D689 (2024).'
   type: primary
   doi: 10.1093/nar/gkad960
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: reactome

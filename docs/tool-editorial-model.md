@@ -1,6 +1,6 @@
 # Metabolomics Navigator: tool editorial model
 
-The September 2026 pass develops the existing 25 tools as the baseline for future entries. Protocol expansion remains outside this pass. A complete entry answers a researcher's selection questions; it is not an exhaustive manual or a certification of the software.
+The existing tool entries provide the baseline for future contributions. A complete entry answers a researcher's selection questions; it is not an exhaustive manual or a certification of the software.
 
 ## Required coverage
 
@@ -70,3 +70,13 @@ MassIVE, MSMS-Chooser and MetaboApps have explicit citation exceptions rather th
 ## Reader experience
 
 The homepage is a topic-based review with a table of contents, plain explanations and direct links to tools. Topic prose and selected tool lists live in `config/guide.yml`. Keep titles descriptive, explain unfamiliar concepts in context, and support newcomers without adding slogans or decorative workflow stages. The searchable catalogue remains available for readers who already know what they need.
+
+## Publication selection
+
+Tool `publications` contain only papers that introduce the named resource, substantially update it, or describe a method/protocol implemented within it. A shared author, compatible export, mention, or use in a biological study is insufficient. Distinct named components belong on their own tool/protocol pages, linked from the parent. Platform papers may be used when the official citation guidance explicitly covers the component; explain that exception in `note`.
+
+Exclude application-only studies, general reviews and papers introducing other resources from the core bibliography. Application-specific extensions can be evaluated as separate protocol candidates rather than automatically expanding a tool bibliography. Independent benchmarks can inform a qualified comparison, but are not core tool publications. Preserve original credit through links to the actual resource.
+
+Put package records and documentation in `resource_citations`, labelled `software` or `documentation`; a package DOI does not make the record a research article. Keep preprints visibly labelled. An empty scholarly bibliography is acceptable when no dedicated paper is established; explain the citation guidance without inventing a substitute. This is a selected bibliography, not a claim of exhaustive coverage. Protocol sources must introduce the transferable strategy described on that page.
+
+Editors must verify title, DOI, resource identity and the paper's actual contribution before accepting it. Schema validation checks structure and permitted types; it cannot determine scientific relevance.

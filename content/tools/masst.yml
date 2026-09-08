@@ -55,13 +55,9 @@ data:
   - Universal Spectrum Identifier (USI) or peak list
 publications:
 - doi: 10.1038/s41587-019-0375-9
-  citation: Wang M, Jarmusch AK, Vargas F, et al. Mass spectrometry searches using MASST. Nature Biotechnology 38,
-    23–26 (2020).
+  citation: Wang M, Jarmusch AK, Vargas F, et al. Mass spectrometry searches using MASST. Nat Biotechnol 38,
+    23-26 (2020).
   type: primary
-- doi: 10.1038/s41587-023-01985-4
-  citation: Mongia M, Yasaka TM, Liu Y, et al. Fast mass spectrometry search and clustering of untargeted metabolomics
-    data. Nature Biotechnology 42, 1672–1677 (2024).
-  type: methods
 common_uses:
 - Search a query MS/MS spectrum across public metabolomics datasets and spectral libraries.
 - Identify datasets, files, or sample contexts in which a molecule or close spectral analogue may occur.
@@ -121,7 +117,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 aliases:

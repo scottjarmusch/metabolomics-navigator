@@ -39,8 +39,8 @@ data:
   other_output_formats:
   - TidyMass analysis objects and reports
 publications:
-- citation: Shen et al. TidyMass an object-oriented reproducible analysis framework for LC-MS data. Nature
-    Communications 13, 4365 (2022).
+- citation: Shen X, Yan H, Wang C, et al. TidyMass an object-oriented reproducible analysis framework for LC-MS
+    data. Nat Commun 13, 4365 (2022).
   type: primary
   doi: 10.1038/s41467-022-32155-w
 common_uses:
@@ -66,7 +66,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metid

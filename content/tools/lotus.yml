@@ -36,8 +36,8 @@ data:
   other_output_formats:
   - Structure-organism-reference records
 publications:
-- citation: Rutz et al. The LOTUS initiative for open knowledge management in natural products research. eLife
-    11, e70780 (2022).
+- citation: Rutz A, Sorokina M, Galgonek J, et al. The LOTUS initiative for open knowledge management in natural
+    products research. Elife 11, e70780 (2022).
   type: primary
   doi: 10.7554/eLife.70780
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: coconut

@@ -37,8 +37,14 @@ data:
   other_output_formats:
   - SDF and ontology downloads
 publications:
+- doi: 10.1093/nar/gkaf1271
+  citation: 'Malik A, Arsalan M, Moreno C, et al. ChEBI: re-engineered for a sustainable future. Nucleic Acids
+    Res 54, D1768-D1778 (2026).'
+  type: primary
+resource_citations:
 - citation: 'ChEBI team. Chemical Entities of Biological Interest: database and ontology documentation. EMBL-EBI.'
-  type: other
+  type: documentation
+  url: https://www.ebi.ac.uk/chebi/
 common_uses:
 - Map metabolite names to stable chemical identifiers.
 - Group compounds by chemical class or biological role.
@@ -61,7 +67,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: pubchem

@@ -61,8 +61,8 @@ scope:
 publications:
 - doi: 10.1093/nar/gkv1042
   citation: 'Sud M, Fahy E, Cotter D, et al. Metabolomics Workbench: An international repository for metabolomics
-    data and metadata, metabolite standards, protocols, tutorials and training, and analysis tools. Nucleic Acids
-    Research 44, D463–D470 (2016).'
+    data and metadata, metabolite standards, protocols, tutorials and training, and analysis tools. Nucleic
+    Acids Res 44, D463-70 (2016).'
   type: primary
 related_tools:
 - slug: metabolights
@@ -79,7 +79,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 aliases:
 - NMDR

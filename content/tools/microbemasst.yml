@@ -39,7 +39,7 @@ access:
 publications:
 - doi: 10.1038/s41564-023-01575-9
   citation: 'Zuffa S, Schmid R, Bauermeister A, et al. microbeMASST: a taxonomically informed mass spectrometry
-    search tool for microbial metabolomics data. Nature Microbiology 9, 336–345 (2024).'
+    search tool for microbial metabolomics data. Nat Microbiol 9, 336-345 (2024).'
   type: primary
 common_uses:
 - Associate unknown or known MS/MS spectra with potential microbial producers represented in monoculture reference
@@ -89,7 +89,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:
