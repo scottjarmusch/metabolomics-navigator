@@ -3,7 +3,7 @@ slug: workflow4metabolomics
 name: Workflow4Metabolomics
 summary: Create and share metabolomics processing and analysis workflows in a Galaxy environment.
 description: Workflow4Metabolomics combines preprocessing, QC, normalization, statistics and annotation tools
-  for MS and NMR through a browser-based workflow system.
+  for MS-based metabolomics through a browser-based workflow system. This entry covers its MS workflows.
 links:
   primary: https://workflow4metabolomics.org/
   documentation: https://workflow4metabolomics.org/
@@ -24,7 +24,6 @@ access:
 data:
   input_types:
   - spectra
-  - nmr_spectra
   - feature_table
   - sample_metadata
   output_types:

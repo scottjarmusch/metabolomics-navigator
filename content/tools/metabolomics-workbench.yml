@@ -20,7 +20,6 @@ functions:
   - provenance_tracking
 platforms:
 - multi_platform
-- nmr
 interfaces:
 - web_app
 - api
@@ -49,7 +48,7 @@ common_uses:
 - Retrieve study metadata and measurements for reproducible reanalysis.
 scope:
   designed_for:
-  - Study-level sharing and discovery of MS and NMR metabolomics data.
+  - Study-level sharing and discovery of MS-based metabolomics data.
   not_designed_for:
   - Guaranteeing that all deposited studies are directly comparable.
   requirements:

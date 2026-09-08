@@ -4,6 +4,8 @@ The Metabolomics Navigator is a community-maintained reference resource for meta
 
 ## Scope and inclusion
 
+The current scope is **MS-based metabolomics**. NMR-only and other non-MS-only tools and protocols are outside scope. Shared reference databases, statistical tools and platforms remain eligible when they support MS metabolomics; entries should describe that use. A platform-independent label alone does not establish eligibility.
+
 ### Tools
 
 A tool is in scope when it is a computational, data, analytical, or reference resource that is specifically useful for generating, processing, interpreting, storing, searching, or sharing metabolomics data. This includes software applications, packages, web services, databases, spectral libraries, repositories, workflow systems, APIs, and vendor software.

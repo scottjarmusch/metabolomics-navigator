@@ -218,10 +218,6 @@ platforms:
   label: MALDI-MS
 - id: imaging_ms
   label: Imaging mass spectrometry
-- id: nmr
-  label: NMR
-- id: infrared_raman
-  label: Infrared or Raman spectroscopy
 - id: multi_platform
   label: Multiple analytical platforms
 - id: platform_independent
@@ -363,8 +359,6 @@ common_data_formats:
   label: XML
 - id: isa_tab
   label: ISA-Tab
-- id: nmrml
-  label: nmrML
 - id: imzml
   label: imzML
 - id: hdf5
@@ -380,8 +374,6 @@ common_data_types:
   label: Raw instrument data
 - id: spectra
   label: Mass spectra
-- id: nmr_spectra
-  label: NMR spectra
 - id: imaging_data
   label: Imaging data
 - id: feature_table

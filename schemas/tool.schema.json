@@ -744,8 +744,6 @@
         "direct_infusion_ms",
         "maldi_ms",
         "imaging_ms",
-        "nmr",
-        "infrared_raman",
         "multi_platform",
         "platform_independent"
       ]
@@ -857,7 +855,6 @@
         "json",
         "xml",
         "isa_tab",
-        "nmrml",
         "imzml",
         "hdf5",
         "sdf",
@@ -870,7 +867,6 @@
       "enum": [
         "raw_instrument_data",
         "spectra",
-        "nmr_spectra",
         "imaging_data",
         "feature_table",
         "spectral_library",
