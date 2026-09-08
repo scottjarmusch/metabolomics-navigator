@@ -190,6 +190,7 @@ body:
   id: publication
   attributes:
     label: Primary publication or DOI
+    description: A paper introducing or substantially updating this resource. Do not submit an application study or a paper for a separate tool. Leave blank if no dedicated paper is known.
     placeholder: 10.xxxx/xxxxx or full citation
 - type: textarea
   id: additional-links
