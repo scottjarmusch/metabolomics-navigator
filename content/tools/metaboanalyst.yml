@@ -76,10 +76,10 @@ publications:
 - doi: 10.1093/nar/gkab382
   type: methods
   citation: 'Pang Z, Chong J, Zhou G, et al. MetaboAnalyst 5.0: narrowing the gap between raw spectra and functional
-    insights. Nucleic Acids Research 49, W388–W396 (2021).'
+    insights. Nucleic Acids Res 49, W388-W396 (2021).'
 - doi: 10.1093/nar/gkae253
-  citation: 'Pang Z, Lu Y, Zhou G, et al. MetaboAnalyst 6.0: towards a unified platform for metabolomics data processing,
-    analysis and interpretation. Nucleic Acids Research 52, W398–W406 (2024).'
+  citation: 'Pang Z, Lu Y, Zhou G, et al. MetaboAnalyst 6.0: towards a unified platform for metabolomics data
+    processing, analysis and interpretation. Nucleic Acids Res 52, W398-W406 (2024).'
   type: primary
 common_uses:
 - Perform exploratory and inferential statistics on metabolomics data tables.
@@ -101,7 +101,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-21'
   last_editorial_review: '2026-09-06'
 scope:

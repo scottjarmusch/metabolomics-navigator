@@ -35,8 +35,8 @@ data:
   other_output_formats:
   - Integrated spectral-region matrices
 publications:
-- citation: 'Jacob et al. NMRProcFlow: a graphical and interactive tool dedicated to 1D spectra processing
-    for NMR-based metabolomics. Metabolomics 13, 36 (2017).'
+- citation: 'Jacob D, Deborde C, Lefebvre M, et al. NMRProcFlow: a graphical and interactive tool dedicated
+    to 1D spectra processing for NMR-based metabolomics. Metabolomics 13, 36 (2017).'
   type: primary
   doi: 10.1007/s11306-017-1178-y
 common_uses:
@@ -62,7 +62,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: nmrglue

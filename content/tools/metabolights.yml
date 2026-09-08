@@ -59,7 +59,7 @@ scope:
 publications:
 - doi: 10.1093/nar/gkad1045
   citation: 'Yurekten O, Payne T, Tejera N, et al. MetaboLights: open data repository for metabolomics. Nucleic
-    Acids Research 52, D640–D646 (2024).'
+    Acids Res 52, D640-D646 (2024).'
   type: primary
 related_tools:
 - slug: metabolomics-workbench
@@ -76,5 +76,5 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'

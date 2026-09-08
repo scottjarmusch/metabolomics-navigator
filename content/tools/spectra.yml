@@ -34,10 +34,11 @@ data:
   - Spectra objects and backend-supported files
   other_output_formats:
   - Spectra objects and backend-supported exports
-publications:
+publications: []
+resource_citations:
 - citation: 'Spectra developers. Spectra: Spectra Infrastructure for Mass Spectrometry Data. Bioconductor package
     record.'
-  type: other
+  type: software
   doi: 10.18129/B9.bioc.Spectra
 common_uses:
 - Build reproducible spectral processing code.
@@ -61,7 +62,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metaboannotation

@@ -38,9 +38,10 @@ data:
   other_output_formats:
   - Pathway enrichment and network results
 publications:
-- citation: Li et al. Predicting network activity from high throughput metabolomics. PLOS Computational Biology
-    (2013).
+- citation: Li S, Park Y, Duraisingham S, et al. Predicting network activity from high throughput metabolomics.
+    PLoS Comput Biol 9, e1003123 (2013).
   type: primary
+  doi: 10.1371/journal.pcbi.1003123
 common_uses:
 - Prioritize pathways associated with differential features.
 - Explore a feature table with a species-appropriate metabolic model.
@@ -64,7 +65,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metaboanalyst

@@ -34,8 +34,8 @@ data:
   other_output_formats:
   - Predicted similarity matrices and embeddings
 publications:
-- citation: 'Huber et al. MS2DeepScore: a novel deep learning similarity measure to compare tandem mass spectra.
-    Journal of Cheminformatics 13, 84 (2021).'
+- citation: 'Huber F, van der Burg S, van der Hooft JJJ, et al. MS2DeepScore: a novel deep learning similarity
+    measure to compare tandem mass spectra. J Cheminform 13, 84 (2021).'
   type: primary
   doi: 10.1186/s13321-021-00558-4
 common_uses:
@@ -60,7 +60,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: matchms

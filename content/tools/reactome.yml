@@ -36,8 +36,14 @@ data:
   other_output_formats:
   - Pathway maps and downloadable reaction data
 publications:
+- doi: 10.1093/nar/gkaf1223
+  citation: Ragueneau E, Gong C, Sinquin P, et al. The Reactome Knowledgebase 2026. Nucleic Acids Res 54, D673-D681
+    (2026).
+  type: primary
+resource_citations:
 - citation: Reactome team. What is Reactome? Official database, evidence model and access documentation.
-  type: other
+  type: documentation
+  url: https://reactome.org/what-is-reactome
 common_uses:
 - Place annotated metabolites in reaction context.
 - Trace pathway assertions to supporting literature.
@@ -60,7 +66,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: wikipathways

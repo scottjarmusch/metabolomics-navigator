@@ -36,9 +36,15 @@ data:
   other_output_formats:
   - Lipid records and selected database exports
 publications:
+- doi: 10.1093/nar/gkad896
+  citation: 'Conroy MJ, Andrews RM, Andrews S, et al. LIPID MAPS: update to databases and tools for the lipidomics
+    community. Nucleic Acids Res 52, D1677-D1682 (2024).'
+  type: primary
+resource_citations:
 - citation: 'LIPID MAPS consortium. LIPID MAPS: databases, classification, nomenclature and analysis tools.
     Official resource documentation.'
-  type: other
+  type: documentation
+  url: https://www.lipidmaps.org/
 common_uses:
 - Check lipid abbreviations and structural classification.
 - Find mass-compatible lipid candidates and supporting references.
@@ -62,7 +68,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: lipidblast

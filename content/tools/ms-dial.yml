@@ -74,11 +74,12 @@ data:
 publications:
 - doi: 10.1038/s41587-020-0531-2
   type: methods
-  citation: Tsugawa H, Ikeda K, Takahashi M, et al. A lipidome atlas in MS-DIAL 4. Nature Biotechnology 38, 1159–1163
+  citation: Tsugawa H, Ikeda K, Takahashi M, et al. A lipidome atlas in MS-DIAL 4. Nat Biotechnol 38, 1159-1163
     (2020).
+  note: Introduces MS-DIAL 4 alongside the lipidome atlas; retained as a direct software update.
 - doi: 10.1038/nmeth.3393
   citation: 'Tsugawa H, Cajka T, Kind T, et al. MS-DIAL: data-independent MS/MS deconvolution for comprehensive
-    metabolome analysis. Nature Methods 12, 523–526 (2015).'
+    metabolome analysis. Nat Methods 12, 523-526 (2015).'
   type: primary
 common_uses:
 - Process untargeted LC-MS, GC-MS, and lipidomics datasets through a graphical workflow.
@@ -103,7 +104,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-21'
   last_editorial_review: '2026-09-06'
 scope:

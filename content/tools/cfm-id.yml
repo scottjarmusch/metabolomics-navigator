@@ -39,8 +39,8 @@ data:
   other_input_formats:
   - Structure strings or formatted spectral peak lists
 publications:
-- citation: 'Wang et al. CFM-ID 4.0: a web server for accurate MS-based metabolite identification. Nucleic
-    Acids Research 50, W165–W174 (2022).'
+- citation: Wang F, Allen D, Tian S, et al. CFM-ID 4.0 - a web server for accurate MS-based metabolite identification.
+    Nucleic Acids Res 50, W165-W174 (2022).
   type: primary
   doi: 10.1093/nar/gkac383
 common_uses:
@@ -67,7 +67,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metfrag

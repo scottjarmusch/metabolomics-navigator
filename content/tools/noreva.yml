@@ -38,8 +38,8 @@ data:
   other_output_formats:
   - Normalized matrices and evaluation results
 publications:
-- citation: 'Yang et al. NOREVA: enhanced normalization and evaluation of time-course and multi-class metabolomic
-    data. Nucleic Acids Research 48, W436–W448 (2020).'
+- citation: 'Yang Q, Wang Y, Zhang Y, et al. NOREVA: enhanced normalization and evaluation of time-course and
+    multi-class metabolomic data. Nucleic Acids Res 48, W436-W448 (2020).'
   type: primary
   doi: 10.1093/nar/gkaa258
 common_uses:
@@ -66,7 +66,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: stattarget

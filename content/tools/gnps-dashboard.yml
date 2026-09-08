@@ -39,7 +39,7 @@ access:
 publications:
 - doi: 10.1038/s41592-021-01339-5
   citation: 'Petras D, Phelan VV, Acharya D, et al. GNPS Dashboard: collaborative exploration of mass spectrometry
-    data in the web browser. Nature Methods 19, 134–136 (2022).'
+    data in the web browser. Nat Methods 19, 134-136 (2022).'
   type: primary
 common_uses:
 - Interactively inspect raw/public LC-MS and other supported MS files in a browser.
@@ -89,7 +89,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

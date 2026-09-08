@@ -33,8 +33,16 @@ data:
   output_formats:
   - csv_tsv
 publications:
+- doi: 10.1093/bioinformatics/btq054
+  citation: 'MacLean B, Tomazela DM, Shulman N, et al. Skyline: an open source document editor for creating
+    and analyzing targeted proteomics experiments. Bioinformatics 26, 966-968 (2010).'
+  type: primary
+  note: Foundational Skyline software paper, originally scoped to targeted proteomics. Consult the linked small-molecule
+    documentation for metabolomics workflows.
+resource_citations:
 - citation: Skyline team. Small Molecule Quantification and Small Molecules tutorials. Official Skyline documentation.
-  type: other
+  type: documentation
+  url: https://skyline.ms/home/software/Skyline/wiki-page.view?name=tutorials-small-mol
 common_uses:
 - Review targeted small-molecule peak integration.
 - Quantify analytes using external calibration and internal standards.
@@ -57,7 +65,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: smartpeak

@@ -86,8 +86,8 @@ data:
   - consensusXML
 publications:
 - doi: 10.1038/s41592-024-02197-7
-  citation: Pfeuffer J, Bielow C, Wein S, et al. OpenMS 3 enables reproducible analysis of large-scale mass spectrometry
-    data. Nature Methods 21, 365–367 (2024).
+  citation: Pfeuffer J, Bielow C, Wein S, et al. OpenMS 3 enables reproducible analysis of large-scale mass
+    spectrometry data. Nat Methods 21, 365-367 (2024).
   type: primary
 common_uses:
 - Assemble reproducible command-line or Python workflows for LC-MS data processing.
@@ -112,7 +112,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-04'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-21'
   last_editorial_review: '2026-09-06'
 scope:

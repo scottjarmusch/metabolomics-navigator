@@ -34,8 +34,8 @@ data:
   - csv_tsv
   - json
 publications:
-- citation: 'Li et al. Asari: a scalable and reproducible workflow for metabolomics data processing. Nature
-    Communications 14, 4113 (2023).'
+- citation: Li S, Siddiqa A, Thapa M, et al. Trackable and scalable LC-MS metabolomics data processing using
+    asari. Nat Commun 14, 4113 (2023).
   type: primary
   doi: 10.1038/s41467-023-39889-1
 common_uses:
@@ -61,7 +61,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: xcms

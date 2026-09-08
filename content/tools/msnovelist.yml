@@ -38,8 +38,8 @@ access:
     The linked standalone repository is archived and retained for historical reference.
 publications:
 - doi: 10.1038/s41592-022-01486-3
-  citation: 'Stravs MA, Dührkop K, Böcker S, Zamboni N. MSNovelist: de novo structure generation from mass spectra.
-    Nature Methods 19, 865–870 (2022).'
+  citation: 'Stravs MA, Dührkop K, Böcker S, et al. MSNovelist: de novo structure generation from mass spectra.
+    Nat Methods 19, 865-870 (2022).'
   type: primary
 common_uses:
 - Generate de novo molecular-structure candidates when database search cannot provide a satisfactory candidate.
@@ -86,7 +86,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

@@ -37,8 +37,8 @@ data:
   other_output_formats:
   - Spectra, similarity scores and pipeline reports
 publications:
-- citation: 'Huber et al. matchms: processing and similarity evaluation of mass spectrometry data. Journal
-    of Open Source Software (2020).'
+- citation: Huber, Verhoeven, Meijer, et al. matchms - processing and similarity evaluation of mass spectrometry
+    data. Journal of Open Source Software 5, 2411 (2020).
   type: primary
   doi: 10.21105/joss.02411
 common_uses:
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: spec2vec

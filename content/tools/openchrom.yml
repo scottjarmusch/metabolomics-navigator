@@ -37,7 +37,7 @@ data:
   other_output_formats:
   - Processed chromatograms and analysis reports
 publications:
-- citation: 'Wenig and Odermatt. OpenChrom: a cross-platform open source software for the mass spectrometric
+- citation: 'Wenig P, Odermatt J. OpenChrom: a cross-platform open source software for the mass spectrometric
     analysis of chromatographic data. BMC Bioinformatics 11, 405 (2010).'
   type: primary
   doi: 10.1186/1471-2105-11-405
@@ -63,7 +63,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: ms-dial

@@ -57,7 +57,7 @@ scope:
 publications:
 - doi: 10.1021/acs.analchem.6b00770
   citation: 'Tsugawa H, Kind T, Nakabayashi R, et al. Hydrogen Rearrangement Rules: Computational MS/MS Fragmentation
-    and Structure Elucidation Using MS-FINDER Software. Analytical Chemistry 88, 7946–7958 (2016).'
+    and Structure Elucidation Using MS-FINDER Software. Anal Chem 88, 7946-7958 (2016).'
   type: primary
 related_tools:
 - slug: ms-dial
@@ -76,7 +76,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 aliases:
 - MSFINDER

@@ -58,8 +58,8 @@ scope:
     with an authentic standard.
 publications:
 - doi: 10.1186/s13321-016-0115-9
-  citation: 'Ruttkies C, Schymanski EL, Wolf S, Hollender J, Neumann S. MetFrag relaunched: incorporating strategies
-    beyond in silico fragmentation. Journal of Cheminformatics 8, 3 (2016).'
+  citation: 'Ruttkies C, Schymanski EL, Wolf S, et al. MetFrag relaunched: incorporating strategies beyond
+    in silico fragmentation. J Cheminform 8, 3 (2016).'
   type: primary
 related_tools:
 - slug: csi-fingerid
@@ -76,5 +76,5 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'

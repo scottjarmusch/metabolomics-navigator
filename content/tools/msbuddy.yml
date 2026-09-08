@@ -32,8 +32,8 @@ data:
   output_formats:
   - csv_tsv
 publications:
-- citation: 'Xing et al. BUDDY: molecular formula discovery via bottom-up MS/MS interrogation. Nature Methods
-    (2023).'
+- citation: 'Xing S, Shen S, Xu B, et al. BUDDY: molecular formula discovery via bottom-up MS/MS interrogation.
+    Nat Methods 20, 881-890 (2023).'
   type: primary
   doi: 10.1038/s41592-023-01850-x
 common_uses:
@@ -59,7 +59,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: sirius

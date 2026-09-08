@@ -41,7 +41,7 @@ access:
 publications:
 - doi: 10.1101/2024.05.13.593988
   citation: Gomes PWP, Mannochio-Russo H, Schmid R, et al. plantMASST - Community-driven chemotaxonomic digitization
-    of plants. bioRxiv (2024), preprint.
+    of plants. bioRxiv (2024). Preprint; not peer reviewed.
   type: primary
 common_uses:
 - Search an MS/MS spectrum across taxonomically defined plant extracts.
@@ -90,7 +90,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

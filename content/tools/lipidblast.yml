@@ -33,8 +33,8 @@ data:
   other_output_formats:
   - Search-engine-dependent candidate matches
 publications:
-- citation: Kind et al. LipidBlast in silico tandem mass spectrometry database for lipid identification. Nature
-    Methods (2013).
+- citation: Kind T, Liu KH, Lee DY, et al. LipidBlast in silico tandem mass spectrometry database for lipid
+    identification. Nat Methods 10, 755-758 (2013).
   type: primary
   doi: 10.1038/nmeth.2551
 common_uses:
@@ -60,7 +60,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: ms-dial

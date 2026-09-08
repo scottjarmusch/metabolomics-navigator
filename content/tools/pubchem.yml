@@ -35,7 +35,7 @@ data:
   other_input_formats:
   - Names, identifiers or structures
 publications:
-- citation: Kim et al. PubChem 2025 update. Nucleic Acids Research 53, D1516–D1525 (2025).
+- citation: Kim S, Chen J, Cheng T, et al. PubChem 2025 update. Nucleic Acids Res 53, D1516-D1525 (2025).
   type: primary
   doi: 10.1093/nar/gkae1059
 common_uses:
@@ -61,7 +61,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: chebi

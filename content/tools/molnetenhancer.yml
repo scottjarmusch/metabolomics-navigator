@@ -38,8 +38,8 @@ data:
   other_output_formats:
   - Annotated molecular networks
 publications:
-- citation: 'Ernst et al. MolNetEnhancer: Enhanced Molecular Networks by Integrating Metabolome Mining and
-    Annotation Tools. Metabolites 9, 144 (2019).'
+- citation: 'Ernst M, Kang KB, Caraballo-Rodríguez AM, et al. MolNetEnhancer: Enhanced Molecular Networks by
+    Integrating Metabolome Mining and Annotation Tools. Metabolites 9, E144 (2019).'
   type: primary
   doi: 10.3390/metabo9070144
 common_uses:
@@ -65,7 +65,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: gnps

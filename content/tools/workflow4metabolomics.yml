@@ -41,8 +41,9 @@ data:
   other_output_formats:
   - Galaxy datasets, histories and workflows
 publications:
-- citation: 'Delporte et al. Workflow4Metabolomics (W4M): A User-Friendly Metabolomics Platform for Analysis
-    of Mass Spectrometry and Nuclear Magnetic Resonance Data. Current Protocols 5, e70095 (2025).'
+- citation: 'Delporte C, Tremblay-Franco M, Guitton Y, et al. Workflow4Metabolomics (W4M): A User-Friendly
+    Metabolomics Platform for Analysis of Mass Spectrometry and Nuclear Magnetic Resonance Data. Curr Protoc
+    5, e70095 (2025).'
   type: primary
   doi: 10.1002/cpz1.70095
 common_uses:
@@ -68,7 +69,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: xcms

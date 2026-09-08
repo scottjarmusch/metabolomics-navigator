@@ -35,8 +35,8 @@ data:
   other_output_formats:
   - Peak detection results
 publications:
-- citation: 'Bueschl et al. PeakBot: machine-learning-based chromatographic peak picking. Bioinformatics 38,
-    3422–3428 (2022).'
+- citation: 'Bueschl C, Doppler M, Varga E, et al. PeakBot: machine-learning-based chromatographic peak picking.
+    Bioinformatics 38, 3422-3428 (2022).'
   type: primary
   doi: 10.1093/bioinformatics/btac344
 common_uses:
@@ -62,7 +62,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: asari

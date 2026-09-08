@@ -40,7 +40,8 @@ access:
     a web service does not establish the license of its code or reference data.
 publications:
 - doi: 10.1038/s41587-026-03082-8
-  citation: Structure-centric searching enables global mapping of the public metabolome. Nature Biotechnology (2026).
+  citation: El Abiead Y, Seo JI, Charron-Lamoureux V, et al. Structure-centric searching enables global mapping
+    of the public metabolome. Nat Biotechnol (2026).
   type: primary
 common_uses:
 - Search public metabolomics data starting from a chemical name, SMILES, or SMARTS representation.
@@ -94,7 +95,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 technical:

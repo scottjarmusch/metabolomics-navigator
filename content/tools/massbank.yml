@@ -53,7 +53,7 @@ scope:
 publications:
 - doi: 10.1093/nar/gkaf1193
   citation: 'Neumann S, Meier R, Wenk M, et al. MassBank: an open and FAIR mass spectral data resource. Nucleic
-    Acids Research (published online 2025).'
+    Acids Res 54, D601-D606 (2026).'
   type: primary
 related_tools:
 - slug: mona
@@ -70,7 +70,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 aliases:
 - MassBank Europe

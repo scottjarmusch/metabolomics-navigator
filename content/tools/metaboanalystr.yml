@@ -38,8 +38,8 @@ data:
   other_output_formats:
   - R analysis objects, tables and figures
 publications:
-- citation: 'Pang et al. MetaboAnalystR 4.0: a unified LC-MS workflow for global metabolomics. Nature Communications
-    15, 3675 (2024).'
+- citation: 'Pang Z, Xu L, Viau C, et al. MetaboAnalystR 4.0: a unified LC-MS workflow for global metabolomics.
+    Nat Commun 15, 3675 (2024).'
   type: primary
   doi: 10.1038/s41467-024-48009-6
 common_uses:
@@ -65,7 +65,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metaboanalyst

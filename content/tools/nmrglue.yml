@@ -36,8 +36,8 @@ data:
   other_output_formats:
   - NMR files and NumPy arrays
 publications:
-- citation: 'Helmus and Jaroniec. Nmrglue: an open source Python package for the analysis of multidimensional
-    NMR data. Journal of Biomolecular NMR 55, 355–367 (2013).'
+- citation: 'Helmus JJ, Jaroniec CP. Nmrglue: an open source Python package for the analysis of multidimensional
+    NMR data. J Biomol NMR 55, 355-367 (2013).'
   type: primary
   doi: 10.1007/s10858-013-9718-x
 common_uses:
@@ -62,7 +62,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: nmrprocflow

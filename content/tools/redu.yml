@@ -52,11 +52,11 @@ data:
 publications:
 - doi: 10.1038/s41592-020-0916-7
   citation: 'Jarmusch AK, Wang M, Aceves CM, et al. ReDU: a framework to find and reanalyze public mass spectrometry
-    data. Nature Methods 17, 901–904 (2020).'
+    data. Nat Methods 17, 901-904 (2020).'
   type: primary
 - doi: 10.1038/s41467-025-60067-y
-  citation: El Abiead Y, Strobel M, Payne T, et al. Enabling pan-repository reanalysis for big data science of public
-    metabolomics data. Nature Communications 16, 4838 (2025).
+  citation: El Abiead Y, Strobel M, Payne T, et al. Enabling pan-repository reanalysis for big data science
+    of public metabolomics data. Nat Commun 16, 4838 (2025).
   type: primary
 common_uses:
 - Find public metabolomics files by harmonized organism, biospecimen, disease, phenotype, and other controlled metadata.
@@ -105,7 +105,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-21'
-  updated_at: '2026-09-06'
+  updated_at: '2026-09-08'
   last_verified: '2026-08-24'
   last_editorial_review: '2026-09-06'
 aliases:

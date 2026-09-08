@@ -34,7 +34,7 @@ data:
   other_output_formats:
   - Standardized names and mapping metadata
 publications:
-- citation: 'Fahy and Subramaniam. RefMet: a reference nomenclature for metabolomics. Nature Methods 17, 1173–1174
+- citation: 'Fahy E, Subramaniam S. RefMet: a reference nomenclature for metabolomics. Nat Methods 17, 1173-1174
     (2020).'
   type: primary
   doi: 10.1038/s41592-020-01009-y
@@ -61,7 +61,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-07'
+  updated_at: '2026-09-08'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: metabolomics-workbench
