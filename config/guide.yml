@@ -1,7 +1,7 @@
 - id: data-processing
   title: Processing analytical data
-  introduction: 'MS and NMR measurements need processing before comparison: detect signals, correct or align
-    spectra, and assemble quantitative tables. A feature or spectral region is not necessarily a single identified
+  introduction: 'MS measurements need processing before comparison: detect signals, correct or align
+    spectra, and assemble quantitative tables. A feature is not necessarily a single identified
     metabolite.'
   selection: Check your acquisition mode and file format, the quality-control steps available, and whether
     you prefer a graphical or scripted workflow.
@@ -17,8 +17,6 @@
   - ipo
   - camera
   - ramclustr
-  - nmrglue
-  - nmrprocflow
   - smartpeak
   - peakbot
   - msnbase
@@ -38,8 +36,6 @@
     ipo: Tune XCMS parameters
     camera: Group isotopes and adducts
     ramclustr: Cluster compound-related features
-    nmrglue: Scripted NMR processing
-    nmrprocflow: Interactive 1D NMR processing
     smartpeak: Targeted peak integration
     peakbot: Learned chromatographic peak detection
     msnbase: R infrastructure for MS data
