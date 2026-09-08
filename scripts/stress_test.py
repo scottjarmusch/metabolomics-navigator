@@ -21,7 +21,7 @@ def size_mb(path: Path) -> float:
 
 
 def synthetic_tool(i: int) -> dict:
-    platform = ['lc_ms', 'gc_ms', 'nmr', 'multi_platform'][i % 4]
+    platform = ['lc_ms', 'gc_ms', 'ce_ms', 'multi_platform'][i % 4]
     function = ['preprocessing', 'annotation_identification', 'statistics', 'quality_control', 'reference_data_search'][i % 5]
     interface = ['web_app', 'desktop_gui', 'r_package', 'python_package', 'command_line'][i % 5]
     slug = f'synthetic-tool-{i:04d}'
