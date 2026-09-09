@@ -30,8 +30,8 @@ Researchers can submit either a tool or a strategy through a GitHub Issue Form. 
 
 - [Submit a tool or resource](https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=submit-tool.yml)
 - [Update an existing tool](https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml)
-- [Submit a published strategy](https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=submit-protocol.yml)
-- [Update an existing strategy](https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-protocol.yml)
+- [Submit a published strategy](https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=submit-strategy.yml)
+- [Update an existing strategy](https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-strategy.yml)
 
 A free GitHub account is required. Update forms open correction requests for editorial review; they do not automatically change an entry. New-entry automation requires GitHub Actions permissions to create pull requests. See [CONTRIBUTING.md](https://github.com/scottjarmusch/metabolomics-navigator/blob/main/CONTRIBUTING.md).
 

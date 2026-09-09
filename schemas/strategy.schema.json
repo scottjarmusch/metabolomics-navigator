@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://scottjarmusch.github.io/metabolomics-navigator/schemas/protocol.schema.json",
+  "$id": "https://scottjarmusch.github.io/metabolomics-navigator/schemas/strategy.schema.json",
   "title": "Metabolomics Navigator strategy entry",
   "description": "Schema for a published, transferable experimental or computational metabolomics strategy.",
   "type": "object",
