@@ -1,0 +1,227 @@
+name: Submit a metabolomics strategy
+description: Add a published, transferable experimental or computational metabolomics strategy to Metabolomics Navigator.
+title: '[Strategy submission]: '
+labels:
+- strategy-submission
+- needs-triage
+body:
+- type: markdown
+  attributes:
+    value: Thank you for contributing. Strategies are published, transferable strategies that combine experimental and/or computational
+      steps to solve a defined metabolomics problem. The required section is intentionally short; editors can enrich the workflow
+      later.
+- type: checkboxes
+  id: scope-check
+  attributes:
+    label: Strategy scope
+    options:
+    - label: This is a transferable method, strategy, or strategy, not simply a paper that happens to use metabolomics.
+      required: true
+- type: input
+  id: strategy-name
+  attributes:
+    label: Strategy or method name
+    placeholder: e.g., Reverse metabolomics
+  validations:
+    required: true
+- type: input
+  id: publication
+  attributes:
+    label: Publication DOI or URL
+    description: Provide the primary paper or strategy publication.
+    placeholder: 10.xxxx/xxxxx or https://...
+  validations:
+    required: true
+- type: textarea
+  id: summary
+  attributes:
+    label: What problem does this strategy solve?
+    description: In one to three sentences, describe the transferable scientific or analytical problem this strategy addresses.
+    placeholder: This strategy enables researchers to...
+  validations:
+    required: true
+- type: dropdown
+  id: platforms
+  attributes:
+    label: Main analytical platform
+    multiple: true
+    options:
+    - LC-MS
+    - GC-MS
+    - CE-MS
+    - Direct-infusion MS
+    - MALDI-MS
+    - Imaging mass spectrometry
+    - Multiple analytical platforms
+    - Platform-independent
+  validations:
+    required: true
+- type: dropdown
+  id: objective
+  attributes:
+    label: Main scientific objective
+    options:
+    - Molecular discovery
+    - Metabolite annotation
+    - Structure elucidation
+    - Dereplication
+    - Molecular-family discovery
+    - Unknown identification
+    - Metal-binding compound discovery
+    - Biomolecular interaction analysis
+    - Chemical-reactivity profiling
+    - Enzyme-activity profiling
+    - Biotransformation analysis
+    - Phenotype association
+    - Disease-state comparison
+    - Biomarker discovery
+    - Host–microbe interaction
+    - Natural-product discovery
+    - Environmental metabolomics
+    - Stable-isotope tracing
+    - Flux analysis
+    - Spatial metabolomics
+    - Single-cell metabolomics
+    - Native metabolomics
+    - Reverse metabolomics
+    - Exposomics
+  validations:
+    required: true
+- type: textarea
+  id: tools
+  attributes:
+    label: Tools or resources used
+    description: List the main software, databases, repositories, or services. Names are enough; Metabolomics Navigator will cross-link
+      entries when possible.
+    placeholder: MZmine, GNPS, MassIVE
+  validations:
+    required: true
+- type: dropdown
+  id: role
+  attributes:
+    label: What is your relationship to this work?
+    options:
+    - Author of the publication or strategy
+    - Strategy user
+    - Database or community curator
+    - Other contributor
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: '### Optional details
+
+      These help editors create a richer strategy page, but you may leave them blank.'
+- type: dropdown
+  id: sample-types
+  attributes:
+    label: Sample types
+    description: Optional. Select sample matrices for which the method has been demonstrated or is directly applicable.
+    multiple: true
+    options:
+    - Plasma
+    - Serum
+    - Whole blood
+    - Dried blood spot
+    - Urine
+    - Saliva
+    - Sputum
+    - Bronchoalveolar lavage fluid
+    - Cerebrospinal fluid
+    - Feces or stool
+    - Tissue or biopsy
+    - Cells or cell pellets
+    - Cell-culture medium or supernatant
+    - Microbial culture or biomass
+    - Microbial culture supernatant
+    - Biofilm
+    - Plant tissue
+    - Root exudate
+    - Soil
+    - Water or aquatic sample
+    - Food
+    - Fermentation sample
+    - Synthetic or analytical standards
+    - Other biofluid
+    - Other or broadly applicable
+- type: dropdown
+  id: biological-contexts
+  attributes:
+    label: Biological context
+    description: Optional. Select the broad biological systems or study contexts represented by the strategy.
+    multiple: true
+    options:
+    - Human
+    - Animal
+    - Microbial
+    - Plant
+    - Fungal
+    - Marine
+    - Environmental
+    - Food or fermentation
+    - Host–microbe interaction
+    - Synthetic or reference material
+    - Broadly applicable
+- type: input
+  id: organisms
+  attributes:
+    label: Specific organisms
+    description: Optional. Add specific organisms when useful, separated by commas.
+    placeholder: Pseudomonas aeruginosa, Homo sapiens
+- type: dropdown
+  id: analysis-types
+  attributes:
+    label: Analysis type
+    multiple: true
+    options:
+    - Targeted metabolomics
+    - Untargeted metabolomics
+    - Semi-targeted metabolomics
+    - Metabolite profiling
+    - Lipidomics
+    - Stable-isotope tracing
+    - Fluxomics
+    - Spatial metabolomics
+    - Exposomics
+    - Volatilomics
+    - Multi-omics
+- type: dropdown
+  id: components
+  attributes:
+    label: Strategy components
+    description: Select the major stages included in the strategy.
+    multiple: true
+    options:
+    - Sample preparation
+    - Chromatography
+    - Post-column modification or infusion
+    - Data acquisition
+    - Ion mobility
+    - Data conversion
+    - Preprocessing and feature extraction
+    - Quality control
+    - Annotation or identification
+    - Spectral search
+    - Molecular networking
+    - Repository-scale mining
+    - Metadata analysis
+    - Statistical analysis
+    - Biological validation
+    - Data and workflow sharing
+- type: input
+  id: contact
+  attributes:
+    label: Name or ORCID for attribution
+    placeholder: Name; 0000-0000-0000-0000
+- type: textarea
+  id: notes
+  attributes:
+    label: Anything else we should know?
+    description: Data or code availability, important requirements, or other context.
+- type: checkboxes
+  id: confirmation
+  attributes:
+    label: Submission confirmation
+    options:
+    - label: To the best of my knowledge, the information is accurate and suitable for public display.
+      required: true
