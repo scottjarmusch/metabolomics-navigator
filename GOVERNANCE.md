@@ -12,9 +12,19 @@ A tool is in scope when it is a computational, data, analytical, or reference re
 
 Historically important or deprecated tools may remain in the catalogue when they are needed to interpret published studies.
 
-### Strategies
+### Analytical Strategies
 
-A strategy is in scope when it is a published, transferable experimental or computational strategy that addresses a defined metabolomics problem and can reasonably be adapted by another researcher. A paper is not included merely because it used metabolomics; the methodological strategy must itself be reusable or distinctive.
+A Strategy must meet both mandatory criteria and normally at least four of the five criteria below:
+
+1. **Methodological contribution (mandatory):** introduces or meaningfully modifies an analytical approach.
+2. **Transferability (mandatory):** remains useful when the organism, sample type or biological question changes.
+3. **Integration:** combines tools, data types or evidence layers in a distinctive way.
+4. **Added capability:** enables more than routine use of the underlying software.
+5. **Implementability:** provides enough detail and resources for another laboratory to adapt it.
+
+Editorial test: **If the biological findings were removed, would the methodological idea still be worth teaching to another metabolomics researcher?**
+
+Ordinary application papers are excluded. Routine software workflows belong in Tool capabilities. Distinct transferable methodological layers belong in Analytical Strategies.
 
 ## Verification states
 

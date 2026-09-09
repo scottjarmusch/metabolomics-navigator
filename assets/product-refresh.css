@@ -1,0 +1,38 @@
+/* Shared reference-site refinement, layered over the established visual system. */
+:root { --navigator-teal:#164f51; --navigator-paper:#faf9f5; --navigator-line:#dce3df; }
+body { background:var(--navigator-paper); }
+h1,h2,h3,p,li,dd,a { overflow-wrap:break-word; }
+h1 { text-wrap:balance; }
+.page-hero.compact { padding:2.8rem 0 2.2rem; }
+.page-hero h1,.tool-hero h1 { max-width:24ch; line-height:1.12; }
+.page-hero p:not(.eyebrow) { max-width:66ch; }
+.breadcrumbs { flex-wrap:wrap; row-gap:.4rem; font-size:.85rem; }
+.button { min-height:42px; padding:.7rem 1rem; border-radius:5px; line-height:1.3; }
+button,input,select { font:inherit; }
+button:not(:disabled),summary { cursor:pointer; }
+button:disabled { opacity:.45; cursor:default; }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible { outline:3px solid #927333; outline-offset:4px; }
+.tool-card,.filter-panel,.tool-facts,.contribution-card { border-radius:6px; box-shadow:none; }
+.tool-card h2 { line-height:1.22; }
+.tool-facts dd,.definition-grid p,.publication-list li { overflow-wrap:anywhere; }
+.method-detail { border-top:1px solid var(--navigator-line); padding:1rem 0; }
+.method-detail summary { color:var(--navigator-teal); font-weight:600; }
+.method-detail li { margin:.75rem 0; }
+.entry-nav { flex-wrap:wrap; }
+.contribution-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin-top:2rem; position:relative; }
+.contribution-card { background:#fff; border:1px solid var(--navigator-line); padding:2rem; display:flex; flex-direction:column; scroll-margin-top:6rem; }
+.contribution-card h2 { font-size:1.8rem; }
+.contribution-card ul { padding-left:1.2rem; }
+.contribution-card li { margin:.6rem 0; }
+.contribution-card blockquote { border-left:2px solid #aa8d50; margin:.75rem 0; padding-left:1rem; font-family:Georgia,serif; font-size:1.15rem; }
+.contribution-actions { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:auto; padding-top:1.2rem; }
+.legacy-anchor { position:absolute; top:0; }
+.contribution-review { padding-top:3rem; padding-bottom:3rem; }
+.contribution-review ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2rem; padding-left:1.3rem; }
+
+@media(max-width:1000px) { .main-nav { gap:.85rem; } .brand-text small { display:none; } }
+@media(max-width:760px) {
+ .page-hero.compact { padding:1.8rem 0 1.3rem; }
+ .contribution-grid,.contribution-review ol { grid-template-columns:1fr; }
+ .contribution-card { padding:1.3rem; }
+}

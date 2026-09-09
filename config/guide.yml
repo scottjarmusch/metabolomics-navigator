@@ -1,10 +1,9 @@
 - id: data-processing
   title: Processing analytical data
-  introduction: 'MS measurements need processing before comparison: detect signals, correct or align
-    spectra, and assemble quantitative tables. A feature is not necessarily a single identified
-    metabolite.'
-  selection: Check your acquisition mode and file format, the quality-control steps available, and whether
-    you prefer a graphical or scripted workflow.
+  introduction: 'MS measurements need processing before comparison: detect signals, correct or align spectra, and
+    assemble quantitative tables. A feature is not necessarily a single identified metabolite.'
+  selection: Check your acquisition mode and file format, the quality-control steps available, and whether you prefer
+    a graphical or scripted workflow.
   slugs:
   - mzmine
   - ms-dial
@@ -43,11 +42,11 @@
     skyline: Targeted small-molecule quantification
 - id: annotation
   title: Annotating molecules
-  introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures,
-    or chemical classes. These are different levels of information. A class prediction can be useful even when
-    an exact structure remains unknown; a ranked structure candidate still needs supporting evidence.
-  selection: 'Match the tool to the question you can answer with your data: formula, chemical class, database
-    candidate, or a possible modification of a known molecule.'
+  introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical
+    classes. These are different levels of information. A class prediction can be useful even when an exact structure
+    remains unknown; a ranked structure candidate still needs supporting evidence.
+  selection: 'Match the tool to the question you can answer with your data: formula, chemical class, database candidate,
+    or a possible modification of a known molecule.'
   slugs:
   - sirius
   - csi-fingerid
@@ -79,10 +78,10 @@
 - id: spectral-analysis
   title: Exploring spectral relationships
   introduction: Tandem mass spectra contain fragmentation information that can help investigate related molecules.
-    Molecular networking organizes spectra by similarity, while a query language can find spectra containing
-    a specified pattern. These approaches help prioritize signals for closer inspection.
-  selection: Decide whether you need to explore relationships across a dataset or test a specific spectral
-    pattern. Similarity or a query match alone does not establish a complete structure.
+    Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified
+    pattern. These approaches help prioritize signals for closer inspection.
+  selection: Decide whether you need to explore relationships across a dataset or test a specific spectral pattern.
+    Similarity or a query match alone does not establish a complete structure.
   slugs:
   - gnps
   - massql
@@ -103,9 +102,9 @@
     molnetenhancer: Combine network annotation evidence
 - id: public-data
   title: Finding context in public data
-  introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been
-    observed. Some resources begin with a query spectrum; others use a structure or sample metadata. Domain-specific
-    collections add context such as microbial taxonomy, plants, or foods.
+  introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been observed.
+    Some resources begin with a query spectrum; others use a structure or sample metadata. Domain-specific collections
+    add context such as microbial taxonomy, plants, or foods.
   selection: Check what is indexed and inspect the original study metadata. A match supports further investigation;
     it does not by itself establish biological origin or absence from unmeasured samples.
   slugs:
@@ -137,8 +136,8 @@
   introduction: Repositories preserve experimental files, reference spectra support annotation, and knowledgebases
     connect molecular evidence to its reported context. These resources serve different purposes, but all depend
     on clear metadata and traceable evidence.
-  selection: Distinguish depositing a dataset from preparing a reference spectrum or contributing a biological
-    annotation. Keep the source files, identifiers, and supporting evidence connected.
+  selection: Distinguish depositing a dataset from preparing a reference spectrum or contributing a biological annotation.
+    Keep the source files, identifiers, and supporting evidence connected.
   slugs:
   - massive
   - msms-chooser
@@ -183,9 +182,9 @@
     refmet: Standardize metabolite names
 - id: interpretation
   title: Inspecting and interpreting results
-  introduction: Once data have been processed, researchers need to inspect signals, analyze variation across
-    samples, and interpret results in biological context. An interactive viewer, a statistical platform, and
-    a collection of downstream applications provide different kinds of support.
+  introduction: Once data have been processed, researchers need to inspect signals, analyze variation across samples,
+    and interpret results in biological context. An interactive viewer, a statistical platform, and a collection
+    of downstream applications provide different kinds of support.
   selection: Start with your study design and the form of your input data. Preserve sample identifiers, preprocessing
     decisions, and analysis settings when moving between tools.
   slugs:
@@ -222,3 +221,20 @@
     tidymass: Connected LC-MS workflows in R
     omicspls: Integrate paired omics datasets
     ropls: PCA, PLS and OPLS models
+- id: spatial-metabolomics
+  title: Working with spatial metabolomics
+  short_title: Spatial metabolomics
+  caption: Explore molecular distributions in tissues and surfaces.
+  introduction: Imaging mass spectrometry links molecular signals to spatial coordinates. Processing, visualization
+    and annotation address different questions; an ion image alone does not establish molecular identity.
+  selection: Start with the acquisition mode, spatial coordinates and available file formats. Keep biological replication
+    distinct from the number of measured pixels.
+  homepage: false
+  slugs:
+  - metaspace
+  - mzmine
+  - ms-dial
+  tool_labels:
+    metaspace: Spatial annotation and public imaging data
+    mzmine: Imaging-MS feature processing
+    ms-dial: Supported imaging-MS workflows
