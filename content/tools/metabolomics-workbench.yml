@@ -60,7 +60,7 @@ scope:
 publications:
 - doi: 10.1093/nar/gkv1042
   citation: 'Sud M, Fahy E, Cotter D, et al. Metabolomics Workbench: An international repository for metabolomics
-    data and metadata, metabolite standards, protocols, tutorials and training, and analysis tools. Nucleic
+    data and metadata, metabolite standards, strategies, tutorials and training, and analysis tools. Nucleic
     Acids Res 44, D463-70 (2016).'
   type: primary
 related_tools:

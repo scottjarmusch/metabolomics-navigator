@@ -75,7 +75,7 @@ scope:
     repositories and historical submissions.
   - Repository coverage and indexed file counts evolve as Pan-ReDU is updated.
   - Save the selected file identifiers and harmonized metadata with the analysis; harmonization does not make experimental
-    protocols equivalent.
+    strategies equivalent.
   not_designed_for:
   - Replacing primary repository records or correcting every missing or inconsistent sample annotation.
 acquisition:
