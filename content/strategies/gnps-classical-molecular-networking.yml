@@ -1,0 +1,105 @@
+$schema: ../../schemas/strategy.schema.json
+slug: gnps-classical-molecular-networking
+name: Classical molecular networking in GNPS
+summary: A GNPS workflow that groups related MS/MS spectra by fragmentation similarity to visualize molecular families
+  and propagate spectral-library annotations through untargeted datasets.
+description: Classical molecular networking organizes MS/MS spectra into a graph in which nodes represent consensus
+  fragmentation spectra and edges connect spectra above defined similarity thresholds. The workflow is useful when
+  chromatographic feature tables are unavailable or when the analysis is centered directly on MS/MS spectral relationships.
+publication:
+  title: Reproducible molecular networking of untargeted mass spectrometry data using GNPS
+  doi: 10.1038/s41596-020-0317-5
+  url: https://www.nature.com/articles/s41596-020-0317-5
+  citation: Aron AT, Gentry EC, McPhail KL, et al. Reproducible molecular networking of untargeted mass spectrometry
+    data using GNPS. Nature Protocols 15, 1954–1991 (2020).
+  journal: Nature Protocols
+  year: 2020
+purpose:
+  primary: molecular_family_discovery
+  secondary:
+  - natural_product_discovery
+  - dereplication
+  - metabolite_annotation
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+components:
+- data_conversion
+- spectral_search
+- molecular_networking
+- annotation
+- data_sharing
+workflow_steps:
+- title: Prepare centroided MS/MS data
+  description: Convert or export tandem mass-spectrometry data in a GNPS-compatible open format and organize files
+    and optional sample metadata for analysis.
+- title: Select or upload data in GNPS2
+  description: Choose uploaded files or reference public files using Universal Spectrum Identifiers (USIs) in the
+    Classical Molecular Networking workflow.
+  tool_slugs:
+  - gnps
+  - massive
+- title: Filter and organize MS/MS spectra
+  description: Apply precursor and fragment tolerances, minimum peak requirements, and networking filters appropriate
+    to the instrument and experiment.
+  tool_slugs:
+  - gnps
+- title: Construct the molecular network
+  description: Connect spectra that pass the selected similarity and matched-fragment criteria, producing molecular
+    families of spectrally related ions.
+  tool_slugs:
+  - gnps
+- title: Search spectral libraries and inspect networks
+  description: Overlay community spectral-library matches, review singletons and molecular families, and export
+    or visualize network results.
+  tool_slugs:
+  - gnps
+tools:
+- slug: gnps
+  role: Classical molecular-networking workflow, spectral-library search, and visualization.
+- slug: massive
+  role: Optional source or repository for public MS/MS datasets.
+resources:
+  code_available: true
+  code_url: https://github.com/CCMS-UCSD/GNPS_Workflows
+  method_available: true
+  method_url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/classical/
+scope:
+  designed_for:
+  - Discovering molecular families directly from untargeted MS/MS spectra without requiring a chromatographic feature
+    table.
+  - Natural-product dereplication and exploratory organization of fragmentation-similar spectra.
+  requirements:
+  - Centroided MS/MS data with precursor information and instrument-appropriate mass tolerances.
+  considerations:
+  - Unlike FBMN, classical molecular networking is spectrum-centric and does not inherently preserve chromatographic
+    feature quantification or resolve coeluting/isomeric features through an external feature table.
+  - Network topology depends on filtering and similarity thresholds; these parameters should be reported together
+    with the GNPS task identifier.
+related_strategies:
+- gnps-feature-based-molecular-networking
+provenance:
+  submitted_by: curator
+  author_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+sample_types:
+- other
+biological_contexts:
+- broadly_applicable
+organisms: []

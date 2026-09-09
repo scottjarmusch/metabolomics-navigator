@@ -2,7 +2,7 @@ version: 0.3.0
 last_updated: '2026-08-24'
 principles:
 - Use stable machine-readable IDs and editable human-readable labels.
-- Treat tools and protocols as separate first-class content types that cross-link to one another.
+- Treat tools and strategies as separate first-class content types that cross-link to one another.
 - Categorize resources across separate dimensions rather than forcing one hierarchy.
 - Keep researcher submission forms short; curators may enrich records later.
 - Use broad browse categories with detailed capabilities for scientific specificity.
@@ -431,7 +431,7 @@ ion_mobility_support:
   label: Not applicable
 - id: unspecified
   label: Not specified
-protocol_objectives:
+strategy_objectives:
 - id: molecular_discovery
   label: Molecular discovery
 - id: metabolite_annotation
@@ -480,7 +480,7 @@ protocol_objectives:
   label: Reverse metabolomics
 - id: exposomics
   label: Exposomics
-protocol_components:
+strategy_components:
 - id: sample_preparation
   label: Sample preparation
 - id: chromatography
@@ -513,11 +513,11 @@ protocol_components:
   label: Biological validation
 - id: data_sharing
   label: Data and workflow sharing
-protocol_submission_roles:
+strategy_submission_roles:
 - id: author
-  label: Author of the publication or protocol
+  label: Author of the publication or strategy
 - id: user
-  label: Protocol user
+  label: Strategy user
 - id: curator
   label: Database or community curator
 - id: other

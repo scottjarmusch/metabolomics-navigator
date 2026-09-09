@@ -1,10 +1,10 @@
 # v5.3.1 migration compatibility fix
 
-v5.3 intentionally retired the broad `sample_contexts` Protocol field and renamed the objective `host_microbiome` to `host_microbe_interaction`. The first v5.3 package migrated the curated Protocol records, but it did not account for community or test Protocols that had already been created in a live repository under v5.2.
+v5.3 intentionally retired the broad `sample_contexts` Strategy field and renamed the objective `host_microbiome` to `host_microbe_interaction`. The first v5.3 package migrated the curated Strategy records, but it did not account for community or test Strategies that had already been created in a live repository under v5.2.
 
 v5.3.1 fixes that upgrade path without weakening the frozen v5.3 schema.
 
-When Protocol records are loaded, legacy v5.2 fields are normalized in memory before validation and rendering:
+When Strategy records are loaded, legacy v5.2 fields are normalized in memory before validation and rendering:
 
 - `sample_contexts: human` → `biological_contexts: human`
 - `sample_contexts: microbial` → `biological_contexts: microbial`

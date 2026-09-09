@@ -41,7 +41,8 @@
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
         <a href="{{ url('') }}"{% if active in ['home', 'guide'] %} aria-current="page"{% endif %}>Guide</a>
         <a href="{{ url('tools/') }}"{% if active == 'tools' %} aria-current="page"{% endif %}>Tools</a>
-        <a href="{{ url('protocols/') }}"{% if active == 'protocols' %} aria-current="page"{% endif %}>Protocols</a>
+        <a href="{{ url('strategies/') }}"{% if active == 'strategies' %} aria-current="page"{% endif %}>Strategies</a>
+        <a href="{{ url('ask/') }}"{% if active == 'ask' %} aria-current="page"{% endif %}>Ask Navigator</a>
         <a href="{{ url('about/') }}"{% if active == 'about' %} aria-current="page"{% endif %}>About</a>
         <a class="nav-submit" href="{{ url('submit/') }}"{% if active == 'submit' %} aria-current="page"{% endif %}>Contribute</a>
       </nav>
@@ -60,7 +61,7 @@
       <div>
         <h2>Explore</h2>
         <a href="{{ url('tools/') }}">Tools</a>
-        <a href="{{ url('protocols/') }}">Protocols</a>
+        <a href="{{ url('strategies/') }}">Strategies</a>
         <a href="{{ url('browse/') }}">Browse categories</a>
       </div>
       <div>
@@ -72,7 +73,7 @@
       <div>
         <h2>Data</h2>
         <a href="{{ url('tool-data.json') }}">Tool data (JSON)</a>
-        <a href="{{ url('protocol-data.json') }}">Protocol data (JSON)</a>
+        <a href="{{ url('strategy-data.json') }}">Strategy data (JSON)</a>
         <a href="{{ url('catalogue-data.json') }}">Complete catalogue (JSON)</a>
       </div>
     </div>

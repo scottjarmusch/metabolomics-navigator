@@ -2,7 +2,7 @@
 
 ## Principle
 
-Contribution should be **stub first, enrichment later**. Researchers should not need to know Git, YAML, JSON Schema, or the Atlas taxonomy in depth.
+Contribution should be **stub first, enrichment later**. Researchers should not need to know Git, YAML, JSON Schema, or the Navigator taxonomy in depth.
 
 ## Tool submission
 
@@ -20,15 +20,15 @@ Required fields:
 
 Curators can later enrich capabilities, acquisition mode, formats, technical requirements, release metadata, scope, verification, and cross-links.
 
-## Protocol submission
+## Strategy submission
 
-A protocol is a **published, transferable experimental or computational strategy**, not simply any paper that uses metabolomics.
+A strategy is a **published, transferable experimental or computational strategy**, not simply any paper that uses metabolomics.
 
 Required fields:
 
-1. Protocol/method name
+1. Strategy/method name
 2. Publication DOI or URL
-3. Problem the protocol solves
+3. Problem the strategy solves
 4. Main analytical platform
 5. Main scientific objective
 6. Tools or resources used

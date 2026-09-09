@@ -8,24 +8,24 @@ if (toggle && nav) {
   });
 }
 
-const atlasSearch = document.querySelector('[data-atlas-search]');
-if (atlasSearch) {
-  const input = atlasSearch.querySelector('input[name="q"]');
-  const scopeButtons = atlasSearch.querySelectorAll('[data-search-scope]');
+const navigatorSearch = document.querySelector('[data-navigator-search]');
+if (navigatorSearch) {
+  const input = navigatorSearch.querySelector('input[name="q"]');
+  const scopeButtons = navigatorSearch.querySelectorAll('[data-search-scope]');
   const actions = {
-    tools: atlasSearch.dataset.toolsAction,
-    protocols: atlasSearch.dataset.protocolsAction,
+    tools: navigatorSearch.dataset.toolsAction,
+    strategies: navigatorSearch.dataset.strategiesAction,
   };
   const placeholders = {
     tools: 'Search tools, functions, platforms…',
-    protocols: 'Search protocols, objectives, methods…',
+    strategies: 'Search strategies, objectives, methods…',
   };
 
   scopeButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const scope = button.dataset.searchScope;
       if (!actions[scope]) return;
-      atlasSearch.action = actions[scope];
+      navigatorSearch.action = actions[scope];
       if (input) input.placeholder = placeholders[scope];
       scopeButtons.forEach((item) => {
         const active = item === button;

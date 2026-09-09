@@ -6,7 +6,7 @@ The catalogue architecture was stress-tested before broad population by generati
 
 - Synthetic tools added: 500
 - Total tool pages generated: 512
-- Protocol pages generated: 2
+- Strategy pages generated: 2
 - Schema/catalogue validation: passed
 - Validation time: 2.46 seconds
 - Static site build time: 3.02 seconds

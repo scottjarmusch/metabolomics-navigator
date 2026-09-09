@@ -3,7 +3,7 @@
 {% block head %}<link rel="canonical" href="{{ absolute_url('') }}">{% endblock %}
 {% block content %}
 <section class="navigator-entrance section-wrap" aria-labelledby="entrance-title">
-  <header class="entrance-header"><p class="eyebrow">METABOLOMICS NAVIGATOR</p><h1 id="entrance-title">Find your next tool.</h1><p class="entrance-lead">A clear starting point for metabolomics workflows, protocols and community knowledge.</p></header>
+  <header class="entrance-header"><p class="eyebrow">METABOLOMICS NAVIGATOR</p><h1 id="entrance-title">Find your next tool.</h1><p class="entrance-lead">A clear starting point for metabolomics workflows, strategies and community knowledge.</p></header>
   <form class="home-search" action="{{ url('tools/') }}" method="get" role="search">
     <label for="home-search-input">Search the catalogue</label>
     <div class="home-search-row"><input id="home-search-input" name="q" type="search" placeholder="Search tools, functions or platforms" autocomplete="off"><button type="submit">Search <span aria-hidden="true">↗</span></button></div>
@@ -19,8 +19,8 @@
     {% endfor %}
   </div>
   <section class="home-contribute" aria-labelledby="contribute-title">
-    <div><p class="eyebrow">HELP GROW THE ATLAS</p><h2 id="contribute-title">Have something to add?</h2></div>
-    <div class="contribute-links"><a href="{{ url('submit/') }}#tool"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a tool</strong><small>Share a resource with the community</small></span><span aria-hidden="true">↗</span></a><a href="{{ url('submit/') }}#protocol"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a protocol</strong><small>Help others reproduce your workflow</small></span><span aria-hidden="true">↗</span></a></div>
+    <div><p class="eyebrow">HELP GROW THE NAVIGATOR</p><h2 id="contribute-title">Have something to add?</h2></div>
+    <div class="contribute-links"><a href="{{ url('submit/') }}#tool"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a tool</strong><small>Share a resource with the community</small></span><span aria-hidden="true">↗</span></a><a href="{{ url('submit/') }}#strategy"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a strategy</strong><small>Help others reproduce your workflow</small></span><span aria-hidden="true">↗</span></a></div>
   </section>
 </section>
 {% endblock %}

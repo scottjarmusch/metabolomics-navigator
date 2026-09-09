@@ -1,15 +1,15 @@
 # v5 visual redesign upgrade
 
-This package updates the visual design of the Metabolomics Tool Atlas while leaving the working submission, review, validation, and deployment workflows intact.
+This package updates the visual design of the Metabolomics Navigator while leaving the working submission, review, validation, and deployment workflows intact.
 
 ## Main changes
 
 - cleaner homepage with one dominant search experience
-- simplified navigation: Tools, Protocols, About, Submit
+- simplified navigation: Tools, Strategies, About, Submit
 - new metabolomics-grounded logo and favicon
 - cleaner design system with fewer heavy cards and lighter borders
-- refined catalogue, tool-page, and protocol-page presentation
-- simplified footer and stronger visual distinction between tools and protocols
+- refined catalogue, tool-page, and strategy-page presentation
+- simplified footer and stronger visual distinction between tools and strategies
 
 ## How to apply the update
 

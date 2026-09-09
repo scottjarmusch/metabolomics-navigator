@@ -2,11 +2,11 @@
 
 Date reviewed: 2026-08-24
 
-This is a tools-only content batch. No Protocol records are added or modified.
+This is a tools-only content batch. No Strategy records are added or modified.
 
 ## Inclusion rule used for ecosystem components
 
-A component receives its own Tool entry when it has a distinct scientific function, a stable recognizable name, a maintained interface/documentation/repository, is reusable across studies, and is something researchers may reasonably search for independently. Small utilities and individual workflow buttons remain capabilities of the parent ecosystem rather than separate Atlas records.
+A component receives its own Tool entry when it has a distinct scientific function, a stable recognizable name, a maintained interface/documentation/repository, is reusable across studies, and is something researchers may reasonably search for independently. Small utilities and individual workflow buttons remain capabilities of the parent ecosystem rather than separate Navigator records.
 
 ## New GNPS/GNPS2 ecosystem entries
 
@@ -74,4 +74,4 @@ The MZmine page now includes current multimodal processing and analysis capabili
 
 ## Validation
 
-The batch was validated against the frozen v5.3.1 schema and built successfully with 25 Tool records and the existing 13 Protocol records.
+The batch was validated against the frozen v5.3.1 schema and built successfully with 25 Tool records and the existing 13 Strategy records.

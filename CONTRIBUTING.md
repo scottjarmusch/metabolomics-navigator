@@ -4,17 +4,17 @@ Metabolomics Navigator is designed so that researchers can contribute without kn
 
 ## Submit a tool
 
-The current scope is **MS-based metabolomics**. NMR-only and other non-MS-only tools and protocols are outside scope. Shared reference databases, statistical tools and platforms remain eligible when they support MS metabolomics; entries should describe that use. A platform-independent label alone does not establish eligibility.
+The current scope is **MS-based metabolomics**. NMR-only and other non-MS-only tools and strategies are outside scope. Shared reference databases, statistical tools and platforms remain eligible when they support MS metabolomics; entries should describe that use. A platform-independent label alone does not establish eligibility.
 
 Use the **Submit a metabolomics tool** issue form. A minimal submission needs a name, link, neutral description, resource type, primary function, analytical platform, interface, access model, and submitter relationship. Aliases and alternative spellings are optional but encouraged for discoverability and duplicate detection.
 
-## Submit a protocol
+## Submit a strategy
 
-Use the **Submit a metabolomics protocol** issue form. Protocols must be published and transferable, not simply application studies that happen to use metabolomics. Sample type and biological context are optional structured fields that improve discovery.
+Use the **Submit a metabolomics strategy** issue form. Strategies must be published and transferable, not simply application studies that happen to use metabolomics. Sample type and biological context are optional structured fields that improve discovery.
 
 ## What happens after submission
 
-New-tool and new-protocol forms create structured drafts through automation. The **Update an existing tool** and **Update an existing protocol** forms create issues for an editor to review and implement. All GitHub forms require a free account.
+New-tool and new-strategy forms create structured drafts through automation. The **Update an existing tool** and **Update an existing strategy** forms create issues for an editor to review and implement. All GitHub forms require a free account.
 
 1. GitHub Actions converts the form into a structured draft record.
 2. A pull request is opened for review.

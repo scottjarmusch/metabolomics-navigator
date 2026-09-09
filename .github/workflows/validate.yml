@@ -22,9 +22,16 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Validate tools, protocols, and cross-links
+      - name: Validate tools, strategies, and cross-links
         run: python scripts/validate_catalogue.py
       - name: Check form and vocabulary stay synchronized
         run: python scripts/check_form_sync.py
       - name: Test full static-site build
         run: python scripts/build_site.py --strict
+      - name: Verify editorial coverage, terminology and links
+        run: |
+          python scripts/check_editorial_readiness.py
+          python scripts/audit_strategy_terminology.py
+          python scripts/audit_navigator_brand.py
+          python scripts/check_site_links.py
+          node scripts/test_catalogue.cjs

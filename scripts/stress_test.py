@@ -66,7 +66,7 @@ def main():
     parser.add_argument('--tools', type=int, default=500, help='Number of synthetic tools to add (default: 500)')
     args = parser.parse_args()
 
-    with tempfile.TemporaryDirectory(prefix='metabo-atlas-stress-') as tmp:
+    with tempfile.TemporaryDirectory(prefix='metabo-navigator-stress-') as tmp:
         target = Path(tmp) / 'site'
         shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns('dist', '__pycache__', '*.pyc'))
         tools_dir = target / 'content' / 'tools'

@@ -1,6 +1,6 @@
 # Population batch 01 — GNPS, SIRIUS, and MZmine ecosystems
 
-This content-only batch enriches five existing tool entries and adds eleven published protocol/workflow entries. It does not change schemas, controlled vocabulary, forms, or GitHub Actions.
+This content-only batch enriches five existing tool entries and adds eleven published strategy/workflow entries. It does not change schemas, controlled vocabulary, forms, or GitHub Actions.
 
 ## Enriched tools
 
@@ -10,7 +10,7 @@ This content-only batch enriches five existing tool entries and adds eleven publ
 - SIRIUS
 - MZmine
 
-## Added protocols
+## Added strategies
 
 ### GNPS ecosystem
 - Classical molecular networking in GNPS

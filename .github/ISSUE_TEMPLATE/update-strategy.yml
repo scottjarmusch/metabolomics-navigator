@@ -1,0 +1,33 @@
+name: Suggest a strategy update
+description: Correct or expand an existing strategy entry.
+title: '[Strategy update]: '
+labels:
+- strategy-update
+- needs-triage
+body:
+- type: input
+  id: strategy
+  attributes:
+    label: Strategy name or page URL
+    placeholder: Reverse metabolomics or https://...
+  validations:
+    required: true
+- type: textarea
+  id: changes
+  attributes:
+    label: What should change?
+    description: Describe the correction, new evidence, updated resource, or additional workflow detail.
+    placeholder: Please update...
+  validations:
+    required: true
+- type: input
+  id: source
+  attributes:
+    label: Source or evidence
+    description: Optional DOI, documentation, repository, or other supporting link.
+    placeholder: https://...
+- type: input
+  id: contact
+  attributes:
+    label: Name or ORCID for attribution
+    placeholder: Name; 0000-0000-0000-0000
