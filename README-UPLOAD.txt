@@ -1,4 +1,4 @@
-METABOLOMICS TOOL ATLAS — CONTENT BATCH 01
+METABOLOMICS NAVIGATOR — CONTENT BATCH 01
 
 This is a content-only update. It does not change schemas, forms, or GitHub Actions.
 
@@ -8,4 +8,4 @@ Upload at repository root:
 3. Commit directly to main with: Add GNPS, SIRIUS, and MZmine content batch
 4. Let Validate catalogue and Deploy catalogue run automatically.
 
-This batch enriches GNPS, MASST, ReDU, SIRIUS, and MZmine and adds 11 new protocol/workflow pages.
+This batch enriches GNPS, MASST, ReDU, SIRIUS, and MZmine and adds 11 new strategy/workflow pages.
