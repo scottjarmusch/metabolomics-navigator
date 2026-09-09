@@ -1,6 +1,6 @@
 # v5.2 pre-population hardening
 
-v5.2 freezes the core information model before broad catalogue population. It adds richer relationships, protocol context fields, clearer governance, duplicate protection, and a scaling test while preserving the existing site design and GitHub review/deployment workflow.
+v5.2 freezes the core information model before broad catalogue population. It adds richer relationships, strategy context fields, clearer governance, duplicate protection, and a scaling test while preserving the existing site design and GitHub review/deployment workflow.
 
 ## What changes
 
@@ -9,14 +9,14 @@ v5.2 freezes the core information model before broad catalogue population. It ad
 - aliases/acronyms are checked for collisions with existing tools
 - relationships can describe alternatives, integrations, dependencies, parent/child resources, successors/predecessors, and hosted/contained resources
 
-### Protocols
+### Strategies
 - optional structured sample types
 - optional biological contexts
 - optional free-text organism names
-- protocol browsing can filter by sample type and biological context
+- strategy browsing can filter by sample type and biological context
 
 ### Governance
-- explicit inclusion criteria for tools and protocols
+- explicit inclusion criteria for tools and strategies
 - precise definitions for Community submitted, Developer verified, Author verified, and Editorially reviewed
 - verification is explicitly not an endorsement
 - comparative performance claims require independent evidence
@@ -33,7 +33,7 @@ v5.2 changes both the public forms in `.github` and the root catalogue schema/va
 
 ### Step 1 — GitHub form helper
 
-1. Extract `metabolomics-tool-atlas-v5-2-github-helper.zip`.
+1. Extract `metabolomics-tool-navigator-v5-2-github-helper.zip`.
 2. In GitHub open your repository, then go to **Code → .github**.
 3. Choose **Add file → Upload files**.
 4. Upload the `ISSUE_TEMPLATE` folder from the helper package.
@@ -44,7 +44,7 @@ The existing site should continue to validate because the old validator ignores 
 
 ### Step 2 — root update
 
-1. Extract `metabolomics-tool-atlas-v5-2-root-update.zip`.
+1. Extract `metabolomics-tool-navigator-v5-2-root-update.zip`.
 2. Return to the repository root.
 3. Choose **Add file → Upload files**.
 4. Upload everything inside the extracted folder.
@@ -54,4 +54,4 @@ The existing site should continue to validate because the old validator ignores 
 
 ## Naming
 
-The current package intentionally retains the existing Metabolomics Tool Atlas name and repository path. Rename the project only after a final project name is selected, so naming and URL migration can be handled once rather than repeatedly.
+The current package intentionally retains the existing Metabolomics Navigator name and repository path. Rename the project only after a final project name is selected, so naming and URL migration can be handled once rather than repeatedly.

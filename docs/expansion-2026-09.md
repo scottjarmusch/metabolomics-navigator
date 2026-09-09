@@ -1,6 +1,6 @@
 # September 2026 catalogue expansion
 
-Editorial reading completed 7 September 2026. This batch adds six resources to the original 25 tools; the 13 protocol records remain unchanged.
+Editorial reading completed 7 September 2026. This batch adds six resources to the original 25 tools; the 13 strategy records remain unchanged.
 
 | Resource | Role | Primary documentation | Publication |
 | --- | --- | --- | --- |

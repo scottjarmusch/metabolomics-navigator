@@ -2,7 +2,7 @@
 
 ## Clinical host–microbe edge case
 
-A synthetic protocol representing paired sputum and plasma analysis in human *Pseudomonas aeruginosa* infection validated cleanly using:
+A synthetic strategy representing paired sputum and plasma analysis in human *Pseudomonas aeruginosa* infection validated cleanly using:
 
 - primary objective: `disease_state_comparison`
 - secondary objectives: `host_microbe_interaction`, `biomarker_discovery`
@@ -27,7 +27,7 @@ Explicit declarations take precedence over inferred inverses, and duplicate disp
 A fresh 500-synthetic-tool test passed after the v5.3 changes:
 
 - 512 total tool pages
-- 2 protocol pages
+- 2 strategy pages
 - validation: ~2.7 seconds
 - static build: ~2.9 seconds
 - tools catalogue HTML: ~0.60 MB

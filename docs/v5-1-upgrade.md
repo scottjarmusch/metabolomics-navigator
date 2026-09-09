@@ -5,17 +5,17 @@ v5.1 is a focused usability and scale refinement of the v5 design. It does not c
 ## What changes
 
 - shorter homepage hero and tighter header
-- smaller long protocol titles
-- shallower tool/protocol page headers
-- maximum of five badges in tool/protocol hero areas
-- functional Tools / Protocols search scope toggle on the homepage
+- smaller long strategy titles
+- shallower tool/strategy page headers
+- maximum of five badges in tool/strategy hero areas
+- functional Tools / Strategies search scope toggle on the homepage
 - a more recognisable mass-spectrum + molecular-network hero illustration
-- publication journal, year, and DOI displayed near the top of protocol pages
+- publication journal, year, and DOI displayed near the top of strategy pages
 - tighter action-button positioning on entry pages
 
 ## Apply the update
 
-1. Download and extract `metabolomics-tool-atlas-v5-1-update.zip`.
+1. Download and extract `metabolomics-tool-navigator-v5-1-update.zip`.
 2. In GitHub, go to the repository **Code** tab.
 3. Choose **Add file → Upload files**.
 4. Drag the `assets`, `templates`, and `docs` folders from the extracted update package into the upload area.

@@ -4,17 +4,17 @@ v5.3 is the final pre-population information-model refinement before building th
 
 ## Changes
 
-- adds **Disease-state comparison** as a protocol objective
+- adds **Disease-state comparison** as a strategy objective
 - replaces the narrower **Host–microbiome metabolomics** objective with **Host–microbe interaction**
-- retires the legacy `sample_contexts` protocol field
+- retires the legacy `sample_contexts` strategy field
 - keeps sample matrix, biological context, and organism information in separate fields
 - automatically renders safe inverse tool relationships
 - rejects self-referential and duplicate tool relationships
-- migrates the two seed Protocol records to the frozen context model
+- migrates the two seed Strategy records to the frozen context model
 
 ## Upgrade order
 
-1. Upload the v5.3 GitHub helper inside `.github` first. This updates the protocol submission form.
+1. Upload the v5.3 GitHub helper inside `.github` first. This updates the strategy submission form.
 2. Commit it to `main` and allow validation/deployment to finish.
 3. Upload the v5.3 root update at repository root.
 4. Commit it to `main`. Validation and deployment should run automatically.

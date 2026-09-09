@@ -10,12 +10,12 @@ This repository is configured for `scottjarmusch/metabolomics-navigator`.
 
 ## Labels
 
-The submission workflow now creates/refreshes these automatically when a tool or protocol submission arrives:
+The submission workflow now creates/refreshes these automatically when a tool or strategy submission arrives:
 
 - `tool-submission`
 - `tool-update`
-- `protocol-submission`
-- `protocol-update`
+- `strategy-submission`
+- `strategy-update`
 - `needs-triage`
 - `automated-draft`
 
@@ -26,7 +26,7 @@ They may also be created manually under **Issues → Labels**.
 ### Tool
 Open **Issues → New issue → Submit a metabolomics tool**. A successful submission should create a structured draft pull request automatically.
 
-### Protocol
-Open **Issues → New issue → Submit a metabolomics protocol**. A successful submission should create a structured protocol draft and cross-link tool names that already exist in the Atlas.
+### Strategy
+Open **Issues → New issue → Submit a metabolomics strategy**. A successful submission should create a structured strategy draft and cross-link tool names that already exist in the Navigator.
 
 Validation runs on every pull request. Merging a valid entry into `main` automatically rebuilds GitHub Pages.
