@@ -1,0 +1,98 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-feature-based-molecular-networking
+name: GNPS2 Feature-Based Molecular Networking
+summary: Dedicated GNPS2 workflow that combines an aligned LC-MS feature table with MS/MS spectra to build quantitative
+  molecular networks.
+links:
+  primary: https://gnps2.org/workflowinput?workflowname=feature_based_molecular_networking_workflow
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/
+resource_types:
+- workflow_pipeline
+- web_service
+functions:
+  primary: molecular_networking
+  capabilities:
+  - library_matching
+  - network_visualization
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users
+    to contact the maintainers or UC Riverside Technology Transfer regarding organizational access. Workflow submission
+    requires a GNPS2 account.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against GNPS2 documentation and the linked method publication on 2026-09-09. No analysis job was
+    submitted and no independent benchmarking or developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+data:
+  input_types:
+  - feature_table
+  - spectra
+  - sample_metadata
+  output_types:
+  - feature_table
+  - compound_list
+  - report
+  input_formats:
+  - csv_tsv
+  - mgf
+  - msp
+  - mzml
+  other_output_formats:
+  - Network edge and node tables, library matches and downloadable workflow results
+publications:
+- citation: Nothias L-F, Petras D, Schmid R, et al. Feature-based molecular networking in the GNPS analysis environment.
+    Nature Methods 17, 905–908 (2020).
+  type: primary
+  doi: 10.1038/s41592-020-0933-6
+common_uses:
+- Build molecular networks that retain chromatographic feature abundance across samples.
+- Layer metadata and quantitative information onto MS/MS molecular families.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Dedicated GNPS2 workflow.
+- slug: mzmine
+  relationship: integration
+  note: MZmine can export feature tables and spectra for FBMN.
+- slug: ms-dial
+  relationship: integration
+  note: MS-DIAL can provide compatible feature/spectral exports.
+maintenance:
+  status: active
+  last_checked: '2026-09-09'
+description: Feature-Based Molecular Networking bridges upstream LC-MS/MS feature-processing tools with GNPS molecular
+  networking. A quantitative feature table and representative MS/MS spectra are exported from software such as MZmine,
+  MS-DIAL, XCMS, or OpenMS and used to build molecular networks in which each node corresponds to an aligned chromatographic
+  feature.
+scope:
+  designed_for:
+  - Untargeted LC-MS/MS studies where chromatographic feature detection and quantitative feature tables are important
+    for molecular-network interpretation.
+  - Resolving isomeric or chromatographically separated features that would otherwise be combined in purely spectrum-centric
+    networking.
+  requirements:
+  - An aligned feature quantification table and representative MS/MS spectra exported from a compatible preprocessing
+    workflow.
+  - Matching feature identifiers between the quantification table and spectral summary; sample metadata is optional.
+  considerations:
+  - The quality of the molecular network depends on upstream feature detection, alignment, MS/MS assignment, and
+    preprocessing choices.
+  - FBMN does not remove the need for independent structural validation; library matches and network propagation
+    represent different levels of annotation evidence.
+  - Raw mzML files are optional supporting inputs in the documented GNPS2 workflow; they do not replace the required
+    processed feature table and spectral summary.
+  not_designed_for:
+  - Definitive structure identification from spectral similarity alone.
+  - Replacing experimental quality control or validating biological causation.

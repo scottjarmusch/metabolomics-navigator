@@ -84,6 +84,8 @@
     Similarity or a query match alone does not establish a complete structure.
   slugs:
   - gnps
+  - gnps-classical-molecular-networking
+  - gnps-feature-based-molecular-networking
   - massql
   - matchms
   - spec2vec
@@ -100,6 +102,8 @@
     ms2deepscore: Predict structural similarity
     ms2lda: Discover recurring substructure motifs
     molnetenhancer: Combine network annotation evidence
+    gnps-classical-molecular-networking: Spectrum-centric molecular networking
+    gnps-feature-based-molecular-networking: Quantitative feature-based networking
 - id: public-data
   title: Finding context in public data
   introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been observed.

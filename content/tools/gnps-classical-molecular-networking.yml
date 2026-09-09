@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-classical-molecular-networking
+name: GNPS2 Classical Molecular Networking
+summary: GNPS2 workflow for organizing MS/MS spectra into molecular families using pairwise spectral similarity
+  and spectral-library searching.
+links:
+  primary: https://gnps2.org/workflowinput?workflowname=classic_networking
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/classical/
+resource_types:
+- workflow_pipeline
+- web_service
+functions:
+  primary: molecular_networking
+  capabilities:
+  - library_matching
+  - network_visualization
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users
+    to contact the maintainers or UC Riverside Technology Transfer regarding organizational access. Workflow submission
+    requires a GNPS2 account.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against GNPS2 documentation and the linked method publication on 2026-09-09. No analysis job was
+    submitted and no independent benchmarking or developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  - compound_list
+  input_formats:
+  - mgf
+  - mzml
+  - mzxml
+  other_output_formats:
+  - Network edge and node tables, library matches and downloadable workflow results
+publications:
+- citation: Aron AT, Gentry EC, McPhail KL, et al. Reproducible molecular networking of untargeted mass spectrometry
+    data using GNPS. Nature Protocols 15, 1954–1991 (2020).
+  type: methods
+  doi: 10.1038/s41596-020-0317-5
+  note: Describes classical GNPS molecular networking; the hosted GNPS2 implementation may differ from the published
+    interface.
+common_uses:
+- Group related MS/MS spectra into molecular families.
+- Search network nodes against public spectral libraries.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Dedicated molecular-networking workflow hosted by GNPS2.
+maintenance:
+  status: active
+  last_checked: '2026-09-09'
+description: Classical molecular networking organizes MS/MS spectra into a graph in which nodes represent consensus
+  fragmentation spectra and edges connect spectra above defined similarity thresholds. The workflow is useful when
+  chromatographic feature tables are unavailable or when the analysis is centered directly on MS/MS spectral relationships.
+scope:
+  designed_for:
+  - Discovering molecular families directly from untargeted MS/MS spectra without requiring a chromatographic feature
+    table.
+  - Natural-product dereplication and exploratory organization of fragmentation-similar spectra.
+  requirements:
+  - Centroided MS/MS data with precursor information and instrument-appropriate mass tolerances.
+  considerations:
+  - Unlike FBMN, classical molecular networking is spectrum-centric and does not inherently preserve chromatographic
+    feature quantification or resolve coeluting/isomeric features through an external feature table.
+  - Network topology depends on filtering and similarity thresholds; these parameters should be reported together
+    with the GNPS task identifier.
+  not_designed_for:
+  - Definitive structure identification from spectral similarity alone.
+  - Replacing experimental quality control or validating biological causation.
