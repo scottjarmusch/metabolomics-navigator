@@ -10,7 +10,7 @@
   </form>
   <div class="home-section-label"><span>Explore by task</span><span aria-hidden="true"></span></div>
   <div class="category-grid">
-    {% for group in guide_sections %}
+    {% for group in guide_sections if group.homepage|default(true) %}
     <a class="category-card" id="{{ group.id }}" href="{{ url('guide/' + group.id + '/') }}">
       <span class="category-icon">{{ topic_icon(group.id) }}</span>
       <h2>{{ group.short_title }}</h2>
@@ -20,7 +20,7 @@
   </div>
   <section class="home-contribute" aria-labelledby="contribute-title">
     <div><p class="eyebrow">HELP GROW THE NAVIGATOR</p><h2 id="contribute-title">Have something to add?</h2></div>
-    <div class="contribute-links"><a href="{{ url('submit/') }}#tool"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a tool</strong><small>Share a resource with the community</small></span><span aria-hidden="true">↗</span></a><a href="{{ url('submit/') }}#strategy"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a strategy</strong><small>Help others reproduce your workflow</small></span><span aria-hidden="true">↗</span></a></div>
+    <div class="contribute-links"><a href="{{ url('submit/') }}#tool"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a tool</strong><small>Share a resource with the community</small></span><span aria-hidden="true">↗</span></a><a href="{{ url('submit/') }}#strategy"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a strategy</strong><small>Share a transferable analytical idea</small></span><span aria-hidden="true">↗</span></a></div>
   </section>
 </section>
 {% endblock %}
