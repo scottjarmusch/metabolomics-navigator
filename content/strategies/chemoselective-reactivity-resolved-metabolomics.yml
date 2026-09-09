@@ -1,0 +1,84 @@
+$schema: ../../schemas/strategy.schema.json
+slug: chemoselective-reactivity-resolved-metabolomics
+name: Chemoselective reactivity-resolved metabolomics
+summary: A functional-group-resolved metabolomics strategy that uses orthogonal chemoselective probes, covalent
+  capture and diagnostic reporter chemistry to enrich and organize otherwise chemically heterogeneous metabolite
+  subsets before LC-MS.
+description: The modular reactivity-encoding platform (MREP) uses distinct alkyne-tagged probes for carboxyl, amine,
+  carbonyl and thiol functionalities. Tagged metabolites are captured through click chemistry on a common resin,
+  matrix is removed, and released derivatives share reporter-ion behavior. The strategy converts intrinsic chemical
+  reactivity into an experimental annotation/enrichment dimension.
+publication:
+  title: Chemoselective Metabolomics via a Modular Reactivity-Encoding Platform
+  doi: 10.1002/advs.76599
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13379249/
+  citation: Tao X, Zhang C-M, Yang R-J, et al. Chemoselective Metabolomics via a Modular Reactivity-Encoding Platform.
+    Advanced Science (2026).
+  journal: Advanced Science
+  year: 2026
+purpose:
+  primary: chemical_reactivity
+  secondary:
+  - metabolite_annotation
+  - molecular_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+acquisition: {}
+components:
+- sample_preparation
+- chromatography
+- data_acquisition
+- annotation
+- biological_validation
+workflow_steps:
+- title: Select a functional-group-specific probe
+  description: Choose a chemoselective probe for the metabolite reactivity class of interest, such as carboxyl,
+    amine, carbonyl or thiol groups.
+- title: Encode metabolites by covalent derivatization
+  description: React the sample under conditions designed to selectively label the targeted functional group.
+- title: Capture and clean up the encoded submetabolome
+  description: Use click chemistry and solid-phase capture to enrich tagged metabolites while reducing matrix background.
+- title: Release and analyze derivatives by LC-MS/MS
+  description: Profile enriched derivatives, using shared reporter behavior and functional-group information to
+    aid classification and annotation.
+- title: Reconstruct reactivity-resolved metabolome layers
+  description: Compare the parallel functional-group-defined measurements to expand detectable chemical space and
+    interpret metabolic changes.
+tools: []
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1002/advs.76599
+scope:
+  designed_for:
+  - Expanding metabolite coverage through functional-group-selective enrichment and reporter chemistry.
+  - Separating complex metabolomes into chemically interpretable reactivity classes.
+  requirements:
+  - Validated chemoselective reagents and controls for reaction selectivity.
+  - Careful assessment of derivatization yield, matrix effects and quantitative behavior.
+  considerations:
+  - Probe selectivity and conversion efficiency are chemistry-dependent.
+  - Derivatization changes retention, ionization and fragmentation and therefore requires method-specific references.
+  - The source demonstrates mouse serum and liver; transfer to other organisms and matrices requires method validation.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because chemoselective reactivity is an orthogonal experimental evidence/enrichment layer, not
+    simply a different LC-MS software workflow. Navigator review checked publication identity and methodological
+    scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types:
+- serum
+- tissue
+biological_contexts:
+- animal
+organisms:
+- Mus musculus

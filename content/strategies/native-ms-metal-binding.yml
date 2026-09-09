@@ -104,9 +104,7 @@ scope:
     optimized and reported.
   - The network highlights candidate binding behavior; structural identity and biological relevance require additional
     evidence.
-related_strategies:
-- gnps-ion-identity-molecular-networking
-- gnps-feature-based-molecular-networking
+related_strategies: []
 provenance:
   submitted_by: curator
   author_verified: false

@@ -1,0 +1,14 @@
+- strategy: bioactivity-based-molecular-networking
+  tool: cytoscape
+- strategy: idbac-colony-maldi-msms-dereplication
+  tool: idbac
+- strategy: idbac-microbial-library-dereplication
+  tool: idbac
+- strategy: metabologenomics
+  tool: nplinker
+- strategy: metabologenomics
+  tool: mibig
+- strategy: ozid-structural-lipidomics
+  tool: lipidoz
+- strategy: three-dimensional-molecular-cartography
+  tool: ili

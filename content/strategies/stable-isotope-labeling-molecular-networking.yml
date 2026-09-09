@@ -1,0 +1,99 @@
+$schema: ../../schemas/strategy.schema.json
+slug: stable-isotope-labeling-molecular-networking
+name: Stable-isotope labeling–assisted molecular networking
+summary: A biosynthetic discovery strategy that combines stable-isotope precursor feeding with LC-MS/MS molecular
+  networking to identify structurally related metabolites that incorporate a defined biosynthetic building block.
+description: Stable-isotope labeling–assisted molecular networking layers biosynthetic incorporation information
+  onto MS/MS similarity. A labeled precursor such as a stable-isotope amino acid is supplied to a producing organism,
+  labeled mass shifts are detected in metabolite features, and molecular networking groups related MS/MS spectra.
+  The combination helps distinguish biosynthetically connected analogues and can provide sequence or building-block
+  information that molecular networking alone does not supply.
+publication:
+  title: Combining Stable Isotope Labeling and Molecular Networking for Biosynthetic Pathway Characterization
+  doi: 10.1021/acs.analchem.5b01934
+  url: https://pubs.acs.org/doi/10.1021/acs.analchem.5b01934
+  citation: Klitgaard A, Nielsen JB, Frandsen RJN, Andersen MR, Nielsen KF. Combining Stable Isotope Labeling and
+    Molecular Networking for Biosynthetic Pathway Characterization. Analytical Chemistry 87, 6520–6526 (2015).
+  journal: Analytical Chemistry
+  year: 2015
+purpose:
+  primary: stable_isotope_tracing
+  secondary:
+  - natural_product_discovery
+  - molecular_family_discovery
+  - structure_elucidation
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- stable_isotope_tracing
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: not_required
+components:
+- sample_preparation
+- chromatography
+- data_acquisition
+- preprocessing
+- molecular_networking
+- annotation
+workflow_steps:
+- title: Select and feed a stable-isotope precursor
+  description: Add a labeled biosynthetic building block to the culture under conditions that permit incorporation
+    into specialized metabolites, while retaining appropriate unlabeled controls.
+- title: Detect isotope incorporation
+  description: Compare labeled and unlabeled LC-MS data to identify features with mass shifts consistent with incorporation
+    of the supplied precursor.
+- title: Acquire and compare MS/MS spectra
+  description: Collect fragmentation spectra for candidate labeled and related metabolites.
+- title: Build a molecular network
+  description: Organize structurally related spectra by MS/MS similarity and overlay isotope-incorporation evidence
+    to recognize families sharing the labeled building block.
+  tool_slugs:
+  - gnps
+- title: Infer biosynthetic or structural relationships
+  description: Use the combined label pattern and fragmentation relationships to prioritize analogues, infer building-block
+    composition, and guide targeted structural validation.
+tools:
+- slug: gnps
+  role: Molecular networking of related MS/MS spectra.
+resources:
+  method_available: true
+  method_url: https://pubs.acs.org/doi/10.1021/acs.analchem.5b01934
+scope:
+  designed_for:
+  - Linking natural-product analogues to a supplied biosynthetic precursor.
+  - Characterizing families of peptide or other metabolites where isotope incorporation provides interpretable biosynthetic
+    information.
+  requirements:
+  - A biologically plausible labeled precursor and culture system capable of incorporating it.
+  - Matched labeled and unlabeled controls and sufficient mass accuracy to resolve the expected isotope shift.
+  considerations:
+  - Label incorporation may be incomplete, diluted by metabolism, or redistributed into downstream metabolites.
+  - Molecular similarity and label incorporation support a biosynthetic relationship but do not by themselves establish
+    complete pathway genetics or final structure.
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included as an Analytical Strategy because stable-isotope incorporation adds a biosynthetic evidence layer
+    to molecular-network relationships and is transferable beyond the original fungal system. Navigator review checked
+    publication identity and methodological scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types:
+- microbial_culture
+biological_contexts:
+- fungal
+- microbial
+organisms:
+- Aspergillus nidulans
+related_strategies: []

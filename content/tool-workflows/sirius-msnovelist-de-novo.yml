@@ -1,0 +1,96 @@
+$schema: ../../schemas/strategy.schema.json
+slug: sirius-msnovelist-de-novo
+name: De novo structure generation with MSNovelist in SIRIUS
+summary: A SIRIUS workflow that combines molecular-formula and fingerprint prediction with MSNovelist to generate
+  candidate molecular structures de novo from MS/MS data.
+description: MSNovelist addresses cases where database searching cannot recover the correct structure because the
+  molecule is absent from candidate databases. It uses a SIRIUS molecular formula and CSI:FingerID fingerprint prediction
+  to generate and rank de novo structure candidates, now integrated into the SIRIUS 6 ecosystem.
+publication:
+  title: 'MSNovelist: de novo structure generation from mass spectra'
+  doi: 10.1038/s41592-022-01486-3
+  url: https://www.nature.com/articles/s41592-022-01486-3
+  citation: 'Stravs MA, Dührkop K, Böcker S, Zamboni N. MSNovelist: de novo structure generation from mass spectra.
+    Nature Methods 19, 865–870 (2022).'
+  journal: Nature Methods
+  year: 2022
+purpose:
+  primary: structure_elucidation
+  secondary:
+  - unknown_identification
+  - molecular_discovery
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+components:
+- annotation
+- data_sharing
+workflow_steps:
+- title: Establish molecular formula and MS/MS representation
+  description: Use SIRIUS to identify a plausible molecular formula and compute the fragmentation-based representation
+    needed for downstream fingerprint prediction.
+  tool_slugs:
+  - sirius
+- title: Predict structural fingerprints
+  description: Run CSI:FingerID fingerprint prediction to estimate structural properties from the fragmentation
+    spectrum.
+  tool_slugs:
+  - sirius
+- title: Generate structures with MSNovelist
+  description: Generate candidate molecular structures de novo under the constraints of the molecular formula and
+    predicted structural fingerprint.
+  tool_slugs:
+  - sirius
+- title: Rank, inspect, and validate candidates
+  description: Review generated structures and prioritize candidates using chemical plausibility and orthogonal
+    analytical or biological evidence before making identification claims.
+tools:
+- slug: sirius
+  role: Integrated formula, fingerprint, class, database-search, confidence, and de novo structure workflows.
+resources:
+  code_available: true
+  code_url: https://github.com/sirius-ms/sirius
+  method_available: true
+  method_url: https://v6.docs.sirius-ms.io/
+scope:
+  designed_for:
+  - Generating candidate structures for unknowns whose correct structure may be absent from molecular-structure
+    databases.
+  - Complementing structure-database searches in poorly represented or novel chemical space.
+  requirements:
+  - A plausible molecular formula and informative MS/MS spectrum; the current MSNovelist implementation is a webservice-backed
+    SIRIUS feature.
+  considerations:
+  - Generated structures are hypotheses and require strong orthogonal validation before structural identification.
+  - The original standalone MSNovelist repository/backend is archived and no longer operative; current users should
+    use the implementation integrated into SIRIUS 6.
+related_strategies:
+- sirius-zodiac-formula-annotation
+- sirius-csi-fingerid-cosmic
+- sirius-canopus-class-prediction
+provenance:
+  submitted_by: curator
+  author_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+sample_types:
+- other
+biological_contexts:
+- broadly_applicable
+organisms: []

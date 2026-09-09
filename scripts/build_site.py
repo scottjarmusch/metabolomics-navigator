@@ -121,6 +121,12 @@ def main():
     # consistent without forcing editors to maintain duplicate declarations.
     relationship_index=build_relationship_index(tools,tool_by_slug,labels)
 
+    workflow_owners=load_yaml(ROOT/'config/tool-workflows.yml')
+    for tool in tools: tool['reference_workflows']=[]
+    for workflow_slug,owner in workflow_owners.items():
+        record=load_yaml(ROOT/'content/tool-workflows'/f'{workflow_slug}.yml')
+        tool_by_slug[owner]['reference_workflows'].append(record)
+
     prepare_output()
     copy_public_files()
     asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','site.js','catalogue.js'))).hexdigest()[:12]

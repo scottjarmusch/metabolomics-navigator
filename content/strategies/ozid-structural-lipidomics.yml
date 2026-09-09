@@ -1,0 +1,84 @@
+$schema: ../../schemas/strategy.schema.json
+slug: ozid-structural-lipidomics
+name: Ozone-induced dissociation for structural lipidomics
+summary: A structural-lipidomics strategy that uses ozone-induced dissociation to generate diagnostic fragments
+  for carbon–carbon double-bond positions that conventional CID-based lipidomics often cannot resolve.
+description: Ozone-induced dissociation (OzID) adds gas-phase chemical reactivity to lipid analysis. Reactions of
+  mass-selected unsaturated lipid ions produce diagnostic fragments that locate carbon–carbon double bonds. The
+  method complements collision-induced fragmentation. Later implementations can combine separation and automated
+  interpretation, but their acquisition and software requirements are implementation-specific.
+publication:
+  title: 'Ozone-Induced Dissociation: Elucidation of Double Bond Position within Mass-Selected Lipid Ions'
+  doi: 10.1021/ac7017684
+  url: https://doi.org/10.1021/ac7017684
+  citation: 'Thomas MC, Mitchell TW, Harman DG, Deeley JM, Nealon JR, Blanksby SJ. Ozone-Induced Dissociation: Elucidation
+    of Double Bond Position within Mass-Selected Lipid Ions. Analytical Chemistry 80, 303–311 (2008).'
+  journal: Analytical Chemistry
+  year: 2008
+purpose:
+  primary: structure_elucidation
+  secondary:
+  - metabolite_annotation
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- lipidomics
+- targeted
+acquisition: {}
+components:
+- data_acquisition
+- annotation
+- biological_validation
+workflow_steps:
+- title: Acquire lipids under OzID-compatible conditions
+  description: Introduce ozone into a compatible MS workflow so unsaturated lipid ions undergo diagnostic gas-phase
+    oxidation.
+- title: Collect diagnostic OzID fragments
+  description: Acquire fragment pairs that encode the location of carbon–carbon double bonds.
+- title: Resolve and score double-bond assignments
+  description: Interpret diagnostic fragment pairs; a later tool such as LipidOz can automate this for its supported
+    OzID–ion mobility MS acquisition format.
+  tool_slugs: []
+  external_tools:
+  - name: LipidOz
+    url: https://github.com/PNNL-m-q/lipidoz
+- title: Validate structural isomers
+  description: Confirm critical assignments with standards, retention/ion-mobility behavior or orthogonal structural
+    evidence when available.
+tools:
+- role: Later automated interpretation for compatible OzID–ion mobility MS data; not part of the original 2008 implementation.
+  name: LipidOz
+  url: https://github.com/PNNL-m-q/lipidoz
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1021/ac7017684
+scope:
+  designed_for:
+  - Resolving lipid double-bond positional isomers beyond conventional sum-composition or acyl-chain annotation.
+  requirements:
+  - Instrumentation or reaction setup capable of ozone-induced dissociation.
+  - Appropriate acquisition methods and candidate lipid context.
+  considerations:
+  - OzID adds structural specificity but does not automatically resolve every lipid stereochemical ambiguity.
+  - Instrumentation and reaction implementation are platform-dependent.
+  - The primary source introduces OzID. LipidOz is a later software implementation; OzFAD and other variants are
+    not treated as interchangeable methods here.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because gas-phase ozone chemistry adds orthogonal structural information not provided by routine
+    CID lipidomics. Navigator review checked publication identity and methodological scope; linked software was
+    not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []

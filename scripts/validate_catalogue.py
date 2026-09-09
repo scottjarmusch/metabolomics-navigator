@@ -5,7 +5,7 @@ import sys
 import re
 from collections import Counter
 
-from common import load_strategies, load_tools, validator
+from common import ROOT, load_yaml, load_strategies, load_tools, validator
 
 
 def format_path(path):
@@ -48,6 +48,18 @@ def main():
     tools=load_tools(); strategies=load_strategies()
     failed, tool_slugs=validate_records(tools,'tool')
     f2, strategy_slugs=validate_records(strategies,'strategy'); failed=failed or f2
+
+    owners=load_yaml(ROOT/'config/tool-workflows.yml')
+    workflow_paths={p.stem:p for p in (ROOT/'content/tool-workflows').glob('*.yml')}
+    if set(owners)!=set(workflow_paths):
+        failed=True; print('ERROR: documented workflow files and owner mapping differ')
+    for slug,path in workflow_paths.items():
+        if owners.get(slug) not in tool_slugs:
+            failed=True; print(f'ERROR: workflow {slug} has no valid Tool owner')
+        if slug in strategy_slugs:
+            failed=True; print(f'ERROR: routine workflow {slug} is also a Strategy')
+        for error in validator('strategy').iter_errors(load_yaml(path)):
+            failed=True; print(f'ERROR: {path}: {error.message}')
 
     for record in tools:
         path=record['_path']

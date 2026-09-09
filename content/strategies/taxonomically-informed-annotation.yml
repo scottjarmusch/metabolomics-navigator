@@ -1,0 +1,89 @@
+$schema: ../../schemas/strategy.schema.json
+slug: taxonomically-informed-annotation
+name: Taxonomically informed metabolite annotation
+summary: A metabolite-annotation strategy that reranks candidate natural-product structures by combining spectral
+  or in-silico annotation evidence with the taxonomic distance between the study organism and known producers of
+  candidate compounds.
+description: Taxonomically informed scoring adds biological provenance to conventional candidate ranking. Candidate
+  structures are first generated from spectral libraries or in-silico annotation. Known organism–compound associations
+  are then used to calculate taxonomic relevance, allowing candidates reported from related organisms to receive
+  additional support without treating taxonomy as structural proof.
+publication:
+  title: Taxonomically Informed Scoring Enhances Confidence in Natural Products Annotation
+  doi: 10.3389/fpls.2019.01329
+  url: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2019.01329/full
+  citation: Rutz A, Dounoue-Kubo M, Ollivier S, et al. Taxonomically Informed Scoring Enhances Confidence in Natural
+    Products Annotation. Frontiers in Plant Science 10, 1329 (2019).
+  journal: Frontiers in Plant Science
+  year: 2019
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - natural_product_discovery
+  - dereplication
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+acquisition: {}
+components:
+- data_acquisition
+- preprocessing
+- annotation
+- metadata_analysis
+- statistics
+workflow_steps:
+- title: Generate candidate structural annotations
+  description: Use spectral-library or in-silico annotation to generate ranked candidate structures for MS/MS features.
+- title: Retrieve candidate biological-source information
+  description: Collect taxonomic provenance for candidate natural products from curated structure–organism resources.
+  tool_slugs:
+  - lotus
+  - natural-products-atlas
+- title: Calculate taxonomic relevance
+  description: Compare the taxonomy of the analyzed organism with reported producers of each candidate and convert
+    the distance into an annotation-support score.
+- title: Rerank candidates
+  description: Combine chemical and taxonomic evidence while retaining the original annotation evidence and uncertainty.
+tools:
+- slug: lotus
+  role: Structure–organism occurrence context.
+- slug: natural-products-atlas
+  role: Natural-product taxonomic provenance, especially microbial compounds.
+resources:
+  code_available: true
+  code_url: https://github.com/oolonek/taxo_scorer
+  method_available: true
+  method_url: https://doi.org/10.3389/fpls.2019.01329
+scope:
+  designed_for:
+  - Improving candidate ranking when reliable organism identity and candidate source-occurrence information are
+    available.
+  requirements:
+  - A taxonomically identified source organism.
+  - Candidate structures with linked biological-source metadata.
+  considerations:
+  - Taxonomy is supporting evidence and cannot establish structure.
+  - Published occurrence databases are incomplete and biased toward studied taxa.
+  - The linked contemporary resources illustrate ways to implement the strategy; they are not all software used
+    in the original publication.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because taxonomy is an independent biological evidence layer added to conventional chemical annotation.
+    Navigator review checked publication identity and methodological scope; linked software was not independently
+    benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types: []
+biological_contexts:
+- plant
+- microbial
+- fungal
+organisms: []

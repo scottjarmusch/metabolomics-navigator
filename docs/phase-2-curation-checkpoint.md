@@ -1,6 +1,6 @@
 # Strategy curation checkpoint — 9 September 2026
 
-Phase 2 is in progress; no new candidate has been published or retired yet.
+Historical pre-implementation checkpoint. Phase 2 implementation and validation are recorded in `phase-2-release.md`; the findings below were resolved or explicitly tracked there.
 
 ## Migration follow-up
 

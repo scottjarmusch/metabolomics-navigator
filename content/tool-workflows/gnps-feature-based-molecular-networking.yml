@@ -1,0 +1,124 @@
+$schema: ../../schemas/strategy.schema.json
+slug: gnps-feature-based-molecular-networking
+name: Feature-Based Molecular Networking (FBMN) in GNPS
+summary: A GNPS workflow that combines chromatographic feature detection and quantification with MS/MS molecular
+  networking, preserving feature-level abundance and retention-time information.
+description: Feature-Based Molecular Networking bridges upstream LC-MS/MS feature-processing tools with GNPS molecular
+  networking. A quantitative feature table and representative MS/MS spectra are exported from software such as MZmine,
+  MS-DIAL, XCMS, or OpenMS and used to build molecular networks in which each node corresponds to an aligned chromatographic
+  feature.
+publication:
+  title: Feature-based molecular networking in the GNPS analysis environment
+  doi: 10.1038/s41592-020-0933-6
+  url: https://www.nature.com/articles/s41592-020-0933-6
+  citation: Nothias L-F, Petras D, Schmid R, et al. Feature-based molecular networking in the GNPS analysis environment.
+    Nature Methods 17, 905–908 (2020).
+  journal: Nature Methods
+  year: 2020
+purpose:
+  primary: molecular_family_discovery
+  secondary:
+  - metabolite_annotation
+  - molecular_discovery
+  - natural_product_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+- lipidomics
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: supported
+components:
+- preprocessing
+- quality_control
+- annotation
+- spectral_search
+- molecular_networking
+- data_sharing
+workflow_steps:
+- title: Process LC-MS/MS data into aligned features
+  description: Perform feature detection, chromatogram construction/resolution, alignment, filtering, and MS/MS
+    association in a compatible processing tool.
+  tool_slugs:
+  - mzmine
+  - ms-dial
+  - xcms
+  - openms
+- title: Export FBMN inputs
+  description: Export the required feature quantification table and representative MS/MS spectral summary file (.mgf
+    or .msp). Optional inputs include sample metadata, supplementary edges, and original mzML files.
+  tool_slugs:
+  - mzmine
+  - ms-dial
+  - xcms
+  - openms
+- title: Run the FBMN workflow in GNPS2
+  description: Upload or select the feature table and spectral summary, configure tolerances and networking filters,
+    and launch Feature-Based Molecular Networking.
+  tool_slugs:
+  - gnps
+- title: Overlay spectral-library annotations
+  description: Search compatible nodes against GNPS spectral libraries and inspect molecular families containing
+    annotated and unannotated features.
+  tool_slugs:
+  - gnps
+- title: Interpret quantitative molecular families
+  description: Use feature abundances, metadata, retention time, ion mobility where available, and spectral relationships
+    to compare molecular families across samples or conditions.
+tools:
+- slug: gnps
+  role: Feature-Based Molecular Networking, library search, and network visualization.
+- slug: mzmine
+  role: Compatible upstream feature processing and FBMN export.
+- slug: ms-dial
+  role: Compatible upstream feature processing and FBMN export.
+- slug: xcms
+  role: Compatible upstream feature processing and FBMN export.
+- slug: openms
+  role: Compatible upstream feature processing and FBMN export.
+resources:
+  raw_data_available: true
+  raw_data_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=MSV000080502
+  code_available: true
+  code_url: https://github.com/CCMS-UCSD/GNPS_Workflows/tree/master/feature-based-molecular-networking
+  method_available: true
+  method_url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/
+scope:
+  designed_for:
+  - Untargeted LC-MS/MS studies where chromatographic feature detection and quantitative feature tables are important
+    for molecular-network interpretation.
+  - Resolving isomeric or chromatographically separated features that would otherwise be combined in purely spectrum-centric
+    networking.
+  requirements:
+  - An aligned feature quantification table and representative MS/MS spectra exported from a compatible preprocessing
+    workflow.
+  considerations:
+  - The quality of the molecular network depends on upstream feature detection, alignment, MS/MS assignment, and
+    preprocessing choices.
+  - FBMN does not remove the need for independent structural validation; library matches and network propagation
+    represent different levels of annotation evidence.
+related_strategies:
+- gnps-classical-molecular-networking
+- gnps-ion-identity-molecular-networking
+- mzmine-lc-ms-processing
+provenance:
+  submitted_by: curator
+  author_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+sample_types:
+- other
+biological_contexts:
+- broadly_applicable
+organisms: []

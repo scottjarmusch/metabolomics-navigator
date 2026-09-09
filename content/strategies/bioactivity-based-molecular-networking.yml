@@ -1,0 +1,124 @@
+$schema: ../../schemas/strategy.schema.json
+slug: bioactivity-based-molecular-networking
+name: Bioactivity-Based Molecular Networking
+summary: A transferable natural-product discovery strategy that overlays quantitative bioassay results onto LC-MS
+  feature abundance and MS/MS molecular networks to prioritize molecular families and individual features associated
+  with biological activity.
+description: Bioactivity-Based Molecular Networking adds an orthogonal biological evidence layer to molecular networking.
+  Fractionated samples are profiled by LC-MS/MS and tested in a quantitative bioassay. Feature abundances across
+  fractions are correlated with bioactivity, producing a bioactivity score that is mapped onto the molecular network.
+  This allows active molecular families and candidate analogues to be prioritized before isolation while preserving
+  molecular-network annotation and dereplication context.
+publication:
+  title: Bioactivity-Based Molecular Networking for the Discovery of Drug Leads in Natural Product Bioassay-Guided
+    Fractionation
+  doi: 10.1021/acs.jnatprod.7b00737
+  url: https://pubs.acs.org/doi/10.1021/acs.jnatprod.7b00737
+  citation: Nothias L-F, Nothias-Esposito M, da Silva R, et al. Bioactivity-Based Molecular Networking for the Discovery
+    of Drug Leads in Natural Product Bioassay-Guided Fractionation. Journal of Natural Products 81, 758–767 (2018).
+  journal: Journal of Natural Products
+  year: 2018
+purpose:
+  primary: natural_product_discovery
+  secondary:
+  - phenotype_association
+  - molecular_family_discovery
+  - dereplication
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: not_required
+components:
+- sample_preparation
+- chromatography
+- data_acquisition
+- preprocessing
+- molecular_networking
+- statistics
+- biological_validation
+- data_sharing
+workflow_steps:
+- title: Generate fractions and quantitative bioassay data
+  description: Fractionate the bioactive extract or sample set and measure a quantitative biological response for
+    the same fractions used for metabolomics.
+- title: Acquire untargeted LC-MS/MS profiles
+  description: Profile the fractions by LC-MS/MS so that feature abundance across fractions and fragmentation spectra
+    are available.
+- title: Detect and quantify features
+  description: Process the LC-MS/MS data to generate aligned feature intensities across the fraction series.
+  tool_slugs:
+  - mzmine
+  - openms
+- title: Calculate feature–bioactivity associations
+  description: Correlate feature abundance across fractions with the quantitative bioassay response to calculate
+    a bioactivity score for each feature.
+  external_tools:
+  - name: Bioactive Molecular Networks Jupyter workflow
+    url: https://github.com/DorresteinLaboratory/Bioactive_Molecular_Networks
+- title: Build and annotate the molecular network
+  description: Generate a molecular network from MS/MS similarity and attach the bioactivity scores as node attributes
+    so active molecular families can be recognized in chemical context.
+  tool_slugs:
+  - gnps
+- title: Prioritize and validate active chemistry
+  description: Select high-scoring features or molecular families for isolation, orthogonal structural work, and
+    direct activity confirmation.
+tools:
+- slug: mzmine
+  role: One supported route for aligned LC-MS/MS feature detection and quantification.
+- slug: openms
+  role: Alternative supported preprocessing route used by the original workflow through Optimus/OpenMS.
+- slug: gnps
+  role: MS/MS molecular networking and library-based dereplication.
+- name: Bioactive Molecular Networks Jupyter workflow
+  url: https://github.com/DorresteinLaboratory/Bioactive_Molecular_Networks
+  role: Calculates and maps feature–bioactivity association scores.
+- role: Visualization of molecular networks with bioactivity attributes.
+  name: Cytoscape
+  url: https://cytoscape.org/
+resources:
+  code_available: true
+  code_url: https://github.com/DorresteinLaboratory/Bioactive_Molecular_Networks
+  method_available: true
+  method_url: https://pubs.acs.org/doi/10.1021/acs.jnatprod.7b00737
+scope:
+  designed_for:
+  - Bioassay-guided natural-product discovery where the same fractions or samples have quantitative LC-MS feature
+    data and biological activity measurements.
+  - Prioritizing active analogues within molecular families before purification.
+  requirements:
+  - Reproducible quantitative bioassay values matched to metabolomics samples.
+  - Sufficient variation in both feature abundance and bioactivity across the sample or fraction series.
+  - The supplied implementation uses MZmine 2 or Optimus exports and an R script or R-kernel Jupyter notebook; check
+    current export compatibility.
+  considerations:
+  - Correlation between a feature and bioactivity is prioritization evidence, not proof that the feature causes
+    the phenotype.
+  - Coeluting or covarying metabolites can receive similar activity scores and require follow-up isolation or orthogonal
+    validation.
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included as an Analytical Strategy because the method adds quantitative bioassay information to an existing
+    molecular-networking workflow and remains transferable across natural-product sources and assays. Navigator
+    review checked publication identity and methodological scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []
+related_strategies:
+- reverse-metabolomics

@@ -1,0 +1,113 @@
+$schema: ../../schemas/strategy.schema.json
+slug: idbac-colony-maldi-msms-dereplication
+name: Colony-based MALDI-MS/MS dereplication with IDBac and GNPS2
+summary: A miniaturized microbial natural-product strategy that adds MALDI tandem mass spectrometry and GNPS2 molecular
+  networking to IDBac so metabolite families can be preliminarily annotated directly from colonies before fermentation
+  scale-up and extraction.
+description: This strategy extends colony-level IDBac screening beyond MALDI-MS1 chemical fingerprints. Protein
+  and specialized-metabolite MS1 data are first used to understand isolate identity and metabolite-production potential.
+  Selected precursor ions are then fragmented by MALDI-MS/MS, and the resulting spectra are passed to GNPS2 for
+  molecular networking and library searching. The layered workflow adds preliminary structural context early enough
+  to influence which strains are advanced to scale-up.
+publication:
+  title: MALDI Tandem Mass Spectrometry for Colony-Based Dereplication of Natural Products
+  doi: 10.1021/acs.jnatprod.6c00765
+  url: https://pubs.acs.org/doi/10.1021/acs.jnatprod.6c00765
+  citation: Shepherd RA, Gad LY, Strobel M, et al. MALDI Tandem Mass Spectrometry for Colony-Based Dereplication
+    of Natural Products. Journal of Natural Products (2026).
+  journal: Journal of Natural Products
+  year: 2026
+purpose:
+  primary: natural_product_discovery
+  secondary:
+  - dereplication
+  - molecular_family_discovery
+  - metabolite_annotation
+platforms:
+- maldi_ms
+analysis_types:
+- metabolite_profiling
+- untargeted
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  ion_mobility: not_required
+components:
+- sample_preparation
+- data_acquisition
+- preprocessing
+- spectral_search
+- molecular_networking
+- annotation
+- biological_validation
+workflow_steps:
+- title: Profile colonies by MALDI-MS1
+  description: Acquire protein-region and specialized-metabolite spectra directly from microbial colonies and inspect
+    the collection in IDBac.
+  tool_slugs: []
+  external_tools:
+  - name: IDBac
+    url: https://idbac.org/
+- title: Select small-molecule precursors for fragmentation
+  description: Use the colony-level specialized-metabolite data to choose precursor ions for MALDI tandem-MS acquisition
+    while filtering matrix/background signals.
+  tool_slugs: []
+  external_tools:
+  - name: IDBac
+    url: https://idbac.org/
+- title: Acquire MALDI-MS/MS spectra
+  description: Fragment selected precursor ions directly from colony-derived samples to generate tandem spectra
+    before fermentation scale-up.
+- title: Run downstream GNPS2 molecular networking
+  description: Submit compatible MALDI-MS/MS spectra to GNPS2 for molecular networking and spectral-library searching.
+  tool_slugs:
+  - gnps
+- title: Prioritize strains and chemistry
+  description: Combine colony identity, metabolite-production patterns, molecular-family context, and preliminary
+    annotations to select strains and compounds for scale-up and orthogonal structural validation.
+tools:
+- role: Colony-level bacterial grouping, specialized-metabolite profiling, and precursor-selection context.
+  name: IDBac
+  url: https://idbac.org/
+- slug: gnps
+  role: Downstream MS/MS molecular networking and spectral-library searching.
+resources:
+  method_available: true
+  method_url: https://pubs.acs.org/doi/10.1021/acs.jnatprod.6c00765
+scope:
+  designed_for:
+  - Early dereplication and strain prioritization in microbial natural-product discovery before large-scale fermentation
+    and extraction.
+  - Linking colony-level metabolite production to MS/MS molecular families and tentative annotations.
+  requirements:
+  - MALDI instrumentation capable of the required MS1 and tandem-MS acquisition workflow.
+  - Cultured microbial colonies and compatible IDBac/GNPS2 data preparation.
+  considerations:
+  - Colony-level production can differ from larger-scale fermentation, so prioritized chemistry should be reconfirmed
+    after scale-up.
+  - Spectral-library matches and molecular-network relationships provide dereplication evidence but do not replace
+    full structure elucidation.
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included as an Analytical Strategy because it layers MALDI-MS/MS and GNPS2 structural context onto IDBac
+    colony screening to move dereplication and prioritization earlier in the discovery pipeline. Navigator review
+    checked publication identity and methodological scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types:
+- microbial_culture
+biological_contexts:
+- microbial
+organisms: []
+related_strategies:
+- idbac-microbial-library-dereplication

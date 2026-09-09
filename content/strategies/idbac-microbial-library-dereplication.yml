@@ -1,0 +1,109 @@
+$schema: ../../schemas/strategy.schema.json
+slug: idbac-microbial-library-dereplication
+name: Taxonomy- and metabolite-aware microbial library prioritization with IDBac
+summary: A microbial natural-product discovery strategy that combines MALDI protein fingerprinting with specialized-metabolite
+  overlap to reduce taxonomic and chemical redundancy when constructing or downsizing isolate libraries.
+description: This strategy uses two complementary MALDI information spaces before scale-up. Protein-region spectra
+  group bacterial isolates by taxonomic or strain-level similarity, while lower-mass specialized-metabolite spectra
+  reveal chemical overlap within those groups. Isolates can then be selected to preserve phylogenetic breadth while
+  minimizing redundant natural-product profiles, shifting strain prioritization from morphology or taxonomy alone
+  to combined biological and chemical evidence.
+publication:
+  title: Minimizing Taxonomic and Natural Product Redundancy in Microbial Libraries Using MALDI-TOF MS and the Bioinformatics
+    Pipeline IDBac
+  doi: 10.1021/acs.jnatprod.9b00168
+  url: https://pubs.acs.org/doi/10.1021/acs.jnatprod.9b00168
+  citation: Costa MS, Clark CM, Ómarsdóttir S, Sanchez LM, Murphy BT. Minimizing Taxonomic and Natural Product Redundancy
+    in Microbial Libraries Using MALDI-TOF MS and the Bioinformatics Pipeline IDBac. Journal of Natural Products
+    82, 2167–2173 (2019).
+  journal: Journal of Natural Products
+  year: 2019
+purpose:
+  primary: natural_product_discovery
+  secondary:
+  - phenotype_association
+platforms:
+- maldi_ms
+analysis_types:
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms1
+  strategies:
+  - full_scan
+  ion_mobility: not_required
+components:
+- sample_preparation
+- data_acquisition
+- preprocessing
+- metadata_analysis
+- statistics
+- biological_validation
+workflow_steps:
+- title: Acquire MALDI protein fingerprints from individual isolates
+  description: Analyze colony material in the higher mass range to generate replicate protein fingerprints suitable
+    for similarity grouping.
+  tool_slugs: []
+  external_tools:
+  - name: IDBac
+    url: https://idbac.org/
+- title: Group taxonomically similar isolates
+  description: Use protein-profile clustering to organize the collection into operational groups of closely related
+    isolates.
+  tool_slugs: []
+  external_tools:
+  - name: IDBac
+    url: https://idbac.org/
+- title: Acquire specialized-metabolite profiles
+  description: Analyze the lower mass region from the same isolate collection to capture differences in specialized-metabolite
+    production.
+  tool_slugs: []
+  external_tools:
+  - name: IDBac
+    url: https://idbac.org/
+- title: Compare chemical overlap within taxonomic groups
+  description: Use metabolite association patterns to identify isolates that add distinct chemistry rather than
+    duplicating existing profiles.
+  tool_slugs: []
+  external_tools:
+  - name: IDBac
+    url: https://idbac.org/
+- title: Select a reduced but diverse library
+  description: Prioritize representatives that retain taxonomic breadth and specialized-metabolite diversity for
+    fermentation, extraction, and downstream discovery.
+tools:
+- role: Protein-profile grouping, specialized-metabolite comparison, and isolate prioritization.
+  name: IDBac
+  url: https://idbac.org/
+resources:
+  method_available: true
+  method_url: https://pubs.acs.org/doi/10.1021/acs.jnatprod.9b00168
+scope:
+  designed_for:
+  - Building or reducing bacterial isolate libraries for natural-product discovery.
+  - Prioritizing isolates before scale-up using both relatedness and chemical phenotype.
+  requirements:
+  - Cultured bacterial isolates and reproducible MALDI protein and small-molecule acquisitions.
+  considerations:
+  - Culture conditions strongly influence specialized-metabolite profiles, so observed chemical redundancy is condition-dependent.
+  - Protein spectral similarity is an operational grouping method and does not replace sequence-based taxonomy when
+    definitive identification is required.
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included as an Analytical Strategy because the publication converts IDBac measurements into a transferable
+    decision framework for constructing chemically and taxonomically diverse microbial libraries. Navigator review
+    checked publication identity and methodological scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types:
+- microbial_culture
+biological_contexts:
+- microbial
+organisms: []
+related_strategies: []

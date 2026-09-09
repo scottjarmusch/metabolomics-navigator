@@ -1,0 +1,11 @@
+gnps-classical-molecular-networking: gnps
+gnps-feature-based-molecular-networking: gnps
+gnps-ion-identity-molecular-networking: gnps
+masst-repository-scale-search: masst
+mzmine-gc-ms-processing: mzmine
+mzmine-imaging-ms-processing: mzmine
+mzmine-lc-ms-processing: mzmine
+sirius-canopus-class-prediction: canopus
+sirius-csi-fingerid-cosmic: csi-fingerid
+sirius-msnovelist-de-novo: msnovelist
+sirius-zodiac-formula-annotation: sirius

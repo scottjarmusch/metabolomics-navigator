@@ -1,0 +1,90 @@
+$schema: ../../schemas/strategy.schema.json
+slug: three-dimensional-molecular-cartography
+name: 3D molecular cartography
+summary: A spatial metabolomics strategy that combines systematic surface sampling, LC-MS/MS, coordinate-aware metadata
+  and 2D/3D molecular mapping to reconstruct the distribution of metabolites and environmental chemicals across
+  physical objects.
+description: 3D molecular cartography extends metabolomics beyond conventional bulk samples by attaching each extraction
+  to a physical coordinate. LC-MS data are processed and annotated, then mapped onto photographs or 3D surface models
+  so chemical distributions can be explored spatially. Cartographical snapshots preserve visualization settings
+  for reproducibility.
+publication:
+  title: 3D molecular cartography using LC–MS facilitated by Optimus and 'ili software
+  doi: 10.1038/nprot.2017.122
+  url: https://www.nature.com/articles/nprot.2017.122
+  citation: Protsyuk I, Melnik AV, Nothias L-F, et al. 3D molecular cartography using LC–MS facilitated by Optimus
+    and 'ili software. Nature Protocols 13, 134–154 (2018).
+  journal: Nature Protocols
+  year: 2018
+purpose:
+  primary: spatial_metabolomics
+  secondary:
+  - environmental_metabolomics
+  - molecular_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- spatial_metabolomics
+acquisition: {}
+components:
+- sample_preparation
+- chromatography
+- data_acquisition
+- preprocessing
+- annotation
+- data_sharing
+workflow_steps:
+- title: Define a spatial sampling scheme
+  description: Record coordinates for reproducible sampling across a surface, organism or object.
+- title: Extract and profile each location
+  description: Analyze spatially indexed extracts by LC-MS/MS with appropriate blanks and quality controls.
+- title: Process and annotate features
+  description: Generate a quantitative feature table and molecular annotations while preserving spatial sample identifiers.
+- title: Map molecular features onto the physical model
+  description: Join feature abundance to sampling coordinates and visualize the chemical distribution on a 2D image
+    or 3D model.
+  tool_slugs: []
+  external_tools:
+  - name: '`ili'
+    url: https://ili.embl.de/
+- title: Share cartographical snapshots
+  description: Preserve the mapped view and visualization settings so collaborators can reproduce the spatial interpretation.
+tools:
+- role: Interactive 2D/3D molecular cartography visualization.
+  name: '`ili'
+  url: https://ili.embl.de/
+resources:
+  method_available: true
+  method_url: https://www.nature.com/articles/nprot.2017.122
+scope:
+  designed_for:
+  - Mapping extractable small molecules over complex surfaces at scales larger than pixel-based MSI.
+  - Environmental, ecological, built-environment and organism-surface chemistry.
+  requirements:
+  - A reproducible coordinate system connecting each extraction to the mapped object.
+  - Sufficient sampling density for the spatial question.
+  considerations:
+  - Spatial resolution is determined by sampling geometry and is much coarser than many MSI methods.
+  - Observed distributions integrate extraction, LC-MS detectability and sampling effects.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because spatial coordinates and physical-model reconstruction add a transferable experimental
+    layer to LC-MS metabolomics. Navigator review checked publication identity and methodological scope; linked
+    software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types: []
+biological_contexts:
+- environmental
+- plant
+- human
+- broadly_applicable
+organisms: []

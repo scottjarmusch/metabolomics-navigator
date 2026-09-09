@@ -1,0 +1,99 @@
+$schema: ../../schemas/strategy.schema.json
+slug: msi-guided-molecular-networking
+name: Mass spectrometry imaging–guided molecular networking
+summary: A multimodal natural-product strategy that uses spatial localization from mass spectrometry imaging to
+  prioritize metabolites for LC-MS/MS molecular networking and structural interpretation.
+description: Mass spectrometry imaging–guided molecular networking connects where a metabolite occurs with how its
+  fragmentation spectrum relates to other molecules. Spatially resolved MSI features are used to identify chemically
+  informative regions or ions, while LC-MS/MS molecular networking supplies fragmentation-based family context and
+  annotation. The combination can focus structural analysis on spatially localized natural products rather than
+  treating imaging and molecular networking as independent readouts.
+publication:
+  title: Mass spectrometry imaging guided molecular networking to expedite discovery and structural analysis of
+    agarwood natural products
+  doi: 10.1016/j.aca.2019.05.070
+  url: https://doi.org/10.1016/j.aca.2019.05.070
+  citation: Kuo TH, Huang HC, Hsu CC. Mass spectrometry imaging guided molecular networking to expedite discovery
+    and structural analysis of agarwood natural products. Analytica Chimica Acta 1080, 95–103 (2019).
+  journal: Analytica Chimica Acta
+  year: 2019
+purpose:
+  primary: spatial_metabolomics
+  secondary:
+  - natural_product_discovery
+  - structure_elucidation
+  - molecular_family_discovery
+platforms:
+- imaging_ms
+- lc_ms
+analysis_types:
+- spatial_metabolomics
+- untargeted
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  ion_mobility: not_required
+components:
+- sample_preparation
+- data_acquisition
+- molecular_networking
+- annotation
+- biological_validation
+workflow_steps:
+- title: Acquire spatial metabolite maps
+  description: Use MALDI or another suitable imaging-MS method to map metabolite ions across the tissue or material
+    of interest.
+- title: Prioritize spatially informative features
+  description: Select ions or chemical regions whose localization suggests biological or anatomical relevance.
+- title: Acquire complementary LC-MS/MS data
+  description: Generate fragmentation-rich LC-MS/MS data from matched or relevant material so spatially prioritized
+    chemistry can be interpreted structurally.
+- title: Build molecular networks
+  description: Organize related MS/MS spectra into molecular families and connect the spatially prioritized features
+    to family-level structural context.
+  tool_slugs:
+  - gnps
+- title: Validate spatial and structural assignments
+  description: Confirm prioritized annotations and localization with orthogonal standards, fragmentation interpretation,
+    or additional imaging experiments where possible.
+tools:
+- slug: gnps
+  role: Molecular-network analysis of structurally related tandem mass spectra.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1016/j.aca.2019.05.070
+scope:
+  designed_for:
+  - Natural-product or specialized-metabolite discovery where spatial localization can guide which chemistry deserves
+    structural follow-up.
+  - Multimodal studies combining imaging MS with fragmentation-rich LC-MS/MS.
+  requirements:
+  - Spatially resolved MSI data and complementary MS/MS data that can be related to the same chemistry.
+  considerations:
+  - Matching an MSI ion to an LC-MS/MS feature requires careful mass, adduct, and sample-context reasoning.
+  - Spatial colocalization and spectral family membership do not substitute for complete structural confirmation.
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included as an Analytical Strategy because spatial localization is used as a transferable evidence layer
+    to guide molecular-network-based discovery and structural prioritization. Navigator review checked publication
+    identity and methodological scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types:
+- plant_tissue
+- tissue
+biological_contexts:
+- plant
+- broadly_applicable
+organisms: []
+related_strategies: []

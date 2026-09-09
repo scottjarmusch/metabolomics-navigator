@@ -1,0 +1,100 @@
+$schema: ../../schemas/strategy.schema.json
+slug: sirius-zodiac-formula-annotation
+name: Molecular-formula annotation with SIRIUS and ZODIAC
+summary: A high-resolution MS/MS workflow that generates molecular-formula candidates with SIRIUS and optionally
+  re-ranks formula assignments across a dataset using ZODIAC.
+description: SIRIUS uses isotope patterns and fragmentation trees to score molecular-formula candidates. ZODIAC
+  adds dataset-level re-ranking by exploiting shared fragments and neutral losses between fragmentation trees, using
+  Bayesian inference and Gibbs sampling to improve formula assignments across related spectra.
+publication:
+  title: Database-independent molecular formula annotation using Gibbs sampling through ZODIAC
+  doi: 10.1038/s42256-020-00234-6
+  url: https://www.nature.com/articles/s42256-020-00234-6
+  citation: Ludwig M, Nothias L-F, Dührkop K, et al. Database-independent molecular formula annotation using Gibbs
+    sampling through ZODIAC. Nature Machine Intelligence 2, 629–641 (2020).
+  journal: Nature Machine Intelligence
+  year: 2020
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - unknown_identification
+  - structure_elucidation
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+components:
+- data_conversion
+- preprocessing
+- annotation
+- data_sharing
+workflow_steps:
+- title: Import centroided spectra or LC-MS runs
+  description: Import preprocessed .ms/.mgf/.msp-style spectra or centroided mzML/mzXML runs. SIRIUS 6 can create
+    a project space and perform its built-in LC-MS feature detection/alignment for mzML/mzXML inputs.
+  tool_slugs:
+  - sirius
+- title: Generate formula candidates with SIRIUS
+  description: Use accurate precursor mass, isotope-pattern evidence, and fragmentation trees to score candidate
+    molecular formulas and annotate fragment formulas.
+  tool_slugs:
+  - sirius
+- title: Apply ZODIAC when dataset-level re-ranking is useful
+  description: Use ZODIAC to jointly re-rank formula candidates across a collection of spectra based on shared fragmentation-tree
+    fragments and losses.
+  tool_slugs:
+  - sirius
+- title: Review formula confidence and ambiguity
+  description: Inspect top formula candidates, scores, adduct assumptions, isotope/fragmentation support, and alternative
+    candidates before downstream structural annotation.
+  tool_slugs:
+  - sirius
+tools:
+- slug: sirius
+  role: Integrated formula, fingerprint, class, database-search, confidence, and de novo structure workflows.
+resources:
+  code_available: true
+  code_url: https://github.com/sirius-ms/sirius
+  method_available: true
+  method_url: https://v6.docs.sirius-ms.io/
+scope:
+  designed_for:
+  - High-resolution MS/MS formula annotation, including unknowns whose formulas may not be represented in structure
+    databases.
+  - Dataset-level molecular-formula re-ranking when multiple fragmentation trees can provide shared evidence.
+  requirements:
+  - Accurate precursor mass and preferably informative MS/MS; isotope-pattern quality improves formula annotation.
+  considerations:
+  - Molecular-formula annotation is an intermediate step, not complete structural identification.
+  - ZODIAC is most useful when processing collections of compounds/spectra because its re-ranking uses relationships
+    across fragmentation trees.
+related_strategies:
+- sirius-csi-fingerid-cosmic
+- sirius-canopus-class-prediction
+- sirius-msnovelist-de-novo
+provenance:
+  submitted_by: curator
+  author_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+sample_types:
+- other
+biological_contexts:
+- broadly_applicable
+organisms: []

@@ -104,8 +104,7 @@ scope:
   - A repository spectral match is evidence of spectral similarity and occurrence, not by itself a complete structural
     confirmation.
   - Repository composition and metadata coverage can bias which biological contexts are visible.
-related_strategies:
-- masst-repository-scale-search
+related_strategies: []
 provenance:
   submitted_by: curator
   author_verified: false

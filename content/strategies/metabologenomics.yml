@@ -1,0 +1,106 @@
+$schema: ../../schemas/strategy.schema.json
+slug: metabologenomics
+name: Metabologenomics
+summary: A natural-product discovery strategy that correlates metabolite occurrence across a strain collection with
+  biosynthetic gene-cluster or gene-cluster-family occurrence to connect chemistry with its likely genetic origin.
+description: Metabologenomics treats a microbial strain collection as a panel of naturally varying experiments.
+  Genome mining defines BGCs or GCFs, metabolomics defines spectra or molecular families, and co-occurrence across
+  strains is scored to prioritize plausible BGC–metabolite links. The strategy can reveal both known and previously
+  uncharacterized natural-product families without requiring a prior genetic hypothesis.
+publication:
+  title: 'Metabologenomics: Correlation of Microbial Gene Clusters with Metabolites Drives Discovery of a Nonribosomal
+    Peptide with an Unusual Amino Acid Monomer'
+  doi: 10.1021/acscentsci.5b00331
+  url: https://pubs.acs.org/doi/10.1021/acscentsci.5b00331
+  citation: 'Goering AW, McClure RA, Doroghazi JR, et al. Metabologenomics: Correlation of Microbial Gene Clusters
+    with Metabolites Drives Discovery of a Nonribosomal Peptide with an Unusual Amino Acid Monomer. ACS Central
+    Science (2016).'
+  journal: ACS Central Science
+  year: 2016
+purpose:
+  primary: natural_product_discovery
+  secondary:
+  - molecular_family_discovery
+  - unknown_identification
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- multiomics
+acquisition: {}
+components:
+- data_acquisition
+- preprocessing
+- molecular_networking
+- metadata_analysis
+- statistics
+- biological_validation
+workflow_steps:
+- title: Profile a genetically diverse strain collection
+  description: Generate comparable LC-MS/MS data across many sequenced isolates or conditions so metabolite occurrence
+    can be compared across the collection.
+- title: Mine genomes for biosynthetic gene clusters
+  description: Identify BGCs and cluster related BGCs into gene-cluster families using genome-mining tools.
+  external_tools:
+  - name: antiSMASH
+    url: https://antismash.secondarymetabolites.org/
+  - name: BiG-SCAPE
+    url: https://bigscape-corason.secondarymetabolites.org/
+- title: Organize metabolite features or molecular families
+  description: Use molecular networking or related spectral grouping to define recurring chemical features across
+    strains.
+  tool_slugs:
+  - gnps
+- title: Score BGC–metabolite co-occurrence
+  description: Correlate the presence/abundance of metabolite features or molecular families with BGC/GCF occurrence
+    across strains.
+  tool_slugs: []
+  external_tools:
+  - name: NPLinker
+    url: https://github.com/NPLinker/nplinker
+- title: Prioritize and validate links
+  description: Use genetics, targeted cultivation, isolation, MS/NMR or heterologous expression to validate high-priority
+    BGC–metabolite associations.
+tools:
+- slug: gnps
+  role: Molecular-family organization and metabolomics comparison.
+- role: Modern framework for scoring and exploring BGC–metabolite links.
+  name: NPLinker
+  url: https://github.com/NPLinker/nplinker
+- role: Reference BGC/product knowledge for interpretation.
+  name: MIBiG
+  url: https://mibig.secondarymetabolites.org/
+resources:
+  method_available: true
+  method_url: https://pubs.acs.org/doi/10.1021/acscentsci.5b00331
+scope:
+  designed_for:
+  - Linking specialized-metabolite chemistry to candidate biosynthetic gene clusters across strain collections.
+  - Prioritizing biosynthetic hypotheses before direct genetic validation.
+  requirements:
+  - A sufficiently diverse, sequenced strain collection with comparable metabolomics data.
+  - Consistent identifiers linking each genome/isolate to its metabolomics samples.
+  considerations:
+  - Co-occurrence supports association, not causation; population structure and phylogeny can confound links.
+  - Silent BGCs and condition-dependent metabolite production create false negatives.
+  - The linked contemporary resources illustrate ways to implement the strategy; they are not all software used
+    in the original publication.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because genome–metabolome co-occurrence is a transferable evidence layer that adds biosynthetic
+    linkage beyond routine molecular networking. Navigator review checked publication identity and methodological
+    scope; linked software was not independently benchmarked.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-09'
+  last_verified: '2026-09-09'
+  last_editorial_review: '2026-09-09'
+sample_types:
+- microbial_culture
+biological_contexts:
+- microbial
+organisms: []
