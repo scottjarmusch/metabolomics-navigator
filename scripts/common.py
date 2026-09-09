@@ -12,10 +12,10 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS_DIR = ROOT / "content" / "tools"
-PROTOCOLS_DIR = ROOT / "content" / "protocols"
+STRATEGIES_DIR = ROOT / "content" / "strategies"
 VOCAB_PATH = ROOT / "data" / "controlled-vocabulary.yml"
 TOOL_SCHEMA_PATH = ROOT / "schemas" / "tool.schema.json"
-PROTOCOL_SCHEMA_PATH = ROOT / "schemas" / "protocol.schema.json"
+STRATEGY_SCHEMA_PATH = ROOT / "schemas" / "strategy.schema.json"
 
 
 def load_yaml(path: Path):
@@ -28,7 +28,7 @@ def load_vocab():
 
 
 def load_schema(kind: str = "tool"):
-    path = TOOL_SCHEMA_PATH if kind == "tool" else PROTOCOL_SCHEMA_PATH
+    path = TOOL_SCHEMA_PATH if kind == "tool" else STRATEGY_SCHEMA_PATH
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -45,7 +45,7 @@ def load_tools():
     return load_records(TOOLS_DIR)
 
 
-LEGACY_PROTOCOL_CONTEXT_TO_BIOLOGICAL = {
+LEGACY_STRATEGY_CONTEXT_TO_BIOLOGICAL = {
     "human": "human",
     "animal": "animal",
     "microbial": "microbial",
@@ -57,16 +57,16 @@ LEGACY_PROTOCOL_CONTEXT_TO_BIOLOGICAL = {
     "other": "broadly_applicable",
 }
 
-LEGACY_PROTOCOL_OBJECTIVES = {
+LEGACY_STRATEGY_OBJECTIVES = {
     "host_microbiome": "host_microbe_interaction",
 }
 
-def normalize_protocol_record(record):
-    """Normalize v5.2 protocol fields into the frozen v5.3 model.
+def normalize_strategy_record(record):
+    """Normalize v5.2 strategy fields into the frozen v5.3 model.
 
     This keeps old community-created records valid after the v5.3 schema freeze.
     New records should use sample_types, biological_contexts, organisms and the
-    current protocol objective vocabulary directly.
+    current strategy objective vocabulary directly.
     """
     record = dict(record)
 
@@ -76,7 +76,7 @@ def normalize_protocol_record(record):
     if legacy_contexts:
         biological = list(record.get("biological_contexts", []) or [])
         for legacy in legacy_contexts:
-            mapped = LEGACY_PROTOCOL_CONTEXT_TO_BIOLOGICAL.get(legacy)
+            mapped = LEGACY_STRATEGY_CONTEXT_TO_BIOLOGICAL.get(legacy)
             if mapped and mapped not in biological:
                 biological.append(mapped)
         record["biological_contexts"] = biological
@@ -92,11 +92,11 @@ def normalize_protocol_record(record):
     # v5.3 broadened host-microbiome to host-microbe interaction.
     purpose = dict(record.get("purpose", {}) or {})
     primary = purpose.get("primary")
-    if primary in LEGACY_PROTOCOL_OBJECTIVES:
-        purpose["primary"] = LEGACY_PROTOCOL_OBJECTIVES[primary]
+    if primary in LEGACY_STRATEGY_OBJECTIVES:
+        purpose["primary"] = LEGACY_STRATEGY_OBJECTIVES[primary]
     secondary = []
     for objective in purpose.get("secondary", []) or []:
-        mapped = LEGACY_PROTOCOL_OBJECTIVES.get(objective, objective)
+        mapped = LEGACY_STRATEGY_OBJECTIVES.get(objective, objective)
         if mapped not in secondary:
             secondary.append(mapped)
     if secondary or "secondary" in purpose:
@@ -106,8 +106,8 @@ def normalize_protocol_record(record):
 
     return record
 
-def load_protocols():
-    return [normalize_protocol_record(record) for record in load_records(PROTOCOLS_DIR)]
+def load_strategies():
+    return [normalize_strategy_record(record) for record in load_records(STRATEGIES_DIR)]
 
 
 def validator(kind: str = "tool"):
@@ -134,15 +134,15 @@ def label_maps(vocab):
         "entry_statuses": "entry_statuses",
         "review_statuses": "review_statuses",
         "submission_roles": "submission_roles",
-        "protocol_submission_roles": "protocol_submission_roles",
+        "strategy_submission_roles": "strategy_submission_roles",
         "operating_systems": "operating_systems",
         "common_data_formats": "common_data_formats",
         "common_data_types": "common_data_types",
         "ms_levels": "ms_levels",
         "acquisition_strategies": "acquisition_strategies",
         "ion_mobility_support": "ion_mobility_support",
-        "protocol_objectives": "protocol_objectives",
-        "protocol_components": "protocol_components",
+        "strategy_objectives": "strategy_objectives",
+        "strategy_components": "strategy_components",
         "sample_types": "sample_types",
         "biological_contexts": "biological_contexts",
         "tool_relationships": "tool_relationships",
