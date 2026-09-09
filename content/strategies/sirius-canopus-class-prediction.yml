@@ -1,0 +1,95 @@
+$schema: ../../schemas/strategy.schema.json
+slug: sirius-canopus-class-prediction
+name: Compound-class prediction with CANOPUS
+summary: A SIRIUS workflow that predicts chemical classes from high-resolution fragmentation spectra, providing
+  structural context even when no spectral-library or exact structure-database match is available.
+description: CANOPUS uses the molecular fingerprint predicted by CSI:FingerID and a deep neural network to assign
+  compound classes and chemical ontologies. It is designed to provide class-level structural information for unknown
+  metabolites, including compounds lacking matching reference spectra or database structures.
+publication:
+  title: Systematic classification of unknown metabolites using high-resolution fragmentation mass spectra
+  doi: 10.1038/s41587-020-0740-8
+  url: https://www.nature.com/articles/s41587-020-0740-8
+  citation: Dührkop K, Nothias L-F, Fleischauer M, et al. Systematic classification of unknown metabolites using
+    high-resolution fragmentation mass spectra. Nature Biotechnology 39, 462–471 (2021).
+  journal: Nature Biotechnology
+  year: 2021
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - unknown_identification
+  - molecular_family_discovery
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+components:
+- annotation
+- statistics
+- data_sharing
+workflow_steps:
+- title: Annotate the precursor formula
+  description: Use SIRIUS to obtain a plausible molecular formula and fragmentation-tree representation for each
+    feature.
+  tool_slugs:
+  - sirius
+- title: Predict the molecular fingerprint
+  description: Run CSI:FingerID fingerprint prediction as the structural representation used by CANOPUS.
+  tool_slugs:
+  - sirius
+- title: Predict compound classes with CANOPUS
+  description: Generate class probabilities and ontology assignments without requiring an exact database search
+    for the unknown structure.
+  tool_slugs:
+  - sirius
+- title: Interpret class-level patterns
+  description: Use predicted classes to summarize chemical diversity, compare groups, or prioritize unknown features
+    for deeper structural work.
+tools:
+- slug: sirius
+  role: Integrated formula, fingerprint, class, database-search, confidence, and de novo structure workflows.
+resources:
+  code_available: true
+  code_url: https://github.com/sirius-ms/sirius
+  method_available: true
+  method_url: https://v6.docs.sirius-ms.io/
+scope:
+  designed_for:
+  - Class-level annotation of unknown compounds when exact structural identification is not possible or not required.
+  - Comparing chemical-class distributions across complex untargeted metabolomics datasets.
+  requirements:
+  - High-resolution MS/MS suitable for SIRIUS/CSI:FingerID processing; CANOPUS is a webservice-backed SIRIUS feature
+    requiring current account/license access.
+  considerations:
+  - CANOPUS predictions are compound-class annotations rather than exact molecular structures.
+  - Class probabilities and ontology depth vary by spectrum and chemical space; downstream biological interpretation
+    should reflect prediction uncertainty.
+related_strategies:
+- sirius-zodiac-formula-annotation
+- sirius-csi-fingerid-cosmic
+- sirius-msnovelist-de-novo
+provenance:
+  submitted_by: curator
+  author_verified: false
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-08-24'
+  last_verified: '2026-08-24'
+  last_editorial_review: '2026-08-24'
+sample_types:
+- other
+biological_contexts:
+- broadly_applicable
+organisms: []
