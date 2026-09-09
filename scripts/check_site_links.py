@@ -3,6 +3,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import argparse
+from common import derive_base_path
 
 ROOT=Path(__file__).resolve().parents[1]/'dist'
 class Page(HTMLParser):
@@ -15,9 +16,10 @@ class Page(HTMLParser):
             if attr in attrs: self.links.append(attrs[attr])
 
 def main():
-    parser=argparse.ArgumentParser(); parser.add_argument('--base-path',default=''); args=parser.parse_args()
-    base=args.base_path.rstrip('/')
+    parser=argparse.ArgumentParser(); parser.add_argument('--base-path',default=None); args=parser.parse_args()
+    base=derive_base_path(args.base_path).rstrip('/')
     pages={p:Page(p.read_text(encoding='utf-8')) for p in ROOT.rglob('*.html')}
+    if not pages: raise SystemExit('No generated pages found. Build the site before checking links.')
     errors=[]; checked=0
     for path,page in pages.items():
         for link in page.links:
