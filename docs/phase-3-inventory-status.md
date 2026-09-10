@@ -27,7 +27,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | GNPS2 Structure Server | `gnps-structure-server` | Pending source review and implementation |
 | GNPS2 Transitive Alignments | `gnps-transitive-alignments` | Pending source review and implementation |
 | GNPS2 Molecular Networking UpSet Dashboards | `gnps-upset-dashboards` | Pending source review and implementation |
-| GNPS2 USI Playground | `gnps-usi-playground` | Pending source review and implementation |
+| GNPS2 USI Playground | `gnps-usi-playground` | Added; FBMN form deprecation warning documented |
 | IsoPairFinder | `isopairfinder` | Pending source review and implementation |
 | MassQL Playground | `massql-playground` | Pending source review and implementation |
 | MS2Query | `ms2query` | Added |
@@ -37,7 +37,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | PostMN MassQL | `postmn-massql` | Added |
 | TinyMass | `tinymass` | Pending source review and implementation |
 
-16 of 32 supplied child records are added; 16 remain.
+17 of 32 supplied child records are added; 15 remain.
 
 After these children: enrich canonical `ms2lda` with the verified MS2LDA 2.0 source and publication, without making a version-specific duplicate.
 

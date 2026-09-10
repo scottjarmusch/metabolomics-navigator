@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-usi-playground
+name: GNPS2 USI Playground
+summary: Prepare spectrum references from GNPS2 jobs, public dataset identifiers and MassIVE file paths.
+description: The USI Playground provides separate forms for dataset identifiers, feature-based molecular networking tasks and MassIVE paths. These helpers support assembling references for downstream spectrum access; they do not establish metabolite identities.
+links:
+  primary: https://usi-playground.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/usi/
+resource_types:
+- web_service
+functions:
+  primary: data_management_sharing
+  capabilities:
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public interface using accessible GNPS2 or MassIVE resources. No software-license or performance assessment was performed.
+data:
+  input_types:
+  - report
+  output_types:
+  - report
+  other_input_formats:
+  - Dataset identifiers, GNPS2 task identifiers or MassIVE file paths
+  other_output_formats:
+  - Identifier tables and FBMN results with USIs
+common_uses:
+- Prepare references for retrieving spectra in downstream tools.
+- Link GNPS2 feature-based molecular networking results to spectrum identifiers.
+scope:
+  designed_for:
+  - Identifier preparation for public MS data and GNPS2 analysis results.
+  not_designed_for:
+  - Raw-data processing, annotation or long-term data deposition.
+  requirements:
+  - Valid accessible dataset, task or file-path references for the selected form.
+  considerations:
+  - A reference depends on the availability and structure of the underlying data.
+  - Correct identifier formatting does not establish spectrum quality or molecular identity.
+  - The FBMN form displayed a Streamlit deprecation warning during review; verify downloaded results before downstream use.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: GNPS2 identifier helper listed in the official tool index.
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: Dedicated form accepts a GNPS2 FBMN task identifier.
+- slug: massive
+  relationship: integration
+  note: Includes forms for public datasets and MassIVE file paths.
+publications: []
+resource_citations:
+- type: documentation
+  citation: GNPS2 Documentation. Universal Spectrum Identifiers. Accessed 10 September 2026.
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/usi/
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official GNPS2 documentation and all three public forms inspected on 2026-09-10. No dedicated app publication identified. No user data submitted or independent end-to-end analysis performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
