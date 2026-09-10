@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: chemprop
+name: Chemical Proportionality (ChemProp)
+summary: Prioritize putative transformations between molecular-network features using abundance changes across ordered samples.
+description: >-
+  Chemical Proportionality adds abundance-pattern context to molecular networks. The current ChemProp2 web app
+  includes the original log-ratio method for two-point comparisons and correlation-based scoring for three or
+  more sequential observations. Scores help select feature pairs for investigation; they do not establish a
+  biochemical reaction. This is distinct from the unrelated Chemprop molecular-property prediction package.
+links:
+  primary: https://chemprop.gnps2.org/
+  documentation: https://github.com/Functional-Metabolomics-Lab/ChemProp-Web-App/blob/main/Home.py
+  repository: https://github.com/Functional-Metabolomics-Lab/ChemProp-Web-App
+resource_types:
+- web_service
+functions:
+  primary: statistics
+  capabilities:
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: The source is BSD-3-Clause licensed. The app can be hosted locally with Python and Streamlit; the public instance is linked above. No analysis job was run during editorial review.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_output_formats:
+  - Interactive app views of feature-pair scores and network context
+  input_formats:
+  - csv_tsv
+  other_input_formats:
+  - TXT and XLSX uploads supported by the app
+  - GNPS2 feature-based molecular networking task identifier
+  - Network edge table for provided-edge and cascade modes
+common_uses:
+- Prioritize molecular-network feature pairs whose abundance patterns suggest a potential transformation.
+- Compare temporal or spatial abundance trends among connected features.
+scope:
+  designed_for:
+  - Ordered non-targeted LC-MS/MS feature-abundance data and molecular-network context.
+  not_designed_for:
+  - Raw-data peak picking or conclusive assignment of reaction mechanisms and metabolite identities.
+  requirements:
+  - Feature quantification and sample metadata with consistent sample identifiers and an ordered comparison variable.
+  - An edge table for provided-edge and cascade analyses; annotation tables are optional.
+  - Select the scoring mode appropriate to two-point versus longer sequential comparisons.
+  considerations:
+  - Anti-correlation and inferred direction are prioritization evidence, not proof of conversion or causation.
+  - Sample preparation, normalization, missing values and experimental ordering affect abundance patterns.
+  - Spectrum Resolver and ModiFinder links require USIs supplied by the GNPS2 task-ID input route; manual uploads do not provide that integration.
+  - The original publication describes ChemProp1; it should not be treated as validation of every feature in ChemProp2.
+publications:
+- citation: 'Petras D, Caraballo-Rodríguez AM, Jarmusch AK, et al. Chemical Proportionality within Molecular Networks. Analytical Chemistry 93, 12833–12839 (2021).'
+  type: primary
+  doi: 10.1021/acs.analchem.1c01520
+  pmid: '34533933'
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Listed as a standalone Chemical Proportionality app in the MetaboApps ecosystem.
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: Accepts a GNPS2 FBMN task identifier to retrieve feature tables, metadata and network context.
+- slug: modifinder
+  relationship: integration
+  note: The task-ID route supports USI-based follow-up with ModiFinder; manual uploads do not.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official app source, repository license, GNPS2 app listing and original publication metadata reviewed on 2026-09-10. No independent benchmark or developer verification performed. ChemProp2 manuscript attribution remains under review; generic FBMN statistics citations were not copied as ChemProp core publications.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+maintenance:
+  status: active
+  last_checked: '2026-09-10'

@@ -4,7 +4,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 
 | Supplied Tool | Canonical slug | Status |
 | --- | --- | --- |
-| Chemical Proportionality (ChemProp) | `chemprop` | Pending source review and implementation |
+| Chemical Proportionality (ChemProp) | `chemprop` | Added; ChemProp2 manuscript attribution remains under review |
 | ChemWalker | `chemwalker` | Pending source review and implementation |
 | CMMC Dashboard | `cmmc-dashboard` | Added |
 | Conjugated Metabolome Explorer | `conjugated-metabolome-explorer` | Added |
@@ -37,7 +37,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | PostMN MassQL | `postmn-massql` | Added |
 | TinyMass | `tinymass` | Pending source review and implementation |
 
-12 of 32 supplied child records are added; 20 remain.
+13 of 32 supplied child records are added; 19 remain.
 
 After these children: enrich canonical `ms2lda` with the verified MS2LDA 2.0 source and publication, without making a version-specific duplicate.
 
