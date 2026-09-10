@@ -6,7 +6,7 @@ An open, community-maintained guide to **MS-based metabolomics tools** and **pub
 
 The homepage offers six task categories, each opening a dedicated guide. The searchable catalogue remains available under Tools.
 
-The current beta contains **79 tools and resources** and **13 strategies**. See the [September expansion and sources](docs/expansion-50-2026-09.md).
+Browse the [current tool catalogue](https://scottjarmusch.github.io/metabolomics-navigator/tools/) and [Strategy collection](https://scottjarmusch.github.io/metabolomics-navigator/strategies/). GNPS2 population progress is tracked in the [Phase 3 inventory](docs/phase-3-inventory-status.md); the [September expansion and sources](docs/expansion-50-2026-09.md) document the earlier expansion.
 
 Metabolomics Navigator is designed around two linked questions:
 
