@@ -6,12 +6,15 @@ description: MZA is a stand-alone converter and data structure for multidimensio
 links:
   primary: https://github.com/PNNL-m-q/mza
   repository: https://github.com/PNNL-m-q/mza
+  documentation: https://github.com/PNNL-m-q/mza
 resource_types:
 - software_application
 functions:
   primary: data_conversion
   secondary:
   - data_management_sharing
+  capabilities:
+  - ms2_processing
 platforms:
 - multi_platform
 interfaces:
@@ -43,6 +46,8 @@ scope:
   - Data conversion and storage for large multidimensional MS datasets.
   not_designed_for:
   - Feature detection, compound annotation or statistical interpretation by itself.
+  requirements:
+  - Supported vendor-format data or mzML input and the dependencies required by the selected converter.
   considerations:
   - Vendor-format conversion may depend on vendor-provided libraries and licensing terms.
 credits: []
