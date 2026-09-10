@@ -1,0 +1,75 @@
+$schema: ../../schemas/tool.schema.json
+slug: cardinal
+name: Cardinal
+summary: Open-source R/Bioconductor toolbox for preprocessing, statistical analysis, segmentation, classification and visualization of mass spectrometry imaging data.
+description: Cardinal provides reproducible analysis of mass spectrometry imaging experiments, including preprocessing, visualization, spatial segmentation, classification and multivariate analysis. Cardinal v3 supports a broad range of MSI workflows and is designed for programmatic analysis in R.
+links:
+  primary: https://cardinalmsi.org/
+  repository: https://github.com/Cardinalverse/Cardinal
+  documentation: https://cardinalmsi.org/
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  secondary:
+  - preprocessing
+  - visualization_reporting
+  capabilities:
+  - multivariate_statistics
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: Artistic-2.0
+  notes: Install through Bioconductor with an R version compatible with the selected release. The current source declares Artistic-2.0 or the accompanying license file; package dependencies and versions should be recorded for reproducibility.
+data:
+  input_types:
+  - imaging_data
+  output_types:
+  - imaging_data
+  - statistical_results
+  input_formats:
+  - imzml
+  other_output_formats:
+  - R analysis objects and statistical or image outputs
+publications:
+- citation: "Bemis KA, Föll MC, Guo D, et al. Cardinal v.3: a versatile open-source software for mass spectrometry imaging analysis. Nature Methods 20, 1883–1886 (2023)."
+  type: methods
+  doi: 10.1038/s41592-023-02070-z
+- citation: "Bemis KD, Harry A, Eberlin LS, et al. Cardinal: an R package for statistical analysis of mass spectrometry-based imaging experiments. Bioinformatics 31, 2418–2420 (2015)."
+  type: primary
+  doi: 10.1093/bioinformatics/btv146
+common_uses:
+- Preprocess and visualize MSI datasets.
+- Segment tissues by chemical composition.
+- Perform classification and multivariate analysis of MSI experiments.
+scope:
+  designed_for:
+  - Reproducible statistical analysis of MALDI- and DESI-based MSI datasets.
+  not_designed_for:
+  - Definitive metabolite identification solely from ion images or statistical classification.
+  requirements:
+  - Compatible imaging-MS data, spatial coordinates and an R/Bioconductor environment.
+  - Biological sample metadata and an analysis design appropriate to spatial measurements.
+  considerations:
+  - Pixels from one tissue are not independent biological replicates; preserve sample-level grouping during inference and validation.
+  - Interpretation depends on acquisition quality, preprocessing choices and spatial experimental design.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official package metadata and original/version-3 publication identities verified on 2026-09-10. No independent software benchmark or developer verification performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+  last_verified: '2026-09-10'
+related_tools:
+- slug: metaspace
+  relationship: complementary
+  note: Spatial statistical analysis and molecular annotation address different stages; no automatic integration is implied.

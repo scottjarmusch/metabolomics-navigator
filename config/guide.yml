@@ -255,6 +255,7 @@
     distinct from the number of measured pixels.
   homepage: false
   slugs:
+  - cardinal
   - metaspace
   - mzmine
   - ms-dial
@@ -262,3 +263,4 @@
     metaspace: Spatial annotation and public imaging data
     mzmine: Imaging-MS feature processing
     ms-dial: Supported imaging-MS workflows
+    cardinal: Scripted spatial preprocessing and statistical analysis
