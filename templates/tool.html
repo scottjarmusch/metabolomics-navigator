@@ -37,6 +37,7 @@
   </ul>
   {% endif %}
 </section>
-{% if related_tools %}<section><h2>Related tools</h2><div class="related-grid">{% for related in related_tools %}<a href="{{ url('tools/' + related.tool.slug + '/') }}"><strong>{{ related.tool.name }}</strong><span><b>{{ related.relationship_label }}</b>{% if related.note %} · {{ related.note }}{% else %} · {{ related.tool.summary }}{% endif %}</span></a>{% endfor %}</div></section>{% endif %}
+{% macro related_cards(items) %}<div class="related-grid">{% for related in items %}<a href="{{ url('tools/' + related.tool.slug + '/') }}"><strong>{{ related.tool.name }}</strong><span><b>{{ related.relationship_label }}</b>{% if related.note %} · {{ related.note }}{% else %} · {{ related.tool.summary }}{% endif %}</span></a>{% endfor %}</div>{% endmacro %}
+{% if related_tools %}<section><h2>Related tools</h2>{{ related_cards(related_tools[:8]) }}{% if related_tools|length > 8 %}<details class="method-detail"><summary>More related tools ({{ related_tools|length - 8 }})</summary>{{ related_cards(related_tools[8:]) }}</details>{% endif %}</section>{% endif %}
 </article></div>
 {% endblock %}

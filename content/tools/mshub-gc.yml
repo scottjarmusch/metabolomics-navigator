@@ -1,0 +1,90 @@
+$schema: ../../schemas/tool.schema.json
+slug: mshub-gc
+name: MSHub-GC
+summary: GC-MS processing workflow that aligns chromatographic data and deconvolves overlapping signals into spectra
+  and quantitative tables for downstream GNPS analysis.
+links:
+  primary: https://gnps2.org/workflowinput?workflowname=mshubgc_workflow
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/mshub-gc_doc/
+  repository: https://github.com/Wang-Bioinformatics-Lab/mshub-gc_workflow
+resource_types:
+- workflow_pipeline
+- web_service
+functions:
+  primary: preprocessing
+  secondary:
+  - molecular_networking
+  - spectral_analysis
+  capabilities:
+  - spectral_deconvolution
+platforms:
+- gc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users
+    to contact the maintainers or UC Riverside Technology Transfer regarding organizational access. Workflow submission
+    requires a GNPS2 account. The linked workflow repository is public; this hosted-service entry does not assert
+    a license for every bundled processing dependency.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review of official documentation, repository and the direct tool publication on 2026-09-10. No
+    analysis job, independent benchmark or developer verification was performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+analysis_types:
+- untargeted
+- volatilomics
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - feature_table
+  - spectra
+  - report
+  other_output_formats:
+  - Deconvolved GC-MS spectra and downloadable tables
+  input_formats:
+  - netcdf
+  - mzml
+  - mzxml
+publications:
+- citation: Aksenov AA, et al. Auto-deconvolution and molecular networking of gas chromatography–mass spectrometry
+    data. Nature Biotechnology 39, 169–173 (2021).
+  type: primary
+  doi: 10.1038/s41587-020-0700-3
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: GNPS2 GC-MS processing/networking workflow.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+description: MSHub-GC separates overlapping GC-MS signals computationally. Its GNPS2 workflow produces deconvolved
+  spectra, a quantification table and a cluster summary. These outputs support subsequent library searching and
+  molecular networking in the GC-MS analysis ecosystem.
+common_uses:
+- Recover component spectra from overlapping GC-MS chromatographic signals.
+- Prepare quantitative and spectral outputs for downstream annotation.
+scope:
+  designed_for:
+  - Untargeted GC-MS processing, including volatile-metabolite studies.
+  not_designed_for:
+  - LC-MS/MS feature processing or automatic confirmation of every compound identity.
+  requirements:
+  - GC-MS files in CDF, mzML or mzXML format, with one format used throughout the input folder.
+  - The correct chromatographic time unit and a GNPS2 account.
+  considerations:
+  - Inspect deconvolution quality and chromatographic separation before interpreting component spectra.
+  - The linked paper describes the wider processing-and-networking system; the current launch page is the deconvolution
+    workflow.
+  - Do not assume support for every vendor-native file type; confirm conversion and input compatibility in the current
+    documentation.

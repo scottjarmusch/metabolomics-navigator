@@ -1,0 +1,97 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms2query
+name: MS2Query
+summary: MS/MS analogue-search tool that combines learned spectral similarity and precursor-mass information to
+  retrieve structurally related reference compounds.
+links:
+  primary: https://gnps2.org/workflowinput?workflowname=ms2query_nextflow_workflow
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/ms2query_doc/
+  repository: https://github.com/iomega/ms2query
+resource_types:
+- programming_package
+- workflow_pipeline
+- web_service
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - library_matching
+platforms:
+- lc_ms
+interfaces:
+- web_app
+- python_package
+- command_line
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: 'The Python software is distributed under Apache-2.0. For the hosted workflow: GNPS2 is openly available
+    to the academic community. The current GNPS2 documentation asks industry users to contact the maintainers or
+    UC Riverside Technology Transfer regarding organizational access. Workflow submission requires a GNPS2 account.'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Editorial review of official documentation, repository and the direct tool publication on 2026-09-10. No
+    analysis job, independent benchmark or developer verification was performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  - statistical_results
+  input_formats:
+  - mgf
+  - msp
+  - mzml
+  - mzxml
+  - json
+  other_input_formats:
+  - Universal Spectrum Identifiers (USIs), where supported by the selected interface
+  output_formats:
+  - csv_tsv
+publications:
+- citation: 'de Jonge NF, Louwen JJR, Chekmeneva E, et al. MS2Query: reliable and scalable MS2 mass spectra-based
+    analogue search. Nature Communications 14, 1752 (2023).'
+  type: primary
+  doi: 10.1038/s41467-023-37446-4
+  pmid: '36990978'
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Available as a GNPS2 workflow.
+- slug: spec2vec
+  relationship: integration
+  note: Uses learned spectral similarity concepts from Spec2Vec.
+- slug: ms2deepscore
+  relationship: integration
+  note: MS2DeepScore predictions contribute to candidate ranking.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+description: MS2Query searches reference MS/MS spectra for both exact-match candidates and structurally related
+  analogues. It combines Spec2Vec, MS2DeepScore and precursor information to rank library candidates, with a Python
+  implementation and a hosted GNPS2 workflow.
+common_uses:
+- Find plausible structural relatives when an exact library match is unavailable.
+- Prioritize spectra for closer structural investigation.
+scope:
+  designed_for:
+  - Library searching of small-molecule MS/MS spectra, including analogue retrieval.
+  not_designed_for:
+  - De novo structure generation or conclusive identification of an unknown molecule.
+  - Chromatographic feature detection, alignment or quantification.
+  requirements:
+  - MS/MS spectra with precursor information and the correct ionization mode.
+  - Compatible reference-library and model files; hosted jobs require uploaded spectra and a GNPS2 account.
+  considerations:
+  - An analogue is a related reference molecule, not necessarily the measured compound.
+  - Filter results by model score and inspect precursor differences; class labels describe the proposed library
+    molecule.
+  - Results depend on reference-library coverage and model compatibility. Record the library, model and software
+    versions.

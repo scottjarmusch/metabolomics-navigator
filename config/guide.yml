@@ -21,6 +21,7 @@
   - msnbase
   - spectra
   - skyline
+  - mshub-gc
   short_title: Data processing
   caption: Process spectra, extract features and quantify targets.
   tool_labels:
@@ -40,6 +41,7 @@
     msnbase: R infrastructure for MS data
     spectra: Scalable spectra objects in R
     skyline: Targeted small-molecule quantification
+    mshub-gc: GC-MS alignment & deconvolution
 - id: annotation
   title: Annotating molecules
   introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical
@@ -60,6 +62,8 @@
   - mist
   - msbuddy
   - metaboannotation
+  - ms2query
+  - npclassifier
   short_title: Molecular annotation
   caption: Explore formulas, structures, and chemical classes.
   tool_labels:
@@ -75,6 +79,8 @@
     mist: Fingerprint prediction from MS/MS
     msbuddy: Molecular formula candidates
     metaboannotation: Reproducible matching in R
+    ms2query: Find spectral matches & analogues
+    npclassifier: Classify supplied natural-product structures
 - id: spectral-analysis
   title: Exploring spectral relationships
   introduction: Tandem mass spectra contain fragmentation information that can help investigate related molecules.

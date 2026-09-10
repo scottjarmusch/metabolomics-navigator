@@ -164,7 +164,7 @@ def main():
     for tool in tools:
         explicit=relationship_index.get(tool['slug'],[])
         if explicit:
-            related=explicit[:8]
+            related=explicit
         else:
             related=[{'tool':x,'relationship':'alternative','relationship_label':'Similar function','note':'','inferred':True} for x in tools if x['slug']!=tool['slug'] and x['functions']['primary']==tool['functions']['primary']][:4]
         update_query=urlencode({'template':'update-tool.yml','title':f"[Tool update]: {tool['name']}"})
