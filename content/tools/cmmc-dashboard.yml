@@ -1,0 +1,93 @@
+$schema: ../../schemas/tool.schema.json
+slug: cmmc-dashboard
+name: CMMC Dashboard
+summary: Visualize CMMC enrichment results alongside feature abundances, metadata and molecular-network information.
+links:
+  primary: https://cmmc-dashboard.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_CMMC_dashboard/
+resource_types:
+- web_service
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - metadata_contextualization
+  - interactive_dashboard
+  - network_visualization
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Publicly hosted MetaboApp. GNPS2 infrastructure is open to the academic community; its documentation directs
+    industry users to the maintainers or UCR Technology Transfer. Hosted access does not establish a software or
+    reference-data license.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against the linked official app documentation on 2026-09-10. No standalone publication for this
+    particular app was verified; the documentation citation identifies the reviewed implementation. Underlying method
+    and application papers are not presented as dedicated app papers. No analysis job or independent benchmark was
+    run; no developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - report
+  - statistical_results
+  input_formats:
+  - csv_tsv
+  other_input_formats:
+  - Completed CMMC enrichment and FBMN task IDs
+  - Sample metadata can also use Excel or TXT
+  other_output_formats:
+  - Interactive box plots, UpSet plots, networks and microbial search views
+scope:
+  designed_for:
+  - Downstream exploration after CMMC enrichment and FBMN processing.
+  not_designed_for:
+  - Replacing CMMC enrichment or establishing the producer of a metabolite in a mixed sample.
+  requirements:
+  - Completed CMMC enrichment and FBMN task identifiers, plus sample metadata.
+  - Metadata sample names must exactly match the FBMN quantification table.
+  considerations:
+  - Interpret source annotations and microbeMASST matches as supporting context rather than proof of origin.
+  - Quantitative comparisons depend on upstream processing and appropriate sample grouping.
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Standalone MetaboApp that can be launched directly or from a GNPS2 task.
+- slug: gnps
+  relationship: integration
+  note: Consumes GNPS2 tasks or ecosystem data.
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: Uses results from a completed FBMN task.
+- slug: cmmc-kb
+  relationship: integration
+  note: Provides the enrichment knowledge context.
+- slug: microbemasst
+  relationship: integration
+  note: Supports microbial spectral-context searches.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+publications: []
+resource_citations:
+- type: documentation
+  citation: GNPS2 Documentation. CMMC Dashboard. Accessed 10 September 2026.
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_CMMC_dashboard/
+description: CMMC Dashboard brings together CMMC enrichment, FBMN abundances and sample metadata. It provides group
+  comparisons, overlap views, molecular-network displays and microbeMASST links for exploring microbial metabolite
+  hypotheses.
+common_uses:
+- Inspect microbial-metabolite annotations alongside sample abundances.
+- Explore overlap between source categories and potential microbial contexts.

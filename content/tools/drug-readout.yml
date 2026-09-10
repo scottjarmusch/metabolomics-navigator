@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: drug-readout
+name: GNPS2 Drug Readout
+summary: Annotate GNPS2 feature-based networking results with drug and drug-metabolite context for exposure-oriented
+  interpretation.
+links:
+  primary: https://drugreadouts.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Drug_Readout/
+resource_types:
+- web_service
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - metadata_contextualization
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Publicly hosted MetaboApp. GNPS2 infrastructure is open to the academic community; its documentation directs
+    industry users to the maintainers or UCR Technology Transfer. Hosted access does not establish a software or
+    reference-data license.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against the linked official app documentation on 2026-09-10. No standalone publication for this
+    particular app was verified; the documentation citation identifies the reviewed implementation. Underlying method
+    and application papers are not presented as dedicated app papers. No analysis job or independent benchmark was
+    run; no developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  output_types:
+  - compound_list
+  - report
+  other_input_formats:
+  - Completed GNPS2 FBMN task ID; peak-area and blank-filter settings
+  other_output_formats:
+  - Annotation tables, class summaries and downloadable plot data
+scope:
+  designed_for:
+  - Research interpretation of drug-library matches in LC-MS/MS studies.
+  not_designed_for:
+  - Establishing dose, adherence or exposure source from spectral similarity alone.
+  requirements:
+  - A completed FBMN task with relevant library matches; documentation recommends the GNPS Drug Library.
+  - A suitable peak-area threshold; blank/control identifiers are optional.
+  considerations:
+  - Separate reference matches from propagated analogues and inspect spectral evidence.
+  - Shared endogenous or food sources can complicate attribution to medication.
+  - Blank exclusion by column-name substring is not equivalent to validating every feature against procedural blanks.
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Standalone MetaboApp that can be launched directly or from a GNPS2 task.
+- slug: gnps
+  relationship: integration
+  note: Consumes GNPS2 tasks or ecosystem data.
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: Uses results from a completed FBMN task.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+publications: []
+resource_citations:
+- type: documentation
+  citation: GNPS2 Documentation. GNPS2 Drug Readout. Accessed 10 September 2026.
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Drug_Readout/
+description: Drug Readout combines FBMN library annotations with drug metadata to summarize candidate drug-related
+  signals across samples. It supports inspection of parent-drug and analogue matches and their pharmacological context.
+common_uses:
+- Inspect possible drug-related signals in untargeted datasets.
+- Compare class summaries with or without analogue matches.

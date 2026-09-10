@@ -219,6 +219,9 @@
   - tidymass
   - omicspls
   - ropls
+  - drug-readout
+  - food-readout
+  - cmmc-dashboard
   short_title: Interpretation
   caption: Inspect signals and interpret study results.
   tool_labels:
@@ -237,6 +240,9 @@
     tidymass: Connected LC-MS workflows in R
     omicspls: Integrate paired omics datasets
     ropls: PCA, PLS and OPLS models
+    drug-readout: Inspect drug-associated annotations
+    food-readout: Explore food-associated signals
+    cmmc-dashboard: Microbial metabolite context dashboard
 - id: spatial-metabolomics
   title: Working with spatial metabolomics
   short_title: Spatial metabolomics
