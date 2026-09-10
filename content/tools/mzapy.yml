@@ -2,7 +2,7 @@ $schema: ../../schemas/tool.schema.json
 slug: mzapy
 name: mzapy
 summary: Read, extract, calibrate, and visualize multidimensional mass-spectrometry data in Python, including LC-IM-MS datasets stored in MZA and selected vendor-supported formats.
-description: mzapy is a Python package for accessing and manipulating multidimensional mass-spectrometry data. It was developed around MZA and supports data extraction, plotting, selected calibration tasks, and programmatic access to dimensions such as retention time, ion mobility, mass-to-charge ratio, and intensity. It is particularly useful for scripting LC-IM-MS workflows and for prototyping downstream analyses on data converted to MZA.
+description: mzapy is a Python package for accessing and manipulating multidimensional mass-spectrometry data. It was developed around MZA and supports data extraction, plotting, selected calibration tasks, signal processing, peak finding, and programmatic access to dimensions such as retention time, ion mobility, mass-to-charge ratio, and intensity. It is particularly useful for scripting LC-IM-MS workflows and for prototyping downstream analyses on data converted to MZA.
 links:
   primary: https://github.com/PNNL-m-q/mzapy
   repository: https://github.com/PNNL-m-q/mzapy
@@ -14,6 +14,10 @@ functions:
   secondary:
   - data_conversion
   - visualization_reporting
+  capabilities:
+  - chromatogram_building
+  - peak_detection
+  - ms2_processing
 platforms:
 - lc_ms
 - direct_infusion_ms
@@ -22,6 +26,7 @@ interfaces:
 access:
   model: open_source
   license: BSD-3-Clause
+  notes: mzapy is distributed as open-source Python software; current installation and dependency details are documented in the project documentation.
 technical:
   programming_languages:
   - Python
@@ -46,6 +51,10 @@ common_uses:
 - Extract retention-time, ion-mobility and m/z slices from multidimensional MS datasets.
 - Build scripted LC-IM-MS analysis and visualization workflows in Python.
 - Work programmatically with MZA files generated from vendor or mzML data.
+publications:
+- doi: 10.1021/acs.analchem.3c01653
+  citation: 'Ross DH, Bilbao A, Lee JY, Zheng X. mzapy: An Open-Source Python Library Enabling Efficient Extraction and Processing of Ion Mobility Spectrometry-Mass Spectrometry Data in the MZA File Format. Anal Chem. 2023;95:9428-9431.'
+  type: primary
 scope:
   designed_for:
   - Programmatic access and lightweight analysis of multidimensional MS data, especially ion-mobility datasets.
@@ -53,11 +62,13 @@ scope:
   - Complete untargeted feature processing or metabolite identification by itself.
   requirements:
   - A compatible Python environment and supported input data such as MZA.
+  considerations:
+  - Ion-mobility workflows require appropriate calibration and interpretation of the mobility dimension; extraction utilities do not by themselves establish metabolite identity.
 credits: []
 provenance:
   submitted_by: curator
   developer_verified: false
-  notes: Added from the 2026 computational-metabolomics review population and Springer methods coverage; functionality checked against the official PNNL repository and documentation on 10 September 2026.
+  notes: Added from the 2026 computational-metabolomics review population and Springer methods coverage; functionality checked against the official PNNL repository, documentation and primary publication on 10 September 2026.
 status:
   entry: published
   review: editorially_reviewed
