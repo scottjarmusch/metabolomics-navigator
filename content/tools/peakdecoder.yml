@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: peakdecoder
+name: PeakDecoder
+summary: Use machine learning to support metabolite identification and error-rate estimation in multidimensional LC-IM-MS-DIA data.
+description: PeakDecoder is a workflow for metabolite annotation and profiling in liquid-chromatography, ion-mobility and data-independent-acquisition mass spectrometry. It uses precursor and fragment-ion co-elution and co-mobility information together with machine learning to score candidate metabolite assignments and estimate false-discovery rates.
+links:
+  primary: https://github.com/EMSL-Computing/PeakDecoder
+  repository: https://github.com/EMSL-Computing/PeakDecoder
+resource_types:
+- workflow_pipeline
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  - quality_control
+  capabilities:
+  - identification_confidence
+  - ms2_processing
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+interfaces:
+- command_line
+access:
+  model: open_source
+  license: BSD-2-Clause
+data:
+  input_types:
+  - feature_table
+  - spectra
+  output_types:
+  - compound_list
+  - statistical_results
+publications:
+- doi: 10.1038/s41467-023-37031-9
+  citation: Bilbao A, et al. PeakDecoder enables machine learning-based metabolite annotation and accurate profiling in multidimensional mass spectrometry measurements. Nature Communications (2023).
+  type: primary
+common_uses:
+- Score metabolite identifications in LC-IM-MS-DIA datasets using co-elution and co-mobility information.
+- Estimate false-discovery-rate thresholds for candidate metabolite identifications.
+scope:
+  designed_for:
+  - Multidimensional LC-IM-MS-DIA metabolite-identification workflows with precursor and fragment-ion traces.
+  not_designed_for:
+  - General-purpose preprocessing of arbitrary LC-MS datasets or de novo structure elucidation.
+  requirements:
+  - Upstream feature and fragment-ion processing plus targeted extraction of precursor and fragment traces.
+  considerations:
+  - Model performance depends on the training data and the quality of chromatographic and ion-mobility measurements.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Added from the 2026 computational-metabolomics review population and Springer methods coverage; checked against the official PeakDecoder repository and primary publication on 10 September 2026.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dia
+  ion_mobility: required
