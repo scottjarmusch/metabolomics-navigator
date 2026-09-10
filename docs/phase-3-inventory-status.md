@@ -23,7 +23,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | GNPS2 Plotter Dashboard | `gnps-plotter-dashboard` | Pending source review and implementation |
 | GNPS2 Reverse Metabolomics | `gnps-reverse-metabolomics` | Added |
 | GNPS2 Spectral Similarity Hub | `gnps-spectral-similarity-hub` | Pending source review and implementation |
-| GNPS2 MS/MS Spectrum Summary | `gnps-spectrum-summary` | Pending source review and implementation |
+| GNPS2 MS/MS Spectrum Summary | `gnps-spectrum-summary` | Added; public input screens inspected |
 | GNPS2 Structure Server | `gnps-structure-server` | Pending source review and implementation |
 | GNPS2 Transitive Alignments | `gnps-transitive-alignments` | Pending source review and implementation |
 | GNPS2 Molecular Networking UpSet Dashboards | `gnps-upset-dashboards` | Pending source review and implementation |
@@ -37,7 +37,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | PostMN MassQL | `postmn-massql` | Added |
 | TinyMass | `tinymass` | Pending source review and implementation |
 
-15 of 32 supplied child records are added; 17 remain.
+16 of 32 supplied child records are added; 16 remain.
 
 After these children: enrich canonical `ms2lda` with the verified MS2LDA 2.0 source and publication, without making a version-specific duplicate.
 

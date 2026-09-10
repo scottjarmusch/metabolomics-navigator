@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-spectrum-summary
+name: GNPS2 MS/MS Spectrum Summary
+summary: Explore recurring fragment peaks and neutral losses across selected tandem mass spectra.
+description: The spectrum-summary app displays peak and neutral-loss histograms for spectra selected through a GNPS2 network component or a list of Universal Spectrum Identifiers. It supports inspection of shared fragmentation evidence before more detailed annotation.
+links:
+  primary: https://spectrasummary.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/toolindex/#msms-spectrum-summary-app
+resource_types:
+- web_service
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public hosted interface; input spectra must be retrievable through the selected GNPS task or USI route. No source-code license or independent performance benchmark was verified.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - Universal Spectrum Identifiers, one per line
+  - GNPS task and network-component identifiers with node selection
+  other_output_formats:
+  - Interactive peak and neutral-loss histograms
+common_uses:
+- Inspect common fragment signals among related spectra.
+- Examine recurring neutral losses in a selected network component.
+scope:
+  designed_for:
+  - Exploratory comparison of shared fragmentation across selected MS/MS spectra.
+  not_designed_for:
+  - Definitive structure identification or quantitative feature-table processing.
+  requirements:
+  - Accessible spectra referenced by USIs or a supported GNPS network task.
+  - Selection of spectra appropriate to the scientific comparison.
+  considerations:
+  - Shared peaks and losses support hypotheses but are not unique structural assignments.
+  - Acquisition conditions, precursor selection and the chosen spectrum subset affect the summary.
+  - Input controls and plots were inspected without submitting a user dataset; operational performance remains untested.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Listed in the official GNPS2 tool index.
+publications: []
+resource_citations:
+- type: documentation
+  citation: GNPS2 Tool Index. MS/MS Spectrum Summary App. Accessed 10 September 2026.
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/toolindex/#msms-spectrum-summary-app
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official tool index and both public input screens reviewed on 2026-09-10. No dedicated publication identified; no general GNPS paper added as an app-specific publication. No private data uploaded or independent benchmark performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
