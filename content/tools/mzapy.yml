@@ -1,0 +1,76 @@
+$schema: ../../schemas/tool.schema.json
+slug: mzapy
+name: mzapy
+summary: Read, extract, calibrate, and visualize multidimensional mass-spectrometry data in Python, including LC-IM-MS datasets stored in MZA and selected vendor-supported formats.
+description: mzapy is a Python package for accessing and manipulating multidimensional mass-spectrometry data. It was developed around MZA and supports data extraction, plotting, selected calibration tasks, and programmatic access to dimensions such as retention time, ion mobility, mass-to-charge ratio, and intensity. It is particularly useful for scripting LC-IM-MS workflows and for prototyping downstream analyses on data converted to MZA.
+links:
+  primary: https://github.com/PNNL-m-q/mzapy
+  repository: https://github.com/PNNL-m-q/mzapy
+  documentation: https://mzapy.readthedocs.io/
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  secondary:
+  - data_conversion
+  - visualization_reporting
+platforms:
+- lc_ms
+- direct_infusion_ms
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: BSD-3-Clause
+technical:
+  programming_languages:
+  - Python
+  package_managers:
+  - pip
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - spectra
+  - feature_table
+  input_formats:
+  - hdf5
+  - other
+  output_formats:
+  - csv_tsv
+  - other
+  other_input_formats:
+  - MZA
+common_uses:
+- Extract retention-time, ion-mobility and m/z slices from multidimensional MS datasets.
+- Build scripted LC-IM-MS analysis and visualization workflows in Python.
+- Work programmatically with MZA files generated from vendor or mzML data.
+scope:
+  designed_for:
+  - Programmatic access and lightweight analysis of multidimensional MS data, especially ion-mobility datasets.
+  not_designed_for:
+  - Complete untargeted feature processing or metabolite identification by itself.
+  requirements:
+  - A compatible Python environment and supported input data such as MZA.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Added from the 2026 computational-metabolomics review population and Springer methods coverage; functionality checked against the official PNNL repository and documentation on 10 September 2026.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - dia
+  ion_mobility: supported
