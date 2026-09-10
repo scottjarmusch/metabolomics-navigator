@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-reverse-metabolomics
+name: GNPS2 Reverse Metabolomics
+summary: Search public MS/MS data using spectrum identifiers and explore matched samples by their biological metadata.
+links:
+  primary: https://reverse-metabolomics.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Reverse_Metabolomics/
+resource_types:
+- web_service
+functions:
+  primary: reference_data_search
+  capabilities:
+  - metadata_contextualization
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Publicly hosted MetaboApp. GNPS2 infrastructure is open to the academic community; its documentation directs
+    industry users to the maintainers or UCR Technology Transfer. Hosted access does not establish a software or
+    reference-data license.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against the linked official app documentation on 2026-09-10. No standalone publication for this
+    particular app was verified; the documentation citation identifies the reviewed implementation. Underlying method
+    and application papers are not presented as dedicated app papers. No analysis job or independent benchmark was
+    run; no developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+data:
+  input_types:
+  - spectra
+  output_types:
+  - sample_metadata
+  - report
+  other_input_formats:
+  - Universal Spectrum Identifiers (USIs) for MS/MS spectra
+  output_formats:
+  - csv_tsv
+  other_output_formats:
+  - PNG heatmaps
+scope:
+  designed_for:
+  - Repository-scale context searching from annotated or unannotated MS/MS spectra.
+  not_designed_for:
+  - Direct structure-string searching or proof of biological production.
+  requirements:
+  - Resolvable MS/MS USIs and suitable MASST search parameters.
+  considerations:
+  - Matches reflect spectral similarity and available metadata, not confirmed identity or origin.
+  - Repository sampling is uneven; absence of a match does not establish biological absence.
+  - ReDU-normalized counts adjust for reference sampling but do not remove every source of bias.
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Standalone MetaboApp that can be launched directly or from a GNPS2 task.
+- slug: gnps
+  relationship: integration
+  note: Consumes GNPS2 tasks or ecosystem data.
+- slug: masst
+  relationship: integration
+  note: Retrieves spectral matches.
+- slug: redu
+  relationship: integration
+  note: Provides metadata context and normalization reference.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+publications: []
+resource_citations:
+- citation: GNPS2 Documentation. GNPS2 Reverse Metabolomics. Accessed 10 September 2026.
+  type: documentation
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Reverse_Metabolomics/
+description: GNPS2 Reverse Metabolomics links MASST spectral matches to public sample metadata. It helps investigate
+  the recorded contexts of a spectrum through heatmaps and tables. This Tool is the hosted implementation; the separate
+  Reverse metabolomics Strategy describes the broader experimental approach.
+common_uses:
+- Explore organisms, tissues or biofluids associated with spectral matches.
+- Compare match distributions across metadata categories.

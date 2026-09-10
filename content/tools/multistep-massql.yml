@@ -1,0 +1,90 @@
+$schema: ../../schemas/tool.schema.json
+slug: multistep-massql
+name: Multi-step MassQL
+summary: Apply a predefined sequence of MassQL queries to GNPS2 networking spectra to investigate bile acids and
+  their isomers.
+links:
+  primary: https://multistep-massql.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Multi-Step_MassQL/
+resource_types:
+- web_service
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - ms2_processing
+  - compound_class_prediction
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Publicly hosted MetaboApp. GNPS2 infrastructure is open to the academic community; its documentation directs
+    industry users to the maintainers or UCR Technology Transfer. Hosted access does not establish a software or
+    reference-data license.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against the linked official app documentation on 2026-09-10. No standalone publication for this
+    particular app was verified; the documentation citation identifies the reviewed implementation. Underlying method
+    and application papers are not presented as dedicated app papers. No analysis job or independent benchmark was
+    run; no developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  - report
+  other_input_formats:
+  - Public GNPS2 CMN/FBMN task ID
+  other_output_formats:
+  - Interactive classification tree and result tables
+scope:
+  designed_for:
+  - Bile-acid-focused analysis of completed molecular-networking results.
+  not_designed_for:
+  - A general-purpose sequential-query interface for arbitrary metabolite classes.
+  - Unqualified confirmation of stereochemistry from every matching spectrum.
+  requirements:
+  - A completed, public GNPS2 CMN or FBMN task containing relevant MS/MS spectra.
+  considerations:
+  - Current documentation limits the app to bile acids; broader classes are described as future work.
+  - Mixed spectra can satisfy multiple classifications. Inspect the evidence behind each assignment.
+  - The app uses preconfigured queries; document the application version and upstream task when reporting results.
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Standalone MetaboApp that can be launched directly or from a GNPS2 task.
+- slug: gnps
+  relationship: integration
+  note: Consumes GNPS2 tasks or ecosystem data.
+- slug: massql
+  relationship: integration
+  note: Uses the MassQL query language.
+- slug: gnps-classical-molecular-networking
+  relationship: integration
+  note: Accepts a completed public CMN task.
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: Accepts a completed public FBMN task.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+publications: []
+resource_citations:
+- citation: GNPS2 Documentation. Multi-step MassQL. Accessed 10 September 2026.
+  type: documentation
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Multi-Step_MassQL/
+description: Multi-step MassQL applies successive fragmentation rules to spectra from a GNPS2 networking task. The
+  documented app is configured for bile-acid classification, with a classification tree and result tables for inspecting
+  individual features.
+common_uses:
+- Apply consistent bile-acid query logic across processed datasets.
+- Inspect alternative classifications for a feature.
