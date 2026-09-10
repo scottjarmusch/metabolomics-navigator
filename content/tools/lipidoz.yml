@@ -28,12 +28,21 @@ interfaces:
 - python_package
 access:
   model: source_available
+  notes: Source code, documentation and graphical executables are publicly available; users should consult the repository and package metadata for current licensing and installation terms.
 data:
   input_types:
   - spectra
   output_types:
   - compound_list
   - report
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - OzID-compatible mass-spectrometry data and lipid target lists
+  other_output_formats:
+  - LipidOz scoring and annotation results
 publications:
 - doi: 10.1038/s42004-023-00867-9
   citation: Ross DH, et al. LipidOz enables automated elucidation of lipid carbon-carbon double bond positions from ozone-induced dissociation mass spectrometry data. Communications Chemistry (2023).
