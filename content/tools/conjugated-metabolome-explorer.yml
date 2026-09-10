@@ -1,0 +1,79 @@
+$schema: ../../schemas/tool.schema.json
+slug: conjugated-metabolome-explorer
+name: Conjugated Metabolome Explorer
+summary: Search public LC-MS/MS evidence for potential conjugated forms of a molecule supplied as a SMILES structure.
+links:
+  primary: https://conjugated-metabolome.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Conjugated_Metabolome_Explorer/
+resource_types:
+- web_service
+functions:
+  primary: reference_data_search
+  capabilities:
+  - repository_scale_search
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: The documentation states that the public app requires no login or registration. Publicly hosted MetaboApp.
+    GNPS2 infrastructure is open to the academic community; its documentation directs industry users to the maintainers
+    or UCR Technology Transfer. Hosted access does not establish a software or reference-data license.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Reviewed against the linked official app documentation on 2026-09-10. No standalone publication for this
+    particular app was verified; the documentation citation identifies the reviewed implementation. Underlying method
+    and application papers are not presented as dedicated app papers. No analysis job or independent benchmark was
+    run; no developer verification is claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - compound_list
+  - report
+  other_input_formats:
+  - SMILES string and minimum occurrence-frequency setting
+  other_output_formats:
+  - Interactive conjugation table, mass-shift plots and spectral links
+scope:
+  designed_for:
+  - Structure-led exploration of potential conjugated metabolites in public LC-MS/MS data.
+  not_designed_for:
+  - Confirming a conjugation site, reaction pathway or enzyme from a mass shift alone.
+  requirements:
+  - A valid SMILES structure and a selected minimum occurrence frequency.
+  considerations:
+  - A delta-mass inference has different support from a direct spectral match.
+  - Occurrence counts reflect repository sampling and should not be treated as quantitative biological prevalence.
+  - Inspect the linked spectra before promoting a proposed conjugate into an identification.
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Standalone MetaboApp that can be launched directly or from a GNPS2 task.
+- slug: gnps
+  relationship: integration
+  note: Consumes GNPS2 tasks or ecosystem data.
+maintenance:
+  status: active
+  last_checked: '2026-09-10'
+description: Conjugated Metabolome Explorer combines spectral matches and mass-shift relationships to investigate
+  possible metabolite conjugations. Results distinguish spectral evidence from components inferred by a mass difference
+  and link to supporting spectra.
+publications: []
+resource_citations:
+- citation: GNPS2 Documentation. Conjugated Metabolome Explorer. Accessed 10 September 2026.
+  type: documentation
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Conjugated_Metabolome_Explorer/
+common_uses:
+- Explore candidate conjugations starting from a known structure.
+- Inspect spectral support for recurrent mass shifts in public data.

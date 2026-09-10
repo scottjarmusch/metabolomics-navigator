@@ -133,6 +133,7 @@
   - metabolomexchange
   - metaspace
   - gnps-reverse-metabolomics
+  - conjugated-metabolome-explorer
   short_title: Public-data search
   caption: Find where molecules have been observed.
   tool_labels:
@@ -147,6 +148,7 @@
     metabolomexchange: Discover public study releases
     metaspace: Explore spatial metabolomics data
     gnps-reverse-metabolomics: Explore spectrum-associated sample contexts
+    conjugated-metabolome-explorer: Explore candidate conjugations
 - id: reference-resources
   title: Sharing data and reference knowledge
   introduction: Repositories preserve experimental files, reference spectra support annotation, and knowledgebases
