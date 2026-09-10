@@ -11,10 +11,10 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | CorrOmics | `corromics` | Pending source review and implementation |
 | GNPS2 Drug Readout | `drug-readout` | Added |
 | Everything Bagel Feature Finder | `everything-bagel-feature-finder` | Pending source review and implementation |
-| FBMN Stats | `fbmn-stats` | Pending source review and implementation |
+| FBMN Stats | `fbmn-stats` | Added |
 | GNPS2 Food Readout | `food-readout` | Added |
 | GNPS2 Classical Molecular Networking | `gnps-classical-molecular-networking` | Added |
-| GNPS2 Cytoscape Bridge | `gnps-cytoscape-bridge` | Pending source review and implementation |
+| GNPS2 Cytoscape Bridge | `gnps-cytoscape-bridge` | Added; Cytoscape relationship awaits Phase 4 |
 | GNPS2 Dataset File Explorer | `gnps-dataset-file-explorer` | Pending source review and implementation |
 | GNPS2 Feature-Based Molecular Networking | `gnps-feature-based-molecular-networking` | Added |
 | GNPS2 MassQL Analysis | `gnps-massql-analysis` | Pending source review and implementation |
@@ -37,7 +37,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | PostMN MassQL | `postmn-massql` | Added |
 | TinyMass | `tinymass` | Pending source review and implementation |
 
-13 of 32 supplied child records are added; 19 remain.
+15 of 32 supplied child records are added; 17 remain.
 
 After these children: enrich canonical `ms2lda` with the verified MS2LDA 2.0 source and publication, without making a version-specific duplicate.
 
