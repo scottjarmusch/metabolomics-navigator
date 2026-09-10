@@ -6,6 +6,7 @@ description: PeakDecoder is a workflow for metabolite annotation and profiling i
 links:
   primary: https://github.com/EMSL-Computing/PeakDecoder
   repository: https://github.com/EMSL-Computing/PeakDecoder
+  documentation: https://github.com/EMSL-Computing/PeakDecoder
 resource_types:
 - workflow_pipeline
 functions:
@@ -26,6 +27,7 @@ interfaces:
 access:
   model: open_source
   license: BSD-2-Clause
+  notes: Source code, example data and workflow instructions are publicly available in the project repository.
 data:
   input_types:
   - feature_table
@@ -33,6 +35,17 @@ data:
   output_types:
   - compound_list
   - statistical_results
+  input_formats:
+  - csv_tsv
+  - msp
+  - other
+  output_formats:
+  - csv_tsv
+  - other
+  other_input_formats:
+  - MS-DIAL peak lists and Skyline reports
+  other_output_formats:
+  - PeakDecoder scores and FDR thresholds
 publications:
 - doi: 10.1038/s41467-023-37031-9
   citation: Bilbao A, et al. PeakDecoder enables machine learning-based metabolite annotation and accurate profiling in multidimensional mass spectrometry measurements. Nature Communications (2023).
