@@ -2,25 +2,20 @@
 {% from "icons.html" import topic_icon %}
 {% block head %}<link rel="canonical" href="{{ absolute_url('') }}">{% endblock %}
 {% block content %}
-<section class="navigator-entrance section-wrap" aria-labelledby="entrance-title">
-  <header class="entrance-header"><p class="eyebrow">METABOLOMICS NAVIGATOR</p><h1 id="entrance-title">Find your next tool.</h1><p class="entrance-lead">A clear starting point for metabolomics workflows, strategies and community knowledge.</p></header>
-  <form class="home-search" action="{{ url('tools/') }}" method="get" role="search">
-    <label for="home-search-input">Search the catalogue</label>
-    <div class="home-search-row"><input id="home-search-input" name="q" type="search" placeholder="Search tools, functions or platforms" autocomplete="off"><button type="submit">Search <span aria-hidden="true">↗</span></button></div>
-  </form>
-  <div class="home-section-label"><span>Explore by task</span><span aria-hidden="true"></span></div>
-  <div class="category-grid">
-    {% for group in guide_sections if group.homepage|default(true) %}
-    <a class="category-card" id="{{ group.id }}" href="{{ url('guide/' + group.id + '/') }}">
-      <span class="category-icon">{{ topic_icon(group.id) }}</span>
-      <h2>{{ group.short_title }}</h2>
-      <span class="category-bottom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
-    </a>
-    {% endfor %}
-  </div>
-  <section class="home-contribute" aria-labelledby="contribute-title">
-    <div><p class="eyebrow">HELP GROW THE NAVIGATOR</p><h2 id="contribute-title">Have something to add?</h2></div>
-    <div class="contribute-links"><a href="{{ url('submit/') }}#tool"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a tool</strong><small>Share a resource with the community</small></span><span aria-hidden="true">↗</span></a><a href="{{ url('submit/') }}#strategy"><span class="contribute-icon" aria-hidden="true">＋</span><span><strong>Submit a strategy</strong><small>Share a transferable analytical idea</small></span><span aria-hidden="true">↗</span></a></div>
-  </section>
-</section>
+<section class="navigator-entrance" aria-labelledby="entrance-title">
+<div class="home-hero section-wrap">
+<div class="home-hero-copy"><p class="eyebrow">METABOLOMICS NAVIGATOR · BETA</p><h1 id="entrance-title">Build better <em>metabolomics</em> workflows.</h1><p class="entrance-lead">Explore tools, analytical strategies and reference resources across the metabolomics workflow — or preview workflow planning with Ask Navigator.</p><div class="hero-actions"><a class="button primary" href="{{ url('ask/') }}">Ask Navigator · Beta <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ url('tools/') }}">Browse tools <span aria-hidden="true">→</span></a></div></div>
+<figure class="science-collage">{% include "scientific-collage.html" %}<figcaption>From measurement to meaning <span>Illustrative scientific data</span></figcaption></figure>
+</div>
+<div class="metrics-strip section-wrap" aria-label="Navigator collection"><div><strong>{{ stats.tools }}</strong><span>Tools</span></div><div><strong>{{ stats.strategies }}</strong><span>Analytical Strategies</span></div><div><strong>{{ guide_sections|length }}</strong><span>Workflow areas</span></div><div><strong>Open</strong><span>Community resource</span></div></div>
+<div class="home-lower section-wrap">
+<form class="home-search" action="{{ url('tools/') }}" method="get" role="search"><label for="home-search-input">Search the Navigator</label><div class="home-search-row"><input id="home-search-input" name="q" type="search" placeholder="Search tools, functions, platforms or resources" autocomplete="off"><button type="submit">Search <span aria-hidden="true">↗</span></button></div></form>
+<header class="task-heading"><p class="eyebrow">EXPLORE BY TASK</p><h2>Start with what you need to do.</h2></header>
+<div class="category-grid">
+{% for group in guide_sections if group.homepage|default(true) %}
+<a class="category-card" id="{{ group.id }}" href="{{ url('guide/' + group.id + '/') }}"><span class="category-icon">{{ topic_icon(group.id) }}</span><div><h3>{{ group.short_title }}</h3><p>{{ group.caption }}</p></div><span class="category-bottom" aria-hidden="true">↗</span></a>
+{% endfor %}
+</div>
+<section class="home-contribute" aria-labelledby="contribute-title"><div><p class="eyebrow">A COMMUNITY RESOURCE</p><h2 id="contribute-title">Built to grow with the field.</h2><p>Developers, authors and users can propose tools, strategies and corrections for editorial review.</p></div><a class="button primary" href="{{ url('submit/') }}">Contribute to Navigator <span aria-hidden="true">↗</span></a></section>
+</div></section>
 {% endblock %}

@@ -1,8 +1,8 @@
 title: Metabolomics Navigator
 short_title: Navigator
-tagline: A community-maintained guide to MS-based metabolomics tools.
+tagline: Tools, strategies & workflow guidance for metabolomics
 description: An open, community-maintained guide to MS-based metabolomics tools and transferable analytical strategies.
 repository_url: https://github.com/scottjarmusch/metabolomics-navigator
 contact_email: ''
 license_text: CC BY 4.0
-footer_note: Community-maintained and openly versioned on GitHub.
+footer_note: An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.title }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
-  <meta name="theme-color" content="#102c40">
+  <meta name="theme-color" content="#faf9f5">
   <link rel="stylesheet" href="{{ url('assets/site.css') }}?v={{ asset_version }}">
   <link rel="stylesheet" href="{{ url('assets/product-refresh.css') }}?v={{ asset_version }}">
   <link rel="icon" href="{{ url('assets/favicon.svg') }}" type="image/svg+xml">
   {% block head %}{% endblock %}
 </head>
-<body class="{% if active == 'home' %}entrance-page{% endif %}">
+<body class="page-{{ active or 'reference' }}{% if active == 'home' %} entrance-page{% endif %}">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner section-wrap">
@@ -34,8 +34,8 @@
           </g>
         </svg>
         <span class="brand-text">
-          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
-          <small>A community-maintained guide</small>
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span> <span class="beta-mark">BETA</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
@@ -45,18 +45,15 @@
         <a href="{{ url('strategies/') }}"{% if active == 'strategies' %} aria-current="page"{% endif %}>Strategies</a>
         <a href="{{ url('ask/') }}"{% if active == 'ask' %} aria-current="page"{% endif %}>Ask Navigator</a>
         <a href="{{ url('about/') }}"{% if active == 'about' %} aria-current="page"{% endif %}>About</a>
-        <a class="nav-submit" href="{{ url('submit/') }}"{% if active == 'submit' %} aria-current="page"{% endif %}>Contribute</a>
+        <a class="nav-submit" href="{{ url('submit/') }}"{% if active in ['submit','contribute'] %} aria-current="page"{% endif %}>Contribute</a>
       </nav>
     </div>
   </header>
   <main id="main-content">{% block content %}{% endblock %}</main>
-  {% if active == 'home' %}
-  <footer class="entrance-footer section-wrap"><span>Open source · Community curated</span></footer>
-  {% else %}
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
       <div>
-        <strong>{{ site.title }}</strong>
+        <strong>{{ site.title }} · Beta</strong>
         <p>{{ site.footer_note }}</p>
       </div>
       <div>
@@ -80,7 +77,6 @@
     </div>
     <div class="section-wrap footer-bottom"><span>{{ site.license_text }}</span><span>Generated {{ generated_at }}</span></div>
   </footer>
-  {% endif %}
   <script src="{{ url('assets/site.js') }}?v={{ asset_version }}" defer></script>{% block scripts %}{% endblock %}
 </body>
 </html>
