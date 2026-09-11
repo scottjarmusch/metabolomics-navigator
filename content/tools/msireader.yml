@@ -1,0 +1,66 @@
+$schema: ../../schemas/tool.schema.json
+slug: msireader
+name: MSiReader
+summary: Vendor-neutral desktop software for visualization, analysis and interpretation of high-resolution mass spectrometry imaging datasets.
+description: MSiReader originated as an open academic MATLAB application and is now professionally maintained by MSI Software Solutions. Current Pro and BioPharma editions provide interactive MSI visualization and analysis for high-resolution accurate-mass imaging datasets.
+links:
+  primary: https://msireader.com/
+  homepage: https://msireader.com/
+  documentation: https://msireader.com/support
+resource_types:
+- software_application
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - interactive_dashboard
+  secondary:
+  - statistics
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+interfaces:
+- desktop_gui
+access:
+  model: freemium
+  notes: The current product retains limited freeware functionality after its trial. Pro and BioPharma features require paid licenses; check the current feature comparison. Historical academic releases used a different distribution model.
+data:
+  input_types:
+  - imaging_data
+  output_types:
+  - imaging_data
+  - statistical_results
+  input_formats:
+  - imzml
+  other_output_formats:
+  - Heatmaps, spectra and m/z-abundance data (edition dependent)
+publications:
+- citation: "Robichaud G, Garrard KP, Barry JA, Muddiman DC. MSiReader: an open-source interface to view and analyze high resolving power MS imaging files on Matlab platform. Journal of the American Society for Mass Spectrometry 24, 718–721 (2013)."
+  type: primary
+  doi: 10.1007/s13361-013-0607-z
+common_uses:
+- Inspect and analyze vendor-neutral high-resolution MSI datasets.
+- Visualize spatial ion distributions and compare regions.
+scope:
+  designed_for:
+  - Interactive mass spectrometry imaging analysis.
+  not_designed_for:
+  - Treating ion-image colocalization as conclusive structural identification.
+  requirements:
+  - Imaging data supported by the selected edition and a compatible desktop installation.
+  - Check licensing and system requirements for the intended feature set.
+  considerations:
+  - Current product capabilities, licensing and supported formats should be checked against the vendor documentation because the software has evolved substantially from the original academic release.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Current vendor product, support and feature-comparison pages and original publication metadata reviewed on 2026-09-10. No installation or benchmark performed. The 2013 paper documents the original academic software, not the complete current commercial feature set.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+related_tools:
+- slug: metaspace
+  relationship: complementary

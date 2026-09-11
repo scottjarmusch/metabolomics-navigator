@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: rmsiproc
+name: rMSIproc
+summary: Open-source R/C++ package for large-scale MSI preprocessing, including smoothing, alignment, recalibration, normalization,
+  peak picking and binning.
+links:
+  primary: https://github.com/prafols/rMSIproc
+  documentation: https://github.com/prafols/rMSIproc
+  repository: https://github.com/prafols/rMSIproc
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  capabilities:
+  - peak_detection
+platforms:
+- imaging_ms
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: R source installation requires compatible native dependencies. The documented GUI uses RGtk2; verify installation on the target operating system before planning an analysis.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official repository README, DESCRIPTION and direct publication metadata reviewed on 2026-09-10. No installation or independent benchmark performed. Ongoing maintenance status has not been established.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+analysis_types:
+- spatial_metabolomics
+data:
+  input_types:
+  - imaging_data
+  other_output_formats:
+  - Processed rMSI TAR datasets and rMSIproc peak-matrix files
+  output_types:
+  - imaging_data
+  - feature_table
+  input_formats:
+  - imzml
+  other_input_formats:
+  - rMSI TAR format
+publications:
+- citation: 'Ràfols P, Heijs B, Del Castillo E, et al. rMSIproc: an R package for mass spectrometry imaging data processing.
+    Bioinformatics 36, 3618–3619 (2020).'
+  type: primary
+  doi: 10.1093/bioinformatics/btaa142
+  pmid: '32108859'
+related_tools:
+- slug: rmsi
+  relationship: complementary
+  note: Designed to complement rMSI data handling and visualization.
+maintenance:
+  status: unclear
+  last_checked: '2026-09-10'
+description: rMSIproc adds C++ processing routines to the rMSI data model, producing processed images and peak matrices through R functions or a parameter wizard.
+common_uses:
+- Extract peak matrices from imaging datasets.
+- Apply smoothing, mass alignment and calibration before spatial analysis.
+scope:
+  designed_for:
+  - MSI preprocessing with rMSI-compatible data.
+  not_designed_for:
+  - Chromatographic retention-time alignment or definitive compound identification.
+  requirements:
+  - Working rMSI installation and compatible R/C++ toolchain.
+  - FFTW support; follow platform-specific installation instructions.
+  considerations:
+  - Check mass calibration and binning settings against the instrument resolution.
+  - Keep preprocessing parameters with output matrices for reproducibility.
+

@@ -256,6 +256,9 @@
   homepage: false
   slugs:
   - cardinal
+  - rmsiproc
+  - rmsi
+  - msireader
   - metaspace
   - mzmine
   - ms-dial
@@ -264,3 +267,6 @@
     mzmine: Imaging-MS feature processing
     ms-dial: Supported imaging-MS workflows
     cardinal: Scripted spatial preprocessing and statistical analysis
+    rmsiproc: Imaging preprocessing and peak matrices
+    rmsi: Disk-backed imaging data exploration
+    msireader: Desktop imaging visualization with free and paid features

@@ -1,0 +1,79 @@
+$schema: ../../schemas/tool.schema.json
+slug: rmsi
+name: rMSI
+summary: Open-source R package and GUI for memory-efficient handling, exploration and visualization of mass spectrometry imaging
+  datasets.
+links:
+  primary: https://github.com/prafols/rMSI
+  documentation: https://github.com/prafols/rMSI
+  repository: https://github.com/prafols/rMSI
+resource_types:
+- programming_package
+- software_application
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - interactive_dashboard
+platforms:
+- imaging_ms
+interfaces:
+- r_package
+- desktop_gui
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: R source installation requires compatible native dependencies. The documented GUI uses RGtk2; verify installation on the target operating system before planning an analysis.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official repository README, DESCRIPTION and direct publication metadata reviewed on 2026-09-10. No installation or independent benchmark performed. Ongoing maintenance status has not been established.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+analysis_types:
+- spatial_metabolomics
+data:
+  input_types:
+  - imaging_data
+  other_output_formats:
+  - R imaging objects and interactive ion-image views
+  output_types:
+  - imaging_data
+  - report
+  input_formats:
+  - imzml
+  other_input_formats:
+  - rMSI TAR format
+publications:
+- citation: 'Ràfols P, Torres S, Ramírez N, et al. rMSI: an R package for MS imaging data handling and visualization. Bioinformatics
+    33, 2427–2428 (2017).'
+  type: primary
+  doi: 10.1093/bioinformatics/btx182
+  pmid: '28369250'
+related_tools:
+- slug: rmsiproc
+  relationship: complementary
+  note: rMSIproc adds a complete preprocessing pipeline.
+maintenance:
+  status: unclear
+  last_checked: '2026-09-10'
+description: rMSI provides disk-backed access to imaging spectra and a graphical interface for ion-image exploration. Its data model supports viewing selected pixels without loading every spectrum into memory.
+common_uses:
+- Inspect ion distributions and selected pixel spectra.
+- Access imaging data from R with disk-backed storage.
+scope:
+  designed_for:
+  - Imaging-data handling and interactive visualization.
+  not_designed_for:
+  - Definitive molecular identification from ion images.
+  requirements:
+  - Compatible R, RGtk2 and native dependencies; Windows instructions require Rtools.
+  - The documented imzML reader supports continuous-mode data; check compatibility before conversion.
+  considerations:
+  - Disk-backed storage still needs sufficient local disk space.
+  - Legacy GUI dependencies may require a carefully configured environment.
+
