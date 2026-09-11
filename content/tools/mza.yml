@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: mza
+name: MZA
+summary: Convert multidimensional mass-spectrometry data from vendor formats or mzML into an HDF5-based MZA structure for efficient storage and programmatic access.
+description: MZA is a stand-alone converter and data structure for multidimensional mass-spectrometry data, including LC-IM-MS and DIA datasets. It converts supported proprietary files and mzML into an HDF5-based representation designed to make large, heterogeneous MS datasets easier to access from multiple programming languages and operating systems.
+links:
+  primary: https://github.com/PNNL-m-q/mza
+  repository: https://github.com/PNNL-m-q/mza
+  documentation: https://github.com/PNNL-m-q/mza
+resource_types:
+- software_application
+functions:
+  primary: data_conversion
+  secondary:
+  - data_management_sharing
+  capabilities:
+  - ms2_processing
+platforms:
+- multi_platform
+interfaces:
+- command_line
+access:
+  model: source_available
+  notes: The repository provides source code and examples, while binary use can also depend on vendor data-access libraries and their terms.
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - raw_instrument_data
+  input_formats:
+  - vendor_raw
+  - mzml
+  output_formats:
+  - hdf5
+  other_output_formats:
+  - MZA
+publications:
+- doi: 10.1021/acs.jproteome.2c00313
+  citation: 'Bilbao A, et al. MZA: a data conversion tool to facilitate software development and artificial intelligence research in multidimensional mass spectrometry. J Proteome Res (2023).'
+  type: primary
+common_uses:
+- Convert LC-MS, LC-IM-MS and DIA datasets into a common HDF5-based representation.
+- Make multidimensional MS data accessible to Python, R and other HDF5-capable environments.
+scope:
+  designed_for:
+  - Data conversion and storage for large multidimensional MS datasets.
+  not_designed_for:
+  - Feature detection, compound annotation or statistical interpretation by itself.
+  requirements:
+  - Supported vendor-format data or mzML input and the dependencies required by the selected converter.
+  considerations:
+  - Vendor-format conversion may depend on vendor-provided libraries and licensing terms.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Added from the 2026 computational-metabolomics review population and Springer methods coverage; functionality checked against the official PNNL repository on 10 September 2026.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dia
+  ion_mobility: supported

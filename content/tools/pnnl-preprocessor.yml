@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: pnnl-preprocessor
+name: PNNL PreProcessor
+summary: Preprocess multidimensional ion-mobility mass-spectrometry data with demultiplexing, smoothing, noise filtering, saturation repair, and format-conversion utilities.
+description: PNNL PreProcessor is a desktop preprocessing utility developed for ion-mobility mass spectrometry. It supports Agilent MassHunter and UIMF data from drift-tube and SLIM IM-MS platforms and provides operations including data compression/interpolation, ion-mobility demultiplexing, multidimensional smoothing, intensity-threshold and spike filtering, saturation repair, metadata export, and selected conversions that make IM information usable in downstream LC-MS-oriented workflows.
+links:
+  primary: https://pnnl-comp-mass-spec.github.io/PNNL-PreProcessor/
+  homepage: https://pnnl-comp-mass-spec.github.io/PNNL-PreProcessor/
+  repository: https://github.com/PNNL-Comp-Mass-Spec/PNNL-PreProcessor
+  documentation: https://pnnl-comp-mass-spec.github.io/PNNL-PreProcessor/
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  secondary:
+  - data_conversion
+  - quality_control
+  capabilities:
+  - spectral_deconvolution
+platforms:
+- lc_ms
+- direct_infusion_ms
+interfaces:
+- desktop_gui
+access:
+  model: unknown
+  notes: The project distributes the binary free of charge, but the source code is closed because of vendor-format restrictions and use is subject to third-party library terms.
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - raw_instrument_data
+  input_formats:
+  - vendor_raw
+  - other
+  output_formats:
+  - vendor_raw
+  - other
+  other_input_formats:
+  - Agilent MassHunter .d
+  - UIMF
+  other_output_formats:
+  - Enhanced vendor-format MS files
+publications:
+- doi: 10.1021/acs.jproteome.1c00425
+  citation: Bilbao A, et al. A Preprocessing Tool for Enhanced Ion Mobility-Mass Spectrometry-Based Omics Workflows. J Proteome Res (2021).
+  type: primary
+- doi: 10.1021/jasms.4c00220
+  citation: Stow SM, et al. Exploring Ion Mobility Mass Spectrometry Data File Conversions to Leverage Existing Tools and Enable New Workflows. J Am Soc Mass Spectrom (2024).
+  type: methods
+common_uses:
+- Improve signal quality before downstream LC-IM-MS data processing.
+- Demultiplex and smooth ion-mobility data and remove low-intensity or spike noise.
+- Convert selected IM-MS data representations for use with downstream workflows.
+scope:
+  designed_for:
+  - Preprocessing Agilent drift-tube and SLIM ion-mobility MS data before downstream omics analysis.
+  not_designed_for:
+  - General-purpose metabolite annotation or statistical analysis.
+  requirements:
+  - Compatible Agilent MassHunter .d or UIMF input data and a supported desktop environment.
+  considerations:
+  - Saturation repair can produce incorrect results for highly convoluted elution or mobility profiles; output logs should be inspected.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Added from the 2026 computational-metabolomics review population and Springer computational-metabolomics methods coverage; scope and limitations checked against official PNNL documentation on 10 September 2026.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-10'
+  updated_at: '2026-09-10'
+  last_verified: '2026-09-10'
+  last_editorial_review: '2026-09-10'
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - dia
+  ion_mobility: required
