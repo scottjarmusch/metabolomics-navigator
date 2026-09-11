@@ -1,0 +1,63 @@
+$schema: ../../schemas/tool.schema.json
+slug: m2aia
+name: M²aia
+aliases: [M2aia]
+summary: Open-source environment for interactive processing, visualization and registration of two- and three-dimensional mass spectrometry imaging data.
+description: M²aia extends the Medical Imaging Interaction Toolkit with MSI signal processing and image interaction. Researchers can inspect ion images and reconstruct or register spatial datasets. The related pyM²aia project exposes programmatic functionality separately.
+links:
+  primary: https://m2aia.de/
+  repository: https://github.com/m2aia/m2aia
+  documentation: https://m2aia.de/
+resource_types: [software_application]
+functions:
+  primary: visualization_reporting
+  secondary: [preprocessing]
+  capabilities: [spectral_data_io, peak_detection, container_support]
+platforms: [imaging_ms]
+analysis_types: [spatial_metabolomics]
+interfaces: [desktop_gui]
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: Source and Windows/Linux packages are available. Dependencies and companion software may carry separate licenses.
+data:
+  input_types: [imaging_data]
+  input_formats: [imzml]
+  output_types: [imaging_data]
+  output_formats: [imzml]
+common_uses:
+- Interactively inspect and process MSI spectra and ion images.
+- Register multimodal images and reconstruct three-dimensional MSI datasets.
+scope:
+  designed_for: [Interactive spatial-data exploration and MSI image processing.]
+  not_designed_for: [Definitive metabolite identification from image colocalization alone.]
+  requirements:
+  - A compatible Windows or Linux installation, or the documented container environment.
+  - The project specifies elastix for image-registration utilities.
+  considerations:
+  - Inspect registration quality and processing parameters before interpreting spatial overlap.
+  - Memory and storage requirements depend on image size and processing choices.
+  - Python workflows use the companion pyM²aia interface; desktop and Python capabilities are not assumed identical.
+publications:
+- citation: Cordes J, Enzlein T, Marsching C, Hinze M, Engelhardt S, Hopf C, Wolf I. M²aia—Interactive, fast, and memory-efficient analysis of 2D and 3D multi-modal mass spectrometry imaging data. GigaScience 10(7), giab049 (2021).
+  doi: 10.1093/gigascience/giab049
+  pmid: '34282451'
+  type: primary
+related_tools:
+- slug: cardinal
+  relationship: alternative
+  note: An R-based alternative for MSI analysis; feature sets and interfaces differ.
+- slug: pyimzml
+  relationship: complementary
+  note: Programmatic imzML I/O can support preparation of imaging data; direct interoperability was not tested.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project site, repository and publication metadata reviewed on 2026-09-11. The desktop tool paper is included; companion-interface and incidental application papers are not attributed to the desktop release. No installation, registration or benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'

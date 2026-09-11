@@ -1,5 +1,7 @@
 # Phase 4 specialist population
 
+Added M²aia with current m2aia.de access, verified desktop-tool paper and scoped image-registration requirements. Companion pyM²aia is distinguished rather than assumed identical. Next spatial candidates include SCiLS Lab and ili.
+
 11 September: added pyimzML using official repository and parser/writer
 documentation. Added the narrow spectral_data_io capability to vocabulary and
 schema so an I/O library is not misclassified as preprocessing or annotation.

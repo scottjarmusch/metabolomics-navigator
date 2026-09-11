@@ -269,6 +269,7 @@
   - mzmine
   - ms-dial
   - pyimzml
+  - m2aia
   tool_labels:
     metaspace: Spatial annotation and public imaging data
     mzmine: Imaging-MS feature processing
@@ -278,3 +279,4 @@
     rmsi: Disk-backed imaging data exploration
     msireader: Desktop imaging visualization with free and paid features
     pyimzml: Read and write imzML in Python
+    m2aia: Interactive MSI processing and registration
