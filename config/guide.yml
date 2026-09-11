@@ -268,6 +268,7 @@
   - metaspace
   - mzmine
   - ms-dial
+  - pyimzml
   tool_labels:
     metaspace: Spatial annotation and public imaging data
     mzmine: Imaging-MS feature processing
@@ -276,3 +277,4 @@
     rmsiproc: Imaging preprocessing and peak matrices
     rmsi: Disk-backed imaging data exploration
     msireader: Desktop imaging visualization with free and paid features
+    pyimzml: Read and write imzML in Python

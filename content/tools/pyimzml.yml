@@ -1,0 +1,57 @@
+$schema: ../../schemas/tool.schema.json
+slug: pyimzml
+name: pyimzML
+summary: Python library for reading and writing imzML imaging mass-spectrometry data.
+description: pyimzML exposes pixel coordinates, spectra and metadata to Python code. Its parser and writer support custom imaging-data workflows rather than providing a complete graphical analysis environment.
+links:
+  primary: https://github.com/alexandrovteam/pyimzML
+  repository: https://github.com/alexandrovteam/pyimzML
+  documentation: https://pyimzml.readthedocs.io/en/latest/
+resource_types: [programming_package]
+functions:
+  primary: data_conversion
+  capabilities: [spectral_data_io]
+platforms: [imaging_ms]
+analysis_types: [spatial_metabolomics]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Installable Python package with source available under Apache-2.0. Included ontology-derived data have their own attribution notices.
+data:
+  input_types: [imaging_data]
+  input_formats: [imzml]
+  output_types: [imaging_data]
+  output_formats: [imzml]
+  other_output_formats: [Python-accessible spectra, coordinates and metadata]
+common_uses:
+- Read pixel spectra in a scripted imaging workflow.
+- Write imzML output after custom transformations.
+scope:
+  designed_for: [Programmatic imzML input/output and interoperability.]
+  not_designed_for: [An end-to-end MSI statistics or molecular-annotation workflow.]
+  requirements: [Python and the package dependencies; imzML metadata and associated binary data.]
+  considerations:
+  - The repository specifies imzML version 1.1.0; check compatibility with the producing software.
+  - Preserve coordinates and relevant metadata when transforming data.
+  - Validate written files with the intended downstream reader.
+related_tools:
+- slug: cardinal
+  relationship: complementary
+  note: Cardinal offers imaging analysis in R; exchanging imzML requires compatible files and is not a verified direct integration.
+publications: []
+resource_citations:
+- citation: Alexandrov Team. pyimzML repository and documentation. Accessed 11 September 2026.
+  type: documentation
+  url: https://pyimzml.readthedocs.io/en/latest/
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official repository and parser/writer documentation reviewed on 2026-09-11. No dedicated peer-reviewed tool paper verified; no incidental usage paper added. Package installation, round-trip fidelity and interoperability were not tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'

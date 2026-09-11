@@ -703,6 +703,7 @@
     "capability": {
       "type": "string",
       "enum": [
+        "spectral_data_io",
         "peak_detection",
         "spectral_deconvolution",
         "retention_time_alignment",
