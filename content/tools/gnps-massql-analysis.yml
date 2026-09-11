@@ -1,0 +1,59 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-massql-analysis
+name: GNPS2 MassQL Analysis
+summary: Hosted interface for exploring MS/MS spectral libraries with MassQL and using LLM assistance to draft or explain queries.
+description: The GNPS2 MassQL Analysis app combines spectral-library query exploration with assisted query construction. It is distinct from the local-file MassQL Playground and from the underlying MassQL language.
+links:
+  primary: https://massql-analysis.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/toolindex/#massql-analysis-app
+resource_types: [web_service]
+functions:
+  primary: spectral_analysis
+  capabilities: [ms2_processing]
+platforms: [lc_ms]
+interfaces: [web_app]
+access:
+  model: free_web_service
+  notes: Publicly listed hosted GNPS2 interface. Availability, account requirements and LLM-service limits should be checked in the app; no software or data license is inferred from hosted access.
+data:
+  input_types: [spectra]
+  other_input_formats: [MassQL query text and spectral-library selections through the hosted interface]
+  output_types: [report]
+  other_output_formats: [Interactive query results and query explanations; export formats not verified]
+common_uses:
+- Explore fragmentation queries against MS/MS spectral libraries.
+- Draft or explain a MassQL query with the app's LLM assistance.
+scope:
+  designed_for: [Interactive library-query exploration and learning MassQL syntax.]
+  not_designed_for: [Treating generated query text or a library hit as a validated identification.]
+  requirements: [Internet access and the hosted app; check requirements for assisted features.]
+  considerations:
+  - Inspect generated queries, tolerances and selected libraries before interpreting matches.
+  - The reviewed documentation does not establish model accuracy or guarantee export compatibility.
+  - Do not assume the hosted app shares the local-file privacy properties of MassQL Playground.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Hosted tool listed in the official GNPS2 tool index.
+- slug: massql
+  relationship: integration
+  note: Interface to MassQL query construction and execution.
+- slug: massql-playground
+  relationship: alternative
+  note: Browser-only query development against supported local files.
+publications: []
+resource_citations:
+- citation: GNPS2 Documentation. MassQL Analysis App. Accessed 11 September 2026.
+  type: documentation
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/toolindex/#massql-analysis-app
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official GNPS2 tool index and reachable app shell reviewed on 2026-09-11. No standalone publication for this interface verified. Query execution, account requirements, LLM quality and export formats were not independently tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'

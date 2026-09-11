@@ -100,6 +100,9 @@
   - molnetenhancer
   - postmn-massql
   - multistep-massql
+  - massql-playground
+  - gnps-massql-analysis
+  - tinymass
   short_title: Spectral analysis
   caption: Find relationships and patterns in spectra.
   tool_labels:
@@ -114,6 +117,9 @@
     gnps-feature-based-molecular-networking: Quantitative feature-based networking
     postmn-massql: Query processed networking spectra
     multistep-massql: Bile-acid query sequences
+    massql-playground: Query local spectra in the browser
+    gnps-massql-analysis: Explore library queries with assistance
+    tinymass: Share an individual spectrum
 - id: public-data
   title: Finding context in public data
   introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been observed.

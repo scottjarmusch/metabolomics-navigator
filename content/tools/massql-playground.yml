@@ -1,0 +1,60 @@
+$schema: ../../schemas/tool.schema.json
+slug: massql-playground
+name: MassQL Playground
+summary: Browser-based MassQL query editor and runner for exploring fragmentation patterns in local mass-spectrometry files.
+description: MassQL Playground parses queries, explains their structure and runs them against local data in the browser. It provides a lightweight way to develop a spectral query before using the same language in larger analyses.
+links:
+  primary: https://apps.gnps2.org/massql_playground
+  documentation: https://apps.gnps2.org/massql_playground
+resource_types: [web_service]
+functions:
+  primary: spectral_analysis
+  capabilities: [ms2_processing]
+platforms: [lc_ms]
+interfaces: [web_app]
+access:
+  model: free_web_service
+  notes: Public browser app with local file processing. Hosted availability does not establish the license of the underlying engine or reference data.
+data:
+  input_types: [spectra]
+  input_formats: [mzml, mgf, json]
+  other_input_formats: [MassQL query text]
+  output_types: [report]
+  output_formats: [csv_tsv, json]
+common_uses:
+- Develop and inspect fragmentation-pattern queries.
+- Search a local spectral file and export matching rows.
+scope:
+  designed_for: [Interactive MassQL query development and local spectral searching.]
+  not_designed_for: [Raw feature detection or definitive molecular identification from a query match.]
+  requirements: [A modern browser and a supported local spectral file for execution.]
+  considerations:
+  - The app reads whole files into browser memory; large files may exceed available resources.
+  - Displayed rows are capped even when the reported match count is larger.
+  - Retain the query and input-file identity to make results reproducible.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Listed among GNPS2 Next Gen Web Apps.
+- slug: massql
+  relationship: integration
+  note: Runs the MassQL query engine.
+- slug: gnps-massql-analysis
+  relationship: alternative
+  note: Hosted library-query interface with LLM assistance, rather than local browser-file execution.
+publications: []
+resource_citations:
+- citation: GNPS2 Next Gen Web Apps. MassQL Playground interface and usage notes. Accessed 11 September 2026.
+  type: documentation
+  url: https://apps.gnps2.org/massql_playground
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official app page and GNPS2 app index reviewed on 2026-09-11. No standalone publication for this interface verified; the canonical MassQL entry holds method publications. No file processing or independent benchmark performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'

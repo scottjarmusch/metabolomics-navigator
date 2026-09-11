@@ -1,0 +1,59 @@
+$schema: ../../schemas/tool.schema.json
+slug: tinymass
+name: TinyMass
+summary: Hosted utility for sharing mass spectra through reusable spectrum identifiers in the GNPS2 ecosystem.
+description: TinyMass accepts a peak list and an optional precursor m/z through a web form. The GNPS2 documentation describes it as a way to share a spectrum and obtain a Universal Spectrum Identifier for use by other tools.
+links:
+  primary: https://tinymass.gnps2.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/toolindex/#tinymass-app
+resource_types: [web_service]
+functions:
+  primary: visualization_reporting
+  capabilities: [provenance_tracking]
+platforms: [lc_ms]
+interfaces: [web_app]
+access:
+  model: free_web_service
+  notes: Public hosted submission interface. No software license or private-storage guarantee is inferred from access.
+data:
+  input_types: [spectra]
+  other_input_formats: [Pasted peak list and optional precursor m/z]
+  output_types: [report]
+  other_output_formats: [Shareable spectrum identifier (USI)]
+common_uses:
+- Share individual spectra for discussion or downstream visualization.
+- Reference a spectrum in compatible GNPS2 tools.
+scope:
+  designed_for: [Lightweight sharing of individual mass spectra.]
+  not_designed_for: [Private data storage, full experimental-data deposition or molecular identification.]
+  requirements: [Internet access and a peak list suitable for the submission form.]
+  considerations:
+  - Treat submitted spectra as shared data. The GNPS2 library search interface states that peak lists deposited through its TinyMass integration are retained indefinitely.
+  - Keep original files and acquisition metadata; a shared spectrum alone does not capture experimental provenance.
+  - Confirm identifier retrieval and downstream compatibility before relying on it in a published workflow.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Listed as a GNPS2 spectrum-sharing utility.
+- slug: gnps-usi-playground
+  relationship: complementary
+  note: USI Playground constructs identifiers for existing dataset or task spectra; TinyMass accepts a peak list for sharing.
+publications: []
+resource_citations:
+- citation: GNPS2 Documentation. TinyMass App. Accessed 11 September 2026.
+  type: documentation
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/toolindex/#tinymass-app
+- citation: GNPS2 Library Knowledgebase. Spectrum search retention notice. Accessed 11 September 2026.
+  type: documentation
+  url: https://library.gnps2.org/
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official tool index, public TinyMass form labels and GNPS2 library retention notice reviewed on 2026-09-11. No spectrum was submitted. No standalone TinyMass publication verified; the 2016 GNPS paper displayed by the app remains on the GNPS parent entry.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'

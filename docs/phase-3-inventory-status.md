@@ -17,7 +17,7 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | GNPS2 Cytoscape Bridge | `gnps-cytoscape-bridge` | Added; Cytoscape relationship awaits Phase 4 |
 | GNPS2 Dataset File Explorer | `gnps-dataset-file-explorer` | Pending source review and implementation |
 | GNPS2 Feature-Based Molecular Networking | `gnps-feature-based-molecular-networking` | Added |
-| GNPS2 MassQL Analysis | `gnps-massql-analysis` | Pending source review and implementation |
+| GNPS2 MassQL Analysis | `gnps-massql-analysis` | Added; assisted query scope and verification limits documented |
 | GNPS2 Multiple Spectrum Alignment | `gnps-multiple-spectrum-alignment` | Pending source review and implementation |
 | GNPS2 Network Customization Playground | `gnps-network-customization` | Pending source review and implementation |
 | GNPS2 Plotter Dashboard | `gnps-plotter-dashboard` | Pending source review and implementation |
@@ -29,15 +29,15 @@ Reconciled against the master handoff on 10 September 2026. Presence below means
 | GNPS2 Molecular Networking UpSet Dashboards | `gnps-upset-dashboards` | Pending source review and implementation |
 | GNPS2 USI Playground | `gnps-usi-playground` | Added; FBMN form deprecation warning documented |
 | IsoPairFinder | `isopairfinder` | Pending source review and implementation |
-| MassQL Playground | `massql-playground` | Pending source review and implementation |
+| MassQL Playground | `massql-playground` | Added; local-file execution and memory limits documented |
 | MS2Query | `ms2query` | Added |
 | MSHub-GC | `mshub-gc` | Added |
 | Multi-step MassQL | `multistep-massql` | Added |
 | NPClassifier | `npclassifier` | Added |
 | PostMN MassQL | `postmn-massql` | Added |
-| TinyMass | `tinymass` | Pending source review and implementation |
+| TinyMass | `tinymass` | Added; public-sharing scope and retention caution documented |
 
-17 of 32 supplied child records are added; 15 remain.
+20 of 32 supplied child records are added; 12 remain.
 
 After these children: enrich canonical `ms2lda` with the verified MS2LDA 2.0 source and publication, without making a version-specific duplicate.
 
