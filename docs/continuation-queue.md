@@ -17,9 +17,9 @@ The user approved continuing and publishing validated work on 11 September 2026.
 5. Complete the full relationships, direct access and page-quality review.
 6. Reconcile metabolomics_navigator_live_handoff_2026-09-10.zip against main and
    PR #13, then implement the remaining review-derived entries. This package is
-   still queued after Ask Navigator and the above catalogue work. LipidOz is
-   now on main, reconciled with the candidate in PR #13; retain the canonical
-   main record when reviewing that PR's remaining entries.
+   still queued after Ask Navigator and the above catalogue work. PR #13 was merged upstream during this batch. Its four other records were
+   preserved and LipidOz was reconciled into one enriched canonical entry.
+   Reconcile the later handoff against these existing records rather than adding duplicates.
 7. Complete release QA.
 
 The new package has manifests and an existing-card update list, not just new

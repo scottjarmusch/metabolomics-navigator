@@ -32,11 +32,12 @@ provenance:
   notes: 'Official documentation and dedicated software publications reviewed on 2026-09-11. No installation,
     uploaded dataset or independent benchmark was run. Reconciled with the LipidOz candidate in PR #13 (628a0f9);
     preserved one canonical slug, corrected the master draft author and verified BSD-2-Clause licensing. PR
-    #13 remains queued for its other records.'
+    #13 was merged upstream during this work; preserved its other records and this single enriched LipidOz
+    entry.'
 status:
   entry: published
   review: editorially_reviewed
-  created_at: '2026-09-08'
+  created_at: '2026-09-10'
   updated_at: '2026-09-11'
   last_verified: '2026-09-11'
   last_editorial_review: '2026-09-11'
@@ -79,3 +80,8 @@ scope:
   considerations:
   - Inspect diagnostic-fragment quality and ambiguous assignments; a software score alone is not structural
     confirmation.
+credits: []
+related_tools:
+- slug: mza
+  relationship: uses
+  note: The documented LC isotope-scoring workflow consumes MZA OzID data.
