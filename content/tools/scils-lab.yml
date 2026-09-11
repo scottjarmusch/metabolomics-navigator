@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: scils-lab
+name: SCiLS Lab
+summary: Commercial software suite for processing, statistical analysis, segmentation, annotation and 2D/3D visualization
+  of mass spectrometry imaging data.
+links:
+  primary: https://www.bruker.com/en/products-and-solutions/mass-spectrometry/ms-software/scils-lab.html
+  documentation: https://www.bruker.com/en/landingpages/bdal/SCiLS-Lab-Tutorials.html
+resource_types:
+- software_application
+- instrument_vendor_suite
+functions:
+  primary: visualization_reporting
+  secondary:
+  - preprocessing
+  - statistics
+  - annotation_identification
+  capabilities:
+  - interactive_dashboard
+  - multivariate_statistics
+platforms:
+- imaging_ms
+interfaces:
+- desktop_gui
+- vendor_integration
+access:
+  model: commercial
+  notes: Commercial Bruker software. Third-party/imzML import and MetaboScape-powered annotation are listed as optional;
+    confirm the purchased edition and modules.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official Bruker product page and tutorials reviewed on 2026-09-11. No single dedicated publication for
+    the current software suite verified; incidental application papers are excluded. No installation, license activation
+    or benchmark performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- spatial_metabolomics
+data:
+  input_types:
+  - imaging_data
+  output_types:
+  - imaging_data
+  - statistical_results
+  - report
+  input_formats:
+  - imzml
+  - vendor_raw
+  output_formats:
+  - imzml
+  other_output_formats:
+  - Edition-dependent statistical reports and ion-image exports
+related_tools:
+- slug: metaspace
+  relationship: complementary
+  note: SCiLS imzML exports can support downstream spatial annotation; verify export compatibility.
+- slug: m2aia
+  relationship: alternative
+  note: Open-source MSI analysis option with a different feature set.
+description: SCiLS Lab provides an interactive environment for spatial segmentation, statistical comparison and
+  visualization of MSI datasets. Import support and molecular annotation depend on licensed options; the separate
+  SCiLS Scope viewer is not the full analysis product.
+common_uses:
+- Explore spatial segmentation and differences among imaging regions.
+- Export supported imaging data to imzML for downstream analysis.
+scope:
+  designed_for:
+  - Interactive MSI visualization and statistical analysis.
+  not_designed_for:
+  - Assuming every licensed edition includes every advertised annotation or import feature.
+  requirements:
+  - A compatible 64-bit Windows workstation and license; consult current vendor hardware and module requirements.
+  considerations:
+  - Large datasets require substantial memory and storage.
+  - Image segmentation or colocalization is not sufficient evidence of molecular identity.
+resource_citations:
+- citation: Bruker. SCiLS Software product documentation. Accessed 11 September 2026.
+  type: documentation
+  url: https://www.bruker.com/en/products-and-solutions/mass-spectrometry/ms-software/scils-lab.html

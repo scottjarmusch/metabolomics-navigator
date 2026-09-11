@@ -44,16 +44,13 @@ workflow_steps:
 - title: Map molecular features onto the physical model
   description: Join feature abundance to sampling coordinates and visualize the chemical distribution on a 2D image
     or 3D model.
-  tool_slugs: []
-  external_tools:
-  - name: '`ili'
-    url: https://ili.embl.de/
+  tool_slugs:
+  - ili
 - title: Share cartographical snapshots
   description: Preserve the mapped view and visualization settings so collaborators can reproduce the spatial interpretation.
 tools:
-- role: Interactive 2D/3D molecular cartography visualization.
-  name: '`ili'
-  url: https://ili.embl.de/
+- slug: ili
+  role: Interactive 2D/3D molecular cartography visualization.
 resources:
   method_available: true
   method_url: https://www.nature.com/articles/nprot.2017.122
@@ -78,7 +75,7 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-08'
-  updated_at: '2026-09-09'
+  updated_at: '2026-09-11'
   last_verified: '2026-09-09'
   last_editorial_review: '2026-09-09'
 sample_types: []

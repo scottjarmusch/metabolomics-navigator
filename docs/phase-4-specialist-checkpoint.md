@@ -1,5 +1,7 @@
 # Phase 4 specialist population
 
+11 September: added ili, SCiLS Lab and SpaMTP with verified official sources. ili now links internally from the 3D molecular-cartography Strategy. SCiLS module-dependent access is explicit. SpaMTP records MIT licensing, stable/developmental separation and m/z annotation ambiguity; link RaMP-DB once populated. The nine supplied spatial candidates are now present. Next: lipidomics.
+
 Added M²aia with current m2aia.de access, verified desktop-tool paper and scoped image-registration requirements. Companion pyM²aia is distinguished rather than assumed identical. Next spatial candidates include SCiLS Lab and ili.
 
 11 September: added pyimzML using official repository and parser/writer
@@ -10,7 +12,7 @@ untested interoperability limits. Added it to the spatial guide.
 
 Second spatial batch: added rMSI, rMSIproc and MSiReader. Reviewed official prafols repository READMEs and DESCRIPTION files, original DOI metadata, and current MSiReader vendor/support/plan pages. Removed the supplied retention-time-alignment tag from rMSIproc: its alignment is spectral mass alignment. Recorded RGtk2/native dependency requirements, continuous-mode imzML limitation in the rMSI documentation, and uncertain current maintenance for the two R packages. MSiReader is classified as freemium because current vendor plans retain limited freeware functionality; older academic licensing does not describe the current paid editions. Added all three to the deeper spatial guide.
 
-The user explicitly requested moving to Phase 4 on 10 September 2026. Phase 3 is not complete: 15 supplied entries remain recorded in `phase-3-inventory-status.md`. Complete that backlog and the relationship pass before functional Ask Navigator work.
+The user explicitly requested moving to Phase 4 on 10 September 2026. Phase 3 is not complete: 12 supplied entries remain recorded in `phase-3-inventory-status.md`. Complete that backlog and the relationship pass before functional Ask Navigator work.
 
 Started spatial metabolomics with Cardinal. Verified both supplied publication DOIs against publisher/Crossref metadata and current official repository DESCRIPTION for license and environment requirements. Kept a single canonical Tool across versions. Added biological-replication cautions and linked the existing METASPACE entry as complementary.
 

@@ -10,5 +10,3 @@
   tool: mibig
 - strategy: ozid-structural-lipidomics
   tool: lipidoz
-- strategy: three-dimensional-molecular-cartography
-  tool: ili

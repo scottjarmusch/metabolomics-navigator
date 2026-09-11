@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: ili
+name: '`ili'
+aliases:
+- ili
+summary: Web-based software for interactive visualization of molecular distributions on 2D images and 3D surfaces.
+description: '`ili maps quantitative molecular or omics features onto 2D images or 3D surface models. It accepts
+  a spatial mapping table plus a background image or 3D model and supports reusable visualization snapshots and
+  shareable links.'
+links:
+  primary: https://ili.embl.de/
+  repository: https://github.com/MolecularCartography/ili
+  documentation: https://github.com/MolecularCartography/ili#input
+resource_types:
+- software_application
+- web_service
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - interactive_dashboard
+platforms:
+- lc_ms
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+interfaces:
+- web_app
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 source with a browser interface. Availability of the hosted site and older extension distribution
+    should be checked before a workshop or production workflow.
+data:
+  input_types:
+  - imaging_data
+  - feature_table
+  output_types:
+  - imaging_data
+  input_formats:
+  - csv_tsv
+  output_formats:
+  - json
+  other_input_formats:
+  - PNG/JPG background or STL model
+  - Textured OBJ model with MTL and image files
+  other_output_formats:
+  - Rendered image and reusable visualization snapshot
+publications:
+- citation: Protsyuk I, Melnik AV, Nothias L-F, et al. 3D molecular cartography using LC-MS facilitated by Optimus
+    and 'ili software. Nature Protocols 13, 134–154 (2018).
+  type: primary
+  doi: 10.1038/nprot.2017.122
+common_uses:
+- Visualize molecular features across 2D biological surfaces.
+- Map metabolomics features onto 3D models.
+scope:
+  designed_for:
+  - Interactive molecular cartography when feature intensities can be associated with spatial coordinates.
+  considerations:
+  - Upstream normalization, annotation and statistical validation occur outside this visualization layer.
+  - Spatial patterns depend on sampling density, coordinate accuracy and display settings.
+  not_designed_for:
+  - Raw MS preprocessing, statistical inference or identification from a spatial map alone.
+  requirements:
+  - Feature intensities matched to sample coordinates and a corresponding background image or model.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official repository input/output documentation, license and publisher citation checked on 2026-09-11. The
+    Nature Protocols paper introduces the software and method, rather than merely using it. Hosted rendering and
+    data processing were not independently tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+  last_verified: '2026-09-11'
+related_tools:
+- slug: mzmine
+  relationship: complementary
+  note: An upstream LC-MS feature-processing option; a coordinate mapping table still needs preparation.

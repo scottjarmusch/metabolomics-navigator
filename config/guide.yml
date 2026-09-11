@@ -270,6 +270,9 @@
   - ms-dial
   - pyimzml
   - m2aia
+  - ili
+  - scils-lab
+  - spamtp
   tool_labels:
     metaspace: Spatial annotation and public imaging data
     mzmine: Imaging-MS feature processing
@@ -280,3 +283,6 @@
     msireader: Desktop imaging visualization with free and paid features
     pyimzml: Read and write imzML in Python
     m2aia: Interactive MSI processing and registration
+    ili: Map features onto surfaces
+    scils-lab: Commercial MSI analysis
+    spamtp: Integrate spatial metabolomics and transcriptomics
