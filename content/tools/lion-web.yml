@@ -1,0 +1,78 @@
+$schema: ../../schemas/tool.schema.json
+slug: lion-web
+name: LION/web
+summary: Web-based lipid ontology enrichment tool that connects lipid lists or rankings to chemical, biophysical,
+  cellular and functional lipid properties.
+links:
+  primary: https://www.lipidontology.com/
+  documentation: https://www.lipidontology.com/faq.html
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - pathway_enrichment
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Free hosted service without an account requirement. The FAQ excludes confidential or proprietary uploads;
+    review the current terms before submitting data.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official service documentation and dedicated tool citation reviewed on 2026-09-11. Included for downstream
+    MS lipidomics interpretation. No user dataset was uploaded or enrichment analysis run.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- lipidomics
+data:
+  input_types:
+  - compound_list
+  - feature_table
+  - statistical_results
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - csv_tsv
+  other_input_formats:
+  - Lipid lists or rankings, depending on analysis mode
+  other_output_formats:
+  - Ontology enrichment results and interactive reports
+publications:
+- citation: 'Molenaar MR, Jeucken A, Wassenaar TA, et al. LION/web: a web-based ontology enrichment tool for lipidomic
+    data analysis. GigaScience 8, giz061 (2019).'
+  type: primary
+  doi: 10.1093/gigascience/giz061
+description: LION/web interprets lipidomics through enrichment of lipid ontology terms. These terms cover chemical
+  and biophysical properties and biological associations, rather than only metabolic pathways. The service operates
+  downstream of lipid identification and quantification.
+common_uses:
+- Identify lipid properties enriched among changed species.
+- Interpret ranked quantitative lipidomics results.
+scope:
+  designed_for:
+  - Ontology-based interpretation of annotated lipidomics data.
+  not_designed_for:
+  - Raw MS processing or proving pathway activity from enrichment alone.
+  requirements:
+  - Recognized lipid names and correctly formatted input for the chosen mode.
+  - The quantitative CSV mode requires condition and sample identifiers.
+  considerations:
+  - Check which lipid names match the ontology before interpreting results.
+  - The selected background, rankings and identification confidence affect enrichment.
+related_tools:
+- slug: lipidr
+  relationship: complementary
+  note: Upstream quantitative lipidomics analysis can supply interpreted lipid lists; direct export compatibility
+    is not assumed.

@@ -1,5 +1,7 @@
 # Phase 4 specialist population
 
+Lipidomics started with LION/web and BioPAN. Both are downstream interpretation tools. BioPAN limitations include oxidized lipids and input-order effects at sum-composition resolution. Add the LipidLynxX integration once that Tool is present. Remaining supplied lipidomics: LipidLynxX, Goslin, LipidCreator, LipidSig, Lipid Mini-On and LipidOz (reconcile with queued PR #13 rather than duplicate).
+
 11 September: added ili, SCiLS Lab and SpaMTP with verified official sources. ili now links internally from the 3D molecular-cartography Strategy. SCiLS module-dependent access is explicit. SpaMTP records MIT licensing, stable/developmental separation and m/z annotation ambiguity; link RaMP-DB once populated. The nine supplied spatial candidates are now present. Next: lipidomics.
 
 Added M²aia with current m2aia.de access, verified desktop-tool paper and scoped image-registration requirements. Companion pyM²aia is distinguished rather than assumed identical. Next spatial candidates include SCiLS Lab and ili.

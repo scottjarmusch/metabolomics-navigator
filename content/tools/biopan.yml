@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: biopan
+name: BioPAN
+summary: LIPID MAPS web tool for exploring changes in mammalian lipid pathways and predicting relative reaction
+  or enzyme activity from quantitative lipidomics data.
+links:
+  primary: https://www.lipidmaps.org/tool/biopan/
+  documentation: https://www.lipidmaps.org/tool/biopan/doc/index.html
+resource_types:
+- web_service
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - pathway_enrichment
+  - network_visualization
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Hosted LIPID MAPS tool requiring no installation. Documentation states that analysis links remain available
+    for 30 days; export results needed for long-term records.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official service documentation and dedicated tool citation reviewed on 2026-09-11. Included for downstream
+    MS lipidomics interpretation. No user dataset was uploaded or enrichment analysis run.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- lipidomics
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  output_types:
+  - pathway_data
+  - statistical_results
+  - report
+  input_formats:
+  - csv_tsv
+  output_formats:
+  - json
+  other_output_formats:
+  - JPEG/PNG/SVG pathway graphs
+  - Text reaction scores and result tables
+publications:
+- citation: 'Gaud C, Sousa BC, Nguyen A, et al. BioPAN: a web-based tool to explore mammalian lipidome metabolic
+    pathways on LIPID MAPS. F1000Research 10, 4 (2021).'
+  type: primary
+related_tools:
+- slug: lipid-maps
+  relationship: part_of
+  note: Hosted by the LIPID MAPS Lipidomics Gateway.
+description: BioPAN compares quantitative mammalian lipidomics data within a curated reaction network. It highlights
+  predicted pathway changes and associated enzymes, with optional LipidLynxX nomenclature conversion. These are
+  abundance-based inferences, not direct flux measurements.
+common_uses:
+- Compare lipid-class and molecular-species pathway patterns.
+- Prioritize possible enzyme-associated changes for follow-up.
+scope:
+  designed_for:
+  - Pathway exploration from quantitative mammalian lipidomics.
+  not_designed_for:
+  - Direct measurement of enzyme activity or metabolic flux.
+  - Oxidized-lipid analysis under the documented input restrictions.
+  requirements:
+  - CSV lipid concentrations with at least two conditions and two samples per condition.
+  considerations:
+  - For sum-composition annotations, input order can affect which reaction combinations are retained.
+  - Review nomenclature conversion and annotation resolution before interpreting the graph.
