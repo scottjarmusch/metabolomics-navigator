@@ -1,5 +1,11 @@
 # Contributor Directory rollout
 
+Beta-tester acknowledgements were added separately from catalogue submission
+credits at Scott Jarmusch's explicit request on 11 September 2026: Daniel Otto
+and Morgane Mauduit, with the ORCID identifiers supplied by the maintainer.
+These acknowledgements do not create fictitious Tool submissions or consent
+records. Removal requests use the same Privacy contact form.
+
 The contribution landing pages now credit only published catalogue records with
 `provenance.public_attribution_consent: true`. Existing names and ORCIDs are not
 backfilled into the directory. Credits are deduplicated by ORCID, then normalized
