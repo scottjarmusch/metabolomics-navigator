@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidoz
+name: LipidOz
+summary: Determine lipid carbon–carbon double-bond positions using diagnostic ozone-induced dissociation data.
+links:
+  primary: https://lipidoz.readthedocs.io/en/latest/
+  documentation: https://lipidoz.readthedocs.io/en/latest/
+  repository: https://github.com/PNNL-m-q/lipidoz
+resource_types:
+- programming_package
+- software_application
+functions:
+  primary: annotation_identification
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - structure_elucidation
+platforms:
+- lc_ms
+- direct_infusion_ms
+interfaces:
+- python_package
+- desktop_gui
+access:
+  model: open_source
+  license: BSD-2-Clause
+  notes: Python source and GUI executables are available. The repository labels its linked GUI release as beta;
+    match the executable and documentation versions before analysis.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: 'Official documentation and dedicated software publications reviewed on 2026-09-11. No installation,
+    uploaded dataset or independent benchmark was run. Reconciled with the LipidOz candidate in PR #13 (628a0f9);
+    preserved one canonical slug, corrected the master draft author and verified BSD-2-Clause licensing. PR
+    #13 remains queued for its other records.'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- lipidomics
+data:
+  input_types:
+  - spectra
+  - compound_list
+  output_types:
+  - compound_list
+  - report
+  input_formats:
+  - csv_tsv
+  other_input_formats:
+  - MZA OzID data
+  other_output_formats:
+  - LipidOz binary results
+  - Excel scoring reports
+publications:
+- citation: Ross DH, Lee JY, Bilbao A, et al. LipidOz enables automated elucidation of lipid carbon–carbon
+    double bond positions from ozone-induced dissociation mass spectrometry data. Communications Chemistry
+    6, 74 (2023).
+  doi: 10.1038/s42004-023-00867-9
+  type: primary
+description: LipidOz scores isotope-distribution evidence for candidate OzID fragments and provides a graphical
+  review interface. Its documented workflows include LC and infusion analyses; ordinary collision-induced MS/MS
+  is not a substitute for OzID measurements.
+common_uses:
+- Score candidate lipid double-bond positions from OzID fragments.
+- Review fragment evidence and export target-level scoring reports.
+scope:
+  designed_for:
+  - Structural interpretation of compatible OzID lipid measurements.
+  not_designed_for:
+  - General lipid discovery without OzID data.
+  requirements:
+  - OzID data, a compatible target list and workflow-specific extraction settings. The LC guide uses MZA data
+    and CSV lipid/adduct/retention-time targets.
+  considerations:
+  - Inspect diagnostic-fragment quality and ambiguous assignments; a software score alone is not structural
+    confirmation.

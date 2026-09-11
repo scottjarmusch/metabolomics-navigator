@@ -1,8 +1,10 @@
 # Phase 4 specialist population
 
+11 September: completed the supplied lipidomics group with LipidCreator, LipidSig, Lipid Mini-On and LipidOz. LipidCreator is assay design, not quantification software by itself. Mini-On uses the current local Shiny instructions. LipidSig keeps its two web-service papers; the companion R paper is not an incidental extra citation. LipidOz was reconciled with open PR #13 without merging its other entries; retain this canonical main record when that PR is reconciled. Sources: official lifs-tools/lipidcreator and PNNL-Comp-Mass-Spec/LipidMiniOn repositories; lipidsig.bioinfomics.org/Tutorial/; lipidoz.readthedocs.io/en/latest/ and its citing/analysis guides. Next usage reset: Ask Navigator per the user's revised priority, then resume remaining specialists.
+
 11 September: added LipidLynxX and Goslin, with identifier_harmonization vocabulary rather than annotation claims. Sources: https://www.lipidmaps.org/lipidlynxx/about, https://github.com/SysMedOs/LipidLynxX, https://lifs-tools.github.io/goslin/ and https://github.com/lifs-tools/goslin. LipidLynxX publication is explicitly a preprint. Goslin grammar MIT licensing is distinguished from implementation licensing. Added BioPAN integration and deeper reference-resource guide links. No parser execution or dataset upload performed.
 
-Lipidomics started with LION/web and BioPAN. Both are downstream interpretation tools. BioPAN limitations include oxidized lipids and input-order effects at sum-composition resolution. LipidLynxX integration is now linked. Remaining supplied lipidomics: LipidCreator, LipidSig, Lipid Mini-On and LipidOz (reconcile with queued PR #13 rather than duplicate).
+Lipidomics started with LION/web and BioPAN. Both are downstream interpretation tools. BioPAN limitations include oxidized lipids and input-order effects at sum-composition resolution. LipidLynxX integration is now linked. All eight supplied lipidomics records are now present.
 
 11 September: added ili, SCiLS Lab and SpaMTP with verified official sources. ili now links internally from the 3D molecular-cartography Strategy. SCiLS module-dependent access is explicit. SpaMTP records MIT licensing, stable/developmental separation and m/z annotation ambiguity; link RaMP-DB once populated. The nine supplied spatial candidates are now present. Next: lipidomics.
 

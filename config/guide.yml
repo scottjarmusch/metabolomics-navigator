@@ -21,6 +21,7 @@
   - msnbase
   - spectra
   - skyline
+  - lipidcreator
   - mshub-gc
   short_title: Data processing
   caption: Process spectra, extract features and quantify targets.
@@ -51,6 +52,7 @@
     or a possible modification of a known molecule.'
   slugs:
   - sirius
+  - lipidoz
   - csi-fingerid
   - canopus
   - msnovelist
@@ -236,6 +238,8 @@
   - cmmc-dashboard
   - lion-web
   - biopan
+  - lipidsig
+  - lipid-mini-on
   short_title: Interpretation
   caption: Inspect signals and interpret study results.
   tool_labels:

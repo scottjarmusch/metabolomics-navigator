@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipid-mini-on
+name: Lipid Mini-On
+summary: Group lipid names into ontology terms and test enrichment using a locally run Shiny interface.
+links:
+  primary: https://github.com/PNNL-Comp-Mass-Spec/LipidMiniOn
+  documentation: https://github.com/PNNL-Comp-Mass-Spec/LipidMiniOn
+  repository: https://github.com/PNNL-Comp-Mass-Spec/LipidMiniOn
+resource_types:
+- software_application
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - pathway_enrichment
+  - network_visualization
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: open_source
+  license: BSD-2-Clause
+  notes: Local browser interface served by R/Shiny. The current README requires R 4.x, RStudio, Rodin and listed
+    R dependencies; do not assume the historical hosted endpoint remains available.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation and dedicated software publications reviewed on 2026-09-11. No installation,
+    uploaded dataset or independent benchmark was run.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- lipidomics
+data:
+  input_types:
+  - compound_list
+  output_types:
+  - statistical_results
+  - report
+  input_formats:
+  - csv_tsv
+  other_output_formats:
+  - Ontology enrichment tables and interactive plots
+publications:
+- citation: 'Clair G, Reehl S, Stratton KG, et al. Lipid Mini-On: mining and ontology tool for enrichment analysis
+    of lipidomic data. Bioinformatics 35, 4507–4508 (2019).'
+  type: primary
+  doi: 10.1093/bioinformatics/btz250
+  pmid: '30977807'
+description: Lipid Mini-On uses the Rodin R package to group lipid names by classes and chain properties, perform
+  enrichment tests and visualize lipid-to-term relationships. Current repository instructions describe local
+  execution.
+common_uses:
+- Compare a lipid query set against its measured background.
+- Explore lipid classes and chain properties associated with a selected set.
+scope:
+  designed_for:
+  - Ontology enrichment of lipid name lists.
+  not_designed_for:
+  - Raw MS data processing or direct metabolic-flux inference.
+  requirements:
+  - Query and universe lipid lists in the documented CSV layout, plus local R dependencies.
+  considerations:
+  - Background selection and name parsing affect enrichment; inspect assignments before interpreting terms.
+related_tools:
+- slug: lion-web
+  relationship: alternative
+  note: Another lipid ontology enrichment tool; term definitions and statistical workflows differ.

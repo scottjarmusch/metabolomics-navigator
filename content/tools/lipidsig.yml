@@ -1,0 +1,87 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidsig
+name: LipidSig
+summary: Explore lipid abundance tables through statistical analysis, lipid characteristics, enrichment and
+  network visualizations.
+links:
+  primary: https://lipidsig.bioinfomics.org/
+  documentation: https://lipidsig.bioinfomics.org/Tutorial/
+resource_types:
+- web_service
+functions:
+  primary: statistics
+  secondary:
+  - pathway_interpretation
+  - visualization_reporting
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+  - pathway_enrichment
+  - network_visualization
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Free hosted service open to all users. Data are uploaded for analysis; consult the service before
+    submitting sensitive datasets. No open-source license is inferred for the web service from the companion
+    R package.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation and dedicated software publications reviewed on 2026-09-11. No installation,
+    uploaded dataset or independent benchmark was run.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- lipidomics
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  output_types:
+  - statistical_results
+  - report
+  - pathway_data
+  input_formats:
+  - csv_tsv
+  other_output_formats:
+  - Downloadable result tables
+  - PDF plots
+publications:
+- citation: 'Lin WJ, Shen PC, Liu HC, et al. LipidSig: a web-based tool for lipidomic data analysis. Nucleic
+    Acids Research 49, W336–W345 (2021).'
+  doi: 10.1093/nar/gkab419
+  type: primary
+- citation: 'Liu CH, Shen PC, Lin WJ, et al. LipidSig 2.0: integrating lipid characteristic insights into advanced
+    lipidomics data analysis. Nucleic Acids Research 52, W390–W397 (2024).'
+  type: methods
+  doi: 10.1093/nar/gkae335
+  pmid: '38709887'
+description: LipidSig 2.0 provides a browser workflow for data checking, lipid-name mapping and downstream
+  analysis of processed lipidomics tables. The canonical entry covers the original and updated web service;
+  the separate LipidSigR package is linked by the service but is not treated as identical software.
+common_uses:
+- Compare lipid abundances and characteristics across study groups.
+- Inspect enrichment and lipid association networks.
+scope:
+  designed_for:
+  - Downstream analysis of processed MS lipidomics tables.
+  not_designed_for:
+  - Raw spectral peak picking or experimental structure identification.
+  requirements:
+  - CSV abundance tables and analysis-specific sample information; use Data Check first.
+  considerations:
+  - Inspect unrecognized lipid names and preprocessing choices.
+  - Enrichment and network modules use differential-expression output; statistical associations require biological
+    validation.
+related_tools:
+- slug: lion-web
+  relationship: alternative
+  note: Another lipid enrichment option, with different ontology and input conventions.

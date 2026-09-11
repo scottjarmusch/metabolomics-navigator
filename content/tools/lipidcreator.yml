@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidcreator
+name: LipidCreator
+summary: Design targeted lipidomics assays and predicted fragment libraries for PRM and MRM experiments.
+links:
+  primary: https://lifs-tools.org/tools/lipidcreator.html
+  documentation: https://github.com/lifs-tools/lipidcreator
+  repository: https://github.com/lifs-tools/lipidcreator
+resource_types:
+- software_application
+functions:
+  primary: data_acquisition
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - in_silico_spectra
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+- command_line
+access:
+  model: open_source
+  license: MIT
+  notes: Install through the Skyline Tool Store or use the standalone application. Windows instructions are
+    documented; Linux uses Mono with reported GUI limitations. Consult release-specific requirements.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation and dedicated software publications reviewed on 2026-09-11. No installation,
+    uploaded dataset or independent benchmark was run.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-08'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+analysis_types:
+- targeted
+- lipidomics
+data:
+  input_types:
+  - compound_list
+  output_types:
+  - spectral_library
+  - report
+  other_input_formats:
+  - User-defined lipid classes, chains, adducts and fragments
+  other_output_formats:
+  - Precursor-product transition lists
+  - BLIB spectral libraries
+publications:
+- citation: Peng B, Kopczynski D, Pratt BS, et al. LipidCreator workbench to probe the lipidomic landscape.
+    Nature Communications 11, 2057 (2020).
+  type: primary
+  doi: 10.1038/s41467-020-15960-z
+  pmid: '32345972'
+related_tools:
+- slug: skyline
+  relationship: integration
+  note: Designed for targeted assay export/integration with Skyline.
+description: LipidCreator calculates lipid precursor and fragment masses from user-defined lipid building blocks.
+  It supports isotope-labelled targets and predicted spectral libraries, with direct Skyline integration or
+  standalone use.
+common_uses:
+- Prepare lipid transition lists for targeted acquisition.
+- Generate predicted lipid fragment libraries for Skyline workflows.
+scope:
+  designed_for:
+  - Assay design for supported lipid classes.
+  not_designed_for:
+  - Automatic proof that predicted transitions are selective in a biological matrix.
+  requirements:
+  - Target lipid definitions and compatible runtime; Skyline for integrated workflows.
+  considerations:
+  - Validate transition selectivity and collision energies experimentally for the intended instrument.
