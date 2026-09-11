@@ -8,6 +8,8 @@ from urllib.parse import quote, urlencode
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from contributors import build_contributors
+
 from common import (
     ROOT, counts_for, date_display, derive_base_path, label_maps,
     load_strategies, load_tools, load_vocab, record_date, validator,
@@ -130,7 +132,7 @@ def main():
     prepare_output()
     copy_public_files()
     asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js'))).hexdigest()[:12]
-    context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version}
+    context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version,'contributors':build_contributors([*tools_raw,*strategies_raw])}
 
     # Homepage
     function_counts={item['id']:sum(item['id'] in {t['functions']['primary'], *t['functions'].get('secondary',[])} for t in tools_raw) for item in vocab['functions']}
@@ -210,9 +212,10 @@ def main():
 
     pages=static_pages(repository_url,url)
     pages.pop('contribute')
+    pages['privacy']={'title':'Privacy','description':'How community contribution information is handled.'}
     render(env,'submit.html',OUT/'contribute/index.html',**context,active='contribute',tool_submission_url=tool_submit,strategy_submission_url=strategy_submit,tool_update_url=tool_update,strategy_update_url=strategy_update)
     for slug,page in pages.items():
-        template=f'{slug}.html' if slug in ('about','ask') else 'static.html'
+        template=f'{slug}.html' if slug in ('about','ask','privacy') else 'static.html'
         render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page)
     render(env,'404.html',OUT/'404.html',**context,active='')
 
@@ -333,7 +336,7 @@ def static_pages(repository_url,url):
 
 
 def write_sitemap(out,tools,strategies,absolute_url,guide_sections):
-    paths=['','ask/','tools/','strategies/','browse/','submit/','about/','contribute/','governance/']+[f"tools/{x['slug']}/" for x in tools]+[f"strategies/{x['slug']}/" for x in strategies]
+    paths=['','ask/','tools/','strategies/','browse/','submit/','about/','contribute/','governance/','privacy/']+[f"tools/{x['slug']}/" for x in tools]+[f"strategies/{x['slug']}/" for x in strategies]
     paths += [f"guide/{group['id']}/" for group in guide_sections]
     xml=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for path in paths: xml.append(f'  <url><loc>{html.escape(absolute_url(path))}</loc></url>')

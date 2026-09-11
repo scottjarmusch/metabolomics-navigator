@@ -1,4 +1,20 @@
 /* Shared reference-site refinement, layered over the established visual system. */
+.privacy-contact-form { display:grid; gap:.65rem; max-width:40rem; margin-block:1.5rem; }
+.privacy-contact-form label { font-weight:600; margin-top:.5rem; }
+.privacy-contact-form label span { font-weight:400; }
+.privacy-contact-form input,.privacy-contact-form textarea { width:100%; min-width:0; box-sizing:border-box; padding:.8rem; font:inherit; border:1px solid var(--line); border-radius:4px; background:white; color:inherit; }
+.privacy-contact-form textarea { resize:vertical; }
+.privacy-contact-form .privacy-honeypot { display:none; }
+.privacy-contact-form button { justify-self:start; }
+.privacy-contact-form :is(input,textarea):focus-visible { outline:2px solid var(--navigator-teal); outline-offset:2px; }
+.contributor-directory { padding-block:2.5rem; border-top:1px solid var(--line); }
+.contributor-directory > p { max-width:75ch; }
+.contributor-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1rem 2rem; list-style:none; padding:0; margin:2rem 0; }
+.contributor-list li { padding:1rem 0; border-bottom:1px solid var(--line); overflow-wrap:anywhere; }
+.contributor-list strong,.contributor-list a { display:block; }
+.contributor-list a { font-size:.875rem; margin-top:.35rem; }
+.contributor-empty { padding:1.25rem; background:var(--navigator-paper); border:1px solid var(--line); }
+.contributor-erasure { font-size:.875rem; margin-top:2rem; }
 :root { --navigator-teal:#164f51; --navigator-paper:#faf9f5; --navigator-line:#dce3df; }
 body { background:var(--navigator-paper); }
 h1,h2,h3,p,li,dd,a { overflow-wrap:break-word; }

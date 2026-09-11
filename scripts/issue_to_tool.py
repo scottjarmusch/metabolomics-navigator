@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 
 import yaml
 
+from contributors import parse_attribution
 from common import ROOT, TOOLS_DIR, load_tools, load_vocab, reverse_label_maps, slugify
 
 LABELS = {
@@ -27,7 +28,8 @@ LABELS = {
     "aliases": "Other names or aliases",
     "publication": "Primary publication or DOI",
     "additional_links": "Additional links",
-    "contact": "Name or ORCID for attribution",
+    "submitter_name": "Contributor name",
+    "submitter_orcid": "ORCID iD",
     "notes": "Anything else we should know?",
 }
 
@@ -212,12 +214,15 @@ def main() -> None:
         else:
             publications.append({"citation": publication, "type": "primary"})
 
-    submitter_name, submitter_orcid, _email = parse_contact(value("contact"))
+    attribution = parse_attribution(sections)
+    submitter_name = attribution["submitter_name"]
+    submitter_orcid = attribution.get("submitter_orcid")
     provenance = {
         "submitted_by": role,
         "source_issue": issue["html_url"],
         "developer_verified": False,
     }
+    provenance.update(attribution)
     if submitter_name:
         provenance["submitter_name"] = submitter_name
     if submitter_orcid:

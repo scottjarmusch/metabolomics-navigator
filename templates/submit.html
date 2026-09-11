@@ -7,4 +7,16 @@
 <article class="contribution-card" id="strategy"><p class="eyebrow">02 / ANALYTICAL STRATEGIES</p><h2>Propose an Analytical Strategy</h2><p>For a published, transferable methodological innovation that adds experimental, computational or data-integration logic beyond routine use of an existing tool.</p><blockquote>If the biological findings were removed, would the methodological idea still be worth teaching to another metabolomics researcher?</blockquote><p class="note">Routine workflows belong in Tool capabilities. <a href="{{ url('governance/') }}">Read the inclusion policy</a>.</p><div class="contribution-actions"><a class="button primary" href="{{ strategy_submission_url }}">Propose a strategy</a><a href="{{ strategy_update_url }}">Update an entry →</a></div></article>
 </section>
 <section class="section-wrap contribution-review"><h2>From suggestion to shared resource</h2><ol aria-label="Editorial process"><li>Submit</li><li>Structured draft</li><li>Validation</li><li>Editorial review</li><li>Publish</li></ol><p>A GitHub account is needed. New-entry forms create structured drafts; update forms open correction issues. Editors check scientific scope, evidence, metadata and neutral wording before publication.</p><p>Authors, developers and users are welcome. Please disclose any connection to the resource. Developer or author verification is recorded separately from editorial review.</p></section>
+<section class="section-wrap contributor-directory" aria-labelledby="contributors-heading">
+  <p class="eyebrow">COMMUNITY</p><h2 id="contributors-heading">Contributors</h2>
+  <p>Metabolomics Navigator is strengthened by researchers who submit new tools, Analytical Strategies, corrections, and other improvements. The people listed here have chosen to be publicly credited for contributions that have been accepted into the catalogue.</p>
+  {% if contributors %}
+  <ul class="contributor-list">
+    {% for person in contributors %}
+    <li><strong>{{ person.name }}</strong>{% if person.orcid %}<a href="https://orcid.org/{{ person.orcid }}" aria-label="ORCID iD for {{ person.name }}">ORCID {{ person.orcid }} ↗</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% else %}<p class="contributor-empty">No contributors have opted in to public attribution yet.</p>{% endif %}
+  <p class="contributor-erasure"><strong>Right to erasure.</strong> Contributors may withdraw their consent at any time and request removal of their name and ORCID iD from this public directory. Please follow the contact instructions in our <a href="{{ url('privacy/') }}">Privacy Policy</a>. We will process erasure requests without undue delay in accordance with applicable data-protection law. Withdrawal does not affect processing carried out before consent was withdrawn.</p>
+</section>
 {% endblock %}

@@ -201,11 +201,19 @@ body:
 
       '
 - type: input
-  id: contact
+  id: submitter-name
   attributes:
-    label: Name or ORCID for attribution
-    description: Optional. Add this if you would like attribution or are willing to answer questions.
-    placeholder: Name; 0000-0000-0000-0000
+    label: Contributor name
+    description: Your name will be used for contribution provenance and, with the consent below, displayed in the public Contributor Directory.
+    placeholder: Jane Doe
+  validations:
+    required: true
+- type: input
+  id: submitter-orcid
+  attributes:
+    label: ORCID iD
+    description: Optional. Add your ORCID iD in the format 0000-0000-0000-0000. If provided, it will be linked from your Contributor Directory entry when you consent to public attribution.
+    placeholder: 0000-0000-0000-0000
 - type: textarea
   id: notes
   attributes:
@@ -217,4 +225,11 @@ body:
     label: Submission confirmation
     options:
     - label: To the best of my knowledge, the information is accurate and suitable for public display.
+      required: true
+- type: checkboxes
+  id: contributor-consent
+  attributes:
+    label: Contributor attribution and privacy
+    options:
+    - label: I consent to Metabolomics Navigator publishing my name and, if provided, my ORCID iD in the public Contributor Directory. I understand that this submission is made through a public GitHub issue and that the information I enter in this form will also be publicly visible on GitHub. I have read the [Metabolomics Navigator Privacy Policy](https://scottjarmusch.github.io/metabolomics-navigator/privacy/).
       required: true

@@ -339,6 +339,11 @@
         "submitted_by": {
           "$ref": "#/$defs/strategy_submission_role"
         },
+        "public_attribution_consent": {
+          "type": "boolean",
+          "default": false,
+          "description": "Explicit consent to public name and ORCID attribution in the Contributor Directory."
+        },
         "submitter_name": {
           "type": "string",
           "maxLength": 150

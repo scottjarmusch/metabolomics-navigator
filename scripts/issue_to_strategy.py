@@ -7,7 +7,8 @@ from pathlib import Path
 import yaml
 
 from common import ROOT, STRATEGIES_DIR, load_tools, load_vocab, reverse_label_maps, slugify
-from issue_to_tool import parse_sections, clean, selected, map_values, parse_contact
+from contributors import parse_attribution
+from issue_to_tool import parse_sections, clean, selected, map_values
 
 LABELS={
  'name':'Strategy or method name',
@@ -22,7 +23,8 @@ LABELS={
  'organisms':'Specific organisms',
  'analysis_types':'Analysis type',
  'components':'Strategy components',
- 'contact':'Name or ORCID for attribution',
+ 'submitter_name':'Contributor name',
+ 'submitter_orcid':'ORCID iD',
  'notes':'Anything else we should know?',
 }
 
@@ -74,8 +76,10 @@ def main():
         matched=lookup.get(item.casefold())
         tools.append({'slug':matched} if matched else {'name':item})
 
-    submitter_name,submitter_orcid,_=parse_contact(value('contact'))
+    attribution=parse_attribution(sections)
+    submitter_name=attribution['submitter_name']; submitter_orcid=attribution.get('submitter_orcid')
     provenance={'submitted_by':role,'source_issue':issue['html_url'],'author_verified':False}
+    provenance.update(attribution)
     if submitter_name: provenance['submitter_name']=submitter_name
     if submitter_orcid: provenance['submitter_orcid']=submitter_orcid
     if value('notes'): provenance['notes']=value('notes')[:1000]
