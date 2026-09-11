@@ -182,6 +182,8 @@
   - lotus
   - coconut
   - refmet
+  - lipidlynxx
+  - goslin
   short_title: Data & references
   caption: Preserve data and connect reference evidence.
   tool_labels:
@@ -204,6 +206,8 @@
     lotus: Natural products and organism links
     coconut: Aggregated natural-product reference
     refmet: Standardize metabolite names
+    lipidlynxx: Convert and cross-match lipid names
+    goslin: Validate lipid shorthand nomenclature
 - id: interpretation
   title: Inspecting and interpreting results
   introduction: Once data have been processed, researchers need to inspect signals, analyze variation across samples,

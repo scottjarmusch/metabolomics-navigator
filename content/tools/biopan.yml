@@ -58,6 +58,9 @@ related_tools:
 - slug: lipid-maps
   relationship: part_of
   note: Hosted by the LIPID MAPS Lipidomics Gateway.
+- slug: lipidlynxx
+  relationship: integration
+  note: Optional nomenclature conversion is documented in the BioPAN input workflow.
 description: BioPAN compares quantitative mammalian lipidomics data within a curated reaction network. It highlights
   predicted pathway changes and associated enzymes, with optional LipidLynxX nomenclature conversion. These are
   abundance-based inferences, not direct flux measurements.

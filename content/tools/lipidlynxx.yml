@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidlynxx
+name: LipidLynxX
+functions:
+  primary: data_management_sharing
+  capabilities:
+  - identifier_harmonization
+platforms:
+- platform_independent
+analysis_types:
+- lipidomics
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official repository and documentation reviewed on 2026-09-11. Included for downstream MS lipidomics.
+    No installation, parser execution or user-data upload performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+data:
+  input_types:
+  - compound_list
+  output_types:
+  - compound_list
+  other_input_formats:
+  - Lipid shorthand names
+  other_output_formats:
+  - Standardized lipid identifiers
+summary: Convert, cross-match and link lipid names across supported nomenclatures before downstream MS lipidomics
+  interpretation.
+description: LipidLynxX provides Converter, Equalizer and Linker modules for nomenclature conversion, comparison
+  at selected structural levels and resource linking. Its naming workflow can prepare lipid lists for tools
+  such as BioPAN.
+links:
+  primary: https://www.lipidmaps.org/lipidlynxx/
+  documentation: https://github.com/SysMedOs/LipidLynxX
+  repository: https://github.com/SysMedOs/LipidLynxX
+resource_types:
+- web_service
+- programming_package
+- api_service
+interfaces:
+- web_app
+- python_package
+- api
+- command_line
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: Hosted on LIPID MAPS, with source available for local deployment. Local use requires a compatible
+    Python environment and dependencies; consult repository setup instructions.
+common_uses:
+- Harmonize names before combining lipidomics tables.
+- Compare lipid lists at a chosen annotation level and obtain resource links.
+scope:
+  designed_for:
+  - Supported lipid shorthand conversion and identifier cross-matching.
+  not_designed_for:
+  - Raw MS processing or experimental confirmation of lipid structures.
+  requirements:
+  - Lipid names in a supported notation and a chosen conversion or comparison level.
+  considerations:
+  - Check unmatched names and conversions before downstream analysis.
+  - Preserve the structural resolution supported by the original measurements.
+publications:
+- citation: 'Ni Z, Fedorova M. LipidLynxX: a data transfer hub to support integration of large scale lipidomics
+    datasets. bioRxiv (2020).'
+  doi: 10.1101/2020.04.09.033894
+  type: methods
+  note: Preprint; the hosted service cites this dedicated software description.
+related_tools:
+- slug: biopan
+  relationship: integration
+  note: BioPAN documents optional LipidLynxX conversion of lipid nomenclature.
+- slug: goslin
+  relationship: alternative
+  note: Another approach to lipid naming consistency; grammar support and outputs differ.

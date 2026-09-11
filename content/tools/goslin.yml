@@ -1,0 +1,78 @@
+$schema: ../../schemas/tool.schema.json
+slug: goslin
+name: Goslin
+functions:
+  primary: data_management_sharing
+  capabilities:
+  - identifier_harmonization
+platforms:
+- platform_independent
+analysis_types:
+- lipidomics
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official repository and documentation reviewed on 2026-09-11. Included for downstream MS lipidomics.
+    No installation, parser execution or user-data upload performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-11'
+  updated_at: '2026-09-11'
+  last_verified: '2026-09-11'
+  last_editorial_review: '2026-09-11'
+data:
+  input_types:
+  - compound_list
+  output_types:
+  - compound_list
+  other_input_formats:
+  - Lipid shorthand names
+  other_output_formats:
+  - Standardized lipid identifiers
+summary: Lipid shorthand grammars and parser implementations for validating and normalizing names in MS lipidomics
+  workflows.
+description: Goslin defines grammars for lipid shorthand notation, with implementations in several programming
+  languages and a web/API project. Goslin 2.0 incorporates updated structural levels. This canonical entry
+  covers the grammar ecosystem rather than treating each implementation as a separate analytical tool.
+links:
+  primary: https://lifs-tools.github.io/goslin/
+  documentation: https://lifs-tools.github.io/goslin/
+  repository: https://github.com/lifs-tools/goslin
+resource_types:
+- programming_package
+interfaces:
+- python_package
+- r_package
+- api
+access:
+  model: open_source
+  license: MIT
+  notes: MIT applies to the grammar repository. Check the license, installation requirements and supported
+    interfaces of the selected language implementation separately.
+common_uses:
+- Validate lipid shorthand before integrating result tables.
+- Normalize supported lipid names within scripted analysis pipelines.
+scope:
+  designed_for:
+  - Grammar-based parsing of supported lipid nomenclatures.
+  not_designed_for:
+  - Identification from spectra or confirmation of double-bond positions.
+  requirements:
+  - Lipid name strings and a suitable Goslin implementation.
+  considerations:
+  - Record the parser version and inspect rejected names.
+  - Syntactic validity does not establish experimental identification confidence.
+publications:
+- citation: 'Kopczynski D, Hoffmann N, Peng B, Ahrends R. Goslin: A Grammar of Succinct Lipid Nomenclature.
+    Analytical Chemistry 92, 10957–10960 (2020).'
+  doi: 10.1021/acs.analchem.0c01690
+  type: primary
+- citation: Kopczynski D, et al. Goslin 2.0 Implements the Recent Lipid Shorthand Nomenclature for MS-Derived
+    Lipid Structures. Analytical Chemistry 94, 6097–6101 (2022).
+  doi: 10.1021/acs.analchem.1c05430
+  type: methods
+related_tools:
+- slug: lipidlynxx
+  relationship: alternative
+  note: Provides nomenclature conversion and resource linking; supported notation and outputs differ.

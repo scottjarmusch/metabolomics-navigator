@@ -704,6 +704,7 @@
       "type": "string",
       "enum": [
         "spectral_data_io",
+        "identifier_harmonization",
         "peak_detection",
         "spectral_deconvolution",
         "retention_time_alignment",

@@ -100,6 +100,9 @@ functions:
   label: Multi-omics integration
   description: Integration of metabolomics with genomics, transcriptomics, proteomics, microbiome, or other data.
 capabilities:
+- id: identifier_harmonization
+  label: Identifier harmonization
+  parent_function: data_management_sharing
 - id: spectral_data_io
   label: Spectral data reading and writing
   parent_function: data_conversion
