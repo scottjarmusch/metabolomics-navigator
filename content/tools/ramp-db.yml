@@ -1,0 +1,102 @@
+$schema: ../../schemas/tool.schema.json
+slug: ramp-db
+name: RaMP-DB
+acronym: RaMP
+summary: Integrated metabolite, gene/protein, reaction, ontology and pathway resource for metabolomics and
+  multi-omics pathway analysis.
+description: RaMP-DB integrates metabolite and gene/protein identifiers with pathway, reaction, chemical and
+  ontology annotations. Researchers can query the resource through a browser, API or R package and perform
+  downstream enrichment on MS-derived metabolite lists. Database coverage, mapping and the chosen background
+  determine what can be interpreted.
+links:
+  primary: https://rampdb.nih.gov/
+  repository: https://github.com/ncats/RaMP-DB
+  documentation: https://github.com/ncats/RaMP-DB#installation-instructions
+resource_types:
+- database_knowledgebase
+- programming_package
+- api_service
+functions:
+  primary: pathway_interpretation
+  secondary:
+  - reference_data_search
+  - multiomics_integration
+  capabilities:
+  - pathway_enrichment
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+- targeted
+- multiomics
+interfaces:
+- web_app
+- r_package
+- api
+access:
+  model: open_source
+  license: GPL-2
+  notes: The R package declares GPL-2 and provides local access through a downloaded SQLite database. Public
+    web and API interfaces are also available. The software license does not replace the terms of contributing
+    source databases; record both package and database versions.
+data:
+  input_types:
+  - compound_list
+  - pathway_data
+  output_types:
+  - pathway_data
+  - statistical_results
+  input_formats:
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+  - json
+  other_input_formats:
+  - Metabolite or gene identifiers with source prefixes; browser or API queries
+publications:
+- citation: 'Zhang B, Hu S, Baskin E, et al. RaMP: a comprehensive relational database of metabolomics pathways
+    for pathway enrichment analysis of genes and metabolites. Metabolites 8, 16 (2018).'
+  type: primary
+  doi: 10.3390/metabo8010016
+- citation: 'Braisted J, et al. RaMP-DB 2.0: a renovated knowledgebase for deriving biological and chemical
+    insight from metabolites, proteins, and genes. Bioinformatics 39, btac726 (2023).'
+  doi: 10.1093/bioinformatics/btac726
+  type: methods
+common_uses:
+- Map metabolite identifiers across pathway resources.
+- Perform pathway enrichment with metabolites or combined gene/metabolite lists.
+- Retrieve pathway, reaction and ontology context programmatically.
+scope:
+  designed_for:
+  - Biological interpretation and identifier harmonization after metabolite or gene-level results are available.
+  not_designed_for:
+  - Raw mass-spectrometry preprocessing or primary metabolite identification.
+  considerations:
+  - Pathway results depend on identifier mapping, source-database coverage, background definition and the biological
+    context of the study.
+  - Inspect unmapped and multiply mapped identifiers; enrichment does not validate the original MS annotation.
+  requirements:
+  - Mapped metabolite identifiers with database prefixes, or supported gene/protein identifiers.
+  - For local R use, the package dependencies and a cached RaMP database; use a recorded database version.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project documentation and direct tool publication metadata reviewed on 2026-09-12. No account
+    creation, data upload, installation or independent benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+  last_verified: '2026-09-12'
+related_tools:
+- slug: metaboanalyst
+  relationship: complementary
+  note: Complementary pathway context; identifier coverage and analysis methods differ.
+- slug: reactome
+  relationship: complementary
+  note: Complementary pathway context; identifier coverage and analysis methods differ.
+- slug: wikipathways
+  relationship: complementary
+  note: Complementary pathway context; identifier coverage and analysis methods differ.

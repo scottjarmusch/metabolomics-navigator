@@ -247,6 +247,7 @@
   - lipid-mini-on
   - graphia
   - metscape
+  - ramp-db
   short_title: Interpretation
   caption: Inspect signals and interpret study results.
   tool_labels:
@@ -272,7 +273,7 @@
     biopan: Mammalian lipid pathway changes
     graphia: Explore correlation graphs
     metscape: Map metabolites into metabolic networks
-
+    ramp-db: Query and enrich pathway references
 - id: spatial-metabolomics
   title: Working with spatial metabolomics
   short_title: Spatial metabolomics
@@ -322,3 +323,17 @@
   tool_labels:
     nplinker: Rank candidate gene-cluster and MS-feature links
     mibig: Inspect characterized biosynthetic references
+
+- id: microbial-maldi
+  title: Comparing cultured isolates with MALDI-MS
+  short_title: Microbial MALDI profiling
+  caption: Compare bacterial protein fingerprints and specialized metabolites.
+  introduction: MALDI profiling can connect similarity among cultured isolates with differences in their detected specialized metabolites. Protein fingerprints and small-molecule profiles answer different questions.
+  selection: Use reproducible culture and acquisition conditions, replicate spectra and plate metadata. Separate putative isolate identification from chemical structure identification.
+  homepage: false
+  slugs:
+  - idbac
+  - msconvert
+  tool_labels:
+    idbac: Compare isolates and specialized-metabolite profiles
+    msconvert: Convert supported instrument files
