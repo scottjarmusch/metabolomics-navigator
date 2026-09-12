@@ -1,8 +1,10 @@
 # Metabolomics Navigator
 
-An open, community-maintained guide to **MS-based metabolomics tools** and **published, transferable strategies**, with practical scope, data requirements, documentation and scientific sources.
+Metabolomics Navigator is an open scientific resource for metabolomics tools, analytical strategies, and workflow guidance, focused on mass spectrometry-based research.
 
-**Public website:** [Metabolomics Navigator](https://scottjarmusch.github.io/metabolomics-navigator/).
+**[Open Metabolomics Navigator](https://scottjarmusch.github.io/metabolomics-navigator/)**
+
+This GitHub repository contains the source code and curated content for the live resource linked above.
 
 The homepage offers six task categories, each opening a dedicated guide. The searchable catalogue remains available under Tools.
 
