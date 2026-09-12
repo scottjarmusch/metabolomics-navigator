@@ -2,16 +2,16 @@
 
 The user approved continuing and publishing validated work on 11 September 2026.
 
-1. Publish rMSI, rMSIproc and MSiReader: committed as 9317b48.
-2. At the next usage reset, prioritize Ask Navigator, as explicitly requested
-   on 11 September 2026. This supersedes the earlier full-population gate.
-   Start with a newcomer with raw LC-MS/MS files. Use existing curated records
-   and verify the tools and relationships used by each enabled path. Keep
-   unsupported paths explicit; do not imply the full population is complete.
-3. Resume specialist population in phase-4-specialist-checkpoint.md after
-   Ask Navigator. Supplied spatial and lipidomics groups are now present;
-   remaining groups include networks/visualization, computational annotation,
-   metabologenomics, IDBac and RaMP-DB.
+1. Mobile navigation contrast and the SEO handoff are deployed (SEO PR #14).
+   Search Console verification and sitemap submission remain account-side steps;
+   see seo-rollout.md. No ranking or indexing timing is guaranteed.
+2. Resume specialist information first, per the latest user instruction:
+   networks/visualization, computational annotation, metabologenomics, IDBac
+   and RaMP-DB. Supplied spatial and lipidomics groups are already present.
+3. Keep Ask Navigator workflows unpublished. Local implementation is preserved
+   in work/navigator-live on codex/ask-navigator-preview, including uncommitted
+   export styling that emphasizes tool names. Return after specialist work;
+   regenerate example exports and finish QA before requesting release approval.
 4. Return to the 12 remaining GNPS2 entries in phase-3-inventory-status.md and
    MS2LDA enrichment after specialist population.
 5. Complete the full relationships, direct access and page-quality review.
