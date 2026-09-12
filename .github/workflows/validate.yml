@@ -37,3 +37,5 @@ jobs:
           python scripts/audit_navigator_brand.py
           python scripts/check_site_links.py
           node scripts/test_catalogue.cjs
+          python scripts/test_seo.py
+          python scripts/check_seo.py

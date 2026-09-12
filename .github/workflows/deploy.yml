@@ -27,6 +27,7 @@ jobs:
       - run: python scripts/validate_catalogue.py
       - run: python scripts/check_form_sync.py
       - run: python scripts/build_site.py --strict
+      - run: python scripts/check_seo.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
