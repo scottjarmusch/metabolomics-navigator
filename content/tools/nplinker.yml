@@ -1,0 +1,91 @@
+$schema: ../../schemas/tool.schema.json
+slug: nplinker
+name: NPLinker
+summary: Ranks candidate links between microbial biosynthetic gene clusters and MS metabolomics spectra or
+  molecular families using paired strain data.
+links:
+  primary: https://github.com/NPLinker/nplinker
+  documentation: https://nplinker.github.io/nplinker/latest/
+  repository: https://github.com/NPLinker/nplinker
+resource_types:
+- programming_package
+- software_application
+functions:
+  primary: multiomics_integration
+  secondary:
+  - molecular_networking
+  - visualization_reporting
+  capabilities:
+  - metadata_contextualization
+platforms:
+- lc_ms
+- platform_independent
+interfaces:
+- python_package
+- web_app
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Open-source Python framework with a documented webapp interface. Current documentation requires Python
+    3.11 or later on Linux, macOS or Windows with WSL; external dependencies and reference databases require
+    additional installation. Pin a release and reference-data versions.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation, repository or archived release metadata and direct resource publications reviewed
+    on 2026-09-12. Included for MS-based natural-product research. No installation, biological validation or
+    independent benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+analysis_types:
+- multiomics
+- untargeted
+data:
+  input_types:
+  - spectra
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Supported GNPS network archives
+  - antiSMASH GenBank regions and optional BiG-SCAPE outputs
+  - Strain-mapping JSON
+  other_output_formats:
+  - Scored candidate links and webapp analysis views
+related_tools:
+- slug: gnps
+  relationship: integration
+  note: Uses GNPS molecular-network/metabolomics outputs.
+- slug: mibig
+  relationship: integration
+  note: Can use curated BGC/product knowledge.
+description: NPLinker brings processed metabolomics and genomics together to prioritize hypotheses about which
+  gene clusters produce detected natural products. It uses matched strain information and configurable scoring
+  methods. Scored links are candidates for follow-up experiments, not confirmed biosynthetic assignments.
+common_uses:
+- Prioritize gene-cluster and MS-feature links across microbial strains.
+- Explore paired genomics and metabolomics datasets.
+scope:
+  designed_for:
+  - Hypothesis generation from paired microbial genomics and MS metabolomics.
+  not_designed_for:
+  - Raw MS preprocessing or proof of a gene-cluster/product relationship.
+  requirements:
+  - Matched strain identifiers connecting spectra and genomic regions.
+  - Supported GNPS outputs, antiSMASH results and configured dependencies, or a supported paired-omics project.
+  considerations:
+  - Missing strains, silent gene clusters and inconsistent sample naming can distort links.
+  - Choose compatible BiG-SCAPE and MIBiG versions; the documented example uses MIBiG 3.1, so do not assume
+    that the newest MIBiG release is interchangeable.
+publications:
+- citation: Eldjarn GH, et al. Ranking microbial metabolomic and genomic links in the NPLinker framework using
+    complementary scoring functions. PLOS Computational Biology 17, e1008920 (2021).
+  doi: 10.1371/journal.pcbi.1008920
+  type: primary
