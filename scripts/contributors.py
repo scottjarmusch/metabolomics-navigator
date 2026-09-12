@@ -2,7 +2,7 @@
 import re
 import unicodedata
 
-ORCID_PATTERN = r"0000-000[0-9]-[0-9]{4}-[0-9]{3}[0-9X]"
+ORCID_PATTERN = r"[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]"
 CONSENT_TEXT = (
     "I consent to Metabolomics Navigator publishing my name and, if provided, my ORCID iD in the public Contributor Directory. "
     "I understand that this submission is made through a public GitHub issue and that the information I enter in this form "
@@ -14,12 +14,18 @@ CONSENT_TEXT = (
 def parse_attribution(sections):
     name = ' '.join(sections.get('Contributor name', '').split())
     orcid = sections.get('ORCID iD', '').strip()
+    # Store the bare identifier, accepting the standard ORCID profile URI too.
+    uri = re.fullmatch(r'https?://orcid\.org/(' + ORCID_PATTERN + r')/?', orcid, re.I)
+    if uri:
+        orcid = uri.group(1).upper()
+    elif orcid.endswith('x'):
+        orcid = orcid[:-1] + 'X'
     if orcid in ('_No response_', 'No response'):
         orcid = ''
     if not name or name in ('_No response_', 'No response') or '@' in name:
         raise ValueError('Contributor name is required and must not contain an email address')
     if orcid and not re.fullmatch(ORCID_PATTERN, orcid):
-        raise ValueError('ORCID iD must use the format 0000-0000-0000-0000')
+        raise ValueError('Enter a hyphenated ORCID iD or its https://orcid.org/ profile link')
     checked = sections.get('Contributor attribution and privacy', '')
     if not any(re.fullmatch(r'\s*[-*] \[[xX]\] ' + re.escape(CONSENT_TEXT) + r'\s*', line)
                for line in checked.splitlines()):
