@@ -84,6 +84,9 @@
     ms2query: Find spectral matches & analogues
     npclassifier: Classify supplied natural-product structures
 - id: spectral-analysis
+  strategy_slugs:
+  - gnps-feature-based-molecular-networking
+  - gnps-ion-identity-molecular-networking
   title: Exploring spectral relationships
   introduction: Tandem mass spectra contain fragmentation information that can help investigate related molecules.
     Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified

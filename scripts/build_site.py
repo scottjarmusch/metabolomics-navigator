@@ -151,6 +151,9 @@ def main():
         missing=set(section['slugs'])-set(tool_by_slug)
         if missing: raise SystemExit(f'Guide section {section["id"]} references unknown tools: {sorted(missing)}')
         section['tools']=[tool_by_slug[slug] for slug in section['slugs']]
+        missing_strategies=set(section.get('strategy_slugs',[]))-set(strategy_by_slug)
+        if missing_strategies: raise SystemExit(f'Guide section {section["id"]} references unknown strategies: {sorted(missing_strategies)}')
+        section['strategies']=[strategy_by_slug[slug] for slug in section.get('strategy_slugs',[])]
     render(env,'home.html',OUT/'index.html',**context,active='home',stats=stats,guide_sections=guide_sections)
     for group in guide_sections:
         render(env,'guide.html',OUT/f"guide/{group['id']}/index.html",**context,active='guide',stats=stats,group=group,guide_sections=guide_sections)
