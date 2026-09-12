@@ -1,6 +1,6 @@
 $schema: ../../schemas/tool.schema.json
 slug: gnps-feature-based-molecular-networking
-name: GNPS2 Feature-Based Molecular Networking
+name: GNPS2 Feature-Based Molecular Networking workflow
 summary: Dedicated GNPS2 workflow that combines an aligned LC-MS feature table with MS/MS spectra to build quantitative
   molecular networks.
 links:
