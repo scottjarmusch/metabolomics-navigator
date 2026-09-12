@@ -52,8 +52,32 @@ class ContributorTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     parse_attribution(sections)
 
+    def test_orcid_uri_and_new_prefix(self):
+        for raw, expected in [
+            ('https://orcid.org/0000-0002-1825-0097', '0000-0002-1825-0097'),
+            ('0009-0001-4165-3484', '0009-0001-4165-3484'),
+            ('http://orcid.org/0000-0002-1694-233x/', '0000-0002-1694-233X'),
+        ]:
+            sections = {'Contributor name': 'Test Contributor', 'ORCID iD': raw,
+                        'Contributor attribution and privacy': '- [x] ' + CONSENT_TEXT}
+            self.assertEqual(parse_attribution(sections)['submitter_orcid'], expected)
+            self.assertEqual(build_contributors([record(orcid=expected)])[0]['orcid'], expected)
+            for kind in ('tool', 'strategy'):
+                schema = json.loads((ROOT / f'schemas/{kind}.schema.json').read_text())
+                field = schema['properties']['provenance']['properties']['submitter_orcid']
+                self.assertEqual(list(Draft202012Validator(field).iter_errors(expected)), [])
+
+    def test_orcid_uri_rejects_unrelated_urls(self):
+        for raw in ['https://orcid.org.evil.example/0000-0002-1825-0097',
+                    'https://orcid.org/0000-0002-1825-0097?extra=1',
+                    'https://orcid.org/0000-0002-1825-0097/works',
+                    '<script>0000-0002-1825-0097</script>']:
+            with self.assertRaises(ValueError):
+                parse_attribution({'Contributor name': 'Test Contributor', 'ORCID iD': raw,
+                                   'Contributor attribution and privacy': '- [x] ' + CONSENT_TEXT})
+
     def test_invalid_identity(self):
-        for name, oid in [('Jane Doe', 'https://orcid.org/0000-0002-1825-0097'),
+        for name, oid in [('Jane Doe', 'https://example.org/0000-0002-1825-0097'),
                           ('Jane Doe', 'invalid'), ('', ''), ('person@example.org', '')]:
             with self.assertRaises(ValueError):
                 parse_attribution({'Contributor name': name, 'ORCID iD': oid,

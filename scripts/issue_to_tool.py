@@ -108,7 +108,7 @@ def parse_additional_links(text: str) -> dict[str, str]:
 def parse_contact(text: str):
     text = clean(text)
     orcid_match = re.search(
-        r"0000-000[0-9]-[0-9]{4}-[0-9]{3}[0-9X]", text
+        r"[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]", text
     )
     email_match = re.search(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", text)
     cleaned = text
