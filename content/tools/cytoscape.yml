@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: cytoscape
+name: Cytoscape
+summary: Desktop network visualization and analysis for exploring MS molecular networks alongside feature annotations
+  and sample metadata.
+links:
+  primary: https://cytoscape.org/
+  documentation: https://cytoscape.org/documentation_users.html
+  download: https://cytoscape.org/download.html
+resource_types:
+- software_application
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - network_visualization
+  - interactive_dashboard
+platforms:
+- platform_independent
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: LGPL-2.1
+  notes: Open-source desktop application. Use the installer and Java requirements for the selected release;
+    apps can have separate licenses and compatibility requirements.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project documentation and direct tool publications reviewed on 2026-09-12. Included for downstream
+    MS metabolomics. No installation, dataset analysis or independent performance benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+data:
+  input_types:
+  - feature_table
+  - pathway_data
+  output_types:
+  - report
+  other_output_formats:
+  - Cytoscape session (.cys), network/table exports and figures
+  other_input_formats:
+  - Network edge lists, GraphML and node/edge attribute tables
+related_tools:
+- slug: gnps
+  relationship: integration
+  note: GNPS molecular networks are commonly exported to Cytoscape.
+- slug: gnps-cytoscape-bridge
+  relationship: integration
+  note: GNPS2 bridge can create ready-to-open Cytoscape sessions.
+description: Cytoscape displays supplied nodes, edges and associated tables. In MS metabolomics it supports
+  inspection and presentation of molecular networks generated upstream, with styles that encode sample groups
+  or annotations. The desktop platform and its separately installed apps have distinct capabilities; a network
+  viewer does not itself establish spectral matches.
+common_uses:
+- Style GNPS networks using study metadata.
+- Inspect connected components and export publication figures.
+scope:
+  designed_for:
+  - Exploration of supplied graphs and linked attribute tables.
+  not_designed_for:
+  - Raw MS peak picking or confirmation of metabolite identity.
+  requirements:
+  - An upstream network, stable node identifiers and matching metadata.
+  - A compatible desktop installation and any required apps.
+  considerations:
+  - Check node identifiers when joining quantitative tables.
+  - Edge definitions and filtering come from upstream analysis; layout distances are not chemical evidence.
+publications:
+- citation: 'Shannon P, et al. Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction
+    Networks. Genome Research 13, 2498-2504 (2003).'
+  doi: 10.1101/gr.1239303
+  type: primary

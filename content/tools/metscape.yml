@@ -1,0 +1,75 @@
+$schema: ../../schemas/tool.schema.json
+slug: metscape
+name: MetScape
+summary: Cytoscape app for interpreting identified metabolites and expression data in metabolic and correlation
+  networks.
+links:
+  primary: https://apps.cytoscape.org/apps/metscape
+  documentation: https://metscape.med.umich.edu/metscape3/index.html
+resource_types:
+- software_application
+functions:
+  primary: pathway_interpretation
+  secondary:
+  - visualization_reporting
+  - multiomics_integration
+  capabilities:
+  - network_visualization
+platforms:
+- platform_independent
+interfaces:
+- desktop_gui
+access:
+  model: unknown
+  notes: Download is offered through the Cytoscape App Store. A current explicit app license was not confirmed
+    in the reviewed pages; do not infer the app license from Cytoscape. The listing reports version 3.1.3 (2017)
+    and compatibility with Cytoscape 3.4; compatibility with newer releases was not tested.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project documentation and direct tool publications reviewed on 2026-09-12. Included for downstream
+    MS metabolomics. No installation, dataset analysis or independent performance benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+data:
+  input_types:
+  - compound_list
+  - pathway_data
+  output_types:
+  - report
+  - pathway_data
+  other_output_formats:
+  - Interactive network views and exported analysis results
+  other_input_formats:
+  - CSV, TSV or Excel compound/gene tables; supported compound and gene identifiers
+related_tools:
+- slug: cytoscape
+  relationship: integration
+  note: Installed as an app within desktop Cytoscape; compatibility is version dependent.
+description: MetScape maps compound and gene identifiers into metabolic networks and supports exploration of
+  metabolite correlation networks. Its reference context is human metabolism, including mappings from supported
+  mouse and rat inputs. It is included for interpretation of MS-derived results after annotation, not as a
+  method for assigning structures from mass spectra.
+common_uses:
+- Place annotated MS metabolites into metabolic context.
+- Explore metabolite and gene relationships in Cytoscape.
+scope:
+  designed_for:
+  - Supported identifier mapping and metabolic-network interpretation.
+  not_designed_for:
+  - Raw MS preprocessing or metabolite identification from accurate mass alone.
+  requirements:
+  - Cytoscape with a compatible MetScape app and supported identifiers.
+  considerations:
+  - Reference coverage and identifier mapping limit which metabolites appear.
+  - Legacy installation and remote data-service availability require verification before planning a study.
+publications:
+- citation: Karnovsky A, et al. Metscape 2 bioinformatics tool for the analysis and visualization of metabolomics
+    and gene expression data. Bioinformatics 28, 373-380 (2012).
+  doi: 10.1093/bioinformatics/btr661
+  type: primary

@@ -2,7 +2,8 @@ $schema: ../../schemas/tool.schema.json
 slug: gnps-cytoscape-bridge
 name: GNPS2 Cytoscape Bridge
 summary: Convert a GNPS2 GraphML network into a styled desktop Cytoscape session in the browser.
-description: The bridge packages an existing GNPS2 network with node and edge tables and sample-group styling for desktop inspection. It does not calculate spectral similarity or build the original network.
+description: The bridge packages an existing GNPS2 network with node and edge tables and sample-group styling
+  for desktop inspection. It does not calculate spectral similarity or build the original network.
 links:
   primary: https://apps.gnps2.org/gnps2_cys_generator
   documentation: https://apps.gnps2.org/gnps2_cys_generator
@@ -18,7 +19,8 @@ interfaces:
 - web_app
 access:
   model: free_web_service
-  notes: Public browser interface. The documented conversion runs locally in the browser; task-ID input fetches data from GNPS2. No independent execution test or software-license verification performed.
+  notes: Public browser interface. The documented conversion runs locally in the browser; task-ID input fetches
+    data from GNPS2. No independent execution test or software-license verification performed.
 data:
   input_types:
   - report
@@ -48,6 +50,9 @@ related_tools:
 - slug: gnps-feature-based-molecular-networking
   relationship: integration
   note: Accepts its GNPS2 network outputs.
+- slug: cytoscape
+  relationship: integration
+  note: Open generated .cys sessions in compatible desktop Cytoscape.
 publications: []
 resource_citations:
 - type: documentation
@@ -56,7 +61,8 @@ resource_citations:
 provenance:
   submitted_by: curator
   developer_verified: false
-  notes: Official interface documentation reviewed on 2026-09-10. No dedicated publication identified; general GNPS and Cytoscape papers are not presented as bridge publications. Add the Cytoscape integration relationship when its canonical Tool page is populated in Phase 4.
+  notes: Official interface documentation reviewed on 2026-09-10. No dedicated publication identified; general
+    GNPS and Cytoscape papers are not presented as bridge publications. Cytoscape integration linked on 2026-09-12.
 status:
   entry: published
   review: editorially_reviewed
