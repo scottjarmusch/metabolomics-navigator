@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: metgem
+name: MetGem
+summary: Local desktop generation and exploration of MS/MS similarity networks and two-dimensional spectral
+  projections.
+links:
+  primary: https://metgem.github.io/
+  documentation: https://metgem.readthedocs.io/en/latest/user_manual.html
+  repository: https://github.com/metgem/metgem
+resource_types:
+- software_application
+functions:
+  primary: molecular_networking
+  secondary:
+  - visualization_reporting
+  - spectral_analysis
+  capabilities:
+  - network_visualization
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: Open-source desktop software with prebuilt and source installation routes. Check operating-system
+    support in the current release instructions; documentation and application versions may differ.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project documentation and direct tool publications reviewed on 2026-09-12. Included for downstream
+    MS metabolomics. No installation, dataset analysis or independent performance benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  other_output_formats:
+  - Interactive network views and exported analysis results
+  input_formats:
+  - mgf
+  - msp
+  other_input_formats:
+  - Optional CSV spectrum metadata
+publications:
+- citation: Olivon F, Elie N, Grelier G, et al. MetGem Software for the Generation of Molecular Networks Based
+    on the t-SNE Algorithm. Analytical Chemistry 90, 13900-13908 (2018).
+  type: primary
+  doi: 10.1021/acs.analchem.8b03099
+  pmid: '30335965'
+related_tools:
+- slug: gnps
+  relationship: alternative
+  note: A local alternative for the spectral-networking part of a workflow, not a replacement for all GNPS
+    services.
+- slug: cytoscape
+  relationship: complementary
+  note: General network visualization; check export formats before transferring results.
+description: MetGem loads tandem mass spectra and optional metadata, computes spectral similarities and offers
+  molecular-network or projection views. It provides a local route for exploring processed LC-MS/MS spectra.
+  Graph layouts and t-SNE projections are different representations and should not be interpreted as validated
+  chemical structures.
+common_uses:
+- Build local molecular networks from processed MS/MS spectra.
+- Compare network views with spectral projections.
+scope:
+  designed_for:
+  - Spectral-similarity calculation and interactive exploration.
+  not_designed_for:
+  - Vendor raw-file preprocessing or confident identification from projection position.
+  requirements:
+  - Processed MGF or MSP tandem spectra and suitable precursor metadata.
+  considerations:
+  - Record spectral filters, tolerances and similarity thresholds.
+  - t-SNE emphasizes local relationships; global distances and layout changes can mislead.

@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: graphia
+name: Graphia
+summary: Graph exploration and correlation-network analysis for processed MS metabolomics tables and existing
+  networks.
+links:
+  primary: https://graphia.app/
+  repository: https://github.com/graphia-app/graphia
+  documentation: https://graphia.app/userguide.html
+resource_types:
+- software_application
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - network_visualization
+  - interactive_dashboard
+platforms:
+- platform_independent
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: Open-source desktop software with Windows, macOS and Linux downloads. The official site also offers
+    a browser version; assess its suitability separately for your data and deployment requirements.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project documentation and direct tool publications reviewed on 2026-09-12. Included for downstream
+    MS metabolomics. No installation, dataset analysis or independent performance benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+data:
+  input_types:
+  - feature_table
+  - statistical_results
+  - pathway_data
+  output_types:
+  - report
+  other_output_formats:
+  - Interactive network views and exported analysis results
+  other_input_formats:
+  - CSV numeric tables or GraphML graphs
+publications:
+- citation: 'Freeman TC, et al. Graphia: A platform for the graph-based visualisation and analysis of high
+    dimensional data. PLOS Computational Biology 18, e1010310 (2022).'
+  type: primary
+  doi: 10.1371/journal.pcbi.1010310
+related_tools:
+- slug: cytoscape
+  relationship: alternative
+  note: Useful when very large graphs or 3D graph exploration are central.
+description: Graphia imports graphs or builds correlation networks from numerical tables, with clustering and
+  interactive 2D or 3D views. It is a general visual-analysis environment included here for downstream MS metabolomics,
+  rather than a mass-spectrometry processing engine.
+common_uses:
+- Explore feature-correlation networks after preprocessing.
+- Cluster and compare annotated graph components.
+scope:
+  designed_for:
+  - General graph analysis and visual exploration of numerical-data relationships.
+  not_designed_for:
+  - MS/MS matching, raw-data processing or inference of causal biochemical interactions.
+  requirements:
+  - A cleaned numerical matrix or an existing graph with meaningful identifiers.
+  considerations:
+  - Normalization, missing values, batch effects and correlation thresholds influence network structure.
+  - Graph clusters are exploratory patterns and need independent biological assessment.

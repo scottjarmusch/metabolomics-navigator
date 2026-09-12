@@ -105,6 +105,8 @@
   - massql-playground
   - gnps-massql-analysis
   - tinymass
+  - metgem
+  - cytoscape
   short_title: Spectral analysis
   caption: Find relationships and patterns in spectra.
   tool_labels:
@@ -122,6 +124,9 @@
     massql-playground: Query local spectra in the browser
     gnps-massql-analysis: Explore library queries with assistance
     tinymass: Share an individual spectrum
+    metgem: Local MS/MS network generation
+    cytoscape: Explore and style molecular networks
+
 - id: public-data
   title: Finding context in public data
   introduction: Public data can help you investigate where a spectrum, molecule, or chemical family has been observed.
@@ -240,6 +245,8 @@
   - biopan
   - lipidsig
   - lipid-mini-on
+  - graphia
+  - metscape
   short_title: Interpretation
   caption: Inspect signals and interpret study results.
   tool_labels:
@@ -263,6 +270,9 @@
     cmmc-dashboard: Microbial metabolite context dashboard
     lion-web: Lipid ontology enrichment
     biopan: Mammalian lipid pathway changes
+    graphia: Explore correlation graphs
+    metscape: Map metabolites into metabolic networks
+
 - id: spatial-metabolomics
   title: Working with spatial metabolomics
   short_title: Spatial metabolomics
