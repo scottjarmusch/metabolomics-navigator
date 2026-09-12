@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: mibig
+name: MIBiG
+summary: Curated biosynthetic gene-cluster and product references for interpreting MS-based natural-product
+  and metabologenomics results.
+links:
+  primary: https://mibig.secondarymetabolites.org/
+  documentation: https://zenodo.org/records/14169073
+  download: https://mibig.secondarymetabolites.org/download
+resource_types:
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  capabilities:
+  - metadata_contextualization
+platforms:
+- platform_independent
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  license: CC-BY-4.0
+  notes: Public browser access and downloadable reference data. The archived MIBiG 4.0 JSON dataset is CC-BY-4.0;
+    preserve attribution and record the actual release used. This is a data license, not a claim about every
+    linked resource or software component.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation, repository or archived release metadata and direct resource publications reviewed
+    on 2026-09-12. Included for MS-based natural-product research. No installation, biological validation or
+    independent benchmarking performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - molecular_structures
+  - report
+  output_formats:
+  - json
+  other_input_formats:
+  - Biosynthetic cluster identifiers or product searches
+  other_output_formats:
+  - Reference records linking genomic regions, products and supporting evidence
+publications:
+- citation: 'Zdouc MM, et al. MIBiG 4.0: advancing biosynthetic gene cluster curation through global collaboration.
+    Nucleic Acids Research 53, D678-D690 (2025).'
+  doi: 10.1093/nar/gkae1115
+  type: primary
+related_tools:
+- slug: nplinker
+  relationship: integration
+  note: Supplies biosynthetic reference context; select a MIBiG version supported by the NPLinker configuration.
+description: MIBiG records experimentally characterized biosynthetic gene clusters and their associated products
+  using a shared data standard. Researchers can inspect reference evidence when relating MS annotations to
+  biosynthetic hypotheses. It is a biosynthesis knowledgebase, not an MS/MS spectral library or a standalone
+  annotation engine.
+common_uses:
+- Check reference evidence for known natural-product biosynthesis.
+- Supply versioned BGC/product context for metabologenomics analysis.
+scope:
+  designed_for:
+  - Reference lookup for experimentally characterized biosynthetic gene clusters.
+  not_designed_for:
+  - Direct identification of an unknown MS/MS spectrum or exhaustive coverage of all biosynthetic diversity.
+  requirements:
+  - A relevant cluster, organism or product query; compatible dataset version for downstream software.
+  considerations:
+  - Inspect record-level experimental evidence and completeness before interpreting a match.
+  - Similarity to a known cluster does not prove production of the same compound in a new sample.

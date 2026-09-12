@@ -308,3 +308,17 @@
     ili: Map features onto surfaces
     scils-lab: Commercial MSI analysis
     spamtp: Integrate spatial metabolomics and transcriptomics
+
+- id: metabologenomics
+  title: Connecting MS metabolomics with biosynthesis
+  short_title: Metabologenomics
+  caption: Relate microbial MS signals to biosynthetic hypotheses.
+  introduction: Paired microbial genomics and MS metabolomics can prioritize links between gene clusters and detected metabolites. Predicted links and experimentally characterized reference records provide different kinds of evidence.
+  selection: Start with matched strain identifiers and processed MS networks. Keep software and reference-data versions explicit, and plan experimental follow-up for proposed biosynthetic links.
+  homepage: false
+  slugs:
+  - nplinker
+  - mibig
+  tool_labels:
+    nplinker: Rank candidate gene-cluster and MS-feature links
+    mibig: Inspect characterized biosynthetic references
