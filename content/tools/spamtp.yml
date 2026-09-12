@@ -1,8 +1,8 @@
 $schema: ../../schemas/tool.schema.json
 slug: spamtp
 name: SpaMTP
-summary: Open-source framework for joint analysis, annotation, alignment, integration and visualization of spatial
-  metabolomics and spatial transcriptomics.
+summary: Open-source framework for joint analysis, annotation, alignment, integration and visualization of
+  spatial metabolomics and spatial transcriptomics.
 links:
   primary: https://genomicsmachinelearning.github.io/SpaMTP/
   repository: https://github.com/GenomicsMachineLearning/SpaMTP
@@ -29,19 +29,19 @@ access:
   model: open_source
   license: MIT
   notes: Open-source R package with documented installation and an Apptainer environment. Stable and developmental
-    branches have separate documentation; experimental features should not be assumed part of a reproducible stable
-    workflow.
+    branches have separate documentation; experimental features should not be assumed part of a reproducible
+    stable workflow.
 provenance:
   submitted_by: curator
   developer_verified: false
   notes: Official package documentation, repository license and Nature Methods publication verified on 2026-09-11.
-    Stable and developmental functionality distinguished. No installation, statistical analysis or benchmark performed.
-    RaMP-DB relationship remains queued until that entry is added.
+    Stable and developmental functionality distinguished. No installation, statistical analysis or benchmark
+    performed. RaMP-DB relationship remains queued until that entry is added.
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-08'
-  updated_at: '2026-09-11'
+  updated_at: '2026-09-12'
   last_verified: '2026-09-11'
   last_editorial_review: '2026-09-11'
 analysis_types:
@@ -62,8 +62,8 @@ data:
   other_output_formats:
   - R analysis objects, statistical tables and visualizations
 publications:
-- citation: 'Causer A, Lu T, Kriel J, et al. SpaMTP: integrative statistical analysis and visualization of spatial
-    metabolomics and transcriptomics data. Nature Methods 23, 1501–1506 (2026).'
+- citation: 'Causer A, Lu T, Kriel J, et al. SpaMTP: integrative statistical analysis and visualization of
+    spatial metabolomics and transcriptomics data. Nature Methods 23, 1501–1506 (2026).'
   type: primary
   doi: 10.1038/s41592-026-03140-8
 related_tools:
@@ -73,6 +73,9 @@ related_tools:
 - slug: metaspace
   relationship: complementary
   note: An alternative source of spatial annotation evidence; direct interchange was not tested.
+- slug: ramp-db
+  relationship: integration
+  note: Provides pathway context used by SpaMTP; inspect identifier mapping and reference versions.
 description: SpaMTP combines spatial metabolomics and transcriptomics analysis in an R environment built around
   Seurat objects and Cardinal functionality. It supports m/z-based candidate annotation, statistical comparison
   and pathway analysis, alongside visualization and multimodal integration.

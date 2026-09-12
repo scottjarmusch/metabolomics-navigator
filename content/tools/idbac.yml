@@ -1,0 +1,127 @@
+$schema: ../../schemas/tool.schema.json
+slug: idbac
+name: IDBac
+summary: Web-based MALDI-TOF mass spectrometry platform and community knowledgebase for bacterial identification,
+  culture-collection analysis, and comparison of specialized-metabolite profiles.
+description: IDBac combines bacterial MALDI protein fingerprints with specialized-metabolite profiles to compare
+  cultured isolates. Its web platform provides reference matching, protein-similarity views and metabolite-association
+  analysis. This entry covers the current platform and its earlier R/desktop methods; older installation instructions
+  are not interchangeable with the current GNPS2 interface.
+links:
+  primary: https://idbac.org/
+  web_app: https://analysis.idbac.org/
+  homepage: https://idbac.org/
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/idbacanalysisplatform/
+  repository: https://github.com/Wang-Bioinformatics-Lab/IDBac_Interactive_Interface
+resource_types:
+- web_service
+- database_knowledgebase
+- workflow_platform
+functions:
+  primary: reference_data_search
+  secondary:
+  - molecular_networking
+  - visualization_reporting
+  - data_management_sharing
+  capabilities:
+  - metadata_contextualization
+  - interactive_dashboard
+  - network_visualization
+platforms:
+- maldi_ms
+analysis_types:
+- metabolite_profiling
+interfaces:
+- web_app
+access:
+  model: free_academic
+  notes: The account-request documentation requires a GNPS2 account requested through an academic affiliation
+    and describes a staged closed-beta rollout. Check the current request page before planning an analysis.
+    Public reference or example views do not establish unrestricted analysis access.
+data:
+  input_types:
+  - spectra
+  - sample_metadata
+  output_types:
+  - spectra
+  - statistical_results
+  - report
+  input_formats:
+  - mzml
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+  other_input_formats:
+  - MALDI protein and specialized-metabolite spectra with plate-map metadata
+  other_output_formats:
+  - Protein dendrograms and heatmaps
+  - Metabolite association networks and analysis tables
+publications:
+- citation: Clark CM, Costa MS, Sanchez LM, Murphy BT. Coupling MALDI-TOF mass spectrometry protein and specialized
+    metabolite analyses to rapidly discriminate bacterial function. Proceedings of the National Academy of
+    Sciences 115, 4981-4986 (2018).
+  type: primary
+  doi: 10.1073/pnas.1801247115
+  pmid: '29686101'
+- citation: Clark CM, Costa MS, Conley E, Li E, Sanchez LM, Murphy BT. Using the Open-Source MALDI TOF-MS IDBac
+    Pipeline for Analysis of Microbial Protein and Specialized Metabolite Data. Journal of Visualized Experiments
+    147, e59219 (2019).
+  type: methods
+  doi: 10.3791/59219
+  pmid: '31157770'
+- citation: Clark CM, Nguyen L, Pham VC, et al. Automated Microbial Library Generation Using the Bioinformatics
+    Platform IDBac. Molecules 27, 2038 (2022).
+  type: methods
+  doi: 10.3390/molecules27072038
+  pmid: '35408437'
+- citation: 'Krull NK, Strobel M, Saulog J, et al. IDBac: an open-access web platform to identify bacteria
+    and analyze relationships in culture collections using MALDI-TOF mass spectrometry. Nature Communications
+    17, 8956 (2026).'
+  type: primary
+  doi: 10.1038/s41467-026-75579-4
+  pmid: '42637730'
+common_uses:
+- Compare specialized-metabolite profiles among related bacterial isolates.
+- Prioritize culture-collection isolates for follow-up MS analysis.
+scope:
+  designed_for:
+  - High-throughput analysis of cultured bacterial isolates using MALDI-TOF or compatible MALDI mass-spectrometry
+    data.
+  - Connecting taxonomic or protein-fingerprint similarity with differences in specialized-metabolite production.
+  - Culture-collection dereplication and strain prioritization before labor-intensive scale-up.
+  not_designed_for:
+  - Replacing sequence-based taxonomy when definitive taxonomic resolution is required.
+  - Complete structural elucidation of specialized metabolites from MALDI-MS1 profiles alone.
+  requirements:
+  - Reproducible MALDI sample preparation and appropriate replicate acquisition.
+  - Protein-region spectra for bacterial grouping or identification and, where chemical comparison is desired,
+    lower-mass specialized-metabolite spectra.
+  considerations:
+  - Protein spectral similarity is not definitive sequence-based taxonomy.
+  - Culture conditions, MALDI matrix and acquisition settings affect detected chemical profiles.
+  - MS1 metabolite-association networks do not establish structures or imply MS/MS fragmentation similarity.
+credits: []
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official project documentation and direct tool publication metadata reviewed on 2026-09-12. No account
+    creation, data upload, installation or independent benchmarking performed. Included for MALDI specialized-metabolite
+    profiling and culture-collection interpretation. The separate colony MALDI-MS/MS method paper is not listed
+    as a core platform publication.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+related_tools:
+- slug: gnps
+  relationship: integration
+  note: Current account, preparation and analysis routes use the GNPS2 ecosystem.
+- slug: msconvert
+  relationship: complementary
+  note: Current IDBac documentation uses MSConvert for conversion of supported raw MALDI files to mzML.
+- slug: massive
+  relationship: complementary
+  note: MassIVE can preserve and expose mass-spectrometry datasets associated with IDBac studies.
