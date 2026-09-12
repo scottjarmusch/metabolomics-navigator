@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% from "icons.html" import topic_icon %}
-{% block title %}{{ group.short_title }} · {{ site.title }}{% endblock %}
-{% block description %}{{ group.caption }}{% endblock %}
-{% block head %}<link rel="canonical" href="{{ absolute_url('guide/' + group.id + '/') }}">{% endblock %}
 {% block content %}
 <div class="section-wrap category-layout">
  <aside class="category-sidebar"><nav aria-label="Explore by task"><h2>Explore by task</h2>{% for section in guide_sections %}<a href="{{ url('guide/' + section.id + '/') }}"{% if section.id == group.id %} aria-current="page"{% endif %}>{{ topic_icon(section.id) }}<span>{{ section.short_title }}</span></a>{% endfor %}</nav><a class="all-tools-link" href="{{ url('tools/') }}">Search all {{ stats.tools }} resources →</a></aside>

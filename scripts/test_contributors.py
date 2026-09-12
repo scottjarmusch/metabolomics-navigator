@@ -73,7 +73,7 @@ class ContributorTests(unittest.TestCase):
     def test_rendering_escapes_identity(self):
         env = Environment(loader=FileSystemLoader(ROOT / 'templates'), autoescape=select_autoescape())
         env.globals['url'] = lambda p: '/metabolomics-navigator/' + p
-        html = env.get_template('submit.html').render(site={}, contributors=[
+        html = env.get_template('submit.html').render(site={}, seo={'title':'Contribute','description':'Contribute','robots':'index,follow'}, contributors=[
             {'name': '<script>alert(1)</script>', 'orcid': '0000-0002-1825-0097'}])
         self.assertNotIn('<script>alert(1)</script>', html)
         self.assertIn('https://orcid.org/0000-0002-1825-0097', html)

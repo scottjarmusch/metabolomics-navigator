@@ -9,6 +9,7 @@ from urllib.parse import quote, urlencode
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from contributors import build_contributors
+from seo import page_metadata
 
 from common import (
     ROOT, counts_for, date_display, derive_base_path, label_maps,
@@ -91,6 +92,7 @@ def main():
     site_url=os.getenv('SITE_URL','').rstrip('/')
     if not site_url and github_repository:
         owner,_=github_repository.split('/',1); site_url=f'https://{owner.lower()}.github.io'
+    if not site_url: site_url=site['site_url'].rstrip('/')
     generated_at=datetime.now(timezone.utc).strftime('%d %B %Y')
 
     def url(path=''):
@@ -320,6 +322,9 @@ def enrich_strategy(record,labels,tool_by_slug):
 
 
 def render(env,template,destination,**context):
+    route=destination.relative_to(OUT).as_posix()
+    if route.endswith('index.html'): route=route[:-len('index.html')]
+    context['seo']=page_metadata(template,route,context,env.globals['absolute_url'])
     destination.parent.mkdir(parents=True,exist_ok=True); destination.write_text(env.get_template(template).render(**context),encoding='utf-8')
 
 

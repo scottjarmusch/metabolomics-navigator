@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-{% block title %}Browse tools · {{ site.title }}{% endblock %}
-{% block description %}Search and filter metabolomics tools by scientific function, platform, interface, resource type, and access model.{% endblock %}
 {% block content %}
 <section class="page-hero compact"><div class="section-wrap"><p class="eyebrow">TOOLS &amp; RESOURCES</p><h1>Find the right resource for the task.</h1><p>Browse software, databases, spectral libraries, repositories, web services and workflow platforms used across mass-spectrometry-based metabolomics.</p></div></section>
 <section class="catalogue-layout section-wrap" data-catalogue><aside class="filter-panel" aria-label="Tool filters"><div class="filter-heading"><h2>Filters</h2><button type="button" class="link-button" data-reset>Reset</button></div><label class="field-label" for="catalogue-search">Search</label><input id="catalogue-search" data-search type="search" placeholder="Name, capability, platform, format…">{% for filter in filters %}<label class="field-label" for="filter-{{ filter.key }}">{{ filter.label }}</label><select id="filter-{{ filter.key }}" data-filter="{{ filter.key }}"><option value="">All {{ filter.all_label }}</option>{% for option in filter.options %}<option value="{{ option.id }}">{{ option.label }} ({{ option.count }})</option>{% endfor %}</select>{% endfor %}</aside>

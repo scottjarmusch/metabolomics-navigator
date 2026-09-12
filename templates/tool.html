@@ -1,7 +1,4 @@
 {% extends "base.html" %}
-{% block title %}{{ tool.name }} · {{ site.title }}{% endblock %}
-{% block description %}{{ tool.summary }}{% endblock %}
-{% block head %}<link rel="canonical" href="{{ absolute_url('tools/' + tool.slug + '/') }}">{% endblock %}
 {% block content %}
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ url('') }}">Home</a><span>›</span><a href="{{ url('tools/') }}">Tools</a><span>›</span><span>{{ tool.name }}</span></nav><div class="tool-title-grid"><div><p class="eyebrow">{{ tool.primary_function_label }}</p><h1>{{ tool.name }}{% if tool.acronym %} <span class="title-acronym">{{ tool.acronym }}</span>{% endif %}</h1><p class="tool-summary">{{ tool.summary }}</p><div class="badge-row large">{% for badge in tool.page_badges[:5] %}<span class="badge">{{ badge }}</span>{% endfor %}</div></div><div class="tool-actions"><a class="button primary" href="{{ tool.links.primary }}">Access tool</a><a class="button secondary" href="{{ update_url }}">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>

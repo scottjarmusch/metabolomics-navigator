@@ -6,3 +6,7 @@ repository_url: https://github.com/scottjarmusch/metabolomics-navigator
 contact_email: ''
 license_text: CC BY 4.0
 footer_note: An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.
+
+site_url: https://scottjarmusch.github.io
+homepage_title: Metabolomics Navigator | Tools & Workflow Guidance for Mass Spectrometry Metabolomics
+homepage_description: Metabolomics Navigator is a community-maintained guide to mass spectrometry-based metabolomics tools, resources, analytical strategies, and workflow guidance.
