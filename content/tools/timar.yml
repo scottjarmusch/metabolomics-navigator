@@ -1,0 +1,43 @@
+$schema: ../../schemas/tool.schema.json
+slug: timar
+name: timaR
+aliases: []
+summary: Annotation of metabolites based on ms2 spectra comparison, rt search and sirius reranking.
+links:
+  primary: https://taxonomicallyinformedannotation.github.io/tima/
+  homepage: https://taxonomicallyinformedannotation.github.io/tima/
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  secondary: []
+  capabilities: []
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- r_package
+access:
+  model: open_source
+publications: []
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-14'
+credits: []
+provenance:
+  submitted_by: user
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/28
+  developer_verified: false
+  submitter_name: Elnur Garayev
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4790-4878
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-14'
+  updated_at: '2026-09-14'
+  last_verified: '2026-09-14'
