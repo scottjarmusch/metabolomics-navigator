@@ -1,0 +1,49 @@
+$schema: ../../schemas/tool.schema.json
+slug: iceberg
+name: ICEBERG
+aliases: []
+summary: ICEBERG is a two-stage neural network that predicts mass spectra from molecular structures. It can rank candidate structures against a spectrum for metabolite annotation.
+links:
+  primary: https://github.com/coleygroup/ms-pred
+  repository: https://github.com/coleygroup/ms-pred
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities: []
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- python_package
+access:
+  model: open_source
+publications:
+- doi: 10.1101/2025.05.28.656653
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-14'
+credits:
+- name: Runzhong Wang
+  role: developer
+  orcid: 0000-0002-9566-738X
+provenance:
+  submitted_by: developer
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/26
+  developer_verified: false
+  submitter_name: Runzhong Wang
+  public_attribution_consent: true
+  submitter_orcid: 0000-0002-9566-738X
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-14'
+  updated_at: '2026-09-14'
+  last_verified: '2026-09-14'
