@@ -56,6 +56,7 @@ scope:
   requirements:
   - An account on a suitable Galaxy instance and data compatible with the chosen tools.
   considerations:
+  - W4M also supports NMR metabolomics, including workflows starting from FID data. This Navigator entry describes its MS-based applications.
   - Record tool versions and histories; public-server quotas, installed tools and job availability vary by
     instance.
 credits: []
@@ -63,12 +64,12 @@ provenance:
   submitted_by: curator
   developer_verified: false
   notes: Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked
-    official sources; software execution and developer verification were not assessed.
+    official sources; software execution and developer verification were not assessed. Scope correction contributed by Yann Guitton (ORCID 0000-0002-4479-0636), W4M Coreteam, in https://github.com/scottjarmusch/metabolomics-navigator/issues/23.
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-07'
-  updated_at: '2026-09-08'
+  updated_at: '2026-09-15'
   last_editorial_review: '2026-09-07'
 related_tools:
 - slug: xcms
