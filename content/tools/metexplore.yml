@@ -1,0 +1,58 @@
+$schema: ../../schemas/tool.schema.json
+slug: metexplore
+name: MetExplore
+aliases: []
+summary: 'MetExplore is an open-access web server that provides interactive tools for metabolic network analysis and visualization. The platform offers:
+
+  A collection of curated genome-scale metabolic networks for multiple organisms, together with the possibility to import custom metabolic networks from SBML files.
+
+  A metabolite identification module that maps experimental metabolites onto metabolic networks using ChEBI identifiers.
+
+  Pathway overrepresentation analysis to identify significantly enriched m...'
+links:
+  primary: https://metexplore.toulouse.inrae.fr/metexplore3
+  repository: https://forge.inrae.fr/metexplore/metexplore3
+  web_app: https://metexplore.toulouse.inrae.fr/metexplore3/
+  homepage: https://metexplore.toulouse.inrae.fr/metexplore3
+resource_types:
+- web_service
+functions:
+  primary: pathway_interpretation
+  secondary:
+  - multiomics_integration
+  - visualization_reporting
+  capabilities: []
+platforms:
+- platform_independent
+analysis_types: []
+interfaces:
+- web_app
+access:
+  model: open_source
+publications:
+- doi: 10.1093/nar/gky301
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-15'
+credits:
+- name: Ludovic Cottret
+  role: developer
+  orcid: 0000-0001-7418-7750
+provenance:
+  submitted_by: developer
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/34
+  developer_verified: false
+  submitter_name: Ludovic Cottret
+  public_attribution_consent: true
+  submitter_orcid: 0000-0001-7418-7750
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-15'
+  updated_at: '2026-09-15'
+  last_verified: '2026-09-15'
