@@ -78,12 +78,11 @@ related_tools:
 provenance:
   submitted_by: curator
   developer_verified: false
-  notes: Added at the site maintainer request. Reviewed against the official repository, v1.2 source, DTU software
-    page and direct ChemRxiv preprint on 2026-09-12. No developer verification or performance test.
+  notes: Metadata checked against the official repository, user guide and tool preprint. Software execution was not tested.
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-12'
-  updated_at: '2026-09-12'
+  updated_at: '2026-09-15'
   last_verified: '2026-09-12'
   last_editorial_review: '2026-09-12'
