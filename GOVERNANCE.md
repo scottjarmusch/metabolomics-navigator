@@ -84,3 +84,12 @@ Exclude application-only studies, general reviews and papers introducing other r
 Put package records and documentation in `resource_citations`, labelled `software` or `documentation`; a package DOI does not make the record a research article. Keep preprints visibly labelled. An empty scholarly bibliography is acceptable when no dedicated paper is established; explain the citation guidance without inventing a substitute. This is a selected bibliography, not a claim of exhaustive coverage. Strategy sources must introduce the transferable strategy described on that page.
 
 Editors must verify title, DOI, resource identity and the paper's actual contribution before accepting it. Schema validation checks structure and permitted types; it cannot determine scientific relevance.
+
+
+## Accepting tool submissions and recording updates
+
+Submission acceptance is separate from editorial completion. Maintainers check the required form information, scope, duplicate status, links and public attribution consent. Schema, vocabulary, relationship, build and link checks remain mandatory. A tool may be merged with `status.entry: stub` and `status.review: unreviewed`; its page clearly shows editorial additions pending. Missing optional details do not block acceptance. No approval label or status field substitutes for a maintainer merging the protected pull request.
+
+Later editorial additions belong in a separate pull request. An entry promoted beyond an unreviewed stub must pass the full editorial coverage check; only set `editorially_reviewed` and an editorial review date after that review actually occurs. Strategy criteria are unchanged.
+
+Each tool page includes committed entry history with dates, commit summaries, diffs and immutable revisions, plus its source submission issue when available. This is catalogue history, not software release history. Original submission wording is preserved through the source issue and Git revisions; do not rewrite a submitter's issue to imitate the current entry. Use clear commit summaries so subsequent updates are understandable. Full-history checkouts are required for deployment. Older entries without a submission issue start at their first committed catalogue record; no submission or approval event is fabricated.
