@@ -25,7 +25,13 @@ access:
   model: open_source
   notes: Install through the documented R-universe repository; the documentation also describes a local Shiny
     interface and a Docker distribution. Consult the current setup instructions and terms for external resources.
-publications: []
+publications:
+- doi: 10.3389/fpls.2019.01329
+  type: primary
+  citation: Rutz A, Dounoue-Kubo M, Ollivier S, et al. Taxonomically Informed Scoring Enhances Confidence in
+    Natural Products Annotation. Frontiers in Plant Science 10:1329 (2019).
+  note: Foundational method cited by the official tima documentation; it does not describe every later R-package
+    update.
 common_uses:
 - Prioritize candidate annotations using organism taxonomy alongside MS/MS evidence.
 - Combine compatible SIRIUS or GNPS annotations with a processed feature dataset.
