@@ -96,4 +96,4 @@ data:
   output_formats:
   - other
   other_output_formats:
-  - Predicted spectra and candidate rankings; model-specific Python workflow outputs.
+  - Predicted spectra and candidate rankings; model-specific outputs.
