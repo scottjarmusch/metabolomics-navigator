@@ -97,7 +97,7 @@ jobs:
         run: |
           PR_URL=$(gh pr list --head "$BRANCH" --base main --state open --json url --jq '.[0].url // empty')
           if [ -z "$PR_URL" ]; then
-            PR_BODY=$(printf 'Automated %s draft generated from %s.\n\nEditorial review is required before publication. Catalogue validation will run automatically on this pull request.' "$ENTRY_TYPE" "$SOURCE_ISSUE")
+            PR_BODY=$(printf 'Automated %s draft generated from %s.\n\nMaintainer acceptance is required before publication. Tool submissions can be accepted with editorial additions pending; Strategies retain their editorial inclusion requirements. Catalogue validation runs automatically.' "$ENTRY_TYPE" "$SOURCE_ISSUE")
             PR_URL=$(gh pr create \
               --base main \
               --head "$BRANCH" \

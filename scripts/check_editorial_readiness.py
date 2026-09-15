@@ -31,14 +31,19 @@ def gaps(record):
 
 def main():
     failures = []
+    pending = 0
     files = sorted((ROOT / 'content/tools').glob('*.yml'))
     for path in files:
-        missing = gaps(yaml.safe_load(path.read_text(encoding='utf-8')))
+        record = yaml.safe_load(path.read_text(encoding='utf-8'))
+        if record.get('status', {}).get('entry') == 'stub' and record.get('status', {}).get('review') == 'unreviewed':
+            pending += 1
+            continue
+        missing = gaps(record)
         if missing: failures.append(f'{path.stem}: {", ".join(missing)}')
     if failures:
         print('\n'.join(failures))
         return 1
-    print(f'{len(files)} tools meet the editorial coverage baseline (not a factual or operational certification).')
+    print(f'{len(files)-pending} tools meet editorial coverage; {pending} accepted-submission candidates await enrichment. Schema validation remains required for all records.')
     return 0
 
 if __name__ == '__main__':
