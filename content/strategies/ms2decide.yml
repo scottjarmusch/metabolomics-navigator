@@ -1,0 +1,81 @@
+$schema: ../../schemas/strategy.schema.json
+slug: ms2decide
+name: MS2DECIDE
+summary: Tandem mass spectrum to decision (MS2DECIDE) leverages decision theory and expert knowledge to
+  aggregate the outputs of three widely used annotation tools (GNPS, Sirius, and ISDB-LOTUS) and compute
+  a recommendation for targeting natural products with regard to their potential novelty.
+publication:
+  doi: 10.1002/cmtd.202400088
+  url: https://doi.org/10.1002/cmtd.202400088
+  title: 'MS2DECIDE: Aggregating Multiannotated Tandem Mass Spectrometry Data with Decision Theory Enhances
+    Natural Products Prioritization'
+  journal: Chemistry–Methods
+  year: 2025
+  citation: 'Mejri, Yassine et al. MS2DECIDE: Aggregating Multiannotated Tandem Mass Spectrometry Data
+    with Decision Theory Enhances Natural Products Prioritization. Chemistry–Methods (2025). DOI: 10.1002/cmtd.202400088.'
+purpose:
+  primary: natural_product_discovery
+  secondary: []
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+sample_types: []
+biological_contexts: []
+organisms: []
+components:
+- annotation
+- spectral_search
+workflow_steps:
+- title: Prepare aligned inputs
+  description: Provide a quantitative CSV table, MGF spectra and compatible SIRIUS annotation results
+    with matching feature identifiers.
+- title: Collect complementary annotations
+  description: Obtain GNPS spectral matches and ISDB-LOTUS results alongside SIRIUS candidates.
+  tool_slugs:
+  - gnps
+  - sirius
+- title: Combine evidence and prioritize
+  description: Use the documented K-estimation method to combine annotation evidence and export ranked
+    results for review.
+- title: Review candidates
+  description: Inspect spectra, annotation disagreements and experimental context before selecting follow-up
+    experiments.
+tools:
+- slug: gnps
+- slug: sirius
+- name: ISDB-LOTUS
+resources:
+  code_available: true
+  code_url: https://github.com/MejriY/MS2DECIDE
+  method_available: true
+  method_url: https://github.com/MejriY/MS2DECIDE#usage-guide-k_estimation
+scope:
+  designed_for:
+  - Prioritizing natural-product features using multiple annotation sources.
+  requirements:
+  - Compatible feature tables, MS/MS spectra and annotation files; Python and access to the services used
+    by the chosen implementation.
+  considerations:
+  - Scores depend on annotation coverage and the decision model; they are not experimental identification
+    or proof of novelty.
+  - Follow the repository documentation for supported SIRIUS and GNPS versions.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/24
+  author_verified: false
+  submitter_name: Morgane Mauduit
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4583-5389
+  notes: 'Original submission by Morgane Mauduit in issue #24; recovered after the title prevented automation.
+    Method details checked against the linked implementation documentation. Software execution and author
+    verification were not performed.'
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-14'
+  updated_at: '2026-09-15'
+description: MS2DECIDE combines annotations from GNPS, SIRIUS and ISDB-LOTUS using an expert-informed
+  decision model. It supports prioritization of natural-product features for follow-up rather than establishing
+  chemical novelty or confirming structures.
