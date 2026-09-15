@@ -36,14 +36,80 @@ class Head(HTMLParser):
         return [a.get(field, '') for t, a in self.tags if t == tag and a.get(key) == value]
 
 
-def check(out, origin, base_path):
+BRAND = 'Metabolomics Navigator'
+PRODUCTION_HOME = 'https://scottjarmusch.github.io/metabolomics-navigator/'
+
+
+def expected_home(origin, base_path):
     base = origin.rstrip('/') + base_path + '/'
+    # Independent deployment assertion: a shared bad base path must not pass
+    # merely because canonical, sitemap and structured data agree with each other.
+    if urlsplit(origin).netloc == 'scottjarmusch.github.io':
+        assert base == PRODUCTION_HOME, 'Production canonical must retain /metabolomics-navigator/'
+    return base
+
+
+class VisibleText(HTMLParser):
+    """Read ordinary body text, excluding explicitly hidden and non-rendered nodes."""
+    VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+
+    def __init__(self, html):
+        super().__init__(convert_charrefs=True)
+        self.stack = []; self.parts = []
+        self.feed(html)
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        style = ''.join(attrs.get('style', '').lower().split())
+        hidden = (tag in ('script', 'style', 'template', 'noscript') or 'hidden' in attrs
+                  or attrs.get('aria-hidden') == 'true' or 'display:none' in style
+                  or 'visibility:hidden' in style)
+        if tag not in self.VOID:
+            self.stack.append((tag, hidden))
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack)-1, -1, -1):
+            if self.stack[i][0] == tag:
+                del self.stack[i:]
+                break
+
+    def handle_data(self, data):
+        if any(tag == 'body' for tag, _ in self.stack) and not any(hidden for _, hidden in self.stack):
+            self.parts.append(data)
+
+
+def check_homepage(head, html, canonical):
+    assert BRAND in head.titles[0], 'Homepage title must contain the exact brand'
+    description = head.values('meta', 'name', 'description')[0]
+    assert BRAND in description, 'Homepage description must contain the exact brand'
+    assert head.values('link', 'rel', 'canonical', 'href') == [canonical], 'Homepage must have one full canonical'
+    assert BRAND in ' '.join(VisibleText(html).parts), 'Homepage must contain visible brand text'
+    assert len(head.ld) == 1
+    data = json.loads(head.ld[0]); assert data['@context'] == 'https://schema.org'
+    nodes = {item['@type']: item for item in data['@graph']}
+    assert {'WebSite', 'CreativeWork'} <= nodes.keys()
+    for kind in ('WebSite', 'CreativeWork'):
+        assert nodes[kind]['name'] == BRAND
+        assert nodes[kind]['url'] == canonical
+        assert nodes[kind]['description'] == description
+    assert nodes['WebSite']['inLanguage'] == 'en'
+    assert nodes['WebSite']['about'] == {'@id': canonical+'#project'}
+    assert nodes['CreativeWork']['isPartOf'] == {'@id': canonical+'#website'}
+    assert nodes['CreativeWork']['about'] == [
+        {'@type': 'Thing', 'name': 'Metabolomics'}, {'@type': 'Thing', 'name': 'Mass spectrometry'}]
+    if canonical == PRODUCTION_HOME:
+        assert nodes['CreativeWork']['sameAs'] == 'https://github.com/scottjarmusch/metabolomics-navigator'
+
+
+def check(out, origin, base_path):
+    base = expected_home(origin, base_path)
     sitemap = [e.text for e in ElementTree.parse(out/'sitemap.xml').iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
     assert len(sitemap) == len(set(sitemap)), 'Duplicate sitemap URLs'
     canonical_urls = set()
     for file in out.rglob('*.html'):
         route = file.relative_to(out).as_posix()
-        head = Head(file.read_text(encoding='utf-8'))
+        html = file.read_text(encoding='utf-8')
+        head = Head(html)
         def one(tag, key, value, field='content'):
             values = head.values(tag,key,value,field)
             assert len(values) == 1 and values[0].strip(), f'{route}: missing/duplicate {value}'
@@ -72,13 +138,8 @@ def check(out, origin, base_path):
         assert one('meta','name','twitter:description') == description
         for block in head.ld: json.loads(block)
         if route == 'index.html':
-            assert len(head.ld) == 1
-            data = json.loads(head.ld[0]); assert data['@context'] == 'https://schema.org'
-            nodes = {item['@type']:item for item in data['@graph']}
-            assert {'WebSite','CreativeWork'} <= nodes.keys()
-            assert nodes['WebSite']['name'] == 'Metabolomics Navigator'
-            assert nodes['WebSite']['url'] == canonical
-            assert nodes['WebSite']['description'] == description
+            check_homepage(head, html, expected)
+    assert base in sitemap, 'Sitemap must include the canonical homepage'
     assert canonical_urls == set(sitemap), 'Canonical pages differ from sitemap'
     robots = (out/'robots.txt').read_text(encoding='utf-8')
     assert 'Allow: /' in robots and 'Sitemap: '+base+'sitemap.xml' in robots

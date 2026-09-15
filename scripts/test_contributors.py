@@ -5,7 +5,7 @@ import json
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from jsonschema import Draft202012Validator
-from contributors import CONSENT_TEXT, build_contributors, parse_attribution
+from contributors import CONSENT_TEXT, build_contributors, parse_attribution, entry_submitter
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,6 +22,16 @@ class ContributorTests(unittest.TestCase):
         records = [record(), record('False', consent=False), record('String', consent='true'),
                    record('Draft', status='stub'), {'provenance': {'submitter_name': 'Legacy'}}]
         self.assertEqual([p['name'] for p in build_contributors(records)], ['Jane Doe'])
+
+    def test_entry_credit(self):
+        self.assertEqual(entry_submitter(record(status='stub'))['name'], 'Jane Doe')
+        self.assertIsNone(entry_submitter(record(consent=False)))
+        self.assertIsNone(entry_submitter(record(consent='true')))
+        self.assertEqual(entry_submitter(record('Scott Jarmusch'))['name'], 'website developers')
+        self.assertEqual(entry_submitter({'provenance': {'submitted_by': 'curator'}})['name'], 'website developers')
+        self.assertIsNone(entry_submitter({'provenance': {'submitted_by': 'curator', 'source_issue': 'issue'}}))
+        self.assertIsNone(entry_submitter(record(orcid='javascript:bad'))['orcid'])
+        self.assertEqual(entry_submitter(record(orcid='0000-0002-1825-0097'))['orcid'], '0000-0002-1825-0097')
 
     def test_identity_and_sorting(self):
         oid = '0000-0002-1825-0097'

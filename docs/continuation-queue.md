@@ -1,5 +1,7 @@
 # Current continuation order
 
+Latest instruction, 12 September: STOP tool-entry population and updates; leave further additions to community contributions until the user resumes curation. The scheduled population automation was deleted. PR #20 (peakPantheR) is held unmerged. Ask Navigator workflows remain unpublished. Current work is the focused branded-search handoff; the historical queue below is paused.
+
 The user approved continuing and publishing validated work on 11 September 2026.
 
 1. Mobile navigation contrast and the SEO handoff are deployed (SEO PR #14).

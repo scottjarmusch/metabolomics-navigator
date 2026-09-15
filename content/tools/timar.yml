@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: timar
+name: timaR
+aliases: []
+summary: timaR helps annotate metabolites in MS/MS data by combining spectral matching with taxonomic information
+  about the organisms being studied. It can incorporate retention-time evidence and existing SIRIUS or GNPS
+  annotations to prioritize candidate compounds.
+links:
+  primary: https://taxonomicallyinformedannotation.github.io/tima/
+  homepage: https://taxonomicallyinformedannotation.github.io/tima/
+  documentation: https://taxonomicallyinformedannotation.github.io/tima/
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary: []
+  capabilities:
+  - library_matching
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- r_package
+access:
+  model: open_source
+  notes: Install through the documented R-universe repository; the documentation also describes a local Shiny
+    interface and a Docker distribution. Consult the current setup instructions and terms for external resources.
+publications:
+- doi: 10.3389/fpls.2019.01329
+  type: primary
+  citation: Rutz A, Dounoue-Kubo M, Ollivier S, et al. Taxonomically Informed Scoring Enhances Confidence in
+    Natural Products Annotation. Frontiers in Plant Science 10:1329 (2019).
+  note: Foundational method cited by the official tima documentation; it does not describe every later R-package
+    update.
+common_uses:
+- Prioritize candidate annotations using organism taxonomy alongside MS/MS evidence.
+- Combine compatible SIRIUS or GNPS annotations with a processed feature dataset.
+scope:
+  designed_for:
+  - Downstream annotation of processed LC-MS/MS features with organism context.
+  not_designed_for:
+  - Replacing raw-data feature extraction or confirming chemical identity from taxonomy alone.
+  requirements:
+  - Feature table with feature IDs, retention time, m/z and sample intensities; MGF spectra; sample-to-organism
+    metadata when multiple organisms are analyzed.
+  considerations:
+  - Taxonomic context and reference-library coverage affect candidate prioritization.
+  - External annotations and custom libraries are optional inputs; check documented version and column conventions.
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-14'
+credits: []
+provenance:
+  submitted_by: user
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/28
+  developer_verified: false
+  submitter_name: Elnur Garayev
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4790-4878
+  notes: Draft editorial additions based on the official tima documentation. Original submitter attribution
+    is retained. Software execution was not tested.
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-14'
+  updated_at: '2026-09-15'
+  last_verified: '2026-09-14'
+description: An R package for Taxonomically Informed Metabolite Annotation. The workflow combines processed
+  feature information and fragmentation spectra with organism metadata and structure-organism evidence. External
+  annotations and custom libraries can supplement the workflow; resulting candidates require interpretation
+  rather than being treated as confirmed identities.
+data:
+  input_types:
+  - feature_table
+  - spectra
+  - sample_metadata
+  output_types:
+  - compound_list
+  - report
+  input_formats:
+  - csv_tsv
+  - mgf
+  output_formats:
+  - other
+  other_output_formats:
+  - Workflow files in .tima/data; exact tables depend on the selected workflow.

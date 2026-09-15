@@ -10,4 +10,11 @@ Manual follow-up: add the URL-prefix property https://scottjarmusch.github.io/me
 
 Google's site-name feature does not support subdirectory-level sites; structured data remains truthful but cannot guarantee a branded site-name display or indexing timing. See https://developers.google.com/search/docs/appearance/site-names and https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls .
 
-Ask Navigator remains the public visual preview; unpublished workflow work stays on its separate local branch. Next: resume specialist population before returning to Ask Navigator, per the user's latest order.
+Ask Navigator remains the public visual preview; unpublished workflow work stays on its separate local branch. Tool population is paused by the latest user instruction; the population automation was deleted. PR #20 remains unmerged.
+
+
+12 September branded-search refinement: strengthened homepage title/description, visible resource definition, About introduction and README live-site link. Retained WebSite and CreativeWork nodes; linked their identities and added metabolomics/mass-spectrometry Thing subjects. No generic alternate name was added because it would not improve identification of the full brand.
+
+The SEO check now independently requires the exact production project URL on scottjarmusch.github.io, so a consistently wrong root URL cannot pass. It also checks the homepage brand in title, description, visible HTML and both JSON-LD entities, plus homepage sitemap inclusion and the project sitemap reference in robots.txt. Hidden/script/template text does not satisfy the visible-text assertion. CI's existing GITHUB_REPOSITORY-based URL derivation remains unchanged.
+
+For CI-equivalent local validation, set GITHUB_REPOSITORY=scottjarmusch/metabolomics-navigator before running build_site.py --strict and check_seo.py. Root-path previews remain possible with an explicit alternate SITE_URL; they must not masquerade as the production GitHub Pages homepage.

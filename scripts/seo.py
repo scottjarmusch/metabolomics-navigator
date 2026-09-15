@@ -36,10 +36,13 @@ def page_metadata(template, route, context, absolute_url):
     if template == 'home.html':
         data = {'@context': 'https://schema.org', '@graph': [
             {'@type': 'WebSite', '@id': canonical+'#website', 'name': brand,
-             'url': canonical, 'description': description, 'inLanguage': 'en'},
+             'url': canonical, 'description': description, 'inLanguage': 'en',
+             'about': {'@id': canonical+'#project'}},
             {'@type': 'CreativeWork', '@id': canonical+'#project', 'name': brand,
              'url': canonical, 'description': description,
-             'sameAs': context['repository_url'], 'isPartOf': {'@id': canonical+'#website'}},
+             'sameAs': context['repository_url'], 'isPartOf': {'@id': canonical+'#website'},
+             'about': [{'@type': 'Thing', 'name': 'Metabolomics'},
+                       {'@type': 'Thing', 'name': 'Mass spectrometry'}]},
         ]}
     return {'title': title, 'description': description,
             'canonical': None if template == '404.html' else canonical,

@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: molnetinvert
+name: MolNetInvert
+summary: Create metadata-based molecular networks from GNPS networks or feature tables to explore how metabolites
+  are distributed across sample groups.
+description: MolNetInvert is a desktop GUI implementing Metadata-Based Molecular Networks (MBMN). It reorganizes
+  processed metabolomics data around selected sample metadata and can simplify network views by collapsing
+  clusters. Metadata connections describe sample-group associations; they are distinct from MS/MS similarity
+  or ion-identity evidence.
+links:
+  primary: https://github.com/AaronJCA/MolNetInvert
+  repository: https://github.com/AaronJCA/MolNetInvert
+  documentation: https://github.com/AaronJCA/MolNetInvert/blob/main/MolNetInvert-UserGuide.pdf
+resource_types:
+- software_application
+functions:
+  primary: molecular_networking
+  secondary:
+  - visualization_reporting
+  capabilities:
+  - network_visualization
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: MIT
+  notes: Repository includes an MIT license, Python source and a Windows executable (v1.2). Consult the user
+    guide for setup and input conventions.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  input_formats:
+  - csv_tsv
+  - other
+  other_input_formats:
+  - GNPS GraphML with metadata; optional metadata preference TXT
+  output_types:
+  - report
+  output_formats:
+  - other
+  other_output_formats:
+  - XGMML network for visualization in Cytoscape
+publications:
+- type: primary
+  doi: 10.26434/chemrxiv-2024-q4dpr
+  citation: 'Christiansen JV, Jarmusch SA, Vertot M, Andersen AJC. MolNetInvert: A Tool for Creating Metadata
+    Based Molecular Networks and Their Applications in Large Microbial Datasets. ChemRxiv (2024), version 1.
+    Preprint.'
+  note: Direct tool preprint, not a peer-reviewed journal article; no separate peer-reviewed version was verified
+    during this review.
+common_uses:
+- Compare metabolite distributions across biological conditions or sample groups.
+- Reorganize dense networks and singleton features around metadata.
+scope:
+  designed_for:
+  - Downstream exploration of processed MS metabolomics networks and feature tables.
+  not_designed_for:
+  - Raw-file preprocessing or confirming compound identities from metadata connections.
+  requirements:
+  - GNPS GraphML with appropriate metadata, or a CSV feature table and tab-delimited sample-to-group metadata
+    in the documented format.
+  considerations:
+  - Missing or inconsistent sample metadata changes the resulting grouping.
+  - Collapsing or filtering nodes can hide detail; retain the original network and record settings.
+  - Input modes and compatibility were checked in v1.2 source; software execution was not tested.
+related_tools:
+- slug: gnps
+  relationship: uses
+  note: Accepts documented GNPS classical, feature-based and ion-identity network exports.
+- slug: cytoscape
+  relationship: complementary
+  note: Visualize the exported XGMML network.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Metadata checked against the official repository, user guide and tool preprint. Software execution was not tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-15'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'

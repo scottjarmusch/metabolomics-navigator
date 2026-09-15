@@ -87,6 +87,9 @@
     ms2query: Find spectral matches & analogues
     npclassifier: Classify supplied natural-product structures
 - id: spectral-analysis
+  strategy_slugs:
+  - gnps-feature-based-molecular-networking
+  - gnps-ion-identity-molecular-networking
   title: Exploring spectral relationships
   introduction: Tandem mass spectra contain fragmentation information that can help investigate related molecules.
     Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified
@@ -103,6 +106,7 @@
   - ms2deepscore
   - ms2lda
   - molnetenhancer
+  - molnetinvert
   - postmn-massql
   - multistep-massql
   - massql-playground
@@ -120,6 +124,7 @@
     ms2deepscore: Predict structural similarity
     ms2lda: Discover recurring substructure motifs
     molnetenhancer: Combine network annotation evidence
+    molnetinvert: Explore metadata-based molecular networks
     gnps-classical-molecular-networking: Spectrum-centric molecular networking
     gnps-feature-based-molecular-networking: Quantitative feature-based networking
     postmn-massql: Query processed networking spectra

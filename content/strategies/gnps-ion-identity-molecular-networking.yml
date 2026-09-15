@@ -1,0 +1,118 @@
+$schema: ../../schemas/strategy.schema.json
+slug: gnps-ion-identity-molecular-networking
+name: Ion Identity Molecular Networking (IIMN)
+summary: A strategy extending feature-based molecular networking with MS1-derived ion relationships, linking
+  candidate ion species of the same molecule alongside MS/MS spectral-similarity edges.
+description: 'Ion Identity Molecular Networking adds a second evidence layer to an FBMN network: relationships
+  between candidate adducts, multimers and other ion species supported by chromatographic behavior and mass
+  differences. MS1 ion-identity edges and MS/MS similarity edges have different meanings and should be interpreted
+  separately. The published GNPS implementation can also collapse ion groups for visualization. These groupings
+  are hypotheses about ion origin, not proof of a molecular structure.'
+publication:
+  title: Ion identity molecular networking for mass spectrometry-based metabolomics in the GNPS environment
+  doi: 10.1038/s41467-021-23953-9
+  url: https://www.nature.com/articles/s41467-021-23953-9
+  citation: Schmid R, Petras D, Nothias L-F, et al. Ion identity molecular networking for mass spectrometry-based
+    metabolomics in the GNPS environment. Nature Communications 12, 3832 (2021).
+  journal: Nature Communications
+  year: 2021
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - molecular_family_discovery
+  - unknown_identification
+  - molecular_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: not_required
+components:
+- preprocessing
+- annotation
+- molecular_networking
+- spectral_search
+- data_sharing
+workflow_steps:
+- title: Detect and align LC-MS/MS features
+  description: Generate an aligned feature table with representative MS/MS spectra using a compatible preprocessing
+    tool.
+  tool_slugs:
+  - mzmine
+- title: Annotate ion identities
+  description: In a documented ion-identity workflow, group chromatographic features and annotate plausible
+    ion species using retention behavior, peak-shape correlation and expected mass relationships.
+  tool_slugs:
+  - mzmine
+- title: Export FBMN and ion-identity edges
+  description: Export the quantification table, representative MS/MS spectra and supplementary ion-identity
+    pairs with matching feature identifiers. Follow the specific GNPS and preprocessing version documentation.
+  tool_slugs:
+  - mzmine
+- title: Build the ion identity molecular network
+  description: Run FBMN in GNPS with supplementary ion-identity relationships so that MS1 ion relationships
+    and MS/MS spectral-similarity relationships are represented together.
+  tool_slugs:
+  - gnps
+- title: Inspect compound-level ion groups and molecular families
+  description: Distinguish ion-identity edges from spectral-similarity edges and review collapsed groups against
+    the uncollapsed network. Check ambiguous assignments before propagating annotations.
+  tool_slugs:
+  - cytoscape
+tools:
+- slug: gnps
+  role: Published GNPS FBMN/IIMN implementation; consult the linked IIMN documentation for the supported workflow.
+- slug: mzmine
+  role: Documented route for feature processing, ion-identity annotation and supplementary-pairs export.
+- slug: cytoscape
+  role: Inspect and style exported networks while retaining edge-type and feature metadata.
+resources:
+  code_available: true
+  code_url: https://github.com/CCMS-UCSD/GNPS_Workflows
+  method_available: true
+  method_url: https://ccms-ucsd.github.io/GNPSDocumentation/fbmn-iin/
+scope:
+  designed_for:
+  - LC-MS/MS datasets in which multiple ion species from the same molecule create redundant nodes or obscure
+    molecular-family interpretation.
+  - Combining chromatographic ion relationships with fragmentation-spectral relationships.
+  requirements:
+  - Feature-level chromatographic information, MS/MS spectra, and an ion-identity/supplementary-pairs export
+    from a compatible preprocessing workflow.
+  considerations:
+  - Ion-identity assignments rely on chromatographic correlation and expected mass relationships and should
+    be reviewed, particularly for crowded or poorly resolved chromatographic regions.
+  - The original paper also describes MS-DIAL and XCMS with CAMERA export routes. Their version-specific scripts
+    and formats must be checked before substituting them for the MZmine route shown here.
+  - Features without MS/MS can participate through ion-identity edges when supported by the implementation;
+    they do not thereby acquire an observed fragmentation spectrum.
+  - Ion identity networking is not ion mobility networking and does not require ion mobility acquisition.
+related_strategies:
+- gnps-feature-based-molecular-networking
+- bioactivity-based-molecular-networking
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Classified as a transferable analytical Strategy; linked Tool entries describe software implementations.
+    Reviewed against the original method publication and GNPS documentation.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-08-24'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []
+aliases:
+- IIMN
+- Ion identity networking
