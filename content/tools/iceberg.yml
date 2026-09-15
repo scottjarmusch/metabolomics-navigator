@@ -2,17 +2,20 @@ $schema: ../../schemas/tool.schema.json
 slug: iceberg
 name: ICEBERG
 aliases: []
-summary: ICEBERG is a two-stage neural network that predicts mass spectra from molecular structures. It can rank candidate structures against a spectrum for metabolite annotation.
+summary: ICEBERG is a two-stage neural network that predicts mass spectra from molecular structures. It can
+  rank candidate structures against a spectrum for metabolite annotation.
 links:
   primary: https://github.com/coleygroup/ms-pred
   repository: https://github.com/coleygroup/ms-pred
+  documentation: https://github.com/coleygroup/ms-pred#readme
 resource_types:
 - programming_package
 functions:
   primary: annotation_identification
   secondary:
   - machine_learning
-  capabilities: []
+  capabilities:
+  - structure_elucidation
 platforms:
 - lc_ms
 analysis_types: []
@@ -20,11 +23,37 @@ interfaces:
 - python_package
 access:
   model: open_source
+  notes: Python source, model instructions and links to pretrained weights are provided in the repository.
+    Dataset access and pretrained-model use are distinct from training a new model; consult their respective
+    terms and requirements.
 publications:
+- doi: 10.1021/acs.analchem.3c04654
+  type: primary
+  citation: Goldman S, Li J, Coley CW. Generating Molecular Fragmentation Graphs with Autoregressive Neural
+    Networks. Analytical Chemistry 96, 3419-3428 (2024).
+  note: Original ICEBERG 1.0 method.
 - doi: 10.1101/2025.05.28.656653
   type: primary
-common_uses: []
-scope: {}
+  citation: Wang R, et al. Neural Spectral Prediction for Structure Elucidation with Tandem Mass Spectrometry.
+    bioRxiv (2025). Preprint.
+  note: ICEBERG 2.0 citation listed by the official repository; later repository updates should be identified
+    by model version.
+common_uses:
+- Predict MS/MS spectra for candidate structures.
+- Rank a defined candidate set by comparison with an experimental spectrum.
+scope:
+  designed_for:
+  - Structure-to-spectrum prediction and candidate ranking for small molecules.
+  not_designed_for:
+  - Raw chromatographic feature extraction or guaranteed de novo identification from a spectrum.
+  requirements:
+  - Use matching model weights, molecular-structure inputs and model-specific acquisition metadata. Follow
+    the prediction example for the chosen ICEBERG version.
+  considerations:
+  - Candidate ranking is limited by the supplied candidate set and model applicability.
+  - The repository distinguishes ICEBERG 1.0, 2.0 and 2.1. Record the model and weights used.
+  - Training hardware requirements must not be presented as the minimum requirement for pretrained inference.
+  - Software execution and prediction performance were not tested during this editorial preparation.
 acquisition: {}
 related_tools: []
 maintenance:
@@ -41,9 +70,30 @@ provenance:
   submitter_name: Runzhong Wang
   public_attribution_consent: true
   submitter_orcid: 0000-0002-9566-738X
+  notes: Draft editorial additions checked against the official ms-pred README and direct ICEBERG publications.
+    Original developer-submission attribution is retained; no additional developer verification is claimed.
 status:
   entry: stub
   review: unreviewed
   created_at: '2026-09-14'
-  updated_at: '2026-09-14'
+  updated_at: '2026-09-15'
   last_verified: '2026-09-14'
+description: ICEBERG predicts tandem mass spectra from candidate molecular structures using a learned fragment
+  generator and an intensity predictor. Predicted spectra can be compared with an experimental spectrum to
+  rank supplied candidates. The ms-pred repository also contains separate models; this entry covers ICEBERG,
+  not every method in that repository.
+data:
+  input_types:
+  - molecular_structures
+  - spectra
+  output_types:
+  - spectra
+  - compound_list
+  input_formats:
+  - other
+  other_input_formats:
+  - SMILES candidate structures; experimental spectra for candidate ranking.
+  output_formats:
+  - other
+  other_output_formats:
+  - Predicted spectra and candidate rankings; model-specific outputs.

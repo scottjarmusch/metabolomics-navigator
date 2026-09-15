@@ -8,7 +8,7 @@ from urllib.parse import quote, urlencode
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from contributors import build_contributors
+from contributors import build_contributors, entry_submitter
 from tool_history import history_for
 from seo import page_metadata
 
@@ -286,6 +286,7 @@ def enrich_tool(record,labels):
     if provenance.get('developer_verified'): provenance_badges.append('Developer verified')
     if status.get('review')=='editorially_reviewed': provenance_badges.append('Editorially reviewed')
     t['entry_history']=history_for(t['slug'])
+    t['submitter_credit']=entry_submitter(t)
     if status.get('entry')=='stub' and status.get('review')=='unreviewed': provenance_badges.append('Editorial additions pending')
     t['provenance_label']=submitted; t['provenance_badges']=provenance_badges
     t['card_badges']=(t['capability_labels'][:2]+t['platform_labels'][:1]+t['interface_labels'][:1])[:4]
@@ -301,6 +302,7 @@ def enrich_tool(record,labels):
 
 def enrich_strategy(record,labels,tool_by_slug):
     p=dict(record); status=p.get('status',{}); acquisition=p.get('acquisition') or {}; resources=p.get('resources') or {}
+    p['submitter_credit']=entry_submitter(p)
     p['created_at']=record_date(p,'created_at'); p['updated_at']=record_date(p,'updated_at'); p['updated_display']=date_display(p['updated_at']); p['verified_display']=date_display(status.get('last_verified'))
     p['objective_label']=labels['strategy_objectives'].get(p['purpose']['primary'],p['purpose']['primary']); p['secondary_objective_labels']=list_labels(p['purpose'].get('secondary',[]),labels['strategy_objectives'])
     p['platform_labels']=list_labels(p['platforms'],labels['platforms']); p['analysis_type_labels']=list_labels(p.get('analysis_types',[]),labels['analysis_types']); p['component_labels']=list_labels(p.get('components',[]),labels['strategy_components']); p['sample_type_labels']=list_labels(p.get('sample_types',[]),labels['sample_types']); p['biological_context_labels']=list_labels(p.get('biological_contexts',[]),labels['biological_contexts'])

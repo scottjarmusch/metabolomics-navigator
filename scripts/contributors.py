@@ -63,3 +63,18 @@ def build_contributors(records):
         person = people.setdefault(key, {'name': name, 'orcid': identity or None, 'contributions': 0})
         person['contributions'] += 1
     return sorted(people.values(), key=lambda x: x['name'].casefold())
+
+
+def entry_submitter(record):
+    """Public entry credit; do not infer personal consent from Git history."""
+    p = record.get('provenance') or {}
+    name = ' '.join((p.get('submitter_name') or '').split())
+    # Existing seed entries are curator records without community issue attribution.
+    if name.casefold() in ('scott jarmusch', 'scottjarmusch') or (
+        p.get('submitted_by') == 'curator' and not name and not p.get('source_issue')
+    ):
+        return {'name': 'website developers', 'orcid': None}
+    if p.get('public_attribution_consent') is not True or not name or '@' in name:
+        return None
+    orcid = (p.get('submitter_orcid') or '').strip()
+    return {'name': name, 'orcid': orcid if re.fullmatch(ORCID_PATTERN, orcid) else None}
