@@ -1,0 +1,97 @@
+$schema: ../../schemas/tool.schema.json
+slug: peakpanther
+name: peakPantheR
+aliases: []
+summary: R package for targeted extraction and integration of predefined metabolic features across LC-MS profiling
+  files.
+links:
+  primary: https://bioconductor.org/packages/release/bioc/html/peakPantheR.html
+  repository: https://github.com/phenomecentre/peakPantheR
+  issue_tracker: https://github.com/phenomecentre/peakPantheR/issues
+  documentation: https://phenomecentre.github.io/peakPantheR.github.io/
+  homepage: https://phenomecentre.github.io/peakPantheR.github.io/
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  secondary: []
+  capabilities:
+  - peak_detection
+  - chromatogram_building
+platforms:
+- lc_ms
+analysis_types:
+- targeted
+interfaces:
+- r_package
+- web_app
+access:
+  model: open_source
+  license: GPL-3
+  notes: Open-source Bioconductor R package. Match R and Bioconductor releases and consult the selected release
+    requirements. The Shiny GUI runs from the installed package; it is not a separate hosted analysis service.
+publications:
+- doi: 10.1093/bioinformatics/btab433
+  type: primary
+  citation: Wolfer AM, et al. peakPantheR, an R package for large-scale targeted extraction and integration
+    of annotated metabolic features in LC-MS profiling datasets. Bioinformatics 37, 4886-4888 (2021).
+common_uses:
+- Extract a consistent predefined feature panel across LC-MS files.
+- Review chromatographic fits and refine target integration windows.
+scope:
+  designed_for:
+  - Targeted extraction from predefined retention-time and m/z regions in profiling data.
+  not_designed_for:
+  - Discovery of all unknown features or de novo metabolite identification.
+  requirements:
+  - A target annotation table with feature identifiers and retention-time/mass windows.
+  - MS files supported by the underlying R readers and a compatible R/Bioconductor installation.
+  considerations:
+  - Chromatographic drift and coelution can compromise extraction within fixed windows.
+  - Inspect fitting diagnostics and retain target definitions and parameter changes.
+  - A fitted peak does not replace reference-standard evidence for its assigned identity.
+related_tools:
+- slug: msnbase
+  relationship: integration
+  note: Used in the package data-reading ecosystem alongside mzR; check release compatibility.
+credits:
+- name: Gonçalo Correia
+  role: developer
+  orcid: 0000-0001-8271-9294
+provenance:
+  submitted_by: developer
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/17
+  developer_verified: false
+  submitter_name: Gonçalo Correia
+  public_attribution_consent: true
+  submitter_orcid: 0000-0001-8271-9294
+  notes: Recovered from the corrected public submission after its original ORCID parsing failure. Bioconductor,
+    official project documentation and DOI metadata reviewed on 2026-09-12. No software execution or independent
+    benchmarking performed. Contributor consent and submitted identity preserved; account ownership was not
+    independently authenticated.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-12'
+  updated_at: '2026-09-12'
+  last_verified: '2026-09-12'
+  last_editorial_review: '2026-09-12'
+description: peakPantheR searches specified retention-time and m/z regions, fits chromatographic peaks and
+  reports integration results with diagnostic plots. It supports processing many files in parallel and reviewing
+  parameters through a local Shiny interface. The target list supplies the expected feature annotations; extraction
+  does not independently establish compound identity.
+data:
+  input_types:
+  - spectra
+  - compound_list
+  input_formats:
+  - mzml
+  other_input_formats:
+  - Target feature table with retention-time and m/z windows
+  output_types:
+  - feature_table
+  - report
+  output_formats:
+  - csv_tsv
+  other_output_formats:
+  - Diagnostic chromatographic plots and R annotation objects

@@ -23,6 +23,7 @@
   - skyline
   - lipidcreator
   - mshub-gc
+  - peakpanther
   short_title: Data processing
   caption: Process spectra, extract features and quantify targets.
   tool_labels:
@@ -43,6 +44,8 @@
     spectra: Scalable spectra objects in R
     skyline: Targeted small-molecule quantification
     mshub-gc: GC-MS alignment & deconvolution
+    peakpanther: Extract predefined LC-MS feature panels
+
 - id: annotation
   title: Annotating molecules
   introduction: Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical
