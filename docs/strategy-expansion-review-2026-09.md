@@ -4,7 +4,7 @@ This note reviews the current Strategy collection as the evidence layer for Ask 
 
 ## Current collection
 
-The current repository contains 15 published Strategies:
+The current repository contains 16 published Strategies:
 
 - Bioactivity-Based Molecular Networking
 - Chemoselective Reactivity-Resolved Metabolomics
