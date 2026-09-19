@@ -1,0 +1,89 @@
+$schema: ../../schemas/strategy.schema.json
+slug: iterative-optimized-ms2-acquisition
+name: Iterative optimized MS/MS acquisition
+aliases:
+- IODA
+summary: A repeated-acquisition strategy that uses prior MS/MS coverage to generate optimized inclusion lists for subsequent injections, increasing the number of informative fragmentation spectra collected from an untargeted sample.
+description: Conventional data-dependent acquisition repeatedly fragments abundant ions and can leave much of the detectable metabolome without MS/MS coverage. Iterative optimized data acquisition instead treats repeated injections as a planning problem. Features already covered are tracked, candidate precursors for the next injection are prioritized computationally, and successive acquisitions are used to increase nonredundant high-quality MS/MS coverage.
+publication:
+  title: 'MS2Planner: improved fragmentation spectra coverage in untargeted mass spectrometry by iterative optimized data acquisition'
+  doi: 10.1093/bioinformatics/btab279
+  url: https://doi.org/10.1093/bioinformatics/btab279
+  citation: Dührkop K, Fleischauer M, Ludwig M, et al. MS2Planner improved fragmentation spectra coverage in untargeted mass spectrometry by iterative optimized data acquisition. Bioinformatics (2021).
+  journal: Bioinformatics
+  year: 2021
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - molecular_discovery
+  - unknown_identification
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: unspecified
+components:
+- data_acquisition
+- preprocessing
+- annotation
+workflow_steps:
+- title: Acquire an initial untargeted LC-MS/MS run
+  description: Collect MS1 and DDA MS/MS data from a representative sample or pooled sample.
+- title: Determine existing MS/MS coverage
+  description: Identify which detectable precursor features already have suitable fragmentation spectra and which remain uncovered.
+- title: Optimize the next precursor list
+  description: Use an iterative planning algorithm to select nonredundant precursor ions for the next acquisition.
+  external_tools:
+  - name: MS2Planner
+    url: https://github.com/mohimanilab/MS2Planner
+- title: Reacquire the sample with an optimized inclusion list
+  description: Perform another LC-MS/MS acquisition targeting the selected precursor set.
+- title: Repeat until coverage is sufficient
+  description: Update the covered-feature set after each injection and iterate to increase cumulative MS/MS coverage.
+tools:
+- name: MS2Planner
+  url: https://github.com/mohimanilab/MS2Planner
+  role: Generates optimized precursor inclusion lists over iterative acquisitions.
+resources:
+  code_available: true
+  code_url: https://github.com/mohimanilab/MS2Planner
+  method_available: true
+  method_url: https://doi.org/10.1093/bioinformatics/btab279
+scope:
+  designed_for:
+  - Increasing MS/MS coverage in untargeted LC-MS experiments when repeat injections are practical.
+  - Building richer fragmentation coverage for annotation and discovery from representative or pooled samples.
+  requirements:
+  - Instrument control that supports precursor inclusion lists.
+  - Sufficient sample quantity and reproducible chromatography across repeated injections.
+  considerations:
+  - Increased coverage requires additional acquisition time and sample.
+  - Gains depend on feature detection quality and reproducibility between iterations.
+ask_keywords:
+- get more msms spectra
+- improve fragmentation coverage
+- iterative dda
+- exclusion inclusion list metabolomics
+- pooled sample deeper msms coverage
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because the paper introduces a transferable acquisition strategy that changes how repeated DDA experiments are planned.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_verified: '2026-09-19'
+  last_editorial_review: '2026-09-19'
