@@ -119,3 +119,18 @@ Sources inspected: [Li et al. primary article](https://journals.plos.org/ploscom
 No new tool entries, citation/popularity ranking, model inference, or production deployment. PB lists no catalogue tool because none was established as part of the original method; an unrelated lipid package must not be substituted. The mummichog Tool is the original computational implementation, not a competing Strategy card.
 
 Remaining review: acquisition/QC and isotope/flux defining papers, multimodal spatial methods, then exposomics and chemical reactivity. The other STRONG candidates are still unreviewed; this batch is not approval of the queue. Existing alpha cards and their originating-publication choices still require a complete scientific audit before merge.
+
+
+## Alpha batch 2 — 19 September 2026
+
+25 Strategies in the working collection. Two reviewed additions:
+
+- **Target-decoy-controlled DIA metabolomics:** [2022 defining paper](https://doi.org/10.1038/s41467-022-29006-z). Distinct from DaDIA because the added analytical relationship is assay/decoy evidence to statistically controlled chromatographic extraction. Existing OpenMS and SIRIUS records resolve. Biological comparisons in the paper do not become separate cards.
+- **Same-section MSI and imaging mass cytometry integration:** [2024 defining paper](https://doi.org/10.1038/s41592-024-02392-6). Antibody-defined cell identity is integrated with metabolite images; this is not a renamed SpaceM card. Published integration scripts remain an external resource, with no invented catalogue slug. Mixed-pixel limitations are explicit. The colorectal-cancer demonstration does not define a cancer-specific Strategy.
+
+Both titles and publication years were checked against publisher-deposited Crossref metadata. Software execution is not claimed. Earlier multimodal imaging methods exist; the new card is specifically scoped to the same-section MSI/IMC relationship, not a claim to the invention of all multimodal imaging.
+
+
+### Ask improvements accompanying batch 2
+
+Workflow steps now link to alternative searches by recorded tool function, without presenting them as validated substitutions. Matching uses whole terms weighted by their frequency across Strategy metadata and boosts curated keywords. No citation counts or tool popularity are used. NMR-only requests, missing flux-method coverage and the tested broad newcomer prompt no longer return misleading substitutes. See `ask-query-check-2026-09-19.md` for ten actual before/after query outputs and remaining retrieval limitations.

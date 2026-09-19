@@ -50,7 +50,7 @@ Status meanings:
 | Differential-peak targeted DDA | STRONG | PMID 37594469 |
 | DDA-assisted DIA metabolomics (DaDIA) | ADDED | 10.1021/acs.analchem.0c05022 |
 | Pooled-QC-guided DDA library generation | STRONG | PMID 36475608 and related methods |
-| Library-assisted DIA metabolomics with FDR control | STRONG | Identify DIAMetAlyzer defining paper |
+| Library-assisted DIA metabolomics with FDR control | ADDED | Alpha batch 2: 10.1038/s41467-022-29006-z; target-decoy-controlled DIA extraction, distinct from acquisition-only DaDIA |
 | Open-source DIA/MSE annotation and networking | STRONG | PMID 38324622 |
 | Narrow-window DIA / gas-phase-fractionated metabolomics | PRIMARY PAPER NEEDED | Find metabolomics-specific method paper |
 | Multi-energy collision acquisition | PRIMARY PAPER NEEDED | Find defining workflow |
@@ -124,7 +124,7 @@ Status meanings:
 | High-throughput SpaceM | IMPLEMENTATION/EXTENSION | Attach as implementation unless methodological distinction is strong |
 | MSI-guided molecular networking | EXISTING | Current Strategy |
 | Three-dimensional molecular cartography | EXISTING | Current Strategy |
-| Multimodal MSI plus imaging mass cytometry | STRONG | 10.1038/s41592-024-02392-6 |
+| Multimodal MSI plus imaging mass cytometry | ADDED | Alpha batch 2: 10.1038/s41592-024-02392-6; same-section antibody-defined phenotypes plus metabolic signals |
 | MSI plus spatial transcriptomics integration | STRONG | Find earliest defining method; SpaMTP 2026 is a later framework |
 | MSI plus histology image fusion | STRONG | Find defining image-fusion paper |
 | On-tissue derivatization MSI | STRONG | npj Imaging 2024 review; identify canonical method |
