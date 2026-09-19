@@ -1,0 +1,74 @@
+$schema: ../../schemas/strategy.schema.json
+slug: feature-level-pathway-inference
+name: Feature-level pathway inference before metabolite identification
+summary: Infer pathway and metabolic-network hypotheses from significant untargeted MS features before
+  assigning every metabolite identity.
+description: The mummichog method connects ambiguous mass-to-metabolite matches to metabolic-network structure.
+  Enrichment is evaluated against the measured feature background, allowing collective evidence to prioritize
+  biological hypotheses for experimental follow-up.
+publication:
+  title: Predicting Network Activity from High Throughput Metabolomics
+  doi: 10.1371/journal.pcbi.1003123
+  year: 2013
+  journal: PLOS Computational Biology
+  citation: Li S, Park Y, Duraisingham S, et al. Predicting Network Activity from High Throughput Metabolomics.
+    PLOS Computational Biology 9, e1003123 (2013).
+purpose:
+  primary: phenotype_association
+  secondary:
+  - metabolite_annotation
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+components:
+- statistics
+- annotation
+- biological_validation
+ask_keywords:
+- pathway enrichment
+- unknown metabolites
+- unidentified features
+- biological interpretation
+- mummichog
+- metabolic pathways
+workflow_steps:
+- title: Define significant and background features
+  description: Prepare significant feature masses and the full measured feature list from the comparison.
+- title: Map candidate metabolites to a network
+  description: Use mass accuracy, ionization assumptions and a suitable metabolic model to retain plausible
+    matches.
+  tool_slugs:
+  - mummichog
+- title: Evaluate network and pathway enrichment
+  description: Compare observed enrichment with permutations from the feature background.
+  tool_slugs:
+  - mummichog
+- title: Validate prioritized hypotheses
+  description: Follow up selected metabolites and pathways with independent measurements.
+tools:
+- slug: mummichog
+  role: Software implementation introduced with the defining paper.
+resources:
+  method_available: true
+  method_url: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003123
+scope:
+  designed_for:
+  - Functional interpretation when many significant features remain unidentified.
+  requirements:
+  - Feature statistics, measured background and a relevant metabolic model.
+  considerations:
+  - Enrichment is a hypothesis, not confirmation of individual identities or a measurement of flux.
+  - Background selection and ambiguous ion assignments influence results.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: 'Primary-paper review: 2013 method introduction, not its immune-cell application as a separate
+    Strategy. The existing mummichog Tool remains the implementation record. No software execution tested.'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'

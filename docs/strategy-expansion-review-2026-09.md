@@ -86,7 +86,7 @@ The new optional `implementations` field is specifically intended for point 6.
 
 ## Candidate that may be better as an implementation, not a new Strategy
 
-**Statistical analysis of FBMN outputs.** The Nature Protocols article *Statistical analysis of feature-based molecular networking results from non-targeted metabolomics data* (published online 2024; protocol volume 2025) describes a substantial downstream workflow. It should first be evaluated as a protocol/extension implementation attached to the existing FBMN Strategy. Only create a separate Strategy if the methodological contribution remains independently transferable beyond "downstream analysis of FBMN."
+**Statistical analysis of FBMN outputs.** The Nature Protocols article *Statistical analysis of feature-based molecular networking results from non-targeted metabolomics data* (published online 2024; journal volume 2025) describes a substantial downstream workflow. It should first be evaluated as a documented extension implementation attached to the existing FBMN Strategy. Only create a separate Strategy if the methodological contribution remains independently transferable beyond "downstream analysis of FBMN."
 
 ## Population priority
 
@@ -99,3 +99,23 @@ Recommended next review order:
 5. additional implementations for existing Strategies before inventing new Strategy categories
 
 The objective is not maximum Strategy count. The best Ask Navigator coverage comes from a smaller set of clearly transferable Strategies with multiple well-curated implementations.
+
+
+## Alpha batch 1 — 19 September 2026
+
+The working collection now contains 23 Strategies; the historical list above describes the earlier snapshot.
+
+| Candidate | Decision | Defining evidence / distinction |
+|---|---|---|
+| Feature-level pathway inference | Add | Li et al., 2013, DOI 10.1371/journal.pcbi.1003123. Joint network enrichment and ambiguous feature mapping is the transferable relationship; the immune-cell demonstration is not a second Strategy. |
+| Paterno-Buchi lipid double-bond localization | Add | Ma and Xia, 2014, DOI 10.1002/anie.201310699. Photochemical derivatization followed by diagnostic fragmentation differs from OzID chemistry. |
+| Shotgun PB identification and quantitation | Implementation/extension | Ma et al., 2016, DOI 10.1073/pnas.1523356113. Attached to the PB Strategy; tissue comparisons do not create cards. |
+| Stable-isotope-assisted credentialing | Already represented | Existing `credentialing-untargeted-features`, DOI 10.1021/ac503092d. |
+| Taxonomy-guided dereplication | Consolidate pending distinct evidence | Existing taxonomically informed annotation provides the candidate-ranking relationship. |
+| Isotope-coded derivatization (two queue rows) | Consolidate review | One candidate family; primary-paper review remains outstanding. |
+
+Sources inspected: [Li et al. primary article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003123), [Ma and Xia primary article](https://onlinelibrary.wiley.com/doi/10.1002/anie.201310699), [2016 extension](https://pmc.ncbi.nlm.nih.gov/articles/PMC4791002/).
+
+No new tool entries, citation/popularity ranking, model inference, or production deployment. PB lists no catalogue tool because none was established as part of the original method; an unrelated lipid package must not be substituted. The mummichog Tool is the original computational implementation, not a competing Strategy card.
+
+Remaining review: acquisition/QC and isotope/flux defining papers, multimodal spatial methods, then exposomics and chemical reactivity. The other STRONG candidates are still unreviewed; this batch is not approval of the queue. Existing alpha cards and their originating-publication choices still require a complete scientific audit before merge.

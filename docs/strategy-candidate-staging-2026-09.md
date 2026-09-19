@@ -9,7 +9,7 @@ Status meanings:
 - **STRONG** — concept appears methodologically distinct; verify the defining primary paper before creating a card.
 - **PRIMARY PAPER NEEDED** — plausible methodological concept identified from reviews/tool landscapes; do not create a Strategy until a paper introducing or materially formalizing it is found.
 - **REVIEW** — may collapse into an existing Strategy after reading the primary literature.
-- **IMPLEMENTATION/EXTENSION / IMPLEMENTATION / IMPLEMENTATION/TOOL LAYER** — more likely a use case, protocol, or extension than a new Strategy.
+- **IMPLEMENTATION/EXTENSION / IMPLEMENTATION / IMPLEMENTATION/TOOL LAYER** — more likely a use case, documented procedure, or extension than a new Strategy.
 
 ## Dereplication & natural-product discovery
 
@@ -20,7 +20,7 @@ Status meanings:
 | Reference-organism spectral dereplication | REVIEW | Potential implementation/variant of molecular-networking dereplication |
 | GC-MS deconvolution-assisted natural-product dereplication | PRIMARY PAPER NEEDED | Review-derived candidate |
 | Ion-mobility-assisted natural-product dereplication | PRIMARY PAPER NEEDED | IM-MS/natural-products review literature |
-| Taxonomy-guided natural-product dereplication | STRONG | Find defining paper distinct from existing taxonomically informed annotation |
+| Taxonomy-guided natural-product dereplication | REVIEW | Existing taxonomically informed annotation covers this absent a distinct analytical relationship; do not create a renamed duplicate |
 | BGC-informed dereplication | STRONG | Find defining paper distinct from metabologenomics |
 | Comparative-strain metabolomics for novelty prioritization | STRONG | Comparative microbial metabolomics review: PMID 27604382 |
 | Mutant-versus-wild-type comparative metabolomics | STRONG | Find defining workflow paper |
@@ -105,7 +105,7 @@ Status meanings:
 | Stable isotope-resolved metabolomics (SIRM) | STRONG | Identify defining methodology paper |
 | Pulse-chase isotope metabolomics | STRONG | Find defining workflow |
 | Isotopologue spectral analysis for flux inference | STRONG | Find canonical 13C-MFA/metabolomics paper |
-| Stable-isotope-assisted metabolite credentialing | STRONG | Verify original credentialing paper |
+| Stable-isotope-assisted metabolite credentialing | EXISTING | `credentialing-untargeted-features`, 10.1021/ac503092d; no additional card |
 | Isotope-assisted elemental composition inference | PRIMARY PAPER NEEDED | Find primary method |
 | Stable-isotope-labeling molecular networking | EXISTING | Current Strategy |
 | Isotope plus ion-mobility multidimensional metabolomics | STRONG | Verify primary paper around PMID 35089687 |
@@ -165,7 +165,7 @@ Status meanings:
 |---|---|---|
 | OzID structural lipidomics | EXISTING | Current Strategy |
 | Data-independent OzID lipidomics | STRONG | Find defining paper |
-| Paternò–Büchi double-bond localization | STRONG | Find canonical method paper |
+| Paternò–Büchi double-bond localization | ADDED | Alpha batch 1: 10.1002/anie.201310699; 2016 extension retained as implementation |
 | Epoxidation-assisted double-bond localization | STRONG | Find defining method |
 | Electron-activated dissociation structural lipidomics | STRONG | Find metabolomics/lipidomics primary paper |
 | Ion-mobility-resolved lipid isomer analysis | STRONG | IM-MS review PMID 33522625; find primary method |
@@ -190,7 +190,7 @@ Status meanings:
 | Host-microbe metabolite source attribution | STRONG | Find defining strategy |
 | Correlation-based metabolic network reconstruction | STRONG | Find canonical metabolomics network method |
 | Biochemical-network-guided feature interpretation | STRONG | Find defining method |
-| Feature-level pathway inference without full identification | STRONG | Identify mummichog defining paper |
+| Feature-level pathway inference without full identification | ADDED | Alpha batch 1: 10.1371/journal.pcbi.1003123; `feature-level-pathway-inference` |
 | Chemical-class enrichment analysis | STRONG | Find defining method |
 | Molecular-family enrichment across phenotypes | PRIMARY PAPER NEEDED | Find defining workflow |
 | Longitudinal metabolomics trajectory analysis | PRIMARY PAPER NEEDED | Find methodology paper |
@@ -207,7 +207,7 @@ Status meanings:
 | Candidate | Status | Evidence / next step |
 |---|---|---|
 | Class-selective derivatization-enhanced untargeted metabolomics | STRONG | Find canonical workflow |
-| Isotope-coded derivatization metabolomics | STRONG | Find defining method |
+| Isotope-coded derivatization metabolomics | REVIEW | Consolidate with isotope-coded derivatization for relative quantification in the isotope section; defining paper still required |
 | Post-column reaction metabolomics | STRONG | Find metabolomics-specific primary paper |
 | Reactive-metabolite trapping metabolomics | STRONG | Find defining strategy |
 | Carbonyl-selective metabolomics | STRONG | Find canonical method |
