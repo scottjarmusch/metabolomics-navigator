@@ -114,7 +114,7 @@ Status meanings:
 | Isotope-coded derivatization for relative quantification | STRONG | Find canonical method |
 | Natural-abundance isotope tracing | REVIEW | Assess scope and methodological distinctiveness |
 | Position-specific isotope tracing by MS/MS | PRIMARY PAPER NEEDED | Find defining strategy |
-| Dynamic isotope labeling for turnover estimation | PRIMARY PAPER NEEDED | Find defining method |
+| Dynamic isotope labeling for turnover estimation | REVIEW | Kinetic flux profiling: defining 2006 source 10.1038/nchembio816; inspect supplementary method and 2008 expanded procedure before adding |
 
 ## Spatial & single-cell metabolomics
 

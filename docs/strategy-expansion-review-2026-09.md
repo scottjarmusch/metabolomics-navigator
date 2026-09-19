@@ -134,3 +134,8 @@ Both titles and publication years were checked against publisher-deposited Cross
 ### Ask improvements accompanying batch 2
 
 Workflow steps now link to alternative searches by recorded tool function, without presenting them as validated substitutions. Matching uses whole terms weighted by their frequency across Strategy metadata and boosts curated keywords. No citation counts or tool popularity are used. NMR-only requests, missing flux-method coverage and the tested broad newcomer prompt no longer return misleading substitutes. See `ask-query-check-2026-09-19.md` for ten actual before/after query outputs and remaining retrieval limitations.
+
+
+### Next isotope/flux review anchor
+
+Kinetic flux profiling has a verified originating paper: Yuan et al., *Kinetic flux profiling of nitrogen assimilation in Escherichia coli*, Nature Chemical Biology 2, 529–530 (2006), DOI [10.1038/nchembio816](https://doi.org/10.1038/nchembio816). Its abstract explicitly introduces the method; the organism does not define a separate Strategy. The publisher provides supplementary methods. An expanded 2008 procedure, *Kinetic flux profiling for quantitation of cellular metabolic fluxes* (PMC2710581), should be inspected alongside those methods to establish assumptions, pool-size requirements and original implementation resources. No card was added from the abstract alone, and the retrieval coverage gap remains explicit.
