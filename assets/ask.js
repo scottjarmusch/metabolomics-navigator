@@ -8,26 +8,32 @@
   const examples = [...document.querySelectorAll('[data-ask-example]')];
   if (!input || !cards.length) return;
 
-  const stop = new Set(['a','an','and','are','for','from','i','in','into','my','of','on','the','to','with']);
-  const tokenize = value => value.toLowerCase()
-    .replace(/[^a-z0-9+/-]+/g,' ')
-    .split(/\s+/).filter(x => x.length > 1 && !stop.has(x));
-
+  const stop = new Set(['a','an','and','are','for','from','i','in','into','my','of','on','the','to','with','have','has','want','need','find','using','use','can','how','what','when','most','is','am','do','me','data','metabolomics']);
+  const tokenize = value => [...new Set(value.toLowerCase()
+    .replace(/[^a-z0-9]+/g,' ').split(/\s+/)
+    .filter(x => x.length > 1 && !stop.has(x))
+    .map(x => x.length > 4 && x.endsWith('s') ? x.slice(0,-1) : x))];
+  const metadata = new Map(cards.map(card => [card, {
+    words: new Set(tokenize(card.dataset.search || '')),
+    name: new Set(tokenize(card.dataset.name || '')),
+    keywords: new Set(tokenize(card.dataset.keywords || '')),
+  }]));
+  const weight = token => 1 + Math.log((cards.length+1)/(1+cards.filter(c=>metadata.get(c).words.has(token)).length));
   function scoreCard(card, tokens) {
-    const hay = (card.dataset.search || '').toLowerCase();
-    const name = (card.dataset.name || '').toLowerCase();
-    if (!tokens.length) return 0;
-    let score = 0;
-    for (const token of tokens) {
-      if (name.includes(token)) score += 4;
-      if (hay.includes(token)) score += 1;
-    }
-    return score;
+    const data=metadata.get(card);
+    return tokens.reduce((score,token)=>score + (data.words.has(token) ? weight(token)*(1 + (data.name.has(token)?1:0) + (data.keywords.has(token)?1:0)) : 0),0);
   }
 
   function runSearch(value) {
     const tokens = tokenize(value);
-    const ranked = cards.map(card => ({card, score: scoreCard(card,tokens)}))
+    let eligible=cards;
+    const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
+    if(nmrOnly) eligible=[];
+    const flux=/\bflux(?:es)?\b/i.test(value);
+    if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
+    const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
+    if(generalOnly) eligible=[];
+    const ranked = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
       .filter(x => x.score > 0)
       .sort((a,b) => b.score - a.score || Number(b.card.dataset.year||0) - Number(a.card.dataset.year||0));
 
@@ -45,7 +51,7 @@
       count.textContent = shown + (ranked.length > shown ? ` of ${ranked.length}` : '') + ' matching published Strateg' + (shown === 1 ? 'y' : 'ies') + '.';
       empty.hidden = true;
     } else {
-      count.textContent = 'No matching published Strategy in the current collection.';
+      count.textContent = nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : generalOnly ? 'Please add your scientific aim or measurement type so we can identify a published Strategy.' : 'No matching published Strategy in the current collection.';
       empty.hidden = false;
     }
   }

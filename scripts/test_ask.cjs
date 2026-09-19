@@ -19,3 +19,7 @@ input.value='unrepresentedquery';button.events.click();assert.equal(empty.hidden
 input.value='';button.events.click();assert.equal(empty.hidden,true);assert(cards.every(x=>x.hidden));
 input.value='isotope';input.events.keydown({key:'Enter',preventDefault(){}});assert.equal(cards[7].hidden,false);
 console.log('Ask tests passed: relevance order, six-result limit, no match, empty query and Enter.');
+
+input.value='NMR spectra';button.events.click();assert(cards.every(x=>x.hidden));assert.match(count.textContent,/outside scope/);
+input.value='carbon flux';button.events.click();assert(cards.every(x=>x.hidden));assert.match(count.textContent,/not a substitute/);
+input.value='I am new to metabolomics and want to compare treated and untreated cells';button.events.click();assert(cards.every(x=>x.hidden));assert.match(count.textContent,/scientific aim/);

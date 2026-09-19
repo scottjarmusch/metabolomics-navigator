@@ -34,6 +34,8 @@
     <article class="ask-strategy-card" hidden
       data-search="{{ strategy.search_text|e }}"
       data-name="{{ strategy.name|e }}"
+      data-keywords="{{ strategy.ask_keywords|default([])|join(' ')|e }}"
+      data-objectives="{{ strategy.purpose.primary }} {{ strategy.purpose.secondary|default([])|join(' ') }}"
       data-year="{{ strategy.publication.year or 0 }}">
       <div class="ask-strategy-head">
         <div>
@@ -53,9 +55,10 @@
       {% if strategy.workflow_steps_enriched %}
       <div class="ask-workflow-preview">
         <strong>Implemented workflow</strong>
+        <p class="note">Alternative searches use the recorded tool function; check inputs, outputs and acquisition compatibility before substituting.</p>
         <ol>
         {% for step in strategy.workflow_steps_enriched[:4] %}
-          <li><span>{{ step.title }}</span>{% if step.tools %}<small>{% for tool in step.tools %}<a href="{{ url('tools/' + tool.slug + '/') }}">{{ tool.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</small>{% endif %}</li>
+          <li><span>{{ step.title }}</span>{% if step.tools or step.external_tools %}<small>Published resources: {% for tool in step.tools %}<a href="{{ url('tools/' + tool.slug + '/') }}">{{ tool.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}{% for tool in step.external_tools or [] %} {% if tool.url %}<a href="{{ tool.url }}">{{ tool.name }}</a>{% else %}{{ tool.name }}{% endif %}{% endfor %}</small>{% endif %}{% if step.alternative_functions %}<small>Explore alternatives: {% for function in step.alternative_functions %}<a href="{{ url('tools/') }}?function={{ function.id }}">{{ function.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</small>{% endif %}</li>
         {% endfor %}
         </ol>
         {% if strategy.workflow_steps_enriched|length > 4 %}<p class="note">+ {{ strategy.workflow_steps_enriched|length - 4 }} more workflow step{% if strategy.workflow_steps_enriched|length - 4 != 1 %}s{% endif %} on the Strategy page.</p>{% endif %}
@@ -94,8 +97,9 @@
   <ol class="workflow-outline">
     <li><strong>Your scientific question</strong><span>What you want to accomplish, not a software name.</span></li>
     <li><strong>Published Strategy</strong><span>A transferable method with an originating citation.</span></li>
-    <li><strong>Implemented workflow</strong><span>The experimental and computational sequence actually reported.</span></li>
-    <li><strong>Independent applications</strong><span>Later papers show where the Strategy has been reused or adapted.</span></li>
+    <li><strong>Implemented workflow</strong>
+        <p class="note">Alternative searches use the recorded tool function; check inputs, outputs and acquisition compatibility before substituting.</p><span>The experimental and computational sequence actually reported.</span></li>
+    <li><strong>Published applications and extensions</strong><span>Later papers show where the Strategy has been reused or adapted.</span></li>
     <li><strong>Catalogue alternatives</strong><span>The full tool catalogue broadens individual workflow steps without rewriting the published precedent.</span></li>
   </ol>
   <p class="ask-disclaimer">Ask Navigator does not treat publication frequency, citation counts, or one software ecosystem as proof that a tool is universally preferable. Published implementations are evidence of precedent; alternatives remain study- and compatibility-dependent.</p>
