@@ -581,6 +581,7 @@
         "chemical_reactivity",
         "enzyme_activity",
         "biotransformation",
+        "analytical_quality_control",
         "phenotype_association",
         "disease_state_comparison",
         "biomarker_discovery",

@@ -55,7 +55,7 @@ Status meanings:
 | Narrow-window DIA / gas-phase-fractionated metabolomics | PRIMARY PAPER NEEDED | Find metabolomics-specific method paper |
 | Multi-energy collision acquisition | PRIMARY PAPER NEEDED | Find defining workflow |
 | Semi-targeted toxicant inclusion-list acquisition | STRONG | PMID 39354300 |
-| Pooled-QC signal-drift correction | STRONG | Find primary method; pooled-QC review PMID 38055671 |
+| Pooled-QC signal-drift correction | ADDED | QC-RLSC, materially formalized in 10.1038/nprot.2011.335; analytical quality-control objective |
 | QC-based feature filtering | STRONG | Find defining methods paper |
 | Blank subtraction and contaminant filtering | PRIMARY PAPER NEEDED | Find defining workflow |
 | Reference-material-anchored batch harmonization | PRIMARY PAPER NEEDED | Find defining workflow |
@@ -111,10 +111,10 @@ Status meanings:
 | Isotope plus ion-mobility multidimensional metabolomics | STRONG | Verify primary paper around PMID 35089687 |
 | Tracer-guided discovery of unknown pathway products | PRIMARY PAPER NEEDED | Find defining method |
 | Multiple-tracer comparative flux metabolomics | PRIMARY PAPER NEEDED | Find defining strategy |
-| Isotope-coded derivatization for relative quantification | STRONG | Find canonical method |
+| Isotope-coded derivatization for relative quantification | ADDED | Dansylation-specific card: 10.1021/ac900166a; do not generalize to all reactive groups |
 | Natural-abundance isotope tracing | REVIEW | Assess scope and methodological distinctiveness |
 | Position-specific isotope tracing by MS/MS | PRIMARY PAPER NEEDED | Find defining strategy |
-| Dynamic isotope labeling for turnover estimation | REVIEW | Kinetic flux profiling: defining 2006 source 10.1038/nchembio816; inspect supplementary method and 2008 expanded procedure before adding |
+| Dynamic isotope labeling for turnover estimation | ADDED | Kinetic flux profiling, 10.1038/nchembio816; expanded 2008 procedure retained as implementation |
 
 ## Spatial & single-cell metabolomics
 
@@ -207,7 +207,7 @@ Status meanings:
 | Candidate | Status | Evidence / next step |
 |---|---|---|
 | Class-selective derivatization-enhanced untargeted metabolomics | STRONG | Find canonical workflow |
-| Isotope-coded derivatization metabolomics | REVIEW | Consolidate with isotope-coded derivatization for relative quantification in the isotope section; defining paper still required |
+| Isotope-coded derivatization metabolomics | EXISTING | Same reviewed dansylation card as the isotope-section candidate; other chemistries need independent review |
 | Post-column reaction metabolomics | STRONG | Find metabolomics-specific primary paper |
 | Reactive-metabolite trapping metabolomics | STRONG | Find defining strategy |
 | Carbonyl-selective metabolomics | STRONG | Find canonical method |

@@ -23,6 +23,7 @@ def audit():
    if OLD not in line.lower():continue
    # A published implementation can describe a procedure without reviving the retired collection.
    if rel.as_posix()=='schemas/strategy.schema.json' and line.strip()=='"'+OLD+'",':continue
+   if rel.parts[:2]==('content','strategies') and line.strip()=='relationship: '+OLD:continue
    clean=re.sub(r'https?://[^\s<>\"\)]+',strip_external_url,line)
    clean=clean.replace('Nature '+OLD.title()+'s','')
    if OLD in clean.lower():errors.append(f'{rel}:{n}: {line.strip()}')

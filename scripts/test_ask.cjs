@@ -23,3 +23,6 @@ console.log('Ask tests passed: relevance order, six-result limit, no match, empt
 input.value='NMR spectra';button.events.click();assert(cards.every(x=>x.hidden));assert.match(count.textContent,/outside scope/);
 input.value='carbon flux';button.events.click();assert(cards.every(x=>x.hidden));assert.match(count.textContent,/not a substitute/);
 input.value='I am new to metabolomics and want to compare treated and untreated cells';button.events.click();assert(cards.every(x=>x.hidden));assert.match(count.textContent,/scientific aim/);
+
+// Flux routing is driven by curated objectives when a qualifying record exists.
+cards[7].dataset.objectives='flux_analysis';input.value='isotope flux';button.events.click();assert.equal(cards.filter(x=>!x.hidden).length,1);assert.equal(cards[7].hidden,false);

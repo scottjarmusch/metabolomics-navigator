@@ -139,3 +139,20 @@ Workflow steps now link to alternative searches by recorded tool function, witho
 ### Next isotope/flux review anchor
 
 Kinetic flux profiling has a verified originating paper: Yuan et al., *Kinetic flux profiling of nitrogen assimilation in Escherichia coli*, Nature Chemical Biology 2, 529–530 (2006), DOI [10.1038/nchembio816](https://doi.org/10.1038/nchembio816). Its abstract explicitly introduces the method; the organism does not define a separate Strategy. The publisher provides supplementary methods. An expanded 2008 procedure, *Kinetic flux profiling for quantitation of cellular metabolic fluxes* (PMC2710581), should be inspected alongside those methods to establish assumptions, pool-size requirements and original implementation resources. No card was added from the abstract alone, and the retrieval coverage gap remains explicit.
+
+
+## Alpha batch 3 — isotope kinetics and chemical isotope tags
+
+The working collection now contains 27 Strategies. The earlier flux review anchor is superseded by this scoped review:
+
+- KFP retains the 2006 originating publication. The 2008 expanded procedure is an implementation. Timed incorporation, pool measurement and model assumptions are explicit. Publisher abstracts, method figures and indexed primary-method text support this synopsis; full publisher methods access was unavailable during this pass. No instrument settings or unverified software dependencies are invented. This does not establish general coverage of 13C-MFA or every tracer design.
+- Differential isotope dansylation retains the 2009 introducing method. The 2011 CSF study is an application, not a new Strategy. This card covers amine/phenol chemistry and deliberately does not imply biological flux measurement or universal metabolome coverage.
+
+DOI/title/year checked against primary publication records and Crossref for all four publications. Crossref XML superscript/whitespace artifacts were normalized for readable isotope notation. The 25-Strategy query report remains a historical baseline: the flux prompt can now match KFP because its curated objective is flux_analysis; it must still require inspection of model and experimental fit.
+
+
+### QC-RLSC addition completing batch 3
+
+28 Strategies in this batch. The QC-RLSC card is anchored to Dunn et al. (2011), DOI 10.1038/nprot.2011.335, whose primary methods describe QC-based LOESS fitting, cross-validation and interpolation across injection order. This is a correction strategy, not a disease-specific application. XCMS is linked only for the documented LC-MS preprocessing step. Added analytical_quality_control consistently to the controlled vocabulary, schema and submission form so this purpose is not mislabeled as phenotype association.
+
+Generated alpha query smoke check (28 Strategies): isotope-labeling time-course flux returned KFP alone; amine/phenol isotope-coded dansylation ranked the dansylation Strategy first; pooled-QC LOESS drift correction ranked QC-RLSC first. The latter two also returned weaker keyword matches, so relevance-tail filtering remains an alpha refinement rather than a completed capability.
