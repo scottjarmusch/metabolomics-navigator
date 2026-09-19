@@ -122,3 +122,44 @@ biological_contexts:
 organisms: []
 related_strategies:
 - reverse-metabolomics
+ask_keywords:
+- bioassay guided fractionation
+- bioactivity guided fractionation
+- connect bioactivity to metabolites
+- antimicrobial activity and metabolomics
+- phenotype associated metabolites
+- prioritize active natural products
+- correlate fractions with activity
+implementations:
+- title: Bioactive Molecular Networking for Mapping the Antimicrobial Constituents of the Baltic Brown Alga Fucus vesiculosus
+  doi: 10.3390/md18060311
+  url: https://doi.org/10.3390/md18060311
+  citation: Buedenbender L, Astone FA, Tasdemir D. Bioactive Molecular Networking for Mapping the Antimicrobial Constituents of the Baltic Brown Alga Fucus vesiculosus. Marine Drugs 18, 311 (2020).
+  journal: Marine Drugs
+  year: 2020
+  relationship: application
+  summary: Applied bioactive molecular networking to fractionated Fucus vesiculosus extracts, combining antimicrobial activity against MRSA with UPLC-QToF-MS/MS feature abundances, MZmine preprocessing, GNPS feature-based molecular networking, Pearson correlation scoring and Cytoscape visualization.
+  biological_contexts:
+  - marine
+  sample_types:
+  - other
+  organisms:
+  - Fucus vesiculosus
+  tool_slugs:
+  - mzmine
+  - gnps
+  - cytoscape
+- title: Bioactivity-Based Molecular Networking-Guided Isolation of Epicolidines A-C from the Endophytic Fungus Epicoccum sp. 1-042
+  doi: 10.1021/acs.jnatprod.4c00214
+  url: https://doi.org/10.1021/acs.jnatprod.4c00214
+  citation: Chang S, Li Y, Huang X, et al. Bioactivity-Based Molecular Networking-Guided Isolation of Epicolidines A-C from the Endophytic Fungus Epicoccum sp. 1-042. Journal of Natural Products 87, 1582-1590 (2024).
+  journal: Journal of Natural Products
+  year: 2024
+  relationship: application
+  summary: Used bioactivity-based molecular networking-guided fractionation in an endophytic fungal natural-product study to prioritize and isolate antibacterial polycyclic tetramic acids.
+  biological_contexts:
+  - fungal
+  sample_types:
+  - microbial_culture
+  organisms:
+  - Epicoccum sp. 1-042

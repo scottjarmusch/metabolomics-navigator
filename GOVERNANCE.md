@@ -26,6 +26,8 @@ Editorial test: **If the biological findings were removed, would the methodologi
 
 Ordinary application papers are excluded. Routine software workflows belong in Tool capabilities. Distinct transferable methodological layers belong in Analytical Strategies.
 
+A new biological application does not create a new Strategy. A new analytical relationship between measurements, data types, tools, or evidence layers can. Papers that apply an established Strategy to a new organism, disease, sample type, or compound class should be recorded as published implementations/use cases of that Strategy rather than as separate Strategy entries.
+
 ## Verification states
 
 - **Community submitted**: the entry was submitted by a user or community contributor.

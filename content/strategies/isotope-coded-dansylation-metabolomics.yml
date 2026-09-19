@@ -1,0 +1,83 @@
+$schema: ../../schemas/strategy.schema.json
+slug: isotope-coded-dansylation-metabolomics
+name: Isotope-coded dansylation for comparative metabolomics
+summary: Pair light and heavy chemical labels to quantify amine- and phenol-containing metabolites by
+  LC-MS.
+description: Differential dansylation couples selective chemical tagging with coeluting isotope pairs.
+  Sample-to-reference signal ratios support comparative quantification; labeled standards enable calibrated
+  measurements.
+publication:
+  title: Differential 12C-/13C-Isotope Dansylation Labeling and Fast Liquid Chromatography/Mass Spectrometry
+    for Absolute and Relative Quantification of the Metabolome
+  doi: 10.1021/ac900166a
+  year: 2009
+  journal: Analytical Chemistry
+  citation: Guo K, Li L. Differential 12C-/13C-Isotope Dansylation Labeling and Fast Liquid Chromatography/Mass
+    Spectrometry for Absolute and Relative Quantification of the Metabolome. Analytical Chemistry 81,
+    3919–3932 (2009).
+purpose:
+  primary: chemical_reactivity
+  secondary: []
+platforms:
+- lc_ms
+analysis_types:
+- metabolite_profiling
+components:
+- sample_preparation
+- chromatography
+- data_acquisition
+- statistics
+ask_keywords:
+- dansylation
+- chemical isotope labeling
+- amine
+- phenol
+- relative quantification
+- light heavy reference
+workflow_steps:
+- title: Label samples and reference
+  description: React compatible metabolites with light or heavy dansyl reagents.
+- title: Mix labeled material
+  description: Combine labeled sample with reference material or calibrated standards.
+- title: Separate and measure isotope pairs
+  description: Analyze coeluting pairs by LC-MS.
+- title: Calculate comparative abundances
+  description: Use pair ratios and appropriate calibration for the intended measurement.
+tools: []
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1021/ac900166a
+scope:
+  designed_for:
+  - Comparative profiling of chemically reactive amines and phenols.
+  requirements:
+  - Compatible derivatization chemistry, labeled reference material and LC-MS.
+  considerations:
+  - Chemical isotope tags do not measure biological isotope incorporation or metabolic flux.
+  - Coverage is restricted by reactive functional groups; isotope pairs alone do not confirm structure.
+implementations:
+- title: Qualitative Metabolome Analysis of Human Cerebrospinal Fluid by 13C-/12C-Isotope Dansylation
+    Labeling Combined with Liquid Chromatography Fourier Transform Ion Cyclotron Resonance Mass Spectrometry
+  doi: 10.1007/s13361-010-0033-4
+  year: 2011
+  journal: Journal of the American Society for Mass Spectrometry
+  relationship: application
+  summary: Application of isotope dansylation to cerebrospinal-fluid profiling; the sample matrix does
+    not define a new Strategy.
+  tool_slugs: []
+  citation: Guo K, Bamforth F, Li L. Qualitative Metabolome Analysis of Human Cerebrospinal Fluid by 13C-/12C-Isotope
+    Dansylation Labeling Combined with Liquid Chromatography Fourier Transform Ion Cyclotron Resonance
+    Mass Spectrometry. Journal of the American Society for Mass Spectrometry (2011).
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: The defining 2009 method establishes chemical labeling and isotope-ratio quantification. The
+    later CSF paper is an application. No original catalogue software dependency established; no experimental
+    execution claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'

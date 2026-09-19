@@ -1,0 +1,74 @@
+$schema: ../../schemas/strategy.schema.json
+slug: msi-imc-single-cell-immunometabolism
+name: Same-section MSI and imaging mass cytometry integration
+summary: Combine tissue metabolite images with antibody-based cellular phenotypes from imaging mass cytometry.
+description: This method links spatial metabolite signals to immunophenotyped cells on the same tissue
+  section, adding a molecular cell-identity layer beyond morphology.
+publication:
+  title: Integration of mass cytometry and mass spectrometry imaging for spatially resolved single-cell
+    metabolic profiling
+  doi: 10.1038/s41592-024-02392-6
+  year: 2024
+  journal: Nature Methods
+  citation: Nunes et al. Integration of mass cytometry and mass spectrometry imaging for spatially resolved
+    single-cell metabolic profiling. Nature Methods (2024).
+purpose:
+  primary: single_cell_metabolomics
+  secondary:
+  - spatial_metabolomics
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+- lipidomics
+components:
+- sample_preparation
+- data_acquisition
+- metadata_analysis
+- statistics
+ask_keywords:
+- immunophenotype
+- immune cells
+- imaging mass cytometry
+- IMC
+- single cell tissue
+- spatial immunometabolism
+workflow_steps:
+- title: Acquire MALDI images
+  description: Measure metabolites before antibody staining.
+- title: Acquire immunophenotypes
+  description: Remove matrix, stain with metal-tagged antibodies and perform IMC.
+- title: Register images and segment cells
+  description: Align modalities and derive cellular boundaries and phenotypes.
+- title: Assign metabolite signals
+  description: Aggregate overlapping image signals into relative per-cell profiles.
+tools:
+- name: MALDI-MSI-IMC analysis scripts
+  url: https://github.com/deMirandaLab/MALDI-MSI-IMC
+  role: Published registration and integration implementation.
+resources:
+  code_available: true
+  code_url: https://github.com/deMirandaLab/MALDI-MSI-IMC
+  method_available: true
+  method_url: https://doi.org/10.1038/s41592-024-02392-6
+scope:
+  designed_for:
+  - Spatial comparison of immunophenotyped cell populations.
+  requirements:
+  - Compatible same-section MSI and IMC measurements.
+  considerations:
+  - MSI pixels can overlap multiple cells, mixing assigned signals.
+  - Cellular attribution depends on registration and segmentation.
+related_strategies:
+- spacem-single-cell-metabolomics
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Same-section antibody phenotyping distinguishes this from SpaceM. Colorectal tissue is the demonstration,
+    not a separate Strategy. Primary method checked; scripts not executed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'

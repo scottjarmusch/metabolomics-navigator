@@ -1,0 +1,91 @@
+$schema: ../../schemas/strategy.schema.json
+slug: dadia-hybrid-acquisition
+name: DDA-assisted DIA metabolomics
+aliases:
+- DaDIA
+summary: A hybrid untargeted acquisition strategy that analyzes individual samples by DIA for broad feature and MS/MS coverage while using pooled quality-control samples by DDA to obtain cleaner fragmentation spectra for annotation.
+description: DaDIA deliberately separates the strengths of two acquisition modes across the study design. Biological samples are acquired using data-independent acquisition to maximize feature and fragmentation coverage, while pooled QC samples are acquired using data-dependent acquisition to generate higher-quality, less multiplexed MS/MS spectra. Computational integration then associates the complementary DDA and DIA evidence for metabolite annotation.
+publication:
+  title: 'DaDIA: Hybridizing Data-Dependent and Data-Independent Acquisition Modes for Generating High-Quality Metabolomic Data'
+  doi: 10.1021/acs.analchem.0c05022
+  url: https://doi.org/10.1021/acs.analchem.0c05022
+  citation: Guo J, Shen S, Xing S, Huan T. DaDIA Hybridizing Data-Dependent and Data-Independent Acquisition Modes for Generating High-Quality Metabolomic Data. Analytical Chemistry 93, 2669-2677 (2021).
+  journal: Analytical Chemistry
+  year: 2021
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - molecular_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  - dia
+  ion_mobility: unspecified
+components:
+- sample_preparation
+- data_acquisition
+- quality_control
+- preprocessing
+- annotation
+workflow_steps:
+- title: Prepare representative pooled QC material
+  description: Pool study material so the QC contains a broad representation of metabolites observed across the sample set.
+- title: Acquire individual study samples by DIA
+  description: Use DIA on individual biological samples to maximize feature detection and fragmentation coverage.
+- title: Acquire pooled QC samples by DDA
+  description: Use DDA on pooled QC material to obtain cleaner precursor-specific fragmentation spectra.
+- title: Integrate DDA and DIA information
+  description: Associate feature-level quantitative data and DIA coverage with higher-quality DDA spectra from the pooled QC.
+  external_tools:
+  - name: DaDIA.R
+    url: https://github.com/HuanLab/DaDIA
+- title: Annotate and interpret the combined dataset
+  description: Use integrated evidence for metabolite annotation and downstream statistical interpretation.
+tools:
+- name: DaDIA.R
+  url: https://github.com/HuanLab/DaDIA
+  role: Computational integration and annotation of the hybrid DDA/DIA dataset.
+resources:
+  code_available: true
+  code_url: https://github.com/HuanLab/DaDIA
+  method_available: true
+  method_url: https://doi.org/10.1021/acs.analchem.0c05022
+scope:
+  designed_for:
+  - Untargeted LC-MS studies seeking broad DIA coverage without sacrificing access to cleaner DDA spectra.
+  - Studies already using pooled QC samples and able to dedicate additional injections to complementary acquisition.
+  requirements:
+  - A representative pooled QC sample.
+  - Instrument support for both DIA and DDA acquisition.
+  considerations:
+  - The workflow increases acquisition and computational complexity relative to one acquisition mode.
+  - Spectra obtained from pooled QC material must be mapped appropriately back to features in individual samples.
+ask_keywords:
+- combine dda and dia
+- hybrid dda dia metabolomics
+- improve msms coverage and quality
+- pooled qc dda individual samples dia
+- dadia
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because the publication introduces a transferable hybrid acquisition design rather than merely comparing existing acquisition modes.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_verified: '2026-09-19'
+  last_editorial_review: '2026-09-19'
