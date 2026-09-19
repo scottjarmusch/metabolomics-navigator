@@ -1,6 +1,7 @@
 (() => {
   const input = document.querySelector('#ask-query');
   const searchButton = document.querySelector('#ask-search-button');
+  const results = document.querySelector('#ask-strategy-results');
   const cards = [...document.querySelectorAll('.ask-strategy-card')];
   const count = document.querySelector('#ask-result-count');
   const empty = document.querySelector('#ask-empty');
@@ -31,7 +32,10 @@
       .sort((a,b) => b.score - a.score || Number(b.card.dataset.year||0) - Number(a.card.dataset.year||0));
 
     cards.forEach(card => card.hidden = true);
-    ranked.slice(0,6).forEach(x => x.card.hidden = false);
+    ranked.slice(0,6).forEach(x => {
+      results.appendChild(x.card);
+      x.card.hidden = false;
+    });
 
     const shown = Math.min(ranked.length,6);
     if (!tokens.length) {

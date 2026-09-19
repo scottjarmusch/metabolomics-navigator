@@ -87,6 +87,10 @@ def main():
             for slug in step.get('tool_slugs',[]):
                 if slug not in tool_slugs:
                     failed=True; print(f"ERROR: {path}: workflow tool '{slug}' does not exist")
+        for implementation in record.get('implementations',[]):
+            for slug in implementation.get('tool_slugs',[]):
+                if slug not in tool_slugs:
+                    failed=True; print(f"ERROR: {path}: implementation tool '{slug}' does not exist")
         for slug in record.get('related_strategies',[]):
             if slug not in strategy_slugs:
                 failed=True; print(f"ERROR: {path}: related strategy '{slug}' does not exist")
