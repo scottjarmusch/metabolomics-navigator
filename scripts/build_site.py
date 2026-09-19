@@ -134,7 +134,7 @@ def main():
 
     prepare_output()
     copy_public_files()
-    asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js'))).hexdigest()[:12]
+    asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js','ask.js'))).hexdigest()[:12]
     context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version,'contributors':build_contributors([*tools_raw,*strategies_raw])}
 
     # Homepage
@@ -222,7 +222,8 @@ def main():
     render(env,'submit.html',OUT/'contribute/index.html',**context,active='contribute',tool_submission_url=tool_submit,strategy_submission_url=strategy_submit,tool_update_url=tool_update,strategy_update_url=strategy_update)
     for slug,page in pages.items():
         template=f'{slug}.html' if slug in ('about','ask','privacy') else 'static.html'
-        render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page)
+        extra={'strategies':strategies} if slug=='ask' else {}
+        render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page,**extra)
     render(env,'404.html',OUT/'404.html',**context,active='')
 
     write_json(OUT/'tool-data.json',tools_raw); write_json(OUT/'strategy-data.json',strategies_raw)
@@ -316,6 +317,12 @@ def enrich_strategy(record,labels,tool_by_slug):
     for step in p.get('workflow_steps',[]):
         x=dict(step); x['tools']=[tool_by_slug[s] for s in step.get('tool_slugs',[]) if s in tool_by_slug]; steps.append(x)
     p['workflow_steps_enriched']=steps
+    implementations=[]
+    for implementation in p.get('implementations',[]):
+        x=dict(implementation)
+        x['tools']=[tool_by_slug[s] for s in implementation.get('tool_slugs',[]) if s in tool_by_slug]
+        implementations.append(x)
+    p['implementations_enriched']=sorted(implementations,key=lambda x:(x.get('year',0),x.get('title','')),reverse=True)
     role=p.get('provenance',{}).get('submitted_by','other'); submitted={'author':'Author submitted','user':'Community submitted','curator':'Curator submitted','other':'Community submitted'}.get(role,'Community submitted')
     badges=[submitted]
     if p.get('provenance',{}).get('author_verified'): badges.append('Author verified')
@@ -325,7 +332,7 @@ def enrich_strategy(record,labels,tool_by_slug):
     p['availability_labels']=[]
     for key,label in [('raw_data_available','Raw data available'),('processed_data_available','Processed data available'),('code_available','Code available'),('method_available','Published method available')]:
         if resources.get(key): p['availability_labels'].append(label)
-    search=[p['name'],p['summary'],p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']]]
+    search=[p['name'],p['summary'],*p.get('ask_keywords',[]),p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']],*[x.get('title','')+' '+x.get('summary','') for x in p.get('implementations',[])]]
     p['search_text']=' '.join(map(str,search)).lower(); return p
 
 
@@ -345,7 +352,7 @@ def static_pages(repository_url,url):
     contribute=f'''<h2>Submit a missing resource</h2><p>Researchers can add either a tool or a published strategy through short forms. Automation converts each submission into a structured draft pull request for editorial review.</p><p><a class="button primary" href="{url('submit/')}">Choose a submission form</a></p><h2>Improve existing pages</h2><p>Every tool and strategy page links to an update form. Corrections, capabilities, versions, workflow details, data availability, and verification are welcome.</p><h2>Review model</h2><p>Developer or author provenance and editorial review are displayed separately. Neither implies independent benchmarking or a performance ranking.</p><div class="callout"><strong>Neutrality:</strong> describe documented capabilities, scope, requirements, and considerations. Avoid promotional language and unsupported “best tool” claims.</div><p><a href="{repository_url}/blob/main/CONTRIBUTING.md">Read the full contribution guide</a>.</p>'''
     governance=f'''<h2>Editorial model</h2><p>New tools and strategies enter through pull requests. Tool submissions may be accepted after checking required submission information, scope, links and attribution. Accepted submissions can appear while editorial additions are pending. A later update completes editorial enrichment and records review separately. Strategy inclusion criteria remain unchanged.</p><h2>Analytical Strategy inclusion</h2><p>A methodological contribution and transferability are mandatory. A Strategy should normally also meet at least two of these three criteria: distinctive integration of evidence, added capability beyond routine software use, and enough detail for another laboratory to implement it.</p><blockquote>If the biological findings were removed, would the methodological idea still be worth teaching to another metabolomics researcher?</blockquote><p>Ordinary application papers are excluded. Routine software workflows belong in Tool capabilities.</p><h2>Verification</h2><p><strong>Developer verified</strong> means a developer or official maintainer confirmed the current tool entry. <strong>Author verified</strong> means an author of the underlying strategy publication confirmed the entry. <strong>Editorially reviewed</strong> means a Navigator editor checked scope, links, categorization, provenance, and neutral presentation. Verification is not endorsement or independent benchmarking.</p><h2>Claims and evidence</h2><p>Factual metadata and documented scope may come from developers or authors. Comparative claims such as greater accuracy, sensitivity, or speed require an appropriate independent citation; unsupported promotional claims are excluded.</p><h2 id="publication-selection">Publication selection</h2><p>Core publications introduce the named resource, substantially update it, or describe methods implemented within it. Application studies and papers introducing separate resources are excluded. Distinct component papers belong on their own tool or strategy pages. An official parent-platform citation is labelled when it covers a component. Software and documentation citations are shown separately, and preprints are identified.</p><h2>Archiving</h2><p>Unavailable or superseded tools are normally retained with an archived status so older publications remain interpretable. Strategy pages remain tied to their source publication while Navigator notes can be updated as resources change.</p><p><a href="{repository_url}/blob/main/GOVERNANCE.md">Read the repository governance file</a>.</p>'''
     ask=''  # Visual preview lives in templates/ask.html.
-    return {'about':{'title':'About the catalogue','eyebrow':'Project','description':'A community-maintained map of metabolomics tools and transferable strategies.','body':about},'contribute':{'title':'Contribute','eyebrow':'Community','description':'Add a tool, submit a strategy, or improve an existing entry.','body':contribute,'active':'contribute'},'governance':{'title':'Governance and review','eyebrow':'Trust and transparency','description':'How entries are reviewed, attributed, verified, corrected, and archived.','body':governance},'ask':{'title':'Ask Navigator','eyebrow':'Coming next','description':'A guided way to move from your data to compatible metabolomics resources.','body':ask,'active':'ask'}}
+    return {'about':{'title':'About the catalogue','eyebrow':'Project','description':'A community-maintained map of metabolomics tools and transferable strategies.','body':about},'contribute':{'title':'Contribute','eyebrow':'Community','description':'Add a tool, submit a strategy, or improve an existing entry.','body':contribute,'active':'contribute'},'governance':{'title':'Governance and review','eyebrow':'Trust and transparency','description':'How entries are reviewed, attributed, verified, corrected, and archived.','body':governance},'ask':{'title':'Ask Navigator','eyebrow':'Evidence-backed workflow guidance','description':'Find published metabolomics strategies, inspect the workflows that were actually implemented, and then explore compatible tool alternatives.','body':ask,'active':'ask'}}
 
 
 def write_sitemap(out,tools,strategies,absolute_url,guide_sections):
