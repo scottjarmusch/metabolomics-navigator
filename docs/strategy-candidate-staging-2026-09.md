@@ -83,7 +83,7 @@ Status meanings:
 | De novo structure generation from MS/MS | STRONG | Enveda review category; select canonical primary paper |
 | Chemical-class prediction before structure annotation | STRONG | Find canonical class-prediction workflow |
 | Spectral-embedding nearest-neighbor annotation | STRONG | Spec2Vec/MS2DeepScore/DreaMS family; select canonical method |
-| Motif/substructure-first annotation | STRONG | MS2LDA family |
+| Motif/substructure-first annotation | ADDED | MS2LDA, 10.1073/pnas.1608041113; multisample MS2LDA+ retained as a 2017 extension |
 | Network-propagated annotation | STRONG | Find defining method |
 | Ion-identity-assisted annotation | EXISTING | Current IIMN Strategy |
 | Adduct/isotope grouping before annotation | STRONG | Find CAMERA/ion-identity style defining workflow |
@@ -191,7 +191,7 @@ Status meanings:
 | Correlation-based metabolic network reconstruction | STRONG | Find canonical metabolomics network method |
 | Biochemical-network-guided feature interpretation | STRONG | Find defining method |
 | Feature-level pathway inference without full identification | ADDED | Alpha batch 1: 10.1371/journal.pcbi.1003123; `feature-level-pathway-inference` |
-| Chemical-class enrichment analysis | STRONG | Find defining method |
+| Chemical-class enrichment analysis | ADDED | ChemRICH, 10.1038/s41598-017-15231-w; chemical structures plus set statistics, distinct from feature-level pathway inference |
 | Molecular-family enrichment across phenotypes | PRIMARY PAPER NEEDED | Find defining workflow |
 | Longitudinal metabolomics trajectory analysis | PRIMARY PAPER NEEDED | Find methodology paper |
 | Time-resolved biotransformation tracking | STRONG | Find defining workflow |
