@@ -4,6 +4,7 @@ const vm = require('node:vm');
 const fs = require('node:fs');
 class Element {
   constructor(dataset={}) { this.dataset=dataset; this.events={}; this.children=[]; this.value=''; this.hidden=true; }
+  focus() { this.focused=true; }
   addEventListener(name, callback) { this.events[name]=callback; }
   appendChild(card) { this.children=this.children.filter(x=>x!==card); this.children.push(card); }
 }
@@ -56,3 +57,14 @@ data.value='unknown';guideButton.events.click();assert.match(message.textContent
 data.value='msms';aim.value='qc';guideButton.events.click();assert.equal(focused[0].hidden,false);assert.match(message.textContent,/repeated representative QC/);
 stage.value='planning';guideButton.events.click();assert(focused.every(x=>x.hidden),'Planning guidance must clear previous results');
 console.log('Guided-entry checks passed: missing answers, planning, raw files, unknown measurements, incompatible table, QC and mixed intent.');
+
+// Show only the aims mentioned, and let the chosen aim execute its existing search.
+const choices=[new Element({askIntent:'qc',askExample:'pooled QC LOESS signal drift'}),new Element({askIntent:'flux',askExample:'isotope labeling time course flux'}),new Element({askIntent:'pathways',askExample:'pathway enrichment unidentified features'}),new Element({askIntent:'families',askExample:'feature based molecular networking'})];
+vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/ask.js'),'utf8'),{document:{querySelector:s=>guidedElements[s],querySelectorAll:s=>s==='.ask-strategy-card'?focused:s==='[data-ask-intent]'||s==='[data-ask-example]'?choices:[]}});
+focusedInput.value='QC correction then pathway interpretation';focusedButton.events.click();
+assert.deepEqual(choices.filter(x=>!x.hidden).map(x=>x.dataset.askIntent),['qc','pathways']);
+choices[0].events.click();assert.equal(mixed.hidden,true);assert.equal(focused[0].hidden,false);assert.equal(focusedInput.focused,true);
+focusedInput.value='molecular networking and pathways';focusedButton.events.click();
+assert.deepEqual(choices.filter(x=>!x.hidden).map(x=>x.dataset.askIntent),['pathways','families']);
+focusedInput.value='flux through pathways';focusedButton.events.click();assert.equal(mixed.hidden,true,'Related concepts without separate aims should not trigger a split');
+focusedInput.value='NMR QC and flux';focusedButton.events.click();assert.equal(mixed.hidden,true);assert.match(focusedCount.textContent,/outside scope/);

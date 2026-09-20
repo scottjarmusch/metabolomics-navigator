@@ -21,10 +21,12 @@
   </details>
 
   <div id="ask-mixed" class="ask-question" hidden>
-    <h3>There are two aims here</h3>
-    <p>QC correction and flux inference need different evidence. Explore each separately; these results do not establish a combined workflow.</p>
-    <button type="button" class="button secondary" data-ask-example="pooled QC LOESS signal drift">Explore analytical QC</button>
-    <button type="button" class="button secondary" data-ask-example="isotope labeling time course flux">Explore flux inference</button>
+    <h3>Which aim would you like to explore first?</h3>
+    <p>These aims can need different measurements and evidence. Explore each separately; the results do not establish a combined workflow.</p>
+    <button type="button" class="button secondary" data-ask-intent="qc" data-ask-example="pooled QC LOESS signal drift">Explore analytical QC</button>
+    <button type="button" class="button secondary" data-ask-intent="flux" data-ask-example="isotope labeling time course flux">Explore flux inference</button>
+    <button type="button" class="button secondary" data-ask-intent="pathways" data-ask-example="pathway enrichment unidentified features">Explore pathway interpretation</button>
+    <button type="button" class="button secondary" data-ask-intent="families" data-ask-example="feature based molecular networking">Explore molecular families</button>
   </div>
 
   <div class="ask-question">

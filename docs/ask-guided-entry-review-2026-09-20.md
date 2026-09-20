@@ -16,3 +16,9 @@
 - Supersedes the QC-plus-flux limitation reported in `ask-query-check-2026-09-20.md`; that document remains a historical snapshot of the earlier controller.
 
 Final browser check: the expanded form fits a 390 x 844 viewport; the feature-table warning and QC/flux clarification render correctly. Selecting Explore analytical QC returns QC-RLSC and clears the clarification panel. The viewport override was reset after testing.
+
+## Expanded mixed-aim clarification
+
+The alpha now recognizes explicit combinations of QC, flux, pathway interpretation and molecular families when joined by words such as and, then, plus or compare. Only the requested aim buttons appear. Each button uses an existing curated search and clears the clarification state. NMR-only scope takes precedence. A single relationship such as flux through pathways remains a flux query. This supersedes the earlier QC-plus-flux-only limitation; arbitrary intent combinations and negation still need work.
+
+Generated-catalogue regression coverage is now 15 queries. Additional controller checks cover button visibility, executing the selected search, stale-state clearing and scope precedence. These are deterministic regression cases, not a general natural-language benchmark.
