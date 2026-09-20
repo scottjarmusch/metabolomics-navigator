@@ -26,3 +26,17 @@ input.value='I am new to metabolomics and want to compare treated and untreated 
 
 // Flux routing is driven by curated objectives when a qualifying record exists.
 cards[7].dataset.objectives='flux_analysis';input.value='isotope flux';button.events.click();assert.equal(cards.filter(x=>!x.hidden).length,1);assert.equal(cards[7].hidden,false);
+
+// A single incidental word should not accompany a much stronger workflow match.
+const focused=[new Element({name:'pooled QC LOESS signal drift',search:'pooled QC LOESS signal drift',keywords:'pooled QC LOESS signal drift'}),new Element({name:'other acquisition',search:'signal acquisition'})];
+const focusedGrid=new Element(); focusedGrid.children=[...focused];
+const focusedInput=new Element(), focusedButton=new Element(), focusedCount=new Element(), focusedEmpty=new Element();
+const focusedElements={'#ask-query':focusedInput,'#ask-search-button':focusedButton,'#ask-strategy-results':focusedGrid,'#ask-result-count':focusedCount,'#ask-empty':focusedEmpty};
+vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/ask.js'),'utf8'),{document:{querySelector:s=>focusedElements[s],querySelectorAll:s=>s==='.ask-strategy-card'?focused:[]}});
+focusedInput.value='pooled QC LOESS signal drift';focusedButton.events.click();
+assert.equal(focused[0].hidden,false);assert.equal(focused[1].hidden,true);
+assert.match(focusedCount.textContent,/^1 matching/);
+focusedInput.value='signal';focusedButton.events.click();
+assert.equal(focused[1].hidden,false,'Broad searches retain weaker but comparable results');
+focusedInput.value='notincatalogue';focusedButton.events.click();
+assert(focused.every(x=>x.hidden),'No-match search must remain safe after score filtering');

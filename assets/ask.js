@@ -33,9 +33,14 @@
     if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
     const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
     if(generalOnly) eligible=[];
-    const ranked = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
+    const scored = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
       .filter(x => x.score > 0)
       .sort((a,b) => b.score - a.score || Number(b.card.dataset.year||0) - Number(a.card.dataset.year||0));
+
+    // Relative lexical cutoff suppresses incidental overlaps; it is not a confidence score.
+    const recognized = tokens.filter(token => eligible.some(card => metadata.get(card).words.has(token)));
+    const cutoff = recognized.length > 1 && scored.length ? scored[0].score * 0.4 : 0;
+    const ranked = scored.filter(x => x.score >= cutoff);
 
     cards.forEach(card => card.hidden = true);
     ranked.slice(0,6).forEach(x => {

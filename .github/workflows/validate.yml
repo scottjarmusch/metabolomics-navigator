@@ -42,5 +42,6 @@ jobs:
           python scripts/check_site_links.py --base-path /metabolomics-navigator
           node scripts/test_catalogue.cjs
           node scripts/test_ask.cjs
+          python scripts/test_ask_generated.py
           python scripts/test_seo.py
           python scripts/check_seo.py --base-path /metabolomics-navigator
