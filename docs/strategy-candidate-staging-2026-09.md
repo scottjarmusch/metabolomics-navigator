@@ -76,7 +76,7 @@ Status meanings:
 | CCS-assisted metabolite identification | STRONG | IM-MS review PMID 33522625; find defining workflow |
 | Predicted-CCS candidate filtering | STRONG | Find AllCCS or equivalent defining paper |
 | Retention-time-assisted annotation | STRONG | Find canonical workflow |
-| Retention-order-constrained structure annotation | STRONG | LC-MS2Struct 2022 method |
+| Retention-order-constrained structure annotation | ADDED | Origin: 10.1093/bioinformatics/bty590 (2018); LC-MS2Struct 2022 retained as extension, not a separate card |
 | Formula-first computational annotation | STRONG | Find defining workflow |
 | In-silico fragmentation candidate ranking | STRONG | Find canonical MetFrag/CFM-ID-style method paper |
 | Machine-learning spectrum-prediction candidate ranking | STRONG | Find defining workflow |
