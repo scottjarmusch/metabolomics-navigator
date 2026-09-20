@@ -40,16 +40,18 @@
     const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
     if(nmrOnly) eligible=[];
     const flux=/\bflux(?:es)?\b/i.test(value);
+    const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
+    const novice = generalOnly || /\b(?:new to (?:metabolomics|lc-ms|mass spectrometry)|never used metabolomics|first metabolomics (?:study|experiment)|not sure|(?:do not|don['’]?t) (?:know|understand)|(?:where|how) (?:do|should) i (?:start|begin))\b/i.test(value);
+    // Exclusion and missing-input requests need clarification, not positive keyword matches.
+    const constrained = !novice && /\b(?:no|not|without|avoid|exclude|excluding|cannot|can['’]?t|don['’]?t|doesn['’]?t|isn['’]?t)\b/i.test(value);
     const requestedIntents = intents.filter(intent => intent.pattern.test(value));
     const separateAims = /\b(?:and|then|plus|also|compare)\b|[+;]/i.test(value);
-    const mixed = !nmrOnly && separateAims && requestedIntents.length > 1;
+    const mixed = !nmrOnly && !novice && !constrained && separateAims && requestedIntents.length > 1;
     intentButtons.forEach(button => { button.hidden = !requestedIntents.some(intent => intent.id === button.dataset.askIntent); });
     if (mixedPanel) mixedPanel.hidden = !mixed;
-    if (mixed) eligible=[];
+    if (mixed || novice || constrained) eligible=[];
+    if ((novice || constrained) && !nmrOnly && guidance) guidance.open=true;
     if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
-    const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
-    const novice = generalOnly || /\bnew to metabolomics\b/i.test(value);
-    if(novice) { eligible=[]; if(guidance) guidance.open=true; }
     const scored = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
       .filter(x => x.score > 0)
       .sort((a,b) => b.score - a.score || Number(b.card.dataset.year||0) - Number(a.card.dataset.year||0));
@@ -73,8 +75,8 @@
       count.textContent = shown + (ranked.length > shown ? ` of ${ranked.length}` : '') + ' matching published Strateg' + (shown === 1 ? 'y' : 'ies') + '.';
       empty.hidden = true;
     } else {
-      count.textContent = nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : mixed ? 'Your question spans several aims. Choose one to explore separately.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : novice ? 'Please add your scientific aim or measurement type so we can identify a published Strategy.' : 'No matching published Strategy in the current collection.';
-      empty.hidden = mixed || novice;
+      count.textContent = nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : novice ? 'Please use the study guide to clarify your scientific aim and available measurements.' : constrained ? 'Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.' : mixed ? 'Your question spans several aims. Choose one to explore separately.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : 'No matching published Strategy in the current collection.';
+      empty.hidden = !nmrOnly && (mixed || novice || constrained);
     }
   }
 

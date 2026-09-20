@@ -17,6 +17,16 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Use retention order to rank structure candidates jointly", "Retention-order-assisted joint molecular annotation", None),
+    ("I want pathway analysis, not flux", None, "exclusion"),
+    ("Correct drift without pooled QC samples", None, "missing input"),
+    ("I don't have MS/MS spectra for molecular networking", None, "missing input"),
+    ("I cannot use isotope tracers but want flux", None, "exclusion"),
+    ("This is my first metabolomics study", None, "study guide"),
+    ("I have raw LC-MS files. Where do I begin?", None, "study guide"),
+    ("I'm not sure whether I measured flux", None, "study guide"),
+    ("I don't know what to do with these measurements", None, "study guide"),
+
     ("Estimate flux through metabolic pathways", "Kinetic flux profiling from isotope-labeling time courses", None),
     ("Correct signal drift then explore pathways", None, "separately"),
     ("Molecular networking and pathway enrichment", None, "separately"),

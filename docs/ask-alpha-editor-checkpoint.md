@@ -17,6 +17,9 @@ The alpha retrieves published Strategies from curated metadata, then exposes the
 | Molecular networking and pathway enrichment | Offers molecular-family and pathway choices only. |
 | Estimate flux through metabolic pathways | Returns kinetic flux profiling, without treating the wording as two aims. |
 | Choose analytical QC from a mixed question | Returns QC-RLSC and clears the mixed-question panel. |
+| Pathway analysis, not flux | Requests clarification; does not treat flux as a positive request. |
+| Correct drift without pooled QCs | Explains that constraints need clarification rather than recommending QC-RLSC. |
+| First metabolomics study / Where do I begin? | Opens beginner guidance. |
 | Ask for NMR-only workflows | Explains the MS-only scope. |
 
 Try your own paraphrases after these scripted cases. Record the exact input, available data, expected next step and actual response. Distinguish a missing Strategy from a poor match or a confusing interface.
@@ -30,6 +33,6 @@ Try your own paraphrases after these scripted cases. Record the exact input, ava
 
 ## Known limitations and next decisions
 
-The catalogue currently contains 30 Strategies; the strong-candidate queue is not fully reviewed. Lexical relevance and the relative score cutoff are heuristics, not confidence estimates. Mixed-aim detection covers four explicit aim families, not arbitrary language; negation and more varied novice phrasing remain important test cases. The beginner route covers only selected aims and sends uncertain measurements to clarification. Study design, statistics, sample-size decisions and acquisition compatibility are not automatically resolved.
+The catalogue currently contains 31 Strategies; the strong-candidate queue is not fully reviewed. Lexical relevance and the relative score cutoff are heuristics, not confidence estimates. Mixed-aim detection covers four explicit aim families, not arbitrary language; exclusion requests now defer to clarification rather than being interpreted; more varied novice phrasing remains an important test area. The beginner route covers only selected aims and sends uncertain measurements to clarification. Study design, statistics, sample-size decisions and acquisition compatibility are not automatically resolved.
 
 Before public rollout: review varied novice phrasing and multi-aim/negated requests, resolve misleading results, and check a representative set of originating papers. Passing the automated regression suite alone is not scientific or usability sign-off.

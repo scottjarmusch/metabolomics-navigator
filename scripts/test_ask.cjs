@@ -68,3 +68,12 @@ focusedInput.value='molecular networking and pathways';focusedButton.events.clic
 assert.deepEqual(choices.filter(x=>!x.hidden).map(x=>x.dataset.askIntent),['pathways','families']);
 focusedInput.value='flux through pathways';focusedButton.events.click();assert.equal(mixed.hidden,true,'Related concepts without separate aims should not trigger a split');
 focusedInput.value='NMR QC and flux';focusedButton.events.click();assert.equal(mixed.hidden,true);assert.match(focusedCount.textContent,/outside scope/);
+
+for (const query of ['pathways, not flux','correct drift without QC','I do not have fragmentation spectra','I can’t use isotope tracers']) {
+ focusedInput.value=query;focusedButton.events.click();
+ assert(focused.every(x=>x.hidden),query);assert.equal(mixed.hidden,true);assert.equal(guidance.open,true);assert.match(focusedCount.textContent,/exclusion or missing input/);
+}
+focusedInput.value="I don't know how to estimate flux";focusedButton.events.click();
+assert.match(focusedCount.textContent,/study guide/);assert.doesNotMatch(focusedCount.textContent,/No curated flux/);
+focusedInput.value='pooled QC LOESS signal drift';focusedButton.events.click();
+assert.equal(focused[0].hidden,false,'A positive follow-up must clear constraint routing');

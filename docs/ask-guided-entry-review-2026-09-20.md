@@ -22,3 +22,7 @@ Final browser check: the expanded form fits a 390 x 844 viewport; the feature-ta
 The alpha now recognizes explicit combinations of QC, flux, pathway interpretation and molecular families when joined by words such as and, then, plus or compare. Only the requested aim buttons appear. Each button uses an existing curated search and clears the clarification state. NMR-only scope takes precedence. A single relationship such as flux through pathways remains a flux query. This supersedes the earlier QC-plus-flux-only limitation; arbitrary intent combinations and negation still need work.
 
 Generated-catalogue regression coverage is now 15 queries. Additional controller checks cover button visibility, executing the selected search, stale-state clearing and scope precedence. These are deterministic regression cases, not a general natural-language benchmark.
+
+## Negation and novice phrasing
+
+Exclusions and missing-input statements now request clarification rather than using excluded words as positive matches. This conservative guard can also defer legitimate questions such as pathways without complete identification; it is not a negation parser. Uncertainty and beginner phrases open the study-first entry, and do not accidentally become flux-coverage warnings. NMR scope remains first. Expanded regression cases cover contractions, missing QC or spectra, exclusions, first studies and where-to-begin phrasing.
