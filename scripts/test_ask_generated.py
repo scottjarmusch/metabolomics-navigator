@@ -17,6 +17,7 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Compare QC drift correction and isotope flux estimation", None, "separately"),
     ("I am new to metabolomics and want to compare treated and untreated cells", None, "scientific aim"),
     ("I have NMR spectra and need peak assignment", None, "outside scope"),
     ("Find pathways when most of my significant features are unidentified", "Feature-level pathway inference before metabolite identification", None),

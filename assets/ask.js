@@ -6,6 +6,8 @@
   const count = document.querySelector('#ask-result-count');
   const empty = document.querySelector('#ask-empty');
   const examples = [...document.querySelectorAll('[data-ask-example]')];
+  const guidance = document.querySelector('#ask-guidance');
+  const mixedPanel = document.querySelector('#ask-mixed');
   if (!input || !cards.length) return;
 
   const stop = new Set(['a','an','and','are','for','from','i','in','into','my','of','on','the','to','with','have','has','want','need','find','using','use','can','how','what','when','most','is','am','do','me','data','metabolomics']);
@@ -30,9 +32,13 @@
     const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
     if(nmrOnly) eligible=[];
     const flux=/\bflux(?:es)?\b/i.test(value);
+    const mixed = flux && /\b(?:qc|quality control|drift|batch correction)\b/i.test(value);
+    if (mixedPanel) mixedPanel.hidden = !mixed;
+    if (mixed) eligible=[];
     if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
     const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
-    if(generalOnly) eligible=[];
+    const novice = generalOnly || /\bnew to metabolomics\b/i.test(value);
+    if(novice) { eligible=[]; if(guidance) guidance.open=true; }
     const scored = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
       .filter(x => x.score > 0)
       .sort((a,b) => b.score - a.score || Number(b.card.dataset.year||0) - Number(a.card.dataset.year||0));
@@ -56,10 +62,35 @@
       count.textContent = shown + (ranked.length > shown ? ` of ${ranked.length}` : '') + ' matching published Strateg' + (shown === 1 ? 'y' : 'ies') + '.';
       empty.hidden = true;
     } else {
-      count.textContent = nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : generalOnly ? 'Please add your scientific aim or measurement type so we can identify a published Strategy.' : 'No matching published Strategy in the current collection.';
-      empty.hidden = false;
+      count.textContent = nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : mixed ? 'Please explore QC correction and flux inference separately.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : novice ? 'Please add your scientific aim or measurement type so we can identify a published Strategy.' : 'No matching published Strategy in the current collection.';
+      empty.hidden = mixed || novice;
     }
   }
+
+  document.querySelector('#ask-guide-button')?.addEventListener('click', () => {
+    const stage = document.querySelector('#ask-stage').value;
+    const data = document.querySelector('#ask-data').value;
+    const aim = document.querySelector('#ask-aim').value;
+    const message = document.querySelector('#ask-guide-message');
+    // Starting a new guided request clears prior recommendations.
+    runSearch('');
+    if (!stage || !data || !aim) {
+      message.textContent = 'Choose a study stage, measurement type and aim. It is fine to select that you are not sure.';
+    } else if (stage === 'planning') {
+      message.textContent = 'Start with the guide and your MS facility: define the comparison, sample handling, controls and suitable measurements before choosing an analysis workflow.';
+    } else if (data === 'unknown' || data === 'other' || aim === 'unsure') {
+      message.textContent = 'Use the guide to clarify your measurement type and scientific aim. Your MS facility can help identify the files and measurements you have.';
+    } else if (stage === 'raw') {
+      message.textContent = 'First prepare and quality-check your raw files. Explore data-processing tools in the catalogue and check instrument and file-format compatibility before selecting a downstream Strategy.';
+    } else if (aim === 'families' && data !== 'msms') {
+      message.textContent = 'Spectral molecular families need fragmentation spectra linked to precursors. A feature table alone does not provide that evidence; check whether MS/MS was acquired.';
+    } else {
+      const queries = {families:'feature based molecular networking', pathways:'pathway enrichment unidentified features', qc:'pooled QC LOESS signal drift', flux:'isotope labeling time course flux'};
+      input.value = queries[aim];
+      runSearch(input.value);
+      message.textContent = aim === 'flux' ? 'These flux methods require a suitable tracer experiment, time courses and model assumptions; ordinary group-comparison data are insufficient.' : aim === 'qc' ? 'QC drift correction requires repeated representative QC injections and recorded injection order. Check these requirements before using the published method.' : 'These are published precedents for your next analytical step. Review their requirements; they are not a complete study plan.';
+    }
+  });
 
   searchButton?.addEventListener('click', () => runSearch(input.value));
   input.addEventListener('keydown', event => {

@@ -40,3 +40,19 @@ focusedInput.value='signal';focusedButton.events.click();
 assert.equal(focused[1].hidden,false,'Broad searches retain weaker but comparable results');
 focusedInput.value='notincatalogue';focusedButton.events.click();
 assert(focused.every(x=>x.hidden),'No-match search must remain safe after score filtering');
+
+// Guided entry and mixed-intent behavior use the same shipped controller.
+const guideButton=new Element(), stage=new Element(), data=new Element(), aim=new Element(), message=new Element(), guidance=new Element(), mixed=new Element();
+const guidedElements={...focusedElements,'#ask-guide-button':guideButton,'#ask-stage':stage,'#ask-data':data,'#ask-aim':aim,'#ask-guide-message':message,'#ask-guidance':guidance,'#ask-mixed':mixed};
+vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/ask.js'),'utf8'),{document:{querySelector:s=>guidedElements[s],querySelectorAll:s=>s==='.ask-strategy-card'?focused:[]}});
+focusedInput.value='Compare QC drift correction and isotope flux estimation';focusedButton.events.click();
+assert(focused.every(x=>x.hidden));assert.equal(mixed.hidden,false);assert.match(focusedCount.textContent,/separately/);
+focusedInput.value='new to metabolomics';focusedButton.events.click();assert.equal(guidance.open,true);assert.equal(mixed.hidden,true);
+guideButton.events.click();assert.match(message.textContent,/Choose a study stage/);
+stage.value='planning';data.value='msms';aim.value='families';guideButton.events.click();assert.match(message.textContent,/before choosing/);assert(focused.every(x=>x.hidden));
+stage.value='raw';guideButton.events.click();assert.match(message.textContent,/raw files/);
+stage.value='analysis';data.value='features';guideButton.events.click();assert.match(message.textContent,/table alone/);assert(focused.every(x=>x.hidden));
+data.value='unknown';guideButton.events.click();assert.match(message.textContent,/clarify/);
+data.value='msms';aim.value='qc';guideButton.events.click();assert.equal(focused[0].hidden,false);assert.match(message.textContent,/repeated representative QC/);
+stage.value='planning';guideButton.events.click();assert(focused.every(x=>x.hidden),'Planning guidance must clear previous results');
+console.log('Guided-entry checks passed: missing answers, planning, raw files, unknown measurements, incompatible table, QC and mixed intent.');

@@ -6,6 +6,27 @@
 <section class="ask-decision" aria-labelledby="ask-title">
   <p class="preview-note"><strong>Evidence-backed alpha.</strong> Matching is currently deterministic and catalogue-grounded: it searches curated Strategy metadata and published implementations. Matches reflect shared terms, not a suitability assessment. Weak matches are filtered when stronger matches exist. It does not generate undocumented tool recommendations.</p>
 
+  <details id="ask-guidance" class="ask-question">
+    <summary><strong>New to metabolomics? Start with your study</strong></summary>
+    <p>You do not need to know a software name. Start with what you have and what you want to learn.</p>
+    <p><label for="ask-stage">Where are you in the study?</label><br>
+      <select id="ask-stage"><option value="">Choose a stage</option><option value="planning">Planning, before collecting data</option><option value="raw">I have raw instrument files</option><option value="analysis">My data have been processed</option></select></p>
+    <p><label for="ask-data">What measurements do you have?</label><br>
+      <select id="ask-data"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="msms">LC-MS/MS with fragment spectra</option><option value="features">An MS feature or metabolite table</option><option value="other">Another MS measurement type</option></select></p>
+    <p><label for="ask-aim">What would you like to learn?</label><br>
+      <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
+    <button id="ask-guide-button" class="button secondary" type="button">Find my next step</button>
+    <p id="ask-guide-message" role="status"></p>
+    <p><a href="{{ url('') }}">Read the MS metabolomics guide</a> · <a href="{{ url('tools/') }}">Explore tools by task</a></p>
+  </details>
+
+  <div id="ask-mixed" class="ask-question" hidden>
+    <h3>There are two aims here</h3>
+    <p>QC correction and flux inference need different evidence. Explore each separately; these results do not establish a combined workflow.</p>
+    <button type="button" class="button secondary" data-ask-example="pooled QC LOESS signal drift">Explore analytical QC</button>
+    <button type="button" class="button secondary" data-ask-example="isotope labeling time course flux">Explore flux inference</button>
+  </div>
+
   <div class="ask-question">
     <p class="ask-step">01 / SCIENTIFIC QUESTION</p>
     <h2 id="ask-title">What are you trying to do?</h2>
