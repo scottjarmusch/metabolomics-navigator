@@ -174,3 +174,18 @@ The candidate initially pointed to LC-MS2Struct (2022). Primary-paper review ins
 - Iterative measured-run exclusion: Koelmel et al. 2017, PMID 28265968 / PMC5408749, is a relevant lipidomics methodology anchor. Full-text retrieval through Europe PMC failed; keep in review rather than fold it into optimized scheduling without checking details.
 - Differential/preidentified-ion acquisition: Zhang et al. 2023, DOI 10.1021/acs.analchem.3c02888. DOI/title/year/authors and primary abstract verified. The proposed distinct relationship is study-wide full-scan statistics/preidentification feeding targeted DDA of QC samples. The clinical demonstration is not a separate Strategy. Publisher full text was unavailable; detailed methods/resources remain to be reviewed before creating a complete entry.
 - No new Strategy cards in this batch: the alpha remains at 31.
+
+
+## Measured-run exclusion review (2026-09-21)
+
+Added one Strategy, bringing the alpha to 32: iterative exclusion-list MS/MS acquisition. Its 2017 reference method (10.1007/s13361-017-1608-0) formalizes automated mass/retention-time grouping and background handling for metabolomics. It does not originate all iterative exclusion: the introduction acknowledges earlier proteomics work, including Bendall et al. (PMID 18936058). No sample-specific cards were created.
+
+The [indexed primary methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC5408749/), [author documentation](https://secim.ufl.edu/secim-tools/ie-omics/) and [code repository](https://github.com/GarrettLab-UF/IE-Omics) establish the conversion and acquisition loop. Instrument compatibility and repeat-injection costs remain explicit. This differs from MS2Planner's survey-derived computational paths. Existing msconvert and MZmine slugs resolve; other resources remain external rather than inventing Tool records. DOI/title/year checked against Crossref on 2026-09-21. The 31-record DOI audit remains a historical snapshot; this entry was checked separately.
+
+A generated-page regression distinguishes the exclusion-list query from the existing topological-scheduling query. Neither instrument execution nor scientific benchmarking is claimed. dpDDA remains in review pending fuller methods/resources checks; compare earlier targeted/untargeted DDA methods before calling it a new relationship. All changes remain in draft PR #47, with no merge or deployment.
+
+### Next acquisition comparison
+
+Before adding dpDDA, compare [2020 targeted versus untargeted DDA](https://pmc.ncbi.nlm.nih.gov/articles/PMC7241085/), DOI 10.3390/metabo10040126. It already tests inclusion lists from cleaned feature tables and preannotated features in QC runs. The unresolved editorial question is whether 2023 differential-feature prioritization adds a distinct relationship or belongs as an adaptation within a broader feature-prioritized acquisition Strategy. The 2023 publisher supporting-information listing identifies Progenesis QI, statTarget and MetaboAnalyst 5.0; these are review leads, not yet verified workflow bindings. Do not create a separate disease-specific card.
+
+Validation for this batch: schema and form synchronization; strict build; editorial, submission, contributor, terminology, implementation and brand checks; catalogue and Ask controller tests; 26 generated Ask queries across 32 Strategies; 6,648 local links across 185 pages; 290 relationship links; SEO tests and 184 canonical-page checks. All passed. Three pre-existing accepted Tool stubs still await editorial enrichment.

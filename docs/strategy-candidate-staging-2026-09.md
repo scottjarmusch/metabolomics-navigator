@@ -46,7 +46,7 @@ Status meanings:
 | Candidate | Status | Evidence / next step |
 |---|---|---|
 | Iterative optimized MS/MS acquisition | ADDED | 10.1093/bioinformatics/btab279 |
-| Iterative exclusion-list DDA | REVIEW | Koelmel et al. 2017, PMID 28265968 / PMC5408749 identified; distinguish measured-run exclusion from MS2Planner computational scheduling before adding |
+| Iterative exclusion-list DDA | ADDED | 10.1007/s13361-017-1608-0: automated metabolomics implementation; earlier exclusion origins acknowledged, distinct from survey-based MS2Planner scheduling |
 | Differential-peak targeted DDA | REVIEW | dpDDA, 10.1021/acs.analchem.3c02888 (2023): method-introduction abstract verified; detailed methods/resources still needed before card creation |
 | DDA-assisted DIA metabolomics (DaDIA) | ADDED | 10.1021/acs.analchem.0c05022 |
 | Pooled-QC-guided DDA library generation | STRONG | PMID 36475608 and related methods |

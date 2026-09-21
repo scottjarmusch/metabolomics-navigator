@@ -17,6 +17,7 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Use iterative exclusion lists for previously fragmented ions", "Iterative exclusion-list MS/MS acquisition", None),
     ("Schedule precursor ions using topological sorting", "Iterative optimized MS/MS acquisition", None),
     ("Use retention order to rank structure candidates jointly", "Retention-order-assisted joint molecular annotation", None),
     ("I want pathway analysis, not flux", None, "exclusion"),
