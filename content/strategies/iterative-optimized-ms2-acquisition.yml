@@ -3,13 +3,18 @@ slug: iterative-optimized-ms2-acquisition
 name: Iterative optimized MS/MS acquisition
 aliases:
 - IODA
-summary: A repeated-acquisition strategy that uses prior MS/MS coverage to generate optimized inclusion lists for subsequent injections, increasing the number of informative fragmentation spectra collected from an untargeted sample.
-description: Conventional data-dependent acquisition repeatedly fragments abundant ions and can leave much of the detectable metabolome without MS/MS coverage. Iterative optimized data acquisition instead treats repeated injections as a planning problem. Features already covered are tracked, candidate precursors for the next injection are prioritized computationally, and successive acquisitions are used to increase nonredundant high-quality MS/MS coverage.
+summary: Plan successive MS/MS acquisitions from an MS1 survey by optimizing precursor schedules across
+  mass and retention time.
+description: MS2Planner uses topological sorting on a feature graph to maximize scheduled coverage. Features
+  selected for one path are excluded from the next planning iteration. This is computational scheduling
+  of repeat acquisitions, rather than a requirement to measure fragmentation quality after every run.
 publication:
-  title: 'MS2Planner: improved fragmentation spectra coverage in untargeted mass spectrometry by iterative optimized data acquisition'
+  title: 'MS2Planner: improved fragmentation spectra coverage in untargeted mass spectrometry by iterative
+    optimized data acquisition'
   doi: 10.1093/bioinformatics/btab279
   url: https://doi.org/10.1093/bioinformatics/btab279
-  citation: Dührkop K, Fleischauer M, Ludwig M, et al. MS2Planner improved fragmentation spectra coverage in untargeted mass spectrometry by iterative optimized data acquisition. Bioinformatics (2021).
+  citation: 'Zuo Z, Cao L, et al. MS2Planner: improved fragmentation spectra coverage in untargeted mass
+    spectrometry by iterative optimized data acquisition. Bioinformatics 37(Suppl 1), i231-i236 (2021).'
   journal: Bioinformatics
   year: 2021
 purpose:
@@ -27,29 +32,37 @@ acquisition:
   - ms2
   strategies:
   - dda
+  - targeted_msms
   ion_mobility: unspecified
 components:
 - data_acquisition
 - preprocessing
 - annotation
 workflow_steps:
-- title: Acquire an initial untargeted LC-MS/MS run
-  description: Collect MS1 and DDA MS/MS data from a representative sample or pooled sample.
-- title: Determine existing MS/MS coverage
-  description: Identify which detectable precursor features already have suitable fragmentation spectra and which remain uncovered.
-- title: Optimize the next precursor list
-  description: Use an iterative planning algorithm to select nonredundant precursor ions for the next acquisition.
+- title: Acquire an MS1 survey
+  description: The published IODA experiment begins with a full-scan MS1 measurement.
+- title: Prepare features for scheduling
+  description: Provide precursor masses, retention times and signals for the acquisition model.
+- title: Optimize successive acquisition paths
+  description: Use topological sorting; exclude scheduled features before computing the next path.
   external_tools:
   - name: MS2Planner
     url: https://github.com/mohimanilab/MS2Planner
-- title: Reacquire the sample with an optimized inclusion list
-  description: Perform another LC-MS/MS acquisition targeting the selected precursor set.
-- title: Repeat until coverage is sufficient
-  description: Update the covered-feature set after each injection and iterate to increase cumulative MS/MS coverage.
+- title: Export instrument inclusion lists
+  description: The study provides companion scripts for inclusion-list generation.
+  external_tools:
+  - name: IODA_MS
+    url: https://github.com/lfnothias/IODA_MS
+- title: Acquire and assess scheduled spectra
+  description: The paper tests inclusion-prioritized DDA and targeted-MS2 variants, with and without dynamic
+    exclusion. Review coverage and spectral quality for the chosen mode.
 tools:
 - name: MS2Planner
   url: https://github.com/mohimanilab/MS2Planner
-  role: Generates optimized precursor inclusion lists over iterative acquisitions.
+  role: Computes optimized paths over survey features for successive acquisitions.
+- name: IODA_MS
+  url: https://github.com/lfnothias/IODA_MS
+  role: Companion inclusion-list generation scripts reported by the primary paper.
 resources:
   code_available: true
   code_url: https://github.com/mohimanilab/MS2Planner
@@ -58,19 +71,24 @@ resources:
 scope:
   designed_for:
   - Increasing MS/MS coverage in untargeted LC-MS experiments when repeat injections are practical.
-  - Building richer fragmentation coverage for annotation and discovery from representative or pooled samples.
+  - Building richer fragmentation coverage for annotation and discovery from representative or pooled
+    samples.
   requirements:
-  - Instrument control that supports precursor inclusion lists.
-  - Sufficient sample quantity and reproducible chromatography across repeated injections.
+  - Full-scan survey features and instrument support for the selected inclusion-list acquisition mode.
+  - Sufficient sample for repeated injections and chromatography consistent with the planned retention-time
+    windows.
   considerations:
-  - Increased coverage requires additional acquisition time and sample.
-  - Gains depend on feature detection quality and reproducibility between iterations.
+  - Planning assumptions and acquisition timing must fit the instrument and chromatography.
+  - This is not equivalent to a simple exclusion list updated after each measured DDA run; no universal
+    coverage gain is promised.
 ask_keywords:
 - get more msms spectra
 - improve fragmentation coverage
 - iterative dda
 - exclusion inclusion list metabolomics
 - pooled sample deeper msms coverage
+- topological sorting
+- schedule precursor ions
 sample_types: []
 biological_contexts:
 - broadly_applicable
@@ -79,11 +97,13 @@ related_strategies: []
 provenance:
   submitted_by: curator
   author_verified: false
-  notes: Included because the paper introduces a transferable acquisition strategy that changes how repeated DDA experiments are planned.
+  notes: Primary full text re-reviewed through Europe PMC XML on 2026-09-20. Corrected author citation,
+    MS1 initialization, computational iteration and companion export scripts. No software execution or
+    instrument validation performed.
 status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-19'
-  updated_at: '2026-09-19'
+  updated_at: '2026-09-20'
   last_verified: '2026-09-19'
-  last_editorial_review: '2026-09-19'
+  last_editorial_review: '2026-09-20'
