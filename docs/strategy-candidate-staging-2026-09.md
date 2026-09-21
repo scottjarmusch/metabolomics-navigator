@@ -47,11 +47,11 @@ Status meanings:
 |---|---|---|
 | Iterative optimized MS/MS acquisition | ADDED | 10.1093/bioinformatics/btab279 |
 | Iterative exclusion-list DDA | ADDED | 10.1007/s13361-017-1608-0: automated metabolomics implementation; earlier exclusion origins acknowledged, distinct from survey-based MS2Planner scheduling |
-| Differential-peak targeted DDA | REVIEW | dpDDA, 10.1021/acs.analchem.3c02888 (2023): method-introduction abstract verified; detailed methods/resources still needed before card creation |
+| Differential-peak targeted DDA | REVIEW | dpDDA, 10.1021/acs.analchem.3c02888 (2023): compare 2020 feature-prioritized DDA (10.3390/metabo10040126) and its 2015/2018 predecessors before deciding adaptation versus distinct Strategy |
 | DDA-assisted DIA metabolomics (DaDIA) | ADDED | 10.1021/acs.analchem.0c05022 |
-| Pooled-QC-guided DDA library generation | STRONG | PMID 36475608 and related methods |
+| Pooled-QC-guided DDA library generation | CONSOLIDATED | PMID 36475608 belongs to reference-pool discovery with cohort-wide extraction, not a separate library-generation Strategy |
 | Library-assisted DIA metabolomics with FDR control | ADDED | Alpha batch 2: 10.1038/s41467-022-29006-z; target-decoy-controlled DIA extraction, distinct from acquisition-only DaDIA |
-| Open-source DIA/MSE annotation and networking | STRONG | PMID 38324622 |
+| Open-source DIA/MSE annotation and networking | IMPLEMENTATION/ADAPTATION | 10.1093/bib/bbae013 attached to FBMN; retain DIA deconvolution and historical software roles |
 | Narrow-window DIA / gas-phase-fractionated metabolomics | PRIMARY PAPER NEEDED | Find metabolomics-specific method paper |
 | Multi-energy collision acquisition | PRIMARY PAPER NEEDED | Find defining workflow |
 | Semi-targeted toxicant inclusion-list acquisition | STRONG | PMID 39354300 |
@@ -60,7 +60,7 @@ Status meanings:
 | Blank subtraction and contaminant filtering | PRIMARY PAPER NEEDED | Find defining workflow |
 | Reference-material-anchored batch harmonization | PRIMARY PAPER NEEDED | Find defining workflow |
 | Randomized-block acquisition for large cohorts | PRIMARY PAPER NEEDED | Find metabolomics methodology paper |
-| Large-cohort discovery plus targeted re-extraction | STRONG | PMID 36475608 |
+| Large-cohort discovery plus targeted re-extraction | ADDED | 10.1021/acs.analchem.2c01270; reference-pool-cohort-extraction |
 | Dual-polarity coordinated acquisition | PRIMARY PAPER NEEDED | Find defining workflow |
 | Orthogonal RP/HILIC coverage expansion | STRONG | Find primary paper; exposomics review DOI 10.1093/exposome/osab003 |
 | Complementary LC-MS plus GC-MS metabolomics | STRONG | Find defining strategy paper |

@@ -33,6 +33,7 @@ acquisition:
   - ms2
   strategies:
   - dda
+  - dia
   ion_mobility: not_required
 components:
 - preprocessing
@@ -119,12 +120,36 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-08-24'
-  updated_at: '2026-09-12'
+  updated_at: '2026-09-21'
   last_verified: '2026-09-12'
-  last_editorial_review: '2026-09-12'
+  last_editorial_review: '2026-09-21'
 sample_types: []
 biological_contexts:
 - broadly_applicable
 organisms: []
 aliases:
 - FBMN
+
+ask_keywords:
+- DIA MSE molecular networking
+- DIA IntOpenStream
+implementations:
+- title: Integrative open workflow for confident annotation and molecular networking of metabolomics MSE/DIA data
+  doi: 10.1093/bib/bbae013
+  year: 2024
+  journal: Briefings in Bioinformatics
+  relationship: adaptation
+  summary: >-
+    DIA-IntOpenStream adapts FBMN to MSE/DIA data. Waters2mzML supplies mzML;
+    KNIME assembles custom structure databases; MS-DIAL assigns DIA fragments to
+    precursors and exports FBMN inputs for GNPS and Cytoscape. MZmine 3 is used
+    for a parallel MS1 annotation branch, not DIA fragment deconvolution in this
+    study. Reliable precursor-fragment assignment is required; custom mass
+    matches and network neighbors are not confirmed structures. The demonstrated
+    conversion uses Windows and Waters data; other vendor compatibility is not established here.
+  tool_slugs: [ms-dial, mzmine, gnps, cytoscape]
+  external_tools:
+  - name: Waters2mzML
+    url: https://github.com/AnP311/Waters2mzML
+  - name: Published KNIME database workflow
+    url: https://hub.knime.com/-/spaces/-/~8bZEbbknV8tVptea/current-state/

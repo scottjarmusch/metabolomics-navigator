@@ -17,6 +17,8 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Process thousands of samples using pooled reference discovery", "Reference-pool discovery with cohort-wide signal extraction", None),
+    ("DIA IntOpenStream MSE molecular networking", "Feature-Based Molecular Networking (FBMN)", None),
     ("Use iterative exclusion lists for previously fragmented ions", "Iterative exclusion-list MS/MS acquisition", None),
     ("Schedule precursor ions using topological sorting", "Iterative optimized MS/MS acquisition", None),
     ("Use retention order to rank structure candidates jointly", "Retention-order-assisted joint molecular annotation", None),
