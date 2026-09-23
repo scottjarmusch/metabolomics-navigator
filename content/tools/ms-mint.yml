@@ -1,0 +1,48 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms-mint
+name: MS-MINT
+aliases: []
+summary: MS-MINT (MS-Metabolomics Integrator) is a Python application for processing, analyzing, and visualizing large liquid chromatography-mass spectrometry (LC-MS) metabolomics datasets
+links:
+  primary: https://github.com/LewisResearchGroup/ms-mint-app2
+  repository: https://github.com/LewisResearchGroup/ms-mint-app2
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  secondary:
+  - visualization_reporting
+  - statistics
+  capabilities: []
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- python_package
+access:
+  model: open_source
+publications:
+- doi: 10.1021/acs.analchem.6c01083
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-18'
+credits: []
+provenance:
+  submitted_by: curator
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/43
+  developer_verified: false
+  submitter_name: Morgane Mauduit
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4583-5389
+  notes: "This software addresses traditional shortcomings in metabolomics data analysis by using an end-to-end workflow based on the region-of-interest (ROI) approach modeled after NMR software. \nIn MS-MINT, ROIs are defined as windows of retention time and m/z that are extracted from MS1 spectra.\nEach metabolite is therefore defined by a specific ROI, which can then be extracted from each spectrum and visualized or analyzed by data processing algorithms."
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-18'
+  updated_at: '2026-09-18'
+  last_verified: '2026-09-18'
