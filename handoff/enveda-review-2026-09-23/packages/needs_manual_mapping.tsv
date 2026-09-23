@@ -1,0 +1,4 @@
+source_row	name	source_category	source_subcategory	tool_url	publication_url	year	programming_language	proposed_primary_function	proposed_platforms	proposed_analysis_types	proposed_interfaces	proposed_resource_type	flags
+141	SpaceM	Imaging MS		https://github.com/alexandrovteam/SpaceM	https://www.nature.com/articles/s41592-021-01198-0	2021	Python	needs_manual_mapping	imaging_ms;maldi_ms		python_package	programming_package	
+586	BitBIRCH-Lean	Drug Discovery		https://github.com/mqcomplab/bblean	https://www.biorxiv.org/content/10.1101/2025.10.22.684015v1	2025	Python, C++	needs_manual_mapping	platform_independent		python_package	programming_package	broad_source_bucket_manual_review
+684	i2i	Imaging MS		https://github.com/LanekoffLab/i2i	https://pubmed.ncbi.nlm.nih.gov/37505508/	2023	MATLAB	needs_manual_mapping	imaging_ms		matlab	software_application	
