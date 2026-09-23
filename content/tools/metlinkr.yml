@@ -1,0 +1,49 @@
+$schema: ../../schemas/tool.schema.json
+slug: metlinkr
+name: MetLinkR
+aliases: []
+summary: MetLinkR is an R package used for cross-linking of metabolite identifiers across disparate data sets. It uses RefMet and RaMP-DB links to recognize metabolites referred to by different names or database identifiers. MetLinkR can be used as an R package or accessed through the RaMP-DB web interface.
+links:
+  primary: https://rampdb.nih.gov/identifier-harmonization
+  repository: https://github.com/ncats/MetLinkR
+  homepage: https://rampdb.nih.gov/identifier-harmonization
+resource_types:
+- programming_package
+functions:
+  primary: reference_data_search
+  secondary: []
+  capabilities: []
+platforms:
+- platform_independent
+analysis_types: []
+interfaces:
+- r_package
+access:
+  model: open_source
+publications:
+- citation: https://pmc.ncbi.nlm.nih.gov/articles/PMC12053952/
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-18'
+credits:
+- name: Andrew Patt
+  role: developer
+  orcid: 0000-0002-6373-9545
+provenance:
+  submitted_by: developer
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/45
+  developer_verified: false
+  submitter_name: Andrew Patt
+  public_attribution_consent: true
+  submitter_orcid: 0000-0002-6373-9545
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-18'
+  updated_at: '2026-09-18'
+  last_verified: '2026-09-18'
