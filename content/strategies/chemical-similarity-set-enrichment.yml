@@ -1,0 +1,76 @@
+$schema: ../../schemas/strategy.schema.json
+slug: chemical-similarity-set-enrichment
+name: Chemical-similarity metabolite-set enrichment
+summary: Group identified metabolites by chemical similarity and test which groups change between study
+  conditions.
+description: ChemRICH combines chemical ontology and structural similarity with set-level statistics,
+  without requiring membership in predefined biochemical pathways.
+publication:
+  title: Chemical Similarity Enrichment Analysis (ChemRICH) as alternative to biochemical pathway mapping
+    for metabolomic datasets
+  doi: 10.1038/s41598-017-15231-w
+  year: 2017
+  journal: Scientific Reports
+purpose:
+  primary: phenotype_association
+  secondary: []
+platforms:
+- lc_ms
+- gc_ms
+analysis_types:
+- metabolite_profiling
+- lipidomics
+components:
+- statistics
+- metadata_analysis
+ask_keywords:
+- ChemRICH
+- chemical class enrichment
+- chemical similarity
+- metabolite sets
+- identified metabolites
+- SMILES
+- lipid classes
+workflow_steps:
+- title: Prepare identified metabolites and statistics
+  description: Provide structures, identifiers and per-metabolite comparison statistics.
+- title: Construct chemical sets
+  description: ChemRICH combines MeSH annotations and Tanimoto similarity into non-overlapping groups.
+  external_tools:
+  - name: ChemRICH
+    url: https://chemrich.idsl.me/
+- title: Evaluate and interpret enrichment
+  description: Use the published Kolmogorov-Smirnov set test and inspect directions of change.
+  external_tools:
+  - name: ChemRICH
+    url: https://chemrich.idsl.me/
+tools:
+- name: ChemRICH
+  url: https://chemrich.idsl.me/
+  role: Implementation introduced by the primary paper; linked service is its current maintained entry
+    point.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1038/s41598-017-15231-w
+scope:
+  designed_for:
+  - Chemical-class interpretation of identified MS metabolomics measurements.
+  requirements:
+  - Chemical structures/identifiers and valid comparison statistics.
+  considerations:
+  - Does not infer identities for unknown m/z features. Chemical-set enrichment is not proof of pathway
+    activation or flux.
+related_strategies:
+- feature-level-pathway-inference
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: 'Primary method reviewed using open-access full text. Distinct from mummichog: known structures
+    and chemical sets rather than ambiguous feature-to-pathway mapping. No new Tool entry or software
+    execution claimed.'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-20'
+  updated_at: '2026-09-20'
+  last_editorial_review: '2026-09-20'

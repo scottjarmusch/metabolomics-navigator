@@ -1,0 +1,83 @@
+$schema: ../../schemas/strategy.schema.json
+slug: kinetic-flux-profiling
+name: Kinetic flux profiling from isotope-labeling time courses
+summary: Combine isotope-label incorporation kinetics with metabolite pool sizes to estimate cellular
+  fluxes under an explicit kinetic model.
+description: Kinetic flux profiling follows replacement of unlabeled metabolites after switching a nutrient
+  source to its isotope-labeled equivalent. The original demonstration used nitrogen assimilation in cultured
+  E. coli; the transferable contribution is the link between labeling dynamics, pool sizes and flux.
+publication:
+  title: Kinetic flux profiling of nitrogen assimilation in Escherichia coli
+  doi: 10.1038/nchembio816
+  year: 2006
+  journal: Nature Chemical Biology
+  citation: Yuan et al. Kinetic flux profiling of nitrogen assimilation in Escherichia coli. Nature Chemical
+    Biology (2006).
+purpose:
+  primary: flux_analysis
+  secondary:
+  - stable_isotope_tracing
+platforms:
+- lc_ms
+analysis_types:
+- stable_isotope_tracing
+- fluxomics
+components:
+- sample_preparation
+- data_acquisition
+- statistics
+ask_keywords:
+- kinetic flux profiling
+- KFP
+- isotope labeling
+- metabolic flux
+- turnover
+- time course
+- pool size
+workflow_steps:
+- title: Switch nutrient isotope labeling
+  description: Change the isotopic nutrient source while preserving the intended culture conditions.
+- title: Sample the labeling time course
+  description: Quench and extract replicate samples at times that resolve metabolite turnover.
+- title: Measure labeling and pool sizes
+  description: Use chromatography-MS to quantify unlabeled fractions and intracellular metabolite concentrations.
+- title: Fit the specified kinetic model
+  description: Estimate turnover and flux using equations appropriate to precursor labeling and pathway
+    structure.
+tools: []
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1038/nprot.2008.131
+scope:
+  designed_for:
+  - Flux estimation in cultured cells with experimentally resolved labeling kinetics.
+  requirements:
+  - Rapid nutrient switching, timed quenching, isotope-resolved measurements and pool-size quantification.
+  considerations:
+  - Basic interpretation assumes metabolic steady state; dynamic variants require additional modeling.
+  - Reliable quantification requires resolving turnover relative to upstream precursor labeling.
+  - A single endpoint or labeling half-time without pool-size and model context does not establish absolute
+    flux.
+implementations:
+- title: Kinetic flux profiling for quantitation of cellular metabolic fluxes
+  doi: 10.1038/nprot.2008.131
+  year: 2008
+  journal: Nature Protocols
+  relationship: protocol
+  summary: Expanded experimental and quantitative procedure, including culture handling and kinetic interpretation.
+  tool_slugs: []
+  citation: Yuan et al. Kinetic flux profiling for quantitation of cellular metabolic fluxes. Nature Protocols
+    (2008).
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: The 2006 introduction defines the method; the 2008 procedure supplies implementation detail.
+    Distinct from isotope-assisted networking and credentialing. No original catalogue software dependency
+    was established; do not invent one. No experiment or software execution performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'

@@ -1,0 +1,109 @@
+$schema: ../../schemas/strategy.schema.json
+slug: iterative-exclusion-list-acquisition
+name: Iterative exclusion-list MS/MS acquisition
+aliases:
+- IE-Omics acquisition workflow
+summary: Use precursors fragmented in earlier injections to guide subsequent DDA runs toward additional ions.
+description: >-
+  The IE-Omics workflow automates exclusion-list preparation between repeat injections.
+  This record uses its 2017 metabolomics methods paper as a reproducible implementation;
+  iterative exclusion has earlier proteomics origins. The defining relationship is measured
+  fragmentation history informing the next acquisition, rather than precomputing survey-based schedules.
+publication:
+  title: Expanding Lipidome Coverage Using LC-MS/MS Data-Dependent Acquisition with Automated Exclusion List Generation
+  doi: 10.1007/s13361-017-1608-0
+  url: https://doi.org/10.1007/s13361-017-1608-0
+  citation: Koelmel JP, Kroeger NM, et al. Journal of the American Society for Mass Spectrometry 28, 908-917 (2017).
+  journal: Journal of the American Society for Mass Spectrometry
+  year: 2017
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - molecular_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+acquisition:
+  ms_levels: [ms1, ms2]
+  strategies: [dda]
+  ion_mobility: unspecified
+components:
+- data_acquisition
+- preprocessing
+- annotation
+workflow_steps:
+- title: Acquire the initial DDA run
+  description: Begin with top-N fragmentation of a representative sample.
+- title: Convert acquired spectra
+  description: Export the measured run to MS2 format with msconvert.
+  tool_slugs: [msconvert]
+- title: Generate the next exclusion list
+  description: IE-Omics groups fragmented precursors by mass and retention time and can flag recurrent background ions.
+  external_tools:
+  - name: IE-Omics
+    url: https://github.com/GarrettLab-UF/IE-Omics
+- title: Import the list and repeat acquisition
+  description: Load the CSV into the instrument method before the next injection; the reported workflow is not real-time control.
+- title: Process and annotate spectra
+  description: The study uses MZmine 2 feature detection with LipidMatch, alongside LipidSearch annotation.
+  tool_slugs: [mzmine]
+  external_tools:
+  - name: LipidMatch
+    url: https://secim.ufl.edu/secim-tools/lipidmatch/
+  - name: LipidSearch
+tools:
+- slug: msconvert
+  role: Converts the acquired run to MS2 format.
+- slug: mzmine
+  role: MZmine 2 supplies features for the published LipidMatch analysis.
+- name: IE-Omics
+  url: https://github.com/GarrettLab-UF/IE-Omics
+  role: Builds exclusion lists for successive acquisitions.
+- name: LipidMatch
+  url: https://secim.ufl.edu/secim-tools/lipidmatch/
+  role: Lipid annotation in the demonstrated workflow.
+- name: LipidSearch
+  role: Additional lipid annotation in the study.
+resources:
+  code_available: true
+  code_url: https://github.com/GarrettLab-UF/IE-Omics
+  method_available: true
+  method_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5408749/
+scope:
+  designed_for:
+  - Extending fragmentation coverage when repeated LC-MS/MS injections are feasible.
+  requirements:
+  - Sufficient sample and instrument time for repeated injections.
+  - Compatible instrument exclusion-list import; the documented implementation targets Thermo instruments.
+  considerations:
+  - Check mass and retention-time tolerances and chromatographic reproducibility with the MS facility.
+  - Additional spectra do not guarantee identification or equal gains across sample types.
+  - This is not a replacement for quantitative study design or quality control.
+ask_keywords:
+- iterative exclusion list
+- fragment additional precursors
+- previously fragmented ions
+- repeated DDA injections
+- IE Omics
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []
+related_strategies:
+- iterative-optimized-ms2-acquisition
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: >-
+    Primary indexed methods, official SECIM documentation and author code repository reviewed
+    on 2026-09-21. DOI/title/year checked against Crossref. The 2017 paper formalizes this
+    automated metabolomics workflow, not the invention of iterative exclusion. No instrument
+    or software execution validation performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-21'
+  updated_at: '2026-09-21'
+  last_verified: '2026-09-21'
+  last_editorial_review: '2026-09-21'
