@@ -33,6 +33,9 @@ Try your own paraphrases after these scripted cases. Record the exact input, ava
 
 ## Known limitations and next decisions
 
-The catalogue currently contains 33 Strategies; the strong-candidate queue is not fully reviewed. Lexical relevance and the relative score cutoff are heuristics, not confidence estimates. Mixed-aim detection covers four explicit aim families, not arbitrary language; exclusion requests now defer to clarification rather than being interpreted; more varied novice phrasing remains an important test area. The beginner route covers only selected aims and sends uncertain measurements to clarification. Study design, statistics, sample-size decisions and acquisition compatibility are not automatically resolved.
+The catalogue currently contains 34 Strategies; the strong-candidate queue is not fully reviewed. Lexical relevance and the relative score cutoff are heuristics, not confidence estimates. Mixed-aim detection covers four explicit aim families, not arbitrary language; exclusion requests now defer to clarification rather than being interpreted; more varied novice phrasing remains an important test area. The beginner route covers only selected aims and sends uncertain measurements to clarification. Study design, statistics, sample-size decisions and acquisition compatibility are not automatically resolved.
 
 Before public rollout: review varied novice phrasing and multi-aim/negated requests, resolve misleading results, and check a representative set of originating papers. Passing the automated regression suite alone is not scientific or usability sign-off.
+
+
+2026-09-23: Added seven novice/missing-input/local-statistics regression cases (36 total). See `ask-novice-probe-2026-09-23.md` for 12 before/after queries. Strategy content was published separately in PR #59; this Ask interface remains held back.

@@ -17,6 +17,13 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("I study bacteria. Can metabolomics help me discover new antibiotics?", None, "study guide"),
+    ("We have blood samples from 200 patients and controls. Where should we start?", None, "study guide"),
+    ("We forgot to measure pooled QC samples. How can we fix batch effects?", None, "missing input"),
+    ("Can you compare treated and untreated cells and tell me which pathways changed?", None, "study guide"),
+    ("Do I need MS/MS before I collect my samples?", None, "study guide"),
+    ("I am a beginner with NMR and LC-MS data. What should I do?", None, "study guide"),
+    ("Can I analyze my metabolomics statistics locally in R?", None, "tool catalogue"),
     ("Predict ion images from histology with microscopy mass spectrometry image fusion", "Predictive fusion of microscopy and mass spectrometry imaging", None),
     ("Process thousands of samples using pooled reference discovery", "Reference-pool discovery with cohort-wide signal extraction", None),
     ("DIA IntOpenStream MSE molecular networking", "Feature-Based Molecular Networking (FBMN)", None),
