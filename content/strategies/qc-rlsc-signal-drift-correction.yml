@@ -1,0 +1,76 @@
+$schema: ../../schemas/strategy.schema.json
+slug: qc-rlsc-signal-drift-correction
+name: QC-based robust LOESS signal-drift correction
+summary: Use repeated biological QC injections to estimate and correct feature-specific signal drift along
+  acquisition order.
+description: QC-RLSC fits local curves to QC intensities and interpolates correction across study injections.
+  It links experimental QC placement with computational drift estimation and subsequent quality assessment.
+publication:
+  title: Procedures for large-scale metabolic profiling of serum and plasma using gas chromatography and
+    liquid chromatography coupled to mass spectrometry
+  doi: 10.1038/nprot.2011.335
+  year: 2011
+  journal: Nature Protocols
+  citation: Dunn WB, Broadhurst D, Begley P, et al. Procedures for large-scale metabolic profiling of
+    serum and plasma using gas chromatography and liquid chromatography coupled to mass spectrometry.
+    Nature Protocols 6, 1060–1083 (2011).
+purpose:
+  primary: analytical_quality_control
+  secondary: []
+platforms:
+- lc_ms
+- gc_ms
+analysis_types:
+- untargeted
+components:
+- data_acquisition
+- preprocessing
+- quality_control
+- statistics
+ask_keywords:
+- QC-RLSC
+- pooled QC
+- LOESS
+- signal drift
+- injection order
+- batch correction
+- normalization
+- quality control
+workflow_steps:
+- title: Interleave representative QC injections
+  description: Retain injection order and batch labels with study and QC measurements.
+- title: Prepare aligned feature intensities
+  description: The documented LC-MS implementation uses XCMS for preprocessing.
+  tool_slugs:
+  - xcms
+- title: Fit QC correction curves
+  description: Cross-validate feature-wise LOESS smoothing and interpolate across injections.
+- title: Correct and assess reliability
+  description: Normalize responses and inspect QC repeatability before combining batches.
+tools:
+- slug: xcms
+  role: LC-MS preprocessing in the defining workflow; not asserted to implement the correction itself.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1038/nprot.2011.335
+scope:
+  designed_for:
+  - Analytical drift correction when representative QC injections span the run.
+  requirements:
+  - Repeated QC observations with usable feature signals and recorded injection order.
+  considerations:
+  - Sparse or unrepresentative QCs cannot reliably characterize every feature.
+  - Check overfitting and corrected QC performance; correction does not fix experimental confounding.
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: The 2011 primary procedure materially formalizes QC-RLSC. Scoped to its correction relationship,
+    not every step in serum/plasma profiling. QC filtering is a companion step, not an extra card. No
+    software execution performed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'

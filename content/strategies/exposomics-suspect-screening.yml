@@ -1,0 +1,92 @@
+$schema: ../../schemas/strategy.schema.json
+slug: exposomics-suspect-screening
+name: Suspect screening of exposome-related xenobiotics
+summary: An exposomics strategy that interrogates untargeted UHPLC-HRMS/MS data with curated lists of plausible xenobiotics and metabolites, then applies chromatographic, spectral, and error-control evidence to prioritize candidate exposures.
+description: Suspect screening occupies the space between targeted analysis and fully non-target screening. Rather than requiring authentic standards for every analyte or searching every detected feature without prior hypotheses, the workflow begins with curated suspect lists and tests whether those candidates are supported by accurate mass, chromatographic peak quality, fragmentation evidence, and matrix-aware filtering. The 2024 workflow evaluated this approach across multiple human biofluids and explicitly measured false-positive and false-negative behavior.
+publication:
+  title: Development and evaluation of a comprehensive workflow for suspect screening of exposome-related xenobiotics and phase II metabolites in diverse human biofluids
+  doi: 10.1016/j.chemosphere.2024.141221
+  url: https://doi.org/10.1016/j.chemosphere.2024.141221
+  citation: Development and evaluation of a comprehensive workflow for suspect screening of exposome-related xenobiotics and phase II metabolites in diverse human biofluids. Chemosphere 351, 141221 (2024).
+  journal: Chemosphere
+  year: 2024
+purpose:
+  primary: exposomics
+  secondary:
+  - metabolite_annotation
+  - unknown_identification
+platforms:
+- lc_ms
+analysis_types:
+- exposomics
+- untargeted
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: not_required
+components:
+- sample_preparation
+- data_acquisition
+- preprocessing
+- spectral_search
+- annotation
+- metadata_analysis
+- biological_validation
+workflow_steps:
+- title: Build suspect lists
+  description: Assemble plausible parent xenobiotics and phase-II metabolites relevant to the exposure question and sample matrix.
+- title: Acquire UHPLC-HRMS/MS data
+  description: Analyze biofluids using high-resolution MS with fragmentation information suitable for candidate assessment.
+- title: Filter chromatographic features for peak quality
+  description: Apply automated peak-quality criteria to reduce poor chromatographic candidates before manual review.
+- title: Compare candidates with suspect and endogenous lists
+  description: Evaluate expected xenobiotic candidates while accounting for endogenous molecules that may create annotation interference.
+- title: Evaluate structural evidence
+  description: Combine accurate mass, isotope/adduct behavior, fragmentation evidence, and available reference information to annotate candidates.
+- title: Estimate identification errors
+  description: Assess false positives and false negatives using standards or spiked samples where available.
+tools:
+- name: Compound Discoverer
+  role: Software used in the published implementation for peak-quality assessment and suspect-screening processing.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1016/j.chemosphere.2024.141221
+scope:
+  designed_for:
+  - Screening broad but hypothesis-informed sets of environmental or exogenous chemicals in human biofluids.
+  - Exposomics studies where fully targeted assays would be too narrow but unconstrained non-target identification is impractical.
+  requirements:
+  - Curated suspect lists appropriate to the study question.
+  - High-resolution MS data and enough spectral/chromatographic evidence to evaluate candidates.
+  considerations:
+  - Suspect-list composition determines which exposure space is visible.
+  - Matrix interferences and endogenous molecules can create both false positives and false negatives.
+ask_keywords:
+- suspect screening exposomics
+- find xenobiotics in untargeted metabolomics
+- screen environmental exposures
+- phase ii metabolites suspect list
+- human biofluid exposomics
+sample_types:
+- urine
+- saliva
+- other_biofluid
+biological_contexts:
+- human
+organisms:
+- Homo sapiens
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because the publication develops and evaluates a transferable suspect-screening workflow with explicit error analysis across multiple biofluids.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_verified: '2026-09-19'
+  last_editorial_review: '2026-09-19'

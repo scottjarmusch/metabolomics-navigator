@@ -1,0 +1,82 @@
+$schema: ../../schemas/strategy.schema.json
+slug: retention-order-joint-annotation
+name: Retention-order-assisted joint molecular annotation
+summary: Combine relative LC elution order with MS/MS candidate scores to annotate multiple features jointly.
+description: The 2018 method integrates learned pairwise retention preferences with spectral evidence
+  rather than filtering each feature independently by absolute retention time.
+publication:
+  title: Liquid-chromatography retention order prediction for metabolite identification
+  doi: 10.1093/bioinformatics/bty590
+  year: 2018
+  journal: Bioinformatics
+purpose:
+  primary: metabolite_annotation
+  secondary: []
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+components:
+- chromatography
+- annotation
+- statistics
+ask_keywords:
+- retention order
+- elution order
+- joint annotation
+- LC-MS2Struct
+- retention time
+- candidate ranking
+workflow_steps:
+- title: Prepare candidate lists
+  description: Associate measured retention times with spectra and candidate structures.
+- title: Score spectral candidates
+  description: The original study uses IOKR scores.
+  external_tools:
+  - name: IOKR
+- title: Learn and integrate retention preferences
+  description: Combine RankSVM order predictions and spectral scores using the published dynamic-programming
+    procedure.
+- title: Review ranked assignments
+  description: Inspect candidates and seek independent confirmation.
+tools:
+- name: IOKR
+  role: Original spectral candidate scorer.
+- name: Retention-order prediction implementation
+  url: https://version.aalto.fi/gitlab/bache1/retention_order_prediction.git
+  role: Code location reported by the 2018 paper; not execution-tested.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1093/bioinformatics/bty590
+scope:
+  designed_for:
+  - Joint interpretation of LC-MS/MS features.
+  requirements:
+  - Candidate structures, spectral scores, measured retention order and suitable training data.
+  considerations:
+  - Candidate coverage and chromatographic transferability matter. Rankings do not confirm identities.
+implementations:
+- title: Joint structural annotation of small molecules using liquid chromatography retention order and
+    tandem mass spectrometry data
+  doi: 10.1038/s42256-022-00577-2
+  year: 2022
+  journal: Nature Machine Intelligence
+  relationship: extension
+  summary: LC-MS2Struct learns structured integration of spectral scores and retention order, including
+    stereochemistry-aware fingerprints. This replaces the original integration model rather than reproducing
+    its algorithm.
+  external_tools:
+  - name: LC-MS2Struct
+    url: https://github.com/aalto-ics-kepaco/msms_rt_ssvm
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Origin anchored to the 2018 joint retention-order/MS2 method, not the later LC-MS2Struct tool.
+    Primary methods and DOI metadata reviewed; software not executed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-20'
+  updated_at: '2026-09-20'
+  last_editorial_review: '2026-09-20'

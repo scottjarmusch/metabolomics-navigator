@@ -1,0 +1,89 @@
+$schema: ../../schemas/strategy.schema.json
+slug: molecular-networking-dereplication
+name: Molecular networking as a dereplication strategy
+summary: A natural-product dereplication strategy that organizes MS/MS spectra by fragmentation similarity and uses reference spectra, standards, or characterized organisms to recognize known molecules and related analogues before isolation.
+description: This strategy uses spectral molecular networking as an early dereplication layer in natural-product discovery. Experimental MS/MS spectra from complex extracts are organized according to spectral similarity and compared with spectra from known standards, synthetic compounds, public libraries, or well-characterized organisms. Known chemistry can therefore seed molecular families and highlight related analogues that may not be present in reference databases, allowing novelty and redundancy to be assessed before lengthy purification.
+publication:
+  title: Molecular Networking as a Dereplication Strategy
+  doi: 10.1021/np400413s
+  url: https://doi.org/10.1021/np400413s
+  citation: Yang JY, Sanchez LM, Rath CM, et al. Molecular Networking as a Dereplication Strategy. Journal of Natural Products 76, 1686-1699 (2013).
+  journal: Journal of Natural Products
+  year: 2013
+purpose:
+  primary: dereplication
+  secondary:
+  - molecular_family_discovery
+  - metabolite_annotation
+  - natural_product_discovery
+platforms:
+- lc_ms
+- direct_infusion_ms
+analysis_types:
+- untargeted
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  ion_mobility: not_required
+components:
+- data_acquisition
+- spectral_search
+- molecular_networking
+- annotation
+- biological_validation
+workflow_steps:
+- title: Acquire MS/MS spectra from complex extracts
+  description: Generate tandem mass spectra from the natural-product mixture using a compatible ionization and acquisition workflow.
+- title: Add reference spectra
+  description: Include spectra from known standards, synthetic compounds, spectral libraries, or well-characterized organisms to provide dereplication anchors.
+- title: Build a spectral molecular network
+  description: Organize spectra according to fragmentation similarity so structurally related molecules cluster into molecular families.
+  tool_slugs:
+  - gnps
+- title: Dereplicate known chemistry and related analogues
+  description: Use reference-connected molecular families to recognize known compounds and prioritize related features that may represent analogues rather than rediscoveries.
+- title: Prioritize chemistry for follow-up
+  description: Advance molecular families that are poorly represented by known references or that contain features of specific biological or chemical interest.
+tools:
+- slug: gnps
+  role: Contemporary implementation environment for MS/MS molecular networking and library searching.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1021/np400413s
+scope:
+  designed_for:
+  - Early-stage dereplication of natural-product extracts before time-intensive isolation.
+  - Recognizing related analogues around known reference compounds through MS/MS similarity.
+  requirements:
+  - Reproducible MS/MS spectra from the sample set.
+  - Suitable reference spectra or standards improve dereplication power.
+  considerations:
+  - Spectral similarity supports structural relatedness but is not complete structural confirmation.
+  - Network structure depends on fragmentation quality, spectral preprocessing, and similarity thresholds.
+ask_keywords:
+- dereplicate natural products
+- avoid rediscovering known compounds
+- molecular networking dereplication
+- identify known compounds and analogues
+- prioritize novel molecular families
+sample_types: []
+biological_contexts:
+- broadly_applicable
+organisms: []
+related_strategies:
+- gnps-feature-based-molecular-networking
+- bioactivity-based-molecular-networking
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because the publication explicitly introduced molecular networking as a transferable dereplication strategy rather than an application-only use of networking.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_verified: '2026-09-19'
+  last_editorial_review: '2026-09-19'

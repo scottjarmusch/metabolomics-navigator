@@ -1,0 +1,80 @@
+$schema: ../../schemas/strategy.schema.json
+slug: target-decoy-controlled-dia-metabolomics
+name: Target-decoy-controlled DIA metabolomics
+summary: Use DDA-derived assay libraries and decoy scoring to control false discoveries during targeted
+  DIA extraction.
+description: DIAMetAlyzer links assay construction, chromatographic extraction and statistical validation.
+  Its distinguishing contribution is error-controlled extraction, rather than merely combining acquisition
+  modes.
+publication:
+  title: DIAMetAlyzer allows automated false-discovery rate-controlled analysis for data-independent acquisition
+    in metabolomics
+  doi: 10.1038/s41467-022-29006-z
+  year: 2022
+  journal: Nature Communications
+  citation: Alka et al. DIAMetAlyzer allows automated false-discovery rate-controlled analysis for data-independent
+    acquisition in metabolomics. Nature Communications (2022).
+purpose:
+  primary: metabolite_annotation
+  secondary: []
+platforms:
+- lc_ms
+analysis_types:
+- targeted
+components:
+- data_acquisition
+- annotation
+- quality_control
+- statistics
+ask_keywords:
+- DIAMetAlyzer
+- DIA
+- false discovery rate
+- decoy
+- assay library
+- targeted extraction
+workflow_steps:
+- title: Construct target and decoy assays
+  description: Build assays from DDA spectra with fragment annotations.
+  tool_slugs:
+  - openms
+  - sirius
+- title: Extract DIA chromatograms
+  description: Use the assay library to extract candidate peak groups.
+  tool_slugs:
+  - openms
+- title: Score and filter results
+  description: Estimate false-discovery rates before interpreting quantified features.
+  tool_slugs:
+  - openms
+tools:
+- slug: openms
+  role: Hosts the DIAMetAlyzer workflow.
+- slug: sirius
+  role: Fragment annotation for assay construction.
+resources:
+  code_available: true
+  code_url: https://github.com/oliveralka/DIAMetAlyzer_additional_code
+  method_available: true
+  method_url: https://doi.org/10.1038/s41467-022-29006-z
+scope:
+  designed_for:
+  - Assay-driven DIA quantification with statistical error control.
+  requirements:
+  - Compatible DDA library and DIA measurements.
+  considerations:
+  - Library coverage limits extraction.
+  - Extraction FDR does not establish definitive chemical identity.
+related_strategies:
+- dadia-hybrid-acquisition
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: 'Distinct from DaDIA acquisition design: this card describes target-decoy statistical validation.
+    Primary paper checked; software not executed.'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'
