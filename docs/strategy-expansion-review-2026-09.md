@@ -201,3 +201,12 @@ Validation for this batch: schema and form synchronization; strict build; editor
 Sources: https://pmc.ncbi.nlm.nih.gov/articles/PMC11018270/ ; https://github.com/pattilab/metabolomics_workflow ; https://pmc.ncbi.nlm.nih.gov/articles/PMC10849173/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC7241085/ . Alpha contains 33 Strategies.
 
 Batch validation passed: schema/forms, strict build, editorial/submission/contributor checks, terminology/implementation/brand checks, catalogue/controller tests, 28 generated Ask queries, 6,695 local links across 186 pages, 290 relationship links and SEO checks.
+
+
+## Predictive spatial image fusion (2026-09-23)
+
+Added one Strategy (34 total): microscopy-MSI predictive image fusion, anchored to Van de Plas et al. 2015, DOI 10.1038/nmeth.3296. Crossref title/year and primary full text (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4382398/fullTextXML) establish ion-specific PLS modeling, reconstruction scores, residual maps and bootstrap uncertainty. Predicted finer pixels are not new MS measurements; unsupported ions must not be extrapolated. This relationship differs from SpaceM cell assignment and existing phenotype integration.
+
+The published prototype is linked externally at https://fusion.vueinnovations.com/ rather than inventing a Tool slug or claiming open-source code. No software execution is claimed. The 2024 pharmaceutical fusion paper remains an implementation-review lead, not a separate Strategy; its final methods must be reviewed before adding an implementation. No alpha deployment.
+
+Validation passed: schema and form synchronization, strict build, editorial/submission/contributor checks, terminology/implementation/brand checks, catalogue/controller tests, 29 generated Ask questions, 6,724 local links across 187 pages, 290 relationships and 186 canonical-page SEO checks. An initial link check overlapped the build and was discarded; the completed-build checks passed.

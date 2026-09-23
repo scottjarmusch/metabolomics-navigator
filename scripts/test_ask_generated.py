@@ -17,6 +17,7 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Predict ion images from histology with microscopy mass spectrometry image fusion", "Predictive fusion of microscopy and mass spectrometry imaging", None),
     ("Process thousands of samples using pooled reference discovery", "Reference-pool discovery with cohort-wide signal extraction", None),
     ("DIA IntOpenStream MSE molecular networking", "Feature-Based Molecular Networking (FBMN)", None),
     ("Use iterative exclusion lists for previously fragmented ions", "Iterative exclusion-list MS/MS acquisition", None),

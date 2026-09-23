@@ -126,7 +126,7 @@ Status meanings:
 | Three-dimensional molecular cartography | EXISTING | Current Strategy |
 | Multimodal MSI plus imaging mass cytometry | ADDED | Alpha batch 2: 10.1038/s41592-024-02392-6; same-section antibody-defined phenotypes plus metabolic signals |
 | MSI plus spatial transcriptomics integration | STRONG | Find earliest defining method; SpaMTP 2026 is a later framework |
-| MSI plus histology image fusion | STRONG | Find defining image-fusion paper |
+| MSI plus histology image fusion | EXISTING | Predictive microscopy-MSI fusion; Van de Plas et al. 2015, 10.1038/nmeth.3296. Ion-specific prediction, distinct from cell assignment. |
 | On-tissue derivatization MSI | STRONG | npj Imaging 2024 review; identify canonical method |
 | Ion-mobility-enhanced MSI | STRONG | npj Imaging 2024 review; identify primary metabolomics/lipidomics paper |
 | Spatial segmentation-driven differential metabolomics | STRONG | Find primary method |
