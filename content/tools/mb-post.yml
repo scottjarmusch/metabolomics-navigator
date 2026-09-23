@@ -1,0 +1,48 @@
+$schema: ../../schemas/tool.schema.json
+slug: mb-post
+name: MB-POST
+aliases: []
+summary: MB-POST is a metabolomics mass spectrometry data repository which implements a reanalysis-oriented metadata framework that captures the information essential for data reuse. It provides a streamlined submission system that enables the rapid deposition of standardized metabolomics metadata together with experimental data.
+links:
+  primary: https://repository.massbank.jp/
+  documentation: https://repository.massbank.jp/help#before-submission
+  homepage: https://repository.massbank.jp/
+resource_types:
+- data_repository
+functions:
+  primary: data_management_sharing
+  secondary:
+  - reference_data_search
+  capabilities: []
+platforms:
+- multi_platform
+analysis_types: []
+interfaces:
+- web_app
+access:
+  model: open_source
+publications:
+- doi: 10.1021/acs.analchem.6c00697
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-23'
+credits: []
+provenance:
+  submitted_by: curator
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/52
+  developer_verified: false
+  submitter_name: Morgane Mauduit
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4583-5389
+  notes: "MB-POST is a mass spectrometry data repository for metabolomics. It consists of a high-speed file upload process, flexible file management system and easy-to-use interfaces. \nUsers can release their \"raw/processed\" data via this site with a unique identifier number for the paper publication. Users also can suspend (or \"embargo\") their data until their paper is published. \nThe file transfer from users' computer to our repository server is very fast and uses only web browsers – it does not require installing any additional software."
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-23'
+  updated_at: '2026-09-23'
+  last_verified: '2026-09-23'
