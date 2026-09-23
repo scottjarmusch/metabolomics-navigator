@@ -1,0 +1,49 @@
+$schema: ../../schemas/tool.schema.json
+slug: bago
+name: BAGO
+aliases:
+- Bayesian Optimization for LC Gradient Optimization
+summary: BAGO is an open-source bioinformatics tool designed for the systematic optimization of LC gradient using the Bayesian optimization framework. It is particularly useful for optimizing LC gradients in LC-MS-based metabolomics, lipidomics, and exposomics.
+links:
+  primary: https://github.com/HuanLab/bago
+  documentation: https://bago.readthedocs.io/en/latest/
+  repository: https://github.com/Waddlessss/bago
+  homepage: https://github.com/HuanLab/bago
+resource_types:
+- software_application
+functions:
+  primary: data_acquisition
+  secondary: []
+  capabilities: []
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- desktop_gui
+- python_package
+access:
+  model: open_source
+publications:
+- doi: 10.1021/acs.analchem.6c01208
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-23'
+credits: []
+provenance:
+  submitted_by: curator
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/54
+  developer_verified: false
+  submitter_name: Morgane Mauduit
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4583-5389
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-23'
+  updated_at: '2026-09-23'
+  last_verified: '2026-09-23'
