@@ -1,0 +1,52 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms-net
+name: MS-Net
+aliases:
+- MSNet
+- MS-Net
+summary: MS-Net combines annotation levels from both mass spectral libraries and in silico tools such as MS-Finder or Sirius-CSI to build a comprehensive candidate chemical space. Then, MS-Net prioritizes annotation using the molecular network and Tanimoto-based similarity with optional biosource reranking. Additionnaly it can combine positive and negative acquisition modes and add metadata to all annotated features, such as chemical ontology or database identifiers.
+links:
+  primary: https://forge.inrae.fr/metatoul/equipe-agromix/ms-net
+  homepage: https://forge.inrae.fr/metatoul/equipe-agromix/ms-net
+resource_types:
+- workflow_pipeline
+functions:
+  primary: annotation_identification
+  secondary:
+  - molecular_networking
+  capabilities: []
+platforms:
+- lc_ms
+analysis_types: []
+interfaces:
+- knime
+access:
+  model: open_source
+publications:
+- doi: 10.1021/acs.analchem.6c01026
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-16'
+credits:
+- name: Guillaume Marti
+  role: developer
+  orcid: 0000-0002-6321-9005
+provenance:
+  submitted_by: developer
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/38
+  developer_verified: false
+  submitter_name: Guillaume Marti
+  public_attribution_consent: true
+  submitter_orcid: 0000-0002-6321-9005
+  notes: MS-Net is compatible with output files from MZmine, Sirius, MS-Dial and MS-Finder
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-16'
+  updated_at: '2026-09-16'
+  last_verified: '2026-09-16'
