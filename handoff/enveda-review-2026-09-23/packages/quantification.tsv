@@ -1,0 +1,9 @@
+source_row	name	source_category	source_subcategory	tool_url	publication_url	year	programming_language	proposed_primary_function	proposed_platforms	proposed_analysis_types	proposed_interfaces	proposed_resource_type	flags
+59	MRMQuant	Targeted		https://github.com/kslynn128171/MRMQuant	https://pubs.acs.org/doi/10.1021/acs.analchem.4c02462	2024	MATLAB	quantification	lc_ms	targeted	matlab	software_application	
+226	RHermes	Targeted		https://github.com/RogerGinBer/RHermes	https://www.nature.com/articles/s41592-021-01307-z	2021	R	quantification	platform_independent	targeted;untargeted	r_package	programming_package	
+298	automRm	Targeted		https://gitlab.gwdg.de/joerg.buescher/automrm	https://pubs.acs.org/doi/full/10.1021/acs.analchem.1c05224	2022	R	quantification	lc_ms	targeted	r_package	programming_package	
+369	CLAW-MRM	Targeted		https://github.com/chopralab/CLAW	https://pubs.acs.org/doi/10.1021/acs.analchem.4c05039	2025	Python	quantification	platform_independent	lipidomics;targeted	python_package	workflow_pipeline	
+372	TARDIS	Targeted		https://github.com/UGent-LIMET/TARDIS	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00567	2025	R	quantification	lc_ms	lipidomics;targeted;untargeted	r_package	programming_package	
+388	MRMPro	Targeted		http://mrmpro.csibio.com/, https://github.com/CSi-Studio/MRMPro-Doc	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05685-x	2024	Java, Webserver	quantification	platform_independent	targeted	web_app	web_service	
+425	Norm ISWSVR	Targeted		https://github.com/Dingxian666/Norm-ISWSVR	https://pubs.acs.org/doi/10.1021/jasms.4c00467	2025	Python	quantification	lc_ms	targeted	python_package	programming_package	
+536	SCALiR	Targeted		https://lewisresearchgroup-ms-conc-streamlit-app-w9e64f.streamlit.app/	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c04988	2024	Python, Webserver	quantification	lc_ms	targeted	web_app;python_package	workflow_pipeline	
