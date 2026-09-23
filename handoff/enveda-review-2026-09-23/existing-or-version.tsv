@@ -1,0 +1,57 @@
+source_row	name	source_category	tool_url	matched_navigator_slug	note
+31	LIPID MAPS	Lipidomics	https://www.lipidmaps.org/	lipid-maps	Likely existing entry or version/update; review as update rather than new tool
+36	MASST+	Annotation	https://github.com/mohimanilab/MASSTplus	masst	Likely existing entry or version/update; review as update rather than new tool
+64	LipidSig	Lipidomics	http://chenglab.cmu.edu.tw/lipidsig	lipidsig	Likely existing entry or version/update; review as update rather than new tool
+65	LipidSig 2.0	Lipidomics	https://lipidsig.bioinfomics.org/	lipidsig	Likely existing entry or version/update; review as update rather than new tool
+102	MZmine 3	Multifunctional	https://github.com/mzmine/mzmine	mzmine	Likely existing entry or version/update; review as update rather than new tool
+131	MSNovelist	Annotation	https://github.com/meowcat/MSNovelist	msnovelist	Likely existing entry or version/update; review as update rather than new tool
+137	xcms	Pre-processing	https://github.com/sneumann/xcms	xcms	Likely existing entry or version/update; review as update rather than new tool
+138	MetaboLights	Database	https://www.ebi.ac.uk/metabolights, https://github.com/EBI-Metabolights	metabolights	Likely existing entry or version/update; review as update rather than new tool
+151	COCONUT	Database	https://coconut.naturalproducts.net/	coconut	Likely existing entry or version/update; review as update rather than new tool
+152	CANOPUS	Annotation	https://bio.informatik.uni-jena.de/software/canopus/	canopus	Likely existing entry or version/update; review as update rather than new tool
+184	matchms	Multifunctional	https://github.com/matchms/matchms	matchms	Likely existing entry or version/update; review as update rather than new tool
+196	MS2DeepScore 2.0	Annotation	https://github.com/matchms/MS2DeepScore	ms2deepscore	Likely existing entry or version/update; review as update rather than new tool
+211	peakPantheR	Large scale	https://bioconductor.org/packages/peakPantheR/	peakpanther	Likely existing entry or version/update; review as update rather than new tool
+246	asari	Pre-processing	https://github.com/shuzhao-li-lab/asari	asari	Likely existing entry or version/update; review as update rather than new tool
+283	M2aia	Imaging MS	https://github.com/m2aia/m2aia	m2aia	Likely existing entry or version/update; review as update rather than new tool
+290	MIST	Annotation	https://github.com/samgoldman97/mist	mist	Likely existing entry or version/update; review as update rather than new tool
+294	ICEBERG	Annotation	https://github.com/coleygroup/ms-pred	iceberg	Likely existing entry or version/update; review as update rather than new tool
+301	MetaboAnalyst 5.0	Multifunctional	http://www.metaboanalyst.ca/	metaboanalyst	Likely existing entry or version/update; review as update rather than new tool
+302	MetaboAnalyst 6.0	Multifunctional	https://www.metaboanalyst.ca	metaboanalyst	Likely existing entry or version/update; review as update rather than new tool
+304	MetaboAnalystR 4.0	Multifunctional	http://www.metaboanalyst.ca/	metaboanalystr	Likely existing entry or version/update; review as update rather than new tool
+321	metLinkR	Pathway, Enrichment and Ontology Tools	https://github.com/metLinkR/metLinkR	metlinkr	Likely existing entry or version/update; review as update rather than new tool
+333	MS2DeepScore	Annotation	https://github.com/matchms/ms2deepscore	ms2deepscore	Likely existing entry or version/update; review as update rather than new tool
+337	Cardinal v3	Imaging MS	https://github.com/kuwisdelu/Cardinal	cardinal	Likely existing entry or version/update; review as update rather than new tool
+344	MassBank	Spectral Library	https://massbank.jp/	massbank	Likely existing entry or version/update; review as update rather than new tool
+348	MZA	Formats	https://github.com/PNNL-m-q/mza	mza	Likely existing entry or version/update; review as update rather than new tool
+349	mzapy	Formats	https://github.com/PNNL-m-q/mzapy	mzapy	Likely existing entry or version/update; review as update rather than new tool
+350	LipidOz	Lipidomics	https://github.com/PNNL-m-q/lipidoz	lipidoz	Likely existing entry or version/update; review as update rather than new tool
+351	PeakDecoder	Pre-processing	https://github.com/EMSL-Computing/PeakDecoder	peakdecoder	Likely existing entry or version/update; review as update rather than new tool
+354	PNNL PreProcessor	Ion Mobility MS	https://github.com/PNNL-Comp-Mass-Spec/PNNL-PreProcessor/releases/tag/v6.0	pnnl-preprocessor	Likely existing entry or version/update; review as update rather than new tool
+412	Natural Products Atlas 2.0	Database	https://www.npatlas.org/	natural-products-atlas	Likely existing entry or version/update; review as update rather than new tool
+420	metID	Annotation	https://jaspershen.github.io/metID/	metid	Likely existing entry or version/update; review as update rather than new tool
+421	TidyMass	Multifunctional	https://www.tidymass.org/	tidymass	Likely existing entry or version/update; review as update rather than new tool
+450	SpaMTP	Spatial Metabolomics	https://github.com/GenomicsMachineLearning/SpaMTP	spamtp	Likely existing entry or version/update; review as update rather than new tool
+457	MS-DIAL 5	Multifunctional	https://github.com/systemsomicslab/MsdialWorkbench	ms-dial	Likely existing entry or version/update; review as update rather than new tool
+493	MS-Net	Annotation/Networks	https://zenodo.org/records/17669288	ms-net	Likely existing entry or version/update; review as update rather than new tool
+494	Workflow4Metabolomics	Holistic/ Standalone Tools	https://workflow4metabolomics.org/	workflow4metabolomics	Likely existing entry or version/update; review as update rather than new tool
+496	CFM-ID 4.0	Annotation	https://cfmid.wishartlab.com/	cfm-id	Likely existing entry or version/update; review as update rather than new tool
+498	HMDB 5.0	Database	https://hmdb.ca	hmdb	Likely existing entry or version/update; review as update rather than new tool
+529	BAGO	Specialized	https://github.com/huaxuyu/bago	bago	Likely existing entry or version/update; review as update rather than new tool
+537	GNPS Dashboard	Database	https://dashboard.gnps2.org/	gnps-dashboard	Likely existing entry or version/update; review as update rather than new tool
+541	foodMASST	Database	https://masst.ucsd.edu/foodmasst	foodmasst	Likely existing entry or version/update; review as update rather than new tool
+543	microbeMASST	Database	https://github.com/robinschmid/microbe_masst	microbemasst	Likely existing entry or version/update; review as update rather than new tool
+546	plantMASST	Database	https://github.com/helenamrusso/plantmasst	plantmasst	Likely existing entry or version/update; review as update rather than new tool
+562	ModiFinder	Annotation	https://github.com/Wang-Bioinformatics-Lab/ModiFinder_base	modifinder	Likely existing entry or version/update; review as update rather than new tool
+565	MassQL	Specialized	https://github.com/mwang87/MassQueryLanguage	massql	Likely existing entry or version/update; review as update rather than new tool
+597	NPLinker	Biosynthetic Gene Clusters	https://github.com/NPLinker/nplinker	nplinker	Likely existing entry or version/update; review as update rather than new tool
+602	IDBac	Organism specific	https://github.com/chasemc/IDBacApp	idbac	Likely existing entry or version/update; review as update rather than new tool
+613	patRoon 2	Multifunctional	https://github.com/rickhelmus/patRoon	patroon	Likely existing entry or version/update; review as update rather than new tool
+660	OpenMS 3	Multifunctional	https://github.com/OpenMS/OpenMS	openms	Likely existing entry or version/update; review as update rather than new tool
+671	PeakBot	Pre-processing	https://github.com/christophuv/PeakBot	peakbot	Likely existing entry or version/update; review as update rather than new tool
+692	Spec2Vec	Annotation	https://github.com/iomega/spec2vec	spec2vec	Likely existing entry or version/update; review as update rather than new tool
+697	MS2Query	Annotation	https://github.com/iomega/ms2query	ms2query	Likely existing entry or version/update; review as update rather than new tool
+699	MIBiG 3.0	Database/Biosynthetic Gene Clusters	https://mibig.secondarymetabolites.org/	mibig	Likely existing entry or version/update; review as update rather than new tool
+705	MS2LDA 2.0	Patterns	https://github.com/vdhooftcompmet/MS2LDA	ms2lda	Likely existing entry or version/update; review as update rather than new tool
+739	NOREVA	Statistical	https://github.com/idrblab/NOREVA; https://idrblab.org/noreva/	noreva	Likely existing entry or version/update; review as update rather than new tool
+748	MS-MINT	Large scale/Targeted/Untargeted	https://github.com/LewisResearchGroup/ms-mint-app2	ms-mint	Likely existing entry or version/update; review as update rather than new tool
