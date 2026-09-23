@@ -244,3 +244,9 @@ body { background:var(--paper); color:var(--ink); }
   }
   .site-header .nav-toggle:focus-visible { outline:3px solid #17575a; outline-offset:3px; }
 }
+
+/* Published Strategy implementation evidence. */
+.strategy-implementations { display:grid; gap:1rem; }
+.strategy-implementation { border-top:1px solid var(--line); padding:1rem 0 0; }
+.strategy-implementation h3 { margin:.15rem 0 .35rem; font-size:1.15rem; }
+.strategy-implementation .implementation-meta { color:var(--muted); font-size:.88rem; }

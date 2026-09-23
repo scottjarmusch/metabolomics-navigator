@@ -1,0 +1,101 @@
+$schema: ../../schemas/strategy.schema.json
+slug: reference-pool-cohort-extraction
+name: Reference-pool discovery with cohort-wide signal extraction
+summary: Discover features in pooled reference samples, then extract their signals across a large LC-MS cohort using curated mass and retention-time targets.
+description: >-
+  This workflow separates discovery from cohort-wide quantification. Reference pools establish
+  the target list; individual samples supply the quantitative measurements. Both annotated
+  metabolites and retained unknown features can be measured. The method is not defined by
+  the longevity cohort used to demonstrate it, and it does not require every feature to be identified.
+publication:
+  title: An Untargeted Metabolomics Workflow that Scales to Thousands of Samples for Population-Based Studies
+  doi: 10.1021/acs.analchem.2c01270
+  url: https://doi.org/10.1021/acs.analchem.2c01270
+  citation: Stancliffe E, Schwaiger-Haber M, et al. Analytical Chemistry 94, 17370-17378 (2022).
+  journal: Analytical Chemistry
+  year: 2022
+purpose:
+  primary: phenotype_association
+  secondary:
+  - metabolite_annotation
+platforms: [lc_ms]
+analysis_types: [untargeted, lipidomics]
+acquisition:
+  ms_levels: [ms1, ms2]
+  strategies: [dda]
+  ion_mobility: unspecified
+components: [preprocessing, quality_control, annotation]
+workflow_steps:
+- title: Prepare representative reference pools
+  description: Include relevant cohort subsets and acquire pooled discovery data, blanks and consistent QC samples.
+- title: Build the polar feature list
+  description: XCMS detects pooled features; CAMERA supports adduct selection. The study supplements these with AcquireX results.
+  tool_slugs: [xcms, camera]
+  external_tools:
+  - name: AcquireX
+- title: Curate reference targets
+  description: Review artifacts and annotation evidence. The published polar branch uses DecoID; the lipid branch uses Lipid Annotator. Retain suitable unknown features too.
+  external_tools:
+  - name: DecoID
+  - name: Lipid Annotator
+- title: Extract cohort peak areas
+  description: Use Skyline batch by batch with curated masses and retention-time boundaries; inspect integration and adjust for retention shifts.
+  tool_slugs: [skyline]
+- title: Evaluate correction and export measurements
+  description: Compare batch-correction choices against common QC samples before downstream biological analysis.
+  external_tools:
+  - name: Published processing notebooks
+    url: https://github.com/pattilab/metabolomics_workflow
+tools:
+- slug: xcms
+  role: Detects features in pooled polar-metabolite data.
+- slug: camera
+  role: Supports adduct selection during reference-list preparation.
+- slug: skyline
+  role: Extracts and reviews cohort-wide peak areas from the curated target list.
+- name: AcquireX
+  role: Supplies additional pooled-sample features in the published polar branch.
+- name: DecoID
+  role: Supports spectral annotation of polar reference features.
+- name: Lipid Annotator
+  role: Generates the published lipid reference list.
+- name: Published processing notebooks
+  url: https://github.com/pattilab/metabolomics_workflow
+  role: Reference processing, peak-boundary generation and batch-correction resources.
+resources:
+  code_available: true
+  code_url: https://github.com/pattilab/metabolomics_workflow
+  method_available: true
+  method_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11018270/
+scope:
+  designed_for:
+  - Large LC-MS cohorts where pooled discovery can provide a reusable reference list.
+  requirements:
+  - Representative pools, blanks, shared QC material and individual-sample raw data.
+  - Expert curation of reference peaks and integration boundaries.
+  considerations:
+  - Rare or low-abundance compounds can be diluted below detection in pools and omitted from the target list.
+  - Targeted signal extraction from untargeted data is not a validated absolute-concentration assay.
+  - Check batch correction for preservation of biological differences; no normalization method is universally best.
+  - The code is documented here, not executed or benchmarked by Navigator.
+ask_keywords:
+- thousands of samples
+- large cohort processing
+- pooled reference discovery
+- cohort wide peak extraction
+- Skyline reference targets
+related_strategies: [qc-rlsc-signal-drift-correction]
+sample_types: []
+biological_contexts: [broadly_applicable]
+organisms: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Primary methods and author code repository reviewed on 2026-09-21. DOI/title/year verified against Crossref. Two queue rows consolidated into this one workflow; no longevity-specific Strategy added.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-21'
+  updated_at: '2026-09-21'
+  last_verified: '2026-09-21'
+  last_editorial_review: '2026-09-21'

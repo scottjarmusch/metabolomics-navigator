@@ -1,0 +1,89 @@
+$schema: ../../schemas/strategy.schema.json
+slug: mass2motif-substructure-discovery
+name: Shared-substructure discovery with Mass2Motifs
+summary: Discover recurring fragment and neutral-loss patterns across MS/MS spectra to propose shared
+  substructures.
+description: MS2LDA links spectra through learned Mass2Motifs, including molecules without high overall
+  spectral similarity.
+publication:
+  title: Topic modeling for untargeted substructure exploration in metabolomics
+  doi: 10.1073/pnas.1608041113
+  year: 2016
+  journal: Proceedings of the National Academy of Sciences
+purpose:
+  primary: metabolite_annotation
+  secondary:
+  - molecular_family_discovery
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+components:
+- preprocessing
+- annotation
+- spectral_search
+ask_keywords:
+- MS2LDA
+- Mass2Motifs
+- shared substructures
+- fragment patterns
+- neutral losses
+- motif discovery
+- unknown spectra
+workflow_steps:
+- title: Prepare precursor-linked spectra
+  description: The original workflow uses XCMS, MzMatch and RMassBank to prepare fragment and loss features.
+  tool_slugs:
+  - xcms
+- title: Learn recurring motifs
+  description: Apply topic modeling to the fragment/loss matrix.
+  tool_slugs:
+  - ms2lda
+- title: Interpret and inspect assignments
+  description: Compare motif patterns with reference spectra and chemical knowledge; examine associated
+    precursors.
+  tool_slugs:
+  - ms2lda
+tools:
+- slug: xcms
+  role: Original preprocessing.
+- name: MzMatch
+  role: Original peak preprocessing.
+- name: RMassBank
+  role: Original MS1-MS2 pairing.
+- slug: ms2lda
+  role: Motif inference and exploration.
+resources:
+  method_available: true
+  method_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5137707/
+scope:
+  designed_for:
+  - Substructure hypotheses from collections of MS/MS spectra.
+  requirements:
+  - Precursor-linked fragmentation spectra and consistent fragment/loss representation.
+  considerations:
+  - A motif need not identify a unique substructure or complete molecule. Expert interpretation remains
+    necessary.
+implementations:
+- title: Unsupervised Discovery and Comparison of Structural Families Across Multiple Samples in Untargeted
+    Metabolomics
+  doi: 10.1021/acs.analchem.7b01391
+  year: 2017
+  journal: Analytical Chemistry
+  relationship: extension
+  summary: MS2LDA+ learns shared motifs across samples while retaining sample-specific prevalence for
+    comparison.
+  tool_slugs:
+  - ms2lda
+related_strategies: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: 2016 primary method; 2017 multisample extension retained here. Original software roles preserved;
+    modern alternatives are not asserted as original dependencies. No software execution tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-20'
+  updated_at: '2026-09-20'
+  last_editorial_review: '2026-09-20'

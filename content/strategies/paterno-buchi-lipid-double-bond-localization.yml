@@ -1,0 +1,75 @@
+$schema: ../../schemas/strategy.schema.json
+slug: paterno-buchi-lipid-double-bond-localization
+name: Paterno-Buchi photochemistry for lipid double-bond localization
+summary: Couple lipid photochemical derivatization to tandem MS to locate carbon-carbon double bonds.
+description: The defining approach converts unsaturated lipids into oxetane reaction products. Collision-induced
+  fragmentation of those products yields diagnostic ions that report double-bond position.
+publication:
+  title: Pinpointing Double Bonds in Lipids by Paternò-Büchi Reactions and Mass Spectrometry
+  doi: 10.1002/anie.201310699
+  year: 2014
+  journal: Angewandte Chemie International Edition
+  citation: Ma X, Xia Y. Pinpointing Double Bonds in Lipids by Paternò-Büchi Reactions and Mass Spectrometry.
+    Angewandte Chemie International Edition 53, 2592–2596 (2014).
+purpose:
+  primary: structure_elucidation
+  secondary:
+  - chemical_reactivity
+platforms:
+- direct_infusion_ms
+analysis_types:
+- lipidomics
+components:
+- sample_preparation
+- data_acquisition
+- annotation
+ask_keywords:
+- Paterno Buchi
+- double bond position
+- lipid isomers
+- photochemical derivatization
+- unsaturated lipids
+workflow_steps:
+- title: Photochemically modify lipid double bonds
+  description: The original implementation irradiates a nanoelectrospray plume containing lipids and acetone
+    with UV light.
+- title: Fragment reaction products
+  description: Acquire tandem mass spectra of the derivatized lipids using collision activation.
+- title: Interpret diagnostic fragments
+  description: Assign candidate double-bond locations from the oxetane-cleavage products.
+tools: []
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1002/anie.201310699
+scope:
+  designed_for:
+  - Locating double bonds in unsaturated lipids.
+  requirements:
+  - A compatible UV photoreaction and tandem-MS setup.
+  considerations:
+  - This is photochemical derivatization, distinct from gas-phase ozone-induced dissociation.
+  - Do not assume that software written for OzID interprets these spectra.
+related_strategies:
+- ozid-structural-lipidomics
+implementations:
+- title: 'Identification and quantitation of lipid C=C location isomers: A shotgun lipidomics approach
+    enabled by photochemical reaction'
+  doi: 10.1073/pnas.1523356113
+  year: 2016
+  journal: Proceedings of the National Academy of Sciences
+  relationship: extension
+  summary: Extends the photochemical method to identification and quantitation in complex lipid mixtures.
+    Tissue comparisons are use cases, not additional Strategies.
+  tool_slugs: []
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Primary source introduces the analytical chemistry-to-fragmentation relationship. The 2016 extension
+    is retained as an implementation. No catalogue software was identified as part of the original workflow;
+    no substitute is invented.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_editorial_review: '2026-09-19'

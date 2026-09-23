@@ -314,8 +314,17 @@ def enrich_strategy(record,labels,tool_by_slug):
         p['resolved_tools'].append(x)
     steps=[]
     for step in p.get('workflow_steps',[]):
-        x=dict(step); x['tools']=[tool_by_slug[s] for s in step.get('tool_slugs',[]) if s in tool_by_slug]; steps.append(x)
+        x=dict(step); x['tools']=[tool_by_slug[s] for s in step.get('tool_slugs',[]) if s in tool_by_slug]
+        functions=sorted({t['functions']['primary'] for t in x['tools']})
+        x['alternative_functions']=[{'id':f,'label':labels['functions'].get(f,f)} for f in functions]
+        steps.append(x)
     p['workflow_steps_enriched']=steps
+    implementations=[]
+    for implementation in p.get('implementations',[]):
+        x=dict(implementation)
+        x['tools']=[tool_by_slug[s] for s in implementation.get('tool_slugs',[]) if s in tool_by_slug]
+        implementations.append(x)
+    p['implementations_enriched']=sorted(implementations,key=lambda x:(x.get('year',0),x.get('title','')),reverse=True)
     role=p.get('provenance',{}).get('submitted_by','other'); submitted={'author':'Author submitted','user':'Community submitted','curator':'Curator submitted','other':'Community submitted'}.get(role,'Community submitted')
     badges=[submitted]
     if p.get('provenance',{}).get('author_verified'): badges.append('Author verified')
@@ -325,7 +334,7 @@ def enrich_strategy(record,labels,tool_by_slug):
     p['availability_labels']=[]
     for key,label in [('raw_data_available','Raw data available'),('processed_data_available','Processed data available'),('code_available','Code available'),('method_available','Published method available')]:
         if resources.get(key): p['availability_labels'].append(label)
-    search=[p['name'],p['summary'],p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']]]
+    search=[p['name'],p['summary'],*p.get('ask_keywords',[]),p['objective_label'],*p['secondary_objective_labels'],*p['platform_labels'],*p['analysis_type_labels'],*p['component_labels'],*p['sample_type_labels'],*p['biological_context_labels'],*p.get('organisms',[]),*p['ms_level_labels'],*p['acquisition_strategy_labels'],*[x.get('name') or (x.get('tool') or {}).get('name','') for x in p['resolved_tools']],*[x.get('title','')+' '+x.get('summary','') for x in p.get('implementations',[])]]
     p['search_text']=' '.join(map(str,search)).lower(); return p
 
 

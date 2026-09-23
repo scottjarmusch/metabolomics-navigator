@@ -1,0 +1,93 @@
+$schema: ../../schemas/strategy.schema.json
+slug: spacem-single-cell-metabolomics
+name: Spatially registered single-cell metabolomics
+aliases:
+- SpaceM
+summary: A single-cell metabolomics strategy that registers microscopy-derived cell boundaries and morphologic information with MALDI imaging mass spectrometry so spatial ion signals can be assigned to individual cells.
+description: SpaceM combines light microscopy, image segmentation, MALDI mass spectrometry imaging, and spatial registration to convert tissue- or culture-level ion images into per-cell metabolic profiles. The key methodological step is aligning optical cell information with MSI ablation coordinates so metabolite signals can be associated with individual cells while retaining morpho-spatial context.
+publication:
+  title: SpaceM reveals metabolic states of single cells
+  doi: 10.1038/s41592-021-01198-0
+  url: https://doi.org/10.1038/s41592-021-01198-0
+  citation: Rappez L, Stadler M, Triana S, et al. SpaceM reveals metabolic states of single cells. Nature Methods 18, 799-805 (2021).
+  journal: Nature Methods
+  year: 2021
+purpose:
+  primary: single_cell_metabolomics
+  secondary:
+  - spatial_metabolomics
+  - phenotype_association
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+- metabolite_profiling
+acquisition:
+  ms_levels:
+  - ms1
+  strategies:
+  - full_scan
+  ion_mobility: not_required
+components:
+- sample_preparation
+- data_acquisition
+- preprocessing
+- metadata_analysis
+- statistics
+- biological_validation
+workflow_steps:
+- title: Acquire microscopy of the same cells
+  description: Record optical images that preserve cell morphology and spatial context before MALDI analysis.
+- title: Segment individual cells
+  description: Derive cell boundaries and image-derived features from the optical data.
+- title: Acquire MALDI mass spectrometry imaging
+  description: Collect spatially resolved metabolite signals across the same cellular field.
+- title: Register optical and MSI coordinate systems
+  description: Align cell masks with MALDI ablation locations so mass-spectral signals can be assigned to individual cells.
+- title: Construct per-cell metabolic profiles
+  description: Aggregate registered ion signals into a cell-by-metabolite matrix while retaining morphologic and spatial information.
+- title: Identify metabolic cell states
+  description: Analyze single-cell metabolic profiles to distinguish heterogeneous cell states and relate them to morphology or experimental conditions.
+tools:
+- name: SpaceM
+  url: https://github.com/alexandrovteam/SpaceM
+  role: Open-source implementation of spatial registration and single-cell metabolomic data processing.
+resources:
+  code_available: true
+  code_url: https://github.com/alexandrovteam/SpaceM
+  method_available: true
+  method_url: https://doi.org/10.1038/s41592-021-01198-0
+scope:
+  designed_for:
+  - In situ metabolic profiling of heterogeneous cell populations at single-cell resolution.
+  - Linking metabolic states to cell morphology and spatial position.
+  requirements:
+  - Compatible microscopy, cell segmentation, and MALDI-MSI measurements from the same spatial field.
+  - Accurate spatial registration between optical images and MSI coordinates.
+  considerations:
+  - Cell-level profiles depend on segmentation and registration accuracy.
+  - MALDI pixel size, analyte delocalization, and ion suppression can influence per-cell assignments.
+ask_keywords:
+- single cell metabolomics
+- maldi single cells
+- connect microscopy with mass spectrometry imaging
+- spatially resolved cell metabolomics
+- spacem
+sample_types:
+- cells
+biological_contexts:
+- broadly_applicable
+organisms: []
+related_strategies:
+- msi-guided-molecular-networking
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Included because the publication introduces a transferable multimodal strategy that uses spatial registration to convert MSI measurements into single-cell metabolic profiles.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-19'
+  updated_at: '2026-09-19'
+  last_verified: '2026-09-19'
+  last_editorial_review: '2026-09-19'
