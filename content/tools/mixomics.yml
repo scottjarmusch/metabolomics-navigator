@@ -1,0 +1,52 @@
+$schema: ../../schemas/tool.schema.json
+slug: mixomics
+name: mixOmics
+aliases:
+- DIABLO
+- MINT
+summary: mixOmics is an R package with tools for integrating multi-omic datasets, such as proteomics, metabolomics, metagenomics, microbiome, lipidomics, and more. It can assist in data visualization and advanced multivariate techniques for integration of varied omics studies.
+links:
+  primary: https://mixomics.org/
+  repository: https://github.com/mixOmics-org/mixOmics
+  documentation: https://www.rdocumentation.org/packages/mixOmics/versions/6.3.2
+  homepage: https://mixomics.org/
+resource_types:
+- programming_package
+functions:
+  primary: multiomics_integration
+  secondary:
+  - statistics
+  - visualization_reporting
+  - pathway_interpretation
+  capabilities: []
+platforms:
+- platform_independent
+analysis_types: []
+interfaces:
+- r_package
+access:
+  model: open_source
+publications:
+- doi: 10.1371/journal.pcbi.1005752
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-16'
+credits: []
+provenance:
+  submitted_by: user
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/40
+  developer_verified: false
+  submitter_name: Daniel J. Otto
+  public_attribution_consent: true
+  submitter_orcid: 0009-0001-4165-3484
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-16'
+  updated_at: '2026-09-16'
+  last_verified: '2026-09-16'
