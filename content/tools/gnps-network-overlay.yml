@@ -1,0 +1,75 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnps-network-overlay
+name: GNPS2 Network Overlay
+summary: Attach custom feature attributes to an existing GNPS2 molecular network using matching node identifiers.
+description: The network-overlay workflow joins an uploaded feature table to a completed network. The documented
+  Progenesis route launches it from FBMN and supplies the existing spectra and graph automatically. The overlay
+  adds supplied attributes; it does not independently establish their biological meaning.
+links:
+  primary: https://gnps2.org/workflowinput?workflowname=gnps2_network_overlay_workflow
+  documentation: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/protocol_fbmn_progenesis_overlay/
+resource_types:
+- workflow_pipeline
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - network_visualization
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Hosted GNPS2 resource. Check hosted-service terms and account requirements; a software license is not inferred
+    from hosting.
+publications: []
+resource_citations:
+- type: documentation
+  citation: GNPS2 Network Overlay official documentation. Accessed 24 September 2026.
+  url: https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/protocol_fbmn_progenesis_overlay/
+maintenance:
+  status: unclear
+  last_checked: '2026-09-24'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation reviewed on 2026-09-24. No dedicated publication verified; no analysis execution
+    or independent benchmark claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-24'
+  updated_at: '2026-09-24'
+  last_verified: '2026-09-24'
+  last_editorial_review: '2026-09-24'
+data:
+  input_types:
+  - feature_table
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - GraphML network, MGF spectra and an overlay table with a node-ID column
+  other_output_formats:
+  - GNPS2 network results with supplied overlay attributes
+common_uses:
+- Add feature-level information to a completed molecular network.
+scope:
+  designed_for:
+  - Overlaying table attributes on existing GNPS2 network nodes.
+  not_designed_for:
+  - Generating new measured evidence or validating uploaded annotations.
+  requirements:
+  - A completed network, its spectra and a compatible overlay table.
+  - A node-ID column that matches network identifiers; follow the documented column-header restrictions.
+  considerations:
+  - Mismatched identifiers can prevent correct attribute assignment.
+  - The linked tutorial demonstrates Progenesis/FBMN; no broader format support was independently tested.
+  - The source repository linked from the workflow collection could not be retrieved during review.
+related_tools:
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: Documented launch from completed FBMN results.
+- slug: gnps-classical-molecular-networking
+  relationship: integration
+  note: Also linked from the official classical-networking result definition.

@@ -94,3 +94,8 @@ Next Gen Web Apps separates maintained apps from in-development tools and an unr
 - https://apps.gnps2.org/
 
 Ask Navigator and the large handoff remain held back. This tool batch is separate.
+
+
+## Follow-up 2026-09-24
+
+Added CorrOmics and GNPS2 Network Overlay after reviewing official app source and the working Progenesis overlay tutorial. Earlier missing labels above remain the initial audit snapshot. CorrOmics links paired tables through explicit sample metadata; no dedicated publication or explicit license was established. The overlay source repository and general documentation link were unavailable, so the entry uses the working official tutorial and limits its claims accordingly. FBMN Plotter endpoint retrieval timed out; do not infer retirement from that. Transitive-alignment documentation is available but still labels its citation “In Press”; primary-paper identity remains to be resolved.
