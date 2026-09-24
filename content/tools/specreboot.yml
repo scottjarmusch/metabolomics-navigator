@@ -1,0 +1,48 @@
+$schema: ../../schemas/tool.schema.json
+slug: specreboot
+name: SpecReBoot
+aliases: []
+summary: SpecReBoot brings the statistical rigor of phylogenetic bootstrapping to mass spectrometry. It resamples spectral features to estimate edge support and build consensus molecular networks with quantified confidence.
+links:
+  primary: https://github.com/ECharria/SpecReBoot
+  repository: https://github.com/ECharria/SpecReBoot
+resource_types:
+- programming_package
+functions:
+  primary: molecular_networking
+  secondary:
+  - spectral_analysis
+  - reference_data_search
+  capabilities: []
+platforms:
+- platform_independent
+analysis_types: []
+interfaces:
+- python_package
+access:
+  model: open_source
+publications:
+- doi: 10.64898/2026.02.03.703446
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-09-24'
+credits: []
+provenance:
+  submitted_by: curator
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/63
+  developer_verified: false
+  submitter_name: Morgane Mauduit
+  public_attribution_consent: true
+  submitter_orcid: 0000-0003-4583-5389
+  notes: "Status: in active development \nFeedback, ideas, issues, and PRs are very welcome!"
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-09-24'
+  updated_at: '2026-09-24'
+  last_verified: '2026-09-24'
