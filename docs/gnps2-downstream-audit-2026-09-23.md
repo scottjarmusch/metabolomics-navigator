@@ -45,7 +45,7 @@ Exact official resource links are matched against catalogue links. A missing dir
 | [MetaboApp - Multi‑step MassQL](https://multistep-massql.gnps2.org/) | `multistep-massql` |
 | [MetaboApp - FoodReadouts](https://foodreadouts.gnps2.org/) | `food-readout` |
 | [MS2LDA.org](http://ms2lda.org/) | Review for dedicated entry or existing-parent coverage |
-| [NPAtlas](https://www.npatlas.org/joomla/) | `natural-products-atlas` (legacy URL in index) |
+| [Natural Products Atlas](https://www.npatlas.org/joomla/) | `natural-products-atlas` (legacy URL in index) |
 | [MIBiG](https://mibig.secondarymetabolites.org/) | `mibig` |
 | [ClassyFire](http://classyfire.wishartlab.com/) | Review for dedicated entry or existing-parent coverage |
 | [SMART NMR](http://smart.ucsd.edu) | Exclude: author administration or NMR-only |
