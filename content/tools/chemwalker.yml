@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: chemwalker
+name: ChemWalker
+summary: Rank candidate molecular structures by propagating spectral-library annotation evidence through molecular
+  networks using random walks.
+platforms:
+- lc_ms
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official ChemWalker repository and GNPS2 workflow input definition reviewed; primary DOI/title/year verified
+    through Crossref on 2026-09-23. No software execution or developer verification.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-23'
+  updated_at: '2026-09-23'
+  last_verified: '2026-09-23'
+  last_editorial_review: '2026-09-23'
+maintenance:
+  status: unclear
+  last_checked: '2026-09-23'
+description: ChemWalker combines molecular-network context with candidate structures evaluated by in-silico fragmentation.
+  Its Python implementation uses MetFrag, while a GNPS2 workflow accepts a networking task and a selected molecular
+  family. Propagated rankings guide annotation follow-up rather than confirming an identity.
+links:
+  primary: https://github.com/computational-chemical-biology/ChemWalker
+  repository: https://github.com/computational-chemical-biology/ChemWalker
+  documentation: https://github.com/Wang-Bioinformatics-Lab/Chemwalker_workflow/blob/master/workflowinput.yaml
+  web_app: https://gnps2.org/workflowinput?workflowname=chemwalker_nextflow_workflow
+resource_types:
+- programming_package
+- workflow_pipeline
+interfaces:
+- python_package
+- web_app
+functions:
+  primary: annotation_identification
+  secondary:
+  - molecular_networking
+  capabilities:
+  - in_silico_spectra
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: Core Python package is BSD-3-Clause; MetFrag and workflow dependencies have their own requirements. Hosted
+    GNPS2 execution requires an account and is restricted to academic/non-commercial use without a separate license.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  - report
+  other_input_formats:
+  - GNPS networking task ID and component index
+  - Ion mode, adduct and optional pipe-separated candidate database
+  other_output_formats:
+  - Candidate annotation rankings from the selected network component.
+common_uses:
+- Prioritize candidate structures for unannotated members of a molecular family.
+- Combine candidate fragmentation evidence with neighboring library annotations.
+scope:
+  designed_for:
+  - Annotation propagation within MS/MS molecular networks.
+  not_designed_for:
+  - Raw feature detection, quantitative statistics or confirmed identification without additional evidence.
+  requirements:
+  - A compatible network task and selected molecular component; the GNPS2 form requests one component per run.
+  - Appropriate ion/adduct settings and a candidate structure database; local installation requires the documented
+    environment and MetFrag.
+  considerations:
+  - Incorrect seed annotations and missing candidate structures can affect propagated rankings.
+  - The repository reports testing with MetFrag 2.3; compatibility with newer dependencies was not execution-tested.
+publications:
+- doi: 10.1093/bioinformatics/btad078
+  type: primary
+  citation: 'Borelli TC, Arini GS, Feitosa LGP, et al. Improving annotation propagation on molecular networks through
+    random walks: introducing ChemWalker. Bioinformatics 39(3), btad078 (2023).'
+related_tools:
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: The GNPS2 workflow accepts FBMN task identifiers and a molecular component.
+- slug: metfrag
+  relationship: integration
+  note: Uses MetFrag for candidate in-silico fragmentation.
