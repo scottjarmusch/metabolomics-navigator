@@ -276,3 +276,7 @@ body { background:var(--paper); color:var(--ink); }
 .tool-education-links a strong,.tool-education-links a span { display:block; }
 .tool-education-links a span { color:var(--muted); font-size:.86rem; margin-top:.2rem; }
 @media(max-width:760px){ .education-controls,.education-list { grid-template-columns:1fr; } }
+
+.education-resource,.education-resource-head > div { min-width:0; }
+.education-resource h2 { overflow-wrap:anywhere; }
+@media(max-width:480px){ .education-resource-head { flex-direction:column; gap:.5rem; } }
