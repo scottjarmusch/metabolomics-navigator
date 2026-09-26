@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: patroon-tutorial
+title: "patRoon tutorial"
+summary: "Current 2026 tutorial for a complete non-target analysis workflow."
+url: "https://rickhelmus.github.io/patRoon/articles/tutorial.html"
+resource_type: tutorial
+tool_slugs:
+  - patroon
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
