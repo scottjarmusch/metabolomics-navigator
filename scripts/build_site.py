@@ -317,8 +317,10 @@ EDUCATION_TYPE_LABELS={'video':'Video','workshop':'Workshop','tutorial':'Tutoria
 def enrich_education(record,tool_by_slug):
     item=dict(record)
     item['tools']=[tool_by_slug[s] for s in item.get('tool_slugs',[]) if s in tool_by_slug]
+    if set(item.get('tool_versions',{})) - set(item.get('tool_slugs',[])):
+        raise ValueError(f"Education {item['slug']}: version supplied for an unlinked tool")
     item['resource_type_label']=EDUCATION_TYPE_LABELS.get(item.get('resource_type'),item.get('resource_type','Resource').replace('_',' ').title())
-    search=[item.get('title',''),item.get('summary',''),item.get('provider',''),item.get('note',''),*[t['name'] for t in item['tools']]]
+    search=[item.get('title',''),item.get('summary',''),item.get('provider',''),item.get('note',''),item.get('year',''),*[t['name'] for t in item['tools']]]
     item['search_text']=' '.join(map(str,search)).lower()
     return item
 

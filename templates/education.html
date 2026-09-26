@@ -27,12 +27,14 @@
     </label>
   </div>
 
-  <p class="education-count"><span data-education-count>{{ education_resources|length }}</span> resources</p>
+  <label class="education-sort">Sort resources <select data-education-sort><option value="tool">By tool</option><option value="newest">Newest first</option></select></label>
+  <p class="education-count" aria-live="polite"><span data-education-count>{{ education_resources|length }}</span> resources</p>
 
   <div class="education-list">
     {% for resource in education_resources %}
     <article class="education-resource"
       data-education-item
+      data-year="{{ resource.year|default(0) }}"
       data-tools="{{ resource.tool_slugs|join(' ') }}"
       data-search="{{ resource.search_text }}">
       <div class="education-resource-head">
@@ -46,11 +48,13 @@
           <span class="education-status">Needs review</span>
         {% endif %}
       </div>
+      <p class="education-date">{% if resource.year %}<a href="{{ resource.date_source }}" title="Date source">{{ resource.year_kind|capitalize }} {{ resource.year }}</a>{% else %}Date not listed{% endif %}</p>
       <p class="education-provider">{{ resource.provider }}</p>
       <p>{{ resource.summary }}</p>
+      <p class="education-tools-label">Tools covered</p>
       <div class="education-tools">
         {% for tool in resource.tools %}
-        <a href="{{ url('tools/' ~ tool.slug ~ '/') }}">{{ tool.name }}</a>
+        <a href="{{ url('tools/' ~ tool.slug ~ '/') }}">{{ tool.name }}{% if resource.tool_versions and tool.slug in resource.tool_versions %} {{ resource.tool_versions[tool.slug] }}{% endif %}</a>
         {% endfor %}
       </div>
       {% if resource.note %}<p class="education-note">{{ resource.note }}</p>{% endif %}

@@ -1,5 +1,6 @@
 """Add the built Education preview to an existing alpha snapshot, preserving Ask."""
 import argparse
+import hashlib
 import re
 from pathlib import Path
 
@@ -14,9 +15,10 @@ base = '/metabolomics-navigator-alpha/'
 page = (ROOT / 'dist/education/index.html').read_text(encoding='utf-8')
 assert base in page
 page = page.replace('content="index,follow"', 'content="noindex,follow"')
-page = page.replace('</head>', f'<link rel="stylesheet" href="{base}assets/education-alpha.css">\n</head>')
-page = page.replace('</body>', f'<script src="{base}assets/education-alpha.js" defer></script>\n</body>')
-page = re.sub(r'(<body[^>]*>)', r'\1<aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>', page, count=1)
+version = hashlib.sha256((ROOT/'assets/site.js').read_bytes() + (ROOT/'assets/product-refresh.css').read_bytes()).hexdigest()[:12]
+page = page.replace('</head>', f'<link rel="stylesheet" href="{base}assets/education-alpha.css?v={version}">\n</head>')
+page = page.replace('</body>', f'<script src="{base}assets/education-alpha.js?v={version}" defer></script>\n</body>')
+page = re.sub(r'(<body[^>]*>)', r'\1<aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot Â· Not the live site Â· <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>', page, count=1)
 (target / 'education').mkdir(exist_ok=True)
 (target / 'education/index.html').write_text(page, encoding='utf-8')
 css = (ROOT / 'assets/product-refresh.css').read_text(encoding='utf-8').split('/* Education alpha:', 1)[1]
