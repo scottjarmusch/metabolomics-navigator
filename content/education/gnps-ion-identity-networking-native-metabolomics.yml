@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-ion-identity-networking-native-metabolomics
+title: "GNPS Ion-Identity Networking, Native Metabolomics"
+summary: "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=tb7LxaeNvcw"
+resource_type: workshop
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+  - mzmine
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Strong but may need explicit IIN mapping/note."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
