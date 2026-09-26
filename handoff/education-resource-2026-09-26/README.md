@@ -1,23 +1,12 @@
-# Education resource — implementation handoff
+# Education — lightweight curated guide
 
-Goal: add an **Education** resource to Metabolomics Navigator for curated external tutorials, workshop recordings, and practical training videos related to tools already represented in Navigator.
+Goal: add **Education** to Metabolomics Navigator as a simple guide to trustworthy external learning resources for tools already represented in Navigator.
 
-This handoff is intentionally separate from the tool catalogue and analytical-strategy model.
+Navigator should not become a course platform, video host, or replacement for official documentation.
 
-## Product intent
+The product promise is simple:
 
-Education should answer:
-
-> “I found the tool. Where can I learn how to use it?”
-
-The first supported resource type is **video tutorial / workshop recording**, especially YouTube content from official tool developers, workshops, training schools, conferences, or established metabolomics community organizations.
-
-Education is **not**:
-- a ranking of tutorials;
-- a replacement for official documentation;
-- a new tool category;
-- an endorsement of a software ecosystem;
-- a place for generic metabolomics lectures with no practical connection to Navigator content.
+> **Found a tool? Navigator helps you find good places to learn it.**
 
 ## Navigation
 
@@ -29,70 +18,115 @@ Route:
 
 `/education/`
 
-Also add Education under the footer's Explore section.
+Also add Education under Footer → Explore.
 
-## Recommended information architecture
+## What belongs here
 
-The Education landing page should be searchable/filterable and show tutorial cards.
+Education resources should be practical and clearly attributable:
 
-Primary browsing dimensions:
+- official tool tutorials;
+- developer or maintainer walkthroughs;
+- workshop recordings;
+- training-school materials;
+- trusted community tutorials;
+- hands-on written tutorials;
+- official documentation/training hubs.
 
-- Tool
-- Format: workshop recording / tutorial / walkthrough / lecture-demo
-- Experience level: introductory / intermediate / advanced / mixed
-- Scientific function, inherited from linked tool(s)
-- Analytical platform, inherited from linked tool(s)
-- Provider / workshop
-- Year
+Avoid:
+- generic lectures with no practical tool connection;
+- popularity-based recommendations;
+- copied tutorial content;
+- embedded video hosting;
+- rankings such as “best tutorial.”
 
-Do not create tool-specific category taxonomies inside Education when those dimensions can be inherited from existing Navigator tool records.
+## Core relationship
 
-## Data model principle
-
-Education resources reference Navigator tools using `tool_slugs`.
-
-Example:
+Each Education resource points to one or more existing Navigator tools:
 
 ```yaml
 tool_slugs:
   - mzmine
 ```
 
-This creates a stable relationship:
+A resource can reference multiple tools when it teaches an actual workflow boundary, for example:
 
-Tool → educational resources  
-Education resource → tool(s)
+```yaml
+tool_slugs:
+  - ms-dial
+  - ms-finder
+```
 
-A tutorial may reference multiple tools when a workshop genuinely covers an interoperable workflow.
+## Minimal metadata
 
-## Initial scope
+Each record needs only:
 
-Phase 1:
-- hosted video links, especially YouTube;
-- tool-focused workshop recordings;
-- official/community tutorials;
-- curated metadata;
-- no embedded tracking-heavy YouTube iframes by default.
+- title
+- external URL
+- linked tool slug(s)
+- provider/source
+- resource type
+- one-line description
+- optional experience level
+- optional legacy/currentness note
+- lightweight provenance
 
-Prefer thumbnail + metadata + “Watch on YouTube” external link. If embedding is introduced later, use privacy-enhanced embeds and do not load third-party content before user interaction.
+No duration, thumbnails, video IDs, presenter databases, popularity metrics, or complex topic taxonomy are required for phase 1.
 
-## Editorial rule
+## Resource types
 
-The existence of an education resource does not mean Navigator endorses the method or tool.
+Use a deliberately small vocabulary:
 
-Prefer:
-1. official developer/maintainer tutorial;
-2. established workshop or training-school material;
-3. community tutorial with clear authorship and sufficient technical value.
+- `video`
+- `workshop`
+- `tutorial`
+- `documentation`
+- `training_hub`
 
-Store provenance and verification dates.
+These describe how the user learns, not the scientific function.
 
-## Package contents
+## Currentness
 
-- `IMPLEMENTATION.md` — exact repository changes
-- `education.schema.json` — proposed resource schema
-- `education.example.yml` — example records using placeholders
-- `education.html` — proposed Jinja template
-- `CODEX_PROMPT.md` — ready-to-run implementation prompt
+Use an optional `note` field for important context such as:
+
+- “Uses the MZmine 2 interface; workflow concepts remain useful.”
+- “Recorded in 2020; verify current GNPS interface before following step-by-step.”
+- “Current official tutorial hub.”
+
+Do not invent a numeric freshness score.
+
+## Display model
+
+The Education page should behave like a guide:
+
+### MZmine
+
+**Data preprocessing in MZmine 3**  
+Functional Metabolomics Lab · Workshop  
+Hands-on introduction to LC-MS preprocessing.  
+[Open resource ↗]
+
+**MZmine Learners Corner**  
+MZmine project · Training hub  
+Official collection of videos, workshops, and learning material.  
+[Open resource ↗]
+
+Resources can be grouped by linked tool and optionally searched.
+
+## Editorial role
+
+Navigator curates and points outward.
+
+The existence of a resource does not imply endorsement of the tool, tutorial, presenter, or analytical approach.
+
+Prefer official and established training material, but include strong community resources when authorship and practical value are clear.
+
+## Seed material already collected
+
+See:
+
+- `education-seed-candidates.tsv`
+- `broader-tutorial-leads.tsv`
+
+These contain an initial set from Functional Metabolomics, GNPS, MZmine, MS-DIAL, MetaboAnalyst, OpenMS/pyOpenMS, XCMS, MetFrag, patRoon, Workflow4Metabolomics, MS-FINDER, and related training sources.
 
 No production files outside this handoff directory are modified by this branch.
