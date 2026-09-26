@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-workshops-training
+title: "GNPS Workshops/Training"
+summary: "Official hub for GNPS modules and recorded workshops covering networking, MASST, ReDU, MS2LDA, dashboard, libraries and more."
+url: "https://ccms-ucsd.github.io/GNPSDocumentation/workshops/"
+resource_type: training_hub
+tool_slugs:
+  - gnps
+provider: "GNPS"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
