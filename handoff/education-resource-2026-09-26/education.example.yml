@@ -1,0 +1,34 @@
+$schema: ../../schemas/education.schema.json
+slug: example-tool-workshop
+title: Example practical workshop for Example Tool
+summary: A hands-on workshop recording introducing a Navigator-listed tool and demonstrating a reproducible analysis workflow.
+url: https://www.youtube.com/watch?v=EXAMPLE
+format: workshop_recording
+tool_slugs:
+  - example-tool
+provider:
+  name: Example Metabolomics Workshop
+  url: https://example.org/
+  type: workshop
+workshop: Example Metabolomics Training School
+publication_date: '2026-01-01'
+duration_minutes: 90
+experience_level: introductory
+language: en
+presenters:
+  - Example Presenter
+topics:
+  - project setup
+  - data import
+  - preprocessing
+  - export
+notes: Placeholder record for implementation testing only. Replace before publication.
+provenance:
+  submitted_by: curator
+  source: Workshop video page
+  verified_against: Provider page and video description
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+  created_at: '2026-09-26'
+  updated_at: '2026-09-26'
