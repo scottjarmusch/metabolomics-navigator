@@ -1,212 +1,197 @@
-# Implementation specification
+# Education implementation specification
 
-## 1. Add the route and navigation
+## 1. Add navigation
 
-### `templates/base.html`
-
-Add between Strategies and Ask Navigator:
+In `templates/base.html`, add Education between Strategies and Ask Navigator:
 
 ```html
 <a href="{{ url('education/') }}"{% if active == 'education' %} aria-current="page"{% endif %}>Education</a>
 ```
 
-Under Footer → Explore add:
+Add Education under Footer → Explore.
 
-```html
-<a href="{{ url('education/') }}">Education</a>
-```
-
-### `scripts/build_site.py`
-
-Load education records from `content/education/*.yml`, validate them, enrich them with referenced tools, and render:
-
-`dist/education/index.html`
-
-Pass:
-- `education_resources`
-- `tools`
-- filter metadata if implemented client-side
-
-Add `education/` to the sitemap.
-
-## 2. Add data directories
+## 2. Add route and content
 
 Create:
 
-`content/education/`
+- `content/education/`
+- `schemas/education.schema.json`
+- `templates/education.html`
 
-and:
+Render:
 
-`schemas/education.schema.json`
+`/education/`
 
-One YAML file per educational resource.
+Add the route to sitemap.xml.
 
-Suggested filename convention:
+## 3. Minimal record model
 
-`<tool-slug>-<short-tutorial-slug>.yml`
-
-Example:
-
-`mzmine-intro-workshop.yml`
-
-## 3. Data model
+One YAML file per external learning resource.
 
 Required:
 - slug
 - title
 - summary
 - url
-- format
+- resource_type
 - tool_slugs
 - provider
-- provenance
 - status
 
-Recommended:
-- publication_date
-- duration_minutes
+Optional:
 - experience_level
-- language
-- workshop
-- presenters
-- topics
-- notes
+- note
+- provenance
 
-### Format vocabulary
+Example:
 
-Start narrowly:
+```yaml
+$schema: ../../schemas/education.schema.json
+slug: mzmine-learners-corner
+title: MZmine Learners Corner
+summary: Official collection of MZmine videos, workshops, and practical learning material.
+url: https://mzmine.github.io/mzmine_documentation/latest/learners_corner.html
+resource_type: training_hub
+tool_slugs:
+  - mzmine
+provider: MZmine project
+experience_level: mixed
+note: Current official training hub.
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: published
+```
 
-- `workshop_recording`
-- `video_tutorial`
-- `software_walkthrough`
-- `lecture_demo`
+## 4. Controlled values
 
-Do not create an unrestricted format vocabulary in phase 1.
+### resource_type
 
-### Experience levels
+- `video`
+- `workshop`
+- `tutorial`
+- `documentation`
+- `training_hub`
 
+### experience_level
+
+Optional:
 - `introductory`
 - `intermediate`
 - `advanced`
 - `mixed`
 - `unspecified`
 
-This describes the tutorial, not the tool.
+Experience level describes the resource, not the tool.
 
-## 4. Tool relationship
+## 5. Tool relationships
 
-During build:
+During the build, resolve `tool_slugs` against existing Navigator tools.
 
-```python
-resource['tools'] = [
-    tool_by_slug[slug]
-    for slug in resource['tool_slugs']
-    if slug in tool_by_slug
-]
-```
+Fail the build if a referenced tool slug does not exist.
 
-Build must fail if a referenced `tool_slug` does not exist.
+Enrich each resource with the resolved tool records.
 
-This allows cards to show tool names and link directly to Navigator tool pages.
+Build the inverse relationship in memory so tool pages can later expose a “Learn this tool” section without duplicating metadata.
 
-Later, tool pages can gain a “Learn this tool” section by building the inverse index.
+## 6. Education page
 
-## 5. Education landing page
+Keep it simple.
 
-Page heading:
+Heading:
 
 **Education**
 
-Suggested introduction:
+Intro:
 
-“Practical tutorials and workshop recordings for metabolomics tools in Navigator. Education resources are linked to the tools they demonstrate and are provided for learning, not as endorsements or performance rankings.”
+“Find tutorials, workshops, walkthroughs, and training resources for tools in Metabolomics Navigator.”
 
-Card structure:
+Suggested browsing:
+- search by resource title, provider, or tool;
+- filter by tool;
+- optionally filter by resource type.
 
-- title
-- provider / workshop
-- format + year
-- linked tool chips
-- experience level
-- short summary
-- external CTA: “Watch tutorial”
+Do not add elaborate faceting in phase 1.
 
-Filters:
-- search
-- tool
-- experience level
-- format
+Group or sort resources primarily by tool name.
 
-Avoid displaying subscriber counts, view counts, likes, or popularity rankings.
+Each card/list item should show:
+- title;
+- provider;
+- resource type;
+- linked tool(s);
+- one-line description;
+- optional experience level;
+- optional note;
+- “Open resource ↗”.
 
-## 6. Video handling
+Do not show:
+- views;
+- likes;
+- subscriber counts;
+- popularity rank;
+- “best” labels.
 
-Phase 1 should link externally rather than embed YouTube.
+## 7. External links only
 
-Benefits:
-- avoids third-party cookies/tracking on page load;
-- simpler static implementation;
-- no API dependency;
-- fewer stale embed issues.
+Do not embed YouTube or other third-party content.
 
-Optionally store:
-- `video_id`
-- `thumbnail_url`
+Navigator should link out using a normal external link with appropriate `rel` attributes.
 
-but do not require them.
+No thumbnails are required.
 
-If thumbnails are used, prefer a locally cached editorial thumbnail or a simple neutral card; avoid making remote YouTube image availability a build dependency.
+## 8. Currentness
 
-## 7. SEO
+Use the optional `note` field for editorial context.
 
-### `scripts/seo.py`
+Examples:
+- “Uses MZmine 2; workflow concepts remain useful, but the interface is outdated.”
+- “Current official tutorial hub.”
+- “Older workshop; check current GNPS interface before following click-by-click instructions.”
 
-Add:
+Avoid a complex freshness model.
 
-```python
-'education.html': (
-    'Metabolomics Education',
-    'Practical tutorials and workshop recordings for metabolomics tools catalogued by Metabolomics Navigator.'
-),
-```
+## 9. SEO
 
-The route should have:
-- canonical URL;
-- index,follow;
-- normal Open Graph metadata.
+Add deterministic metadata in `scripts/seo.py`:
 
-Do not create individual tutorial pages in phase 1 unless there is enough unique editorial content to justify them.
+Title:
+**Metabolomics Education**
 
-## 8. Build validation
+Description:
+**Find external tutorials, workshops, walkthroughs, and training resources for metabolomics tools catalogued by Metabolomics Navigator.**
 
-Add checks:
-- all records validate;
+Include the route in the sitemap and normal canonical checks.
+
+## 10. Validation
+
+Validate:
+- unique slug;
+- unique URL where practical;
+- URL is a valid external URI;
 - all `tool_slugs` exist;
-- all external URLs are HTTPS where possible;
-- duplicate URLs are rejected;
-- duplicate slugs are rejected;
-- publication dates use YYYY-MM-DD when known;
-- Education appears in sitemap;
-- rendered Education page has a canonical.
+- resource_type is controlled;
+- optional experience_level is controlled;
+- required summary/provider fields are present.
 
-## 9. Catalogue neutrality
+No external API is required at build time.
 
-Education sorting should default to:
-1. tool name, then
-2. publication/workshop date descending, or title
+## 11. Seed data
 
-Do not sort by “best,” views, popularity, or Navigator preference.
+Use the curated handoff files as source material:
 
-For multiple tutorials for one tool, show them as alternatives with descriptive metadata.
+- `education-seed-candidates.tsv`
+- `broader-tutorial-leads.tsv`
 
-## 10. Future extension
+Verify each link before publication and convert strong resources into individual YAML records.
 
-The schema should leave room for:
-- written tutorials;
-- workshop exercises;
-- notebooks;
-- course modules;
-- slides;
-- recorded webinars.
+## 12. Future extension
 
-Do not implement these formats yet unless trivial to support without weakening the first release.
+Later, tool pages can show:
+
+**Learn this tool**
+
+with Education links resolved from the shared records.
+
+Do not add hosted courses, progress tracking, accounts, video playback, or complex learning-path functionality unless the product direction explicitly changes.
