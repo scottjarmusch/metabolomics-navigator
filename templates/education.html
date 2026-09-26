@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero compact">
+  <div class="section-wrap">
+    <p class="eyebrow">External learning resources <span class="beta-mark">ALPHA</span></p>
+    <h1>Education</h1>
+    <p>Find tutorials, workshops, and training videos for tools in Metabolomics Navigator. Alpha links are being collected broadly and still need manual validation for accuracy, relevance, and currentness.</p>
+  </div>
+</section>
+
+<section class="section-wrap education-directory" data-education-directory>
+  <div class="education-alpha-note">
+    <strong>Alpha collection.</strong> These links are guides to external resources, not endorsements. Entries marked “Needs review” have not yet been manually checked end to end.
+  </div>
+
+  <div class="education-controls">
+    <label>
+      <span>Search resources</span>
+      <input type="search" data-education-search placeholder="Search by tool, tutorial, workshop, or provider">
+    </label>
+    <label>
+      <span>Tool</span>
+      <select data-education-tool>
+        <option value="">All tools</option>
+        {% for tool in education_tools %}<option value="{{ tool.slug }}">{{ tool.name }}</option>{% endfor %}
+      </select>
+    </label>
+  </div>
+
+  <p class="education-count"><span data-education-count>{{ education_resources|length }}</span> resources</p>
+
+  <div class="education-list">
+    {% for resource in education_resources %}
+    <article class="education-resource"
+      data-education-item
+      data-tools="{{ resource.tool_slugs|join(' ') }}"
+      data-search="{{ resource.search_text }}">
+      <div class="education-resource-head">
+        <div>
+          <p class="eyebrow">{{ resource.resource_type_label }}</p>
+          <h2><a href="{{ resource.url }}" rel="noopener noreferrer">{{ resource.title }}</a></h2>
+        </div>
+        {% if resource.validation_status == 'validated' %}
+          <span class="education-status validated">Validated</span>
+        {% else %}
+          <span class="education-status">Needs review</span>
+        {% endif %}
+      </div>
+      <p class="education-provider">{{ resource.provider }}</p>
+      <p>{{ resource.summary }}</p>
+      <div class="education-tools">
+        {% for tool in resource.tools %}
+        <a href="{{ url('tools/' ~ tool.slug ~ '/') }}">{{ tool.name }}</a>
+        {% endfor %}
+      </div>
+      {% if resource.note %}<p class="education-note">{{ resource.note }}</p>{% endif %}
+      <p><a class="text-link" href="{{ resource.url }}" rel="noopener noreferrer">Open resource ↗</a></p>
+    </article>
+    {% endfor %}
+  </div>
+
+  <p class="education-empty" data-education-empty hidden>No resources match these filters.</p>
+</section>
+{% endblock %}
