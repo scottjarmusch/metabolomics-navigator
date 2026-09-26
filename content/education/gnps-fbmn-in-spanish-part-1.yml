@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-fbmn-in-spanish-part-1
+title: "GNPS FBMN in Spanish Part 1"
+summary: "External workshop recording related to gnps-feature-based-molecular-networking collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=0xWMAwM8x3U"
+resource_type: workshop
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+provider: "GNPS"
+experience_level: unspecified
+language: es
+note: "Spanish-language FBMN."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
