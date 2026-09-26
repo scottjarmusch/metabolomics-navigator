@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-feature-based-molecular-networking-mzmine2
+title: "GNPS Feature Based Molecular Networking (MZmine2)"
+summary: "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=MwdJ6mVkdJY"
+resource_type: workshop
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+  - mzmine
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Legacy MZmine2 interface; concepts still useful."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
