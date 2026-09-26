@@ -17,6 +17,7 @@ def page_metadata(template, route, context, absolute_url):
     defaults = {
         'tools.html': ('Metabolomics Tools', 'Search and filter MS-based metabolomics tools by scientific function, platform, interface and access model.'),
         'strategies.html': ('Analytical Strategies', 'Explore published, transferable MS-based metabolomics strategies and the tools used to implement them.'),
+        'education.html': ('Metabolomics Education · Alpha', 'Find external tutorials, workshops, walkthroughs and training videos for metabolomics tools catalogued by Metabolomics Navigator.'),
         'submit.html': ('Contribute', 'Suggest a metabolomics tool or analytical strategy, improve an entry, and meet the community contributors.'),
         'browse.html': ('Browse categories', 'Browse metabolomics tools and analytical strategies by scientific function, platform and biological context.'),
         'about.html': ('About', 'Learn about Metabolomics Navigator, its MS-based scope, community contributions and editorial approach.'),

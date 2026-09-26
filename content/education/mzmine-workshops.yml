@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: mzmine-workshops
+title: "MZmine workshops"
+summary: "Official workshop archive including recent VMOL webinars and non-target metabolomics summer schools."
+url: "https://mzmine.github.io/mzmine_documentation/latest/workshops.html"
+resource_type: training_hub
+tool_slugs:
+  - mzmine
+provider: "MZmine project"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

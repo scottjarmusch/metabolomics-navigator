@@ -5,7 +5,7 @@ import sys
 import re
 from collections import Counter
 
-from common import ROOT, load_yaml, load_strategies, load_tools, validator
+from common import ROOT, load_education, load_yaml, load_strategies, load_tools, validator
 
 
 def format_path(path):
@@ -45,9 +45,10 @@ def validate_records(records, kind):
 
 
 def main():
-    tools=load_tools(); strategies=load_strategies()
+    tools=load_tools(); strategies=load_strategies(); education=load_education()
     failed, tool_slugs=validate_records(tools,'tool')
     f2, strategy_slugs=validate_records(strategies,'strategy'); failed=failed or f2
+    f3, education_slugs=validate_records(education,'education'); failed=failed or f3
 
     owners=load_yaml(ROOT/'config/tool-workflows.yml')
     workflow_paths={p.stem:p for p in (ROOT/'content/tool-workflows').glob('*.yml')}
@@ -77,6 +78,22 @@ def main():
         if sup and sup not in tool_slugs:
             failed=True; print(f"ERROR: {path}: superseded_by tool '{sup}' does not exist")
 
+    for record in education:
+        path=record['_path']
+        for slug in record.get('tool_slugs',[]):
+            if slug not in tool_slugs:
+                failed=True; print(f"ERROR: {path}: education tool '{slug}' does not exist")
+
+    education_urls={}
+    for record in education:
+        path=record['_path']; url=record.get('url')
+        if not url: continue
+        previous=education_urls.get(url)
+        if previous:
+            failed=True; print(f"ERROR: duplicate education URL in {previous} and {path}")
+        else:
+            education_urls[url]=path
+
     for record in strategies:
         path=record['_path']
         for item in record.get('tools',[]):
@@ -96,7 +113,7 @@ def main():
                 failed=True; print(f"ERROR: {path}: related strategy '{slug}' does not exist")
 
     if failed: return 1
-    print(f"Validated {len(tools)} tool records and {len(strategies)} strategy records successfully.")
+    print(f"Validated {len(tools)} tool records, {len(strategies)} strategy records and {len(education)} education resources successfully.")
     return 0
 
 if __name__=='__main__':

@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-classical-molecular-networking
+title: "GNPS Classical Molecular Networking"
+summary: "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=PqTuex0nsGk"
+resource_type: workshop
+tool_slugs:
+  - gnps-classical-molecular-networking
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Strong foundational workshop."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

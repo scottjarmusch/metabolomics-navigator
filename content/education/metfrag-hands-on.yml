@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: metfrag-hands-on
+title: "MetFrag Hands-on"
+summary: "Hands-on compound identification tutorial with MS/MS and metadata."
+url: "https://ipb-halle.github.io/MetFragTraining/"
+resource_type: tutorial
+tool_slugs:
+  - metfrag
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

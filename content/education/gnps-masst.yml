@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-masst
+title: "GNPS MASST"
+summary: "External workshop recording related to masst, gnps collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=14hGi6FtZIM"
+resource_type: workshop
+tool_slugs:
+  - masst
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Strong repository-scale search resource."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
