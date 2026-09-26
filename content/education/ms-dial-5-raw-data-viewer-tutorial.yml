@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: ms-dial-5-raw-data-viewer-tutorial
+title: "MS-DIAL 5 raw data viewer tutorial"
+summary: "External training video related to ms-dial collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=aApHc8Op4VY"
+resource_type: video
+tool_slugs:
+  - ms-dial
+provider: "MS-DIAL project"
+experience_level: unspecified
+language: en
+note: "Embedded in current MS-DIAL 5 tutorial."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
