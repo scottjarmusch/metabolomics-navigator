@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2023-day2-s2-data-preprocessing-in-mzmine-3-i
+title: "NTMSS2023 Day2 S2 - Data preprocessing in MZmine 3 I"
+summary: "External workshop recording related to mzmine collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=MmUY5qCz8eo"
+resource_type: workshop
+tool_slugs:
+  - mzmine
+provider: "Functional Metabolomics Lab"
+experience_level: unspecified
+language: en
+note: "Summer-school session; check interface currency."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
