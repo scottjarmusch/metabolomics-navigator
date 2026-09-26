@@ -5,7 +5,7 @@ import sys
 import re
 from collections import Counter
 
-from common import ROOT, load_yaml, load_strategies, load_tools, validator
+from common import ROOT, load_education, load_yaml, load_strategies, load_tools, validator
 
 
 def format_path(path):
