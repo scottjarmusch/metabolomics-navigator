@@ -4,49 +4,40 @@
   <div class="section-wrap">
     <p class="eyebrow">Learn the tools</p>
     <h1>Education</h1>
-    <p>Practical tutorials and workshop recordings for metabolomics tools in Navigator. These resources support learning and do not represent endorsements or performance rankings.</p>
+    <p>Find tutorials, workshops, walkthroughs, and training resources for tools in Metabolomics Navigator.</p>
   </div>
 </section>
 
 <section class="section-wrap education-directory">
-  <div class="education-controls" aria-label="Education filters">
-    <label>
-      <span>Search tutorials</span>
-      <input id="education-search" type="search" placeholder="Search by tool, workshop, provider or topic">
-    </label>
-    <label>
-      <span>Experience level</span>
-      <select id="education-level">
-        <option value="">All levels</option>
-        <option value="introductory">Introductory</option>
-        <option value="intermediate">Intermediate</option>
-        <option value="advanced">Advanced</option>
-        <option value="mixed">Mixed</option>
-      </select>
-    </label>
-  </div>
+  <form class="education-search" role="search">
+    <label for="education-search">Search learning resources</label>
+    <input id="education-search" type="search" placeholder="Search by tool, resource, or provider">
+  </form>
 
-  <div class="education-grid" id="education-grid">
-    {% for resource in education_resources %}
-    <article class="education-card"
-      data-level="{{ resource.experience_level or 'unspecified' }}"
-      data-search="{{ resource.search_text }}">
-      <p class="eyebrow">{{ resource.format_label }}</p>
-      <h2><a href="{{ resource.url }}" rel="noopener noreferrer">{{ resource.title }}</a></h2>
-      <p>{{ resource.summary }}</p>
-      <dl class="education-meta">
-        <div><dt>Provider</dt><dd>{{ resource.provider.name }}</dd></div>
-        {% if resource.publication_date %}<div><dt>Published</dt><dd>{{ resource.publication_date }}</dd></div>{% endif %}
-        {% if resource.duration_minutes %}<div><dt>Duration</dt><dd>{{ resource.duration_minutes }} min</dd></div>{% endif %}
-      </dl>
-      <div class="education-tools">
-        {% for tool in resource.tools %}
-        <a href="{{ url('tools/' ~ tool.slug ~ '/') }}">{{ tool.name }}</a>
-        {% endfor %}
-      </div>
-      <p><a class="button" href="{{ resource.url }}" rel="noopener noreferrer">Watch tutorial ↗</a></p>
-    </article>
-    {% endfor %}
-  </div>
+  {% for group in education_groups %}
+  <section class="education-tool-group" data-tool="{{ group.tool.slug }}">
+    <header>
+      <h2><a href="{{ url('tools/' ~ group.tool.slug ~ '/') }}">{{ group.tool.name }}</a></h2>
+    </header>
+
+    <div class="education-list">
+      {% for resource in group.resources %}
+      <article class="education-resource" data-search="{{ resource.search_text }}">
+        <p class="eyebrow">{{ resource.resource_type_label }}</p>
+        <h3><a href="{{ resource.url }}" rel="noopener noreferrer">{{ resource.title }}</a></h3>
+        <p class="education-provider">{{ resource.provider }}</p>
+        <p>{{ resource.summary }}</p>
+        {% if resource.experience_level and resource.experience_level != 'unspecified' %}
+        <p><strong>Level:</strong> {{ resource.experience_level|capitalize }}</p>
+        {% endif %}
+        {% if resource.note %}
+        <p class="education-note">{{ resource.note }}</p>
+        {% endif %}
+        <p><a class="text-link" href="{{ resource.url }}" rel="noopener noreferrer">Open resource ↗</a></p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
 </section>
 {% endblock %}
