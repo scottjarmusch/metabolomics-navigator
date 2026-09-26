@@ -320,6 +320,8 @@ def enrich_education(record,tool_by_slug):
     if set(item.get('tool_versions',{})) - set(item.get('tool_slugs',[])):
         raise ValueError(f"Education {item['slug']}: version supplied for an unlinked tool")
     item['resource_type_label']=EDUCATION_TYPE_LABELS.get(item.get('resource_type'),item.get('resource_type','Resource').replace('_',' ').title())
+    if item.get('resource_type') == 'workshop' and item.get('url','').startswith(('https://www.youtube.com/', 'https://youtube.com/', 'https://youtu.be/')):
+        item['resource_type_label']='Video Workshop'
     search=[item.get('title',''),item.get('summary',''),item.get('provider',''),item.get('note',''),item.get('year',''),*[t['name'] for t in item['tools']]]
     item['search_text']=' '.join(map(str,search)).lower()
     return item
