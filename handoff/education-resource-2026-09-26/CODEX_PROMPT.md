@@ -1,33 +1,34 @@
 # Codex implementation prompt
 
-Implement the Education resource described in this handoff against the current Metabolomics Navigator repository.
+Implement Education as a **lightweight curated guide to external learning resources**.
 
-Read first:
+Read:
 - handoff/education-resource-2026-09-26/README.md
 - handoff/education-resource-2026-09-26/IMPLEMENTATION.md
 - handoff/education-resource-2026-09-26/education.schema.json
 - handoff/education-resource-2026-09-26/education.html
+- handoff/education-resource-2026-09-26/education-seed-candidates.tsv
+- handoff/education-resource-2026-09-26/broader-tutorial-leads.tsv
 
 Requirements:
 
-1. Add **Education** to the main navigation between Strategies and Ask Navigator.
-2. Add `/education/` as a first-class rendered route and include it in sitemap.xml.
-3. Add `schemas/education.schema.json` and `content/education/`.
-4. Implement loader + JSON Schema validation for education records.
-5. Fail the build when a tutorial references a nonexistent Navigator tool slug.
-6. Render the Education page using a design consistent with the existing editorial UI.
-7. Add lightweight client-side search/filtering for title, tool, provider, topic and experience level. Do not add a framework or external dependency.
-8. Link tutorials externally; do not embed YouTube in phase 1.
-9. Add Education to footer Explore links.
-10. Add deterministic SEO metadata.
-11. Extend `scripts/check_seo.py` or relevant tests so the Education canonical and sitemap entry are verified.
-12. Add at least one **fixture/example only for automated tests** if needed, but do not publish fake tutorial content on the live page.
-13. Do not modify the tool taxonomy just to support Education.
-14. Do not rank resources by popularity or preference.
-15. Run the full existing validation/build suite and fix regressions.
+1. Add **Education** to the main header between Strategies and Ask Navigator.
+2. Add Education to Footer → Explore.
+3. Add `/education/` as a static route and include it in sitemap.xml.
+4. Create `schemas/education.schema.json` and `content/education/`.
+5. Use the simplified schema from the handoff.
+6. Each resource must link to at least one existing Navigator `tool_slug`; fail the build for unknown tool slugs.
+7. Render resources as simple external links grouped primarily by tool.
+8. Show only useful metadata: title, provider, resource type, one-line description, optional experience level, optional currentness/legacy note.
+9. Add a lightweight client-side text search. Do not add a JS framework.
+10. Do not embed YouTube or any third-party media.
+11. Do not add thumbnails, view counts, likes, popularity ranking, or “best” labels.
+12. Add deterministic SEO metadata and sitemap/canonical checks.
+13. Build the inverse relationship in memory so a future tool-page “Learn this tool” section can reuse the same records.
+14. Convert a small number of the strongest verified seed links into real Education YAML records if desired, but do not publish anything without checking that the link still resolves and clearly matches the linked tool.
+15. Keep the implementation static, small, accessible, and neutral.
+16. Run the full validation/build test suite and fix regressions.
 
-Optional but desirable:
-- build the inverse relationship so tool pages can later expose `education_resources`, without rendering that section yet;
-- emit `education-data.json` if consistent with the project's existing public data approach.
+Product principle:
 
-Keep code small, deterministic, static-site friendly, accessible, and neutral.
+> Navigator curates and points outward. It does not become the tutorial platform.
