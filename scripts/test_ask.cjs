@@ -5,6 +5,7 @@ const fs = require('node:fs');
 class Element {
   constructor(dataset={}) { this.dataset=dataset; this.events={}; this.children=[]; this.value=''; this.hidden=true; }
   focus() { this.focused=true; }
+  setAttribute(name,value) { this[name]=value; }
   addEventListener(name, callback) { this.events[name]=callback; }
   appendChild(card) { this.children=this.children.filter(x=>x!==card); this.children.push(card); }
 }
@@ -77,3 +78,20 @@ focusedInput.value="I don't know how to estimate flux";focusedButton.events.clic
 assert.match(focusedCount.textContent,/study guide/);assert.doesNotMatch(focusedCount.textContent,/No curated flux/);
 focusedInput.value='pooled QC LOESS signal drift';focusedButton.events.click();
 assert.equal(focused[0].hidden,false,'A positive follow-up must clear constraint routing');
+
+// Every study starter clears stale answers without assuming acquired measurements.
+const starters=['cohort','comparative','natural','exposomics','lipids','spatial'].map(studyStart=>new Element({studyStart}));
+const context=new Element(), reset=new Element();
+const studyElements={...guidedElements,'#ask-study-context':context,'#ask-start-over':reset};
+vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/ask.js'),'utf8'),{document:{querySelector:s=>studyElements[s],querySelectorAll:s=>s==='.ask-strategy-card'?focused:s==='[data-study-start]'?starters:[]}});
+for(const starter of starters) {
+ stage.value='analysis';data.value='msms';aim.value='qc';focused[0].hidden=false;
+ starter.events.click();
+ assert.equal(stage.value,'');assert.equal(data.value,'');assert.equal(aim.value,'');
+ assert(focused.every(x=>x.hidden));assert.equal(guidance.open,true);
+ assert.equal(starter['aria-pressed'],'true');assert(context.textContent.length>40);
+ assert.equal(starters.filter(x=>x['aria-pressed']==='true').length,1);
+}
+reset.events.click();assert.equal(context.textContent,'');assert.equal(focusedInput.value,'');
+assert(starters.every(x=>x['aria-pressed']==='false'));
+console.log('Six study starters and reset passed: no stale results or assumed measurements.');

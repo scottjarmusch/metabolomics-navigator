@@ -34,3 +34,7 @@ Passing deterministic regression checks is not scientific or usability sign-off.
 ## Validation before alpha refresh
 
 Strict build: 143 tools, 34 Strategies, 57 learning resources. 7,638 local links/fragments and 290 relationship links passed. Ask controller tests and all 36 generated query cases passed. Browser checks confirmed novice clarification, FBMN retrieval, expandable requirements, filtered Education handoff, date sorting and widths 320/375/768/1440 without horizontal overflow. Mobile screenshot inspected. An initial browser run failed a response assertion; the instrumented repeat produced the expected response and no JavaScript errors.
+
+## 27 September: study-context starters
+
+Six experiment contexts now open tailored clarification: cohort comparison, comparative metabolomics, natural products/drug discovery, exposomics, lipidomics and spatial metabolomics. These are prompts, not complete workflow templates. Each clears old results and leaves stage, measurements and analytical aim unanswered. Start over clears the selected context too. Dedicated regression tests exercise all six selections and prevent stale recommendations or assumed data. The four analytical aims remain limited pending scientific review.
