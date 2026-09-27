@@ -31,6 +31,16 @@
       <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
     <button id="ask-guide-button" class="button secondary" type="button">Find my next step</button>
     <p id="ask-guide-message" role="status"></p>
+    <nav id="ask-next-actions" aria-label="Suggested next steps" hidden>
+      <p><strong>Explore your next step</strong></p>
+      <ul>
+        <li data-guide-action="learn" hidden><a href="{{ url('education/') }}">Find tutorials and video workshops</a></li>
+        <li data-guide-action="prepare" hidden><a href="{{ url('guide/data-processing/') }}">Understand data processing</a> · <a href="{{ url('tools/') }}?function=preprocessing">Browse preprocessing tools</a></li>
+        <li data-guide-action="qc" hidden><a href="{{ url('tools/') }}?function=quality_control">Explore quality-control tools</a></li>
+        <li data-guide-action="statistics" hidden><a href="{{ url('tools/') }}?function=statistics">Explore statistical analysis tools, including local software</a></li>
+      </ul>
+    </nav>
+
     <button id="ask-start-over" class="text-link" type="button">Start over</button>
     <p><a href="{{ url('') }}">Read the MS metabolomics guide</a> · <a href="{{ url('tools/') }}">Explore tools by task</a> · <a href="{{ url('education/') }}">Tutorials and video workshops</a></p>
   </details>

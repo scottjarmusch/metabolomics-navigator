@@ -38,3 +38,7 @@ Strict build: 143 tools, 34 Strategies, 57 learning resources. 7,638 local links
 ## 27 September: study-context starters
 
 Six experiment contexts now open tailored clarification: cohort comparison, comparative metabolomics, natural products/drug discovery, exposomics, lipidomics and spatial metabolomics. These are prompts, not complete workflow templates. Each clears old results and leaves stage, measurements and analytical aim unanswered. Start over clears the selected context too. Dedicated regression tests exercise all six selections and prevent stale recommendations or assumed data. The four analytical aims remain limited pending scientific review.
+
+## 27 September: actionable guidance
+
+Beginner responses now expose appropriate catalogue/learning links: raw data to processing and QC; planning or uncertain measurements to Education; local R/Python statistics queries to the statistics catalogue. These remain exploration links rather than validated recommendations. New searches and reset clear stale actions. Regression tests cover each route and clearing behavior.

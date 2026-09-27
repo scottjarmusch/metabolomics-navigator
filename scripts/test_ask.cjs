@@ -95,3 +95,17 @@ for(const starter of starters) {
 reset.events.click();assert.equal(context.textContent,'');assert.equal(focusedInput.value,'');
 assert(starters.every(x=>x['aria-pressed']==='false'));
 console.log('Six study starters and reset passed: no stale results or assumed measurements.');
+
+// Guidance links follow the current request and disappear on reset/new searches.
+const nextActions=new Element(), actions=['learn','prepare','qc','statistics'].map(guideAction=>new Element({guideAction}));
+const actionElements={...studyElements,'#ask-next-actions':nextActions};
+vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/ask.js'),'utf8'),{document:{querySelector:s=>actionElements[s],querySelectorAll:s=>s==='.ask-strategy-card'?focused:s==='[data-guide-action]'?actions:s==='[data-study-start]'?starters:[]}});
+const visibleActions=()=>actions.filter(x=>!x.hidden).map(x=>x.dataset.guideAction);
+stage.value='raw';data.value='msms';aim.value='families';guideButton.events.click();
+assert.deepEqual(visibleActions(),['learn','prepare','qc']);assert.equal(nextActions.hidden,false);
+stage.value='planning';guideButton.events.click();assert.deepEqual(visibleActions(),['learn']);
+focusedInput.value='Can I run statistics locally in R?';focusedButton.events.click();
+assert.deepEqual(visibleActions(),['learn','statistics']);assert.equal(guidance.open,true);
+reset.events.click();assert.deepEqual(visibleActions(),[]);assert.equal(nextActions.hidden,true);
+focusedInput.value='pooled QC LOESS signal drift';focusedButton.events.click();assert.deepEqual(visibleActions(),[]);
+console.log('Action links passed: raw-data preparation/QC, planning tutorials, local statistics and clearing stale actions.');
