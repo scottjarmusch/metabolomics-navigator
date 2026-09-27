@@ -66,4 +66,9 @@ if (educationDirectory) {
   search?.addEventListener('input', update);
   tool?.addEventListener('change', update);
   sort?.addEventListener('change', update);
+  const requestedTool = new URLSearchParams(window.location.search).get('tool');
+  if (requestedTool && [...tool.options].some(option => option.value === requestedTool)) {
+    tool.value = requestedTool;
+    update();
+  }
 }

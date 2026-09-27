@@ -142,7 +142,7 @@ def main():
 
     prepare_output()
     copy_public_files()
-    asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js'))).hexdigest()[:12]
+    asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js','ask.js'))).hexdigest()[:12]
     context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version,'contributors':build_contributors([*tools_raw,*strategies_raw])}
 
     # Homepage
@@ -234,7 +234,8 @@ def main():
     render(env,'submit.html',OUT/'contribute/index.html',**context,active='contribute',tool_submission_url=tool_submit,strategy_submission_url=strategy_submit,tool_update_url=tool_update,strategy_update_url=strategy_update)
     for slug,page in pages.items():
         template=f'{slug}.html' if slug in ('about','ask','privacy') else 'static.html'
-        render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page)
+        extra={'strategies':strategies} if slug=='ask' else {}
+        render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page,**extra)
     render(env,'404.html',OUT/'404.html',**context,active='')
 
     write_json(OUT/'tool-data.json',tools_raw); write_json(OUT/'strategy-data.json',strategies_raw); write_json(OUT/'education-data.json',education_raw)
