@@ -1,0 +1,78 @@
+$schema: ../../schemas/strategy.schema.json
+slug: maldi-fish
+name: Correlative metabolite and microbial imaging with MALDI-FISH
+aliases:
+- (MA)LDI-FISH
+- MALDI-FISH
+- metaFISH
+summary: Combine mass spectrometry imaging with taxon-specific fluorescence labeling to associate spatial chemistry
+  with microbial identity.
+publication:
+  title: Linking metabolite production to taxonomic identity in environmental samples by (MA)LDI-FISH
+  doi: 10.1038/ismej.2015.122
+  year: 2016
+  journal: The ISME Journal
+  citation: Kaltenpoth M, Strupat K, Svatos A. The ISME Journal 10, 527-531 (2016); first published online 14 July
+    2015.
+purpose:
+  primary: spatial_metabolomics
+  secondary:
+  - host_microbe_interaction
+platforms:
+- imaging_ms
+components:
+- sample_preparation
+- data_acquisition
+- metadata_analysis
+tools: []
+workflow_steps:
+- title: Preserve spatial correspondence
+  description: Prepare material compatible with both fluorescence labeling and MSI.
+- title: Measure chemistry and microbial identity
+  description: Acquire ion images and taxon-specific FISH fluorescence using the sequence specified by the selected
+    published method.
+- title: Register and compare images
+  description: Align the two measurements to assess which chemical distributions coincide with labeled microbes.
+scope:
+  designed_for:
+  - Spatial association of metabolites with microbes in heterogeneous samples.
+  requirements:
+  - MS imaging and taxon-specific FISH microscopy from corresponding material.
+  - Validated preparation, imaging order and spatial registration.
+  considerations:
+  - Colocalization alone does not establish biosynthesis or metabolite exchange.
+  - Resolution depends on both modalities; the original method should not be described as universally single-cell.
+ask_keywords:
+- maldi fish
+- metafish
+- link metabolites to microbial identity
+- spatial chemistry and bacterial fluorescence
+related_strategies:
+- spacem-single-cell-metabolomics
+implementations:
+- title: Spatial metabolomics of in situ host–microbe interactions at the micrometre scale
+  doi: 10.1038/s41564-019-0664-6
+  year: 2020
+  relationship: extension
+  summary: metaFISH integrates fluorescence and metabolite images on the same tissue section at micrometre scale.
+- title: Visualization of metabolites and microbes at high spatial resolution using MALDI mass spectrometry imaging
+    and in situ fluorescence labeling
+  doi: 10.1038/s41596-023-00864-1
+  year: 2023
+  relationship: protocol
+  summary: Detailed metaFISH preparation, acquisition and image-integration instructions.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1038/s41596-023-00864-1
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Primary identity and scope checked against the original paper and later metaFISH papers. Distinct from
+    generic cell segmentation in SpaceM. No unverified software assigned.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-28'
+  updated_at: '2026-09-28'
+  last_verified: '2026-09-28'
+  last_editorial_review: '2026-09-28'

@@ -1,0 +1,62 @@
+$schema: ../../schemas/strategy.schema.json
+slug: microfluidic-bioactivity-fractionation
+name: Microfluidic fractionation for compound-resolved bioactivity
+summary: Pair rapid chromatographic fraction collection with LC-MS/MS and luminescent bioreporters to connect chemical
+  signals with antibacterial responses.
+publication:
+  title: High-Frequency Microfluidic Fractionation for Compound-Resolved Bioactivity-Based Metabolomics
+  doi: 10.1021/acs.analchem.5c04612
+  year: 2025
+  journal: Analytical Chemistry
+  citation: Geibel C, et al. Analytical Chemistry 97, 24093-24104 (2025).
+purpose:
+  primary: natural_product_discovery
+  secondary:
+  - phenotype_association
+platforms:
+- lc_ms
+components:
+- chromatography
+- data_acquisition
+- biological_validation
+tools: []
+workflow_steps:
+- title: Collect fractions during LC-MS/MS
+  description: Spot eluent onto a paper microfluidic device at approximately one fraction per second while acquiring
+    spectra.
+- title: Measure reporter responses
+  description: Expose fractions to luminescent bioreporters and image the response.
+- title: Align activity with chemistry
+  description: Match reporter signals to chromatographic profiles to prioritize active compounds.
+scope:
+  designed_for:
+  - Antibacterial activity screening of extracts or compound mixtures.
+  requirements:
+  - Custom rapid fractionation hardware and compatible paper devices.
+  - LC-MS/MS, luminescent bioreporters and response imaging.
+  - Reliable correspondence between fraction positions and retention times.
+  considerations:
+  - Reporter responses are assay-specific; confirm prioritized activity with follow-up experiments.
+  - Coelution can complicate assigning activity to one compound.
+related_strategies:
+- bioactivity-based-molecular-networking
+ask_keywords:
+- microfluidic bioactivity fractionation
+- compound resolved bioactivity
+- luminescent bioreporter
+- connect chromatography to antibacterial activity
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1021/acs.analchem.5c04612
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Distinct measurement integration, not a new biological application. Primary title, DOI, year and abstract
+    verified. No software dependencies inferred from author overlap.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-28'
+  updated_at: '2026-09-28'
+  last_verified: '2026-09-28'
+  last_editorial_review: '2026-09-28'
