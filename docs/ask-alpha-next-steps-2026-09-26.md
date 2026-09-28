@@ -42,3 +42,7 @@ Six experiment contexts now open tailored clarification: cohort comparison, comp
 ## 27 September: actionable guidance
 
 Beginner responses now expose appropriate catalogue/learning links: raw data to processing and QC; planning or uncertain measurements to Education; local R/Python statistics queries to the statistics catalogue. These remain exploration links rather than validated recommendations. New searches and reset clear stale actions. Regression tests cover each route and clearing behavior.
+
+## 28 September: explicit QC and tracer evidence
+
+Local alpha now asks whether repeated representative QC injections and injection order exist before offering pooled-QC drift correction, and whether tracer labeling measurements and times exist before offering isotope-flux methods. Unknown and absent answers give distinct guidance and no method cards. Questions appear only for the relevant aim and reset on aim/study changes. These checks are prerequisites, not proof of full compatibility. Unit tests cover all three answer states and reset. Free-text search remains an exploration route, not a validated compatibility engine.

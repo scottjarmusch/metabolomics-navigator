@@ -45,7 +45,9 @@ assert(focused.every(x=>x.hidden),'No-match search must remain safe after score 
 
 // Guided entry and mixed-intent behavior use the same shipped controller.
 const guideButton=new Element(), stage=new Element(), data=new Element(), aim=new Element(), message=new Element(), guidance=new Element(), mixed=new Element();
-const guidedElements={...focusedElements,'#ask-guide-button':guideButton,'#ask-stage':stage,'#ask-data':data,'#ask-aim':aim,'#ask-guide-message':message,'#ask-guidance':guidance,'#ask-mixed':mixed};
+const qcEvidence=new Element(), tracerEvidence=new Element(), qcQuestion=new Element(), tracerQuestion=new Element();
+qcEvidence.value='yes';
+const guidedElements={...focusedElements,'#ask-guide-button':guideButton,'#ask-stage':stage,'#ask-data':data,'#ask-aim':aim,'#ask-guide-message':message,'#ask-qc-evidence':qcEvidence,'#ask-tracer-evidence':tracerEvidence,'#ask-qc-question':qcQuestion,'#ask-tracer-question':tracerQuestion,'#ask-guidance':guidance,'#ask-mixed':mixed};
 vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/ask.js'),'utf8'),{document:{querySelector:s=>guidedElements[s],querySelectorAll:s=>s==='.ask-strategy-card'?focused:[]}});
 focusedInput.value='Compare QC drift correction and isotope flux estimation';focusedButton.events.click();
 assert(focused.every(x=>x.hidden));assert.equal(mixed.hidden,false);assert.match(focusedCount.textContent,/separately/);
@@ -109,3 +111,24 @@ assert.deepEqual(visibleActions(),['learn','statistics']);assert.equal(guidance.
 reset.events.click();assert.deepEqual(visibleActions(),[]);assert.equal(nextActions.hidden,true);
 focusedInput.value='pooled QC LOESS signal drift';focusedButton.events.click();assert.deepEqual(visibleActions(),[]);
 console.log('Action links passed: raw-data preparation/QC, planning tutorials, local statistics and clearing stale actions.');
+
+// Unknown and absent measurements must never count as confirmed compatibility.
+for (const target of ['qc','flux']) {
+ stage.value='analysis';data.value='features';aim.value=target;aim.events.change();
+ assert.equal(qcQuestion.hidden,target!=='qc');assert.equal(tracerQuestion.hidden,target!=='flux');
+ const field=target==='qc'?qcEvidence:tracerEvidence;
+ for(const value of ['', 'unknown', 'no']) {
+  field.value=value;guideButton.events.click();
+  assert(focused.every(x=>x.hidden),`${target}/${value} must not recommend a method`);
+  assert(message.textContent.length>60);
+ }
+ field.value='yes';guideButton.events.click();
+ if(target==='qc') assert.equal(focused[0].hidden,false);
+ else assert.match(message.textContent,/suitable tracer/);
+}
+reset.events.click();assert.equal(qcEvidence.value,'');assert.equal(tracerEvidence.value,'');
+assert.equal(qcQuestion.hidden,true);assert.equal(tracerQuestion.hidden,true);
+console.log('Evidence gates passed: unknown, missing and confirmed QC/tracer inputs, conditional questions and reset.');
+
+for(const field of [stage,data,qcEvidence,tracerEvidence]) { focused[0].hidden=false;message.textContent='old result';field.events.change();assert(focused.every(x=>x.hidden));assert.equal(message.textContent,''); }
+console.log('Changed answers clear stale recommendations.');
