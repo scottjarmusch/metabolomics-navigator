@@ -1,0 +1,74 @@
+$schema: ../../schemas/tool.schema.json
+slug: msnlib
+name: MSnLib
+summary: Open multistage fragmentation reference spectra and a reproducible library-generation workflow implemented
+  with mzmine.
+description: MSnLib combines reference-compound measurements, curated metadata and mzmine processing to generate
+  spectral libraries organized as fragmentation trees. The 2025 publication describes more than two million spectra
+  from 30,008 compounds; these are publication-version figures, not a live count.
+links:
+  primary: https://doi.org/10.1038/s41592-025-02813-0
+  documentation: https://github.com/merlin-ms/mass-spectral-library-network/tree/master/libraries/MSnLib
+  repository: https://github.com/merlin-ms/mass-spectral-library-network
+resource_types:
+- spectral_library
+- workflow_pipeline
+functions:
+  primary: reference_data_search
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - reference_spectrum_selection
+platforms:
+- direct_infusion_ms
+- lc_ms
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  notes: Generation uses open-source mzmine. MERLIN metadata and acquisition resources carry an MIT license; consult
+    the selected library release for data reuse terms.
+data:
+  input_types:
+  - spectra
+  - compound_list
+  other_input_formats:
+  - Reference measurements and curated compound metadata
+  output_types:
+  - spectral_library
+  other_output_formats:
+  - Release-specific spectral-library files and multistage fragmentation trees
+common_uses:
+- Use reference fragmentation spectra for annotation or method development.
+- Generate libraries from measured reference compounds using mzmine.
+scope:
+  designed_for:
+  - Reference spectral resources and reproducible library generation.
+  not_designed_for:
+  - A standalone end-to-end statistical analysis of biological cohorts.
+  requirements:
+  - Compatible library-search software for using released spectra; mzmine and suitable measurements for generation.
+  considerations:
+  - Match polarity, fragmentation stage and acquisition conditions when interpreting spectral similarity.
+  - Confirm library-release formats and licensing before reuse.
+publications:
+- type: primary
+  doi: 10.1038/s41592-025-02813-0
+  citation: 'Brungs C, Schmid R, Heuckeroth S, et al. MSnLib: efficient generation of open multi-stage fragmentation
+    mass spectral libraries. Nature Methods 22, 2028-2031 (2025).'
+related_tools:
+- slug: mzmine
+  relationship: integration
+  note: Published library-generation processing is implemented in mzmine.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Primary publication identity and MERLIN MSnLib documentation verified. Desktop interface refers to mzmine
+    generation, not a separate MSnLib application. Downloads and generation were not independently executed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-28'
+  updated_at: '2026-09-28'
+  last_verified: '2026-09-28'
+  last_editorial_review: '2026-09-28'
