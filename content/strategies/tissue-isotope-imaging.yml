@@ -1,0 +1,75 @@
+$schema: ../../schemas/strategy.schema.json
+slug: tissue-isotope-imaging
+name: Tissue isotope imaging with iso-imaging
+aliases:
+- iso-imaging
+summary: Combine stable-isotope nutrient tracing with MALDI imaging to map labeling patterns within tissue rather
+  than averaging an entire section.
+publication:
+  title: Spatially resolved isotope tracing reveals tissue metabolic activity
+  doi: 10.1038/s41592-021-01378-y
+  year: 2022
+  journal: Nature Methods
+  citation: Wang L, Xing X, Zeng X, et al. Nature Methods 19, 223-230 (2022).
+purpose:
+  primary: stable_isotope_tracing
+  secondary:
+  - spatial_metabolomics
+platforms:
+- imaging_ms
+components:
+- sample_preparation
+- data_acquisition
+- metadata_analysis
+tools:
+- name: IsoScope
+  url: https://github.com/xxing9703/Isoscope
+  role: Analyze and display spatial isotope-labeling patterns.
+workflow_steps:
+- title: Introduce and measure the nutrient tracer
+  description: Use the published nutrient-infusion design and measure circulating tracer labeling.
+- title: Image tissue isotopologues
+  description: Acquire MALDI ion images while retaining tissue coordinates.
+- title: Validate signals and map labeling
+  description: Check assignments against LC-MS and visualize isotope fractions or enrichment with IsoScope.
+  external_tools:
+  - name: IsoScope
+    url: https://github.com/xxing9703/Isoscope
+scope:
+  designed_for:
+  - Spatial nutrient-use measurements in tracer-labeled mammalian tissues.
+  requirements:
+  - A designed stable-isotope labeling experiment, not an ordinary unlabeled imaging dataset.
+  - MSI resolving the relevant isotopologues and matched anatomical information.
+  - Companion LC-MS measurements for signal validation and tracer normalization.
+  considerations:
+  - Label incorporation alone is not an absolute reaction-flux measurement.
+  - Overlapping ions, isotope abundance and sampling time affect interpretation.
+  - The published tissue implementation is not generally single-cell resolved.
+ask_keywords:
+- spatial isotope tracing
+- tissue isotope imaging
+- nutrient labeling across tissue
+- iso imaging
+- isotopologue maps
+related_strategies:
+- kinetic-flux-profiling
+- spacem-single-cell-metabolomics
+resources:
+  code_available: true
+  code_url: https://github.com/xxing9703/Isoscope
+  method_available: true
+  method_url: https://doi.org/10.1038/s41592-021-01378-y
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: The 2022 paper formalizes this iso-imaging workflow; no claim to first use of all isotope imaging. Distinct
+    from unlabeled spatial profiling and bulk kinetic flux inference. Single-cell isotope extensions require separate
+    evaluation.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-29'
+  updated_at: '2026-09-29'
+  last_verified: '2026-09-29'
+  last_editorial_review: '2026-09-29'
