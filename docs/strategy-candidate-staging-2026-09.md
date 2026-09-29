@@ -186,7 +186,7 @@ Status meanings:
 | Metabolome-guided genome mining | STRONG | Find defining workflow |
 | Metabolomics plus transcriptomics pathway integration | STRONG | Find method paper introducing integration logic |
 | Metabolomics plus proteomics pathway integration | STRONG | Find defining workflow |
-| Metabolomics plus microbiome association networks | STRONG | Find methodology paper, not application-only |
+| Metabolomics plus microbiome association networks | ADDED | Conditional mmvec association Strategy: 10.1038/s41592-019-0616-3; causal claims excluded and methodological debate noted |
 | Host-microbe metabolite source attribution | STRONG | Find defining strategy |
 | Correlation-based metabolic network reconstruction | STRONG | Find canonical metabolomics network method |
 | Biochemical-network-guided feature interpretation | STRONG | Find defining method |
