@@ -1,0 +1,76 @@
+$schema: ../../schemas/strategy.schema.json
+slug: microbe-metabolite-conditional-associations
+name: Conditional microbe–metabolite association modeling
+aliases:
+- mmvec strategy
+- microbe-metabolite vectors
+summary: Model paired microbial and MS metabolomics measurements to prioritize conditional co-occurrence relationships
+  between taxa and molecular features.
+publication:
+  title: Learning representations of microbe–metabolite interactions
+  doi: 10.1038/s41592-019-0616-3
+  year: 2019
+  journal: Nature Methods
+  citation: Morton JT, Aksenov AA, Nothias LF, et al. Nature Methods 16, 1306-1314 (2019).
+purpose:
+  primary: host_microbe_interaction
+  secondary:
+  - phenotype_association
+platforms:
+- lc_ms
+components:
+- metadata_analysis
+- statistics
+tools:
+- name: mmvec
+  url: https://github.com/biocore/mmvec
+  role: Estimate conditional microbe–metabolite co-occurrences from paired tables.
+workflow_steps:
+- title: Match the two measurement tables
+  description: Align microbial and metabolite features using shared sample identifiers; inspect filtering, sparsity
+    and study design.
+- title: Fit and evaluate the conditional model
+  description: Use mmvec with appropriate tuning and held-out evaluation; inspect training diagnostics.
+  external_tools:
+  - name: mmvec
+    url: https://github.com/biocore/mmvec
+- title: Prioritize and validate associations
+  description: Inspect conditional rankings and ordinations, then design independent tests for biological hypotheses.
+scope:
+  designed_for:
+  - Associations across paired microbiome and MS metabolomics samples.
+  requirements:
+  - Matched microbial feature and metabolite abundance tables with sufficient shared samples.
+  - Recorded preprocessing and a validation design appropriate to the study.
+  considerations:
+  - Conditional co-occurrence does not establish metabolite production, consumption or causation.
+  - A low conditional score is not automatically a negative correlation.
+  - Compare against suitable compositional-data baselines; universal superiority over linear methods is not established.
+    See the 2021 discussion (10.1038/s41592-020-01006-1) and reply (10.1038/s41592-020-01007-0).
+  - Small studies and sparse data require careful tuning and uncertainty assessment.
+ask_keywords:
+- paired microbiome metabolomics
+- microbe metabolite co occurrence
+- conditional microbial metabolite associations
+- mmvec
+- connect microbial taxa to metabolite profiles
+related_strategies:
+- metabologenomics
+resources:
+  code_available: true
+  code_url: https://github.com/biocore/mmvec
+  method_available: true
+  method_url: https://doi.org/10.1038/s41592-019-0616-3
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Primary method and official implementation reviewed, including the 2021 methodological discussion and reply.
+    Distinct from BGC-to-metabolite matching and spatial colocalization. Inclusion does not endorse causal inference
+    or benchmark superiority.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-29'
+  updated_at: '2026-09-29'
+  last_verified: '2026-09-29'
+  last_editorial_review: '2026-09-29'
