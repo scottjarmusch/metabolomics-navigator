@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: ms-finder-tutorial
+title: "MS-FINDER tutorial"
+summary: "Official detailed MS-FINDER tutorial; older page but comprehensive."
+url: "https://systemsomicslab.github.io/mtbinfo.github.io/MS-FINDER/tutorial"
+resource_type: tutorial
+tool_slugs:
+  - ms-finder
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

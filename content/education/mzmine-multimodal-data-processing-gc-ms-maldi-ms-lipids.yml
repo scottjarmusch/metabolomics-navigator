@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: mzmine-multimodal-data-processing-gc-ms-maldi-ms-lipids
+title: "MZmine multimodal data processing (GC-MS, MALDI-MS, lipids)"
+summary: "External training video related to mzmine collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=cGA5WIKcMpM"
+resource_type: video
+tool_slugs:
+  - mzmine
+provider: "MZmine / EMBL-EBI training"
+experience_level: unspecified
+language: en
+note: "Validate current scope/version."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

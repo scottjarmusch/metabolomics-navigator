@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: ms-dial-5-official-tutorial
+title: "MS-DIAL 5 official tutorial"
+summary: "Current official tutorial with embedded videos across LC-MS, GC-MS, CE-MS, lipidomics and utilities."
+url: "https://systemsomicslab.github.io/msdial5tutorial/"
+resource_type: training_hub
+tool_slugs:
+  - ms-dial
+provider: "MS-DIAL project"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

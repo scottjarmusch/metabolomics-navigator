@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: bioconductor-untargeted-lc-ms-preprocessing-with-xcms
+title: "Bioconductor untargeted LC-MS preprocessing with XCMS"
+summary: "Detailed hands-on preprocessing workshop; older but technically useful."
+url: "https://www.bioconductor.org/help/course-materials/2019/CSAMA/materials/labs/lab-05-metabolomics/preprocessing-untargeted-metabolomics.html"
+resource_type: tutorial
+tool_slugs:
+  - xcms
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

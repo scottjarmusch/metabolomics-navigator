@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: mzmine-learners-corner
+title: "MZmine Learners corner"
+summary: "Curated official page pointing to current MZmine videos, workshops, Functional Metabolomics Lab, and related channels."
+url: "https://mzmine.github.io/mzmine_documentation/latest/learners_corner.html"
+resource_type: training_hub
+tool_slugs:
+  - mzmine
+provider: "MZmine project"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

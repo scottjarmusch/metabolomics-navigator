@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-metabolomics-principles-tools-portuguese-part-1
+title: "GNPS metabolomics principles + tools Portuguese Part 1"
+summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=QVw1K1dkpIc"
+resource_type: workshop
+tool_slugs:
+  - gnps
+provider: "GNPS community / official listing"
+experience_level: unspecified
+language: pt
+note: "Portuguese-language tutorial."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

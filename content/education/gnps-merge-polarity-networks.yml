@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-merge-polarity-networks
+title: "GNPS Merge Polarity Networks"
+summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=wHdr9coLmoQ"
+resource_type: workshop
+tool_slugs:
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Check whether a dedicated Navigator entry exists/needed."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: cmfi-molecular-networking-seminar
+title: "CMFI Molecular Networking seminar"
+summary: "External workshop recording related to gnps, gnps-classical-molecular-networking collected for the Navigator Education alpha."
+url: "https://youtu.be/s5y1XNKENbk"
+resource_type: workshop
+tool_slugs:
+  - gnps
+  - gnps-classical-molecular-networking
+provider: "Functional Metabolomics Lab / GNPS"
+experience_level: unspecified
+language: en
+note: "Molecular networking seminar by Dorrestein/Petras."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

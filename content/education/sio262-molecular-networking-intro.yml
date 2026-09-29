@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: sio262-molecular-networking-intro
+title: "SIO262 Molecular Networking Intro"
+summary: "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=DIItacY4VaE"
+resource_type: workshop
+tool_slugs:
+  - gnps-classical-molecular-networking
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Short instructional session."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

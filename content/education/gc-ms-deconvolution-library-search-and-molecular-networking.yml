@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: gc-ms-deconvolution-library-search-and-molecular-networking
+title: "GC-MS deconvolution, library search and molecular networking"
+summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=CXDlwC7evnk"
+resource_type: workshop
+tool_slugs:
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "GC-MS workflow training."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

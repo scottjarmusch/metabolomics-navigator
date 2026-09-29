@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: massql-in-ms-dial-5
+title: "MassQL in MS-DIAL 5"
+summary: "External training video related to ms-dial, massql collected for the Navigator Education alpha."
+url: "https://www.youtube.com/watch?v=otCq9s1PjAs"
+resource_type: video
+tool_slugs:
+  - ms-dial
+  - massql
+provider: "MS-DIAL project"
+experience_level: unspecified
+language: en
+note: "Strong integration-focused candidate."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

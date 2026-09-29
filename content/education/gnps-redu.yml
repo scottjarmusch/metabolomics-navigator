@@ -1,0 +1,19 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-redu
+title: "GNPS ReDU"
+summary: "External workshop recording related to redu, gnps collected for the Navigator Education alpha."
+url: "https://youtu.be/I-CdsHESLJ8"
+resource_type: workshop
+tool_slugs:
+  - redu
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Official ReDU workshop."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

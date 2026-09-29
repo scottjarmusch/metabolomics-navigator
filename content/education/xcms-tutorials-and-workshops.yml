@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: xcms-tutorials-and-workshops
+title: "XCMS tutorials and workshops"
+summary: "Current tutorial/workshop repository for LC-MS(/MS) preprocessing with XCMS; strong candidate when Education expands beyond video."
+url: "https://github.com/jorainer/xcmsTutorials"
+resource_type: tutorial
+tool_slugs:
+  - xcms
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Alpha resource; manual content/currentness validation pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

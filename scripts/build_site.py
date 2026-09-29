@@ -14,7 +14,7 @@ from seo import page_metadata
 
 from common import (
     ROOT, counts_for, date_display, derive_base_path, label_maps,
-    load_strategies, load_tools, load_vocab, record_date, validator,
+    load_education, load_strategies, load_tools, load_vocab, record_date, validator,
 )
 
 OUT=ROOT/'dist'
@@ -83,6 +83,7 @@ def main():
     vocab=load_vocab(); labels=label_maps(vocab)
     tools_raw=clean_and_validate(load_tools(),'tool')
     strategies_raw=clean_and_validate(load_strategies(),'strategy')
+    education_raw=clean_and_validate(load_education(),'education')
     site=load_yaml(ROOT/'config/site.yml')
 
     github_repository=os.getenv('GITHUB_REPOSITORY','')
@@ -110,6 +111,13 @@ def main():
     tool_by_slug={t['slug']:t for t in tools}
     strategies=sorted([enrich_strategy(r,labels,tool_by_slug) for r in strategies_raw],key=lambda x:x['name'].casefold())
     strategy_by_slug={p['slug']:p for p in strategies}
+    education=sorted([enrich_education(r,tool_by_slug) for r in education_raw],key=lambda x:(x['tools'][0]['name'].casefold(),x['title'].casefold()))
+    education_by_tool={slug:[] for slug in tool_by_slug}
+    for resource in education:
+        for slug in resource['tool_slugs']:
+            if slug not in tool_by_slug:
+                raise SystemExit(f"Education resource {resource['slug']} references unknown tool slug: {slug}")
+            education_by_tool[slug].append(resource)
 
     # Bidirectional knowledge graph: tools know which strategies use them.
     for tool in tools: tool['strategies_using']=[]
@@ -178,7 +186,7 @@ def main():
         update_query=urlencode({'template':'update-tool.yml','title':f"[Tool update]: {tool['name']}"})
         update_url=f"{repository_url}/issues/new?{update_query}"
         source_url=f"{repository_url}/blob/main/content/tools/{quote(tool['slug'])}.yml"
-        render(env,'tool.html',OUT/f"tools/{tool['slug']}/index.html",**context,active='tools',tool=tool,related_tools=related,strategies_using=tool['strategies_using'],update_url=update_url,source_url=source_url)
+        render(env,'tool.html',OUT/f"tools/{tool['slug']}/index.html",**context,active='tools',tool=tool,related_tools=related,strategies_using=tool['strategies_using'],education_resources=education_by_tool.get(tool['slug'],[]),update_url=update_url,source_url=source_url)
 
     # Strategy catalogue
     objective_counts=counts_for(strategies_raw,'purpose.primary')
@@ -197,6 +205,10 @@ def main():
         update_url=f"{repository_url}/issues/new?{update_query}"
         source_url=f"{repository_url}/blob/main/content/strategies/{quote(strategy['slug'])}.yml"
         render(env,'strategy.html',OUT/f"strategies/{strategy['slug']}/index.html",**context,active='strategies',strategy=strategy,related_strategies=related,update_url=update_url,source_url=source_url)
+
+    # Education: curated external learning resources. Alpha entries may still be unreviewed.
+    education_tools=sorted({tool['slug']:tool for resource in education for tool in resource['tools']}.values(),key=lambda x:x['name'].casefold())
+    render(env,'education.html',OUT/'education/index.html',**context,active='education',education_resources=education,education_tools=education_tools)
 
     # Browse combines both content types.
     sections=[
@@ -225,11 +237,11 @@ def main():
         render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page)
     render(env,'404.html',OUT/'404.html',**context,active='')
 
-    write_json(OUT/'tool-data.json',tools_raw); write_json(OUT/'strategy-data.json',strategies_raw)
-    write_json(OUT/'catalogue-data.json',{'tools':tools_raw,'strategies':strategies_raw})
+    write_json(OUT/'tool-data.json',tools_raw); write_json(OUT/'strategy-data.json',strategies_raw); write_json(OUT/'education-data.json',education_raw)
+    write_json(OUT/'catalogue-data.json',{'tools':tools_raw,'strategies':strategies_raw,'education':education_raw})
     write_sitemap(OUT,tools,strategies,absolute_url,guide_sections)
     (OUT/'robots.txt').write_text(f"User-agent: *\nAllow: /\nSitemap: {absolute_url('sitemap.xml')}\n",encoding='utf-8')
-    print(f"Built {len(tools)} tool pages and {len(strategies)} strategy pages in {OUT} with base path '{base_path or '/'}'.")
+    print(f"Built {len(tools)} tool pages, {len(strategies)} strategy pages and {len(education)} education links in {OUT} with base path '{base_path or '/'}'.")
 
 
 def clean_and_validate(records,kind):
@@ -249,7 +261,7 @@ def prepare_output():
 
 def copy_public_files():
     shutil.copytree(ROOT/'assets',OUT/'assets')
-    (OUT/'schemas').mkdir(); shutil.copy2(ROOT/'schemas/tool.schema.json',OUT/'schemas/tool.schema.json'); shutil.copy2(ROOT/'schemas/strategy.schema.json',OUT/'schemas/strategy.schema.json')
+    (OUT/'schemas').mkdir(); shutil.copy2(ROOT/'schemas/tool.schema.json',OUT/'schemas/tool.schema.json'); shutil.copy2(ROOT/'schemas/strategy.schema.json',OUT/'schemas/strategy.schema.json'); shutil.copy2(ROOT/'schemas/education.schema.json',OUT/'schemas/education.schema.json')
     (OUT/'data').mkdir(); shutil.copy2(ROOT/'data/controlled-vocabulary.yml',OUT/'data/controlled-vocabulary.yml')
     (OUT/'.nojekyll').write_text('',encoding='utf-8')
 
@@ -298,6 +310,17 @@ def enrich_tool(record,labels):
         seen.add(href); t['display_links'].append((link_names.get(key,key.replace('_',' ').title()),href))
     search=[t['name'],t.get('acronym',''),*t.get('aliases',[]),t['summary'],t['primary_function_label'],*t['secondary_function_labels'],*t['capability_labels'],*t['platform_labels'],*t['interface_labels'],*t['analysis_type_labels'],t['access_label'],*t['input_format_labels'],*t['output_format_labels'],*t['ms_level_labels'],*t['acquisition_strategy_labels']]
     t['search_text']=' '.join(map(str,search)).lower(); return t
+
+
+EDUCATION_TYPE_LABELS={'video':'Video','workshop':'Workshop','tutorial':'Tutorial','documentation':'Documentation','training_hub':'Training hub'}
+
+def enrich_education(record,tool_by_slug):
+    item=dict(record)
+    item['tools']=[tool_by_slug[s] for s in item.get('tool_slugs',[]) if s in tool_by_slug]
+    item['resource_type_label']=EDUCATION_TYPE_LABELS.get(item.get('resource_type'),item.get('resource_type','Resource').replace('_',' ').title())
+    search=[item.get('title',''),item.get('summary',''),item.get('provider',''),item.get('note',''),*[t['name'] for t in item['tools']]]
+    item['search_text']=' '.join(map(str,search)).lower()
+    return item
 
 
 def enrich_strategy(record,labels,tool_by_slug):
@@ -358,7 +381,7 @@ def static_pages(repository_url,url):
 
 
 def write_sitemap(out,tools,strategies,absolute_url,guide_sections):
-    paths=['','ask/','tools/','strategies/','browse/','submit/','about/','contribute/','governance/','privacy/']+[f"tools/{x['slug']}/" for x in tools]+[f"strategies/{x['slug']}/" for x in strategies]
+    paths=['','ask/','tools/','strategies/','education/','browse/','submit/','about/','contribute/','governance/','privacy/']+[f"tools/{x['slug']}/" for x in tools]+[f"strategies/{x['slug']}/" for x in strategies]
     paths += [f"guide/{group['id']}/" for group in guide_sections]
     xml=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for path in paths: xml.append(f'  <url><loc>{html.escape(absolute_url(path))}</loc></url>')
