@@ -17,6 +17,12 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Prioritize biotransformations from ordered abundance changes", "Chemical proportionality for transformation prioritization", None),
+    ("Model paired microbiome metabolomics conditional associations", "Conditional microbe–metabolite association modeling", None),
+    ("MALDI FISH link metabolites to microbial identity", "Correlative metabolite and microbial imaging with MALDI-FISH", None),
+    ("Microfluidic bioactivity fractionation luminescent bioreporter", "Microfluidic fractionation for compound-resolved bioactivity", None),
+    ("Infer transformations without ordered samples", None, "missing input"),
+    ("Use mmvec without paired microbiome samples", None, "missing input"),
     ("I study bacteria. Can metabolomics help me discover new antibiotics?", None, "study guide"),
     ("We have blood samples from 200 patients and controls. Where should we start?", None, "study guide"),
     ("We forgot to measure pooled QC samples. How can we fix batch effects?", None, "missing input"),

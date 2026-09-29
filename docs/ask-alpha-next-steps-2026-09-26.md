@@ -46,3 +46,7 @@ Beginner responses now expose appropriate catalogue/learning links: raw data to 
 ## 28 September: explicit QC and tracer evidence
 
 Local alpha now asks whether repeated representative QC injections and injection order exist before offering pooled-QC drift correction, and whether tracer labeling measurements and times exist before offering isotope-flux methods. Unknown and absent answers give distinct guidance and no method cards. Questions appear only for the relevant aim and reset on aim/study changes. These checks are prerequisites, not proof of full compatibility. Unit tests cover all three answer states and reset. Free-text search remains an exploration route, not a validated compatibility engine.
+
+## 29 September: Strategy evidence expansion
+
+Synced published content and ML/AI guide, including MALDI-FISH, microfluidic bioactivity fractionation, MSnLib and SpecReBoot. Added the approved chemical-proportionality and conditional microbe-metabolite association Strategies. Alpha now contains 38 Strategies and 145 tools. Six generated-search cases cover new concepts and explicit missing-input constraints. Ranking remains lexical relevance, not scientific compatibility or citation popularity. Enveda and production Ask remain held.
