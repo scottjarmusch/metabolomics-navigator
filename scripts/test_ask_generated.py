@@ -17,6 +17,10 @@ class Cards(HTMLParser):
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
 
 CASES = [
+    ("Epoxidation lipid double bond localization with epoxide fragments", "Epoxidation-assisted lipid double-bond localization", None),
+    ("Spatial isotope tracing with tissue isotopologue maps", "Tissue isotope imaging with iso-imaging", None),
+    ("Find double bond positions without derivatization", None, "missing input"),
+    ("Map isotope incorporation without a tracer", None, "missing input"),
     ("Prioritize biotransformations from ordered abundance changes", "Chemical proportionality for transformation prioritization", None),
     ("Model paired microbiome metabolomics conditional associations", "Conditional microbe–metabolite association modeling", None),
     ("MALDI FISH link metabolites to microbial identity", "Correlative metabolite and microbial imaging with MALDI-FISH", None),

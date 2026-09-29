@@ -50,3 +50,7 @@ Local alpha now asks whether repeated representative QC injections and injection
 ## 29 September: Strategy evidence expansion
 
 Synced published content and ML/AI guide, including MALDI-FISH, microfluidic bioactivity fractionation, MSnLib and SpecReBoot. Added the approved chemical-proportionality and conditional microbe-metabolite association Strategies. Alpha now contains 38 Strategies and 145 tools. Six generated-search cases cover new concepts and explicit missing-input constraints. Ranking remains lexical relevance, not scientific compatibility or citation popularity. Enveda and production Ask remain held.
+
+## 29 September: spatial isotope and lipid structure batch
+
+Added epoxidation-assisted double-bond localization (2017 primary; 2018 phospholipid extension) and specific tissue iso-imaging (2022). Alpha now contains 40 Strategies, 145 tools and 57 learning resources. Four additional search cases cover both methods and missing experimental prerequisites. Ordinary lipid spectra and unlabeled imaging are not treated as compatible inputs. 13C-SpaceM remains a separate editorial decision.
