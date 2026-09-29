@@ -1,0 +1,80 @@
+$schema: ../../schemas/strategy.schema.json
+slug: chemical-proportionality-network-transformations
+name: Chemical proportionality for transformation prioritization
+aliases:
+- ChemProp strategy
+summary: Combine molecular-network edges with abundance changes across ordered samples to prioritize possible chemical
+  transformations.
+publication:
+  title: Chemical Proportionality within Molecular Networks
+  doi: 10.1021/acs.analchem.1c01520
+  year: 2021
+  journal: Analytical Chemistry
+  citation: Petras D, et al. Chemical Proportionality within Molecular Networks. Analytical Chemistry 93, 12833-12839
+    (2021).
+purpose:
+  primary: biotransformation
+platforms:
+- lc_ms
+components:
+- molecular_networking
+- metadata_analysis
+- statistics
+tools:
+- slug: chemprop
+  role: Score abundance changes between connected features.
+workflow_steps:
+- title: Prepare matched network and abundance data
+  description: Connect quantified features to fragmentation-based network edges and ordered sample metadata.
+- title: Score proportional changes
+  description: Apply the appropriate ChemProp scoring mode to connected feature pairs.
+  tool_slugs:
+  - chemprop
+- title: Investigate candidate transformations
+  description: Inspect abundance trends, mass differences and spectra before follow-up validation.
+scope:
+  designed_for:
+  - Prioritizing possible transformations among network-connected features.
+  requirements:
+  - MS/MS network edges linked to quantified features.
+  - Consistent sample identifiers and an ordered temporal or spatial variable.
+  - Choose the scoring mode for the available sampling design.
+  considerations:
+  - Direction and proportionality are hypotheses, not proof of a reaction or its mechanism.
+  - Co-variation, normalization and missing signals affect interpretation.
+  - This does not estimate metabolic flux.
+ask_keywords:
+- chemical proportionality
+- prioritize biotransformations
+- ordered abundance changes
+- drug metabolite transformation
+- time resolved molecular network
+related_strategies:
+- gnps-feature-based-molecular-networking
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1021/acs.analchem.1c01520
+implementations:
+- title: A Functional Metabolomics Framework to Track Microbiome Drug Metabolism
+  doi: 10.64898/2026.01.30.702925
+  year: 2026
+  journal: bioRxiv (preprint; not peer reviewed)
+  citation: 'Pakkir Shah AK, et al. bioRxiv (2026), preprint. DOI: 10.64898/2026.01.30.702925.'
+  relationship: extension
+  summary: ChemProp2 extends scoring to time-series correlations with a decoy-based empirical FDR procedure. Demonstrated
+    with a synthetic gut community and drugs; microbial association does not establish a producing organism.
+  tool_slugs:
+  - chemprop
+  - gnps-feature-based-molecular-networking
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Primary ChemProp paper anchors the transferable relationship. ChemProp2 is an extension, not a separate
+    drug-specific Strategy. Primary DOI/title/year and preprint status verified; workflows not executed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-29'
+  updated_at: '2026-09-29'
+  last_verified: '2026-09-29'
+  last_editorial_review: '2026-09-29'
