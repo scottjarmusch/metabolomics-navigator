@@ -1,0 +1,16 @@
+$schema: ../../schemas/education.schema.json
+slug: mzmine-learners-corner
+title: MZmine Learners Corner
+summary: Official collection of MZmine videos, workshops, and practical learning material.
+url: https://mzmine.github.io/mzmine_documentation/latest/learners_corner.html
+resource_type: training_hub
+tool_slugs:
+  - mzmine
+provider: MZmine project
+experience_level: mixed
+note: Current official training hub.
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: published
