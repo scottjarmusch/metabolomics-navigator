@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   create-draft:
-    if: startsWith(github.event.issue.title, '[Tool submission]:') || startsWith(github.event.issue.title, '[Strategy submission]:')
+    if: contains(github.event.issue.title, '[Tool submission]:') || contains(github.event.issue.title, '[Strategy submission]:') || contains(github.event.issue.labels.*.name, 'tool-submission') || contains(github.event.issue.labels.*.name, 'strategy-submission')
     runs-on: ubuntu-latest
 
     steps:
@@ -30,18 +30,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Identify submission type
+      - name: Check required submission fields and identify type
         id: kind
-        shell: bash
+        run: python scripts/check_submission_completeness.py --event "$GITHUB_EVENT_PATH"
+
+      - name: Preserve existing submission branches
         env:
-          ISSUE_TITLE: ${{ github.event.issue.title }}
+          BRANCH: automation/${{ steps.kind.outputs.type }}-submission-${{ github.event.issue.number }}
         run: |
-          if [[ "$ISSUE_TITLE" == "[Strategy submission]:"* ]]; then
-            echo "type=strategy" >> "$GITHUB_OUTPUT"
-            echo "label=strategy-submission" >> "$GITHUB_OUTPUT"
-          else
-            echo "type=tool" >> "$GITHUB_OUTPUT"
-            echo "label=tool-submission" >> "$GITHUB_OUTPUT"
+          if [ -n "$(git ls-remote --heads origin "refs/heads/$BRANCH")" ]; then
+            echo "An existing submission branch needs maintainer review; it will not be overwritten." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
 
       - name: Ensure repository labels exist
@@ -84,7 +83,7 @@ jobs:
           else
             git commit -m "Add draft $ENTRY_TYPE entry for $ENTRY_NAME"
           fi
-          git push --force --set-upstream origin "$BRANCH"
+          git push --set-upstream origin "$BRANCH"
 
       - name: Create or reuse pull request
         id: pr
@@ -97,7 +96,7 @@ jobs:
         run: |
           PR_URL=$(gh pr list --head "$BRANCH" --base main --state open --json url --jq '.[0].url // empty')
           if [ -z "$PR_URL" ]; then
-            PR_BODY=$(printf 'Automated %s draft generated from %s.\n\nMaintainer acceptance is required before publication. Tool submissions can be accepted with editorial additions pending; Strategies retain their editorial inclusion requirements. Catalogue validation runs automatically.' "$ENTRY_TYPE" "$SOURCE_ISSUE")
+            PR_BODY=$(printf 'Automated %s draft generated from %s.\n\nCloses %s.\n\nMaintainer acceptance is required before publication. Tool submissions can be accepted with editorial additions pending; Strategies retain their editorial inclusion requirements. Required catalogue validation must pass before merging. If GitHub is awaiting workflow approval, a maintainer must review and approve the run from the Actions tab. See docs/submission-maintainer-guide.md.' "$ENTRY_TYPE" "$SOURCE_ISSUE" "$SOURCE_ISSUE")
             PR_URL=$(gh pr create \
               --base main \
               --head "$BRANCH" \
@@ -115,7 +114,7 @@ jobs:
           ENTRY_TYPE: ${{ steps.kind.outputs.type }}
         run: |
           gh issue comment "${{ github.event.issue.number }}" \
-            --body "Thank you. A structured $ENTRY_TYPE draft has been created for editorial review: $PR_URL. Automated catalogue validation will run on the pull request before it can be merged."
+            --body "Thank you. A structured $ENTRY_TYPE draft has been created for editorial review: $PR_URL. Required catalogue validation must pass before merging; GitHub may require a maintainer to approve its workflow run. Acceptance and later editorial enrichment are separate."
 
       - name: Comment if draft generation fails
         if: failure()
@@ -123,4 +122,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh issue comment "${{ github.event.issue.number }}" \
-            --body "The automated draft could not be generated. A maintainer should review this workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            --body "The automated draft could not be generated. A maintainer should review the completeness report and workflow summary here: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

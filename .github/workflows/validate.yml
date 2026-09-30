@@ -34,6 +34,7 @@ jobs:
         run: |
           python scripts/check_editorial_readiness.py
           python scripts/test_submission_acceptance.py
+          python scripts/test_submission_completeness.py
           python scripts/test_contributors.py
           python scripts/audit_strategy_terminology.py
           python scripts/test_strategy_terminology.py
