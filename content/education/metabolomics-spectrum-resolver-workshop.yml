@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: metabolomics-spectrum-resolver-workshop
 title: "Metabolomics Spectrum Resolver workshop"
-summary: "External workshop recording related to gnps-spectrum-summary collected for the Navigator Education alpha."
+summary: "Workshop titled Metabolomics Spectrum Resolver. A resource for exploring spectrum-level analysis; the precise relationship to the linked GNPS Spectrum Summary entry still needs content review."
 url: "https://www.youtube.com/watch?v=JMJO8CAfCNI"
 resource_type: workshop
 tool_slugs:

@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-gc-part-2
 title: "GNPS GC - Part 2"
-summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+summary: "Second session in the GNPS GC-MS training sequence. Intended for gas-chromatography mass spectrometry workflows; check the current GNPS documentation before reproducing older steps."
 url: "https://www.youtube.com/watch?v=EJipzmkK7oA"
 resource_type: workshop
 tool_slugs:

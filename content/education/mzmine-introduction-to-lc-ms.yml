@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-introduction-to-lc-ms
 title: "MZmine introduction to LC-MS"
-summary: "External training video related to mzmine collected for the Navigator Education alpha."
+summary: "MZmine training introducing LC-MS. A starting point for learners who need analytical context before exploring the software-specific workshops."
 url: "https://www.youtube.com/watch?v=UnqVtZngzl0"
 resource_type: video
 tool_slugs:

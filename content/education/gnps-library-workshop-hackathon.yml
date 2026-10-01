@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-library-workshop-hackathon
 title: "GNPS Library Workshop/Hackathon"
-summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+summary: "GNPS spectral-library workshop and hackathon recording. Community training around library resources; the format is broader than a single step-by-step tutorial."
 url: "https://www.youtube.com/watch?v=IbXBpud57Z8"
 resource_type: workshop
 tool_slugs:

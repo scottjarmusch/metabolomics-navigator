@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2023-day2-bonus-mzmine-3-new-features
 title: "NTMSS2023 Day2 BONUS - MZmine 3 New Features"
-summary: "External workshop recording related to mzmine collected for the Navigator Education alpha."
+summary: "Bonus summer-school session on new features in MZmine 3. Supplement the core preprocessing training with this version-specific overview."
 url: "https://www.youtube.com/watch?v=MdpUNf-xTmQ"
 resource_type: workshop
 tool_slugs:

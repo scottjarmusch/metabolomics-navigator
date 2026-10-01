@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-ms-library-generation
 title: "MZmine MS-library generation"
-summary: "External training video related to mzmine collected for the Navigator Education alpha."
+summary: "MZmine training focused on mass-spectral library generation. Relevant when building reference resources rather than only processing an experimental sample set."
 url: "https://www.youtube.com/watch?v=SmEpFYV4_bY"
 resource_type: video
 tool_slugs:

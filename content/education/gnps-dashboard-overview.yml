@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-dashboard-overview
 title: "GNPS Dashboard - Overview"
-summary: "External workshop recording related to gnps-dashboard, gnps collected for the Navigator Education alpha."
+summary: "Overview of GNPS Dashboard for exploring mass spectrometry data. A starting point before using the linked Dashboard teaching example."
 url: "https://www.youtube.com/watch?v=S3aAkGTMC-g"
 resource_type: workshop
 tool_slugs:

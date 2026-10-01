@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-dashboard-teaching-tutorial-use-case
 title: "GNPS Dashboard teaching/tutorial use case"
-summary: "External training video related to gnps-dashboard collected for the Navigator Education alpha."
+summary: "Teaching example linked from the GNPS Dashboard documentation. Follow a tutorial use case to put the Dashboard overview into practical context."
 url: "https://www.youtube.com/watch?v=tT5b1IIJCE8"
 resource_type: video
 tool_slugs:

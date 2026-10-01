@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: xcms-tutorials-and-workshops
 title: "XCMS tutorials and workshops"
-summary: "Current tutorial/workshop repository for LC-MS(/MS) preprocessing with XCMS; strong candidate when Education expands beyond video."
+summary: "XCMS tutorial and workshop collection. Find guidance for processing LC-MS data in R before selecting downstream annotation or statistical analysis."
 url: "https://github.com/jorainer/xcmsTutorials"
 resource_type: tutorial
 tool_slugs:

@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-multimodal-data-processing-gc-ms-maldi-ms-lipids
 title: "MZmine multimodal data processing (GC-MS, MALDI-MS, lipids)"
-summary: "External training video related to mzmine collected for the Navigator Education alpha."
+summary: "MZmine workshop spanning GC-MS, MALDI-MS and lipid data processing. Browse for the modality that matches your experiment; these are distinct analytical contexts."
 url: "https://www.youtube.com/watch?v=cGA5WIKcMpM"
 resource_type: video
 tool_slugs:

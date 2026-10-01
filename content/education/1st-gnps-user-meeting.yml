@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: 1st-gnps-user-meeting
 title: "1st GNPS User Meeting"
-summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+summary: "GNPS community meeting recording. Explore how the platform is discussed by its user community; this is a broad meeting rather than a sequential software tutorial."
 url: "https://www.youtube.com/watch?v=4HMjK4Js8xI"
 resource_type: workshop
 tool_slugs:

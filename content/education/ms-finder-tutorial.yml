@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-finder-tutorial
 title: "MS-FINDER tutorial"
-summary: "Official detailed MS-FINDER tutorial; older page but comprehensive."
+summary: "MS-FINDER tutorial for computational investigation of small-molecule identities. Relevant after obtaining mass-spectrometry evidence for an unknown compound."
 url: "https://systemsomicslab.github.io/mtbinfo.github.io/MS-FINDER/tutorial"
 resource_type: tutorial
 tool_slugs:

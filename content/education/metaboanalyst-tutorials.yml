@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: metaboanalyst-tutorials
 title: "MetaboAnalyst tutorials"
-summary: "Current official tutorial index; useful companion to workshop videos."
+summary: "Official MetaboAnalyst tutorial collection. Choose a tutorial that matches your analysis objective and input data rather than treating every module as a required workflow step."
 url: "https://www.metaboanalyst.ca/docs/Tutorials.xhtml"
 resource_type: training_hub
 tool_slugs:

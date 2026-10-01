@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-merge-polarity-networks
 title: "GNPS Merge Polarity Networks"
-summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+summary: "GNPS session on merging networks from different ionization polarities. Relevant to researchers considering how positive- and negative-mode results can be viewed together."
 url: "https://www.youtube.com/watch?v=wHdr9coLmoQ"
 resource_type: workshop
 tool_slugs:

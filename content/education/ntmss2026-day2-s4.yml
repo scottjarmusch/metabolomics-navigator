@@ -1,0 +1,25 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day2-s4
+title: NTMSS2026 Day2 S4 - Vanessa Phelan - Molecular Networking in GNPS2
+summary: Vanessa Phelan introduces molecular networking in GNPS2. Relevant for organizing
+  tandem mass spectra by similarity and exploring related molecules in a dataset.
+url: https://www.youtube.com/watch?v=g7J_Z6zqbeo
+resource_type: workshop
+tool_slugs:
+- gnps
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=g7J_Z6zqbeo
+date_verified_at: '2026-10-01'

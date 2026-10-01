@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: lc-ms-data-analysis-with-xcms-and-metfrag-on-phenomenal
 title: "LC/MS data analysis with XCMS and MetFrag on PhenoMeNal"
-summary: "External training video related to xcms, metfrag collected for the Navigator Education alpha."
+summary: "LC-MS training combining XCMS data processing and MetFrag annotation in the PhenoMeNal environment. The platform is older, so use the workflow context alongside current software documentation."
 url: "https://www.youtube.com/watch?v=vzcD0WnAuAQ"
 resource_type: video
 tool_slugs:

@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day4-s1
+title: NTMSS2026 Day4 S1 - Simone Zuffa - STATS part1
+summary: Simone Zuffa presents the first statistics session in the summer-school sequence.
+  Pair it with the following FBMN STATS hands-on session for the practical component.
+url: https://www.youtube.com/watch?v=06YC1E-5gME
+resource_type: workshop
+tool_slugs: []
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=06YC1E-5gME
+date_verified_at: '2026-10-01'

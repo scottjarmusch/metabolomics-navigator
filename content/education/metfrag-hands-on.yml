@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: metfrag-hands-on
 title: "MetFrag Hands-on"
-summary: "Hands-on compound identification tutorial with MS/MS and metadata."
+summary: "Hands-on MetFrag learning resource for computational annotation. Relevant when investigating candidate structures using tandem mass spectrometry evidence."
 url: "https://ipb-halle.github.io/MetFragTraining/"
 resource_type: tutorial
 tool_slugs:

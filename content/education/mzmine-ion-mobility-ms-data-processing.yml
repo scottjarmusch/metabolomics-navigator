@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-ion-mobility-ms-data-processing
 title: "MZmine ion-mobility MS data processing"
-summary: "External training video related to mzmine collected for the Navigator Education alpha."
+summary: "MZmine workshop focused on processing ion-mobility mass spectrometry data. Choose this resource when mobility information is part of your dataset."
 url: "https://www.youtube.com/watch?v=Xp-G1HSozgM"
 resource_type: video
 tool_slugs:

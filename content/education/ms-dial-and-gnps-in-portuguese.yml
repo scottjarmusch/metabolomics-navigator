@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-and-gnps-in-portuguese
 title: "MS-DIAL and GNPS in Portuguese"
-summary: "External training video related to ms-dial, gnps collected for the Navigator Education alpha."
+summary: "Portuguese-language tutorial covering MS-DIAL and GNPS. A resource for researchers learning how these tools fit into metabolomics analysis."
 url: "https://www.youtube.com/watch?v=IZoS3Lvto1M"
 resource_type: video
 tool_slugs:

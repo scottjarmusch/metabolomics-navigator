@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: cmfi-mass-spec-seminar-10-metabolomics-data-analysis-with-pyopenms
 title: "CMFI Mass Spec Seminar #10 - Metabolomics Data Analysis with pyOpenMS"
-summary: "External workshop recording related to openms collected for the Navigator Education alpha."
+summary: "Hands-on metabolomics data analysis with pyOpenMS, the Python interface to OpenMS. The session uses Binder for an interactive computational environment."
 url: "https://www.youtube.com/watch?v=XWDFZXYp1qM"
 resource_type: workshop
 tool_slugs:

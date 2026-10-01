@@ -1,5 +1,5 @@
 from pathlib import Path
-import re,shutil,subprocess
+import re,shutil,subprocess,json
 root=Path('.').resolve();out=root/'dist';target=root.parent/'navigator-alpha-published'
 remote=subprocess.check_output(['git','-C',str(target),'remote','get-url','origin'],text=True).strip()
 assert remote=='https://github.com/scottjarmusch/metabolomics-navigator-alpha.git'
@@ -15,5 +15,5 @@ for source in out.rglob('*'):
  else:shutil.copyfile(source,dest)
 (target/'robots.txt').write_bytes(b'User-agent: *\nDisallow: /\n')
 (target/'.nojekyll').touch()
-(target/'README.md').write_bytes(f"# Metabolomics Navigator alpha preview\n\nStrategy-first Ask Navigator plus Education. {len(list(out.glob('strategies/*/index.html')))} Strategies, {len(list(out.glob('tools/*/index.html')))} tools and 57 learning resources.\n\nAsk: https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/\n\nEducation: https://scottjarmusch.github.io/metabolomics-navigator-alpha/education/\n\nSource branch: codex/ask-education-alpha in scottjarmusch/metabolomics-navigator. Production unchanged.\n".encode())
+(target/'README.md').write_bytes(f"# Metabolomics Navigator alpha preview\n\nStrategy-first Ask Navigator plus Education. {len(list(out.glob('strategies/*/index.html')))} Strategies, {len(list(out.glob('tools/*/index.html')))} tools and {len(json.loads((out/'education-data.json').read_text(encoding='utf-8')))} learning resources.\n\nAsk: https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/\n\nEducation: https://scottjarmusch.github.io/metabolomics-navigator-alpha/education/\n\nSource branch: codex/ask-education-alpha in scottjarmusch/metabolomics-navigator. Production unchanged.\n".encode())
 print('Refreshed separate alpha snapshot with noindex pages.')

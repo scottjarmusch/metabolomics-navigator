@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-workshops
 title: "MZmine workshops"
-summary: "Official workshop archive including recent VMOL webinars and non-target metabolomics summer schools."
+summary: "MZmine workshop collection. Find training by analysis topic and check the demonstrated version before reproducing interface-specific steps."
 url: "https://mzmine.github.io/mzmine_documentation/latest/workshops.html"
 resource_type: training_hub
 tool_slugs:

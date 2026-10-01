@@ -111,7 +111,7 @@ def main():
     tool_by_slug={t['slug']:t for t in tools}
     strategies=sorted([enrich_strategy(r,labels,tool_by_slug) for r in strategies_raw],key=lambda x:x['name'].casefold())
     strategy_by_slug={p['slug']:p for p in strategies}
-    education=sorted([enrich_education(r,tool_by_slug) for r in education_raw],key=lambda x:(x['tools'][0]['name'].casefold(),x['title'].casefold()))
+    education=sorted([enrich_education(r,tool_by_slug) for r in education_raw],key=lambda x:((x['tools'][0]['name'] if x['tools'] else 'General concepts').casefold(),x['title'].casefold()))
     education_by_tool={slug:[] for slug in tool_by_slug}
     for resource in education:
         for slug in resource['tool_slugs']:

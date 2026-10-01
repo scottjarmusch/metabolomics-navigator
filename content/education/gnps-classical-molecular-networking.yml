@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-classical-molecular-networking
 title: "GNPS Classical Molecular Networking"
-summary: "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha."
+summary: "Workshop on classical molecular networking in GNPS: grouping related tandem mass spectra to explore molecular families. Use alongside the current documentation when following an older interface."
 url: "https://www.youtube.com/watch?v=PqTuex0nsGk"
 resource_type: workshop
 tool_slugs:

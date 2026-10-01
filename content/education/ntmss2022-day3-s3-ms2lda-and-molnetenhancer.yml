@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2022-day3-s3-ms2lda-and-molnetenhancer
 title: "NTMSS2022 Day3 S3 - MS2LDA and MolNetEnhancer"
-summary: "External workshop recording related to ms2lda, molnetenhancer collected for the Navigator Education alpha."
+summary: "Summer-school session pairing MS2LDA with MolNetEnhancer. Relevant for interpreting molecular networks using recurring spectral patterns and chemical annotation context."
 url: "https://www.youtube.com/watch?v=Eg4cH93yViA"
 resource_type: workshop
 tool_slugs:

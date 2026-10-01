@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: mana-2021-gnps-workshop-networking-dashboard-masst
 title: "MANA 2021 GNPS Workshop - Networking, Dashboard, MASST"
-summary: "External workshop recording related to gnps, masst, gnps-dashboard collected for the Navigator Education alpha."
+summary: "MANA 2021 workshop spanning GNPS molecular networking, Dashboard and MASST. Compare resources for organizing spectra, inspecting data and searching public repositories."
 url: "https://www.youtube.com/watch?v=-XoVrHQxW9U"
 resource_type: workshop
 tool_slugs:

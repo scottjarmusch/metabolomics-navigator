@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: multivariate-analysis-in-ms-dial-5
 title: "Multivariate analysis in MS-DIAL 5"
-summary: "External training video related to ms-dial collected for the Navigator Education alpha."
+summary: "Tutorial on multivariate analysis within MS-DIAL 5. Relevant when moving from processed data to exploring patterns across samples."
 url: "https://www.youtube.com/watch?v=wtOS7F1RgZs"
 resource_type: video
 tool_slugs:

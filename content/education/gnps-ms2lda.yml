@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-ms2lda
 title: "GNPS - MS2LDA"
-summary: "External workshop recording related to ms2lda, gnps collected for the Navigator Education alpha."
+summary: "GNPS workshop on MS2LDA and its use in exploring recurring fragment and neutral-loss patterns. A resource for moving from spectra toward substructure-level interpretation."
 url: "https://www.youtube.com/watch?v=0wKUmjPy40s"
 resource_type: workshop
 tool_slugs:

@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: metabolomic-data-analysis-using-metaboanalyst
 title: "Metabolomic Data Analysis Using MetaboAnalyst"
-summary: "External workshop recording related to metaboanalyst collected for the Navigator Education alpha."
+summary: "Recorded introduction to metabolomic data analysis using MetaboAnalyst. It uses an older version; consult current tutorials for present-day menus and options."
 url: "https://www.youtube.com/watch?v=4CVC98KnlMA"
 resource_type: workshop
 tool_slugs:

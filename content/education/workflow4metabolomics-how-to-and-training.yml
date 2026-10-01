@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: workflow4metabolomics-how-to-and-training
 title: "Workflow4Metabolomics HOW TO and training"
-summary: "Links Galaxy Training Network and Workflow4Experimenters materials."
+summary: "Workflow4Metabolomics how-to and training collection. A starting point for learning metabolomics analysis through the Galaxy-based platform."
 url: "https://workflow4metabolomics.org/howto"
 resource_type: training_hub
 tool_slugs:

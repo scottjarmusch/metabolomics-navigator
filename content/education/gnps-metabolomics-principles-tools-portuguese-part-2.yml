@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-metabolomics-principles-tools-portuguese-part-2
 title: "GNPS metabolomics principles + tools Portuguese Part 2"
-summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+summary: "Portuguese-language session on metabolomics principles and GNPS tools. Continue from part 1 for the second instalment."
 url: "https://www.youtube.com/watch?v=OLRazw7Q-2M"
 resource_type: workshop
 tool_slugs:

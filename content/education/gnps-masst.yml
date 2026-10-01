@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-masst
 title: "GNPS MASST"
-summary: "External workshop recording related to masst, gnps collected for the Navigator Education alpha."
+summary: "Workshop on MASST, the GNPS mass spectrometry search tool. Relevant when asking where a tandem mass spectrum occurs across public datasets."
 url: "https://www.youtube.com/watch?v=14hGi6FtZIM"
 resource_type: workshop
 tool_slugs:

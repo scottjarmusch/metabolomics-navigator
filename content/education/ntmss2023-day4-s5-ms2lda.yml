@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2023-day4-s5-ms2lda
 title: "NTMSS2023 Day4 S5 - MS2LDA"
-summary: "External workshop recording related to ms2lda collected for the Navigator Education alpha."
+summary: "Summer-school session on MS2LDA. Relevant when exploring shared fragmentation patterns as evidence for molecular substructures."
 url: "https://www.youtube.com/watch?v=M6UlZA9JaY8"
 resource_type: workshop
 tool_slugs:

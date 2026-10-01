@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-nature-microbiome-2021-workshop
 title: "GNPS Nature Microbiome 2021 Workshop"
-summary: "External workshop recording related to gnps collected for the Navigator Education alpha."
+summary: "GNPS workshop framed around food, diet and the microbiome. A domain-focused learning resource for researchers connecting metabolomics analysis with microbiome questions."
 url: "https://www.youtube.com/watch?v=V3X7AMugMMc"
 resource_type: workshop
 tool_slugs:

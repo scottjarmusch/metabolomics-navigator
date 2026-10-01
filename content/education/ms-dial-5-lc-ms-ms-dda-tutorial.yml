@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-5-lc-ms-ms-dda-tutorial
 title: "MS-DIAL 5 LC-MS/MS DDA tutorial"
-summary: "External training video related to ms-dial collected for the Navigator Education alpha."
+summary: "MS-DIAL 5 walkthrough for LC-MS/MS data acquired with data-dependent acquisition. Choose this tutorial when your acquisition type is DDA."
 url: "https://www.youtube.com/watch?v=cZY7wqF5Wdo"
 resource_type: video
 tool_slugs:

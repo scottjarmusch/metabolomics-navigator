@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-molnetenhancer
 title: "GNPS MolNetEnhancer"
-summary: "External workshop recording related to molnetenhancer, gnps collected for the Navigator Education alpha."
+summary: "Workshop introducing MolNetEnhancer in the GNPS ecosystem. Relevant for adding chemical-class and annotation context to molecular networks."
 url: "https://www.youtube.com/watch?v=-4DE_ZfF2vc"
 resource_type: workshop
 tool_slugs:

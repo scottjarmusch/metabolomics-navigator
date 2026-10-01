@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-ion-identity-networking-native-metabolomics
 title: "GNPS Ion-Identity Networking, Native Metabolomics"
-summary: "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha."
+summary: "Workshop covering ion-identity networking and native metabolomics. Explore how information beyond spectral similarity can contribute to interpreting molecular networks."
 url: "https://www.youtube.com/watch?v=tb7LxaeNvcw"
 resource_type: workshop
 tool_slugs:

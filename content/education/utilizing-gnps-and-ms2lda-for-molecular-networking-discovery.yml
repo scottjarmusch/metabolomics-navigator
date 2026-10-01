@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: utilizing-gnps-and-ms2lda-for-molecular-networking-discovery
 title: "Utilizing GNPS and MS2LDA for molecular networking discovery"
-summary: "External workshop recording related to gnps, ms2lda collected for the Navigator Education alpha."
+summary: "Session combining GNPS and MS2LDA for molecular-network exploration. Connect network relationships with recurring spectral patterns during interpretation."
 url: "https://www.youtube.com/watch?v=Cc6eKGZQ1Qw"
 resource_type: workshop
 tool_slugs:

@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: massql-in-ms-dial-5
 title: "MassQL in MS-DIAL 5"
-summary: "External training video related to ms-dial, massql collected for the Navigator Education alpha."
+summary: "Tutorial on using MassQL within MS-DIAL 5. Relevant when you want to apply mass-spectrometry queries from an MS-DIAL workflow."
 url: "https://www.youtube.com/watch?v=otCq9s1PjAs"
 resource_type: video
 tool_slugs:

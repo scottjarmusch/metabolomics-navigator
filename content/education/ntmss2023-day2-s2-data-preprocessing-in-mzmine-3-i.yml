@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2023-day2-s2-data-preprocessing-in-mzmine-3-i
 title: "NTMSS2023 Day2 S2 - Data preprocessing in MZmine 3 I"
-summary: "External workshop recording related to mzmine collected for the Navigator Education alpha."
+summary: "First summer-school session on data preprocessing in MZmine 3. Relevant before downstream annotation or statistics; the interface shown is version 3."
 url: "https://www.youtube.com/watch?v=MmUY5qCz8eo"
 resource_type: workshop
 tool_slugs:

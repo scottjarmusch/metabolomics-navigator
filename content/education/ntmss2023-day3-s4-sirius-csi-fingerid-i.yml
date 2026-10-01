@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2023-day3-s4-sirius-csi-fingerid-i
 title: "NTMSS2023 Day3 S4 - Sirius+CSI:FingerID I"
-summary: "External workshop recording related to sirius, csi-fingerid collected for the Navigator Education alpha."
+summary: "First summer-school session on SIRIUS and CSI:FingerID. A resource for exploring computational molecular annotation from mass spectrometry data."
 url: "https://www.youtube.com/watch?v=Gj_h7fvzL_g"
 resource_type: workshop
 tool_slugs:

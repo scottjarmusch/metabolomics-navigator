@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: patroon-tutorial
 title: "patRoon tutorial"
-summary: "Current 2026 tutorial for a complete non-target analysis workflow."
+summary: "patRoon tutorial for non-target analysis workflows in R. A resource for learners considering a scripted analysis environment."
 url: "https://rickhelmus.github.io/patRoon/articles/tutorial.html"
 resource_type: tutorial
 tool_slugs:

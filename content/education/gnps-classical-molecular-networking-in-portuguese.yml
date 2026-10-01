@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-classical-molecular-networking-in-portuguese
 title: "GNPS Classical Molecular Networking in Portuguese"
-summary: "External workshop recording related to gnps-classical-molecular-networking collected for the Navigator Education alpha."
+summary: "Portuguese-language introduction to classical molecular networking in GNPS. Relevant for exploring relationships among tandem mass spectra."
 url: "https://www.youtube.com/watch?v=Lba9e45ZAE0"
 resource_type: workshop
 tool_slugs:

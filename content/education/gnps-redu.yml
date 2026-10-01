@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-redu
 title: "GNPS ReDU"
-summary: "External workshop recording related to redu, gnps collected for the Navigator Education alpha."
+summary: "Workshop on ReDU and reuse of public mass spectrometry data with associated metadata. Relevant when exploring datasets beyond your own experiment."
 url: "https://youtu.be/I-CdsHESLJ8"
 resource_type: workshop
 tool_slugs:

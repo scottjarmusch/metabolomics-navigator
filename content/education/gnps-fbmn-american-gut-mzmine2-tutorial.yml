@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-fbmn-american-gut-mzmine2-tutorial
 title: "GNPS FBMN - American Gut / MZmine2 tutorial"
-summary: "External training video related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha."
+summary: "American Gut tutorial combining MZmine 2 with GNPS feature-based molecular networking. A worked dataset connects preprocessing with networking; the MZmine interface is a legacy version."
 url: "https://www.youtube.com/watch?v=5jjMllbwD-U"
 resource_type: video
 tool_slugs:

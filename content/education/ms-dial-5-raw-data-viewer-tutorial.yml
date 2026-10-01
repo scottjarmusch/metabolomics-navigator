@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-5-raw-data-viewer-tutorial
 title: "MS-DIAL 5 raw data viewer tutorial"
-summary: "External training video related to ms-dial collected for the Navigator Education alpha."
+summary: "Tutorial for the MS-DIAL 5 raw-data viewer. Relevant at the initial inspection stage, before drawing conclusions from processed feature tables."
 url: "https://www.youtube.com/watch?v=aApHc8Op4VY"
 resource_type: video
 tool_slugs:

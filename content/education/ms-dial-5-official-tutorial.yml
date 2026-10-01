@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-5-official-tutorial
 title: "MS-DIAL 5 official tutorial"
-summary: "Current official tutorial with embedded videos across LC-MS, GC-MS, CE-MS, lipidomics and utilities."
+summary: "Official MS-DIAL 5 tutorial resource. A starting point for learning the software before selecting a walkthrough for your acquisition type and analysis task."
 url: "https://systemsomicslab.github.io/msdial5tutorial/"
 resource_type: training_hub
 tool_slugs:

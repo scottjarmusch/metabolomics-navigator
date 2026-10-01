@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-5-to-ms-finder-for-unknown-annotation
 title: "MS-DIAL 5 to MS-FINDER for unknown annotation"
-summary: "External training video related to ms-dial, ms-finder collected for the Navigator Education alpha."
+summary: "Tutorial connecting MS-DIAL 5 with MS-FINDER for annotation of unknowns. Focuses on the handoff between data processing and computational structure investigation."
 url: "https://www.youtube.com/watch?v=moHIiTTVfGQ"
 resource_type: video
 tool_slugs:

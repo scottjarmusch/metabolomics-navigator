@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: cmfi-molecular-networking-seminar
 title: "CMFI Molecular Networking seminar"
-summary: "External workshop recording related to gnps, gnps-classical-molecular-networking collected for the Navigator Education alpha."
+summary: "Dorrestein and Petras present molecular networking in this CMFI seminar. Background for understanding how spectral relationships can organize metabolomics data."
 url: "https://youtu.be/s5y1XNKENbk"
 resource_type: workshop
 tool_slugs:

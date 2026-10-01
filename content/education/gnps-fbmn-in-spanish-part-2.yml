@@ -1,7 +1,7 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-fbmn-in-spanish-part-2
 title: "GNPS FBMN in Spanish Part 2"
-summary: "External workshop recording related to gnps-feature-based-molecular-networking collected for the Navigator Education alpha."
+summary: "Part 2 of the Spanish-language feature-based molecular networking tutorial. Continue from part 1 for the remainder of the sequence."
 url: "https://www.youtube.com/watch?v=l90j5T8EQbw"
 resource_type: workshop
 tool_slugs:
