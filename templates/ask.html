@@ -77,6 +77,15 @@
     </div>
   </div>
 
+  <aside id="ask-tool-matches" class="preview-note" hidden aria-live="polite">
+    <h2>Tools named in your question</h2>
+    <p>These are catalogue references, not a compatibility assessment. Read the recorded scope and requirements. A tool name alone does not establish a published workflow.</p>
+    <ul>
+    {% for tool in ask_tools %}
+      <li data-ask-tool data-slug="{{ tool.slug }}" data-names="{{ ([tool.name, tool.slug] + tool.aliases|default([]))|join('|')|e }}" hidden><a href="{{ url('tools/' + tool.slug + '/') }}">{{ tool.name }}</a> — {{ tool.summary }}</li>
+    {% endfor %}
+    </ul>
+  </aside>
   <div class="ask-results-header">
     <div><p class="ask-step">02 / PUBLISHED PRECEDENT</p><h2>Strategies that match</h2></div>
     <p id="ask-result-count" class="note">Choose an example or describe your question.</p>
@@ -87,6 +96,7 @@
     <article class="ask-strategy-card" hidden
       data-search="{{ strategy.search_text|e }}"
       data-name="{{ strategy.name|e }}"
+      data-tools="{{ strategy.ask_tool_slugs|join(' ') }}"
       data-keywords="{{ strategy.ask_keywords|default([])|join(' ')|e }}"
       data-objectives="{{ strategy.purpose.primary }} {{ strategy.purpose.secondary|default([])|join(' ') }}"
       data-year="{{ strategy.publication.year or 0 }}">

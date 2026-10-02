@@ -234,7 +234,7 @@ def main():
     render(env,'submit.html',OUT/'contribute/index.html',**context,active='contribute',tool_submission_url=tool_submit,strategy_submission_url=strategy_submit,tool_update_url=tool_update,strategy_update_url=strategy_update)
     for slug,page in pages.items():
         template=f'{slug}.html' if slug in ('about','ask','privacy') else 'static.html'
-        extra={'strategies':strategies} if slug=='ask' else {}
+        extra={'strategies':strategies,'ask_tools':tools} if slug=='ask' else {}
         render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page,**extra)
     render(env,'404.html',OUT/'404.html',**context,active='')
 
@@ -347,6 +347,7 @@ def enrich_strategy(record,labels,tool_by_slug):
         x['alternative_functions']=[{'id':f,'label':labels['functions'].get(f,f)} for f in functions]
         steps.append(x)
     p['workflow_steps_enriched']=steps
+    p['ask_tool_slugs']=sorted({x['slug'] for x in p['resolved_tools'] if x.get('slug')} | {s for step in p.get('workflow_steps',[]) for s in step.get('tool_slugs',[])})
     implementations=[]
     for implementation in p.get('implementations',[]):
         x=dict(implementation)

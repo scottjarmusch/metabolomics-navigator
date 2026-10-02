@@ -10,13 +10,21 @@ class Cards(HTMLParser):
     def __init__(self):
         super().__init__()
         self.cards = []
+        self.tools = []
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
         if "ask-strategy-card" in values.get("class", "").split():
             self.cards.append({k[5:]: v for k, v in attrs if k.startswith("data-")})
+        if 'data-ask-tool' in values:
+            self.tools.append({k[5:]: v for k, v in attrs if k.startswith('data-')})
 
 CASES = [
+    ('Can SIMPEL infer flux from unlabeled features?', None, 'missing input'),
+    ('Can SIMPEL infer flux from unlabelled features?', None, 'missing input'),
+    ('Use khipu to group adduct and isotope peaks', None, 'Named tools found'),
+    ('Can Everything Bagel replace statistical analysis?', None, 'Named tools found'),
+    ('Use ChemWalker to prioritize structures from my molecular network', None, 'Named tools found'),
     ("Epoxidation lipid double bond localization with epoxide fragments", "Epoxidation-assisted lipid double-bond localization", None),
     ("Spatial isotope tracing with tissue isotopologue maps", "Tissue isotope imaging with iso-imaging", None),
     ("Find double bond positions without derivatization", None, "missing input"),
@@ -75,10 +83,11 @@ class E {
  appendChild(c){this.children=this.children.filter(x=>x!==c);this.children.push(c);}
 }
 const cards=fixture.cards.map(x=>new E(x)),input=new E(),button=new E(),grid=new E(),count=new E(),empty=new E();
+const tools=(fixture.tools||[]).map(x=>new E(x)),toolPanel=new E();
 grid.children=[...cards];
-const elements={'#ask-query':input,'#ask-search-button':button,'#ask-strategy-results':grid,'#ask-result-count':count,'#ask-empty':empty};
-vm.runInNewContext(fixture.controller,{document:{querySelector:s=>elements[s],querySelectorAll:s=>s==='.ask-strategy-card'?cards:[]}});
-const answers=fixture.queries.map(query=>{input.value=query;button.events.click();return {query,message:count.textContent,results:grid.children.filter(x=>!x.hidden).map(x=>x.dataset.name)};});
+const elements={'#ask-query':input,'#ask-search-button':button,'#ask-strategy-results':grid,'#ask-result-count':count,'#ask-empty':empty,'#ask-tool-matches':toolPanel};
+vm.runInNewContext(fixture.controller,{document:{querySelector:s=>elements[s],querySelectorAll:s=>s==='.ask-strategy-card'?cards:s==='[data-ask-tool]'?tools:[]}});
+const answers=fixture.queries.map(query=>{input.value=query;button.events.click();return {query,message:count.textContent,results:grid.children.filter(x=>!x.hidden).map(x=>x.dataset.name),tools:tools.filter(x=>!x.hidden).map(x=>x.dataset.slug)};});
 process.stdout.write(JSON.stringify(answers));
 """
 
@@ -87,7 +96,7 @@ def run():
     parser.feed((ROOT / "dist/ask/index.html").read_text(encoding="utf-8"))
     if not parser.cards:
         raise AssertionError("Build the site first: no rendered Strategy cards found")
-    payload = {"cards": parser.cards, "controller": (ROOT / "assets/ask.js").read_text(encoding="utf-8"), "queries": [c[0] for c in CASES]}
+    payload = {"cards": parser.cards, "tools": parser.tools, "controller": (ROOT / "assets/ask.js").read_text(encoding="utf-8"), "queries": [c[0] for c in CASES]}
     result = subprocess.run(["node", "-e", JS], input=json.dumps(payload), capture_output=True, text=True, encoding="utf-8", check=True)
     answers = json.loads(result.stdout)
     assert len(answers) == len(CASES), "Every regression question must produce an answer"
@@ -97,6 +106,10 @@ def run():
             assert answer["results"] and answer["results"][0] == expected, query
         else:
             assert not answer["results"] and message in answer["message"], query
+        if query == 'Use khipu to group adduct and isotope peaks':
+            assert answer['tools'] == ['khipu'], 'Named tool must resolve to its catalogue entry'
+        if 'MS/MS spectra' in query:
+            assert 'spectra' not in answer['tools'], 'Generic spectra must not be read as the Spectra package'
     print(f"Generated Ask checks passed: {len(CASES)} questions against {len(parser.cards)} Strategy cards.")
 
 if __name__ == "__main__":
