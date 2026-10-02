@@ -345,3 +345,43 @@
   tool_labels:
     idbac: Compare isolates and specialized-metabolite profiles
     msconvert: Convert supported instrument files
+
+- id: machine-learning-ai
+  title: Machine learning and AI in MS metabolomics
+  short_title: Machine learning & AI
+  homepage: false
+  caption: Understand what a model predicts, what evidence it needs and how to assess its output.
+  introduction: AI is an umbrella term; machine learning is one family of AI methods. Tools can combine several approaches. Start with your scientific task, then check the input data, model version and evidence behind the prediction.
+  selection: Separate training a model from using pretrained weights. Hardware, licensing and data-transfer requirements can differ. Record the model and version, check performance on relevant chemistry and acquisition conditions, and treat predicted structures or associations as hypotheses.
+  glossary:
+  - term: Predictive machine learning
+    description: Learns a relationship from examples, such as molecular structure to fragmentation spectrum or MS/MS to chemical class. Evaluate the specific prediction task and model applicability.
+  - term: Spectral representation learning
+    description: Learns numerical representations of spectra for tasks such as similarity search. DreaMS uses self-supervised learning; a similar representation is not proof of identical structure.
+  - term: Generative models
+    description: Generate candidates, such as molecular structures or fragmentation graphs. Generation does not establish that a proposed molecule is present in the sample.
+  - term: Foundation models
+    description: Broadly pretrained models adapted to multiple downstream tasks. This describes training and reuse, not a guarantee of reliability for every instrument or sample type.
+  - term: Agentic AI
+    description: A model selects or coordinates analysis tools over multiple steps. Inspect the actual tools, parameters, intermediate evidence and human review points. An agent can call both learned models and conventional software.
+  - term: Workflow automation
+    description: Runs processing steps automatically. Automation alone does not imply learned inference or an AI agent. Everything Bagel is currently documented here as automated feature finding; use within an agentic workflow does not change that classification.
+  reading:
+  - title: DreaMS — self-supervised spectral representations
+    url: https://doi.org/10.1038/s41587-025-02663-3
+  - title: ICEBERG — neural fragmentation-graph generation
+    url: https://doi.org/10.1021/acs.analchem.3c04654
+  - title: MSNovelist — de novo structure generation
+    url: https://doi.org/10.1038/s41592-022-01486-3
+  slugs:
+  - iceberg
+  - msnovelist
+  - csi-fingerid
+  - canopus
+  - peakdecoder
+  tool_labels:
+    iceberg: Predict spectra and rank candidate structures
+    msnovelist: Generate molecular-structure candidates
+    csi-fingerid: Predict fingerprints for structure-database searches
+    canopus: Predict compound classes
+    peakdecoder: Detect and annotate features in DIA data

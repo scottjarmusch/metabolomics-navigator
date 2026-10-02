@@ -132,7 +132,7 @@ Status meanings:
 | Spatial segmentation-driven differential metabolomics | STRONG | Find primary method |
 | Co-localization-guided spatial molecular families | PRIMARY PAPER NEEDED | Find defining workflow |
 | Single-cell MALDI plus microscopy phenotyping | REVIEW | Distinguish from SpaceM |
-| Spatial isotope tracing by MSI | STRONG | Find defining method |
+| Spatial isotope tracing by MSI | ADDED | Scoped iso-imaging workflow, 10.1038/s41592-021-01378-y; no claim to origin of all isotope imaging |
 | Spatial metabolomics plus proteomics integration | PRIMARY PAPER NEEDED | Find methodology paper |
 | Spatial metabolomics plus glycomics integration | PRIMARY PAPER NEEDED | Find methodology paper |
 | Spatially resolved pathway enrichment | PRIMARY PAPER NEEDED | Find defining analytical method |
@@ -166,7 +166,7 @@ Status meanings:
 | OzID structural lipidomics | EXISTING | Current Strategy |
 | Data-independent OzID lipidomics | STRONG | Find defining paper |
 | Paternò–Büchi double-bond localization | ADDED | Alpha batch 1: 10.1002/anie.201310699; 2016 extension retained as implementation |
-| Epoxidation-assisted double-bond localization | STRONG | Find defining method |
+| Epoxidation-assisted double-bond localization | ADDED | 2017 origin 10.1021/acs.analchem.7b01870; 2018 phospholipid extension retained |
 | Electron-activated dissociation structural lipidomics | STRONG | Find metabolomics/lipidomics primary paper |
 | Ion-mobility-resolved lipid isomer analysis | STRONG | IM-MS review PMID 33522625; find primary method |
 | LC-IMS-PASEF four-dimensional lipidomics | STRONG | Verify Lipid4DAnalyzer-associated primary paper |
@@ -186,7 +186,7 @@ Status meanings:
 | Metabolome-guided genome mining | STRONG | Find defining workflow |
 | Metabolomics plus transcriptomics pathway integration | STRONG | Find method paper introducing integration logic |
 | Metabolomics plus proteomics pathway integration | STRONG | Find defining workflow |
-| Metabolomics plus microbiome association networks | STRONG | Find methodology paper, not application-only |
+| Metabolomics plus microbiome association networks | ADDED | Conditional mmvec association Strategy: 10.1038/s41592-019-0616-3; causal claims excluded and methodological debate noted |
 | Host-microbe metabolite source attribution | STRONG | Find defining strategy |
 | Correlation-based metabolic network reconstruction | STRONG | Find canonical metabolomics network method |
 | Biochemical-network-guided feature interpretation | STRONG | Find defining method |

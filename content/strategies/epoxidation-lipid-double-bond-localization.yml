@@ -1,0 +1,72 @@
+$schema: ../../schemas/strategy.schema.json
+slug: epoxidation-lipid-double-bond-localization
+name: Epoxidation-assisted lipid double-bond localization
+summary: Convert unsaturated fatty-acid double bonds to epoxides and use diagnostic tandem-MS fragments to distinguish
+  positional isomers.
+publication:
+  title: Identification and Quantitation of C=C Location Isomers of Unsaturated Fatty Acids by Epoxidation Reaction
+    and Tandem Mass Spectrometry
+  doi: 10.1021/acs.analchem.7b01870
+  year: 2017
+  journal: Analytical Chemistry
+  citation: Zhao Y, Zhao H, Zhao X, et al. Analytical Chemistry 89, 10270-10278 (2017).
+purpose:
+  primary: structure_elucidation
+  secondary:
+  - chemical_reactivity
+platforms:
+- direct_infusion_ms
+analysis_types:
+- lipidomics
+components:
+- sample_preparation
+- data_acquisition
+- annotation
+tools: []
+workflow_steps:
+- title: Epoxidize unsaturated fatty acids
+  description: Use the published low-temperature-plasma reaction to modify double bonds.
+- title: Fragment epoxide products
+  description: Acquire tandem mass spectra of the derivatized analytes.
+- title: Assign double-bond positions
+  description: Interpret diagnostic cleavage ions and compare appropriate positional-isomer standards.
+scope:
+  designed_for:
+  - Unsaturated fatty-acid double-bond positional isomers.
+  requirements:
+  - Suitable epoxidation apparatus and validated reaction conditions.
+  - Tandem-MS measurements of reaction products and relevant standards.
+  considerations:
+  - Conventional unmodified lipid spectra cannot be retrospectively treated as epoxidation data.
+  - Reaction yield and competing products affect interpretation.
+  - Double-bond position does not by itself establish cis/trans geometry or full stereochemistry.
+ask_keywords:
+- epoxidation lipid double bond localization
+- epoxide diagnostic fragments
+- fatty acid positional isomers
+- low temperature plasma epoxidation
+related_strategies:
+- paterno-buchi-lipid-double-bond-localization
+- ozid-structural-lipidomics
+implementations:
+- title: Locating Carbon-Carbon Double Bonds in Unsaturated Phospholipids by Epoxidation Reaction and Tandem Mass
+    Spectrometry
+  doi: 10.1021/acs.analchem.8b02021
+  year: 2018
+  relationship: extension
+  summary: Extends the epoxidation/CID approach to phospholipid classes in positive and negative ion modes.
+resources:
+  method_available: true
+  method_url: https://doi.org/10.1021/acs.analchem.7b01870
+provenance:
+  submitted_by: curator
+  author_verified: false
+  notes: Anchored to the 2017 fatty-acid method, not the later 2018 phospholipid extension. Distinct reaction chemistry
+    from Paterno-Buchi and OzID. No software implementation assumed; experiment not executed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-29'
+  updated_at: '2026-09-29'
+  last_verified: '2026-09-29'
+  last_editorial_review: '2026-09-29'
