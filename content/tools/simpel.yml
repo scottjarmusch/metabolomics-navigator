@@ -1,0 +1,76 @@
+$schema: ../../schemas/tool.schema.json
+slug: simpel
+name: SIMPEL
+summary: Extract and correct isotopologue distributions from isotope-enriched metabolomics
+  feature lists.
+description: SIMPEL is an R package for single- and dual-label HRMS experiments. It
+  combines processed features with compound formula/retention-time information and
+  produces mass-isotopologue distributions and labeling summaries. Flux modelling
+  in the primary paper is performed downstream with separate modelling software.
+links:
+  primary: https://github.com/SIMPELmetabolism/SIMPEL
+  repository: https://github.com/SIMPELmetabolism/SIMPEL
+  documentation: https://github.com/SIMPELmetabolism/SIMPEL
+platforms:
+- lc_ms
+interfaces:
+- r_package
+resource_types:
+- programming_package
+functions:
+  primary: isotope_tracing_flux
+  capabilities:
+  - isotopologue_correction
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: R package with a repository tutorial and declared R dependencies.
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  output_types:
+  - isotope_tracing_data
+  - report
+  other_input_formats:
+  - Processed feature lists plus compound formulae and retention-time information
+  other_output_formats:
+  - Mass-isotopologue distribution matrices and labeling plots
+common_uses:
+- Prepare isotope-enrichment measurements for downstream modelling.
+scope:
+  designed_for:
+  - Post-processing transient stable-isotope labeling experiments.
+  not_designed_for:
+  - A substitute for raw-data preprocessing or a standalone metabolic-network flux
+    solver.
+  requirements:
+  - Resolved isotope measurements, compound information and a configured R environment.
+  considerations:
+  - Instrument resolving power and tracer design constrain which isotope species can
+    be distinguished.
+publications:
+- doi: 10.1038/s42003-024-05844-z
+  type: primary
+  citation: 'SIMPEL: using stable isotopes to elucidate dynamics of context specific
+    metabolism. Communications Biology (2024).'
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Discovered through the Enveda review intake; official repository and primary
+    publication metadata checked on 2026-10-02. Editorial review only; software and
+    performance not execution-tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'
+related_tools:
+- slug: xcms
+  relationship: integration
+  note: The primary paper uses XCMS feature lists before SIMPEL.
