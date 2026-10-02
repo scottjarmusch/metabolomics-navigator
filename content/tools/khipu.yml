@@ -1,0 +1,79 @@
+$schema: ../../schemas/tool.schema.json
+slug: khipu
+name: khipu
+summary: Group LC-MS isotope and adduct features into empirical compounds and infer
+  neutral masses.
+description: khipu provides Python and command-line pre-annotation of feature tables.
+  Its graph/tree representation links related ions; the associated Khipu-web publication
+  extends access for stable-isotope tracing. These groupings do not by themselves
+  establish molecular identity.
+links:
+  primary: https://github.com/shuzhao-li-lab/khipu
+  repository: https://github.com/shuzhao-li-lab/khipu
+  documentation: https://github.com/shuzhao-li-lab/khipu
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- command_line
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  capabilities:
+  - adduct_isotope_grouping
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: Python package; the repository also links a web interface. Check that interface
+    separately for hosted availability.
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - compound_list
+  other_input_formats:
+  - Tab-delimited feature ID, m/z, retention time and sample intensity columns
+  other_output_formats:
+  - Empirical-compound annotations in JSON and TSV
+common_uses:
+- Reduce redundant isotope/adduct features before downstream interpretation.
+scope:
+  designed_for:
+  - LC-MS ion grouping, including configured isotope-tracing patterns.
+  not_designed_for:
+  - Confirmed structural identification or a metabolic-flux solver.
+  requirements:
+  - A preprocessed feature table and appropriate ion-mode, mass and retention-time
+    tolerances.
+  considerations:
+  - Grouping depends on expected ion patterns and preprocessing quality.
+publications:
+- doi: 10.1021/acs.analchem.2c05810
+  type: primary
+  citation: Generalized Tree Structure to Annotate Untargeted Metabolomics and Stable
+    Isotope Tracing Data. Analytical Chemistry (2023).
+- doi: 10.1021/jasms.4c00175
+  type: methods
+  citation: Annotation of Metabolites in Stable Isotope Tracing Untargeted Metabolomics
+    via Khipu-web. Journal of the American Society for Mass Spectrometry (2024).
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Discovered through the Enveda review intake; official repository and primary
+    publication metadata checked on 2026-10-02. Editorial review only; software and
+    performance not execution-tested.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'
+related_tools:
+- slug: asari
+  relationship: integration
+  note: asari uses khipu for pre-annotation.
