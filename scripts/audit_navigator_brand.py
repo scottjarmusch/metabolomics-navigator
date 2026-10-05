@@ -12,6 +12,11 @@ def audit():
   except UnicodeDecodeError:continue
   for n,line in enumerate(text.splitlines(),1):
    if OLD not in line.lower():continue
+   # Intake names are quoted third-party resource names, not Navigator branding.
+   # Still audit URLs/notes and all other fields; do not exempt the whole ledger.
+   if p.relative_to(ROOT).as_posix()=='docs/enveda-validation-ledger.tsv':
+    fields=line.split('\t')
+    if len(fields)==8:line='\t'.join([fields[0],*fields[2:]])
    clean=re.sub(r'https?://[^\s<>\"\)]+','',line.lower())
    for prefix in ['natural products ','natural-products-','natural product ','dreams ','a lipidome ','the lipidome ']:clean=clean.replace(prefix+OLD,'')
    if OLD in clean:errors.append(f'{p.relative_to(ROOT)}:{n}: {line.strip()}')

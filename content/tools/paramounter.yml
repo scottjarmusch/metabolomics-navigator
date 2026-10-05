@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: paramounter
+name: Paramounter
+summary: Estimate LC-MS processing parameters from measured data for downstream feature
+  extraction.
+description: Paramounter supplies R scripts for parameter estimation before feature
+  extraction. The checked script reads mzXML through MSnbase and requires XCMS. Outputs
+  guide processing settings; they are not validated metabolite identifications.
+links:
+  primary: https://github.com/HuanLab/Paramounter
+  repository: https://github.com/HuanLab/Paramounter
+  documentation: https://github.com/HuanLab/Paramounter
+platforms:
+- lc_ms
+interfaces:
+- command_line
+resource_types:
+- workflow_pipeline
+functions:
+  primary: preprocessing
+  capabilities:
+  - peak_detection
+access:
+  model: open_source
+  license: MIT
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - mzXML files read by the supplied R scripts
+  other_output_formats:
+  - Parameter estimates and diagnostic plots for configuring downstream processing
+common_uses:
+- Estimate mass-tolerance and peak-processing settings.
+scope:
+  designed_for:
+  - Estimate LC-MS processing parameters from measured data for downstream feature
+    extraction.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - R with XCMS, MSnbase and the other script dependencies; edit example file paths
+    and review the supplied manual.
+  considerations:
+  - The repository warns that permissive optimized peak thresholds may increase false
+    positives or cause crashes.
+  - The available implementation is a script workflow, not a verified installable
+    R package.
+publications:
+- doi: 10.1021/acs.analchem.1c04758
+  type: primary
+  citation: 'Paramounter: Direct Measurement of Universal Parameters To Process Metabolomics
+    Data in a “White Box”. Analytical Chemistry (2022).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'
+related_tools:
+- slug: xcms
+  relationship: integration
+  note: The checked scripts use XCMS during parameter estimation.
+- slug: msnbase
+  relationship: integration
+  note: The input script uses readMSData from MSnbase.

@@ -1,0 +1,76 @@
+$schema: ../../schemas/tool.schema.json
+slug: dbnorm
+name: dbnorm
+summary: Compare statistical batch-correction models and inspect technical variation
+  in metabolomics matrices.
+description: dbnorm provides R functions for batch adjustment and diagnostic visualization.
+  It includes empirical-Bayes and two-stage approaches and compares corrected data
+  structure. Model selection does not establish that biological differences were preserved.
+links:
+  primary: https://github.com/NBDZ/dbnorm
+  repository: https://github.com/NBDZ/dbnorm
+  documentation: https://github.com/NBDZ/dbnorm
+platforms:
+- lc_ms
+interfaces:
+- r_package
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  capabilities:
+  - batch_effect_correction
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - CSV sample-by-feature matrix with batch labels
+  other_output_formats:
+  - Corrected CSV matrices and diagnostic PDF plots
+common_uses:
+- Inspect and compare batch-adjustment results.
+scope:
+  designed_for:
+  - Compare statistical batch-correction models and inspect technical variation in
+    metabolomics matrices.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - Processed metabolomics data, batch labels and compatible R dependencies.
+  - CSV matrix with samples in rows, features in columns and batch labels; follow
+    documented normalization/log2 preparation
+  considerations:
+  - Confounding between batch and biological groups requires assessment before correction.
+  - The documented setup includes archived R dependencies.
+publications:
+- doi: 10.1038/s41598-021-84824-3
+  type: primary
+  citation: DBnorm as an R package for the comparison and selection of appropriate
+    statistical methods for batch effect correction in metabolomic studies. Scientific
+    Reports (2021).
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'

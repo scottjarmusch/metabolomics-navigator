@@ -1,0 +1,79 @@
+$schema: ../../schemas/tool.schema.json
+slug: maffin
+name: MAFFIN
+summary: Normalize metabolomics feature intensities using selected features and corrected
+  signal responses.
+description: MAFFIN combines feature-quality selection, signal-intensity correction
+  and maximal-density fold-change normalization. Its R implementation returns normalized
+  intensities, normalization factors and variation summaries.
+links:
+  primary: https://github.com/HuanLab/MAFFIN
+  repository: https://github.com/HuanLab/MAFFIN
+  documentation: https://github.com/HuanLab/MAFFIN
+platforms:
+- lc_ms
+interfaces:
+- r_package
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  capabilities:
+  - feature_selection
+access:
+  model: open_source
+  license: MIT
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - CSV/data frame with features, samples and QC-group annotations
+  other_output_formats:
+  - Normalized table, normalization factors and PRMAD summaries as an R list or CSV
+common_uses:
+- Normalize processed feature tables using the documented QC design.
+scope:
+  designed_for:
+  - Normalize metabolomics feature intensities using selected features and corrected
+    signal responses.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - An appropriately annotated feature table; serial QC loading amounts for the signal-correction
+    component.
+  - Feature-by-sample CSV/data frame with group annotations for blanks, QC and serial
+    QC loading levels
+  considerations:
+  - Do not assume that missing serial-QC information can be reconstructed from ordinary
+    study samples.
+  - Normalization can change biological contrasts; evaluate its assumptions for the
+    study.
+publications:
+- doi: 10.1093/bioinformatics/btac355
+  type: primary
+  citation: 'MAFFIN: metabolomics sample normalization using maximal density fold
+    change with high-quality metabolic features and corrected signal intensities.
+    Bioinformatics (2022).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'

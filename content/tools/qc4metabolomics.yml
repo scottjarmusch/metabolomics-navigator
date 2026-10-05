@@ -1,0 +1,75 @@
+$schema: ../../schemas/tool.schema.json
+slug: qc4metabolomics
+name: QC4Metabolomics
+summary: Monitor LC-MS data quality with a configurable processing service, database
+  and dashboard.
+description: QC4Metabolomics provides a locally deployed QC system with background
+  processing, a MariaDB database and a Shiny interface. Its MetabolomiQCsR component
+  supplies QC functions. Optional conversion services prepare mzML inputs.
+links:
+  primary: https://stanstrup.github.io/QC4Metabolomics/
+  repository: https://github.com/stanstrup/QC4Metabolomics
+  documentation: https://stanstrup.github.io/QC4Metabolomics/
+platforms:
+- lc_ms
+interfaces:
+- web_app
+resource_types:
+- workflow_pipeline
+functions:
+  primary: quality_control
+  capabilities:
+  - container_support
+  - interactive_dashboard
+access:
+  model: open_source
+  license: GPL-3.0-or-later
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - spectra
+  - sample_metadata
+  output_types:
+  - report
+  other_input_formats:
+  - mzML files plus configured file-name metadata and QC settings
+  other_output_formats:
+  - QC database records and dashboard views
+common_uses:
+- Track quality measurements across acquisitions.
+scope:
+  designed_for:
+  - Monitor LC-MS data quality with a configurable processing service, database and
+    dashboard.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - Docker/Compose, configured data volumes, database and background workers.
+  considerations:
+  - This is infrastructure to deploy and configure, not simply a public upload website.
+  - File naming and metadata parsing must match the local acquisition setup.
+publications:
+- doi: 10.1021/acs.analchem.4c07078
+  type: primary
+  citation: 'QC4Metabolomics: Real-Time and Retrospective Quality Control of Metabolomics
+    Data. Analytical Chemistry (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'
+aliases:
+- MetabolomiQCsR
