@@ -1,0 +1,39 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: qcomics
+name: QComics
+summary: An R Shiny application for quickly assessing metabolomics and lipidomics study quality from regularly injected pooled QC samples.
+links:
+  primary: https://github.com/ricoderks/QComics
+  repository: https://github.com/ricoderks/QComics
+resource_types: [software_application]
+functions:
+  primary: quality_control
+  secondary: [visualization_reporting]
+  capabilities: [interactive_dashboard]
+platforms: [platform_independent]
+analysis_types: [metabolite_profiling, lipidomics]
+interfaces: [r_package, web_app]
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems: [cross_platform, browser]
+  programming_languages: [R]
+data:
+  input_types: [feature_table, sample_metadata]
+  output_types: [report]
+maintenance:
+  status: active
+  repository_last_activity: '2025-11-11'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; project labels itself experimental.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
