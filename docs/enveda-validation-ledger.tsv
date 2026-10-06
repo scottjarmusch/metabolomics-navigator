@@ -1,5 +1,5 @@
 source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	review_note
-2	LC-MS2Struct	unreviewed		https://github.com/aalto-ics-kepaco/msms_rt_ssvm	https://www.nature.com/articles/s42256-022-00577-2		Not yet reviewed.
+2	LC-MS2Struct	validated_pending_merge	lc-ms2struct	https://github.com/aalto-ics-kepaco/msms_rt_ssvm	https://www.nature.com/articles/s42256-022-00577-2		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
 3	MSI-Explorer	unreviewed		https://github.com/MMV-Lab/MSI-Explorer	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01513		Not yet reviewed.
 5	GMDP Database	unreviewed		https://lccl.shinyapps.io/GMDP/	https://www.biorxiv.org/content/10.1101/2023.12.11.571124v1		Not yet reviewed.
 6	Neurolipid Atlas	unreviewed		https://neurolipidatlas.com/	https://www.nature.com/articles/s42255-025-01365-z		Not yet reviewed.
@@ -41,7 +41,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 49	IsoSolve	held_for_review		https://pypi.org/project/isosolve/	https://www.biorxiv.org/content/10.1101/2021.03.08.430771v1	mixed_nmr_mentions	Mixed-platform/NMR scope requires a specific verified MS workflow.
 50	MIADB	unreviewed		https://gnps.ucsd.edu	https://link.springer.com/protocol/10.1007/978-1-0716-2349-7_7		Not yet reviewed.
 51	FragHub	unreviewed		https://github.com/eMetaboHUB/FragHub	https://pubs.acs.org/doi/10.1021/acs.analchem.4c02219		Not yet reviewed.
-52	MS2DECIDE	unreviewed		https://github.com/MejriY/MS2DECIDE	https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmtd.202400088		Not yet reviewed.
+52	MS2DECIDE	validated_pending_merge	ms2decide	https://github.com/MejriY/MS2DECIDE	https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmtd.202400088		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
 55	PaintOmics 4	unreviewed		https://paintomics.org	https://academic.oup.com/nar/article/50/W1/W551/6591534		Not yet reviewed.
 56	MBROLE3	unreviewed		http://csbg.cnb.csic.es/mbrole3	https://academic.oup.com/nar/article/51/W1/W305/7161529		Not yet reviewed.
 57	AutonoMS	unreviewed		https://autonoms.readthedocs.io	https://pubs.acs.org/doi/10.1021/jasms.3c00396	ion_mobility_platform_dimension	Not yet reviewed.
@@ -56,7 +56,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 68	SSN-CCSPIF	unreviewed		https://github.com/Anqi-Guo0105/Trendline-based-IM-MS-Feature-Filtering-Software-V1.0	https://www.sciencedirect.com/science/article/pii/S0003267023009418	ion_mobility_platform_dimension	Not yet reviewed.
 69	FNICM	unreviewed		https://github.com/LiQi94/FNICM	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c04131		Not yet reviewed.
 70	AnnoSM	unreviewed		https://github.com/YangHuaLab/AnnoSM	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04946		Not yet reviewed.
-71	ROASMI	unreviewed		https://github.com/FangYuan717/ROASMI	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-025-00968-8		Not yet reviewed.
+71	ROASMI	validated_pending_merge	roasmi	https://github.com/FangYuan717/ROASMI	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-025-00968-8		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
 72	DeepMASS	unreviewed		https://github.com/hcji/DeepMASS2_Data_Processing	https://www.biorxiv.org/content/10.1101/2024.05.30.596727v2		Not yet reviewed.
 74	DeepRTAlign	unreviewed		https://github.com/PHOENIXcenter/deeprtalign	https://www.nature.com/articles/s41467-023-43909-5		Not yet reviewed.
 75	WaveICA 2.0	unreviewed		https://github.com/dengkuistat/WaveICA_2.0	https://link.springer.com/article/10.1007/s11306-021-01839-7		Not yet reviewed.
