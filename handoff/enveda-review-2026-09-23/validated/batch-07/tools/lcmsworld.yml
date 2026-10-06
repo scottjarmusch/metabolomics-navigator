@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lcmsworld
+name: lcmsWorld
+summary: A desktop 3D viewer for interactive exploration of LC-MS data from mzML or supported Thermo raw files.
+links:
+  primary: https://github.com/PGB-LIV/lcmsWorld
+  repository: https://github.com/PGB-LIV/lcmsWorld
+resource_types: [software_application]
+functions:
+  primary: visualization_reporting
+  secondary: []
+  capabilities: [interactive_dashboard]
+platforms: [lc_ms]
+interfaces: [desktop_gui]
+access:
+  model: open_source
+  license: AGPL-3.0
+technical:
+  operating_systems: [windows, linux, macos]
+data:
+  input_types: [raw_instrument_data, spectra]
+  output_types: [report]
+  input_formats: [vendor_raw, mzml]
+maintenance:
+  status: limited
+  repository_last_activity: '2021-11-23'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
