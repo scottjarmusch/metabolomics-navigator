@@ -1,0 +1,77 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: ms-ridd
+name: MS-RIDD
+summary: An open-source Python application for interpreting radical-induced dissociation tandem mass spectra, with current support focused on oxygen attachment dissociation for detailed lipid structural annotation.
+links:
+  primary: https://github.com/Metabolomics-CompMS/MS-RIDD
+  repository: https://github.com/Metabolomics-CompMS/MS-RIDD
+resource_types:
+  - software_application
+functions:
+  primary: annotation_identification
+  secondary:
+    - spectral_analysis
+  capabilities:
+    - structure_elucidation
+    - ms2_processing
+platforms:
+  - lc_ms
+analysis_types:
+  - lipidomics
+interfaces:
+  - desktop_gui
+access:
+  model: open_source
+  license: LGPL-3.0
+technical:
+  operating_systems:
+    - windows
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - feature_table
+  output_types:
+    - compound_list
+    - report
+  input_formats:
+    - mzml
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1038/s42004-022-00778-1
+    type: primary
+common_uses:
+  - Interpret OAD-MS/MS spectra for detailed lipid structural annotation.
+  - Consume MS-DIAL peak-list and alignment exports as inputs to a lipid-structure workflow.
+maintenance:
+  status: limited
+  repository_last_activity: '2022-06-22'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Lipid structural interpretation using radical-induced dissociation, currently documented for OAD-MS/MS.
+  requirements:
+    - OAD-MS/MS mzML data plus MS-DIAL-derived peak or alignment exports.
+  considerations:
+    - This is a specialized lipidomics workflow and should not be presented as a general-purpose annotation engine.
+acquisition:
+  ms_levels:
+    - ms2
+  strategies:
+    - targeted_msms
+    - dda
+  ion_mobility: unspecified
