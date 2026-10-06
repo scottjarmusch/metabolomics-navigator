@@ -1,0 +1,68 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: g-aligner
+name: G-Aligner
+summary: An open-source graph-based method for aligning untargeted LC-MS features across runs by solving the correspondence problem as a multidimensional assignment task.
+links:
+  primary: https://github.com/CSi-Studio/G-Aligner
+  repository: https://github.com/CSi-Studio/G-Aligner
+resource_types:
+  - programming_package
+functions:
+  primary: preprocessing
+  secondary: []
+  capabilities:
+    - retention_time_alignment
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - command_line
+access:
+  model: open_source
+  license: MulanPSL-2.0
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - feature_table
+  output_types:
+    - feature_table
+  input_formats:
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1186/s12859-023-05525-4
+    type: primary
+common_uses:
+  - Align extracted LC-MS features across multiple samples or runs.
+  - Replace or compare alignment stages from preprocessing workflows such as XCMS, OpenMS, or MZmine.
+maintenance:
+  status: limited
+  repository_last_activity: '2024-03-09'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Cross-run feature alignment after feature extraction in untargeted LC-MS.
+  requirements:
+    - Feature tables containing m/z, retention time, and abundance information.
+  considerations:
+    - Alignment quality depends on the upstream feature-detection results and parameterization.
