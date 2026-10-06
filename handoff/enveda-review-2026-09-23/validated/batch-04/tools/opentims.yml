@@ -1,0 +1,69 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: opentims
+name: OpenTIMS
+summary: An open-source C++ library with Python and R bindings for reading Bruker timsTOF TDF binary data without relying on the vendor SDK.
+links:
+  primary: https://github.com/michalsta/opentims
+  repository: https://github.com/michalsta/opentims
+resource_types:
+  - programming_package
+functions:
+  primary: data_conversion
+  secondary: []
+  capabilities:
+    - spectral_data_io
+platforms:
+  - multi_platform
+interfaces:
+  - python_package
+  - r_package
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - C++
+    - Python
+    - R
+data:
+  input_types:
+    - raw_instrument_data
+  output_types:
+    - spectra
+  input_formats:
+    - vendor_raw
+publications:
+  - doi: 10.1038/s41592-021-01332-y
+    type: methods
+common_uses:
+  - Read timsTOF TDF data into Python or R for downstream analysis.
+maintenance:
+  status: active
+  repository_last_activity: '2026-10-05'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository; access model is conservative because repository license metadata was not explicit.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Programmatic access to Bruker timsTOF TDF data.
+  considerations:
+    - OpenTIMS is a data-access layer, not a complete metabolomics analysis workflow.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - unspecified
+  ion_mobility: supported
