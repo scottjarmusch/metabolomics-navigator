@@ -1,0 +1,54 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: maw
+name: MAW
+summary: A reproducible metabolome-annotation workflow combining spectral-database dereplication and compound-database annotation from tandem mass-spectrometry data.
+links:
+  primary: https://github.com/zmahnoor14/MAW
+  repository: https://github.com/zmahnoor14/MAW
+resource_types:
+  - workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+    - annotation_identification
+    - spectral_analysis
+  capabilities:
+    - library_matching
+    - structure_database_search
+    - provenance_tracking
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - r_package
+  - command_line
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+    - Python
+data:
+  input_types:
+    - spectra
+  output_types:
+    - compound_list
+maintenance:
+  status: limited
+  repository_last_activity: '2025-10-31'
+  last_checked: '2026-10-06'
+  notes: The repository itself labels the project as not maintained.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; retain the maintenance warning prominently.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
