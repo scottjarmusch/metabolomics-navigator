@@ -1,0 +1,39 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: spectral-denoising
+name: spectral-denoising
+summary: A Python package for removing electronic and chemical noise from tandem mass spectra and performing denoising-based spectral searches to improve annotation quality.
+links:
+  primary: https://github.com/FanzhouKong/spectral_denoising
+  repository: https://github.com/FanzhouKong/spectral_denoising
+resource_types: [programming_package]
+functions:
+  primary: spectral_analysis
+  secondary: [annotation_identification]
+  capabilities: [ms2_processing, library_matching]
+platforms: [platform_independent]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+  package_managers: [PyPI]
+data:
+  input_types: [spectra, spectral_library]
+  output_types: [spectra, compound_list]
+maintenance:
+  status: limited
+  repository_last_activity: '2024-11-21'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
