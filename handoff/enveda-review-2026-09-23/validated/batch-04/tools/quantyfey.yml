@@ -1,0 +1,54 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: quantyfey
+name: QuantyFey
+summary: A Windows Shiny application for external-calibration quantification of mass-spectrometry data with visualization and correction strategies for intensity drift.
+links:
+  primary: https://github.com/CDLMarkus/QuantyFey
+  repository: https://github.com/CDLMarkus/QuantyFey
+resource_types:
+  - software_application
+functions:
+  primary: quantification
+  secondary:
+    - normalization
+    - visualization_reporting
+  capabilities:
+    - calibration_curve
+    - qc_drift_correction
+platforms:
+  - platform_independent
+interfaces:
+  - desktop_gui
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems:
+    - windows
+  programming_languages:
+    - R
+data:
+  input_types:
+    - feature_table
+    - sample_metadata
+  output_types:
+    - feature_table
+    - report
+common_uses:
+  - Quantify compounds using external calibration.
+  - Correct intensity drift before reporting quantitative results.
+maintenance:
+  status: active
+  repository_last_activity: '2025-08-27'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
