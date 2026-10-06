@@ -1,0 +1,37 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: ridims
+name: rIDIMS
+summary: An R package and Shiny application for processing direct-infusion mass-spectrometry data with reproducible scan selection and handling of invalid or noisy scan regions.
+links:
+  primary: https://github.com/BioinovarLab/rIDIMS
+  repository: https://github.com/BioinovarLab/rIDIMS
+resource_types: [programming_package, software_application]
+functions:
+  primary: preprocessing
+  secondary: [quality_control, visualization_reporting]
+  capabilities: [ms2_processing, interactive_dashboard]
+platforms: [direct_infusion_ms]
+interfaces: [r_package, web_app]
+access:
+  model: source_available
+technical:
+  operating_systems: [cross_platform, browser]
+  programming_languages: [R]
+data:
+  input_types: [raw_instrument_data, spectra]
+  output_types: [spectra, feature_table]
+maintenance:
+  status: active
+  repository_last_activity: '2025-11-07'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository. Reclassified from Enveda isotope-tracing bucket to preprocessing based on actual scope.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
