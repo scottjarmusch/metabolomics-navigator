@@ -1,0 +1,52 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: rassp
+name: RASSP
+summary: A research implementation for rapid prediction of electron-ionization mass spectra from molecular structures using neural-network models.
+links:
+  primary: https://github.com/thejonaslab/rassp-public
+  repository: https://github.com/thejonaslab/rassp-public
+resource_types:
+  - programming_package
+  - api_service
+functions:
+  primary: spectral_analysis
+  secondary:
+    - machine_learning
+  capabilities:
+    - in_silico_spectra
+platforms:
+  - gc_ms
+interfaces:
+  - python_package
+  - api
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - linux
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - molecular_structures
+  output_types:
+    - spectra
+  input_formats:
+    - smiles_inchi
+common_uses:
+  - Predict EI spectra from molecular structures for GC-MS annotation research.
+maintenance:
+  status: limited
+  repository_last_activity: '2023-01-25'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official public repository; this is primarily a research implementation.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
