@@ -1,0 +1,42 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mass2adduct
+name: mass2adduct
+summary: An R package for identifying and evaluating possible matrix-, salt-, and metabolite-adduct relationships in mass-spectrometry-imaging data.
+links:
+  primary: https://github.com/kbseah/mass2adduct
+  repository: https://github.com/kbseah/mass2adduct
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [preprocessing]
+  capabilities: [adduct_isotope_grouping]
+platforms: [imaging_ms]
+analysis_types: [spatial_metabolomics]
+interfaces: [r_package]
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [R]
+data:
+  input_types: [imaging_data, feature_table]
+  output_types: [compound_list, feature_table]
+publications:
+  - doi: 10.1021/acs.analchem.0c04720
+    type: primary
+maintenance:
+  status: limited
+  repository_last_activity: '2021-06-09'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and paper.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
