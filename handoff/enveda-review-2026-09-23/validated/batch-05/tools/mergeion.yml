@@ -1,0 +1,68 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mergeion
+name: MergeION
+summary: A workflow for extracting and merging LC-MS/MS spectra into local GNPS-style spectral libraries with user metadata, plus local and public-library searching for annotation.
+links:
+  primary: https://github.com/daniellyz/meRgeION2
+  repository: https://github.com/daniellyz/meRgeION2
+resource_types:
+  - workflow_pipeline
+functions:
+  primary: spectral_analysis
+  secondary:
+    - annotation_identification
+    - data_management_sharing
+  capabilities:
+    - reference_spectrum_selection
+    - library_matching
+    - spectral_data_io
+platforms:
+  - lc_ms
+analysis_types:
+  - targeted
+  - untargeted
+interfaces:
+  - r_package
+access:
+  model: source_available
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+    - sample_metadata
+  output_types:
+    - spectral_library
+    - compound_list
+  input_formats:
+    - mzml
+    - mzxml
+  output_formats:
+    - msp
+    - mgf
+    - csv_tsv
+common_uses:
+  - Build local LC-MS/MS spectral libraries without publishing confidential metadata.
+  - Search unknown spectra against local or public reference libraries.
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-24'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository; license metadata was not explicit.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - dda
+    - targeted_msms
+  ion_mobility: unspecified
