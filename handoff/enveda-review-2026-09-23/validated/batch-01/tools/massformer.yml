@@ -1,0 +1,76 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: massformer
+name: MassFormer
+summary: A research implementation of a graph-transformer model for predicting small-molecule tandem mass spectra from molecular structures.
+links:
+  primary: https://github.com/Roestlab/massformer
+  repository: https://github.com/Roestlab/massformer
+resource_types:
+  - programming_package
+functions:
+  primary: spectral_analysis
+  secondary:
+    - machine_learning
+  capabilities:
+    - in_silico_spectra
+platforms:
+  - platform_independent
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - command_line
+access:
+  model: open_source
+  license: BSD-2-Clause
+technical:
+  operating_systems:
+    - linux
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - molecular_structures
+  output_types:
+    - spectra
+  input_formats:
+    - smiles_inchi
+  output_formats:
+    - other
+  other_output_formats:
+    - Predicted spectrum arrays
+publications:
+  - doi: 10.1038/s42256-024-00816-8
+    type: primary
+common_uses:
+  - Predict MS/MS spectra for small molecules from structure.
+  - Evaluate or benchmark learned spectrum-prediction models.
+maintenance:
+  status: limited
+  repository_last_activity: '2024-08-26'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Research and benchmarking of learned small-molecule MS/MS spectrum prediction.
+  requirements:
+    - A Python/PyTorch environment; GPU hardware is recommended for faster training and evaluation.
+  considerations:
+    - This is a code-first research implementation rather than a general end-user annotation application.
+acquisition:
+  ms_levels:
+    - ms2
+  strategies:
+    - targeted_msms
+    - unspecified
+  ion_mobility: not_applicable
