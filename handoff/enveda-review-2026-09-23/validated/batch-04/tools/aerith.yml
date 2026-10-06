@@ -1,0 +1,54 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: aerith
+name: Aerith
+summary: An R package for reading, annotating, scoring, and visualizing isotopic mass spectra in stable-isotope-probing workflows for metabolites and peptides.
+links:
+  primary: https://github.com/thepanlab/Aerith
+  repository: https://github.com/thepanlab/Aerith
+resource_types:
+  - programming_package
+functions:
+  primary: isotope_tracing_flux
+  secondary:
+    - spectral_analysis
+    - visualization_reporting
+  capabilities:
+    - isotopologue_correction
+    - ms2_processing
+platforms:
+  - multi_platform
+analysis_types:
+  - stable_isotope_tracing
+interfaces:
+  - r_package
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+    - C++
+data:
+  input_types:
+    - spectra
+    - isotope_tracing_data
+  output_types:
+    - isotope_tracing_data
+    - report
+maintenance:
+  status: active
+  repository_last_activity: '2026-04-30'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; package also supports proteomic use cases, so Navigator should describe only the metabolomics-relevant isotope functionality.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
