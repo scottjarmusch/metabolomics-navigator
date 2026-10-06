@@ -1,0 +1,80 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lc-ms2struct
+name: LC-MS2Struct
+aliases:
+  - LC-MS²Struct
+summary: A Python implementation for ranking candidate molecular structures from LC-MS/MS data by jointly using tandem mass spectra and chromatographic retention-order information.
+links:
+  primary: https://github.com/aalto-ics-kepaco/msms_rt_ssvm
+  repository: https://github.com/aalto-ics-kepaco/msms_rt_ssvm
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - machine_learning
+  capabilities:
+    - structure_database_search
+    - retention_time_prediction
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - linux
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - feature_table
+    - molecular_structures
+  output_types:
+    - compound_list
+  input_formats:
+    - mgf
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1038/s42256-022-00577-2
+    type: primary
+common_uses:
+  - Re-rank candidate structures by combining MS/MS evidence with retention-order constraints across an LC-MS run.
+maintenance:
+  status: limited
+  repository_last_activity: '2022-08-28'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Candidate-structure ranking for LC-MS/MS features when retention-order information can supplement spectral evidence.
+  requirements:
+    - Candidate structure sets for the measured features and a Linux/Python environment.
+  considerations:
+    - The method re-ranks supplied candidate structures; it does not establish definitive structural identification on its own.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - dda
+    - targeted_msms
+    - unspecified
+  ion_mobility: not_required
