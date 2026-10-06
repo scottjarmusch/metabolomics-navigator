@@ -1,0 +1,42 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: moccal
+name: MOCCal
+summary: A Python application for collision-cross-section calibration and biomolecular-class-aware analysis of traveling-wave ion-mobility mass-spectrometry data.
+links:
+  primary: https://github.com/HinesLab/MOCCal
+  repository: https://github.com/HinesLab/MOCCal
+resource_types: [software_application]
+functions:
+  primary: preprocessing
+  secondary: [annotation_identification]
+  capabilities: []
+platforms: [multi_platform]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [feature_table, sample_metadata]
+  output_types: [feature_table]
+maintenance:
+  status: active
+  repository_last_activity: '2025-01-24'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository. MOCCal calibrates experimental CCS and is intentionally not tagged as CCS prediction.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels: [ms1]
+  strategies: [unspecified]
+  ion_mobility: required
