@@ -1,0 +1,54 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: getfeatistics
+name: GetFeatistics
+summary: An R package for targeted and untargeted metabolomics feature-table processing, QC-aware analysis, and advanced statistical modeling including regression and mixed-effects models.
+links:
+  primary: https://github.com/FrigerioGianfranco/GetFeatistics
+  repository: https://github.com/FrigerioGianfranco/GetFeatistics
+resource_types:
+  - programming_package
+functions:
+  primary: statistics
+  secondary:
+    - quality_control
+    - visualization_reporting
+  capabilities:
+    - univariate_statistics
+    - multivariate_statistics
+platforms:
+  - platform_independent
+analysis_types:
+  - targeted
+  - untargeted
+interfaces:
+  - r_package
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - feature_table
+    - sample_metadata
+  output_types:
+    - statistical_results
+    - report
+maintenance:
+  status: active
+  repository_last_activity: '2026-10-02'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
