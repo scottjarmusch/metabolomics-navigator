@@ -1,0 +1,42 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: spectus
+name: SpecTUS
+summary: A transformer-based research tool for de novo translation of GC-EI mass spectra into candidate molecular structures represented as SMILES.
+links:
+  primary: https://github.com/hejjack/SpecTUS
+  repository: https://github.com/hejjack/SpecTUS
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [machine_learning]
+  capabilities: [structure_elucidation]
+platforms: [gc_ms]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [linux]
+  programming_languages: [Python]
+data:
+  input_types: [spectra]
+  output_types: [molecular_structures]
+  output_formats: [smiles_inchi]
+publications:
+  - doi: 10.1021/acs.analchem.6c02423
+    type: primary
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-15'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository; final fine-tuned NIST20 model weights may be constrained by proprietary training data.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
