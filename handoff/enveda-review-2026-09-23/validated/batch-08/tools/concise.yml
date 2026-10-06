@@ -1,0 +1,39 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: concise
+name: ConCISE
+summary: A molecular-network interpretation tool that assigns consensus chemical classifications from in-silico structure annotations onto molecular subnetworks.
+links:
+  primary: https://github.com/zquinlan/concise
+  repository: https://github.com/zquinlan/concise
+resource_types: [programming_package]
+functions:
+  primary: molecular_networking
+  secondary: [annotation_identification]
+  capabilities: [compound_class_prediction, network_visualization]
+platforms: [platform_independent]
+analysis_types: [untargeted]
+interfaces: [python_package, notebook]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [compound_list, statistical_results]
+  output_types: [compound_list, report]
+maintenance:
+  status: limited
+  repository_last_activity: '2024-11-15'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
