@@ -16,6 +16,8 @@ STRATEGIES_DIR = ROOT / "content" / "strategies"
 VOCAB_PATH = ROOT / "data" / "controlled-vocabulary.yml"
 TOOL_SCHEMA_PATH = ROOT / "schemas" / "tool.schema.json"
 STRATEGY_SCHEMA_PATH = ROOT / "schemas" / "strategy.schema.json"
+EDUCATION_DIR = ROOT / "content" / "education"
+EDUCATION_SCHEMA_PATH = ROOT / "schemas" / "education.schema.json"
 
 
 def load_yaml(path: Path):
@@ -28,7 +30,8 @@ def load_vocab():
 
 
 def load_schema(kind: str = "tool"):
-    path = TOOL_SCHEMA_PATH if kind == "tool" else STRATEGY_SCHEMA_PATH
+    paths = {"tool": TOOL_SCHEMA_PATH, "strategy": STRATEGY_SCHEMA_PATH, "education": EDUCATION_SCHEMA_PATH}
+    path = paths[kind]
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -43,6 +46,10 @@ def load_records(directory: Path):
 
 def load_tools():
     return load_records(TOOLS_DIR)
+
+
+def load_education():
+    return load_records(EDUCATION_DIR) if EDUCATION_DIR.exists() else []
 
 
 LEGACY_STRATEGY_CONTEXT_TO_BIOLOGICAL = {

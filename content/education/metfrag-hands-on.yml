@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: metfrag-hands-on
+title: "MetFrag Hands-on"
+summary: "Hands-on MetFrag learning resource for computational annotation. Relevant when investigating candidate structures using tandem mass spectrometry evidence."
+url: "https://ipb-halle.github.io/MetFragTraining/"
+resource_type: tutorial
+tool_slugs:
+  - metfrag
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Manual review of content and currentness is pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

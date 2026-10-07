@@ -1,0 +1,26 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day3-s3
+title: NTMSS2026 Day3 S3 - Allegra Aron & Scott Jarmusch - MassQL
+summary: Allegra Aron and Scott Jarmusch introduce MassQL, a query language for mass
+  spectrometry data. Relevant when searching spectra for defined patterns rather than
+  browsing individual spectra manually.
+url: https://www.youtube.com/watch?v=V2Yi80fYwpY
+resource_type: workshop
+tool_slugs:
+- massql
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=V2Yi80fYwpY
+date_verified_at: '2026-10-01'

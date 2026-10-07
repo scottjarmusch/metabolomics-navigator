@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-molnetenhancer
+title: "GNPS MolNetEnhancer"
+summary: "Workshop introducing MolNetEnhancer in the GNPS ecosystem. Relevant for adding chemical-class and annotation context to molecular networks."
+url: "https://www.youtube.com/watch?v=-4DE_ZfF2vc"
+resource_type: workshop
+tool_slugs:
+  - molnetenhancer
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Strong tool-specific candidate."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=-4DE_ZfF2vc
+date_verified_at: '2026-09-26'

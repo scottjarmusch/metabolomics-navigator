@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: mzmine-ion-mobility-ms-data-processing
+title: "MZmine ion-mobility MS data processing"
+summary: "MZmine workshop focused on processing ion-mobility mass spectrometry data. Choose this resource when mobility information is part of your dataset."
+url: "https://www.youtube.com/watch?v=Xp-G1HSozgM"
+resource_type: video
+tool_slugs:
+  - mzmine
+provider: "MZmine / EMBL-EBI training"
+experience_level: unspecified
+language: en
+note: "MZmine 4.x-era webinar; strong candidate."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2024
+year_kind: published
+date_source: https://www.youtube.com/watch?v=Xp-G1HSozgM
+date_verified_at: '2026-09-26'

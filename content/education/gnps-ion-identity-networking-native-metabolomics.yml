@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-ion-identity-networking-native-metabolomics
+title: "GNPS Ion-Identity Networking, Native Metabolomics"
+summary: "Workshop covering ion-identity networking and native metabolomics. Explore how information beyond spectral similarity can contribute to interpreting molecular networks."
+url: "https://www.youtube.com/watch?v=tb7LxaeNvcw"
+resource_type: workshop
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+  - mzmine
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Strong but may need explicit IIN mapping/note."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=tb7LxaeNvcw
+date_verified_at: '2026-09-26'

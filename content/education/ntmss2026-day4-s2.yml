@@ -1,0 +1,26 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day4-s2
+title: NTMSS2026 Day4 S2 - Daniel Petras - STATS part2 (FBMN STATS Hands-On)
+summary: Daniel Petras leads a hands-on session with FBMN STATS for statistical analysis
+  of feature-based molecular networking results. This follows the introductory statistics
+  session.
+url: https://www.youtube.com/watch?v=cUSwdx_WKRE
+resource_type: workshop
+tool_slugs:
+- fbmn-stats
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=cUSwdx_WKRE
+date_verified_at: '2026-10-01'

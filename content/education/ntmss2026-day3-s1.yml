@@ -1,0 +1,26 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day3-s1
+title: NTMSS2026 Day3 S1 - Anelize Bauermeister - Network Vizualization in Cytoscape
+summary: Anelize Bauermeister presents network visualization in Cytoscape. A resource
+  for researchers ready to explore and present relationships in molecular-network
+  results.
+url: https://www.youtube.com/watch?v=GBTSi_xADAE
+resource_type: workshop
+tool_slugs:
+- cytoscape
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=GBTSi_xADAE
+date_verified_at: '2026-10-01'

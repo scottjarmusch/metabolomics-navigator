@@ -1,0 +1,25 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day5-s2
+title: NTMSS2026 Day5 S2 - Emily Gentry - Keynote Lecture
+summary: Keynote lecture by Emily Gentry at the 2026 non-target metabolomics summer
+  school. The recording title does not specify the scientific topic; detailed coverage
+  remains to be reviewed.
+url: https://www.youtube.com/watch?v=BVlIMEGiLDY
+resource_type: workshop
+tool_slugs: []
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=BVlIMEGiLDY
+date_verified_at: '2026-10-01'

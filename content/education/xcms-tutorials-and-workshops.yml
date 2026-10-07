@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: xcms-tutorials-and-workshops
+title: "XCMS tutorials and workshops"
+summary: "XCMS tutorial and workshop collection. Find guidance for processing LC-MS data in R before selecting downstream annotation or statistical analysis."
+url: "https://github.com/jorainer/xcmsTutorials"
+resource_type: tutorial
+tool_slugs:
+  - xcms
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Manual review of content and currentness is pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

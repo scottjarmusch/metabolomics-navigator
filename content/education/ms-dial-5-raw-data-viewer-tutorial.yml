@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: ms-dial-5-raw-data-viewer-tutorial
+title: "MS-DIAL 5 raw data viewer tutorial"
+summary: "Tutorial for the MS-DIAL 5 raw-data viewer. Relevant at the initial inspection stage, before drawing conclusions from processed feature tables."
+url: "https://www.youtube.com/watch?v=aApHc8Op4VY"
+resource_type: video
+tool_slugs:
+  - ms-dial
+provider: "MS-DIAL project"
+experience_level: unspecified
+language: en
+note: "Embedded in current MS-DIAL 5 tutorial."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2022
+year_kind: published
+date_source: https://www.youtube.com/watch?v=aApHc8Op4VY
+date_verified_at: '2026-09-26'

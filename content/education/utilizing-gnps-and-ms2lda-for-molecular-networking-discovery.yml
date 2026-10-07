@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: utilizing-gnps-and-ms2lda-for-molecular-networking-discovery
+title: "Utilizing GNPS and MS2LDA for molecular networking discovery"
+summary: "Session combining GNPS and MS2LDA for molecular-network exploration. Connect network relationships with recurring spectral patterns during interpretation."
+url: "https://www.youtube.com/watch?v=Cc6eKGZQ1Qw"
+resource_type: workshop
+tool_slugs:
+  - gnps
+  - ms2lda
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Cross-tool workflow candidate."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=Cc6eKGZQ1Qw
+date_verified_at: '2026-09-26'
