@@ -206,7 +206,7 @@ def main():
         source_url=f"{repository_url}/blob/main/content/strategies/{quote(strategy['slug'])}.yml"
         render(env,'strategy.html',OUT/f"strategies/{strategy['slug']}/index.html",**context,active='strategies',strategy=strategy,related_strategies=related,update_url=update_url,source_url=source_url)
 
-    # Education: curated external learning resources. Alpha entries may still be unreviewed.
+    # Education: curated external learning resources. Individual entries retain their review status.
     education_tools=sorted({tool['slug']:tool for resource in education for tool in resource['tools']}.values(),key=lambda x:x['name'].casefold())
     render(env,'education.html',OUT/'education/index.html',**context,active='education',education_resources=education,education_tools=education_tools)
 

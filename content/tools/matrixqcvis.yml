@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+slug: matrixqcvis
+name: MatrixQCvis
+summary: Explore sample and feature quality in metabolomics matrices through interactive
+  visualizations.
+description: MatrixQCvis is a Bioconductor/Shiny interface for inspecting quantitative
+  matrices. It visualizes distributions, sample relationships, outliers and batch
+  structure, using SummarizedExperiment as its input container.
+links:
+  primary: https://bioconductor.org/packages/MatrixQCvis/
+  repository: https://github.com/tnaake/MatrixQCvis
+  documentation: https://bioconductor.org/packages/MatrixQCvis/
+platforms:
+- platform_independent
+interfaces:
+- r_package
+- web_app
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  capabilities:
+  - interactive_dashboard
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - report
+  other_input_formats:
+  - SummarizedExperiment object supplied directly or as an RDS file
+  other_output_formats:
+  - Interactive per-sample and per-feature quality visualizations
+common_uses:
+- Inspect processed MS-metabolomics matrices before interpretation.
+scope:
+  designed_for:
+  - Explore sample and feature quality in metabolomics matrices through interactive
+    visualizations.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - A feature-by-sample matrix and metadata prepared as a SummarizedExperiment object.
+  considerations:
+  - Visual separation alone cannot determine whether a batch difference is technical
+    or biological.
+  - Use the compatible Bioconductor release rather than assuming the development branch
+    is production-ready.
+publications:
+- doi: 10.1093/bioinformatics/btab748
+  type: primary
+  citation: 'MatrixQCvis: shiny-based interactive data quality exploration for omics
+    data. Bioinformatics (2021).'
+  note: Published online in 2021; assigned to the 2022 journal issue. Replaces the
+    intake preprint citation.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'
