@@ -20,6 +20,12 @@ class Cards(HTMLParser):
             self.tools.append({k[5:]: v for k, v in attrs if k.startswith('data-')})
 
 CASES = [
+    ('Use LC-MS2Struct for joint retention order annotation', 'Retention-order-assisted joint molecular annotation', None),
+    ('Use ROASMI to combine retention scores and MS/MS', 'Retention-order-assisted joint molecular annotation', None),
+    ('Use MS2DECIDE for natural product prioritization', 'MS2DECIDE', None),
+    ('Can dbnorm correct batch effects in my feature table?', None, 'Named tools found'),
+    ('Use MatrixQCvis to inspect my processed metabolomics matrix', None, 'Named tools found'),
+
     ('Can SIMPEL infer flux from unlabeled features?', None, 'missing input'),
     ('Can SIMPEL infer flux from unlabelled features?', None, 'missing input'),
     ('Use khipu to group adduct and isotope peaks', None, 'Named tools found'),

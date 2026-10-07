@@ -347,7 +347,7 @@ def enrich_strategy(record,labels,tool_by_slug):
         x['alternative_functions']=[{'id':f,'label':labels['functions'].get(f,f)} for f in functions]
         steps.append(x)
     p['workflow_steps_enriched']=steps
-    p['ask_tool_slugs']=sorted({x['slug'] for x in p['resolved_tools'] if x.get('slug')} | {s for step in p.get('workflow_steps',[]) for s in step.get('tool_slugs',[])})
+    p['ask_tool_slugs']=sorted({x['slug'] for x in p['resolved_tools'] if x.get('slug')} | {s for step in p.get('workflow_steps',[]) for s in step.get('tool_slugs',[])} | {s for impl in p.get('implementations',[]) for s in impl.get('tool_slugs',[])})
     implementations=[]
     for implementation in p.get('implementations',[]):
         x=dict(implementation)

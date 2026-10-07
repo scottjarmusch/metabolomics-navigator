@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<header class="page-hero compact"><div class="section-wrap"><p class="eyebrow">ASK NAVIGATOR · ALPHA</p><h1>Start from a published workflow, not a list of tools.</h1><p>Describe the scientific problem you are trying to solve. Ask Navigator first matches your question to transferable Analytical Strategies, shows the workflow and publication that implemented them, and then links you into the full catalogue for alternatives.</p></div></header>
+<header class="page-hero compact"><div class="section-wrap"><p class="eyebrow">ASK NAVIGATOR · ALPHA</p><h1>Find your next step in metabolomics.</h1><p>Start with your experiment or describe what you want to learn. We will help you clarify your measurements, explore published Strategies and find the tools and tutorials for your next step.</p></div></header>
 
 <div class="ask-evidence section-wrap">
 <section class="ask-decision" aria-labelledby="ask-title">
@@ -42,6 +42,7 @@
         <li data-guide-action="learn" hidden><a href="{{ url('education/') }}">Find tutorials and video workshops</a></li>
         <li data-guide-action="prepare" hidden><a href="{{ url('guide/data-processing/') }}">Understand data processing</a> · <a href="{{ url('tools/') }}?function=preprocessing">Browse preprocessing tools</a></li>
         <li data-guide-action="qc" hidden><a href="{{ url('tools/') }}?function=quality_control">Explore quality-control tools</a></li>
+        <li data-guide-action="browse" hidden><a href="{{ url('strategies/') }}">Browse the curated Strategies</a> · <a href="{{ url('tools/') }}">Explore the tool catalogue</a></li>
         <li data-guide-action="statistics" hidden><a href="{{ url('tools/') }}?function=statistics">Explore statistical analysis tools, including local software</a></li>
       </ul>
     </nav>
@@ -79,7 +80,7 @@
 
   <aside id="ask-tool-matches" class="preview-note" hidden aria-live="polite">
     <h2>Tools named in your question</h2>
-    <p>These are catalogue references, not a compatibility assessment. Read the recorded scope and requirements. A tool name alone does not establish a published workflow.</p>
+    <p>These are catalogue references, not a compatibility assessment. Read the recorded scope and requirements. A tool name alone does not establish a published workflow. Matches can come from the original method or a later implementation; each is labelled in the Strategy below.</p>
     <ul>
     {% for tool in ask_tools %}
       <li data-ask-tool data-slug="{{ tool.slug }}" data-names="{{ ([tool.name, tool.slug] + tool.aliases|default([]))|join('|')|e }}" hidden><a href="{{ url('tools/' + tool.slug + '/') }}">{{ tool.name }}</a> — {{ tool.summary }}</li>
@@ -134,7 +135,7 @@
         <strong>Subsequent published implementations</strong>
         <ul>
         {% for impl in strategy.implementations_enriched[:2] %}
-          <li><span>{{ impl.year }} · {{ impl.title }}</span>{% if impl.doi %}<a href="https://doi.org/{{ impl.doi }}">citation ↗</a>{% elif impl.url %}<a href="{{ impl.url }}">citation ↗</a>{% endif %}</li>
+          <li><span>{{ impl.year }} · {{ impl.title }}{% if impl.tools %}<small class="ask-implementation-tools">Implementation tools: {% for tool in impl.tools %}<a href="{{ url('tools/' + tool.slug + '/') }}">{{ tool.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</small>{% endif %}</span>{% if impl.doi %}<a href="https://doi.org/{{ impl.doi }}">citation ↗</a>{% elif impl.url %}<a href="{{ impl.url }}">citation ↗</a>{% endif %}</li>
         {% endfor %}
         </ul>
       </div>

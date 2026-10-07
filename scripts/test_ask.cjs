@@ -132,3 +132,6 @@ console.log('Evidence gates passed: unknown, missing and confirmed QC/tracer inp
 
 for(const field of [stage,data,qcEvidence,tracerEvidence]) { focused[0].hidden=false;message.textContent='old result';field.events.change();assert(focused.every(x=>x.hidden));assert.equal(message.textContent,''); }
 console.log('Changed answers clear stale recommendations.');
+
+focusedInput.value='zzzz-unrepresented-method-xxxx';focusedButton.events.click();assert(focused.every(x=>x.hidden),'A generic word such as method must not generate unsupported matches');
+message.textContent='stale guided result';focusedInput.value='pooled QC LOESS signal drift';focusedButton.events.click();assert.equal(message.textContent,'','New free-text searches must clear stale guided messages');

@@ -1,0 +1,124 @@
+[
+  {
+    "label": "New cohort researcher",
+    "input": "Patient cohort; planning / unsure measurements / unsure aim",
+    "response": "Choose an example or describe your question.",
+    "guidance": "Start with the guide and your MS facility: define the comparison, sample handling, controls and suitable measurements before choosing an analysis workflow.",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops"
+    ]
+  },
+  {
+    "label": "New LC-MS user",
+    "input": "I have raw LC-MS files. Where do I begin?",
+    "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+    "guidance": "Start with data processing and quality control. Ask your MS facility which file format and acquisition type you have; then use the study guide to choose a downstream aim.",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops",
+      "Understand data processing · Browse preprocessing tools",
+      "Explore quality-control tools"
+    ]
+  },
+  {
+    "label": "Feature table only",
+    "input": "Processed feature table; find molecular families",
+    "response": "Choose an example or describe your question.",
+    "guidance": "Spectral molecular families need fragmentation spectra linked to precursors. A feature table alone does not provide that evidence; check whether MS/MS was acquired.",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops"
+    ]
+  },
+  {
+    "label": "Missing QC controls",
+    "input": "Processed data; drift correction; QC/order missing",
+    "response": "Choose an example or describe your question.",
+    "guidance": "The pooled-QC drift-correction route needs repeated representative QC injections and injection order. Missing QC cannot be reconstructed by selecting this method. Review available controls and batch effects with your analyst.",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops",
+      "Explore quality-control tools"
+    ]
+  },
+  {
+    "label": "Ordinary abundance study",
+    "input": "Processed data; flux; no tracer experiment",
+    "response": "Choose an example or describe your question.",
+    "guidance": "Ordinary abundance measurements do not support these isotope-tracer flux methods. You can explore group differences or plan a suitable tracer experiment with a specialist.",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops"
+    ]
+  },
+  {
+    "label": "Local statistical analysis",
+    "input": "Can I analyze my metabolomics statistics locally in R?",
+    "response": "Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.",
+    "guidance": "",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops",
+      "Explore statistical analysis tools, including local software"
+    ]
+  },
+  {
+    "label": "Retention model researcher",
+    "input": "Use ROASMI to combine retention scores and MS/MS",
+    "response": "1 matching published Strategy.",
+    "guidance": "",
+    "strategies": [
+      "Retention-order-assisted joint molecular annotation"
+    ],
+    "tools": [
+      "ROASMI"
+    ],
+    "actions": []
+  },
+  {
+    "label": "Natural products researcher",
+    "input": "Use MS2DECIDE for natural product prioritization",
+    "response": "1 matching published Strategy.",
+    "guidance": "",
+    "strategies": [
+      "MS2DECIDE"
+    ],
+    "tools": [
+      "MS2DECIDE"
+    ],
+    "actions": []
+  },
+  {
+    "label": "No catalogue match",
+    "input": "zzzz-unrepresented-method-xxxx",
+    "response": "No matching published Strategy in the current collection.",
+    "guidance": "",
+    "strategies": [],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops",
+      "Browse the curated Strategies · Explore the tool catalogue"
+    ]
+  },
+  {
+    "label": "QC evidence available",
+    "input": "Processed feature table; drift correction; repeated QC and injection order available",
+    "response": "1 matching published Strategy.",
+    "guidance": "QC drift correction requires repeated representative QC injections and recorded injection order. Check these requirements before using the published method.",
+    "strategies": [
+      "QC-based robust LOESS signal-drift correction"
+    ],
+    "tools": [],
+    "actions": [
+      "Find tutorials and video workshops",
+      "Explore quality-control tools"
+    ]
+  }
+]

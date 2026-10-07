@@ -329,3 +329,5 @@ body { background:var(--paper); color:var(--ink); }
 .ask-starters h2 { margin-top:0; }
 .ask-starters button[aria-pressed="true"] { background:var(--teal); color:#fff; }
 #ask-start-over { background:none; border:0; cursor:pointer; padding:.6rem 0; }
+
+.ask-implementation-tools { display:block; margin-top:.35rem; }
