@@ -20,6 +20,12 @@ class Cards(HTMLParser):
             self.tools.append({k[5:]: v for k, v in attrs if k.startswith('data-')})
 
 CASES = [
+    ('find metabolite differences in bulk soil samples', None, 'comparison'),
+    ('Find metabolite differences without MS/MS spectra', None, 'missing input'),
+    ('Compare metabolite abundances between treated and control plasma samples', None, 'comparison'),
+    ('Find metabolite differences between bacterial culture conditions', None, 'comparison'),
+    ('feature based molecular networking for bulk soil extracts', 'Feature-Based Molecular Networking (FBMN)', None),
+
     ('Use LC-MS2Struct for joint retention order annotation', 'Retention-order-assisted joint molecular annotation', None),
     ('Use ROASMI to combine retention scores and MS/MS', 'Retention-order-assisted joint molecular annotation', None),
     ('Use MS2DECIDE for natural product prioritization', 'MS2DECIDE', None),

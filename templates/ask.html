@@ -28,7 +28,7 @@
     <p><label for="ask-data">What measurements do you have?</label><br>
       <select id="ask-data"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="msms">LC-MS/MS with fragment spectra</option><option value="features">An MS feature or metabolite table</option><option value="other">Another MS measurement type</option></select></p>
     <p><label for="ask-aim">What would you like to learn?</label><br>
-      <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
+      <select id="ask-aim"><option value="">Choose an aim</option><option value="comparison">Compare metabolite levels between samples or groups</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
     <p id="ask-qc-question" hidden><label for="ask-qc-evidence">Were representative QC samples injected repeatedly, with injection order recorded?</label><br>
       <select id="ask-qc-evidence"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="yes">Yes, both are available</option><option value="no">No, one or both are missing</option></select></p>
     <p id="ask-tracer-question" hidden><label for="ask-tracer-evidence">Was this an isotope-tracer experiment with recorded labeling measurements and sampling times?</label><br>
@@ -97,6 +97,7 @@
     <article class="ask-strategy-card" hidden
       data-search="{{ strategy.search_text|e }}"
       data-name="{{ strategy.name|e }}"
+      data-platforms="{{ strategy.platforms|join(' ') }}"
       data-tools="{{ strategy.ask_tool_slugs|join(' ') }}"
       data-keywords="{{ strategy.ask_keywords|default([])|join(' ')|e }}"
       data-objectives="{{ strategy.purpose.primary }} {{ strategy.purpose.secondary|default([])|join(' ') }}"
