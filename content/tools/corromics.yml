@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: corromics
+name: CorrOmics
+summary: Explore associations between paired metabolomics and other omics feature tables and export correlation
+  networks.
+description: CorrOmics links metabolite abundances with microbial or other omics measurements using sample-mapping
+  metadata. It provides correlation-network exploration and downloadable edges; inferred associations do not establish
+  biological causation. Hosted and local execution routes are documented.
+links:
+  primary: https://corromics.gnps2.org/
+  documentation: https://github.com/Functional-Metabolomics-Lab/Corromics/blob/main/Home.py
+  repository: https://github.com/Functional-Metabolomics-Lab/Corromics
+resource_types:
+- web_service
+functions:
+  primary: multiomics_integration
+  secondary:
+  - statistics
+  - visualization_reporting
+  capabilities:
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: Public web app with documented Python/Streamlit local setup and a Windows installer route. No explicit
+    repository license was established; public source availability is not an open-source license claim.
+publications: []
+resource_citations:
+- type: documentation
+  citation: CorrOmics official documentation. Accessed 24 September 2026.
+  url: https://github.com/Functional-Metabolomics-Lab/Corromics/blob/main/Home.py
+maintenance:
+  status: unclear
+  last_checked: '2026-09-24'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Official documentation reviewed on 2026-09-24. No dedicated publication verified; no analysis execution
+    or independent benchmark claimed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-24'
+  updated_at: '2026-09-24'
+  last_verified: '2026-09-24'
+  last_editorial_review: '2026-09-24'
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Paired omics abundance tables and sample-mapping metadata
+  output_formats:
+  - csv_tsv
+  other_output_formats:
+  - GraphML network for Cytoscape
+common_uses:
+- Explore metabolite-microbe abundance associations.
+- Export cross-omics association networks for inspection in Cytoscape.
+scope:
+  designed_for:
+  - Exploratory association analysis of matched metabolomics and other omics samples.
+  not_designed_for:
+  - Inferring causation, confirming metabolite identity or preprocessing raw MS files.
+  requirements:
+  - Paired abundance tables and metadata with filename and ATTRIBUTE_Corromics_filename sample mappings.
+  - Local Python/Streamlit dependencies when running outside the hosted service.
+  considerations:
+  - The documentation limits hosted analyses to one million correlations and recommends local execution above that.
+  - Compositional effects, confounders, missing values and repeated measures require study-specific assessment.
+  - Exploratory methods differ in interpretation and significance support; do not treat every association score
+    as a corrected hypothesis test.
+related_tools:
+- slug: metaboapps
+  relationship: part_of
+  note: Listed in the GNPS2 MetaboApps ecosystem.
+- slug: cytoscape
+  relationship: integration
+  note: Exports GraphML for network visualization.
