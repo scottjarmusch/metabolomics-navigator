@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: roasmi
+name: ROASMI
+summary: Predict relative LC retention behavior and combine it with MS/MS scores to rank candidate structures.
+description: ROASMI learns molecular representations and pairwise elution preferences using a neural ranking
+  model. Its supplied scripts predict retention scores, optionally retrain models, and integrate retention
+  evidence with MS/MS candidate scores.
+links:
+  primary: https://github.com/FangYuan717/ROASMI
+  repository: https://github.com/FangYuan717/ROASMI
+  documentation: https://github.com/FangYuan717/ROASMI
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- command_line
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  capabilities:
+  - structure_elucidation
+access:
+  model: open_source
+  license: MIT
+  notes: MIT license verified in the official repository. Software was not installed or execution-tested;
+    dependencies and external services have their own requirements.
+data:
+  input_types:
+  - compound_list
+  - feature_table
+  output_types:
+  - compound_list
+  input_formats:
+  - csv_tsv
+  other_output_formats:
+  - Predicted retention scores and candidate annotation rankings
+common_uses:
+- Add chromatographic evidence to molecular candidate ranking.
+- Retrain a retention-order model with a suitable reference set.
+scope:
+  designed_for:
+  - Predict relative LC retention behavior and combine it with MS/MS scores to rank candidate structures.
+  not_designed_for:
+  - Replacing experimental confirmation of compound identity.
+  - Raw-data feature detection or chromatographic alignment.
+  requirements:
+  - Python/Conda and the documented dependencies, model files and candidate structures.
+  - Prepare input CSV files using the repository prediction and identification examples. Identification
+    requires the expected retention and candidate-score information.
+  - Select reference data and models compatible with the chromatographic mode and buffer pH.
+  considerations:
+  - The supplied initial models target reversed-phase LC around pH 2.7; they are not universal retention
+    models.
+  - The repository supplies retraining examples, including HILIC. That does not establish general applicability
+    of the initial RPLC models to HILIC.
+  - CPU execution is documented; GPU acceleration is recommended for faster retraining, not required for
+    all use.
+  - Retention scores describe relative order, not necessarily calibrated absolute retention times.
+publications:
+- doi: 10.1186/s13321-025-00968-8
+  type: primary
+  citation: 'ROASMI: accelerating small molecule identification by repurposing retention data. Journal
+    of Cheminformatics (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake reviewed against the primary publication, official repository documentation and
+    license on 2026-10-05. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-05'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-05'
+  updated_at: '2026-10-05'
+  last_verified: '2026-10-05'
+  last_editorial_review: '2026-10-05'
+related_tools:
+- slug: lc-ms2struct
+  relationship: alternative
+  note: Both combine retention-order and spectral evidence; they use different models and are not interchangeable
+    implementations.

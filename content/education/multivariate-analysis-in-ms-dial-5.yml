@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: multivariate-analysis-in-ms-dial-5
+title: "Multivariate analysis in MS-DIAL 5"
+summary: "Tutorial on multivariate analysis within MS-DIAL 5. Relevant when moving from processed data to exploring patterns across samples."
+url: "https://www.youtube.com/watch?v=wtOS7F1RgZs"
+resource_type: video
+tool_slugs:
+  - ms-dial
+provider: "MS-DIAL project"
+experience_level: unspecified
+language: en
+note: "Statistics within MS-DIAL."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2022
+year_kind: published
+date_source: https://www.youtube.com/watch?v=wtOS7F1RgZs
+date_verified_at: '2026-09-26'

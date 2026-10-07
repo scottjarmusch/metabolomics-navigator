@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-fbmn-in-spanish-part-2
+title: "GNPS FBMN in Spanish Part 2"
+summary: "Part 2 of the Spanish-language feature-based molecular networking tutorial. Continue from part 1 for the remainder of the sequence."
+url: "https://www.youtube.com/watch?v=l90j5T8EQbw"
+resource_type: workshop
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+provider: "GNPS"
+experience_level: unspecified
+language: es
+note: "Spanish-language FBMN."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=l90j5T8EQbw
+date_verified_at: '2026-09-26'

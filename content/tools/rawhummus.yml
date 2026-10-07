@@ -1,0 +1,75 @@
+$schema: ../../schemas/tool.schema.json
+slug: rawhummus
+name: RawHummus
+summary: Inspect LC-MS instrument logs and raw QC measurements through an R Shiny
+  interface.
+description: RawHummus summarizes chromatographic and MS-level quality measurements
+  to help inspect system performance. It produces interactive QC reports and supports
+  local execution; detecting a problem does not automatically correct the underlying
+  data.
+links:
+  primary: https://github.com/YonghuiDong/RawHummus
+  repository: https://github.com/YonghuiDong/RawHummus
+  documentation: https://github.com/YonghuiDong/RawHummus
+platforms:
+- lc_ms
+interfaces:
+- r_package
+- web_app
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  capabilities:
+  - interactive_dashboard
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - Supported raw QC measurements and instrument log files
+  other_output_formats:
+  - Interactive HTML quality reports
+common_uses:
+- Inspect run-to-run variation before downstream interpretation.
+scope:
+  designed_for:
+  - Inspect LC-MS instrument logs and raw QC measurements through an R Shiny interface.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - Representative QC measurements and an R/Shiny environment for local use.
+  - Supported raw QC measurements and instrument log files; consult the app instructions
+    for instrument-specific import
+  considerations:
+  - The documented free hosted deployment has memory limits; local execution is recommended
+    for larger sets.
+  - Thresholds are diagnostic aids, not universal acceptance criteria.
+publications:
+- doi: 10.1093/bioinformatics/btac040
+  type: primary
+  citation: 'RawHummus: an R Shiny app for automated raw data quality control in metabolomics.
+    Bioinformatics (2022).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'

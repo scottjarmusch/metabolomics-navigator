@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: patroon-tutorial
+title: "patRoon tutorial"
+summary: "patRoon tutorial for non-target analysis workflows in R. A resource for learners considering a scripted analysis environment."
+url: "https://rickhelmus.github.io/patRoon/articles/tutorial.html"
+resource_type: tutorial
+tool_slugs:
+  - patroon
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Manual review of content and currentness is pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

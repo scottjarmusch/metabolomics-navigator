@@ -1,0 +1,25 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2023-day2-s2-data-preprocessing-in-mzmine-3-i
+title: "NTMSS2023 Day2 S2 - Data preprocessing in MZmine 3 I"
+summary: "First summer-school session on data preprocessing in MZmine 3. Relevant before downstream annotation or statistics; the interface shown is version 3."
+url: "https://www.youtube.com/watch?v=MmUY5qCz8eo"
+resource_type: workshop
+tool_slugs:
+  - mzmine
+provider: "Functional Metabolomics Lab"
+experience_level: unspecified
+language: en
+note: "Summer-school session; check interface currency."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2023
+year_kind: published
+date_source: https://www.youtube.com/watch?v=MmUY5qCz8eo
+date_verified_at: '2026-09-26'
+tool_versions:
+  mzmine: "3"

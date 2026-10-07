@@ -65,9 +65,18 @@ implementations:
   summary: LC-MS2Struct learns structured integration of spectral scores and retention order, including
     stereochemistry-aware fingerprints. This replaces the original integration model rather than reproducing
     its algorithm.
-  external_tools:
-  - name: LC-MS2Struct
-    url: https://github.com/aalto-ics-kepaco/msms_rt_ssvm
+  tool_slugs:
+  - lc-ms2struct
+- title: 'ROASMI: accelerating small molecule identification by repurposing retention data'
+  doi: 10.1186/s13321-025-00968-8
+  year: 2025
+  journal: Journal of Cheminformatics
+  relationship: extension
+  summary: Uses learned molecular representations and a neural ranking model to predict retention
+    order within a chromatographic application domain, then integrates this evidence with MS/MS
+    scores. This is a later implementation, not the original 2018 workflow.
+  tool_slugs:
+  - roasmi
 related_strategies: []
 provenance:
   submitted_by: curator
@@ -78,5 +87,5 @@ status:
   entry: published
   review: editorially_reviewed
   created_at: '2026-09-20'
-  updated_at: '2026-09-20'
+  updated_at: '2026-10-05'
   last_editorial_review: '2026-09-20'

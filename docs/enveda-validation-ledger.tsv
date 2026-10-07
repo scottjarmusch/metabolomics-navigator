@@ -1,0 +1,645 @@
+source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	review_note
+2	LC-MS2Struct	validated_pending_merge	lc-ms2struct	https://github.com/aalto-ics-kepaco/msms_rt_ssvm	https://www.nature.com/articles/s42256-022-00577-2		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
+3	MSI-Explorer	unreviewed		https://github.com/MMV-Lab/MSI-Explorer	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01513		Not yet reviewed.
+5	GMDP Database	unreviewed		https://lccl.shinyapps.io/GMDP/	https://www.biorxiv.org/content/10.1101/2023.12.11.571124v1		Not yet reviewed.
+6	Neurolipid Atlas	unreviewed		https://neurolipidatlas.com/	https://www.nature.com/articles/s42255-025-01365-z		Not yet reviewed.
+7	Pyrfume	unreviewed		https://pyrfume.org/	https://www.nature.com/articles/s41597-024-04051-z		Not yet reviewed.
+8	MMST	unreviewed		https://github.com/mpriessner/MultiModalSpectralTransformer	https://onlinelibrary.wiley.com/doi/10.1002/ange.202517611	mixed_nmr_mentions	Not yet reviewed.
+9	GlyKAn AZ	unreviewed		https://github.com/ZaylaSchaeffer/GlyKAn-AZ-application	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05346-5	broad_source_bucket_manual_review	Not yet reviewed.
+10	Lipid4DAnalyzer	unreviewed		http://lipid4danalyzer.zhulab.cn/	https://doi.org/10.1016/j.aca.2022.339886		Not yet reviewed.
+13	WebGestalt	unreviewed		https://www.webgestalt.org	https://academic.oup.com/nar/article/52/W1/W415/7684598		Not yet reviewed.
+14	MetaboLINK/ PCA-GLASSO	unreviewed		https://github.com/jlichtarge/pcaGLASSO	https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1520982	mixed_nmr_mentions	Not yet reviewed.
+15	NetAurHPD	unreviewed		https://github.com/TamirBar-Tov/NetAurHPD-Network-Auralization-Hyperlink-Prediction-Method	https://arxiv.org/abs/2410.22030		Not yet reviewed.
+16	SMQVP	unreviewed		https://github.com/mzlab-research/SMQVP	https://www.mdpi.com/2218-1989/15/6/354		Not yet reviewed.
+17	MetHoS	unreviewed		https://methos.cebitec.uni-bielefeld.de/welcomeview	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04793-w		Not yet reviewed.
+18	SEISMiQ	unreviewed		https://github.com/Boehringer-Ingelheim/seismiq	https://chemrxiv.org/engage/chemrxiv/article-details/67c0518081d2151a024875ed		Not yet reviewed.
+19	MobiLipid	unreviewed		https://github.com/FelinaHildebrand/MobiLipid	https://pubs.acs.org/doi/10.1021/acs.analchem.4c01253	ion_mobility_platform_dimension	Not yet reviewed.
+20	QuantyFey	unreviewed		https://github.com/CDLMarkus/QuantyFey	https://doi.org/10.1016/j.aca.2025.344571		Not yet reviewed.
+21	AnnoMe	unreviewed		https://github.com/chrboku/AnnoMe	https://chemrxiv.org/engage/chemrxiv/article-details/6895a25a23be8e43d653f5e9		Not yet reviewed.
+22	NP3 MS Workflow	unreviewed		https://github.com/danielatrivella/NP3_MS_Workflow	https://pubs.acs.org/doi/10.1021/acs.analchem.3c05829	broad_source_bucket_manual_review	Not yet reviewed.
+23	massNet	unreviewed		https://github.com/wabdelmoula/massNet	https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btac032/6510930		Not yet reviewed.
+24	MSConnect	unreviewed		https://github.com/RTKlab-BYU/MSConnect	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.4c00854	broad_source_bucket_manual_review;scope_review_adjacent_field	Not yet reviewed.
+25	Eclipse	unreviewed		https://github.com/broadinstitute/bmxp/tree/main/bmxp/eclipse	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btaf290/8128335		Not yet reviewed.
+26	MetaboScape 2025	unreviewed		https://www.bruker.com/en/products-and-solutions/mass-spectrometry/ms-software/metaboscape.html	https://www.bruker.com/en/products-and-solutions/mass-spectrometry/ms-software/metaboscape.html	broad_source_bucket_manual_review	Not yet reviewed.
+27	MetNet	unreviewed		https://www.dsi.unive.it/~biolab/MetNet.php, https://github.com/simeoni-biolab/MetNet	https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246962		Not yet reviewed.
+28	MAVEN2	unreviewed		https://github.com/eugenemel/maven/releases/tag/2.11.8	https://www.mdpi.com/2218-1989/12/8/684	broad_source_bucket_manual_review	Not yet reviewed.
+29	SMART	unreviewed		https://github.com/bioinfo-ibms-pumc/SMART	https://pubs.acs.org/doi/10.1021/acs.analchem.4c06210		Not yet reviewed.
+30	LipidFinder 2.0	unreviewed		https://github.com/ODonnell-Lipidomics/LipidFinder	https://academic.oup.com/bioinformatics/article/37/10/1478/5919072		Not yet reviewed.
+33	MolDiscovery	unreviewed		https://github.com/mohimanilab/molDiscovery	https://www.nature.com/articles/s41467-021-23986-0		Not yet reviewed.
+34	MS2Planner	unreviewed		https://github.com/mohimanilab/MS2Planner	https://academic.oup.com/bioinformatics/article/37/Supplement_1/i231/6319686		Not yet reviewed.
+35	FluoroMatch IM	unreviewed		https://fluoromatch.com	https://academic.oup.com/exposome/article/2/1/osac006/6674510		Not yet reviewed.
+37	VInSMoC	unreviewed		https://github.com/mohimanilab/VInSMoC	https://www.nature.com/articles/s43588-025-00923-5		Not yet reviewed.
+38	MAMSI	unreviewed		https://pypi.org/project/mamsi/	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01327		Not yet reviewed.
+39	GNN-RT	unreviewed		https://github.com/Qiong-Yang/GNN-RT	https://pubs.acs.org/doi/full/10.1021/acs.analchem.0c04071		Not yet reviewed.
+41	FastEI	unreviewed		https://github.com/Qiong-Yang/FastEI	https://www.nature.com/articles/s41467-023-39279-7		Not yet reviewed.
+42	SigmaCCS	unreviewed		https://github.com/zmzhang/SigmaCCS, https://github.com/yuxuanliao/SigmaCCS, https://github.com/YoujiaZhang/SigmaCCS	https://www.nature.com/articles/s42004-023-00939-w	ion_mobility_platform_dimension	Not yet reviewed.
+43	MWFormer	unreviewed		https://github.com/zhanghailiangcsu/MWFormer	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.4c03781		Not yet reviewed.
+44	MSBERT	unreviewed		https://github.com/zhanghailiangcsu/MSBERT	https://pubs.acs.org/doi/10.1021/acs.analchem.4c02426		Not yet reviewed.
+45	GCMSFormer	unreviewed		https://github.com/zxguocsu/GCMSFormer	https://pubs.acs.org/doi/10.1021/acs.analchem.3c05772		Not yet reviewed.
+46	CSU-MS2	unreviewed		https://github.com/tingxiecsu/CSU-MS2	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01594		Not yet reviewed.
+47	PACCS	unreviewed		https://github.com/yuxuanliao/PACCS	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.70040	ion_mobility_platform_dimension	Not yet reviewed.
+49	IsoSolve	held_for_review		https://pypi.org/project/isosolve/	https://www.biorxiv.org/content/10.1101/2021.03.08.430771v1	mixed_nmr_mentions	Mixed-platform/NMR scope requires a specific verified MS workflow.
+50	MIADB	unreviewed		https://gnps.ucsd.edu	https://link.springer.com/protocol/10.1007/978-1-0716-2349-7_7		Not yet reviewed.
+51	FragHub	unreviewed		https://github.com/eMetaboHUB/FragHub	https://pubs.acs.org/doi/10.1021/acs.analchem.4c02219		Not yet reviewed.
+52	MS2DECIDE	validated_pending_merge	ms2decide	https://github.com/MejriY/MS2DECIDE	https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmtd.202400088		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
+55	PaintOmics 4	unreviewed		https://paintomics.org	https://academic.oup.com/nar/article/50/W1/W551/6591534		Not yet reviewed.
+56	MBROLE3	unreviewed		http://csbg.cnb.csic.es/mbrole3	https://academic.oup.com/nar/article/51/W1/W305/7161529		Not yet reviewed.
+57	AutonoMS	unreviewed		https://autonoms.readthedocs.io	https://pubs.acs.org/doi/10.1021/jasms.3c00396	ion_mobility_platform_dimension	Not yet reviewed.
+58	Rapid QC-MS	unreviewed		https://github.com/czbiohub-sf/Rapid-QC-MS	https://pubs.acs.org/doi/10.1021/acs.analchem.4c00786		Not yet reviewed.
+59	MRMQuant	unreviewed		https://github.com/kslynn128171/MRMQuant	https://pubs.acs.org/doi/10.1021/acs.analchem.4c02462		Not yet reviewed.
+60	IMN4NPD	unreviewed		https://github.com/mwang87/NP-Classifier	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04746		Not yet reviewed.
+61	mVOC 4.0	unreviewed		http://bioinformatics.charite.de/mvoc	https://academic.oup.com/nar/article/53/D1/D1692/7850955		Not yet reviewed.
+62	MedMeta	unreviewed		https://cbcb.cdutcm.edu.cn/MedMeta	https://www.sciencedirect.com/science/article/pii/S2095809925005697#s0005		Not yet reviewed.
+63	Xconnector	unreviewed		https://github.com/Proteomicslab57357/Xconnector	https://www.sciencedirect.com/science/article/pii/S1874391921002013		Not yet reviewed.
+66	LipidSigR	unreviewed		https://lipidsig.bioinfomics.org/lipidsigr/index.html; https://github.com/BioinfOMICS/LipidSigR	https://academic.oup.com/bioinformaticsadvances/article/5/1/vbaf047/8068804		Not yet reviewed.
+67	HORDB	unreviewed		https://github.com/CPU-HORDB/HORDB	https://www.nature.com/articles/s41597-022-01287-5	scope_review_adjacent_field	Not yet reviewed.
+68	SSN-CCSPIF	unreviewed		https://github.com/Anqi-Guo0105/Trendline-based-IM-MS-Feature-Filtering-Software-V1.0	https://www.sciencedirect.com/science/article/pii/S0003267023009418	ion_mobility_platform_dimension	Not yet reviewed.
+69	FNICM	unreviewed		https://github.com/LiQi94/FNICM	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c04131		Not yet reviewed.
+70	AnnoSM	unreviewed		https://github.com/YangHuaLab/AnnoSM	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04946		Not yet reviewed.
+71	ROASMI	validated_pending_merge	roasmi	https://github.com/FangYuan717/ROASMI	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-025-00968-8		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
+72	DeepMASS	unreviewed		https://github.com/hcji/DeepMASS2_Data_Processing	https://www.biorxiv.org/content/10.1101/2024.05.30.596727v2		Not yet reviewed.
+74	DeepRTAlign	unreviewed		https://github.com/PHOENIXcenter/deeprtalign	https://www.nature.com/articles/s41467-023-43909-5		Not yet reviewed.
+75	WaveICA 2.0	unreviewed		https://github.com/dengkuistat/WaveICA_2.0	https://link.springer.com/article/10.1007/s11306-021-01839-7		Not yet reviewed.
+76	KGMN	unreviewed		https://github.com/ZhuMetLab/MetDNA2, https://github.com/ZhuMetLab/MetDNA2InSilicoTool , https://github.com/ZhuMetLab/MetDNA2Vis	https://www.nature.com/articles/s41467-022-34537-6		Not yet reviewed.
+77	SOmicsFusion	unreviewed		https://zenodo.org/records/7700528	https://www.sciencedirect.com/science/article/pii/S2949747724000162		Not yet reviewed.
+78	CMSSP	unreviewed		https://huggingface.co/OliXio/CMSSP	https://pubs.acs.org/doi/10.1021/acs.analchem.4c03724		Not yet reviewed.
+79	Met4DX	unreviewed		https://met4dx.zhulab.cn/, https://github.com/ZhuMetLab/Met4DX	https://pubs.acs.org/doi/full/10.1021/jasms.4c00290	ion_mobility_platform_dimension	Not yet reviewed.
+80	MS4MS	unreviewed		NA	https://www.biorxiv.org/content/10.64898/2025.12.02.691830v1		Not yet reviewed.
+81	RapidMass	unreviewed		https://github.com/Katherine00689/RapidMass	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c05062		Not yet reviewed.
+82	E-SGMN	unreviewed		https://sourceforge.net/projects/e-sgmn/	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00314		Not yet reviewed.
+83	LongitudinalProf-MSMS-Method	unreviewed		https://github.com/academicCQMD/LongitudinalProf-MSMS-Method	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01414		Not yet reviewed.
+84	ShinyMetID	unreviewed		https://github.com/jjs3098/ShinyMetID	https://www.sciencedirect.com/science/article/abs/pii/S0169743923001119		Not yet reviewed.
+86	FeatureHunter	unreviewed		https://msomics.abrc.sinica.edu.tw/FeatureHunter/	https://pubs.acs.org/doi/10.1021/acs.est.3c04674		Not yet reviewed.
+87	MetaNet	unreviewed		https://github.com/Asa12138/MetaNet	https://www.biorxiv.org/content/10.1101/2025.06.26.661636v1		Not yet reviewed.
+88	CRB-FCC	unreviewed		https://github.com/iconSS/FCC/releases/tag/v1	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03451	mixed_nmr_mentions	Not yet reviewed.
+89	scFUMES	unreviewed		https://github.com/ChengF-Lab/scFUMES	https://www.researchsquare.com/article/rs-7207381/v1	consider_single_cell_analysis_type	Not yet reviewed.
+90	MSCAT	unreviewed		https://mscat.metabolomicsworkbench.org/	https://www.mdpi.com/2218-1989/11/10/678		Not yet reviewed.
+91	MAI	unreviewed		https://bioconductor.org/packages/release/bioc/html/MAI.html	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04659-1		Not yet reviewed.
+92	DisCo P-ad	unreviewed		https://github.com/KechrisLab/DisCoPad	https://www.mdpi.com/2218-1989/15/1/28		Not yet reviewed.
+93	ptairMS	unreviewed		https://bioconductor.org/packages/release/bioc/html/ptairMS.html	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac031/6511435	broad_source_bucket_manual_review	Not yet reviewed.
+94	mineMS2	unreviewed		https://github.com/odisce/mineMS2	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-025-01051-y		Not yet reviewed.
+95	Tidy-Direct-to-MS	unreviewed		https://github.com/griquelme/tidyms	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.3c00784		Not yet reviewed.
+96	Finnee 2024	unreviewed		https://github.com/glerny/Finnee2024	https://chemrxiv.org/engage/chemrxiv/article-details/662bd5fb21291e5d1dcc6568		Not yet reviewed.
+97	MetaboSeek	unreviewed		https://github.com/mjhelf/Metaboseek	https://www.nature.com/articles/s41467-022-28391-9		Not yet reviewed.
+98	maplet	unreviewed		https://github.com/krumsieklab/maplet	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab741/6409851		Not yet reviewed.
+99	The Molecular Human	unreviewed		https://littleswissriver.shinyapps.io/generate_network/	https://www.nature.com/articles/s41467-024-51134-x		Not yet reviewed.
+100	LORA	unreviewed		https://github.com/lifs-tools/lipidspace, https://lora.metabolomics.fgu.cas.cz/	https://pubs.acs.org/doi/10.1021/acs.analchem.3c02039		Not yet reviewed.
+101	CycloBranch	unreviewed		https://ms.biomed.cas.cz/cyclobranch; https://github.com/novak-jiri/cyclobranch	https://journals.sagepub.com/doi/abs/10.1177/14690667231164766		Not yet reviewed.
+103	MassSpecGym	unreviewed		https://github.com/pluskal-lab/MassSpecGym	https://arxiv.org/html/2410.23326v1		Not yet reviewed.
+104	MSnLib	unreviewed		https://github.com/corinnabrungs/msn_tree_library	https://www.nature.com/articles/s41592-025-02813-0		Not yet reviewed.
+105	DreaMS	unreviewed		https://github.com/pluskal-lab/DreaMS	https://www.nature.com/articles/s41587-025-02663-3		Not yet reviewed.
+106	MassSpecBlocks	unreviewed		https://github.com/privrja/MassSpecBlocks	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00530-2		Not yet reviewed.
+107	PPGB-MS2	unreviewed		https://github.com/zhengfj1994/PPGB_MS2	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c04375		Not yet reviewed.
+108	MODAPro	unreviewed		https://github.com/zhaoxiaoqi0714/MODAPro	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03611	broad_source_bucket_manual_review	Not yet reviewed.
+109	MS2MP	unreviewed		https://github.com/ucasaccn/MS2MP	https://pubs.acs.org/doi/10.1021/acs.analchem.4c06875		Not yet reviewed.
+110	MetCohort	unreviewed		https://github.com/JunYang2021/MetCohort	https://pubs.acs.org/doi/10.1021/acs.analchem.4c04906	broad_source_bucket_manual_review	Not yet reviewed.
+111	BATMAN‑TCM 2.0	unreviewed		http://bionet.ncpsb.org.cn/batman-tcm/	https://academic.oup.com/nar/article/52/D1/D1110/7334089		Not yet reviewed.
+112	Doxlipid	unreviewed		https://figshare.com/articles/journal_contribution/_em_strong_In_silico_strong_em_strong_-predicted_dynamic_oxlipidomics_MS_MS_library_High-throughput_discovery_and_characterization_of_unknown_oxidized_lipids_strong_/23700177/4	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04459		Not yet reviewed.
+113	DNNpwa‑TL	unreviewed		NA	https://pubs.acs.org/doi/full/10.1021/acs.analchem.1c03250		Not yet reviewed.
+114	isopair	unreviewed		https://github.com/kilgain/MassSpec/tree/main	https://www.biorxiv.org/content/10.1101/2021.12.05.471237v2		Not yet reviewed.
+115	SIMPEL	validated_pending_merge	simpel	https://github.com/SIMPELmetabolism/SIMPEL	https://www.nature.com/articles/s42003-024-05844-z		Editorial source validation only; software not execution-tested.
+116	LAGF	unreviewed		https://github.com/zsspython/LAGF	https://pubs.acs.org/doi/10.1021/acs.analchem.5c00060		Not yet reviewed.
+117	Scannotation	unreviewed		https://github.com/scannotation/Scannotation_software	https://pubs.acs.org/doi/abs/10.1021/acs.est.3c04764		Not yet reviewed.
+118	arcMS	unreviewed		https://github.com/leesulab/arcMS	https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae160/7845273	broad_source_bucket_manual_review	Not yet reviewed.
+120	ATLASx	unreviewed		https://lcsb-databases.epfl.ch/Atlas2	https://www.nature.com/articles/s41467-022-29238-z	broad_source_bucket_manual_review	Not yet reviewed.
+121	SpatialMETA	unreviewed		https://github.com/WanluLiuLab/SpatialMETA	https://www.nature.com/articles/s41467-025-63915-z#Abs1		Not yet reviewed.
+122	Rodin	unreviewed		https://github.com/BM-Boris/rodin, https://rodin-meta.com/	https://academic.oup.com/bioinformaticsadvances/article/5/1/vbaf088/8111568	broad_source_bucket_manual_review	Not yet reviewed.
+123	PharmMet DB	unreviewed		https://github.com/ClinicalBiomarkersLaborabory/PharmMet	https://www.sciencedirect.com/science/article/pii/S0090955625094929		Not yet reviewed.
+124	MS2Mol	unreviewed		https://doi.org/10.26434/chemrxiv-2023-vsmpx-v3	https://chemrxiv.org/engage/chemrxiv/article-details/6492507524989702c2b082fc		Not yet reviewed.
+125	Weighted spectral similarity for library search	unreviewed		https://github.com/enveda/weighting-spectral-similarity	https://pubs.acs.org/doi/full/10.1021/jasms.3c00353		Not yet reviewed.
+126	Mol2CCS	unreviewed		https://github.com/enveda/ccs-prediction	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00899-w	ion_mobility_platform_dimension	Not yet reviewed.
+127	MS2Prop	unreviewed		NA	https://www.biorxiv.org/content/10.1101/2022.10.09.511482v1		Not yet reviewed.
+128	msiFlow	unreviewed		https://github.com/Immunodynamics-Engel-Lab/msiflow	https://www.nature.com/articles/s41467-024-55306-7		Not yet reviewed.
+129	SLAW	unreviewed		https://github.com/adelabriere/SLAW	https://pubs.acs.org/doi/10.1021/acs.analchem.1c02687	broad_source_bucket_manual_review	Not yet reviewed.
+130	rawrr R	unreviewed		https://github.com/fgcz/rawrr	https://pubs.acs.org/doi/10.1021/acs.jproteome.0c00866	scope_review_adjacent_field	Not yet reviewed.
+132	Regularized Adversarial Learning Preserving Similarity (RALPS)	unreviewed		https://github.com/zamboni-lab/RALPS	https://academic.oup.com/bioinformatics/article/39/3/btad096/7056639		Not yet reviewed.
+133	eMZed 3	unreviewed		https://emzed.ethz.ch	https://arxiv.org/abs/2510.21484	broad_source_bucket_manual_review	Not yet reviewed.
+134	LipidOracle	unreviewed		https://hub.docker.com/r/zambonilab/lipidoracle	https://chemrxiv.org/engage/chemrxiv/article-details/68208af7927d1c2e661238ab		Not yet reviewed.
+135	SpectriPy	unreviewed		https://github.com/rformassspectrometry/SpectriPy	https://joss.theoj.org/papers/10.21105/joss.08070		Not yet reviewed.
+136	Metabonaut	unreviewed		https://github.com/rformassspectrometry/Metabonaut	https://chemrxiv.org/engage/chemrxiv/article-details/6836f52d3ba0887c3371221c		Not yet reviewed.
+139	MetaProViz	unreviewed		https://saezlab.github.io/MetaProViz/	https://www.biorxiv.org/content/10.1101/2025.08.18.670781v1.	broad_source_bucket_manual_review	Not yet reviewed.
+140	MatrixQCvis	validated_pending_merge	matrixqcvis	https://bioconductor.org/packages/MatrixQCvis/	https://www.biorxiv.org/content/10.1101/2021.06.17.448827v1		Editorial source validation only; software not execution-tested.
+141	SpaceM	unreviewed		https://github.com/alexandrovteam/SpaceM	https://www.nature.com/articles/s41592-021-01198-0		Not yet reviewed.
+142	Msquality	validated_pending_merge	msquality	https://bioconductor.org/packages/MsQuality	https://academic.oup.com/bioinformatics/article/39/10/btad618/7301439		Editorial source validation only; software not execution-tested.
+143	13C-SpaceM	validated_pending_merge	13c-spacem	https://github.com/Buglakova/13C-SpaceM	https://doi.org/10.1038/s42255-024-01118-4		Editorial source validation only; software not execution-tested.
+144	EMBL-MCF 2.0	unreviewed		https://www.embl.org/groups/metabolomics/instrumentation-and-software/#MCF-library	https://link.springer.com/article/10.1007/s11306-024-02176-1		Not yet reviewed.
+145	METASPACE-ML	unreviewed		https://github.com/metaspace2020/metaspace	https://www.nature.com/articles/s41467-024-52213-9		Not yet reviewed.
+146	HT SpaceM	unreviewed		https://github.com/delafior/HT-SpaceM	https://www.cell.com/cell/S0092-8674(25)00929-8		Not yet reviewed.
+147	S2IsoMEr	unreviewed		https://github.com/alexandrovteam/S2IsoMEr	https://academic.oup.com/bioinformaticsadvances/article/5/1/vbaf100/8139932		Not yet reviewed.
+148	FIORA	unreviewed		https://github.com/BAMeScience/fiora	https://www.nature.com/articles/s41467-025-57422-4#Fig6		Not yet reviewed.
+149	UniqPy	unreviewed		https://github.com/DNKonanov/uni_cli	https://www.sciencedirect.com/science/article/pii/S0731708522001029		Not yet reviewed.
+150	PeakPerformance	unreviewed		https://peak-performance.readthedocs.io/en/latest/	https://www.biorxiv.org/content/10.1101/2024.02.17.580815v2		Not yet reviewed.
+153	COSMIC	unreviewed		https://bio.informatik.uni-jena.de/cosmic/	https://www.nature.com/articles/s41587-021-01045-9		Not yet reviewed.
+154	HREI-MSDB	unreviewed		https://github.com/mtshn/gchrmsexplain	https://chemrxiv.org/engage/chemrxiv/article-details/68a556ea23be8e43d6fdae04		Not yet reviewed.
+155	FSA	unreviewed		https://github.com/kslynn128171/FSA	https://www.researchsquare.com/article/rs-7764688/v1		Not yet reviewed.
+156	EISA-EXPOSOME	unreviewed		https://github.com/Lab-XUE/EISA-EXPOSOME	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c02697		Not yet reviewed.
+157	haCCA	unreviewed		https://github.com/LittleLittleCloud/haCCA	https://www.biorxiv.org/content/10.1101/2024.08.20.608773v2		Not yet reviewed.
+158	ChromaQuant	unreviewed		https://hplcfdu.shinyapps.io/ChromaQuant/	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c02702	broad_source_bucket_manual_review;scope_review_adjacent_field	Not yet reviewed.
+159	PredCMB	unreviewed		https://www.sysbiolab.org/predcmb	https://academic.oup.com/bioinformatics/article/41/1/btaf020/7954692		Not yet reviewed.
+160	CCS Predictor 2.0	unreviewed		https://github.com/facundof2016/CCSP2.0	https://pubs.acs.org/doi/10.1021/acs.analchem.2c03491	ion_mobility_platform_dimension;mixed_nmr_mentions	Not yet reviewed.
+161	MetaboPAC	unreviewed		https://github.com/gtStyLab/MetaboPAC	https://pubs.rsc.org/en/content/articlelanding/2022/mo/d2mo00168c		Not yet reviewed.
+162	scSpaMet	unreviewed		https://github.com/coskunlab/ScSpaMet	https://www.nature.com/articles/s41467-023-43917-5		Not yet reviewed.
+163	Multipass CCS Refiner	unreviewed		https://github.com/facundof2016/Multipass-CCS-Refiner; https://ericgier.shinyapps.io/Multipass-CCS-Refiner/	https://pubs.acs.org/doi/10.1021/jasms.5c00199	broad_source_bucket_manual_review	Not yet reviewed.
+164	MetaBench	unreviewed		https://github.com/metabench/metabench	https://arxiv.org/abs/2510.14944		Not yet reviewed.
+165	MAW	unreviewed		https://github.com/zmahnoor14/MAW	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00695-y	broad_source_bucket_manual_review	Not yet reviewed.
+166	Maldi Transformer	unreviewed		https://github.com/gdewael/maldi-nn	https://linkinghub.elsevier.com/retrieve/pii/S0010482525000459	broad_source_bucket_manual_review	Not yet reviewed.
+167	Metanorm	unreviewed		https://github.com/UGent-LIMET/Metanorm	https://www.biorxiv.org/content/10.1101/2025.09.30.679445v1		Not yet reviewed.
+168	ALISTER	unreviewed		https://itmp.shinyapps.io/alister/; https://github.com/Fraunhofer-ITMP/alister	https://www.sciencedirect.com/science/article/pii/S0009898124000998		Not yet reviewed.
+169	Umatrix	unreviewed		https://cran.r-project.org/package=Umatrix	https://academic.oup.com/bib/article/26/1/bbae640/7919969	broad_source_bucket_manual_review	Not yet reviewed.
+170	OrchidMD	unreviewed		https://www.orchidcomics.com/	https://onlinelibrary.wiley.com/doi/10.1111/pbi.70445		Not yet reviewed.
+171	GutUDB	unreviewed		https://intestine.splicedb.net/; https://github.com/Ansanqi/GutUDB	https://onlinelibrary.wiley.com/doi/full/10.1002/imt2.195		Not yet reviewed.
+172	GraphBio	unreviewed		https://github.com/databio2022/GraphBio	https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2022.957317		Not yet reviewed.
+173	HSM3	unreviewed		Spreadsheets linked to the article	https://www.sciencedirect.com/science/article/pii/S0021967324005016		Not yet reviewed.
+174	MetabFlow	unreviewed		https://bddg.hznu.edu.cn/metabflow/	https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaf1220/8349477		Not yet reviewed.
+175	GNPS2	unreviewed		https://gnps2.org	https://www.nature.com/articles/s41596-025-01237-6	broad_source_bucket_manual_review	Not yet reviewed.
+176	MetaboLM	unreviewed		https://github.com/Qiu-Shizheng/MetaboLM	https://www.nature.com/articles/s41467-025-66163-3	broad_source_bucket_manual_review	Not yet reviewed.
+177	LiqBioer	unreviewed		http://www.medsysbio.org:8080/LiqBioer/	https://academic.oup.com/database/article/doi/10.1093/database/baac077/6687198		Not yet reviewed.
+178	gutMGene v2.0	unreviewed		http://bio-computing.hrbmu.edu.cn/gutmgene	https://academic.oup.com/nar/article/53/D1/D783/7850954		Not yet reviewed.
+180	LipidCruncher	unreviewed		https://lipidcruncher.org/, https://github.com/FareseWaltherLab/LipidCruncher	https://www.biorxiv.org/content/10.1101/2025.04.28.650893v1		Not yet reviewed.
+181	BitterMasS	unreviewed		https://github.com/Niv-Lab/BitterPredict1	https://pubs.acs.org/doi/10.1021/acs.jafc.3c09767	broad_source_bucket_manual_review	Not yet reviewed.
+182	Mass Spectrum Transformer	unreviewed		https://github.com/chensaian/TransG-Net	https://link.springer.com/article/10.1007/s10489-022-04351-0		Not yet reviewed.
+183	MetalinksDB	unreviewed		https://metalinks.omnipathdb.org/, https://github.com/biocypher/metalinks	https://academic.oup.com/bib/article/25/4/bbae347/7717953		Not yet reviewed.
+185	MS1FA	unreviewed		https://github.com/RuibingS/MS1FA_RShiny_dashboard	https://academic.oup.com/bioinformatics/article/41/5/btaf161/8114000		Not yet reviewed.
+186	MobilityTransformR	unreviewed		https://github.com/LiesaSalzer/MobilityTransformR	https://academic.oup.com/bioinformatics/article/38/16/4044/6628580		Not yet reviewed.
+187	MetaboCoreUtils, MetaboAnnotation and CompoundDb	unreviewed		https://github.com/jorainer/MetaboAnnotationTutorials	https://www.mdpi.com/2218-1989/12/2/173		Not yet reviewed.
+188	DBDIpy	unreviewed		https://github.com/leopold-weidner/DBDIpy	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btad088/7036334		Not yet reviewed.
+189	RepoRT	unreviewed		https://github.com/michaelwitting/RepoRT	https://www.nature.com/articles/s41592-023-02143-z		Not yet reviewed.
+190	NMRlipids Databank	unreviewed		https://nmrlipids.github.io/, https://github.com/NMRlipids/Databank/	https://www.nature.com/articles/s41467-024-45189-z		Not yet reviewed.
+191	PeanutOmics	unreviewed		https://cgm.sjtu.edu.cn/PeanutOmics/	https://www.cell.com/plant-communications/S2590-3462(25)00384-0		Not yet reviewed.
+192	MetMiner, MDAtoolkits	unreviewed		https://github.com/ShawnWx2019/MetMiner	https://onlinelibrary.wiley.com/doi/full/10.1111/jipb.13774	broad_source_bucket_manual_review	Not yet reviewed.
+193	Lipidepifind	unreviewed		https://github.com/Xinguang-Liu/Lipidepifind	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c00277		Not yet reviewed.
+194	CLERMS	unreviewed		https://github.com/HaldamirS/CLERMS	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c00260		Not yet reviewed.
+195	AriumMS	unreviewed		https://github.com/AdrianHaun/AriumMS/	https://link.springer.com/article/10.1007/s00216-023-04715-6		Not yet reviewed.
+197	DeepION	unreviewed		https://github.com/BioNet-XMU/DeepION	https://pubs.acs.org/doi/10.1021/acs.analchem.3c05002		Not yet reviewed.
+198	SagMSI	unreviewed		https://github.com/BioNet-XMU/SagMSI	https://www.sciencedirect.com/science/article/abs/pii/S0003267025004921		Not yet reviewed.
+199	Graphormer-IR	unreviewed		https://github.com/HopkinsLaboratory/Graphormer-IR	https://pubs.acs.org/doi/10.1021/acs.jcim.4c00378	ir_scope_or_platform	Not yet reviewed.
+200	MultiABLER	unreviewed		https://github.com/holab-hku/MultiABLER	https://doi.org/10.1016/j.isci.2023.106881		Not yet reviewed.
+201	MariClus	unreviewed		https://www.mariclus.com	https://www.mdpi.com/1660-3397/21/8/449	consider_genome_metabolome_linking_capability	Not yet reviewed.
+202	BnIR	unreviewed		http://yanglab.hzau.edu.cn/BnIR	https://www.cell.com/molecular-plant/S1674-2052(23)00071-0		Not yet reviewed.
+203	IDSL.UFA	unreviewed		https://cran.r-project.org/package=IDSL.UFA	https://pubs.acs.org/doi/10.1021/acs.analchem.2c00563		Not yet reviewed.
+204	IDSL.IPA	unreviewed		https://cran.r-project.org/package=IDSL.IPA	https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00120		Not yet reviewed.
+205	CCDB	unreviewed		https://github.com/idslme/CCDB/tree/main	https://www.sciencedirect.com/science/article/pii/S0160412022001660		Not yet reviewed.
+206	IDSL.CSA	unreviewed		https://cran.r-project.org/package=IDSL.CSA	https://pubs.acs.org/doi/10.1021/acs.analchem.3c00376		Not yet reviewed.
+207	IDSL.GOA	unreviewed		https://goa.idsl.me/	https://www.nature.com/articles/s41598-024-51992-x		Not yet reviewed.
+208	IDSL_MINT	unreviewed		https://github.com/idslme/IDSL_MINT	https://link.springer.com/article/10.1186/s13321-024-00804-5		Not yet reviewed.
+210	ORA	unreviewed		https://github.com/cwieder/metabolomics-ORA	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009105		Not yet reviewed.
+212	M2S	unreviewed		https://github.com/rjdossan/M2S	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03592	broad_source_bucket_manual_review	Not yet reviewed.
+213	MetaboAnnotatoR	unreviewed		https://github.com/gggraca/MetaboAnnotatoR	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03032		Not yet reviewed.
+216	Kiphynet	unreviewed		http://pallab.cds.iisc.ac.in/kiphynet//	https://link.springer.com/article/10.1007/s11306-024-02151-w		Not yet reviewed.
+217	DuReS	unreviewed		https://github.com/BiosystemEngineeringLab-IITB/dures	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c01726		Not yet reviewed.
+218	MSOne	unreviewed		https://msone.claritybiosystems.com	https://chemrxiv.org/engage/chemrxiv/article-details/68fc99c25dd091524f7de8f9	broad_source_bucket_manual_review	Not yet reviewed.
+219	3DMolMS	unreviewed		https://github.com/JosieHong/3DMolMS; https://spectrumprediction.gnps2.org	https://academic.oup.com/bioinformatics/article/39/6/btad354/7186501		Not yet reviewed.
+220	FIDDLE	unreviewed		https://github.com/JosieHong/FIDDLE	https://doi.org/10.1038/s41467-025-66060-9		Not yet reviewed.
+221	Viime-Path	unreviewed		https://github.com/girder/viime-path	https://www.biorxiv.org/content/10.1101/2023.03.07.531550v1		Not yet reviewed.
+222	Metabokiller	unreviewed		https://pypi.org/project/Metabokiller/	https://doi.org/10.1038/s41589-022-01110-7	broad_source_bucket_manual_review	Not yet reviewed.
+223	SalivaDB	unreviewed		https://webs.iiitd.edu.in/raghava/salivadb/	https://academic.oup.com/database/article/doi/10.1093/database/baad002/7030099		Not yet reviewed.
+224	FORUM	unreviewed		https://github.com/eMetaboHUB/Forum-DiseasesChem	https://academic.oup.com/bioinformatics/article/37/21/3896/6363786	broad_source_bucket_manual_review	Not yet reviewed.
+225	Mass2SMILES	unreviewed		https://github.com/volvox292/mass2smiles	https://www.biorxiv.org/content/10.1101/2023.07.06.547963v1		Not yet reviewed.
+226	RHermes	unreviewed		https://github.com/RogerGinBer/RHermes	https://www.nature.com/articles/s41592-021-01307-z		Not yet reviewed.
+227	Easy-Amanida	unreviewed		https://github.com/mariallr/easy-amanida	https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1713	broad_source_bucket_manual_review	Not yet reviewed.
+228	GcDUO	unreviewed		https://github.com/mariallr/GcDuo	https://academic.oup.com/bib/article/26/2/bbaf080/8051527		Not yet reviewed.
+229	UCL-MetIsoLib	unreviewed		https://github.com/kserafimov10/UCLMetIsoLib	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03390		Not yet reviewed.
+230	GINv2.0	unreviewed		https://github.com/BIGchix/GINv2.0	https://www.nature.com/articles/s41540-024-00330-y		Not yet reviewed.
+231	DiffSpectra	unreviewed		https://github.com/AzureLeon1/DiffSpectra	https://arxiv.org/abs/2507.06853		Not yet reviewed.
+232	SpectraLLM	unreviewed		NA	https://arxiv.org/abs/2508.08441	broad_source_bucket_manual_review	Not yet reviewed.
+233	NA	unreviewed		https://github.com/Ministreliya131/An-OpenSource-Pipeline-for-Processing-Direct-Infusion-Mass-Spectrometry-Data	https://www.mdpi.com/2218-1989/12/8/768		Not yet reviewed.
+234	MSroi	unreviewed		http://www.mcrals.info/	https://www.sciencedirect.com/science/article/pii/S0169743921001015		Not yet reviewed.
+235	MSident	unreviewed		https://github.com/cplqam/GUI	https://www.sciencedirect.com/science/article/pii/S0169743924000030	broad_source_bucket_manual_review	Not yet reviewed.
+236	SPIFFED	unreviewed		https://github.com/bio-it-station/SPIFFED	https://academic.oup.com/bib/advance-article-abstract/doi/10.1093/bib/bbad229/7199559	broad_source_bucket_manual_review;scope_review_adjacent_field	Not yet reviewed.
+237	SimMS	unreviewed		https://github.com/PangeAI/simms	https://academic.oup.com/bioinformatics/article/41/3/btaf081/8026685		Not yet reviewed.
+238	POMAShiny	unreviewed		https://github.com/nutrimetabolomics/POMAShiny	https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1009148	broad_source_bucket_manual_review	Not yet reviewed.
+239	isoSCAN	validated_pending_merge	isoscan	https://github.com/jcapelladesto/isoSCAN	https://pubs.acs.org/doi/10.1021/acs.analchem.0c02998		Editorial source validation only; software not execution-tested.
+240	cluster-CV	unreviewed		NA	https://www.sciencedirect.com/science/article/pii/S0003267024008638		Not yet reviewed.
+241	ChemEmbed	unreviewed		https://github.com/massspecdl/ChemEmbed	https://www.biorxiv.org/content/10.1101/2025.02.07.637102v1		Not yet reviewed.
+242	MetChem	unreviewed		https://CRAN.R-project.org/package=MetChem	https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad053/7135819		Not yet reviewed.
+243	pyAIR	unreviewed		NA	https://www.mdpi.com/1420-3049/27/7/2063		Not yet reviewed.
+244	MetaboliticsDB	unreviewed		https://github.com/alperdokay/metabolitics-frontend	https://ieeexplore.ieee.org/abstract/document/10974632/authors#authors		Not yet reviewed.
+245	khipu	validated_pending_merge	khipu	https://github.com/shuzhao-li-lab/khipu	https://pubs.acs.org/doi/10.1021/acs.analchem.2c05810		Editorial source validation only; software not execution-tested.
+247	mzrtsim	unreviewed		https://github.com/yufree/mzrtsim	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c01213		Not yet reviewed.
+248	TransExION	unreviewed		https://github.com/banhdzui/TransExION	https://link.springer.com/article/10.1186/s13321-024-00858-5		Not yet reviewed.
+249	MeRgeION	unreviewed		https://github.com/daniellyz/meRgeION2	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c04343	broad_source_bucket_manual_review	Not yet reviewed.
+250	AsRTNet	unreviewed		https://github.com/piscookie/AS-RT	https://www.sciencedirect.com/science/article/pii/S2213343725046597		Not yet reviewed.
+251	HCMMD	unreviewed		NA	https://www.aging-us.com/full/205779	broad_source_bucket_manual_review	Not yet reviewed.
+252	Aird-MSI	unreviewed		https://github.com/CSi-Studio/mzmine3/tree/Aird2.0	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.5c00423		Not yet reviewed.
+253	LipiDisease	unreviewed		http://cbdm-01.zdv.uni-mainz.de:3838/piyusmor/LipiDisease/	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab559/6343440		Not yet reviewed.
+254	OpenTIMS, TimsPy, and TimsR	unreviewed		www.github.com/michalsta/opentims, www.github.com/MatteoLacki/timspy, www.github.com/MatteoLacki/timsr	https://pubs.acs.org/doi/10.1021/acs.jproteome.0c00962	ion_mobility_platform_dimension	Not yet reviewed.
+255	mzBucket	unreviewed		https://github.com/hildebrandtlab/mzBucket	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04833-5	broad_source_bucket_manual_review;scope_review_adjacent_field	Not yet reviewed.
+256	BioPKS Pipeline, RetroTide	unreviewed		https://github.com/JBEI/BioPKS-Pipeline, https://github.com/JBEI/RetroTide	https://www.biorxiv.org/content/10.1101/2024.11.04.621673v2	broad_source_bucket_manual_review	Not yet reviewed.
+257	ChemSpectra	unreviewed		https://github.com/ComPlat/chem-spectra-app	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00481-0	mixed_nmr_mentions;broad_source_bucket_manual_review	Not yet reviewed.
+258	MOCCA	unreviewed		https://github.com/Bayer-Group/mocca	https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00214h		Not yet reviewed.
+259	MassBase	unreviewed		http://webs2.kazusa.or.jp/massbase/	https://www.jstage.jst.go.jp/article/plantbiotechnology/advpub/0/advpub_20.0911a/_article/-char/ja/		Not yet reviewed.
+260	MS-RIDD	unreviewed		https://github.com/Metabolomics-CompMS/MS-RIDD	https://www.nature.com/articles/s42004-022-00778-1#Abs1		Not yet reviewed.
+261	TOMATOMET	unreviewed		http://metabolites.in/tomato‐fruits/	https://onlinelibrary.wiley.com/doi/10.1002/pld3.318		Not yet reviewed.
+262	NPFimg	unreviewed		http://github.com/poomcj/NPFimg	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03163?ref=	broad_source_bucket_manual_review	Not yet reviewed.
+263	MetaHD	unreviewed		https://bookdown.org/a2delivera/MetaHD/	https://academic.oup.com/bioinformatics/article/40/7/btae470/7721025		Not yet reviewed.
+264	Punc’data	unreviewed		https://github.com/WTVoe/puncdata	https://pubs.acs.org/doi/10.1021/jasms.5c00151	broad_source_bucket_manual_review	Not yet reviewed.
+265	SIMILE	unreviewed		https://github.com/biorack/simile	https://www.nature.com/articles/s41467-022-30118-9		Not yet reviewed.
+266	BLINK	unreviewed		https://github.com/biorack/blink	https://www.nature.com/articles/s41598-023-40496-9		Not yet reviewed.
+267	ChemEcho	unreviewed		https://github.com/biorack/chemecho	https://pubs.acs.org/doi/10.1021/acs.analchem.5c02591	broad_source_bucket_manual_review	Not yet reviewed.
+268	mFAM	unreviewed		https://github.com/MassBank/MassBank-data/commit/a91b1ca4841aea536545f7c1d452c1f80d225e84	https://chemrxiv.org/engage/chemrxiv/article-details/68dfa95c5dd091524fb32f3f		Not yet reviewed.
+269	MiMIR	unreviewed		https://github.com/DanieleBizzarri/MiMIR	https://academic.oup.com/bioinformatics/article/38/15/3847/6607582	mixed_nmr_mentions	Not yet reviewed.
+270	compareMS2 2.0	unreviewed		https://github.com/524D/compareMS2	https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00457	scope_review_adjacent_field	Not yet reviewed.
+271	MiMeDB	unreviewed		https://mimedb.org/	https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkac868/6754917	mixed_nmr_mentions	Not yet reviewed.
+272	iSODA	unreviewed		http://isoda.online/	https://pubmed.ncbi.nlm.nih.gov/39886798/		Not yet reviewed.
+273	LPPtiger2	unreviewed		https://github.com/LMAI-TUD/lpptiger2	https://www.nature.com/articles/s41467-022-33225-9		Not yet reviewed.
+274	FAMetA	validated_pending_merge	fameta	https://github.com/maialba3/FAMetA. https://www.fameta.es	https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbad064/7066347		Editorial source validation only; software not execution-tested.
+275	Omics Untargeted Key Script	unreviewed		https://github.com/plyush1993/OUKS	https://pubs.acs.org/doi/10.1021/acs.jproteome.1c00392		Not yet reviewed.
+276	mspepsearchr	unreviewed		https://github.com/AndreySamokhin/mssearchr	https://pubs.acs.org/doi/10.1021/jasms.5c00322		Not yet reviewed.
+277	MInfer	unreviewed		https://github.com/cellbiomaths/MInfer	https://www.sciencedirect.com/science/article/pii/S0169260725000896		Not yet reviewed.
+278	MASSISTANT	unreviewed		https://github.com/BartaLazar/MASSISTANT/	https://chemrxiv.org/engage/chemrxiv/article-details/67d9484d6dde43c9083d4dde		Not yet reviewed.
+279	MetDIT	unreviewed		https://github.com/Li-OmicsLab/MetDIT	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04607	broad_source_bucket_manual_review	Not yet reviewed.
+280	CRISP	unreviewed		https://github.com/vivekmathema/GCxGC-CRISP	https://academic.oup.com/bib/article/23/2/bbab550/6503617		Not yet reviewed.
+281	Metabox 2.0	unreviewed		http://metsysbio.com/metabox, https://github.com/kwanjeeraw/metabox2	https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae005/7629842	broad_source_bucket_manual_review	Not yet reviewed.
+282	SiMD	unreviewed		https://si-simd.com/	https://www.csbj.org/article/S2001-0370(25)00273-9		Not yet reviewed.
+284	gc-ims-tools	unreviewed		https://github.com/Charisma-Mannheim/gc-ims-tools	https://www.sciencedirect.com/science/article/pii/S0308814622014388		Not yet reviewed.
+285	EASY-FIA	unreviewed		https://github.com/AMrbt20/EASY-FIA/	https://www.mdpi.com/2218-1989/13/1/13		Not yet reviewed.
+286	SpecTUS	unreviewed		https://github.com/hejjack/SpecTUS	https://arxiv.org/abs/2502.05114		Not yet reviewed.
+287	Chemprop-IR	unreviewed		https://github.com/gfm-collab/chemprop-IR	https://pubs.acs.org/doi/10.1021/acs.jcim.1c00055	ir_scope_or_platform	Not yet reviewed.
+288	MIST-CF	unreviewed		https://github.com/samgoldman97/mist-cf	https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c01082		Not yet reviewed.
+289	ms-pred	unreviewed		https://github.com/coleygroup/ms-pred	https://arxiv.org/abs/2303.06470		Not yet reviewed.
+291	GrAFF-MS	unreviewed		https://www.envedabio.com/posts/a-new-scalable-ml-model-for-accurate-prediction-of-small-molecule-mass-spectra	https://arxiv.org/abs/2301.11419		Not yet reviewed.
+292	LSM1-MS2	unreviewed		https://github.com/matterworksbio/LSM1-MS2	https://chemrxiv.org/engage/chemrxiv/article-details/65ecf744e9ebbb4db95a7b14		Not yet reviewed.
+293	DiffMS	unreviewed		https://github.com/coleygroup/DiffMS	https://arxiv.org/abs/2502.09571		Not yet reviewed.
+295	MARASON	unreviewed		https://github.com/coleygroup/ms-pred	https://arxiv.org/abs/2502.17874		Not yet reviewed.
+296	NeatMS	unreviewed		https://github.com/bihealth/NeatMS	https://pubs.acs.org/doi/10.1021/acs.analchem.1c02220		Not yet reviewed.
+297	mass2adduct	unreviewed		https://github.com/kbseah/mass2adduct	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.0c04720		Not yet reviewed.
+298	automRm	unreviewed		https://gitlab.gwdg.de/joerg.buescher/automrm	https://pubs.acs.org/doi/full/10.1021/acs.analchem.1c05224		Not yet reviewed.
+299	OmicsAnalyst	unreviewed		https://www.omicsanalyst.ca	https://academic.oup.com/nar/article/49/W1/W476/6279835		Not yet reviewed.
+300	OmicsNet 2.0	unreviewed		https://www.omicsnet.ca	https://academic.oup.com/nar/article/50/W1/W527/6593602		Not yet reviewed.
+303	mGWAS-Explorer 2.0	unreviewed		https://www.mgwas.ca/	https://www.mdpi.com/2218-1989/13/7/826	broad_source_bucket_manual_review	Not yet reviewed.
+306	PeakMeister	unreviewed		https://github.com/PBM-Group/PeakMeister	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c03513		Not yet reviewed.
+307	imputomics	unreviewed		https://github.com/BioGenies/imputomics, https://imputomics.umb.edu.pl	https://academic.oup.com/bioinformatics/article/40/3/btae098/7611648		Not yet reviewed.
+308	MeTEor	unreviewed		https://github.com/scibiome/meteor	https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae178/7900315		Not yet reviewed.
+309	PeakForest	unreviewed		https://github.com/peakforest/peakforest-webapp	https://link.springer.com/article/10.1007/s11306-022-01899-3	mixed_nmr_mentions	Not yet reviewed.
+310	iMAP	unreviewed		https://imap.metaboprofile.cloud/, https://github.com/IP4M/R-scripts-for-iMAP	https://www.frontiersin.org/articles/10.3389/fchem.2021.659656	broad_source_bucket_manual_review	Not yet reviewed.
+311	MassLite	unreviewed		https://github.com/chemzzchem/MassLite/tree/main	https://www.sciencedirect.com/science/article/pii/S0003267024009255		Not yet reviewed.
+312	POMICS	unreviewed		https://www.pomics.org/	https://pubs.acs.org/doi/10.1021/jasms.1c00315	ion_mobility_platform_dimension	Not yet reviewed.
+313	Snakemake CCS	unreviewed		https://github.com/DasSusanta/snakemake_ccs	https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00890	ion_mobility_platform_dimension	Not yet reviewed.
+314	MSIannotator	unreviewed		https://github.com/Yingzhu96/MSIannotator	https://pubs.acs.org/doi/10.1021/acs.analchem.2c00557		Not yet reviewed.
+315	MSGo	unreviewed		http://github.com/aaronma2020/MSGO	https://www.nature.com/articles/s42256-025-01140-5		Not yet reviewed.
+316	Graph-Based Multi-scale Learning (GMS)	unreviewed		NA	https://link.springer.com/chapter/10.1007/978-981-95-0030-7_2		Not yet reviewed.
+317	HExpMetDB	unreviewed		https://github.com/FangLabNTU/HExpMetDB	https://ehp.niehs.nih.gov/doi/10.1289/EHP7722		Not yet reviewed.
+318	CIL-ExPMRM	unreviewed		http://www.exposomemrm.com/	https://pubs.acs.org/doi/abs/10.1021/acs.est.3c01830		Not yet reviewed.
+319	TidyMass2	unreviewed		https://github.com/tidymass/tidymass	https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1	broad_source_bucket_manual_review	Not yet reviewed.
+320	metScribeR	unreviewed		https://github.com/ncats/metScribeR	https://pubs.acs.org/doi/10.1021/acs.jproteome.5c00548		Not yet reviewed.
+323	MassQLab	unreviewed		https://github.com/JohnsonDylan/MassQLab	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/full/10.1002/rcm.10132		Not yet reviewed.
+325	NIST23	unreviewed		https://chemdata.nist.gov/dokuwiki/doku.php?id=chemdata:nist23-msms	https://chemdata.nist.gov/dokuwiki/doku.php?id=chemdata:nist23-msms		Not yet reviewed.
+326	MSIpixel	unreviewed		https://github.com/gmartano/MSIpixel	https://academic.oup.com/bib/article-abstract/25/1/bbad463/7473608		Not yet reviewed.
+327	ImpLiMet	unreviewed		https://complimet.ca/shiny/implimet/, https://github.com/complimet/ImpLiMet	https://academic.oup.com/bioinformaticsadvances/article/5/1/vbae209/7972451		Not yet reviewed.
+328	MetaMOPE	unreviewed		https://metamope.cmdm.tw; https://github.com/CMDM-Lab/MetaMOPE	https://academic.oup.com/bioinformaticsadvances/advance-article/doi/10.1093/bioadv/vbad061/7172446		Not yet reviewed.
+329	LipidA-IDER	unreviewed		https://github.com/Systems-Biology-Of-Lipid-Metabolism-Lab/LipidA-IDER	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00520		Not yet reviewed.
+330	One Small Step / MIST + MolForge pipeline	unreviewed		NA	https://arxiv.org/abs/2508.04180		Not yet reviewed.
+331	PS2MS	unreviewed		https://github.com/jhhung/PS2MS	https://pubs.acs.org/doi/10.1021/acs.analchem.3c05019		Not yet reviewed.
+332	SMART 2.0	unreviewed		https://github.com/YuJenL/SMART	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03225		Not yet reviewed.
+334	mzQuality	unreviewed		https://github.com/hankemeierlab/mzQuality	https://pubs.acs.org/doi/full/10.1021/jasms.5c00073		Not yet reviewed.
+335	DWSA-PSO	unreviewed		NA	https://pubs.rsc.org/en/content/articlelanding/2023/an/d3an01042b	ion_mobility_platform_dimension	Not yet reviewed.
+336	MACS	unreviewed		NA	https://pubs.acs.org/doi/10.1021/jasms.3c00178		Not yet reviewed.
+338	MINE 2.0	unreviewed		https://minedatabase.ci.northwestern.edu, https://github.com/tyo-nu/MINE-Server	https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btac331/6589885	broad_source_bucket_manual_review	Not yet reviewed.
+339	Pickaxe	unreviewed		https://github.com/tyo-nu/MINE-Database	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05149-8	broad_source_bucket_manual_review	Not yet reviewed.
+340	UmetaFlow	unreviewed		https://github.com/biosustain/snakemake_UmetaFlow	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00724-w	broad_source_bucket_manual_review	Not yet reviewed.
+341	antiSMASH 8.0	unreviewed		https://antismash.secondarymetabolites.org/	https://academic.oup.com/nar/article/53/W1/W32/8119805	consider_genome_metabolome_linking_capability	Not yet reviewed.
+342	AMDB	unreviewed		https://amdb.online/	https://www.mdpi.com/2218-1989/13/10/1088	mixed_nmr_mentions	Not yet reviewed.
+343	LipoCLEAN	unreviewed		https://github.com/stavis1/LipoCLEAN	https://pubs.acs.org/doi/10.1021/acs.analchem.4c04040		Not yet reviewed.
+345	AutoCCS	unreviewed		https://github.com/PNNL-Comp-Mass-Spec/AutoCCS	https://academic.oup.com/bioinformatics/article/37/22/4193/6305793#312931102	ion_mobility_platform_dimension	Not yet reviewed.
+346	NGlycDB	unreviewed		https://metaspace2020.org/project/velickovic_Nglyc_2021?tab=datasets	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.1c02347		Not yet reviewed.
+347	DEIMoS	unreviewed		https://github.com/pnnl/deimos	https://pubs.acs.org/doi/10.1021/acs.analchem.1c05017	broad_source_bucket_manual_review	Not yet reviewed.
+352	QC-GN2oMS2	unreviewed		https://github.com/PNNL-m-q/qcgnoms	https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00446		Not yet reviewed.
+353	PeakQC	unreviewed		https://github.com/pnnl/IonToolPack	https://pubs.acs.org/doi/10.1021/jasms.4c00146		Not yet reviewed.
+355	PMart	unreviewed		https://github.com/pmartR/PMart_ShinyApp	https://pubs.acs.org/doi/10.1021/acs.jproteome.3c00512	mixed_nmr_mentions;broad_source_bucket_manual_review	Not yet reviewed.
+358	MODE	unreviewed		https://github.com/pmartR/MODE_ShinyApp	https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00650		Not yet reviewed.
+359	ExposomeX	unreviewed		http://www.exposomex.cn/	https://www.biorxiv.org/content/10.1101/2022.11.23.517586v1		Not yet reviewed.
+360	QGeoGNN	unreviewed		https://github.com/woshixuhao/Retention-Time-Prediction-for-Chromatographic-Enantioseparation/tree/main	https://www.nature.com/articles/s41467-023-38853-3		Not yet reviewed.
+361	ECDFormer	unreviewed		https://github.com/HowardLi1984/ECDFormer	https://www.nature.com/articles/s43588-024-00757-7#Abs1	broad_source_bucket_manual_review	Not yet reviewed.
+362	LEAFBot	unreviewed		https://ccms-ucsd.github.io/GNPSDocumentation/gnpslibraries/	https://pubs.acs.org/doi/full/10.1021/jasms.5c00038		Not yet reviewed.
+363	MetEx	unreviewed		https://mo.princeton.edu/MetEx/	https://pubs.acs.org/doi/10.1021/acschembio.1c00737	broad_source_bucket_manual_review	Not yet reviewed.
+364	NetID	unreviewed		https://github.com/LiChenPU/NetID/releases/tag/v1.0	https://www.nature.com/articles/s41592-021-01303-3		Not yet reviewed.
+365	DeepMet	unreviewed		https://github.com/skinniderlab/clm, https://deepmet.org/	https://www.biorxiv.org/content/10.1101/2024.11.13.623458v1	broad_source_bucket_manual_review	Not yet reviewed.
+367	Spectraverse	unreviewed		https://github.com/skinniderlab/spectraverse-analysis	https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/68e6ac09dfd0d042d180d18b/original/comprehensive-curation-and-harmonization-of-small-molecule-ms-ms-libraries-in-spectraverse.		Not yet reviewed.
+368	MSIGen	unreviewed		https://github.com/LabLaskin/MSIGen	https://pubs.acs.org/doi/abs/10.1021/jasms.4c00178		Not yet reviewed.
+369	CLAW-MRM	unreviewed		https://github.com/chopralab/CLAW	https://pubs.acs.org/doi/10.1021/acs.analchem.4c05039		Not yet reviewed.
+370	SpectraX	unreviewed		https://github.com/weantony/SpectraX	https://pubs.acs.org/doi/10.1021/jasms.3c00322		Not yet reviewed.
+371	MassVision	unreviewed		https://SlicerMassVision.readthedocs.io	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c04018		Not yet reviewed.
+372	TARDIS	unreviewed		https://github.com/UGent-LIMET/TARDIS	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00567		Not yet reviewed.
+373	In silico infrared spectral library of human metabolites	unreviewed		https://zenodo.org/records/7706021	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c01078		Not yet reviewed.
+374	MSThunder	unreviewed		https://github.com/LQZ0123/MSThunder.git	https://www.sciencedirect.com/science/article/pii/S2590182625001171		Not yet reviewed.
+375	mzLearn	unreviewed		https://github.com/ReviveMed/mzEmbed	https://www.biorxiv.org/content/10.1101/2025.01.26.634927v3		Not yet reviewed.
+376	Spec2Mol	unreviewed		https://github.com/KavrakiLab/Spec2Mol	https://www.nature.com/articles/s42004-023-00932-3		Not yet reviewed.
+377	Peak2Patch	unreviewed		NA	https://chemrxiv.org/engage/chemrxiv/article-details/680a771c927d1c2e669d466b		Not yet reviewed.
+378	ConCISE	unreviewed		http://github.com/zquinlan/concise	https://www.mdpi.com/2218-1989/12/12/1275		Not yet reviewed.
+379	METLIN-CCS	unreviewed		https://metlin.scripps.edu/	https://www.nature.com/articles/s41592-023-02078-5		Not yet reviewed.
+380	XCMS-METLIN	unreviewed		https://xcmsonline.scripps.edu/	https://www.embopress.org/doi/full/10.1038/s44320-024-00063-4	broad_source_bucket_manual_review	Not yet reviewed.
+381	MoMS-Net	unreviewed		NA	https://www.nature.com/articles/s41598-024-51760-x		Not yet reviewed.
+382	3D-MPEA	unreviewed		https://github.com/ZibianFan/3D-MPEA	https://pubs.acs.org/doi/10.1021/acs.analchem.4c00256		Not yet reviewed.
+383	Aird	unreviewed		https://github.com/CSi-Studio/AirdPro	https://link.springer.com/article/10.1186/s12859-021-04490-0		Not yet reviewed.
+384	G-Aligner	unreviewed		https://github.com/CSi-Studio/G-Aligner	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05525-4		Not yet reviewed.
+385	3D-MSNet	unreviewed		https://github.com/CSi-Studio/3D-MSNet	https://academic.oup.com/bioinformatics/article/39/5/btad195/7127907		Not yet reviewed.
+386	InjectionDesign	unreviewed		https://github.com/CSi-Studio/InjectionDesign, http://www.injection.design/	https://www.biorxiv.org/content/10.1101/2023.02.26.530140v1.article-info		Not yet reviewed.
+387	MetaPro	unreviewed		https://github.com/CSi-Studio/MetaPro	https://link.springer.com/article/10.1007/s11306-023-02018-6		Not yet reviewed.
+388	MRMPro	unreviewed		http://mrmpro.csibio.com/, https://github.com/CSi-Studio/MRMPro-Doc	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05685-x		Not yet reviewed.
+389	MSMCE	unreviewed		https://github.com/WoodFY/MSMCE	https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0321239		Not yet reviewed.
+390	MyxoDB	unreviewed		https://figshare.com/collections/Constructing_a_Myxobacterial_Natural_Product_Database_to_Facilitate_NMR-Based_Metabolomics_Bioprospecting_of_Myxobacteria/6468946	https://pubs.acs.org/doi/10.1021/acs.analchem.2c05145	mixed_nmr_mentions	Not yet reviewed.
+391	SVAtlas	unreviewed		https://www.svatlas.org/	https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaf1189/8326460		Not yet reviewed.
+392	IsoFusion	unreviewed		https://github.com/xfcui/IsoFusion	https://ieeexplore.ieee.org/document/10778134		Not yet reviewed.
+393	CorrDIA	unreviewed		https://github.com/zhangxiang1205/CorrDIA	https://www.mdpi.com/2076-3417/13/10/5969		Not yet reviewed.
+394	MolSpectLLM	unreviewed		https://github.com/Eurekashen/MolSpectLLM	https://arxiv.org/abs/2509.21861	mixed_nmr_mentions;broad_source_bucket_manual_review	Not yet reviewed.
+395	SpectrumWorld (SpectrumLab)	unreviewed		https://github.com/little1d/SpectrumLab; https://ai4s-chem.github.io/SpectrumWorld/	https://arxiv.org/abs/2508.01188		Not yet reviewed.
+396	MoleTrans	unreviewed		https://github.com/JibaoLiu/MoleTrans	https://pubs.acs.org/doi/abs/10.1021/acs.estlett.5c00284	ft_icr_platform_dimension	Not yet reviewed.
+397	DMetFinder	unreviewed		https://github.com/KeWHs/dmetdata	https://www.sciencedirect.com/science/article/pii/S0039914025014092#sec5	broad_source_bucket_manual_review	Not yet reviewed.
+398	SynFrag	unreviewed		https://github.com/simmzx/SynFrag, https://synfrag.simm.ac.cn/	https://chemrxiv.org/engage/chemrxiv/article-details/68e867fddfd0d042d1c5032e	broad_source_bucket_manual_review	Not yet reviewed.
+399	TraceMetrix	unreviewed		https://www.biosino.org/tracemetrix/	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-025-01095-0	broad_source_bucket_manual_review	Not yet reviewed.
+400	AllCCS2	unreviewed		http://allccs.zhulab.cn/	https://pubs.acs.org/doi/10.1021/acs.analchem.3c02267	ion_mobility_platform_dimension	Not yet reviewed.
+401	OSCA Finder	unreviewed		https://github.com/dawnmengsjtu/OSCA-Finder	https://www.sciencedirect.com/science/article/pii/S0039914023004964		Not yet reviewed.
+402	DBLiPro	unreviewed		http://lipid.cloudna.cn/home	https://link.springer.com/article/10.1007/s43657-023-00099-w		Not yet reviewed.
+403	MS-BART	unreviewed		https://github.com/OpenDFM/MS-BART	https://arxiv.org/abs/2510.20615		Not yet reviewed.
+404	MetDNA3	unreviewed		https://github.com/ZhuMetLab/MrnAnnoAlgo3, http://metdna.zhulab.cn/	https://www.nature.com/articles/s41467-025-63536-6	broad_source_bucket_manual_review	Not yet reviewed.
+405	SCMeTA	unreviewed		https://github.com/ChenLab/SCMeTA	https://academic.oup.com/bioinformatics/article/40/9/btae545/7750353	consider_single_cell_analysis_type	Not yet reviewed.
+406	MDSi	unreviewed		http://sky.sxau.edu.cn/MDSi.htm	https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-023-04238-3		Not yet reviewed.
+407	SMAnalyst	unreviewed		https://github.com/mzlab-research/SManalyst	https://www.preprints.org/frontend/manuscript/1dfd92632ea0a825e0f1d0b28c67541		Not yet reviewed.
+408	MetaNetX 2025 update	unreviewed		https://www.metanetx.org/	https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaf1286/8343507		Not yet reviewed.
+409	DeepCDM	unreviewed		https://github.com/ADNLab-SCU/DeepCDMs	https://www.nature.com/articles/s41467-024-52805-5		Not yet reviewed.
+410	Multi‑MSI Processor	unreviewed		https://github.com/multimsiproc/MMP	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c04192		Not yet reviewed.
+413	NP Analyst	unreviewed		https://www.npanalyst.org/, https://github.com/liningtonlab/npanalyst	https://pubs.acs.org/doi/10.1021/acscentsci.1c01108	broad_source_bucket_manual_review	Not yet reviewed.
+414	rMSIannotation	unreviewed		https://github.com/prafols/rMSIproc	https://www.sciencedirect.com/science/article/pii/S0003267021004955		Not yet reviewed.
+415	TurboPutative	unreviewed		https://proteomics.cnic.es/TurboPutative/	https://www.frontiersin.org/articles/10.3389/fmolb.2022.952149		Not yet reviewed.
+416	TurbOmics	unreviewed		https://proteomics.cnic.es/TurboPutative/TurbOmicsApp.html	https://www.biorxiv.org/content/10.1101/2025.05.09.653072v1		Not yet reviewed.
+417	Omics Dashboard	unreviewed		https://biocyc.org/dashboard/dashboard-help.html	https://www.mdpi.com/2218-1989/14/1/65		Not yet reviewed.
+418	rtmsEcho	unreviewed		https://github.com/nathanieltwarog/rtmsEcho	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03730		Not yet reviewed.
+419	massDatabase	unreviewed		https://massdatabase.tidymass.org/	https://academic.oup.com/bioinformatics/article/38/19/4650/6659093		Not yet reviewed.
+422	deepPseudoMSI	unreviewed		https://www.deeppseudomsi.org/	https://academic.oup.com/bib/article/23/5/bbac331/6659741		Not yet reviewed.
+424	IsoPairFinder	held_for_review		https://github.com/DoddLab/IsoPairFinder	https://www.biorxiv.org/content/10.1101/2025.08.18.670916v1		Verify publication status and separate core tool from web reimplementations.
+425	Norm ISWSVR	unreviewed		https://github.com/Dingxian666/Norm-ISWSVR	https://pubs.acs.org/doi/10.1021/jasms.4c00467		Not yet reviewed.
+426	MODMS	unreviewed		https://modms.lzu.edu.cn	https://academic.oup.com/hr/article/11/1/uhad245/7452859		Not yet reviewed.
+427	PlantMetSuite	unreviewed		https://github.com/YaonanLab/PlantMetSuite	https://www.mdpi.com/2223-7747/12/15/2880	broad_source_bucket_manual_review	Not yet reviewed.
+428	DeepMSProfiler	unreviewed		https://github.com/yjdeng9/DeepMSProfiler	https://www.nature.com/articles/s41467-024-51433-3		Not yet reviewed.
+429	retention_time_gnn	unreviewed		https://github.com/seokhokang/retention_time_gnn	https://pubs.acs.org/doi/10.1021/acs.analchem.3c03177		Not yet reviewed.
+431	Machine Learning-Based Retention Time Prediction Tool for Routine LC-MS Data Analysis	unreviewed		https://bitbucket.org/enaminedev/enaminert_prediction	https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c00514		Not yet reviewed.
+432	LINEX2⁠	unreviewed		https://gitlab.lrz.de/lipitum-projects/linex	https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbac572/6966533		Not yet reviewed.
+433	OrbiFragsNets	unreviewed		https://github.com/EdwinChingate/OrbiFragsNets	https://www.sciencedirect.com/science/article/pii/S2215016123002546		Not yet reviewed.
+434	LipiDetective	unreviewed		https://github.com/LipiTUM/lipidetective	https://www.biorxiv.org/content/10.1101/2024.10.07.617094v3		Not yet reviewed.
+435	MetaXtract	unreviewed		https://github.com/Rappsilber-Laboratory/MetaXtract	https://www.biorxiv.org/content/10.1101/2025.11.12.687968v1		Not yet reviewed.
+436	MACE	unreviewed		http://www.oc.tu-bs.de/schulz/html/MACE.html	https://pubs.acs.org/doi/10.1021/acs.jnatprod.4c01240		Not yet reviewed.
+437	CCWeights	unreviewed		https://github.com/YonghuiDong/CCWeights	https://academic.oup.com/bioinformaticsadvances/article/1/1/vbab029/6413624	broad_source_bucket_manual_review	Not yet reviewed.
+438	RawHummus	validated_pending_merge	rawhummus	https://github.com/YonghuiDong/RawHummus	https://academic.oup.com/bioinformatics/article/38/7/2072/6515613		Editorial source validation only; software not execution-tested.
+439	MIMOSA2	unreviewed		http://elbo-spice.cs.tau.ac.il/shiny/MIMOSA2shiny/ , http://www.borensteinlab.com/software_MIMOSA2.html	https://academic.oup.com/bioinformatics/article/38/6/1615/6499258		Not yet reviewed.
+441	HighResNPS	unreviewed		https://highresnps.com/	https://www.sciencedirect.com/science/article/pii/S2352007824002968		Not yet reviewed.
+442	uafR	unreviewed		https://github.org/castratton/uafR	https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0306202		Not yet reviewed.
+445	MS2extrcat	unreviewed		https://www.cooperstonelab.com/MS2extract/	https://www.biorxiv.org/content/10.1101/2025.10.05.680545v1		Not yet reviewed.
+447	MCnebula	unreviewed		https://mcnebula.org/	https://pubs.acs.org/doi/10.1021/acs.analchem.3c01072	broad_source_bucket_manual_review	Not yet reviewed.
+448	PLSKO	unreviewed		https://github.com/guannan-yang/PLSKO	https://academic.oup.com/bioinformatics/article/41/9/btaf475/8244280		Not yet reviewed.
+449	LipidSuite	unreviewed		https://suite.lipidr.org/	https://academic.oup.com/nar/article/49/W1/W346/6266419		Not yet reviewed.
+451	hRUV	unreviewed		https://github.com/SydneyBioX/hRUV	https://www.nature.com/articles/s41467-021-25210-5		Not yet reviewed.
+452	AgeAnnoMO	unreviewed		https://relab.xidian.edu.cn/AgeAnnoMO/#/	https://academic.oup.com/nar/article/52/D1/D822/7321067		Not yet reviewed.
+453	iTraNet	unreviewed		https://itranet.streamlit.app	https://academic.oup.com/bioinformaticsadvances/article/2/1/vbac016/6544613		Not yet reviewed.
+454	RT-Ensemble Pred	unreviewed		https://gitlab.com/mikic93/rt-ensemble-pred	https://www.sciencedirect.com/science/article/pii/S0021967323005290		Not yet reviewed.
+455	SONAR-MSI	unreviewed		https://github.com/GrantBellic/SONAR-MSI	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03682		Not yet reviewed.
+456	jMorp	unreviewed		https://jmorp.megabank.tohoku.ac.jp	https://academic.oup.com/nar/article/52/D1/D622/7335743		Not yet reviewed.
+458	subMALDI	unreviewed		https://github.com/wesleyburr/subMaldi	https://joss.theoj.org/papers/10.21105/joss.02694		Not yet reviewed.
+459	TeFT	unreviewed		https://github.com/thumingo/TeFT	https://www.nature.com/articles/s42004-024-01189-0#Sec16		Not yet reviewed.
+460	LipidOA	unreviewed		NA	https://pubs.acs.org/doi/10.1021/acs.analchem.2c03505		Not yet reviewed.
+461	BAM	unreviewed		https://github.com/HassounLab/BAM	https://pubs.acs.org/doi/10.1021/acs.analchem.4c01565		Not yet reviewed.
+462	ESP	unreviewed		https://github.com/HassounLab/ESP	https://academic.oup.com/bioinformatics/article/40/8/btae490/7734912		Not yet reviewed.
+463	OMG	unreviewed		https://github.com/HassounLab/OMGG	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c01770		Not yet reviewed.
+464	JESTR	unreviewed		https://github.com/HassounLab/JESTR1//	https://academic.oup.com/bioinformatics/article/41/7/btaf354/8165426		Not yet reviewed.
+465	MVP	unreviewed		https://github.com/HassounLab/MVP, https://huggingface.co/spaces/HassounLab/MVP	https://www.biorxiv.org/content/10.1101/2025.11.12.688047v1		Not yet reviewed.
+466	MADGEN	unreviewed		https://github.com/HassounLab/MADGEN	https://arxiv.org/abs/2501.01950		Not yet reviewed.
+467	GIF	unreviewed		NA	https://arxiv.org/abs/2511.09571		Not yet reviewed.
+468	wscaling.R	unreviewed		https://github.com/nishithkumarpaul/robustScaling/blob/main/wscaling.R	https://arxiv.org/abs/2208.00603		Not yet reviewed.
+469	omicsMIC	unreviewed		https://github.com/WQLin8/omicsMIC	https://academic.oup.com/nargab/article/6/2/lqae071/7693416		Not yet reviewed.
+470	ENTAiLS Toolkit	unreviewed		https://whitehead-heather.github.io/ENTAiLSToolkit/	https://link.springer.com/article/10.1007/s00216-025-05921-0		Not yet reviewed.
+471	DIMPLE	unreviewed		https://github.com/dickinsonlab/DIMPLE-code	https://www.biorxiv.org/content/10.1101/2025.09.22.677919v1		Not yet reviewed.
+473	MiNEApy	unreviewed		https://github.com/vpandey-om/mineapy	https://academic.oup.com/bioinformatics/article/41/3/btaf077/8030213		Not yet reviewed.
+474	PSC-db	unreviewed		http://pscdb.appsbio.utalca.cl/	https://www.mdpi.com/1420-3049/26/4/1124		Not yet reviewed.
+475	QComics	held_for_review		https://github.com/ricoderks/QComics	https://pubs.acs.org/doi/10.1021/acs.analchem.3c03660		Publication describes a QC procedure implemented with Excel/MetaboAnalyst; linked repository is a differently authored Shiny app. Do not join them without evidence.
+476	mspack	unreviewed		https://github.com/fhanau/mspack	https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab636/6363791		Not yet reviewed.
+477	mscompiler	unreviewed		https://github.com/QizhiSu/mspcompiler	https://pubs.acs.org/doi/full/10.1021/acs.analchem.2c05389		Not yet reviewed.
+479	Aspergillus Metabolome Database	unreviewed		https://github.com/albertogilf/ceuMassMediator/tree/master/CMMAspergillusDB	https://www.mdpi.com/2309-608X/7/5/387/htm		Not yet reviewed.
+480	CMM-RT	unreviewed		https://github.com/constantino-garcia/cmmrt	https://link.springer.com/article/10.1186/s13321-022-00613-8		Not yet reviewed.
+481	RefLAS	unreviewed		https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Project&ProjectID=PR002159	https://www.jlr.org/article/S0022-2275(24)00176-7		Not yet reviewed.
+482	ChemWalker	unreviewed		https://github.com/computational-chemical-biology/ChemWalker	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btad078/7067745		Not yet reviewed.
+483	NPMine	unreviewed		https://github.com/computational-chemical-biology/npmine	https://www.biorxiv.org/content/10.1101/2023.06.28.546864v1		Not yet reviewed.
+484	RegFilter	unreviewed		https://github.com/computational-chemical-biology/regression_filter	https://www.biorxiv.org/content/10.1101/2024.08.07.607073v1		Not yet reviewed.
+485	ClusterApp	unreviewed		http://ccbl-apps.fcfrp.usp.br/ClusterApp	https://www.biorxiv.org/content/10.1101/2025.02.12.637912v1		Not yet reviewed.
+486	rIDIMS	unreviewed		https://github.com/BioinovarLab/rIDIMS	https://www.sciencedirect.com/science/article/abs/pii/S0039914024016527		Not yet reviewed.
+487	GCIMS	unreviewed		https://github.com/sipss/GCIMS	https://www.sciencedirect.com/science/article/pii/S0169743923001880#cebib0010	ion_mobility_platform_dimension	Not yet reviewed.
+488	mWISE	unreviewed		https://github.com/b2slab/mWISE	https://pubs.acs.org/doi/full/10.1021/acs.analchem.1c00238		Not yet reviewed.
+489	MultiBaC	unreviewed		https://github.com/ConesaLab/MultiBaC	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac132/6541627		Not yet reviewed.
+490	CloMet	unreviewed		https://github.com/rmallol/clomet	https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00602	mixed_nmr_mentions	Not yet reviewed.
+491	SingleFrag	unreviewed		https://github.com/MaribelPR/SingleFrag	https://www.biorxiv.org/content/10.1101/2024.11.04.621329v1		Not yet reviewed.
+495	Dbnorm	validated_pending_merge	dbnorm	https://github.com/NBDZ/dbnorm	https://www.nature.com/articles/s41598-021-84824-3		Editorial source validation only; software not execution-tested.
+497	DarkNPS	unreviewed		https://github.com/skinniderlab/DarkNPS	https://www.nature.com/articles/s42256-021-00407-x	broad_source_bucket_manual_review	Not yet reviewed.
+499	BioTransformer 3.0	unreviewed		https://biotransformer.ca	https://academic.oup.com/nar/article/50/W1/W115/6583239	broad_source_bucket_manual_review	Not yet reviewed.
+500	NPS-MS	unreviewed		https://nps-ms.ca/	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c02413		Not yet reviewed.
+501	RIpred	unreviewed		https://ripred.ca/	https://www.sciencedirect.com/science/article/pii/S0021967323004028		Not yet reviewed.
+504	PathBank 2.0	unreviewed		https://pathbank.org/	https://academic.oup.com/nar/article/52/D1/D654/7420099		Not yet reviewed.
+505	MCID database	unreviewed		http://www.mycompoundid.org/	https://www.sciencedirect.com/science/article/abs/pii/S0003267023006888		Not yet reviewed.
+506	GCMS-ID	unreviewed		https://gcms-id.ca	https://academic.oup.com/nar/article/52/W1/W381/7680620		Not yet reviewed.
+508	ChemFOnt	unreviewed		https://www.chemfont.ca/	https://academic.oup.com/nar/article/51/D1/D1220/6777791		Not yet reviewed.
+509	BioTransformer4.0	unreviewed		https://github.com/Wishartlab-openscience/Biotransformer	https://www.biorxiv.org/content/10.1101/2025.07.28.667289v1		Not yet reviewed.
+510	MarkerDB 2.0	unreviewed		https://markerdb.ca/	https://academic.oup.com/nar/article/53/D1/D1415/7899528		Not yet reviewed.
+511	MiMeDB 2.0	unreviewed		https://mimedb.org/	https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaf1272/8340166		Not yet reviewed.
+512	RT-Pred	unreviewed		https://rtpred.ca/	https://www.sciencedirect.com/science/article/pii/S0021967325001645		Not yet reviewed.
+513	M2R	unreviewed		https://github.com/e-weglarz-tomczak/m2r	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab060/6125380		Not yet reviewed.
+514	Human Hair Atlas	unreviewed		https://metabolomics.cloud/hair/	https://www.nature.com/articles/s42003-025-09069-6		Not yet reviewed.
+515	RDD metabolomics platform	unreviewed		https://github.com/bittremieuxlab/gnps-rdd; https://gnps-rdd.streamlit.app/	https://www.biorxiv.org/content/10.1101/2025.11.05.686710v1		Not yet reviewed.
+516	MetaboDirect	unreviewed		https://github.com/Coayala/MetaboDirect	https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-023-01476-3	ft_icr_platform_dimension	Not yet reviewed.
+517	SMITER	unreviewed		https://github.com/LeidelLab/SMITER	https://www.mdpi.com/2073-4425/12/3/396	broad_source_bucket_manual_review	Not yet reviewed.
+519	QCxMS2	unreviewed		https://github.com/grimme-lab/QCxMS2	https://pubs.acs.org/doi/full/10.1021/jasms.5c00234		Not yet reviewed.
+520	Metaboprep	unreviewed		https://github.com/MRCIEU/metaboprep	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac059/6522114		Not yet reviewed.
+521	metaboprep v2	unreviewed		https://github.com/MRCIEU/metaboprep	https://www.biorxiv.org/content/10.1101/2025.11.11.687831v1		Not yet reviewed.
+522	DaDIA	unreviewed		https://github.com/HuanLab/DaDIA	https://pubs.acs.org/doi/full/10.1021/acs.analchem.0c05022		Not yet reviewed.
+523	EVA	unreviewed		https://github.com/HuanLab/EVA	https://pubs.acs.org/doi/10.1021/acs.analchem.1c01309		Not yet reviewed.
+524	ISFrag	unreviewed		https://github.com/HuanLab/ISFrag	https://pubs.acs.org/doi/10.1021/acs.analchem.1c01644		Not yet reviewed.
+525	JPA	unreviewed		https://github.com/HuanLab/JPA	https://www.mdpi.com/2218-1989/12/3/212		Not yet reviewed.
+526	MAFFIN	validated_pending_merge	maffin	https://github.com/HuanLab/MAFFIN	https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btac355/6593484		Editorial source validation only; software not execution-tested.
+527	Paramounter	validated_pending_merge	paramounter	https://github.com/HuanLab/Paramounter	https://pubs.acs.org/doi/10.1021/acs.analchem.1c04758		Editorial source validation only; software not execution-tested.
+528	BUDDY	unreviewed		https://github.com/HuanLab/BUDDY	https://www.nature.com/articles/s41592-023-01850-x		Not yet reviewed.
+530	DNMS2Purifier	unreviewed		https://github.com/HuanLab/DNMS2Purifier	https://pubs.acs.org/doi/10.1021/acs.analchem.3c00736		Not yet reviewed.
+531	AVIR	unreviewed		https://github.com/HuanLab/AVIR	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04046		Not yet reviewed.
+532	BreathXplorer	unreviewed		https://github.com/HuanLab/breathXplorer	https://pubs.acs.org/doi/full/10.1021/jasms.4c00152	broad_source_bucket_manual_review	Not yet reviewed.
+533	HalogenFinder	unreviewed		https://halogenfinder.com	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c00503		Not yet reviewed.
+534	DIATAGe	unreviewed		https://github.com/Velenosi-Lab/DIATAGeR	https://www.sciencedirect.com/science/article/pii/S000326702501092X		Not yet reviewed.
+535	MINNO	unreviewed		https://lewisresearchgroup.github.io/MINNO/	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04501		Not yet reviewed.
+536	SCALiR	unreviewed		https://lewisresearchgroup-ms-conc-streamlit-app-w9e64f.streamlit.app/	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c04988		Not yet reviewed.
+538	IIMN	unreviewed		https://ccms-ucsd.github.io/GNPSDocumentation/fbmn-iin/	https://www.nature.com/articles/s41467-021-23953-9		Not yet reviewed.
+539	falcon	unreviewed		https://github.com/bittremieux-lab/falcon	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/rcm.9153	scope_review_adjacent_field	Not yet reviewed.
+540	NPOmix	unreviewed		https://github.com/tiagolbiotech/NPOmix_python	https://academic.oup.com/pnasnexus/advance-article/doi/10.1093/pnasnexus/pgac257/6847575	consider_genome_metabolome_linking_capability	Not yet reviewed.
+542	secCellFie	unreviewed		https://github.com/LewisLabUCSD/secCellFie	https://www.sciencedirect.com/science/article/pii/S1096717623001799		Not yet reviewed.
+544	SpecPCM	unreviewed		NA	https://ieeexplore.ieee.org/abstract/document/10753646/	broad_source_bucket_manual_review	Not yet reviewed.
+545	LipidSIM	held_for_review		NA	https://www.sciencedirect.com/science/article/pii/S1096717624000107		Locate official software and access terms; intake URL is missing.
+547	GNPS Drug Library	unreviewed		https://github.com/ninahaoqizhao/Manuscript_GNPS_Drug_Library	https://www.nature.com/articles/s41467-025-65993-5		Not yet reviewed.
+548	Reverse Spectral Search	unreviewed		https://github.com/Philipbear/reverse_search	https://pubs.acs.org/doi/10.1021/acs.analchem.5c02047		Not yet reviewed.
+549	MetaboliteChat	unreviewed		https://github.com/13501274828/MetaboliteChat	https://www.biorxiv.org/content/10.1101/2025.11.07.687008v1	broad_source_bucket_manual_review	Not yet reviewed.
+550	MS/MS spectral entropy similarity	unreviewed		https://github.com/YuanyueLi/MSEntropy	https://www.nature.com/articles/s41592-021-01331-z		Not yet reviewed.
+551	Metabolome atlas of the aging mouse brain	unreviewed		https://mouse.atlas.metabolomics.us/	https://www.nature.com/articles/s41467-021-26310-y		Not yet reviewed.
+552	Amanida	unreviewed		https://github.com/mariallr/amanida	https://academic.oup.com/bioinformatics/article/38/2/583/6354350	broad_source_bucket_manual_review	Not yet reviewed.
+553	Flash entropy search	unreviewed		https://github.com/YuanyueLi/EntropySearch	https://www.nature.com/articles/s41592-023-02012-9		Not yet reviewed.
+554	BinDiscover database	unreviewed		https://github.com/metabolomics-us/bindiscover, https://bindiscover.metabolomics.us/	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00734-8		Not yet reviewed.
+555	SERDA	unreviewed		https://github.com/slfan2013/SERDA	https://www.mdpi.com/2218-1989/13/8/944		Not yet reviewed.
+556	SMetaS	unreviewed		https://github.com/metabolomics-us/metadatastandardizer	https://www.mdpi.com/2218-1989/13/8/941		Not yet reviewed.
+557	FoodAtlas	unreviewed		https://github.com/IBPA/FoodAtlas , http://foodatlas.ai	https://www.sciencedirect.com/science/article/pii/S0010482524011570		Not yet reviewed.
+558	CIDMD	unreviewed		https://github.com/jesilee/	https://pubs.acs.org/doi/10.1021/acs.jcim.4c00760		Not yet reviewed.
+559	MassCube	unreviewed		https://github.com/huaxuyu/masscube	https://www.nature.com/articles/s41467-025-60640-5	broad_source_bucket_manual_review	Not yet reviewed.
+560	Spectral Denoising	unreviewed		https://github.com/FanzhouKong/spectral_denoising	https://www.researchsquare.com/article/rs-4758843/v1		Not yet reviewed.
+561	TIMSCONVERT	unreviewed		https://github.com/gtluu/timsconvert	https://academic.oup.com/bioinformatics/article/38/16/4046/6618521		Not yet reviewed.
+563	MMSA	unreviewed		https://multiplealignment.gnps2.org/setscreation , https://github.com/Wang-Bioinformatics-Lab/NetworkFamily_MultipleAlignment_Website	https://pubs.acs.org/doi/abs/10.1021/jasms.5c00237		Not yet reviewed.
+564	MS-RT	unreviewed		https://github.com/XianghuWang-287/Metabolomics_Clustering_Benchmark	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.4c00881	broad_source_bucket_manual_review	Not yet reviewed.
+567	IonFlow	unreviewed		https://github.com/wanchanglin/ionflow	https://link.springer.com/article/10.1007/s11306-021-01841-z	broad_source_bucket_manual_review;scope_review_adjacent_field	Not yet reviewed.
+568	RASSP	unreviewed		https://github.com/thejonaslab/rassp-public	https://pubs.acs.org/doi/10.1021/acs.analchem.2c02093		Not yet reviewed.
+569	SGMNS	unreviewed		https://github.com/DLUT-datas/SGMNS	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c00849		Not yet reviewed.
+570	EnzyMine	unreviewed		http://www.rxnfinder.org/enzymine/	https://academic.oup.com/database/article/doi/10.1093/database/baaa065/5909106		Not yet reviewed.
+571	SmartGate	unreviewed		https://github.com/zhanglabtools/SmartGate	https://academic.oup.com/bib/advance-article-abstract/doi/10.1093/bib/bbad141/7126351		Not yet reviewed.
+573	PaIRKAT	unreviewed		https://github.com/CharlieCarpenter/PaIRKAT	https://www.biorxiv.org/content/10.1101/2021.04.23.440821v1		Not yet reviewed.
+574	marr	unreviewed		http://bioconductor.org/packages/release/bioc/html/marr.html	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04336-9		Not yet reviewed.
+577	MPACT	unreviewed		https://github.com/BalunasLab/mpact	https://pubs.acs.org/doi/10.1021/acs.analchem.2c04632		Not yet reviewed.
+578	MCN	unreviewed		https://github.com/Alexander0/molecular_communities	https://www.biorxiv.org/content/10.1101/2024.08.02.606356v2		Not yet reviewed.
+579	Khipu-web	covered_by_existing_candidate	khipu	https://metabolomics.cloud/khipu	https://pubs.acs.org/doi/10.1021/jasms.4c00175		Interface extension and methods publication covered by khipu in PR71.
+580	PCPFM (Python‑Centric Pipeline For Metabolomics)	unreviewed		https://github.com/shuzhao-li-lab/PythonCentricPipelineForMetabolomics	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011912		Not yet reviewed.
+581	AlphaTims	unreviewed		https://github.com/MannLabs/alphatims	https://www.mcponline.org/article/S1535-9476(21)00121-3	scope_review_adjacent_field	Not yet reviewed.
+582	DNA adduct database	unreviewed		https://gitlab.com/nexs-metabolomics/projects/dna_adductomics_database	https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2022.908572	mixed_nmr_mentions	Not yet reviewed.
+583	QC4Metabolomics	validated_pending_merge	qc4metabolomics	https://github.com/stanstrup/QC4Metabolomics	https://doi.org/10.1021/acs.analchem.4c07078		Editorial source validation only; software not execution-tested.
+584	MetaVision3D	unreviewed		https://metavision3d.rc.ufl.edu	https://www.nature.com/articles/s42255-025-01242-9		Not yet reviewed.
+585	DNEA	unreviewed		https://github.com/Karnovsky-Lab/DNEA/	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05994-1		Not yet reviewed.
+586	BitBIRCH-Lean	unreviewed		https://github.com/mqcomplab/bblean	https://www.biorxiv.org/content/10.1101/2025.10.22.684015v1	broad_source_bucket_manual_review	Not yet reviewed.
+587	Nextflow4MS-DIAL	unreviewed		https://github.com/Nextflow4Metabolomics/nextflow4ms-dial	https://pubs.acs.org/doi/full/10.1021/jasms.4c00364		Not yet reviewed.
+588	StreptomeDB 4.0	unreviewed		https://streptomedb.vm.uni-freiburg.de/streptomedb/	https://academic.oup.com/nar/article/53/D1/D724/7875978		Not yet reviewed.
+589	MultiOmicsIntegrator	unreviewed		https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses	https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae175/7900314		Not yet reviewed.
+590	MicroMap	unreviewed		https://dataverse.harvard.edu/dataverse/micromap	https://www.nature.com/articles/s41522-025-00853-0		Not yet reviewed.
+591	MolNotator	unreviewed		https://github.com/ZzakB/MolNotator	https://www.biorxiv.org/content/10.1101/2021.12.21.473622v1		Not yet reviewed.
+592	Inventa	unreviewed		https://luigiquiros.github.io/inventa/	https://www.frontiersin.org/articles/10.3389/fmolb.2022.1028334		Not yet reviewed.
+593	Test-Time Tuned Language Models	unreviewed		NA	https://arxiv.org/abs/2510.23746		Not yet reviewed.
+595	MOCCal	unreviewed		https://github.com/HinesLab/MOCCal	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04290	ion_mobility_platform_dimension	Not yet reviewed.
+596	PALS	unreviewed		https://github.com/glasgowcompbio/PALS; https://pals.glasgowcompbio.org/app/	https://www.mdpi.com/2218-1989/11/2/103		Not yet reviewed.
+598	VIMMS 2.0	unreviewed		https://github.com/glasgowcompbio/vimms/	https://joss.theoj.org/papers/10.21105/joss.03990	broad_source_bucket_manual_review	Not yet reviewed.
+599	TopNEXt	unreviewed		https://github.com/glasgowcompbio/vimms	https://academic.oup.com/bioinformatics/article/39/7/btad406/7207825		Not yet reviewed.
+600	Thermo-Flux	unreviewed		https://github.com/molecular-systems-biology/thermo-flux	https://www.biorxiv.org/content/10.1101/2025.11.20.689566v1		Not yet reviewed.
+601	MiMeNet	unreviewed		https://github.com/YDaiLab/MiMeNet	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009021		Not yet reviewed.
+603	macroMS	unreviewed		https://github.com/macroMS/macroMS_web	https://pubs.acs.org/doi/abs/10.1021/jasms.1c00013		Not yet reviewed.
+604	MEISTER	unreviewed		https://github.com/richardxie1119/MEISTER	https://www.nature.com/articles/s41592-024-02171-3	broad_source_bucket_manual_review	Not yet reviewed.
+605	MSNORM	unreviewed		https://pubs.acs.org/doi/suppl/10.1021/jasms.3c00295/suppl_file/js3c00295_si_001.txt	https://pubs.acs.org/doi/10.1021/jasms.3c00295		Not yet reviewed.
+606	mwtab Python Library for RESTful Access	unreviewed		https://github.com/MoseleyBioinformaticsLab/mwtab	https://www.mdpi.com/2218-1989/11/3/163	mixed_nmr_mentions	Not yet reviewed.
+607	MESSES	unreviewed		https://github.com/MoseleyBioinformaticsLab/MESSES	https://doi.org/10.3390/metabo13070842		Not yet reviewed.
+608	PathwayNexus	unreviewed		https://cls.uni-konstanz.de/software/pathway-nexus/overview/	https://academic.oup.com/bioinformatics/article/40/6/btae310/7667867		Not yet reviewed.
+610	lcmsWorld	unreviewed		https://github.com/PGB-LIV/lcmsWorld	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.0c00618		Not yet reviewed.
+611	MassGenie	unreviewed		https://github.com/neilswainston/FragGenie	https://www.mdpi.com/2218-273X/11/12/1793		Not yet reviewed.
+612	Lipid Wizard	unreviewed		https://github.com/RaoboXu/Lipidwizard	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c04419		Not yet reviewed.
+614	RMB-mix	unreviewed		https://github.com/rmassbank/rmbmix	https://pubs.rsc.org/en/content/articlehtml/2023/em/d3em00181d		Not yet reviewed.
+615	PubChemLite plus CCS	unreviewed		https://gitlab.com/uniluxembourg/lcsb/eci/pubchemlite-web, https://pubchemlite.lcsb.uni.lu	https://chemrxiv.org/engage/chemrxiv/article-details/673f30f3f9980725cf47b8ba	ion_mobility_platform_dimension	Not yet reviewed.
+616	Shinyscreen	unreviewed		https://gitlab.com/uniluxembourg/lcsb/eci/shinyscreen	https://link.springer.com/article/10.1186/s13321-025-01044-x		Not yet reviewed.
+617	ipaPy2	unreviewed		https://github.com/francescodc87/ipaPy2	https://academic.oup.com/bioinformatics/article/39/7/btad455/7230779		Not yet reviewed.
+619	metabCombiner	unreviewed		https://bioconductor.org/packages/metabCombiner/	https://pubs.acs.org/doi/full/10.1021/acs.analchem.0c03693		Not yet reviewed.
+620	Lilikoi V2.0	unreviewed		https://github.com/lanagarmire/lilikoi2	https://academic.oup.com/gigascience/article/10/1/giaa162/6114871		Not yet reviewed.
+621	metabCombiner 2.0	unreviewed		https://metabcombiner.medicine.umich.edu/	https://www.mdpi.com/2218-1989/14/2/125		Not yet reviewed.
+622	Recon8D	unreviewed		https://github.com/sriram-lab/Recon8D	https://www.biorxiv.org/content/10.1101/2024.08.17.608400v2		Not yet reviewed.
+623	mpactR	unreviewed		https://www.mums2.org/mpactr/	https://journals.asm.org/doi/full/10.1128/mra.00997-24	broad_source_bucket_manual_review	Not yet reviewed.
+624	INTEGRATE	unreviewed		https://github.com/qLSLab/integrate	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009337		Not yet reviewed.
+625	ADViSELipidomics	unreviewed		https://github.com/ShinyFabio/ADViSELipidomics	https://academic.oup.com/bioinformatics/article/38/24/5460/6779973		Not yet reviewed.
+626	DNA Adduct Portal	unreviewed		https://sites.google.com/umn.edu/dnaadductportal	https://pubs.acs.org/doi/abs/10.1021/acs.chemrestox.3c00302		Not yet reviewed.
+627	CIeaD	unreviewed		https://www.moleculardetective.org/Links.html	https://pubs.acs.org/doi/10.1021/jasms.5c00329		Not yet reviewed.
+628	RPLC-IMS-CID-MS Lipid Database	unreviewed		https://tarheels.live/bakerlab/databases/	https://link.springer.com/article/10.1007/s00216-024-05351-4		Not yet reviewed.
+629	CMDN	unreviewed		https://github.com/LeaveMeNotTonight/CMDN	https://pubs.acs.org/doi/10.1021/acs.est.5c08558		Not yet reviewed.
+630	ADAP-KDB	unreviewed		https://adap.cloud/	https://pubs.acs.org/doi/10.1021/acs.analchem.1c00355		Not yet reviewed.
+631	SBGNview	unreviewed		https://github.com/datapplab/SBGNview	https://academic.oup.com/bioinformatics/article/38/5/1473/6433671		Not yet reviewed.
+632	Peak Pair Pruner	unreviewed		https://github.com/QibinZhangLab/Peak_Pair_Pruner	https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad044/7087097		Not yet reviewed.
+633	SimLipid	unreviewed		https://www.premierbiosoft.com/lipid/index.html	https://link.springer.com/protocol/10.1007/978-1-0716-1822-6_15		Not yet reviewed.
+634	MetaPhenotype	unreviewed		https://github.com/songyuan93/MetaPhenotype	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.4c02038	consider_single_cell_analysis_type	Not yet reviewed.
+635	Aerith	unreviewed		https://github.com/thepanlab/Aerith	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03207		Not yet reviewed.
+636	RTStaR	unreviewed		http://www.neurolipidomics.ca/rtstar/rtstar.html	https://www.biorxiv.org/content/10.1101/2021.05.01.442266v1		Not yet reviewed.
+637	BATL	unreviewed		https://www.complimet.ca/shiny/batl//	https://academic.oup.com/bioinformatics/article/38/6/1593/6482739		Not yet reviewed.
+638	LipidQuant 1.0	unreviewed		https://holcapek.upce.cz/lipidquant.php	https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab644/6366545		Not yet reviewed.
+639	LipidQuant 2.1	unreviewed		https://zenodo.org/record/10364585	https://www.sciencedirect.com/science/article/pii/S0169743924001096		Not yet reviewed.
+640	MARS (MetAbolomics ReSearch)	unreviewed		https://mass-analytica.com/MARS	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c03620		Not yet reviewed.
+641	LipidOne 2.0	unreviewed		https://lipidone.eu	https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.70009		Not yet reviewed.
+642	COMMIT	unreviewed		https://github.com/pwendering/COMMIT/tree/v1.0.0	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009906	broad_source_bucket_manual_review	Not yet reviewed.
+643	rMisbeta	unreviewed		https://cran.r-project.org/package=rMisbeta	https://www.sciencedirect.com/science/article/abs/pii/S0010482521007058		Not yet reviewed.
+644	EDaViS	unreviewed		https://github.com/LRuehrmund/RoMBAT	https://star-protocols.cell.com/protocols/3222		Not yet reviewed.
+645	SpecEmbedding	unreviewed		https://huggingface.co/spaces/xp113280/SpecEmbedding	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c02655		Not yet reviewed.
+646	NA	unreviewed		https://github.com/LizzyParkerPannell/Untargeted_metabolomics_workflow	https://www.mdpi.com/2218-1989/13/4/463		Not yet reviewed.
+647	MetaboLink	unreviewed		https://github.com/anitamnd/MetaboLink	https://academic.oup.com/bioinformatics/article/40/7/btae459/7715873	broad_source_bucket_manual_review	Not yet reviewed.
+648	ReTimeML	unreviewed		https://mikeallwright23-retime-app-lipid3-021zpv.streamlit.app/	https://www.nature.com/articles/s41598-024-53860-0		Not yet reviewed.
+649	Pew2	unreviewed		https://github.com/djdt/pewpew	https://pubs.acs.org/doi/10.1021/acs.analchem.1c02138	scope_review_adjacent_field	Not yet reviewed.
+650	Lipid Spectrum Generator	unreviewed		https://github.com/98104781/LSG	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c04518		Not yet reviewed.
+651	MatrixLM	unreviewed		https://github.com/senresearch/MatrixLM.jl	https://www.mdpi.com/2218-1989/15/2/140		Not yet reviewed.
+652	DIAMetAlyzer	unreviewed		https://github.com/OpenMS/DIAMetAlyzer	https://www.nature.com/articles/s41467-022-29006-z		Not yet reviewed.
+653	metGWAS 1.0	unreviewed		https://github.com/saifurbd28/metGWAS-1.0	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btad523/7248906		Not yet reviewed.
+654	MassDash	unreviewed		https://github.com/Roestlab/massdash	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.4c00026		Not yet reviewed.
+656	MassFormer	unreviewed		https://github.com/Roestlab/massformer/	https://www.nature.com/articles/s42256-024-00816-8#Abs1		Not yet reviewed.
+657	fragnnet	unreviewed		https://github.com/FraGNNet/fragnnet	https://arxiv.org/abs/2404.02360		Not yet reviewed.
+658	pyOpenMS-viz	unreviewed		https://github.com/OpenMS/pyopenms_viz	https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00873		Not yet reviewed.
+659	PFΔScreen	unreviewed		https://github.com/JonZwe/PFAScreen	https://link.springer.com/article/10.1007/s00216-023-05070-2		Not yet reviewed.
+661	mzPeak	unreviewed		https://github.com/mobiusklein/mzpeak_prototyping	https://pubs.acs.org/doi/full/10.1021/acs.jproteome.5c00435		Not yet reviewed.
+662	OpenMS WebApps	unreviewed		https://github.com/OpenMS/streamlit-template	https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00872	broad_source_bucket_manual_review	Not yet reviewed.
+663	MCheM	unreviewed		https://github.com/sirius-ms/sirius	https://www.nature.com/articles/s41467-025-61240-z#Sec6		Not yet reviewed.
+664	HoloFoodR	unreviewed		https://doi.org/10.18129/B9.bioc.HoloFoodR	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btaf605/8317436		Not yet reviewed.
+665	Metaboverse	unreviewed		https://github.com/Metaboverse/Metaboverse	https://www.nature.com/articles/s41556-023-01117-9	broad_source_bucket_manual_review	Not yet reviewed.
+666	EnrichMET	unreviewed		https://github.com/biodatalab/enrichmet	https://www.biorxiv.org/content/10.1101/2025.08.28.672951v2		Not yet reviewed.
+667	MS-VIS	unreviewed		https://github.com/hkevgill/MS-VIS	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/rcm.9253		Not yet reviewed.
+668	imzML Writer	unreviewed		https://github.com/VIU-Metabolomics/imzML_Writer	https://pubs.acs.org/doi/10.1021/acs.analchem.4c06520		Not yet reviewed.
+669	mzRAPP	unreviewed		https://github.com/YasinEl/mzRAPP	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab231/6214530		Not yet reviewed.
+670	homologueDiscoverer	unreviewed		https://github.com/kevinmildau/homologueDiscoverer	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac647/6722615	broad_source_bucket_manual_review	Not yet reviewed.
+672	LipidSpace	unreviewed		https://lifs-tools.org/tools/lipidspace.html	https://pubs.acs.org/doi/10.1021/acs.analchem.3c02449		Not yet reviewed.
+673	COVRECON	unreviewed		https://bitbucket.org/mosys-univie/covrecon	https://www.biorxiv.org/content/10.1101/2024.08.27.609825v1	broad_source_bucket_manual_review	Not yet reviewed.
+674	CCSfind	unreviewed		https://github.com/sangeeta97/ccs_find	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/jms.5040	ion_mobility_platform_dimension	Not yet reviewed.
+676	iMSEA	unreviewed		https://github.com/BioNet-XMU/iMSEA	https://pubs.acs.org/doi/10.1021/acs.analchem.2c04603		Not yet reviewed.
+677	Limelight	unreviewed		https://limelight-ms.org	https://pubs.acs.org/doi/full/10.1021/acs.analchem.1c04101	broad_source_bucket_manual_review	Not yet reviewed.
+678	Mass-Suite	unreviewed		https://github.com/XiminHu/mass-suite	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00741-9	broad_source_bucket_manual_review	Not yet reviewed.
+680	Graphormer-RT	unreviewed		https://github.com/HopkinsLaboratory/Graphormer-RT	https://pubs.acs.org/doi/10.1021/acs.analchem.4c05859		Not yet reviewed.
+681	LipiDex 2	unreviewed		https://github.com/coongroup/LipiDex-2	https://pubs.acs.org/doi/10.1021/acs.analchem.4c00359		Not yet reviewed.
+682	MSIght	unreviewed		https://github.com/laurenfields/MSIght	https://pubs.acs.org/doi/full/10.1021/acs.jproteome.4c01140	scope_review_adjacent_field	Not yet reviewed.
+683	MetaFetcheR	unreviewed		https://github.com/komorowskilab/MetaFetcheR/	https://www.biorxiv.org/content/10.1101/2021.02.28.433248v2		Not yet reviewed.
+684	i2i	unreviewed		https://github.com/LanekoffLab/i2i	https://pubmed.ncbi.nlm.nih.gov/37505508/		Not yet reviewed.
+685	SSN	unreviewed		https://github.com/LanekoffLab/i2i	https://www.biorxiv.org/content/10.1101/2025.03.07.642022v3		Not yet reviewed.
+686	Met-ID	unreviewed		https://github.com/pbjarterot/Met-ID	https://pubs.acs.org/doi/10.1021/acs.analchem.5c00633		Not yet reviewed.
+687	Isoreader	unreviewed		https://github.com/isoverse/isoreader	https://joss.theoj.org/papers/10.21105/joss.02878		Not yet reviewed.
+688	LipidQMap	unreviewed		https://github.com/swinnenteam/LipidQMap	https://www.biorxiv.org/content/10.1101/2025.10.15.682422v1		Not yet reviewed.
+689	MargheRita	unreviewed		https://github.com/emosca-cnr/margheRita	https://www.biorxiv.org/content/10.1101/2024.06.20.599545v1	broad_source_bucket_manual_review	Not yet reviewed.
+690	GetFeatistics	unreviewed		https://github.com/FrigerioGianfranco/GetFeatistics	https://doi.org/10.1515/jib-2025-0047		Not yet reviewed.
+691	NA	unreviewed		https://github.com/ViktoriiaTurkina/From-Spectra-to-Local-Networks-Evaluating-MS-Similarity	https://chemrxiv.org/engage/chemrxiv/article-details/6929724fa10c9f5ca12d55ee		Not yet reviewed.
+693	Paired Omics	unreviewed		https://github.com/iomega/paired-data-form	https://www.nature.com/articles/s41589-020-00724-z		Not yet reviewed.
+694	gutSMASH	held_for_review		https://gutsmash.bioinformatics.nl/ , https://github.com/victoriapascal/gutsmash	https://www.biorxiv.org/content/10.1101/2021.02.25.432841v1		Genome/metabolic cluster resource: validate MS-metabolomics scope and do not copy the isotope-flux mapping.
+695	FERMO	unreviewed		https://fermo.bioinformatics.nl/	https://www.biorxiv.org/content/10.1101/2022.12.21.521422v1	broad_source_bucket_manual_review	Not yet reviewed.
+696	NPClassScore	unreviewed		https://github.com/NPLinker/nplinker	https://link.springer.com/article/10.1186/s40168-022-01444-3	consider_genome_metabolome_linking_capability	Not yet reviewed.
+698	iPRESTO	unreviewed		https://pypi.org/project/ipresto/	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010462	consider_genome_metabolome_linking_capability	Not yet reviewed.
+700	msFeaST	unreviewed		https://github.com/kevinmildau/msFeaST	https://academic.oup.com/bioinformatics/article/40/10/btae584/7796532		Not yet reviewed.
+701	SpecXplore	unreviewed		https://github.com/kevinmildau/specXplore	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c04444		Not yet reviewed.
+702	Pear Review	unreviewed		NA	https://www.sciencedirect.com/science/article/pii/S0026265X24016904		Not yet reviewed.
+703	RAIChU	unreviewed		https://github.com/BTheDragonMaster/RAIChU	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00898-x		Not yet reviewed.
+704	WFSR Food Safety Mass Spectral Library	unreviewed		https://www.wur.nl/en/show/food-safety-mass-spectral-library.htm	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03020		Not yet reviewed.
+706	PASL	unreviewed		https://gnps.ucsd.edu/ProteoSAFe/gnpslibrary.jsp?library=PYRROLIZIDINE-ALKALOID-SPECTRAL-LIBRARY	https://www.nature.com/articles/s41597-025-05940-7		Not yet reviewed.
+707	DecoID	unreviewed		https://github.com/pattilab/DecoID/releases	https://www.nature.com/articles/s41592-021-01195-3		Not yet reviewed.
+708	PeakDetective	unreviewed		https://github.com/pattilab/PeakDetective	https://pubs.acs.org/doi/10.1021/acs.analchem.3c00764		Not yet reviewed.
+709	RawBeans	unreviewed		https://bitbucket.org/incpm/prot-qc/downloads/	https://pubs.acs.org/doi/10.1021/acs.jproteome.0c00956	scope_review_adjacent_field	Not yet reviewed.
+710	Spec2Class	unreviewed		https://huggingface.co/VickiPol/binary_models	https://www.biorxiv.org/content/10.1101/2024.03.17.585408v1		Not yet reviewed.
+711	MetaboReport	unreviewed		https://github.com/YonghuiDong/MetReport, https://metaboreport.com/	https://academic.oup.com/bioinformatics/article/40/6/btae373/7695238	broad_source_bucket_manual_review	Not yet reviewed.
+712	DeepGCN-RT	unreviewed		https://github.com/kangqiyue/DeepGCN-RT	https://www.sciencedirect.com/science/article/pii/S0021967323006647		Not yet reviewed.
+713	iDIA-QC	unreviewed		https://github.com/guomics-lab/iDIA-QC	https://www.nature.com/articles/s41467-024-54871-1	scope_review_adjacent_field	Not yet reviewed.
+714	RI-based-CPSC	unreviewed		https://github.com/WHU-Fenglab/RI-based-CPSC	https://pubs.acs.org/doi/10.1021/acs.analchem.3c02583		Not yet reviewed.
+715	HeuSMA	unreviewed		https://github.com/Lacterd/HeuSMA	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c05315		Not yet reviewed.
+716	NA	unreviewed		https://github.com/Chen-micslab/QCCAssisted4DSterol/tree/main	https://onlinelibrary.wiley.com/doi/10.1002/anie.202507483	ion_mobility_platform_dimension	Not yet reviewed.
+717	MS-IDF	unreviewed		NA	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.1c04719		Not yet reviewed.
+718	CordBat	unreviewed		https://github.com/BorchLab/CordBat	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c05748		Not yet reviewed.
+719	MDRB	unreviewed		https://github.com/933ZhangDD/MDRB	https://cmjournal.biomedcentral.com/articles/10.1186/s13020-024-01031-8		Not yet reviewed.
+720	MS-TDF Software	unreviewed		https://github.com/CaixiaYuan/MS-TDF	https://pubs.acs.org/doi/10.1021/acs.analchem.4c00527		Not yet reviewed.
+722	HyperCCS	unreviewed		https://github.com/NeoNexusX/HyperCCS	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03492	ion_mobility_platform_dimension	Not yet reviewed.
+723	LipidIN	unreviewed		https://github.com/LinShuhaiLAB/LipidIN	https://www.nature.com/articles/s41467-025-59683-5#Sec12		Not yet reviewed.
+724	QuanFormer	unreviewed		https://github.com/LinShuhaiLAB/QuanFormer	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.4c04531		Not yet reviewed.
+725	eROI	unreviewed		https://github.com/Gaozhuang-big/eROI	https://www.sciencedirect.com/science/article/abs/pii/S0003267025005653		Not yet reviewed.
+726	FluoroMatch 2.0	unreviewed		http://innovativeomics.com/software/fluoromatch-flow-covers-entire-pfas-workflow/	https://link.springer.com/article/10.1007/s00216-021-03392-7	broad_source_bucket_manual_review	Not yet reviewed.
+727	MS2Compound	unreviewed		https://github.com/beherasan/MS2Compound	https://www.liebertpub.com/doi/full/10.1089/omi.2021.0051		Not yet reviewed.
+728	MS2Lipid	unreviewed		https://github.com/systemsomicslab/ms2lipid/tree/main/notebooks	https://www.mdpi.com/2218-1989/14/11/602		Not yet reviewed.
+729	MS2toImg	unreviewed		https://github.com/jsehhs/MS2toImg-CNN	https://arxiv.org//2510.09716	broad_source_bucket_manual_review	Not yet reviewed.
+730	MPOD	unreviewed		http://mpod.ict.cn	https://onlinelibrary.wiley.com/doi/10.1111/pbi.13769		Not yet reviewed.
+731	MetaDb	unreviewed		http://medmetadb.ynau.edu.cn	https://link.springer.com/article/10.1186/s43897-024-00095-2		Not yet reviewed.
+732	RT-Transformer	unreviewed		https://github.com/01dadada/RT-Transformer	https://academic.oup.com/bioinformatics/article/40/3/btae084/7613958		Not yet reviewed.
+733	HDSE-MS	unreviewed		https://github.com/lzjforyou/HDSE-MS	https://pubs.acs.org/doi/10.1021/acs.analchem.5c04111		Not yet reviewed.
+734	ABCoRT	unreviewed		https://github.com/RiverCCC/ABCoRT	https://pubs.acs.org/doi/10.1021/acs.jcim.4c02179		Not yet reviewed.
+735	Dear-OMG	unreviewed		https://github.com/jianweishuai/Dear-OMG	https://link.springer.com/article/10.1007/s12539-025-00786-4		Not yet reviewed.
+737	SmilODB	unreviewed		http://www.isage.top:56789	https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1586268		Not yet reviewed.
+738	LargeMetabo	unreviewed		https://github.com/LargeMetabo/LargeMetabo	https://academic.oup.com/bib/article-abstract/23/6/bbac455/6768054	broad_source_bucket_manual_review	Not yet reviewed.
+740	OpenNAU	unreviewed		https://github.com/zjuRong/openNAU	http://article.cjcrcn.org/en/article/doi/10.21147/j.issn.1000-9604.2023.05.11		Not yet reviewed.
+741	NP-PRESS	unreviewed		https://github.com/MicroResearchLab/NP-PRESS	https://chemrxiv.org/engage/chemrxiv/article-details/6661401d21291e5d1d2cb051		Not yet reviewed.
+742	MultiClassMetabo	unreviewed		http://idrblab.cn/multiclassmetabo/	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c03212		Not yet reviewed.
+743	MassKG	unreviewed		https://xomics.com.cn/masskg	https://www.csbj.org/article/S2001-0370(24)00289-7		Not yet reviewed.
+744	MMEASE	unreviewed		https://idrblab.org/mmease/	https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaf363/8123449	consider_single_cell_analysis_type	Not yet reviewed.
+745	GLMR	unreviewed		NA	https://arxiv.org/abs/2511.06259		Not yet reviewed.
+746	NaFM	unreviewed		https://github.com/TomAIDD/NaFM-Official	https://arxiv.org//2503.17656		Not yet reviewed.
+747	MNA	unreviewed		NA	https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968684		Not yet reviewed.

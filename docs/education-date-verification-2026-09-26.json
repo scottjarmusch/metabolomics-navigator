@@ -1,0 +1,232 @@
+[
+  {
+    "slug": "1st-gnps-user-meeting",
+    "url": "https://www.youtube.com/watch?v=4HMjK4Js8xI",
+    "date": "2020-08-27"
+  },
+  {
+    "slug": "cmfi-mass-spec-seminar-10-metabolomics-data-analysis-with-pyopenms",
+    "url": "https://www.youtube.com/watch?v=XWDFZXYp1qM",
+    "date": "2022-05-11"
+  },
+  {
+    "slug": "cmfi-molecular-networking-seminar",
+    "url": "https://youtu.be/s5y1XNKENbk",
+    "date": "2022-02-16"
+  },
+  {
+    "slug": "gc-ms-deconvolution-library-search-and-molecular-networking",
+    "url": "https://www.youtube.com/watch?v=CXDlwC7evnk",
+    "date": "2020-09-08"
+  },
+  {
+    "slug": "gnps-classical-molecular-networking-in-portuguese",
+    "url": "https://www.youtube.com/watch?v=Lba9e45ZAE0",
+    "date": "2020-08-13"
+  },
+  {
+    "slug": "gnps-classical-molecular-networking-in-spanish",
+    "url": "https://www.youtube.com/watch?v=hTZzZI3PtR0",
+    "date": "2020-06-23"
+  },
+  {
+    "slug": "gnps-classical-molecular-networking",
+    "url": "https://www.youtube.com/watch?v=PqTuex0nsGk",
+    "date": "2020-04-30"
+  },
+  {
+    "slug": "gnps-dashboard-overview",
+    "url": "https://www.youtube.com/watch?v=S3aAkGTMC-g",
+    "date": "2021-05-19"
+  },
+  {
+    "slug": "gnps-dashboard-teaching-tutorial-use-case",
+    "url": "https://www.youtube.com/watch?v=tT5b1IIJCE8",
+    "date": "2021-03-18"
+  },
+  {
+    "slug": "gnps-fbmn-american-gut-mzmine2-tutorial",
+    "url": "https://www.youtube.com/watch?v=5jjMllbwD-U",
+    "date": "2018-08-29"
+  },
+  {
+    "slug": "gnps-fbmn-in-spanish-part-1",
+    "url": "https://www.youtube.com/watch?v=0xWMAwM8x3U",
+    "date": "2020-08-12"
+  },
+  {
+    "slug": "gnps-fbmn-in-spanish-part-2",
+    "url": "https://www.youtube.com/watch?v=l90j5T8EQbw",
+    "date": "2020-08-20"
+  },
+  {
+    "slug": "gnps-feature-based-molecular-networking-mzmine2",
+    "url": "https://www.youtube.com/watch?v=MwdJ6mVkdJY",
+    "date": "2020-05-26"
+  },
+  {
+    "slug": "gnps-gc-part-2",
+    "url": "https://www.youtube.com/watch?v=EJipzmkK7oA",
+    "date": "2020-09-08"
+  },
+  {
+    "slug": "gnps-ion-identity-networking-native-metabolomics",
+    "url": "https://www.youtube.com/watch?v=tb7LxaeNvcw",
+    "date": "2020-06-15"
+  },
+  {
+    "slug": "gnps-library-workshop-hackathon",
+    "url": "https://www.youtube.com/watch?v=IbXBpud57Z8",
+    "date": "2020-04-08"
+  },
+  {
+    "slug": "gnps-masst",
+    "url": "https://www.youtube.com/watch?v=14hGi6FtZIM",
+    "date": "2020-04-23"
+  },
+  {
+    "slug": "gnps-merge-polarity-networks",
+    "url": "https://www.youtube.com/watch?v=wHdr9coLmoQ",
+    "date": "2020-06-23"
+  },
+  {
+    "slug": "gnps-metabolomics-principles-tools-portuguese-part-1",
+    "url": "https://www.youtube.com/watch?v=QVw1K1dkpIc",
+    "date": "2021-04-28"
+  },
+  {
+    "slug": "gnps-metabolomics-principles-tools-portuguese-part-2",
+    "url": "https://www.youtube.com/watch?v=OLRazw7Q-2M",
+    "date": "2021-04-29"
+  },
+  {
+    "slug": "gnps-molnetenhancer",
+    "url": "https://www.youtube.com/watch?v=-4DE_ZfF2vc",
+    "date": "2020-06-18"
+  },
+  {
+    "slug": "gnps-ms2lda",
+    "url": "https://www.youtube.com/watch?v=0wKUmjPy40s",
+    "date": "2020-08-05"
+  },
+  {
+    "slug": "gnps-nature-microbiome-2021-workshop",
+    "url": "https://www.youtube.com/watch?v=V3X7AMugMMc",
+    "date": "2021-11-16"
+  },
+  {
+    "slug": "gnps-redu",
+    "url": "https://youtu.be/I-CdsHESLJ8",
+    "date": "2020-05-12"
+  },
+  {
+    "slug": "lc-ms-data-analysis-with-xcms-and-metfrag-on-phenomenal",
+    "url": "https://www.youtube.com/watch?v=vzcD0WnAuAQ",
+    "date": "2017-11-27"
+  },
+  {
+    "slug": "mana-2021-gnps-workshop-networking-dashboard-masst",
+    "url": "https://www.youtube.com/watch?v=-XoVrHQxW9U",
+    "date": "2021-10-21"
+  },
+  {
+    "slug": "massql-in-ms-dial-5",
+    "url": "https://www.youtube.com/watch?v=otCq9s1PjAs",
+    "date": "2022-08-06"
+  },
+  {
+    "slug": "metaboanalyst-5-0-lc-ms-and-tandem-ms-workshop-part-1",
+    "url": "https://www.youtube.com/watch?v=FHvsbf4vNt8",
+    "date": "2026-05-22"
+  },
+  {
+    "slug": "metabolomic-data-analysis-using-metaboanalyst",
+    "url": "https://www.youtube.com/watch?v=4CVC98KnlMA",
+    "date": "2016-08-08"
+  },
+  {
+    "slug": "metabolomics-spectrum-resolver-workshop",
+    "url": "https://www.youtube.com/watch?v=JMJO8CAfCNI",
+    "date": "2020-08-31"
+  },
+  {
+    "slug": "ms-dial-5-lc-ms-ms-dda-tutorial",
+    "url": "https://www.youtube.com/watch?v=cZY7wqF5Wdo",
+    "date": "2024-09-03"
+  },
+  {
+    "slug": "ms-dial-5-raw-data-viewer-tutorial",
+    "url": "https://www.youtube.com/watch?v=aApHc8Op4VY",
+    "date": "2022-11-14"
+  },
+  {
+    "slug": "ms-dial-5-to-ms-finder-for-unknown-annotation",
+    "url": "https://www.youtube.com/watch?v=moHIiTTVfGQ",
+    "date": "2022-11-13"
+  },
+  {
+    "slug": "ms-dial-and-gnps-in-portuguese",
+    "url": "https://www.youtube.com/watch?v=IZoS3Lvto1M",
+    "date": "2020-08-10"
+  },
+  {
+    "slug": "multivariate-analysis-in-ms-dial-5",
+    "url": "https://www.youtube.com/watch?v=wtOS7F1RgZs",
+    "date": "2022-11-18"
+  },
+  {
+    "slug": "mzmine-introduction-to-lc-ms",
+    "url": "https://www.youtube.com/watch?v=UnqVtZngzl0",
+    "date": "2024-11-05"
+  },
+  {
+    "slug": "mzmine-ion-mobility-ms-data-processing",
+    "url": "https://www.youtube.com/watch?v=Xp-G1HSozgM",
+    "date": "2024-12-03"
+  },
+  {
+    "slug": "mzmine-ms-library-generation",
+    "url": "https://www.youtube.com/watch?v=SmEpFYV4_bY",
+    "date": "2024-12-17"
+  },
+  {
+    "slug": "mzmine-multimodal-data-processing-gc-ms-maldi-ms-lipids",
+    "url": "https://www.youtube.com/watch?v=cGA5WIKcMpM",
+    "date": "2024-11-19"
+  },
+  {
+    "slug": "ntmss2022-day3-s3-ms2lda-and-molnetenhancer",
+    "url": "https://www.youtube.com/watch?v=Eg4cH93yViA",
+    "date": "2022-08-29"
+  },
+  {
+    "slug": "ntmss2023-day2-bonus-mzmine-3-new-features",
+    "url": "https://www.youtube.com/watch?v=MdpUNf-xTmQ",
+    "date": "2023-08-24"
+  },
+  {
+    "slug": "ntmss2023-day2-s2-data-preprocessing-in-mzmine-3-i",
+    "url": "https://www.youtube.com/watch?v=MmUY5qCz8eo",
+    "date": "2023-08-24"
+  },
+  {
+    "slug": "ntmss2023-day3-s4-sirius-csi-fingerid-i",
+    "url": "https://www.youtube.com/watch?v=Gj_h7fvzL_g",
+    "date": "2023-08-24"
+  },
+  {
+    "slug": "ntmss2023-day4-s5-ms2lda",
+    "url": "https://www.youtube.com/watch?v=M6UlZA9JaY8",
+    "date": "2023-08-24"
+  },
+  {
+    "slug": "sio262-molecular-networking-intro",
+    "url": "https://www.youtube.com/watch?v=DIItacY4VaE",
+    "date": "2020-12-09"
+  },
+  {
+    "slug": "utilizing-gnps-and-ms2lda-for-molecular-networking-discovery",
+    "url": "https://www.youtube.com/watch?v=Cc6eKGZQ1Qw",
+    "date": "2020-05-21"
+  }
+]

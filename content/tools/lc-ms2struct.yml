@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: lc-ms2struct
+name: LC-MS2Struct
+summary: Jointly rank molecular candidates using LC retention order and precomputed MS/MS scores.
+description: LC-MS2Struct uses a structured support vector machine to combine relative elution order with
+  spectral candidate scores across a set of features. It returns candidate rankings after preprocessing
+  and candidate generation; it does not generate an end-to-end workflow from raw files.
+links:
+  primary: https://github.com/aalto-ics-kepaco/msms_rt_ssvm
+  repository: https://github.com/aalto-ics-kepaco/msms_rt_ssvm
+  documentation: https://github.com/aalto-ics-kepaco/lcms2struct_exp
+platforms:
+- lc_ms
+interfaces:
+- python_package
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  capabilities:
+  - structure_elucidation
+access:
+  model: open_source
+  license: MIT
+  notes: MIT license verified in the official repository. Software was not installed or execution-tested;
+    dependencies and external services have their own requirements.
+data:
+  input_types:
+  - compound_list
+  - feature_table
+  output_types:
+  - compound_list
+  other_input_formats:
+  - Candidate structures, MS/MS scores and retention times via the Python interface
+  other_output_formats:
+  - Per-feature molecular candidate scores and rankings
+common_uses:
+- Re-rank ambiguous candidates using the retention order shared across an LC-MS/MS run.
+scope:
+  designed_for:
+  - Jointly rank molecular candidates using LC retention order and precomputed MS/MS scores.
+  not_designed_for:
+  - Replacing experimental confirmation of compound identity.
+  - Raw-data feature detection or chromatographic alignment.
+  requirements:
+  - Linux and the documented Conda environment; the README does not support other operating systems.
+  - The separate msmsrt_scorer dependency, suitable model/training data, per-feature candidate structures
+    and MS/MS scores, and measured retention times.
+  - Prepare inputs using the linked manuscript experiment scripts; this is a research Python implementation.
+  considerations:
+  - The published evaluation uses reversed-phase LC data; evaluate transfer to your chromatographic conditions.
+  - Candidates absent from the input sets cannot be recovered by re-ranking.
+  - Joint scores depend on candidate and model quality; a high rank does not establish stereochemistry.
+publications:
+- doi: 10.1038/s42256-022-00577-2
+  type: primary
+  citation: Joint structural annotation of small molecules using liquid chromatography retention order
+    and tandem mass spectrometry data. Nature Machine Intelligence (2022).
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake reviewed against the primary publication, official repository documentation and
+    license on 2026-10-05. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-05'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-05'
+  updated_at: '2026-10-05'
+  last_verified: '2026-10-05'
+  last_editorial_review: '2026-10-05'
+aliases:
+- LC-MS²Struct
+related_tools:
+- slug: cfm-id
+  relationship: integration
+  note: The primary paper demonstrates integration of candidate scores from CFM-ID. This is not a claim
+    of a one-click connector.
+- slug: metfrag
+  relationship: integration
+  note: The primary paper demonstrates integration of candidate scores from MetFrag. This is not a claim
+    of a one-click connector.
+- slug: sirius
+  relationship: integration
+  note: The primary paper demonstrates integration of candidate scores from SIRIUS. This is not a claim
+    of a one-click connector.

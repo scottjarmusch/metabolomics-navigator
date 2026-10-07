@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-fbmn-american-gut-mzmine2-tutorial
+title: "GNPS FBMN - American Gut / MZmine2 tutorial"
+summary: "American Gut tutorial combining MZmine 2 with GNPS feature-based molecular networking. A worked dataset connects preprocessing with networking; the MZmine interface is a legacy version."
+url: "https://www.youtube.com/watch?v=5jjMllbwD-U"
+resource_type: video
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+  - mzmine
+provider: "Dorrestein Lab / GNPS"
+experience_level: unspecified
+language: en
+note: "Legacy MZmine2 interface."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2018
+year_kind: published
+date_source: https://www.youtube.com/watch?v=5jjMllbwD-U
+date_verified_at: '2026-09-26'

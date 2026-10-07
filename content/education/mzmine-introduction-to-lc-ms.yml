@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: mzmine-introduction-to-lc-ms
+title: "MZmine introduction to LC-MS"
+summary: "MZmine training introducing LC-MS. A starting point for learners who need analytical context before exploring the software-specific workshops."
+url: "https://www.youtube.com/watch?v=UnqVtZngzl0"
+resource_type: video
+tool_slugs:
+  - mzmine
+provider: "MZmine / EMBL-EBI training"
+experience_level: unspecified
+language: en
+note: "Current MZmine training set; validate title/version/interface."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2024
+year_kind: published
+date_source: https://www.youtube.com/watch?v=UnqVtZngzl0
+date_verified_at: '2026-09-26'

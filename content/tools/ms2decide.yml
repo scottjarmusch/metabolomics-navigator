@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms2decide
+name: MS2DECIDE
+summary: Combine GNPS, ISDB-LOTUS and SIRIUS annotations into scores for natural-product feature prioritization.
+description: MS2DECIDE is a Python library implementing an expert-informed decision model. Its K-estimation
+  workflow aggregates complementary annotation results and exports scored features for follow-up investigation.
+links:
+  primary: https://github.com/MejriY/MS2DECIDE
+  repository: https://github.com/MejriY/MS2DECIDE
+  documentation: https://github.com/MejriY/MS2DECIDE
+platforms:
+- lc_ms
+interfaces:
+- python_package
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  capabilities:
+  - identification_confidence
+access:
+  model: open_source
+  license: MIT
+  notes: MIT license verified in the official repository. Software was not installed or execution-tested;
+    dependencies and external services have their own requirements.
+data:
+  input_types:
+  - feature_table
+  - spectra
+  - compound_list
+  output_types:
+  - feature_table
+  - statistical_results
+  input_formats:
+  - csv_tsv
+  - mgf
+  output_formats:
+  - csv_tsv
+  other_output_formats:
+  - Filtered dataframe and TSV file with K-values
+common_uses:
+- Prioritize natural-product features using multiple annotation sources and an explicit decision model.
+scope:
+  designed_for:
+  - Combine GNPS, ISDB-LOTUS and SIRIUS annotations into scores for natural-product feature prioritization.
+  not_designed_for:
+  - Replacing experimental confirmation of compound identity.
+  - Raw-data feature detection or chromatographic alignment.
+  requirements:
+  - A quantitative feature table, corresponding MGF spectra and compatible SIRIUS identification results
+    with matching feature identifiers.
+  - A supported Python environment, GNPS account and network access for the documented workflow.
+  - The documentation describes SIRIUS 6 and MZmine FBMN-compatible exports; check current format compatibility
+    before use.
+  considerations:
+  - K-values reflect the decision model and available annotations, not probabilities of correct identification
+    or proof of chemical novelty.
+  - Results depend on reference coverage and agreement between annotation sources. Inspect spectra and
+    investigate prioritized features experimentally.
+publications:
+- doi: 10.1002/cmtd.202400088
+  type: primary
+  citation: 'MS2DECIDE: Aggregating Multiannotated Tandem Mass Spectrometry Data with Decision Theory
+    Enhances Natural Products Prioritization. Chemistry–Methods (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake reviewed against the primary publication, official repository documentation and
+    license on 2026-10-05. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-05'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-05'
+  updated_at: '2026-10-05'
+  last_verified: '2026-10-05'
+  last_editorial_review: '2026-10-05'
+related_tools:
+- slug: gnps
+  relationship: integration
+  note: The documented workflow obtains GNPS annotation evidence.
+- slug: sirius
+  relationship: integration
+  note: Consumes compatible SIRIUS annotation results.
+- slug: mzmine
+  relationship: integration
+  note: The README describes compatible MZmine FBMN-format exports, not an embedded plugin.

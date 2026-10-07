@@ -38,10 +38,14 @@ workflow_steps:
 - title: Combine evidence and prioritize
   description: Use the documented K-estimation method to combine annotation evidence and export ranked
     results for review.
+  tool_slugs:
+  - ms2decide
 - title: Review candidates
   description: Inspect spectra, annotation disagreements and experimental context before selecting follow-up
     experiments.
 tools:
+- slug: ms2decide
+  role: Implements K-estimation and result export.
 - slug: gnps
 - slug: sirius
 - name: ISDB-LOTUS
@@ -75,7 +79,7 @@ status:
   entry: stub
   review: unreviewed
   created_at: '2026-09-14'
-  updated_at: '2026-09-15'
+  updated_at: '2026-10-05'
 description: MS2DECIDE combines annotations from GNPS, SIRIUS and ISDB-LOTUS using an expert-informed
   decision model. It supports prioritization of natural-product features for follow-up rather than establishing
   chemical novelty or confirming structures.

@@ -1,0 +1,25 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day2-s2
+title: NTMSS2026 Day2 S2 - Kai Duehrkopp - SIRIUS part1
+summary: Part 1 of Kai Duehrkopp's SIRIUS workshop. An entry point for researchers
+  exploring computational annotation of small molecules from mass spectrometry data.
+url: https://www.youtube.com/watch?v=_hcSxOvBnec
+resource_type: workshop
+tool_slugs:
+- sirius
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=_hcSxOvBnec
+date_verified_at: '2026-10-01'

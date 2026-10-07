@@ -1,0 +1,87 @@
+$schema: ../../schemas/tool.schema.json
+slug: everything-bagel
+name: Everything Bagel
+summary: Detect, align and gap-fill LC-MS features, with a GNPS2 workflow connecting raw LC-MS/MS data to feature-based
+  molecular networking.
+platforms:
+- lc_ms
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: GNPS2 homepage announcement, hosted workflow link, FBMN input definition and Crossref preprint abstract/metadata
+    checked on 2026-09-23. Preprint full text was not accessible; detailed performance, format and standalone software
+    claims remain unverified. No analysis job was run.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-09-23'
+  updated_at: '2026-09-23'
+  last_verified: '2026-09-23'
+  last_editorial_review: '2026-09-23'
+maintenance:
+  status: unclear
+  last_checked: '2026-09-23'
+aliases:
+- Everything Bagel Feature Finder
+- Everything Bagel Workflow
+description: Everything Bagel is a feature-finding resource for untargeted LC-MS analysis. Its 2026 preprint describes
+  feature detection, retention-time alignment and gap filling. The GNPS2-hosted workflow combines feature finding
+  with FBMN, making this an upstream processing route into subsequent network interpretation.
+links:
+  primary: https://gnps2.org/workflowinput?workflowname=everything_bagel_workflow
+  documentation: https://gnps2.org/homepage
+resource_types:
+- workflow_pipeline
+- web_service
+interfaces:
+- web_app
+functions:
+  primary: preprocessing
+  secondary:
+  - molecular_networking
+  capabilities:
+  - peak_detection
+  - retention_time_alignment
+  - gap_filling
+access:
+  model: free_web_service
+  notes: Hosted GNPS2 execution requires an account and permits academic/non-commercial use; commercial access requires
+    a license. A standalone code repository and software license were not verified in this review.
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - LC-MS/MS files accepted by the GNPS2 workflow form
+  other_output_formats:
+  - Aligned feature tables and GNPS2 FBMN results
+common_uses:
+- Generate aligned quantitative features from LC-MS data.
+- Connect raw-data processing with GNPS2 feature-based molecular networking.
+scope:
+  designed_for:
+  - Untargeted LC-MS feature finding and a raw-data-to-FBMN workflow.
+  not_designed_for:
+  - A downstream statistical-analysis replacement or proof of compound identity.
+  requirements:
+  - A GNPS2 account and compatible LC-MS(/MS) data; check the workflow form for file and parameter requirements.
+  considerations:
+  - The dedicated publication is a preprint, not a peer-reviewed validation.
+  - Reported speed and benchmark performance are author claims and were not independently reproduced here.
+  - It is an upstream workflow, not solely an analysis of a previously generated network.
+publications:
+- doi: 10.64898/2026.08.17.744735
+  type: primary
+  citation: 'Shin Y, El Abiead Y, Jarmusch AK, et al. The Everything Bagel Feature Finder: Ultra-fast automated
+    feature finding for untargeted metabolomics. bioRxiv (2026), preprint.'
+  note: Preprint; not peer reviewed.
+related_tools:
+- slug: gnps
+  relationship: part_of
+  note: Available as a hosted workflow in GNPS2.
+- slug: gnps-feature-based-molecular-networking
+  relationship: integration
+  note: The GNPS2 workflow joins feature finding to FBMN; the FBMN input definition includes an Everything Bagel
+    format option.

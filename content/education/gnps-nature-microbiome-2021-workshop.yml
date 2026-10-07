@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-nature-microbiome-2021-workshop
+title: "GNPS Nature Microbiome 2021 Workshop"
+summary: "GNPS workshop framed around food, diet and the microbiome. A domain-focused learning resource for researchers connecting metabolomics analysis with microbiome questions."
+url: "https://www.youtube.com/watch?v=V3X7AMugMMc"
+resource_type: workshop
+tool_slugs:
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Food, diet, microbiome workshop."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2021
+year_kind: published
+date_source: https://www.youtube.com/watch?v=V3X7AMugMMc
+date_verified_at: '2026-09-26'

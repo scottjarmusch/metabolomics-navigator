@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-merge-polarity-networks
+title: "GNPS Merge Polarity Networks"
+summary: "GNPS session on merging networks from different ionization polarities. Relevant to researchers considering how positive- and negative-mode results can be viewed together."
+url: "https://www.youtube.com/watch?v=wHdr9coLmoQ"
+resource_type: workshop
+tool_slugs:
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Check whether a dedicated Navigator entry exists/needed."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=wHdr9coLmoQ
+date_verified_at: '2026-09-26'

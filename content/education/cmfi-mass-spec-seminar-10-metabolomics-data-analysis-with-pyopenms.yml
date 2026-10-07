@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: cmfi-mass-spec-seminar-10-metabolomics-data-analysis-with-pyopenms
+title: "CMFI Mass Spec Seminar #10 - Metabolomics Data Analysis with pyOpenMS"
+summary: "Hands-on metabolomics data analysis with pyOpenMS, the Python interface to OpenMS. The session uses Binder for an interactive computational environment."
+url: "https://www.youtube.com/watch?v=XWDFZXYp1qM"
+resource_type: workshop
+tool_slugs:
+  - openms
+provider: "Functional Metabolomics Lab"
+experience_level: unspecified
+language: en
+note: "Hands-on pyOpenMS with Binder."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2022
+year_kind: published
+date_source: https://www.youtube.com/watch?v=XWDFZXYp1qM
+date_verified_at: '2026-09-26'

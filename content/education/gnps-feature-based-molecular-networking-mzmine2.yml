@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-feature-based-molecular-networking-mzmine2
+title: "GNPS Feature Based Molecular Networking (MZmine2)"
+summary: "Feature-based molecular networking training using MZmine 2 and GNPS. Relevant for connecting detected features to spectral networks; screenshots and menus reflect the older MZmine interface."
+url: "https://www.youtube.com/watch?v=MwdJ6mVkdJY"
+resource_type: workshop
+tool_slugs:
+  - gnps-feature-based-molecular-networking
+  - mzmine
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Legacy MZmine2 interface; concepts still useful."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=MwdJ6mVkdJY
+date_verified_at: '2026-09-26'

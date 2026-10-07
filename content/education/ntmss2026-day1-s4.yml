@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: ntmss2026-day1-s4
+title: NTMSS2026 Day1 S4 - Allegra Aron - Intro to Data Sets
+summary: Allegra Aron introduces the datasets used in the summer school. Watch for
+  context before following the subsequent practical data-analysis sessions.
+url: https://www.youtube.com/watch?v=qtRa7JzTu2w
+resource_type: workshop
+tool_slugs: []
+provider: Functional Metabolomics Lab
+experience_level: unspecified
+language: en
+note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
+  September 30, 2026. Description and tool links are based on recording metadata;
+  full content review is pending.
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-10-01'
+status:
+  entry: draft
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=qtRa7JzTu2w
+date_verified_at: '2026-10-01'

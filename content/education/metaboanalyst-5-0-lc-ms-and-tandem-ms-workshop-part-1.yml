@@ -1,0 +1,23 @@
+$schema: ../../schemas/education.schema.json
+slug: metaboanalyst-5-0-lc-ms-and-tandem-ms-workshop-part-1
+title: "MetaboAnalyst 5.0 LC-MS and tandem-MS workshop Part 1"
+summary: "Part 1 of a MetaboAnalyst 5.0 workshop focused on LC-MS and tandem-MS data. Use as version-specific training and compare its steps with the current interface."
+url: "https://www.youtube.com/watch?v=FHvsbf4vNt8"
+resource_type: workshop
+tool_slugs:
+  - metaboanalyst
+provider: "Metabolomics Society"
+experience_level: unspecified
+language: en
+note: "Verify exact workshop year/title and relevance."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2026
+year_kind: published
+date_source: https://www.youtube.com/watch?v=FHvsbf4vNt8
+date_verified_at: '2026-09-26'

@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-classical-molecular-networking
+title: "GNPS Classical Molecular Networking"
+summary: "Workshop on classical molecular networking in GNPS: grouping related tandem mass spectra to explore molecular families. Use alongside the current documentation when following an older interface."
+url: "https://www.youtube.com/watch?v=PqTuex0nsGk"
+resource_type: workshop
+tool_slugs:
+  - gnps-classical-molecular-networking
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Strong foundational workshop."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://www.youtube.com/watch?v=PqTuex0nsGk
+date_verified_at: '2026-09-26'

@@ -1,0 +1,18 @@
+$schema: ../../schemas/education.schema.json
+slug: workflow4metabolomics-how-to-and-training
+title: "Workflow4Metabolomics HOW TO and training"
+summary: "Workflow4Metabolomics how-to and training collection. A starting point for learning metabolomics analysis through the Galaxy-based platform."
+url: "https://workflow4metabolomics.org/howto"
+resource_type: training_hub
+tool_slugs:
+  - workflow4metabolomics
+provider: "Training resource"
+experience_level: mixed
+language: en
+note: "Manual review of content and currentness is pending."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft

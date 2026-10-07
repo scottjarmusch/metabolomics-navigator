@@ -1,0 +1,76 @@
+$schema: ../../schemas/tool.schema.json
+slug: msquality
+name: MsQuality
+summary: Calculate standardized per-sample quality metrics from mass spectrometry
+  data in R.
+description: MsQuality uses the mzQC controlled vocabulary to calculate low-level
+  quality metrics from Spectra or MsExperiment objects. It supports tracking data
+  quality across runs but is not itself a signal-drift correction algorithm.
+links:
+  primary: https://bioconductor.org/packages/MsQuality/
+  repository: https://github.com/tnaake/MsQuality
+  documentation: https://bioconductor.org/packages/MsQuality/
+platforms:
+- lc_ms
+interfaces:
+- r_package
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  capabilities:
+  - spectral_data_io
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: License checked against official package metadata or repository. Local setup
+    requires the documented dependencies; no installation or hosted-service availability
+    test was performed.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - Spectra or MsExperiment objects
+  other_output_formats:
+  - Per-sample quality-metric results from the R interface
+common_uses:
+- Calculate comparable low-level QC summaries for MS-metabolomics runs.
+scope:
+  designed_for:
+  - Calculate standardized per-sample quality metrics from mass spectrometry data
+    in R.
+  not_designed_for:
+  - Confirming compound identity or replacing study design and scientific review.
+  requirements:
+  - A compatible R/Bioconductor installation and populated spectral objects.
+  - Spectra or MsExperiment objects with retention time, m/z and intensity information
+  considerations:
+  - Available metrics depend on the information stored in each input; low-level metrics
+    do not replace experimental QC design.
+publications:
+- doi: 10.1093/bioinformatics/btad618
+  type: primary
+  citation: 'MsQuality: an interoperable open-source package for the calculation of
+    standardized quality metrics of mass spectrometry data. Bioinformatics (2023).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate verified against official documentation, source/package
+    metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review
+    only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-02'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-02'
+  updated_at: '2026-10-02'
+  last_verified: '2026-10-02'
+  last_editorial_review: '2026-10-02'
+related_tools:
+- slug: spectra
+  relationship: integration
+  note: Metrics can be computed from Spectra objects.

@@ -1,0 +1,24 @@
+$schema: ../../schemas/education.schema.json
+slug: gnps-redu
+title: "GNPS ReDU"
+summary: "Workshop on ReDU and reuse of public mass spectrometry data with associated metadata. Relevant when exploring datasets beyond your own experiment."
+url: "https://youtu.be/I-CdsHESLJ8"
+resource_type: workshop
+tool_slugs:
+  - redu
+  - gnps
+provider: "GNPS"
+experience_level: unspecified
+language: en
+note: "Official ReDU workshop."
+validation_status: unreviewed
+provenance:
+  submitted_by: curator
+  last_checked: '2026-09-26'
+status:
+  entry: draft
+
+year: 2020
+year_kind: published
+date_source: https://youtu.be/I-CdsHESLJ8
+date_verified_at: '2026-09-26'
