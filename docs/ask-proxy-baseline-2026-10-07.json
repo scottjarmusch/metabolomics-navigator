@@ -1,0 +1,1338 @@
+{
+  "source_commit": "50aef134ae94e364156b0db80915a2f2f45937ed",
+  "queries": 48,
+  "passed": 41,
+  "failed": 7,
+  "browser_errors": [],
+  "results": [
+    {
+      "id": "Q01",
+      "group": "general_comparison",
+      "environment": "terrestrial",
+      "sample_type": "bulk soil",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "find metabolite differences in bulk soil samples",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q02",
+      "group": "general_comparison",
+      "environment": "freshwater",
+      "sample_type": "river water",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Which metabolites differ between upstream and downstream river water samples?",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "6 of 7 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        },
+        {
+          "slug": "microbe-metabolite-conditional-associations",
+          "name": "Conditional microbeâ€“metabolite association modeling"
+        },
+        {
+          "slug": "native-ms-metal-binding",
+          "name": "Native MS metabolomics for metal-binding compounds"
+        },
+        {
+          "slug": "taxonomically-informed-annotation",
+          "name": "Taxonomically informed metabolite annotation"
+        },
+        {
+          "slug": "maldi-fish",
+          "name": "Correlative metabolite and microbial imaging with MALDI-FISH"
+        },
+        {
+          "slug": "gnps-feature-based-molecular-networking",
+          "name": "Feature-Based Molecular Networking (FBMN)"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": false,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q03",
+      "group": "general_comparison",
+      "environment": "marine",
+      "sample_type": "seawater",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Compare metabolite levels between coastal and offshore seawater samples",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q04",
+      "group": "general_comparison",
+      "environment": "terrestrial",
+      "sample_type": "sediment",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Find differences in metabolite abundance between contaminated and clean sediments",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q05",
+      "group": "general_comparison",
+      "environment": "plant",
+      "sample_type": "leaf extracts",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Which metabolites distinguish drought-stressed leaves from watered controls?",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "6 of 12 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        },
+        {
+          "slug": "credentialing-untargeted-features",
+          "name": "Credentialing untargeted metabolomics features"
+        },
+        {
+          "slug": "qc-rlsc-signal-drift-correction",
+          "name": "QC-based robust LOESS signal-drift correction"
+        },
+        {
+          "slug": "exposomics-suspect-screening",
+          "name": "Suspect screening of exposome-related xenobiotics"
+        },
+        {
+          "slug": "reference-pool-cohort-extraction",
+          "name": "Reference-pool discovery with cohort-wide signal extraction"
+        },
+        {
+          "slug": "target-decoy-controlled-dia-metabolomics",
+          "name": "Target-decoy-controlled DIA metabolomics"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": false,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q06",
+      "group": "general_comparison",
+      "environment": "plant",
+      "sample_type": "root exudates",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Compare metabolite abundances in root exudates from two plant genotypes",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q07",
+      "group": "general_comparison",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Find metabolite differences between patient and control plasma samples",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q08",
+      "group": "general_comparison",
+      "environment": "human",
+      "sample_type": "urine",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "I want to discover which urine metabolites change after treatment",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "6 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        },
+        {
+          "slug": "chemical-proportionality-network-transformations",
+          "name": "Chemical proportionality for transformation prioritization"
+        },
+        {
+          "slug": "exposomics-suspect-screening",
+          "name": "Suspect screening of exposome-related xenobiotics"
+        },
+        {
+          "slug": "native-ms-metal-binding",
+          "name": "Native MS metabolomics for metal-binding compounds"
+        },
+        {
+          "slug": "reference-pool-cohort-extraction",
+          "name": "Reference-pool discovery with cohort-wide signal extraction"
+        },
+        {
+          "slug": "mass2motif-substructure-discovery",
+          "name": "Shared-substructure discovery with Mass2Motifs"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": false,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q09",
+      "group": "general_comparison",
+      "environment": "microbial",
+      "sample_type": "culture supernatants",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Find metabolites that change between bacterial culture conditions",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "6 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        },
+        {
+          "slug": "maldi-fish",
+          "name": "Correlative metabolite and microbial imaging with MALDI-FISH"
+        },
+        {
+          "slug": "chemical-proportionality-network-transformations",
+          "name": "Chemical proportionality for transformation prioritization"
+        },
+        {
+          "slug": "taxonomically-informed-annotation",
+          "name": "Taxonomically informed metabolite annotation"
+        },
+        {
+          "slug": "microbe-metabolite-conditional-associations",
+          "name": "Conditional microbeâ€“metabolite association modeling"
+        },
+        {
+          "slug": "idbac-microbial-library-dereplication",
+          "name": "Taxonomy- and metabolite-aware microbial library prioritization with IDBac"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": false,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q10",
+      "group": "general_comparison",
+      "environment": "food",
+      "sample_type": "fermented food",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "How do metabolite profiles differ between fermented and unfermented food samples?",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "2 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "microbe-metabolite-conditional-associations",
+          "name": "Conditional microbeâ€“metabolite association modeling"
+        },
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": false,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q11",
+      "group": "general_comparison",
+      "environment": "animal",
+      "sample_type": "feces",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "Compare metabolite levels in fecal samples from two diet groups",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q12",
+      "group": "general_comparison",
+      "environment": "cell culture",
+      "sample_type": "bulk cell extracts",
+      "experience": "newcomer",
+      "available_measurements": "unspecified",
+      "query": "What chemicals are more abundant in treated cells than untreated cells?",
+      "expected_route": "comparison_guidance",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "6 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "spacem-single-cell-metabolomics",
+          "name": "Spatially registered single-cell metabolomics"
+        },
+        {
+          "slug": "iterative-optimized-ms2-acquisition",
+          "name": "Iterative optimized MS/MS acquisition"
+        },
+        {
+          "slug": "msi-imc-single-cell-immunometabolism",
+          "name": "Same-section MSI and imaging mass cytometry integration"
+        },
+        {
+          "slug": "chemical-proportionality-network-transformations",
+          "name": "Chemical proportionality for transformation prioritization"
+        },
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        },
+        {
+          "slug": "isotope-coded-dansylation-metabolomics",
+          "name": "Isotope-coded dansylation for comparative metabolomics"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": false,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "Q13",
+      "group": "study_planning",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "newcomer",
+      "available_measurements": "not acquired",
+      "query": "I am new to metabolomics. How should I plan a patient cohort study?",
+      "expected_route": "clarification",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "Q14",
+      "group": "study_planning",
+      "environment": "marine",
+      "sample_type": "coral",
+      "experience": "newcomer",
+      "available_measurements": "not acquired",
+      "query": "I have never used metabolomics to study coral bleaching. Where should I start?",
+      "expected_route": "clarification",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "Q15",
+      "group": "study_planning",
+      "environment": "plant",
+      "sample_type": "root exudates",
+      "experience": "newcomer",
+      "available_measurements": "not acquired",
+      "query": "Before we collect samples, how can metabolomics help study root exudates?",
+      "expected_route": "clarification",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "Q16",
+      "group": "study_planning",
+      "environment": "microbial",
+      "sample_type": "biofilm",
+      "experience": "newcomer",
+      "available_measurements": "not acquired",
+      "query": "This is my first metabolomics study of biofilms",
+      "expected_route": "clarification",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "Q17",
+      "group": "study_planning",
+      "environment": "terrestrial",
+      "sample_type": "soil",
+      "experience": "newcomer",
+      "available_measurements": "not acquired",
+      "query": "I am not sure which measurements I need for soil metabolomics",
+      "expected_route": "clarification",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "Q18",
+      "group": "study_planning",
+      "environment": "animal",
+      "sample_type": "tissue",
+      "experience": "newcomer",
+      "available_measurements": "not acquired",
+      "query": "I am a beginner studying liver metabolism. What should I measure?",
+      "expected_route": "clarification",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "Q19",
+      "group": "missing_or_incompatible",
+      "environment": "terrestrial",
+      "sample_type": "soil",
+      "experience": "mixed",
+      "available_measurements": "missing prerequisite",
+      "query": "I have a soil feature table but no MS/MS. Can I build molecular networks?",
+      "expected_route": "constraint",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "Q20",
+      "group": "missing_or_incompatible",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "mixed",
+      "available_measurements": "missing prerequisite",
+      "query": "Correct instrument drift without pooled QC samples",
+      "expected_route": "constraint",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Check your run sheet for controls, QC injections and injection order. The QC catalogue can help you inspect available evidence; a missing control cannot be assumed to exist.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "qc"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "Q21",
+      "group": "missing_or_incompatible",
+      "environment": "plant",
+      "sample_type": "leaf extracts",
+      "experience": "mixed",
+      "available_measurements": "missing prerequisite",
+      "query": "Infer metabolic flux from unlabeled plant metabolite abundances",
+      "expected_route": "constraint",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "Q22",
+      "group": "missing_or_incompatible",
+      "environment": "spatial",
+      "sample_type": "tissue",
+      "experience": "mixed",
+      "available_measurements": "missing prerequisite",
+      "query": "Can I run SpaceM without microscopy images?",
+      "expected_route": "constraint",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "Q23",
+      "group": "missing_or_incompatible",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "mixed",
+      "available_measurements": "missing prerequisite",
+      "query": "I need NMR peak assignment, not mass spectrometry",
+      "expected_route": "scope",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": false,
+      "criterion": "Recognize explicit NMR-only intent"
+    },
+    {
+      "id": "Q24",
+      "group": "missing_or_incompatible",
+      "environment": "microbial",
+      "sample_type": "culture",
+      "experience": "mixed",
+      "available_measurements": "missing prerequisite",
+      "query": "Use mmvec without paired microbiome samples",
+      "expected_route": "constraint",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "Q25",
+      "group": "published_method",
+      "environment": "terrestrial",
+      "sample_type": "bulk soil",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Organize bulk soil LC-MS/MS features into molecular families with feature based molecular networking",
+      "expected_route": "strategy",
+      "expected_strategy": "gnps-feature-based-molecular-networking",
+      "expected_tool": null,
+      "response": "6 of 7 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "gnps-feature-based-molecular-networking",
+          "name": "Feature-Based Molecular Networking (FBMN)"
+        },
+        {
+          "slug": "molecular-networking-dereplication",
+          "name": "Molecular networking as a dereplication strategy"
+        },
+        {
+          "slug": "bioactivity-based-molecular-networking",
+          "name": "Bioactivity-Based Molecular Networking"
+        },
+        {
+          "slug": "idbac-colony-maldi-msms-dereplication",
+          "name": "Colony-based MALDI-MS/MS dereplication with IDBac and GNPS2"
+        },
+        {
+          "slug": "gnps-ion-identity-molecular-networking",
+          "name": "Ion Identity Molecular Networking (IIMN)"
+        },
+        {
+          "slug": "stable-isotope-labeling-molecular-networking",
+          "name": "Stable-isotope labelingâ€“assisted molecular networking"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q26",
+      "group": "published_method",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Organize plasma LC-MS/MS features into molecular families with feature based molecular networking",
+      "expected_route": "strategy",
+      "expected_strategy": "gnps-feature-based-molecular-networking",
+      "expected_tool": null,
+      "response": "6 of 8 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "gnps-feature-based-molecular-networking",
+          "name": "Feature-Based Molecular Networking (FBMN)"
+        },
+        {
+          "slug": "molecular-networking-dereplication",
+          "name": "Molecular networking as a dereplication strategy"
+        },
+        {
+          "slug": "bioactivity-based-molecular-networking",
+          "name": "Bioactivity-Based Molecular Networking"
+        },
+        {
+          "slug": "idbac-colony-maldi-msms-dereplication",
+          "name": "Colony-based MALDI-MS/MS dereplication with IDBac and GNPS2"
+        },
+        {
+          "slug": "gnps-ion-identity-molecular-networking",
+          "name": "Ion Identity Molecular Networking (IIMN)"
+        },
+        {
+          "slug": "stable-isotope-labeling-molecular-networking",
+          "name": "Stable-isotope labelingâ€“assisted molecular networking"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q27",
+      "group": "published_method",
+      "environment": "microbial",
+      "sample_type": "culture extracts",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Organize bacterial LC-MS/MS features into molecular families with feature based molecular networking",
+      "expected_route": "strategy",
+      "expected_strategy": "gnps-feature-based-molecular-networking",
+      "expected_tool": null,
+      "response": "6 of 8 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "gnps-feature-based-molecular-networking",
+          "name": "Feature-Based Molecular Networking (FBMN)"
+        },
+        {
+          "slug": "molecular-networking-dereplication",
+          "name": "Molecular networking as a dereplication strategy"
+        },
+        {
+          "slug": "bioactivity-based-molecular-networking",
+          "name": "Bioactivity-Based Molecular Networking"
+        },
+        {
+          "slug": "idbac-colony-maldi-msms-dereplication",
+          "name": "Colony-based MALDI-MS/MS dereplication with IDBac and GNPS2"
+        },
+        {
+          "slug": "gnps-ion-identity-molecular-networking",
+          "name": "Ion Identity Molecular Networking (IIMN)"
+        },
+        {
+          "slug": "stable-isotope-labeling-molecular-networking",
+          "name": "Stable-isotope labelingâ€“assisted molecular networking"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q28",
+      "group": "published_method",
+      "environment": "microbial",
+      "sample_type": "culture extracts",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Connect measured antimicrobial bioactivity to molecular networks from fractions",
+      "expected_route": "strategy",
+      "expected_strategy": "bioactivity-based-molecular-networking",
+      "expected_tool": null,
+      "response": "2 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "bioactivity-based-molecular-networking",
+          "name": "Bioactivity-Based Molecular Networking"
+        },
+        {
+          "slug": "microfluidic-bioactivity-fractionation",
+          "name": "Microfluidic fractionation for compound-resolved bioactivity"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q29",
+      "group": "published_method",
+      "environment": "marine",
+      "sample_type": "sponge extracts",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Find known natural products through molecular networking dereplication",
+      "expected_route": "strategy",
+      "expected_strategy": "molecular-networking-dereplication",
+      "expected_tool": null,
+      "response": "3 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "molecular-networking-dereplication",
+          "name": "Molecular networking as a dereplication strategy"
+        },
+        {
+          "slug": "bioactivity-based-molecular-networking",
+          "name": "Bioactivity-Based Molecular Networking"
+        },
+        {
+          "slug": "gnps-feature-based-molecular-networking",
+          "name": "Feature-Based Molecular Networking (FBMN)"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q30",
+      "group": "published_method",
+      "environment": "plant",
+      "sample_type": "leaf extracts",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Use taxonomic information from the plant to prioritize metabolite annotations",
+      "expected_route": "strategy",
+      "expected_strategy": "taxonomically-informed-annotation",
+      "expected_tool": null,
+      "response": "6 of 12 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "taxonomically-informed-annotation",
+          "name": "Taxonomically informed metabolite annotation"
+        },
+        {
+          "slug": "msi-guided-molecular-networking",
+          "name": "Mass spectrometry imagingâ€“guided molecular networking"
+        },
+        {
+          "slug": "molecular-networking-dereplication",
+          "name": "Molecular networking as a dereplication strategy"
+        },
+        {
+          "slug": "chemical-proportionality-network-transformations",
+          "name": "Chemical proportionality for transformation prioritization"
+        },
+        {
+          "slug": "bioactivity-based-molecular-networking",
+          "name": "Bioactivity-Based Molecular Networking"
+        },
+        {
+          "slug": "exposomics-suspect-screening",
+          "name": "Suspect screening of exposome-related xenobiotics"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q31",
+      "group": "published_method",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Suspect screening of xenobiotics with a candidate chemical list for exposomics",
+      "expected_route": "strategy",
+      "expected_strategy": "exposomics-suspect-screening",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "exposomics-suspect-screening",
+          "name": "Suspect screening of exposome-related xenobiotics"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q32",
+      "group": "published_method",
+      "environment": "environmental",
+      "sample_type": "water extracts",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Discover recurring fragments and neutral losses as shared substructures",
+      "expected_route": "strategy",
+      "expected_strategy": "mass2motif-substructure-discovery",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "mass2motif-substructure-discovery",
+          "name": "Shared-substructure discovery with Mass2Motifs"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q33",
+      "group": "published_method",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Use retention order to rank molecular structure candidates jointly",
+      "expected_route": "strategy",
+      "expected_strategy": "retention-order-joint-annotation",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "retention-order-joint-annotation",
+          "name": "Retention-order-assisted joint molecular annotation"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q34",
+      "group": "published_method",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Infer pathways from significant unidentified features using mummichog",
+      "expected_route": "strategy",
+      "expected_strategy": "feature-level-pathway-inference",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "feature-level-pathway-inference",
+          "name": "Feature-level pathway inference before metabolite identification"
+        }
+      ],
+      "tools": [
+        "mummichog"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q35",
+      "group": "published_method",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Chemical class enrichment for identified metabolites using ChemRICH",
+      "expected_route": "strategy",
+      "expected_strategy": "chemical-similarity-set-enrichment",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "chemical-similarity-set-enrichment",
+          "name": "Chemical-similarity metabolite-set enrichment"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q36",
+      "group": "published_method",
+      "environment": "microbial",
+      "sample_type": "culture extracts",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Estimate metabolic flux from isotope labeling time courses",
+      "expected_route": "strategy",
+      "expected_strategy": "kinetic-flux-profiling",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "kinetic-flux-profiling",
+          "name": "Kinetic flux profiling from isotope-labeling time courses"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q37",
+      "group": "published_method",
+      "environment": "spatial",
+      "sample_type": "tissue images",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Correlate metabolite images and microbial identities using MALDI FISH",
+      "expected_route": "strategy",
+      "expected_strategy": "maldi-fish",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "maldi-fish",
+          "name": "Correlative metabolite and microbial imaging with MALDI-FISH"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q38",
+      "group": "published_method",
+      "environment": "cell culture",
+      "sample_type": "single cells",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Spatially registered single cell metabolomics with SpaceM",
+      "expected_route": "strategy",
+      "expected_strategy": "spacem-single-cell-metabolomics",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "spacem-single-cell-metabolomics",
+          "name": "Spatially registered single-cell metabolomics"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q39",
+      "group": "published_method",
+      "environment": "spatial",
+      "sample_type": "tissue images",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Integrate mass spectrometry imaging and imaging mass cytometry on the same tissue section",
+      "expected_route": "strategy",
+      "expected_strategy": "msi-imc-single-cell-immunometabolism",
+      "expected_tool": null,
+      "response": "4 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "msi-imc-single-cell-immunometabolism",
+          "name": "Same-section MSI and imaging mass cytometry integration"
+        },
+        {
+          "slug": "microscopy-msi-predictive-image-fusion",
+          "name": "Predictive fusion of microscopy and mass spectrometry imaging"
+        },
+        {
+          "slug": "tissue-isotope-imaging",
+          "name": "Tissue isotope imaging with iso-imaging"
+        },
+        {
+          "slug": "maldi-fish",
+          "name": "Correlative metabolite and microbial imaging with MALDI-FISH"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q40",
+      "group": "published_method",
+      "environment": "lipidomics",
+      "sample_type": "plasma lipids",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Localize lipid double bond positions using epoxidation diagnostic fragments",
+      "expected_route": "strategy",
+      "expected_strategy": "epoxidation-lipid-double-bond-localization",
+      "expected_tool": null,
+      "response": "2 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "epoxidation-lipid-double-bond-localization",
+          "name": "Epoxidation-assisted lipid double-bond localization"
+        },
+        {
+          "slug": "paterno-buchi-lipid-double-bond-localization",
+          "name": "Paterno-Buchi photochemistry for lipid double-bond localization"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q41",
+      "group": "published_method",
+      "environment": "acquisition",
+      "sample_type": "reference mixtures",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Improve precursor coverage by iterative exclusion list MS/MS acquisition",
+      "expected_route": "strategy",
+      "expected_strategy": "iterative-exclusion-list-acquisition",
+      "expected_tool": null,
+      "response": "2 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "iterative-optimized-ms2-acquisition",
+          "name": "Iterative optimized MS/MS acquisition"
+        },
+        {
+          "slug": "iterative-exclusion-list-acquisition",
+          "name": "Iterative exclusion-list MS/MS acquisition"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q42",
+      "group": "published_method",
+      "environment": "human",
+      "sample_type": "plasma cohort",
+      "experience": "experienced",
+      "available_measurements": "method prerequisites asserted in question",
+      "query": "Correct signal drift with repeated pooled QC injections and LOESS",
+      "expected_route": "strategy",
+      "expected_strategy": "qc-rlsc-signal-drift-correction",
+      "expected_tool": null,
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "qc-rlsc-signal-drift-correction",
+          "name": "QC-based robust LOESS signal-drift correction"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy in first three"
+    },
+    {
+      "id": "Q43",
+      "group": "named_software_or_local_analysis",
+      "environment": "terrestrial",
+      "sample_type": "soil",
+      "experience": "intermediate",
+      "available_measurements": "tool-specific input requires checking",
+      "query": "Use dbnorm to adjust batch effects in my soil feature table",
+      "expected_route": "tool",
+      "expected_strategy": null,
+      "expected_tool": "dbnorm",
+      "response": "Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [
+        "dbnorm"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "Q44",
+      "group": "named_software_or_local_analysis",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "intermediate",
+      "available_measurements": "tool-specific input requires checking",
+      "query": "Use MatrixQCvis to inspect my processed plasma matrix",
+      "expected_route": "tool",
+      "expected_strategy": null,
+      "expected_tool": "matrixqcvis",
+      "response": "Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [
+        "matrixqcvis"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "Q45",
+      "group": "named_software_or_local_analysis",
+      "environment": "plant",
+      "sample_type": "extracts",
+      "experience": "intermediate",
+      "available_measurements": "tool-specific input requires checking",
+      "query": "Use ROASMI to combine retention scores and MS/MS",
+      "expected_route": "tool",
+      "expected_strategy": null,
+      "expected_tool": "roasmi",
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "retention-order-joint-annotation",
+          "name": "Retention-order-assisted joint molecular annotation"
+        }
+      ],
+      "tools": [
+        "roasmi"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "Q46",
+      "group": "named_software_or_local_analysis",
+      "environment": "microbial",
+      "sample_type": "extracts",
+      "experience": "intermediate",
+      "available_measurements": "tool-specific input requires checking",
+      "query": "Use MS2DECIDE for natural product prioritization",
+      "expected_route": "tool",
+      "expected_strategy": null,
+      "expected_tool": "ms2decide",
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "ms2decide",
+          "name": "MS2DECIDE"
+        }
+      ],
+      "tools": [
+        "ms2decide"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "Q47",
+      "group": "named_software_or_local_analysis",
+      "environment": "spatial",
+      "sample_type": "tissue",
+      "experience": "intermediate",
+      "available_measurements": "tool-specific input requires checking",
+      "query": "Use 13C-SpaceM for spatial isotope measurements",
+      "expected_route": "tool",
+      "expected_strategy": null,
+      "expected_tool": "13c-spacem",
+      "response": "Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [
+        "13c-spacem"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "Q48",
+      "group": "named_software_or_local_analysis",
+      "environment": "human",
+      "sample_type": "plasma",
+      "experience": "intermediate",
+      "available_measurements": "tool-specific input requires checking",
+      "query": "Can I perform metabolomics statistics locally in R?",
+      "expected_route": "statistics",
+      "expected_strategy": null,
+      "expected_tool": null,
+      "response": "Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Local statistics route, no method cards"
+    }
+  ],
+  "controller_sha256": "09f370f583d3176eab7f7dafa708cb899ff55ba4d3581c552add35e530b4957b"
+}
