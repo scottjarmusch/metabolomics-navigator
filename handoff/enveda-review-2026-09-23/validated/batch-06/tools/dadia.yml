@@ -1,0 +1,43 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: dadia
+name: DaDIA
+summary: An R workflow for feature extraction and annotation from LC-MS data-independent-acquisition metabolomics datasets.
+links:
+  primary: https://github.com/HuanLab/DaDIA
+  repository: https://github.com/HuanLab/DaDIA
+resource_types: [workflow_pipeline]
+functions:
+  primary: preprocessing
+  secondary: [annotation_identification, spectral_analysis]
+  capabilities: [peak_detection, ms2_processing]
+platforms: [lc_ms]
+analysis_types: [untargeted]
+interfaces: [r_package]
+access:
+  model: source_available
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [R]
+data:
+  input_types: [raw_instrument_data, spectra]
+  output_types: [feature_table, compound_list]
+  input_formats: [mzxml]
+maintenance:
+  status: limited
+  repository_last_activity: '2022-02-09'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; workflow depends on XCMS/metaMS versions documented by the project.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels: [ms1, ms2]
+  strategies: [dia]
+  ion_mobility: not_required

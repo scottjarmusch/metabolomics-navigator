@@ -1,0 +1,60 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mol2ccs
+name: Mol2CCS
+summary: A research codebase for graph-neural-network prediction of ion-mobility collision cross sections from molecular structure, developed to evaluate model generalizability across chemical domains.
+links:
+  primary: https://github.com/enveda/ccs-prediction
+  repository: https://github.com/enveda/ccs-prediction
+resource_types:
+  - programming_package
+functions:
+  primary: machine_learning
+  secondary:
+    - annotation_identification
+  capabilities:
+    - ccs_prediction
+platforms:
+  - platform_independent
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - molecular_structures
+  output_types:
+    - statistical_results
+  input_formats:
+    - smiles_inchi
+publications:
+  - doi: 10.1186/s13321-024-00899-w
+    type: primary
+common_uses:
+  - Predict CCS from molecular structure for research and benchmarking.
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-09'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official Enveda repository and primary publication.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels:
+    - ms1
+  strategies:
+    - unspecified
+  ion_mobility: supported

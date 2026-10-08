@@ -1,0 +1,34 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: fsa
+name: FSA
+summary: A metabolite molecular-formula ranking method based on fragment-subset analysis of tandem mass spectra.
+links:
+  primary: https://github.com/kslynn128171/FSA
+  repository: https://github.com/kslynn128171/FSA
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [spectral_analysis]
+  capabilities: [molecular_formula_prediction, ms2_processing]
+platforms: [platform_independent]
+interfaces: [command_line]
+access:
+  model: source_available
+data:
+  input_types: [spectra]
+  output_types: [compound_list]
+maintenance:
+  status: active
+  repository_last_activity: '2025-12-08'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository description; license metadata was not explicit.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

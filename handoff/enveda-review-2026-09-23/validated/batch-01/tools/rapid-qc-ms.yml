@@ -1,0 +1,86 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: rapid-qc-ms
+name: Rapid QC-MS
+summary: An open-source system for automated quality control of LC-MS instrument runs, providing real-time checks, QC-failure alerts, and interactive visualization during and after data acquisition.
+links:
+  primary: https://czbiohub-sf.github.io/Rapid-QC-MS/
+  homepage: https://czbiohub-sf.github.io/Rapid-QC-MS/
+  repository: https://github.com/czbiohub-sf/Rapid-QC-MS
+  documentation: https://czbiohub-sf.github.io/Rapid-QC-MS/
+resource_types:
+  - software_application
+  - workflow_pipeline
+functions:
+  primary: quality_control
+  secondary:
+    - visualization_reporting
+    - data_conversion
+  capabilities:
+    - interactive_dashboard
+    - spectral_data_io
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - desktop_gui
+  - command_line
+access:
+  model: open_source
+technical:
+  operating_systems:
+    - windows
+  programming_languages:
+    - Python
+  package_managers:
+    - PyPI
+data:
+  input_types:
+    - raw_instrument_data
+    - sample_metadata
+  output_types:
+    - report
+    - feature_table
+  input_formats:
+    - vendor_raw
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1021/acs.analchem.4c00786
+    type: primary
+common_uses:
+  - Monitor LC-MS acquisition quality in near real time.
+  - Track internal-standard intensity, retention time, and m/z behavior across a sequence.
+  - Send notifications when user-defined QC checks fail.
+maintenance:
+  status: active
+  repository_last_activity: '2026-05-19'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and project documentation; license was not asserted because the repository metadata did not expose a clear SPDX license.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Automated operational QC of LC-MS sequences during and after acquisition.
+  requirements:
+    - Windows is required for the documented acquisition-side workflow because it depends on MSConvert and MS-DIAL.
+  considerations:
+    - The project reports broad vendor-format compatibility through MSConvert but notes extensive testing primarily on Thermo systems.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - unspecified
+  ion_mobility: unspecified

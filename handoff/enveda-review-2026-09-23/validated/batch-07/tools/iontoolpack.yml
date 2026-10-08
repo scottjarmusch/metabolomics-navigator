@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: iontoolpack
+name: IonToolPack
+summary: A graphical mass-spectrometry utility suite containing omics-agnostic raw-data visualization and automated MS1 quality-control workflows.
+links:
+  primary: https://github.com/pnnl/IonToolPack
+  repository: https://github.com/pnnl/IonToolPack
+resource_types: [software_application]
+functions:
+  primary: quality_control
+  secondary: [visualization_reporting]
+  capabilities: [interactive_dashboard]
+platforms: [multi_platform]
+analysis_types: [untargeted, lipidomics]
+interfaces: [desktop_gui]
+access:
+  model: open_source
+  license: BSD-2-Clause
+technical:
+  operating_systems: [windows]
+data:
+  input_types: [raw_instrument_data, spectra]
+  output_types: [report]
+maintenance:
+  status: active
+  repository_last_activity: '2026-02-10'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository; IonToolPack is omics-agnostic, so Navigator describes its metabolomics-relevant QC/visualization functions.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

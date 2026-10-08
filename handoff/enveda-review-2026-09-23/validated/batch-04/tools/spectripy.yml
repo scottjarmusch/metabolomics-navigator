@@ -1,0 +1,54 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: spectripy
+name: SpectriPy
+summary: An R package that connects the RforMassSpectrometry Spectra ecosystem with Python, enabling exchange and joint analysis of mass-spectrometry data across R and Python workflows.
+links:
+  primary: https://github.com/rformassspectrometry/SpectriPy
+  repository: https://github.com/rformassspectrometry/SpectriPy
+resource_types:
+  - programming_package
+functions:
+  primary: data_conversion
+  secondary:
+    - workflow_reproducibility
+  capabilities:
+    - spectral_data_io
+platforms:
+  - platform_independent
+interfaces:
+  - r_package
+  - python_package
+access:
+  model: open_source
+  license: Artistic-2.0
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+    - Python
+data:
+  input_types:
+    - spectra
+  output_types:
+    - spectra
+publications:
+  - doi: 10.21105/joss.08070
+    type: primary
+common_uses:
+  - Exchange spectral data between R Spectra objects and Python-based analysis code.
+maintenance:
+  status: active
+  repository_last_activity: '2026-05-12'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official active repository and JOSS publication.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

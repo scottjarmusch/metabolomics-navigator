@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: serda
+name: SERDA
+summary: An R-based normalization method for reducing unwanted variation in metabolomics data.
+links:
+  primary: https://github.com/slfan2013/SERDA
+  repository: https://github.com/slfan2013/SERDA
+resource_types: [programming_package]
+functions:
+  primary: normalization
+  secondary: [machine_learning]
+  capabilities: [batch_effect_correction]
+platforms: [platform_independent]
+analysis_types: [metabolite_profiling]
+interfaces: [r_package]
+access:
+  model: source_available
+technical:
+  operating_systems: [windows]
+  programming_languages: [R, Python]
+data:
+  input_types: [feature_table, sample_metadata]
+  output_types: [feature_table]
+maintenance:
+  status: limited
+  repository_last_activity: '2022-02-06'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository. Reclassified from Enveda isotope-tracing bucket to normalization based on actual scope.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

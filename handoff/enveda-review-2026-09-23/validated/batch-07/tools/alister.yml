@@ -1,0 +1,40 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: alister
+name: ALISTER
+summary: A web application providing curated evidence about pre-analytical blood-sample stability in metabolomics and lipidomics, including effects of processing delay and temperature.
+links:
+  primary: https://github.com/Fraunhofer-ITMP/alister
+  repository: https://github.com/Fraunhofer-ITMP/alister
+  web_app: https://itmp.shinyapps.io/alister/
+resource_types: [web_service, database_knowledgebase]
+functions:
+  primary: reference_data_search
+  secondary: [quality_control]
+  capabilities: [metadata_contextualization]
+platforms: [platform_independent]
+analysis_types: [metabolite_profiling, lipidomics]
+interfaces: [web_app]
+access:
+  model: free_web_service
+  license: MIT
+technical:
+  operating_systems: [browser]
+  programming_languages: [R]
+data:
+  input_types: [sample_metadata]
+  output_types: [report]
+maintenance:
+  status: limited
+  repository_last_activity: '2024-05-15'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and hosted Shiny app.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

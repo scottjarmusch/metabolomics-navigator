@@ -1,0 +1,50 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: msgo
+name: MSGO
+summary: A research implementation for de novo molecular-structure generation from mass-spectral evidence using pseudodata-trained machine learning.
+links:
+  primary: https://github.com/aaronma2020/MSGO
+  repository: https://github.com/aaronma2020/MSGO
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - machine_learning
+  capabilities:
+    - structure_elucidation
+platforms:
+  - platform_independent
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - linux
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+  output_types:
+    - molecular_structures
+maintenance:
+  status: active
+  repository_last_activity: '2026-04-07'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and associated Nature Machine Intelligence project description.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  considerations:
+    - This is a research implementation rather than a routine end-user annotation workflow.

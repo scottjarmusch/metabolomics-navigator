@@ -1,0 +1,50 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: simpel
+name: SIMPEL
+summary: An open-source R resource for analysis of stable-isotope-labeled metabolomics data.
+links:
+  primary: https://github.com/SIMPELmetabolism/SIMPEL
+  repository: https://github.com/SIMPELmetabolism/SIMPEL
+resource_types:
+  - programming_package
+functions:
+  primary: isotope_tracing_flux
+  secondary: []
+  capabilities:
+    - isotopologue_correction
+platforms:
+  - platform_independent
+analysis_types:
+  - stable_isotope_tracing
+interfaces:
+  - r_package
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - isotope_tracing_data
+    - feature_table
+  output_types:
+    - isotope_tracing_data
+    - statistical_results
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-20'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

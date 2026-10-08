@@ -1,0 +1,56 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: nplinker
+name: NPLinker
+summary: A Python framework for microbial natural-products discovery that links metabolomics and biosynthetic gene-cluster information to prioritize relationships between spectra, molecular families, and genomic loci.
+links:
+  primary: https://github.com/NPLinker/nplinker
+  repository: https://github.com/NPLinker/nplinker
+resource_types:
+  - programming_package
+functions:
+  primary: multiomics_integration
+  secondary:
+    - molecular_networking
+    - annotation_identification
+  capabilities:
+    - network_visualization
+platforms:
+  - platform_independent
+analysis_types:
+  - multiomics
+  - untargeted
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: Apache-2.0
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - sample_metadata
+    - compound_list
+  output_types:
+    - statistical_results
+    - report
+common_uses:
+  - Link metabolomics molecular families with biosynthetic gene clusters in microbial natural-products studies.
+maintenance:
+  status: active
+  repository_last_activity: '2026-05-02'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

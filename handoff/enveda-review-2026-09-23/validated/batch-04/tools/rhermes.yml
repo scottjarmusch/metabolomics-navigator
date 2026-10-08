@@ -1,0 +1,53 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: rhermes
+name: RHermes
+summary: An R package for broad-scoped targeted and semi-targeted LC-MS metabolomics analysis designed to deeply characterize biological and environmental samples.
+links:
+  primary: https://github.com/RogerGinBer/RHermes
+  repository: https://github.com/RogerGinBer/RHermes
+resource_types:
+  - programming_package
+functions:
+  primary: quantification
+  secondary:
+    - preprocessing
+    - annotation_identification
+  capabilities:
+    - chromatogram_building
+    - peak_detection
+platforms:
+  - lc_ms
+analysis_types:
+  - targeted
+  - semi_targeted
+interfaces:
+  - r_package
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - raw_instrument_data
+    - compound_list
+  output_types:
+    - feature_table
+    - compound_list
+maintenance:
+  status: active
+  repository_last_activity: '2026-05-22'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository; repository labels the package experimental.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

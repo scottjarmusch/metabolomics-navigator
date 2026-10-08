@@ -1,0 +1,64 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: metaboannotator
+name: MetaboAnnotatoR
+summary: An R package for annotating LC-MS all-ion-fragmentation metabolomics features using fragment-ion databases and centroided chromatographic data.
+links:
+  primary: https://github.com/gggraca/MetaboAnnotatoR
+  repository: https://github.com/gggraca/MetaboAnnotatoR
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - spectral_analysis
+  capabilities:
+    - library_matching
+    - ms2_processing
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - r_package
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+    - spectral_library
+  output_types:
+    - compound_list
+publications:
+  - doi: 10.1021/acs.analchem.1c03032
+    type: primary
+common_uses:
+  - Annotate AIF LC-MS features by matching fragment-ion evidence to reference databases.
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-11'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository and primary publication.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - all_ion
+  ion_mobility: not_required

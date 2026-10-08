@@ -1,0 +1,67 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: rapidmass
+name: RapidMass
+summary: A visual software platform for high-throughput mass-spectrometry data preprocessing, database-based sample scoring, discriminative peak discovery, and classification of unknown samples.
+links:
+  primary: https://github.com/Katherine00689/RapidMass
+  repository: https://github.com/Katherine00689/RapidMass
+resource_types:
+  - software_application
+functions:
+  primary: annotation_identification
+  secondary:
+    - preprocessing
+    - machine_learning
+    - visualization_reporting
+  capabilities:
+    - structure_database_search
+    - feature_selection
+    - interactive_dashboard
+platforms:
+  - direct_infusion_ms
+  - multi_platform
+analysis_types:
+  - metabolite_profiling
+interfaces:
+  - desktop_gui
+access:
+  model: source_available
+data:
+  input_types:
+    - spectra
+  output_types:
+    - statistical_results
+    - report
+publications:
+  - doi: 10.1021/acs.analchem.4c05062
+    type: primary
+common_uses:
+  - Compare unknown high-throughput MS profiles against user-managed reference databases.
+  - Identify discriminative mass-spectral peaks between sample groups or classes.
+maintenance:
+  status: active
+  repository_last_activity: '2025-04-14'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; access model is conservatively recorded as source available because repository licensing was not explicit.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - High-throughput profile comparison and unknown-sample discrimination across direct or ambient MS workflows.
+  considerations:
+    - The demonstrated applications emphasize sample classification and database scoring rather than conventional LC-MS feature annotation.
+acquisition:
+  ms_levels:
+    - ms1
+  strategies:
+    - flow_injection
+    - unspecified
+  ion_mobility: unspecified

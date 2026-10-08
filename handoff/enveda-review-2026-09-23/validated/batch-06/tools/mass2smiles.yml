@@ -1,0 +1,40 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mass2smiles
+name: Mass2SMILES
+summary: An open-source deep-learning approach for predicting molecular structures and functional groups from MS/MS spectra, with containerized inference support.
+links:
+  primary: https://github.com/volvox292/mass2smiles
+  repository: https://github.com/volvox292/mass2smiles
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [machine_learning]
+  capabilities: [structure_elucidation, substructure_prediction]
+platforms: [platform_independent]
+interfaces: [python_package]
+access:
+  model: source_available
+technical:
+  operating_systems: [linux, containers]
+  programming_languages: [Python]
+  containers: [Docker]
+data:
+  input_types: [spectra]
+  output_types: [molecular_structures]
+  input_formats: [mgf]
+  output_formats: [smiles_inchi]
+maintenance:
+  status: limited
+  repository_last_activity: '2025-01-31'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; some model resources depend on separately licensed NIST data.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

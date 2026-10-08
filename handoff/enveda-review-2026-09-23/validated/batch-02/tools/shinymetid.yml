@@ -1,0 +1,62 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: shinymetid
+name: ShinyMetID
+summary: An R Shiny application for metabolite identification by mass-spectral library matching with multiple spectral-similarity measures.
+links:
+  primary: https://github.com/jjs3098/ShinyMetID
+  repository: https://github.com/jjs3098/ShinyMetID
+  web_app: https://dhdnqkrtk22.shinyapps.io/shinymetid/
+resource_types:
+  - web_service
+  - software_application
+functions:
+  primary: annotation_identification
+  secondary:
+    - spectral_analysis
+  capabilities:
+    - library_matching
+platforms:
+  - gc_ms
+interfaces:
+  - web_app
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - browser
+  programming_languages:
+    - R
+data:
+  input_types:
+    - spectra
+    - spectral_library
+  output_types:
+    - compound_list
+common_uses:
+  - Compare query spectra against reference libraries using alternative similarity measures.
+maintenance:
+  status: limited
+  repository_last_activity: '2023-04-25'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and hosted Shiny example; access model is conservative because no explicit repository license was identified.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Spectral-library-based metabolite identification through a graphical R Shiny interface.
+  considerations:
+    - Spectral matches remain putative annotations unless supported by orthogonal evidence and appropriate reference standards.
+acquisition:
+  ms_levels:
+    - ms2
+  strategies:
+    - unspecified
+  ion_mobility: not_required

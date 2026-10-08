@@ -1,0 +1,45 @@
+# Intake-only mapping rules; not publication decisions.
+direct_source_category_to_primary_function:
+  "Pre-processing": preprocessing
+  "Quality Control": quality_control
+  "Pathway, Enrichment and Ontology Tools": pathway_interpretation
+  "Statistical": statistics
+  "Metabolic networks": pathway_interpretation
+  "Isotopic": isotope_tracing_flux
+  "Spectral Library": reference_data_search
+  "Targeted": quantification
+  "Multiomics": multiomics_integration
+  "Formats": data_conversion
+  "Visualization": visualization_reporting
+  "Metadata": data_management_sharing
+  "Database": reference_data_search
+annotation_subcategory_overrides:
+  "Molecular Networking": molecular_networking
+  "Spectrum prediction": spectral_analysis
+  "Spectral similarity retrieval": spectral_analysis
+  "Learned spectrum representations": spectral_analysis
+  "Class | Property prediction": machine_learning
+  default: annotation_identification
+source_categories_requiring_function_inference:
+  - Imaging MS
+  - Spatial Metabolomics
+  - Lipidomics
+  - Ion Mobility MS
+  - GC-MS
+  - CE-MS
+  - DIMS
+  - FT-ICR MS
+  - Exposomics
+  - Organism specific
+  - Single cell metabolomics
+  - Specialized
+  - Multifunctional
+  - Holistic/ Standalone Tools
+  - Drug Discovery
+  - Patterns
+  - Large scale
+  - Biosynthetic Gene Clusters
+notes:
+  - Source categories describing platform or scientific context are not copied into Navigator as functions.
+  - NMR-category rows are excluded.
+  - Mixed MS/NMR mentions outside an NMR source category receive a manual-review flag.

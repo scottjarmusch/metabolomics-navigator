@@ -1,0 +1,94 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: nextflow4ms-dial
+name: Nextflow4MS-DIAL
+summary: A reproducible Nextflow workflow for LC-HRMS metabolomics that executes MS-DIAL-based processing across local, containerized, and high-performance computing environments.
+links:
+  primary: https://github.com/Nextflow4Metabolomics/nextflow4ms-dial
+  repository: https://github.com/Nextflow4Metabolomics/nextflow4ms-dial
+resource_types:
+  - workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+    - preprocessing
+    - annotation_identification
+  capabilities:
+    - provenance_tracking
+    - container_support
+    - peak_detection
+    - retention_time_alignment
+    - library_matching
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - workflow_language
+  - command_line
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - containers
+  programming_languages:
+    - Nextflow
+  containers:
+    - Docker
+    - Singularity
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+    - spectral_library
+  output_types:
+    - feature_table
+    - compound_list
+    - report
+  input_formats:
+    - mzml
+    - other
+  other_input_formats:
+    - ABF
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1021/jasms.4c00364
+    type: primary
+common_uses:
+  - Run MS-DIAL preprocessing reproducibly on local systems or HPC.
+  - Preserve workflow configuration, execution logs, and containerized dependencies around an MS-DIAL analysis.
+related_tools:
+  - slug: ms-dial
+    relationship: dependency
+maintenance:
+  status: active
+  repository_last_activity: '2026-05-30'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Reproducible execution of MS-DIAL LC-HRMS workflows across local, container, and HPC environments.
+  requirements:
+    - Nextflow plus MS-DIAL configuration files and the workflow's container/runtime requirements.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - unspecified
+  ion_mobility: unspecified

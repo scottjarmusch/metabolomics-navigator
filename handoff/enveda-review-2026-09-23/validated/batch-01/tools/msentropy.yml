@@ -1,0 +1,82 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: msentropy
+name: MSEntropy
+summary: An open-source multi-language implementation of spectral entropy, entropy similarity, and flash entropy search for comparing and querying small-molecule mass spectra.
+links:
+  primary: https://msentropy.readthedocs.io/
+  homepage: https://msentropy.readthedocs.io/
+  repository: https://github.com/YuanyueLi/MSEntropy
+  documentation: https://msentropy.readthedocs.io/
+resource_types:
+  - programming_package
+functions:
+  primary: spectral_analysis
+  secondary:
+    - annotation_identification
+    - reference_data_search
+  capabilities:
+    - library_matching
+    - ms2_processing
+platforms:
+  - platform_independent
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - r_package
+access:
+  model: open_source
+  license: Apache-2.0
+technical:
+  operating_systems:
+    - windows
+    - macos
+    - linux
+    - cross_platform
+  programming_languages:
+    - Python
+    - R
+    - C
+    - C++
+data:
+  input_types:
+    - spectra
+    - spectral_library
+  output_types:
+    - statistical_results
+publications:
+  - doi: 10.1038/s41592-021-01331-z
+    type: methods
+  - doi: 10.1038/s41592-023-02012-9
+    type: primary
+common_uses:
+  - Calculate spectral entropy and entropy-based similarity between MS/MS spectra.
+  - Search spectral libraries with flash entropy search.
+maintenance:
+  status: active
+  repository_last_activity: '2026-10-05'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository, documentation, and cited Nature Methods publications; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Entropy-based spectral comparison and high-speed library searching.
+  considerations:
+    - Spectral-similarity scores support candidate prioritization but do not independently establish compound identity.
+acquisition:
+  ms_levels:
+    - ms2
+  strategies:
+    - dda
+    - targeted_msms
+    - unspecified
+  ion_mobility: not_required

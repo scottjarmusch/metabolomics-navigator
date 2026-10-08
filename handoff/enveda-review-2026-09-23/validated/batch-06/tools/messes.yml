@@ -1,0 +1,39 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: messes
+name: MESSES
+summary: A Python package for extracting structured metadata from experimental spreadsheets and converting tabular study information into interoperable representations.
+links:
+  primary: https://github.com/MoseleyBioinformaticsLab/MESSES
+  repository: https://github.com/MoseleyBioinformaticsLab/MESSES
+resource_types: [programming_package]
+functions:
+  primary: data_management_sharing
+  secondary: [data_conversion, workflow_reproducibility]
+  capabilities: [metadata_contextualization, provenance_tracking]
+platforms: [platform_independent]
+interfaces: [python_package, command_line]
+access:
+  model: source_available
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python, Cython]
+data:
+  input_types: [sample_metadata]
+  output_types: [sample_metadata]
+  input_formats: [csv_tsv]
+  output_formats: [json, csv_tsv]
+maintenance:
+  status: active
+  repository_last_activity: '2026-06-23'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

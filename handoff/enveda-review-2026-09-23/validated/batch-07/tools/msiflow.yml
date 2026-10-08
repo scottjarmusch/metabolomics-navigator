@@ -1,0 +1,42 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: msiflow
+name: msiFlow
+summary: An open-source collection of reproducible and scalable workflows for multimodal mass-spectrometry imaging and microscopy data analysis.
+links:
+  primary: https://github.com/Immunodynamics-Engel-Lab/msiflow
+  repository: https://github.com/Immunodynamics-Engel-Lab/msiflow
+resource_types: [workflow_pipeline]
+functions:
+  primary: workflow_reproducibility
+  secondary: [preprocessing, visualization_reporting, multiomics_integration]
+  capabilities: [provenance_tracking, container_support, network_visualization]
+platforms: [imaging_ms]
+analysis_types: [spatial_metabolomics, multiomics]
+interfaces: [command_line, workflow_language]
+access:
+  model: open_source
+  license: Apache-2.0
+technical:
+  operating_systems: [linux, containers]
+  programming_languages: [Python]
+data:
+  input_types: [imaging_data]
+  output_types: [imaging_data, report]
+publications:
+  - doi: 10.1038/s41467-024-55306-7
+    type: primary
+maintenance:
+  status: active
+  repository_last_activity: '2026-03-17'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository and publication.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

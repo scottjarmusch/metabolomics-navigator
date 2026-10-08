@@ -1,0 +1,48 @@
+source_row	name	source_category	source_subcategory	tool_url	publication_url	reason
+4	Protomix	NMR		https://github.com/mzniber/Protomix	https://doi.org/10.1093/bioadv/vbae192	Source category contains NMR
+11	ukbnmr	NMR		https://github.com/sritchie73/ukbnmr/	https://www.nature.com/articles/s41597-023-01949-y	Source category contains NMR
+12	NMRQNet	NMR		https://github.com/LiuzLab/NMRQNet	https://www.biorxiv.org/content/10.1101/2023.03.01.530642v1	Source category contains NMR
+32	mcfNMR	NMR		https://github.com/GeoMetabolomics-ICBM/mcfNMR	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c01652	Source category contains NMR
+40	pSCNN	NMR		https://github.com/yuxuanliao/pSCNN	https://www.mdpi.com/1420-3049/27/12/3653	Source category contains NMR
+48	FlavorFormer	NMR		https://github.com/yfWang01/FlavorFormer	https://www.sciencedirect.com/science/article/pii/S0026265X25027201	Source category contains NMR
+53	MultiNMRFit	NMR		https://github.com/NMRTeamTBI/MultiNMRFit/	https://academic.oup.com/bioinformatics/article/41/9/btaf463/8239312	Source category contains NMR
+54	MetSCORE	NMR		NA	https://cardiab.biomedcentral.com/articles/10.1186/s12933-024-02363-3	Source category contains NMR
+73	CReSS	NMR		https://github.com/Qihoo360/CReSS	https://pubs.acs.org/doi/10.1021/acs.analchem.1c04307	Source category contains NMR
+85	Bucket Fuser	NMR		https://www.mdpi.com/article/10.3390/metabo12090812/s1	https://www.mdpi.com/2218-1989/12/9/812	Source category contains NMR
+119	ASICS	NMR		https://github.com/GaelleLefort/ASICS	https://pubs.acs.org/doi/10.1021/acs.analchem.0c04232	Source category contains NMR
+179	ROIAL-NMR	NMR		https://github.com/Leo-Cheng-Lab/ROIAL-NMR	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/nbm.70131	Source category contains NMR
+209	SMolESY	NMR		https://github.com/pantakis/SMolESY-select	https://pubs.acs.org/doi/10.1021/acs.analchem.1c00113	Source category contains NMR
+214	NMIRacle	IR/NMR/Annotation		NA	https://arxiv.org/abs/2512.19733	Source category contains NMR
+215	MetAssimulo 2.0	NMR		https://github.com/yanyan5420/MetAssimulo_2	https://academic.oup.com/bioinformatics/article/41/3/btaf045/7979240	Source category contains NMR
+305	NMRphasing	NMR		https://github.com/ajiangsfu/NMRphasing	https://ojs.bonviewpress.com/index.php/jdsis/article/view/4036	Source category contains NMR
+322	PRIMA-Panel	NMR		https://github.com/funkam/PRIMA	https://pubs.acs.org/doi/10.1021/acs.analchem.4c04938	Source category contains NMR
+324	SAND	NMR		https://github.com/edisonomics/SAND	https://pubs.acs.org/doi/10.1021/acs.analchem.3c03078	Source category contains NMR
+356	nmRanalysis	NMR		https://github.com/EMSL-Computing/nmRanalysis	https://pubs.acs.org/doi/10.1021/acs.analchem.4c05104	Source category contains NMR
+357	NP-MRD	NMR		https://np-mrd.org/	https://academic.oup.com/nar/article/53/D1/D700/7906838	Source category contains NMR
+366	CRAFT 	NMR		NA	https://www.mdpi.com/2218-1989/15/6/387	Source category contains NMR
+411	MADByTE	NMR		https://github.com/liningtonlab/madbyte	https://pubs.acs.org/doi/10.1021/acs.jnatprod.0c01076	Source category contains NMR
+423	NMR2Struct	NMR		https://github.com/MarklandGroup/NMR2Struct	https://pubs.acs.org/doi/full/10.1021/acscentsci.4c01132	Source category contains NMR
+430	AQuA	NMR		https://pmc.ncbi.nlm.nih.gov/articles/instance/8253485/bin/ac0c04233_si_001.pdf	https://link.springer.com/article/10.1007/s11306-023-02073-z	Source category contains NMR
+440	NMRFx	NMR		https://github.com/nanalysis/nmrfx	https://www.nature.com/articles/s42004-025-01812-8	Source category contains NMR
+443	COLMAR1d	NMR		https://spin.ccic.osu.edu/index.php/colmar1d	https://pubs.acs.org/doi/10.1021/acs.analchem.4c02688	Source category contains NMR
+444	COLMARppm	NMR		https://spin.ccic.osu.edu/index.php/colmar	https://pubs.acs.org/doi/10.1021/acs.analchem.3c03677	Source category contains NMR
+446	COLMARvista	NMR		https://github.com/lidawei1975/colmarvista	https://link.springer.com/article/10.1007/s10858-025-00465-y#Sec2	Source category contains NMR
+472	NMRhub	NMR		https://nmrhub.org/	https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5688647	Source category contains NMR
+478	NAPROC-13	NMR		https://github.com/DIFACQUIM/naproc13_characterization	https://pubs.acs.org/doi/full/10.1021/acs.jnatprod.4c00530	Source category contains NMR
+492	MixONat	NMR		https://sourceforge.net/projects/mixonat/	https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-1470-0446	Source category contains NMR
+502	MagMet	NMR		http://magmet.ca/	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/mrc.5371	Source category contains NMR
+503	MagMet-F	NMR		https://www.magmet.ca/	https://analyticalsciencejournals.onlinelibrary.wiley.com/doi//10.1002/mrc.5372	Source category contains NMR
+507	PROSPRE	NMR		https://prospre.ca/	https://www.mdpi.com/2218-1989/14/5/290	Source category contains NMR
+518	MetaboLabPy	NMR		https://github.com/ludwigc/metabolabpy	https://www.mdpi.com/2218-1989/15/1/48	Source category contains NMR
+566	DeepSAT	NMR		https://github.com/mwang87/DeepSAT	https://link.springer.com/article/10.1186/s13321-023-00738-4	Source category contains NMR
+572	NMRium	NMR		https://www.nmrium.org/teaching, https://github.com/cheminfo/nmrium	https://www.beilstein-journals.org/bjoc/articles/20/4	Source category contains NMR
+575	A-SIMA/A-MAP	NMR		https://poky.clas.ucdenver.edu	https://link.springer.com/article/10.1007/s11306-024-02208-w	Source category contains NMR
+576	InRA	NMR		https://github.com/InRA-Software/InRA	https://www.sciencedirect.com/science/article/abs/pii/S0003267025005690	Source category contains NMR
+594	PyINETA	NMR		https://github.com/edisonomics/PyINETA	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c03966	Source category contains NMR
+609	CASMDB	NMR		https://ccpn.ac.uk/software/analysismetabolomics/	https://www.biorxiv.org/content/10.1101/2024.05.05.592402v1	Source category contains NMR
+618	NMRInversions.jl	NMR		https://github.com/aris-mav/NMRInversions.jl	https://joss.theoj.org/papers/10.21105/joss.07745.	Source category contains NMR
+655	Spectro	IR/NMR/Annotation		https://github.com/ChemAI-Lab/spectro	https://chemrxiv.org/engage/chemrxiv/article-details/6724fb5b7be152b1d0ae66f8	Source category contains NMR
+675	Magnetstein	NMR		https://github.com/ElsevierSoftwareX/SOFTX-D-25-00358	https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5280863	Source category contains NMR
+679	NMR molecular networking	NMR/Networks		https://github.com/enveda/NMR-Networking	https://chemrxiv.org/engage/chemrxiv/article-details/68c0a2679008f1a46773dc60	Source category contains NMR
+721	NMRformer	NMR		https://github.com/zza1211/NMRformer	https://pubs.acs.org/doi/10.1021/acs.analchem.4c05632	Source category contains NMR
+736	LAMAIS	NMR		https://github.com/Ariel-foliage/LAMAIS	https://www.sciencedirect.com/science/article/abs/pii/S0003267024009012	Source category contains NMR

@@ -1,0 +1,50 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lipidetective
+name: LipiDetective
+summary: A deep-learning framework for identifying molecular lipid species from tandem mass spectra.
+links:
+  primary: https://github.com/LipiTUM/lipidetective
+  repository: https://github.com/LipiTUM/lipidetective
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - machine_learning
+  capabilities:
+    - structure_elucidation
+    - compound_class_prediction
+platforms:
+  - platform_independent
+analysis_types:
+  - lipidomics
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: BSD-3-Clause
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+  output_types:
+    - compound_list
+maintenance:
+  status: active
+  repository_last_activity: '2026-08-09'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository and documentation.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
