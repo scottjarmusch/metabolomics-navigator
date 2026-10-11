@@ -30,8 +30,7 @@ jobs:
       - run: python scripts/check_form_sync.py
       - run: python scripts/build_site.py --strict
         env:
-          UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
-          UMAMI_SCRIPT_URL: ${{ vars.UMAMI_SCRIPT_URL }}
+          UMAMI_WEBSITE_ID: 36b91a72-9d10-4314-8431-621f793ecdcb
       - run: python scripts/check_seo.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
