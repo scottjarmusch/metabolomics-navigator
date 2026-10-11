@@ -96,6 +96,8 @@ def main():
         owner,_=github_repository.split('/',1); site_url=f'https://{owner.lower()}.github.io'
     if not site_url: site_url=site['site_url'].rstrip('/')
     generated_at=datetime.now(timezone.utc).strftime('%d %B %Y')
+    umami_website_id=os.getenv('UMAMI_WEBSITE_ID','').strip()
+    umami_script_url=os.getenv('UMAMI_SCRIPT_URL','https://cloud.umami.is/script.js').strip()
 
     def url(path=''):
         path=str(path).lstrip('/')
@@ -143,7 +145,7 @@ def main():
     prepare_output()
     copy_public_files()
     asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js'))).hexdigest()[:12]
-    context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version,'contributors':build_contributors([*tools_raw,*strategies_raw])}
+    context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version,'contributors':build_contributors([*tools_raw,*strategies_raw]),'umami_website_id':umami_website_id,'umami_script_url':umami_script_url}
 
     # Homepage
     function_counts={item['id']:sum(item['id'] in {t['functions']['primary'], *t['functions'].get('secondary',[])} for t in tools_raw) for item in vocab['functions']}
