@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{ url('assets/site.css') }}?v={{ asset_version }}">
   <link rel="stylesheet" href="{{ url('assets/product-refresh.css') }}?v={{ asset_version }}">
   <link rel="icon" href="{{ url('assets/favicon.svg') }}" type="image/svg+xml">
+  {% if umami_website_id %}<script defer src="{{ umami_script_url }}" data-website-id="{{ umami_website_id }}"></script>{% endif %}
   {% block head %}{% endblock %}
 </head>
 <body class="page-{{ active or 'reference' }}{% if active == 'home' %} entrance-page{% endif %}">
