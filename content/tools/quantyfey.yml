@@ -1,0 +1,74 @@
+$schema: ../../schemas/tool.schema.json
+slug: quantyfey
+name: QuantyFey
+summary: Calculate concentrations from integrated LC-MS signals with calibration and drift correction.
+description: QuantyFey is a locally run Shiny application for external-calibration quantification. It
+  supports inspection and adjustment of calibration models and several intensity-drift correction options.
+links:
+  primary: https://github.com/CDLMarkus/QuantyFey
+  repository: https://github.com/CDLMarkus/QuantyFey
+  documentation: https://github.com/CDLMarkus/QuantyFey/blob/master/tutorial/tutorial.md
+platforms:
+- lc_ms
+interfaces:
+- web_app
+resource_types:
+- software_application
+functions:
+  primary: quantification
+  capabilities:
+  - calibration_curve
+  - qc_drift_correction
+access:
+  model: open_source
+  notes: License checked against official repository/package metadata. Installation and execution were
+    not tested.
+  license: GPL-3.0
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - Integrated signal tables and configured calibration/template information
+  other_output_formats:
+  - Excel concentration and parameter tables; PDF reports
+common_uses:
+- Calculate concentrations from integrated LC-MS signals with calibration and drift correction.
+scope:
+  designed_for:
+  - QuantyFey is a locally run Shiny application for external-calibration quantification. It supports
+    inspection and adjustment of calibration models and several intensity-drift correction options.
+  not_designed_for:
+  - Chromatographic peak integration from raw files.
+  requirements:
+  - Integrated signals, known-concentration standards and a configured input template.
+  - Use a documented local R environment, Windows distribution or Linux Apptainer setup.
+  considerations:
+  - Correction requires appropriate standards/control information; model selection cannot rescue an unsuitable
+    calibration.
+  - The README contains platform-dependent installation routes; check the route-specific requirements.
+publications:
+- doi: 10.1016/j.aca.2025.344571
+  type: primary
+  citation: 'QuantyFey: An open-source tool for targeted LC-MS quantification with integrated drift correction.
+    Analytica Chimica Acta (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'
+analysis_types:
+- targeted

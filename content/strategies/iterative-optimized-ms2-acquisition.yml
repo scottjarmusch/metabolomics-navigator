@@ -45,9 +45,7 @@ workflow_steps:
   description: Provide precursor masses, retention times and signals for the acquisition model.
 - title: Optimize successive acquisition paths
   description: Use topological sorting; exclude scheduled features before computing the next path.
-  external_tools:
-  - name: MS2Planner
-    url: https://github.com/mohimanilab/MS2Planner
+  tool_slugs: [ms2planner]
 - title: Export instrument inclusion lists
   description: The study provides companion scripts for inclusion-list generation.
   external_tools:
@@ -57,8 +55,7 @@ workflow_steps:
   description: The paper tests inclusion-prioritized DDA and targeted-MS2 variants, with and without dynamic
     exclusion. Review coverage and spectral quality for the chosen mode.
 tools:
-- name: MS2Planner
-  url: https://github.com/mohimanilab/MS2Planner
+- slug: ms2planner
   role: Computes optimized paths over survey features for successive acquisitions.
 - name: IODA_MS
   url: https://github.com/lfnothias/IODA_MS

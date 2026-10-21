@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: np3-ms-workflow
+name: NP3 MS Workflow
+summary: Process LC-MS/MS data for natural-product profiling and molecular-network exploration.
+description: NP3 MS Workflow combines preprocessing, spectral clustering, quantification, library annotation
+  and molecular-network generation. Sample bioactivity metadata can support prioritization.
+links:
+  primary: https://github.com/danielatrivella/NP3_MS_Workflow
+  repository: https://github.com/danielatrivella/NP3_MS_Workflow
+  documentation: https://crisfbazz.github.io/NP3_MS_Workflow_Nextflow/
+platforms:
+- lc_ms
+interfaces:
+- command_line
+- web_app
+resource_types:
+- workflow_pipeline
+functions:
+  primary: preprocessing
+  capabilities:
+  - ms2_processing
+  - library_matching
+  - network_visualization
+access:
+  model: open_source
+  notes: License checked against official repository/package metadata. Installation and execution were
+    not tested.
+  license: GPL-3.0-or-later
+data:
+  input_types:
+  - spectra
+  - sample_metadata
+  output_types:
+  - feature_table
+  - spectra
+  - report
+  other_input_formats:
+  - LC-MS/MS mzML or mzXML files and sample metadata
+  other_output_formats:
+  - MGF spectra, CSV count/peak-area tables and network/report files
+common_uses:
+- Process LC-MS/MS data for natural-product profiling and molecular-network exploration.
+scope:
+  designed_for:
+  - NP3 MS Workflow combines preprocessing, spectral clustering, quantification, library annotation and
+    molecular-network generation. Sample bioactivity metadata can support prioritization.
+  not_designed_for:
+  - Demonstrating biological activity or establishing a structure solely from a network or library match.
+  requirements:
+  - Compatible LC-MS/MS acquisition and prepared sample metadata.
+  - Local dependencies for the full CLI; a GNPS2 interface exposes a subset of the workflow.
+  considerations:
+  - Bioactivity prioritization requires measured bioactivity metadata.
+  - 'Check ion-mode support against the selected version: the manual cautions that some negative-mode
+    steps are less tested.'
+publications:
+- doi: 10.1021/acs.analchem.3c05829
+  type: primary
+  citation: 'NP3 MS Workflow: An Open-Source Software System to Empower Natural Product-Based Drug Discovery
+    Using Untargeted Metabolomics. Analytical Chemistry (2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'
+analysis_types:
+- untargeted
+aliases:
+- NP3
+- NP³ MS Workflow
+related_tools:
+- slug: gnps
+  relationship: integration
+  note: The official documentation describes a GNPS2-hosted workflow interface and GNPS library searching;
+    the full CLI has additional options.

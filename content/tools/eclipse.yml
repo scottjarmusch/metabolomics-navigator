@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: eclipse
+name: Eclipse
+summary: Match corresponding features across untargeted LC-MS datasets.
+description: Eclipse is a BMXP Python module that aligns feature tables using retention time, m/z and
+  intensity, then aggregates matches through a graph.
+links:
+  primary: https://github.com/broadinstitute/bmxp
+  repository: https://github.com/broadinstitute/bmxp
+  documentation: https://github.com/broadinstitute/bmxp/blob/main/bmxp/eclipse/readme.md
+platforms:
+- lc_ms
+interfaces:
+- python_package
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  capabilities:
+  - retention_time_alignment
+access:
+  model: source_available
+  notes: The LICENSE is headed MIT License (Dual License) but adds a commercial-redistribution restriction.
+    Recorded as source available, not standard MIT; consult the actual license for intended use.
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - CSV or DataFrame tables with feature ID, RT, m/z and intensity
+  other_output_formats:
+  - Matched-feature CSV tables and alignment reports
+common_uses:
+- Match corresponding features across untargeted LC-MS datasets.
+scope:
+  designed_for:
+  - Eclipse is a BMXP Python module that aligns feature tables using retention time, m/z and intensity,
+    then aggregates matches through a graph.
+  not_designed_for:
+  - Raw-file peak detection or structural confirmation of aligned features.
+  requirements:
+  - Python with BMXP and extracted feature tables from compatible LC-MS methods.
+  considerations:
+  - Inspect alignment diagnostics and thresholds. Different gradients require the documented prescaling;
+    arbitrary methods are not automatically compatible.
+publications:
+- doi: 10.1093/bioinformatics/btaf290
+  type: primary
+  citation: 'Eclipse : a Python package for alignment of two or more nontargeted LC-MS metabolomics datasets.
+    Bioinformatics (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'

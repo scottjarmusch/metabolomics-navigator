@@ -1,0 +1,77 @@
+$schema: ../../schemas/tool.schema.json
+access:
+  model: open_source
+  license: MIT
+  notes: MIT declaration verified in official repository documentation and metadata. No installation or
+    execution test performed.
+common_uses:
+- Filter LC-MS lipid features and obtain putative database annotations.
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - Prepared LC-MS feature CSV files and JSON workflow parameters
+  other_output_formats:
+  - Filtered and annotated CSV tables; lipid-category plots
+description: LipidFinder processes previously extracted lipidomics feature tables, removes artifacts,
+  optionally combines polarities and searches lipid databases. This canonical entry includes version 2.0.
+functions:
+  primary: preprocessing
+  capabilities:
+  - blank_filtering
+  - structure_database_search
+interfaces:
+- command_line
+links:
+  primary: https://github.com/ODonnell-Lipidomics/LipidFinder
+  repository: https://github.com/ODonnell-Lipidomics/LipidFinder
+  documentation: https://github.com/ODonnell-Lipidomics/LipidFinder#readme
+maintenance:
+  last_checked: '2026-10-21'
+  status: unclear
+name: LipidFinder
+platforms:
+- lc_ms
+provenance:
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+  submitted_by: curator
+publications:
+- doi: 10.1093/bioinformatics/btaa856
+  type: methods
+  citation: 'LipidFinder 2.0: advanced informatics pipeline for lipidomics discovery applications. Bioinformatics
+    (2021).'
+- doi: 10.1172/jci.insight.91634
+  type: primary
+  citation: 'LipidFinder: A computational workflow for discovery of lipids identifies eicosanoid-phosphoinositides
+    in platelets. JCI Insight (2017).'
+resource_types:
+- workflow_pipeline
+scope:
+  designed_for:
+  - LipidFinder processes previously extracted lipidomics feature tables, removes artifacts, optionally
+    combines polarities and searches lipid databases. This canonical entry includes version 2.0.
+  not_designed_for:
+  - Shotgun lipidomics, low-resolution data or definitive MS/MS structure identification.
+  requirements:
+  - High-resolution LC-MS data processed into feature tables upstream, with suitable chromatographic separation.
+  - Python dependencies and documented column/parameter preparation.
+  considerations:
+  - Database mass matches are putative; inspect filtering and confirm identities with additional evidence.
+slug: lipidfinder
+status:
+  created_at: '2026-10-21'
+  entry: published
+  last_editorial_review: '2026-10-21'
+  last_verified: '2026-10-21'
+  review: editorially_reviewed
+  updated_at: '2026-10-21'
+summary: Filter LC-MS lipid features and obtain putative database annotations.
+analysis_types:
+- lipidomics
+aliases:
+- LipidFinder 2.0
