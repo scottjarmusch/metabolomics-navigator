@@ -99,6 +99,7 @@
       data-name="{{ strategy.name|e }}"
       data-platforms="{{ strategy.platforms|join(' ') }}"
       data-tools="{{ strategy.ask_tool_slugs|join(' ') }}"
+      data-keyword-phrases="{{ strategy.ask_keywords|default([])|join('|')|e }}"
       data-keywords="{{ strategy.ask_keywords|default([])|join(' ')|e }}"
       data-objectives="{{ strategy.purpose.primary }} {{ strategy.purpose.secondary|default([])|join(' ') }}"
       data-year="{{ strategy.publication.year or 0 }}">

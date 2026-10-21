@@ -1,0 +1,705 @@
+{
+  "source_commit": "a3c6e78006c639087280cf123bd67ed3894da557",
+  "controller_sha256": "66803131ca8102880ad1c41bc2abf3b28e3744edc8160511753eb71286372f8c",
+  "fixture_sha256": "52a7d4093c039d392140b94e63f1f0f024d90e9697efc12c6244f329051b9995",
+  "extra_hit_flags": 1,
+  "queries": 36,
+  "passed": 36,
+  "failed": 0,
+  "browser_errors": [],
+  "results": [
+    {
+      "id": "H01",
+      "sample_type": "bulk soil",
+      "query": "Which metabolites are different in farm soil versus forest soil?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H02",
+      "sample_type": "sediment",
+      "query": "Compare chemical profiles of lake sediment before and after remediation",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H03",
+      "sample_type": "wastewater",
+      "query": "What metabolites changed between influent and effluent samples?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H04",
+      "sample_type": "coral",
+      "query": "Compare metabolite abundance in bleached and healthy coral extracts",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H05",
+      "sample_type": "root exudate",
+      "query": "Find metabolite diferences between root exudate samples",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H06",
+      "sample_type": "plasma",
+      "query": "Which plasma metabolites differ between cases and controls?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H07",
+      "sample_type": "stool",
+      "query": "Compare fecal metabolomics profiles before and after antibiotics",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H08",
+      "sample_type": "food",
+      "query": "Are chemicals more abundant in fermented tea than fresh tea?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H09",
+      "sample_type": "biofilm",
+      "query": "Compare metabolites in bulk biofilm extracts from two treatments",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H10",
+      "sample_type": "organoid",
+      "query": "Find differential metabolites in treated versus control organoids",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.",
+      "guidance": "For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Comparison guidance and statistical exploration, no specialist cards"
+    },
+    {
+      "id": "H11",
+      "sample_type": "marine",
+      "query": "Can metabolomics help study coral bleaching?",
+      "expected_route": "clarification",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "H12",
+      "sample_type": "soil",
+      "query": "I have never used metabolomics. How should I study drought in soil?",
+      "expected_route": "clarification",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "H13",
+      "sample_type": "plasma",
+      "query": "Before we collect plasma samples, how do we plan this experiment?",
+      "expected_route": "clarification",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "H14",
+      "sample_type": "plant",
+      "query": "The facility sent raw files from leaves and I do not know what to do",
+      "expected_route": "clarification",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with data processing and quality control. Ask your MS facility which file format and acquisition type you have; then use the study guide to choose a downstream aim.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "H15",
+      "sample_type": "microbial",
+      "query": "I am a beginner studying bacterial competition. What measurements should I collect?",
+      "expected_route": "clarification",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "H16",
+      "sample_type": "clinical",
+      "query": "I am not sure whether these patient data are raw files or a feature table",
+      "expected_route": "clarification",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Please use the study guide to clarify your scientific aim and available measurements.",
+      "guidance": "Start with data processing and quality control. Ask your MS facility which file format and acquisition type you have; then use the study guide to choose a downstream aim.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "prepare",
+        "qc"
+      ],
+      "passed": true,
+      "criterion": "Beginner clarification with learning route, no method cards"
+    },
+    {
+      "id": "H17",
+      "sample_type": "soil",
+      "query": "Find molecular families in soil but I have no MS/MS spectra",
+      "expected_route": "constraint",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "H18",
+      "sample_type": "plasma",
+      "query": "Correct instrument drift without pooled QC injections",
+      "expected_route": "constraint",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Check your run sheet for controls, QC injections and injection order. The QC catalogue can help you inspect available evidence; a missing control cannot be assumed to exist.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "qc"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "H19",
+      "sample_type": "cells",
+      "query": "Estimate metabolic flux in unlabeled cell extracts",
+      "expected_route": "constraint",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "H20",
+      "sample_type": "spatial",
+      "query": "Map metabolites to tissue locations but we only measured bulk extracts, not images",
+      "expected_route": "constraint",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.",
+      "guidance": "Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn"
+      ],
+      "passed": true,
+      "criterion": "Missing-input constraint, no method cards"
+    },
+    {
+      "id": "H21",
+      "sample_type": "NMR",
+      "query": "Only NMR spectra for urine metabolite assignment",
+      "expected_route": "scope",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Recognize explicit NMR-only intent"
+    },
+    {
+      "id": "H22",
+      "sample_type": "NMR",
+      "query": "Use NMR rather than LC-MS to assign plant metabolites",
+      "expected_route": "scope",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Recognize explicit NMR-only intent"
+    },
+    {
+      "id": "H23",
+      "sample_type": "plasma",
+      "query": "I want statistical analysis locally in Python for plasma metabolomics",
+      "expected_route": "statistics",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Local statistics route, no method cards"
+    },
+    {
+      "id": "H24",
+      "sample_type": "soil",
+      "query": "Can I run metabolomics statistics in R on a soil feature table?",
+      "expected_route": "statistics",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [
+        "learn",
+        "statistics"
+      ],
+      "passed": true,
+      "criterion": "Local statistics route, no method cards"
+    },
+    {
+      "id": "H25",
+      "sample_type": "acquisition",
+      "query": "Use iterative exclusion lists to skip previously fragmented precursors on repeated DDA injections",
+      "expected_route": "strategy",
+      "expected_strategy": "iterative-exclusion-list-acquisition",
+      "allowed_strategies": [
+        "iterative-exclusion-list-acquisition"
+      ],
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "iterative-exclusion-list-acquisition",
+          "name": "Iterative exclusion-list MS/MS acquisition"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy first"
+    },
+    {
+      "id": "H26",
+      "sample_type": "acquisition",
+      "query": "MS2Planner optimized precursor scheduling from an MS1 survey",
+      "expected_route": "strategy",
+      "expected_strategy": "iterative-optimized-ms2-acquisition",
+      "allowed_strategies": [
+        "iterative-optimized-ms2-acquisition"
+      ],
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "iterative-optimized-ms2-acquisition",
+          "name": "Iterative optimized MS/MS acquisition"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy first"
+    },
+    {
+      "id": "H27",
+      "sample_type": "QC",
+      "query": "Pooled QC injections and LOESS regression to correct signal drift",
+      "expected_route": "strategy",
+      "expected_strategy": "qc-rlsc-signal-drift-correction",
+      "allowed_strategies": [
+        "qc-rlsc-signal-drift-correction"
+      ],
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "qc-rlsc-signal-drift-correction",
+          "name": "QC-based robust LOESS signal-drift correction"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy first"
+    },
+    {
+      "id": "H28",
+      "sample_type": "cells",
+      "query": "Use SpaceM for spatially registered single cell metabolomics",
+      "expected_route": "strategy",
+      "expected_strategy": "spacem-single-cell-metabolomics",
+      "allowed_strategies": [
+        "spacem-single-cell-metabolomics"
+      ],
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "spacem-single-cell-metabolomics",
+          "name": "Spatially registered single-cell metabolomics"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy first"
+    },
+    {
+      "id": "H29",
+      "sample_type": "microbial",
+      "query": "MALDI FISH to connect microbial identities with metabolite images",
+      "expected_route": "strategy",
+      "expected_strategy": "maldi-fish",
+      "allowed_strategies": [
+        "maldi-fish"
+      ],
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "maldi-fish",
+          "name": "Correlative metabolite and microbial imaging with MALDI-FISH"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy first"
+    },
+    {
+      "id": "H30",
+      "sample_type": "lipid",
+      "query": "Use epoxidation and diagnostic fragments to localize lipid double bonds",
+      "expected_route": "strategy",
+      "expected_strategy": "epoxidation-lipid-double-bond-localization",
+      "allowed_strategies": [
+        "epoxidation-lipid-double-bond-localization"
+      ],
+      "unreviewed_extras": [
+        "paterno-buchi-lipid-double-bond-localization"
+      ],
+      "response": "2 matching published Strategies.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "epoxidation-lipid-double-bond-localization",
+          "name": "Epoxidation-assisted lipid double-bond localization"
+        },
+        {
+          "slug": "paterno-buchi-lipid-double-bond-localization",
+          "name": "Paterno-Buchi photochemistry for lipid double-bond localization"
+        }
+      ],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Expected Strategy first"
+    },
+    {
+      "id": "H31",
+      "sample_type": "soil",
+      "query": "Can dbnorm help with batch effects in soil extracts?",
+      "expected_route": "tool",
+      "expected_tool": "dbnorm",
+      "unreviewed_extras": [],
+      "response": "Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [
+        "dbnorm"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "H32",
+      "sample_type": "plasma",
+      "query": "Show MatrixQCvis for inspecting a processed plasma matrix",
+      "expected_route": "tool",
+      "expected_tool": "matrixqcvis",
+      "unreviewed_extras": [],
+      "response": "Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [
+        "matrixqcvis"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "H33",
+      "sample_type": "annotation",
+      "query": "Find ROASMI for combining retention information and tandem spectra",
+      "expected_route": "tool",
+      "expected_tool": "roasmi",
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "retention-order-joint-annotation",
+          "name": "Retention-order-assisted joint molecular annotation"
+        }
+      ],
+      "tools": [
+        "roasmi"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "H34",
+      "sample_type": "natural products",
+      "query": "Show MS2DECIDE for prioritizing natural products",
+      "expected_route": "tool",
+      "expected_tool": "ms2decide",
+      "unreviewed_extras": [],
+      "response": "1 matching published Strategy.",
+      "guidance": "",
+      "strategies": [
+        {
+          "slug": "ms2decide",
+          "name": "MS2DECIDE"
+        }
+      ],
+      "tools": [
+        "ms2decide"
+      ],
+      "actions": [],
+      "passed": true,
+      "criterion": "Named tool resolved; compatibility still requires review"
+    },
+    {
+      "id": "H35",
+      "sample_type": "mixed",
+      "query": "I need QC and molecular networking for marine extracts",
+      "expected_route": "mixed",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Your question spans several aims. Choose one to explore separately.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Separate multiple aims before recommending methods"
+    },
+    {
+      "id": "H36",
+      "sample_type": "mixed",
+      "query": "Estimate flux and investigate pathways in cultured cells",
+      "expected_route": "mixed",
+      "allowed_strategies": [],
+      "unreviewed_extras": [],
+      "response": "Your question spans several aims. Choose one to explore separately.",
+      "guidance": "",
+      "strategies": [],
+      "tools": [],
+      "actions": [],
+      "passed": true,
+      "criterion": "Separate multiple aims before recommending methods"
+    }
+  ]
+}

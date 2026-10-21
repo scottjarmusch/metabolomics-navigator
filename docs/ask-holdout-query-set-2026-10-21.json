@@ -1,0 +1,276 @@
+{
+  "purpose": "Author-written proxy holdout frozen before execution. Not independent researcher testing.",
+  "acceptance": "Route correctness plus conservative extra-hit audit. Specific named methods must rank first. Additional strategies require manual justification; flags are not proof of scientific invalidity.",
+  "queries": [
+    {
+      "id": "H01",
+      "sample_type": "bulk soil",
+      "query": "Which metabolites are different in farm soil versus forest soil?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H02",
+      "sample_type": "sediment",
+      "query": "Compare chemical profiles of lake sediment before and after remediation",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H03",
+      "sample_type": "wastewater",
+      "query": "What metabolites changed between influent and effluent samples?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H04",
+      "sample_type": "coral",
+      "query": "Compare metabolite abundance in bleached and healthy coral extracts",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H05",
+      "sample_type": "root exudate",
+      "query": "Find metabolite diferences between root exudate samples",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H06",
+      "sample_type": "plasma",
+      "query": "Which plasma metabolites differ between cases and controls?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H07",
+      "sample_type": "stool",
+      "query": "Compare fecal metabolomics profiles before and after antibiotics",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H08",
+      "sample_type": "food",
+      "query": "Are chemicals more abundant in fermented tea than fresh tea?",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H09",
+      "sample_type": "biofilm",
+      "query": "Compare metabolites in bulk biofilm extracts from two treatments",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H10",
+      "sample_type": "organoid",
+      "query": "Find differential metabolites in treated versus control organoids",
+      "expected_route": "comparison_guidance",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H11",
+      "sample_type": "marine",
+      "query": "Can metabolomics help study coral bleaching?",
+      "expected_route": "clarification",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H12",
+      "sample_type": "soil",
+      "query": "I have never used metabolomics. How should I study drought in soil?",
+      "expected_route": "clarification",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H13",
+      "sample_type": "plasma",
+      "query": "Before we collect plasma samples, how do we plan this experiment?",
+      "expected_route": "clarification",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H14",
+      "sample_type": "plant",
+      "query": "The facility sent raw files from leaves and I do not know what to do",
+      "expected_route": "clarification",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H15",
+      "sample_type": "microbial",
+      "query": "I am a beginner studying bacterial competition. What measurements should I collect?",
+      "expected_route": "clarification",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H16",
+      "sample_type": "clinical",
+      "query": "I am not sure whether these patient data are raw files or a feature table",
+      "expected_route": "clarification",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H17",
+      "sample_type": "soil",
+      "query": "Find molecular families in soil but I have no MS/MS spectra",
+      "expected_route": "constraint",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H18",
+      "sample_type": "plasma",
+      "query": "Correct instrument drift without pooled QC injections",
+      "expected_route": "constraint",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H19",
+      "sample_type": "cells",
+      "query": "Estimate metabolic flux in unlabeled cell extracts",
+      "expected_route": "constraint",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H20",
+      "sample_type": "spatial",
+      "query": "Map metabolites to tissue locations but we only measured bulk extracts, not images",
+      "expected_route": "constraint",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H21",
+      "sample_type": "NMR",
+      "query": "Only NMR spectra for urine metabolite assignment",
+      "expected_route": "scope",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H22",
+      "sample_type": "NMR",
+      "query": "Use NMR rather than LC-MS to assign plant metabolites",
+      "expected_route": "scope",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H23",
+      "sample_type": "plasma",
+      "query": "I want statistical analysis locally in Python for plasma metabolomics",
+      "expected_route": "statistics",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H24",
+      "sample_type": "soil",
+      "query": "Can I run metabolomics statistics in R on a soil feature table?",
+      "expected_route": "statistics",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H25",
+      "sample_type": "acquisition",
+      "query": "Use iterative exclusion lists to skip previously fragmented precursors on repeated DDA injections",
+      "expected_route": "strategy",
+      "expected_strategy": "iterative-exclusion-list-acquisition",
+      "allowed_strategies": [
+        "iterative-exclusion-list-acquisition"
+      ]
+    },
+    {
+      "id": "H26",
+      "sample_type": "acquisition",
+      "query": "MS2Planner optimized precursor scheduling from an MS1 survey",
+      "expected_route": "strategy",
+      "expected_strategy": "iterative-optimized-ms2-acquisition",
+      "allowed_strategies": [
+        "iterative-optimized-ms2-acquisition"
+      ]
+    },
+    {
+      "id": "H27",
+      "sample_type": "QC",
+      "query": "Pooled QC injections and LOESS regression to correct signal drift",
+      "expected_route": "strategy",
+      "expected_strategy": "qc-rlsc-signal-drift-correction",
+      "allowed_strategies": [
+        "qc-rlsc-signal-drift-correction"
+      ]
+    },
+    {
+      "id": "H28",
+      "sample_type": "cells",
+      "query": "Use SpaceM for spatially registered single cell metabolomics",
+      "expected_route": "strategy",
+      "expected_strategy": "spacem-single-cell-metabolomics",
+      "allowed_strategies": [
+        "spacem-single-cell-metabolomics"
+      ]
+    },
+    {
+      "id": "H29",
+      "sample_type": "microbial",
+      "query": "MALDI FISH to connect microbial identities with metabolite images",
+      "expected_route": "strategy",
+      "expected_strategy": "maldi-fish",
+      "allowed_strategies": [
+        "maldi-fish"
+      ]
+    },
+    {
+      "id": "H30",
+      "sample_type": "lipid",
+      "query": "Use epoxidation and diagnostic fragments to localize lipid double bonds",
+      "expected_route": "strategy",
+      "expected_strategy": "epoxidation-lipid-double-bond-localization",
+      "allowed_strategies": [
+        "epoxidation-lipid-double-bond-localization"
+      ]
+    },
+    {
+      "id": "H31",
+      "sample_type": "soil",
+      "query": "Can dbnorm help with batch effects in soil extracts?",
+      "expected_route": "tool",
+      "expected_tool": "dbnorm"
+    },
+    {
+      "id": "H32",
+      "sample_type": "plasma",
+      "query": "Show MatrixQCvis for inspecting a processed plasma matrix",
+      "expected_route": "tool",
+      "expected_tool": "matrixqcvis"
+    },
+    {
+      "id": "H33",
+      "sample_type": "annotation",
+      "query": "Find ROASMI for combining retention information and tandem spectra",
+      "expected_route": "tool",
+      "expected_tool": "roasmi"
+    },
+    {
+      "id": "H34",
+      "sample_type": "natural products",
+      "query": "Show MS2DECIDE for prioritizing natural products",
+      "expected_route": "tool",
+      "expected_tool": "ms2decide"
+    },
+    {
+      "id": "H35",
+      "sample_type": "mixed",
+      "query": "I need QC and molecular networking for marine extracts",
+      "expected_route": "mixed",
+      "allowed_strategies": []
+    },
+    {
+      "id": "H36",
+      "sample_type": "mixed",
+      "query": "Estimate flux and investigate pathways in cultured cells",
+      "expected_route": "mixed",
+      "allowed_strategies": []
+    }
+  ]
+}
