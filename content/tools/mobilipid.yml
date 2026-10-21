@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: mobilipid
+name: MobiLipid
+summary: Assess and correct lipid collision-cross-section bias using labeled internal standards.
+description: MobiLipid provides R Markdown workflows and a labeled-lipid reference library for CCS quality
+  control in ion-mobility MS lipidomics. It estimates bias and class/adduct-specific correction functions.
+  Correction functions are fitted by linear regression.
+links:
+  primary: https://github.com/FelinaHildebrand/MobiLipid
+  repository: https://github.com/FelinaHildebrand/MobiLipid
+  documentation: https://github.com/FelinaHildebrand/MobiLipid#readme
+platforms:
+- lc_ms
+analysis_types:
+- lipidomics
+interfaces:
+- notebook
+resource_types:
+- workflow_pipeline
+functions:
+  primary: quality_control
+  capabilities:
+  - univariate_statistics
+access:
+  model: source_available
+  notes: Code is publicly available; an explicit software license was not identified in the reviewed repository.
+    The article license does not establish code reuse terms.
+data:
+  input_types:
+  - feature_table
+  other_input_formats:
+  - 'CSV: File, LipidClass, LipidSpecies, Adduct, Label, CCS'
+  - Provided U13C lipid CCS reference library
+  output_types:
+  - feature_table
+  - report
+  other_output_formats:
+  - Corrected CCS tables (CSV) and HTML/PDF reports
+common_uses:
+- Check CCS bias in lipidomics measurements containing labeled internal standards.
+scope:
+  designed_for:
+  - Internal-standard-based CCS assessment and correction.
+  not_designed_for:
+  - Raw spectrum processing, lipid identification or metabolic flux estimation.
+  requirements:
+  - Ion-mobility measurements of samples spiked with uniformly 13C-labeled lipid standards.
+  - R/RStudio and documented dependencies; correction needs at least three standards per supported class/adduct
+    combination.
+  considerations:
+  - Vendor-required instrument calibration remains necessary.
+  - Correction scope depends on represented lipid classes and adducts; do not extrapolate validation to
+    all lipids.
+publications:
+- doi: 10.1021/acs.analchem.4c01253
+  type: primary
+  citation: 'MobiLipid: A Tool for Enhancing CCS Quality Control of Ion Mobility–Mass Spectrometry Lipidomics
+    by Internal Standardization. Analytical Chemistry (2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Selected from the Enveda intake. Official documentation and primary-paper DOI/title/year checked
+    on 2026-10-21. Editorial review only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'

@@ -1,6 +1,6 @@
 source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	review_note
 2	LC-MS2Struct	validated_pending_merge	lc-ms2struct	https://github.com/aalto-ics-kepaco/msms_rt_ssvm	https://www.nature.com/articles/s42256-022-00577-2		Primary paper, official code, MIT license and input/model limitations verified 2026-10-05; no execution test. See annotation batch review.
-3	MSI-Explorer	unreviewed		https://github.com/MMV-Lab/MSI-Explorer	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01513		Not yet reviewed.
+3	MSI-Explorer	validated_pending_merge	msi-explorer	https://github.com/MMV-Lab/MSI-Explorer	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01513		Official documentation and primary publication verified 2026-10-21. See docs/enveda-specialist-review-2026-10-21.md; no execution test.
 5	GMDP Database	unreviewed		https://lccl.shinyapps.io/GMDP/	https://www.biorxiv.org/content/10.1101/2023.12.11.571124v1		Not yet reviewed.
 6	Neurolipid Atlas	unreviewed		https://neurolipidatlas.com/	https://www.nature.com/articles/s42255-025-01365-z		Not yet reviewed.
 7	Pyrfume	unreviewed		https://pyrfume.org/	https://www.nature.com/articles/s41597-024-04051-z		Not yet reviewed.
@@ -13,7 +13,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 16	SMQVP	unreviewed		https://github.com/mzlab-research/SMQVP	https://www.mdpi.com/2218-1989/15/6/354		Not yet reviewed.
 17	MetHoS	unreviewed		https://methos.cebitec.uni-bielefeld.de/welcomeview	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04793-w		Not yet reviewed.
 18	SEISMiQ	unreviewed		https://github.com/Boehringer-Ingelheim/seismiq	https://chemrxiv.org/engage/chemrxiv/article-details/67c0518081d2151a024875ed		Not yet reviewed.
-19	MobiLipid	unreviewed		https://github.com/FelinaHildebrand/MobiLipid	https://pubs.acs.org/doi/10.1021/acs.analchem.4c01253	ion_mobility_platform_dimension	Not yet reviewed.
+19	MobiLipid	validated_pending_merge	mobilipid	https://github.com/FelinaHildebrand/MobiLipid	https://pubs.acs.org/doi/10.1021/acs.analchem.4c01253	ion_mobility_platform_dimension	Official documentation and primary publication verified 2026-10-21. See docs/enveda-specialist-review-2026-10-21.md; no execution test.
 20	QuantyFey	unreviewed		https://github.com/CDLMarkus/QuantyFey	https://doi.org/10.1016/j.aca.2025.344571		Not yet reviewed.
 21	AnnoMe	unreviewed		https://github.com/chrboku/AnnoMe	https://chemrxiv.org/engage/chemrxiv/article-details/6895a25a23be8e43d653f5e9		Not yet reviewed.
 22	NP3 MS Workflow	unreviewed		https://github.com/danielatrivella/NP3_MS_Workflow	https://pubs.acs.org/doi/10.1021/acs.analchem.3c05829	broad_source_bucket_manual_review	Not yet reviewed.

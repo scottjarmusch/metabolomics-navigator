@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: msi-explorer
+name: MSI-Explorer
+summary: Explore ion images and region-of-interest spectra in a napari imaging-MS interface.
+description: MSI-Explorer adds imaging-MS exploration to napari, including preprocessing, ion-image display,
+  region selection and database-assisted annotation.
+links:
+  primary: https://github.com/MMV-Lab/MSI-Explorer
+  repository: https://github.com/MMV-Lab/MSI-Explorer
+  documentation: https://github.com/MMV-Lab/MSI-Explorer#readme
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+interfaces:
+- desktop_gui
+- python_package
+resource_types:
+- software_application
+functions:
+  primary: visualization_reporting
+  capabilities:
+  - interactive_dashboard
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: BSD-3-Clause verified in the official repository LICENSE.
+data:
+  input_types:
+  - imaging_data
+  input_formats:
+  - imzml
+  output_types:
+  - spectra
+  - imaging_data
+  other_output_formats:
+  - Exported spectra as CSV and spectrum plots
+common_uses:
+- Inspect spatial ion distributions and compare selected regions.
+scope:
+  designed_for:
+  - Interactive exploration of imaging-MS datasets.
+  not_designed_for:
+  - Bulk LC-MS feature-table processing or definitive identification from mass alone.
+  requirements:
+  - A local napari environment with the MSI-Explorer plugin and compatible imzML data.
+  considerations:
+  - Record preprocessing settings; normalization and region selection affect interpretation.
+  - Database mass matches require further evidence for structural identification.
+publications:
+- doi: 10.1021/acs.analchem.5c01513
+  type: primary
+  citation: 'MSI-Explorer: Napari-Powered Tool for Mass Spectrometry Imaging Data Analysis. Analytical
+    Chemistry (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Selected from the Enveda intake. Official documentation and primary-paper DOI/title/year checked
+    on 2026-10-21. Editorial review only; no software execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'
