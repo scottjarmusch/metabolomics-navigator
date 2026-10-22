@@ -1,0 +1,68 @@
+$schema: ../../schemas/tool.schema.json
+slug: gnn-rt
+name: GNN-RT
+summary: Predict chromatographic retention times from molecular structures.
+description: GNN-RT learns molecular-graph representations for retention-time prediction, with training
+  and transfer-learning scripts for applying the model to a chromatographic dataset.
+links:
+  primary: https://github.com/Qiong-Yang/GNN-RT
+  repository: https://github.com/Qiong-Yang/GNN-RT
+  documentation: https://github.com/Qiong-Yang/GNN-RT#readme
+platforms:
+- lc_ms
+interfaces:
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  capabilities:
+  - retention_time_prediction
+access:
+  model: open_source
+  notes: Access classification follows official repository license metadata; code and software execution
+    were not tested.
+  license: AGPL-3.0
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - report
+  other_input_formats:
+  - Molecular structures and measured retention times for training/adaptation
+  other_output_formats:
+  - Model-predicted retention times
+common_uses:
+- Predict chromatographic retention times from molecular structures.
+scope:
+  designed_for:
+  - GNN-RT learns molecular-graph representations for retention-time prediction, with training and transfer-learning
+    scripts for applying the model to a chromatographic dataset.
+  not_designed_for:
+  - Direct peak detection, structure confirmation or method-independent retention-time prediction.
+  requirements:
+  - Python, PyTorch, RDKit and data prepared for the provided scripts.
+  - Training or transfer-learning data appropriate to the chromatographic method.
+  considerations:
+  - Predictions depend on chemical and chromatographic applicability; use them as supporting annotation
+    evidence.
+publications:
+- doi: 10.1021/acs.analchem.0c04071
+  type: primary
+  citation: Prediction of Liquid Chromatographic Retention Time with Graph Neural Networks to Assist in
+    Small Molecule Identification. Analytical Chemistry (2021).
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'

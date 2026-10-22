@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: deeprtalign
+name: DeepRTAlign
+summary: Align retention times across large LC-MS sample collections.
+description: DeepRTAlign uses a deep-learning-based workflow to match extracted LC-MS features across
+  samples, with alignment scoring and quality-control output. The primary paper includes metabolomics
+  as well as proteomics.
+links:
+  primary: https://github.com/PHOENIXcenter/deeprtalign
+  repository: https://github.com/PHOENIXcenter/deeprtalign
+  documentation: https://github.com/PHOENIXcenter/deeprtalign#readme
+platforms:
+- lc_ms
+interfaces:
+- command_line
+- python_package
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  capabilities:
+  - retention_time_alignment
+access:
+  model: open_source
+  notes: License checked against official repository/package metadata. Installation and execution were
+    not tested.
+  license: GPL-3.0
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Feature lists containing m/z, charge, RT and intensity; sample mapping workbook
+  other_output_formats:
+  - Aligned feature groups and scores in CSV files
+common_uses:
+- Align retention times across large LC-MS sample collections.
+scope:
+  designed_for:
+  - DeepRTAlign uses a deep-learning-based workflow to match extracted LC-MS features across samples,
+    with alignment scoring and quality-control output. The primary paper includes metabolomics as well
+    as proteomics.
+  not_designed_for:
+  - Metabolite identification or peak extraction directly from instrument raw files.
+  requirements:
+  - Python, PyTorch and feature extraction completed upstream.
+  - Input column mappings and sample-file relationships prepared as documented.
+  considerations:
+  - Match quality depends on chromatography, extraction and alignment parameters; confirm suitability
+    for the study.
+publications:
+- doi: 10.1038/s41467-023-43909-5
+  type: primary
+  citation: 'DeepRTAlign: toward accurate retention time alignment for large cohort mass spectrometry
+    data analysis. Nature Communications (2023).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'

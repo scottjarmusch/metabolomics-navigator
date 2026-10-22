@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: mamsi
+name: MAMSI
+summary: Integrate multiple LC-MS assays using multiblock statistical models.
+description: MAMSI combines assay data blocks with multiblock partial least squares, feature-importance
+  assessment and feature-link exploration using m/z and retention time.
+links:
+  primary: https://github.com/kopeckylukas/py-mamsi
+  repository: https://github.com/kopeckylukas/py-mamsi
+  documentation: https://kopeckylukas.github.io/py-mamsi/
+platforms:
+- lc_ms
+interfaces:
+- python_package
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  capabilities:
+  - multivariate_statistics
+  - feature_selection
+  - network_visualization
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: License verified in the official repository. Code licensing does not establish the terms for
+    every separately downloaded model or dataset.
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Assay-specific abundance matrices, matched sample metadata and response values
+  other_output_formats:
+  - Python model/results objects, feature scores and network visualizations
+common_uses:
+- Integrate multiple LC-MS assays using multiblock statistical models.
+scope:
+  designed_for:
+  - MAMSI combines assay data blocks with multiblock partial least squares, feature-importance assessment
+    and feature-link exploration using m/z and retention time.
+  not_designed_for:
+  - Raw LC-MS processing or universal metabolite identification.
+  requirements:
+  - Python and documented dependencies; sample-matched assay blocks and a numeric modeled response.
+  - Feature m/z and retention-time metadata for structural-link searches.
+  considerations:
+  - Built-in ROI-based annotation is supported only for the documented National Phenome Centre assays.
+  - Use appropriate cross-validation and avoid information leakage; structural links and predictive associations
+    are not confirmed identities or causal relationships.
+publications:
+- doi: 10.1021/acs.analchem.5c01327
+  type: primary
+  citation: 'MAMSI: Integration of Multiassay Liquid Chromatography–Mass Spectrometry Metabolomics Data
+    Using Multiview Machine Learning. Analytical Chemistry (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'

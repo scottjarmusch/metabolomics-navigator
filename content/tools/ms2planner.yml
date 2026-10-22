@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+access:
+  model: free_academic
+  notes: Official license permits academic/nonprofit noncommercial internal research, with restrictions
+    on redistribution and derivatives. Not an unrestricted open-source license.
+common_uses:
+- Plan precursor acquisition schedules from LC-MS survey features.
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - Prepared survey-feature table; optional MS1 mzML or mzTab for curve mode
+  other_output_formats:
+  - Text or CSV acquisition paths and a planning log
+description: MS2Planner computes acquisition paths from feature masses, retention times and signals. Companion
+  scripts translate these paths into instrument inclusion lists.
+functions:
+  primary: data_acquisition
+  capabilities:
+  - blank_filtering
+interfaces:
+- command_line
+links:
+  primary: https://github.com/mohimanilab/MS2Planner
+  repository: https://github.com/mohimanilab/MS2Planner
+  documentation: https://github.com/mohimanilab/MS2Planner#readme
+maintenance:
+  last_checked: '2026-10-21'
+  status: unclear
+name: MS2Planner
+platforms:
+- lc_ms
+provenance:
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+  submitted_by: curator
+publications:
+- doi: 10.1093/bioinformatics/btab279
+  type: primary
+  citation: 'MS2Planner: improved fragmentation spectra coverage in untargeted mass spectrometry by iterative
+    optimized data acquisition. Bioinformatics (2021).'
+resource_types:
+- workflow_pipeline
+scope:
+  designed_for:
+  - MS2Planner computes acquisition paths from feature masses, retention times and signals. Companion
+    scripts translate these paths into instrument inclusion lists.
+  not_designed_for:
+  - Real-time instrument control or retrospective metabolite identification.
+  requirements:
+  - Survey features with sample/background information and a configured Python environment.
+  - Instrument-compatible inclusion-list export, repeat injections and reproducible chromatography.
+  considerations:
+  - Timing and isolation parameters must match the instrument; planned coverage does not guarantee usable
+    MS/MS spectra.
+slug: ms2planner
+status:
+  created_at: '2026-10-21'
+  entry: published
+  last_editorial_review: '2026-10-21'
+  last_verified: '2026-10-21'
+  review: editorially_reviewed
+  updated_at: '2026-10-21'
+summary: Plan precursor acquisition schedules from LC-MS survey features.
+analysis_types:
+- untargeted

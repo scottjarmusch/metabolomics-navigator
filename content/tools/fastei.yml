@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: fastei
+name: FastEI
+summary: Search electron-ionization spectra against a large predicted reference library.
+description: FastEI combines learned spectrum embeddings with approximate nearest-neighbor indexing for
+  EI library matching. It provides a Windows GUI and Python example workflows.
+links:
+  primary: https://github.com/Qiong-Yang/FastEI
+  repository: https://github.com/Qiong-Yang/FastEI
+  documentation: https://github.com/Qiong-Yang/FastEI#readme
+platforms:
+- gc_ms
+interfaces:
+- desktop_gui
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: spectral_analysis
+  capabilities:
+  - library_matching
+access:
+  model: open_source
+  notes: Access classification follows official repository license metadata; code and software execution
+    were not tested.
+  license: Apache-2.0
+data:
+  input_types:
+  - spectra
+  - spectral_library
+  output_types:
+  - compound_list
+  other_input_formats:
+  - EI peak lists; documented Python example accepts two-column CSV spectra
+  other_output_formats:
+  - Ranked library candidate matches
+common_uses:
+- Search electron-ionization spectra against a large predicted reference library.
+scope:
+  designed_for:
+  - FastEI combines learned spectrum embeddings with approximate nearest-neighbor indexing for EI library
+    matching. It provides a Windows GUI and Python example workflows.
+  not_designed_for:
+  - General LC-ESI-MS/MS identification or raw chromatogram deconvolution.
+  requirements:
+  - Compatible EI spectra plus the reference database, embedding model and index.
+  - Windows 64-bit for the packaged GUI, or the documented Python environment.
+  considerations:
+  - Predicted-library matches remain candidates; database coverage and spectral quality limit interpretation.
+publications:
+- doi: 10.1038/s41467-023-39279-7
+  type: primary
+  citation: Ultra-fast and accurate electron ionization mass spectrum matching for compound identification
+    with million-scale in-silico library. Nature Communications (2023).
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'

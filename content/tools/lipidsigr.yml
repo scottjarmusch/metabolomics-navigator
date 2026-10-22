@@ -1,0 +1,78 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidsigr
+name: LipidSigR
+summary: Analyze lipid abundance changes and lipid characteristics in R.
+description: LipidSigR supports lipid profiling, differential analysis, enrichment, correlation and selected
+  network or machine-learning workflows using processed lipidomics data.
+links:
+  primary: https://github.com/BioinfOMICS/LipidSigR
+  repository: https://github.com/BioinfOMICS/LipidSigR
+  documentation: https://lipidsig.bioinfomics.org/lipidsigr/
+platforms:
+- lc_ms
+interfaces:
+- r_package
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+  - pathway_enrichment
+access:
+  model: open_source
+  notes: License checked against official repository/package metadata. Installation and execution were
+    not tested.
+  license: MIT
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Processed lipid abundance and sample information in package input objects
+  other_output_formats:
+  - R analysis objects, result tables and visualizations
+common_uses:
+- Analyze lipid abundance changes and lipid characteristics in R.
+scope:
+  designed_for:
+  - LipidSigR supports lipid profiling, differential analysis, enrichment, correlation and selected network
+    or machine-learning workflows using processed lipidomics data.
+  not_designed_for:
+  - Raw LC-MS preprocessing or independent validation of lipid identities.
+  requirements:
+  - R 4.3 or later, package dependencies, lipid identifiers and a suitable study design.
+  considerations:
+  - The documented network and machine-learning workflows are restricted to two-group data.
+  - Results depend on lipid naming, preprocessing and study design; predictive models require appropriate
+    validation.
+publications:
+- doi: 10.1093/bioadv/vbaf047
+  type: primary
+  citation: 'LipidSigR: a R-based solution for integrated lipidomics data analysis and visualization.
+    Bioinformatics Advances (2025).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'
+analysis_types:
+- lipidomics
+related_tools:
+- slug: lipidsig
+  relationship: complementary
+  note: Companion R package based on the LipidSig web tool; interfaces and workflow support differ.

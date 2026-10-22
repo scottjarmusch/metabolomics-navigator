@@ -1,0 +1,73 @@
+$schema: ../../schemas/tool.schema.json
+slug: mrmquant
+name: MRMQuant
+summary: Quantify targeted metabolites from MRM chromatograms.
+description: MRMQuant provides a MATLAB graphical interface for MRM peak integration, calibration-based
+  quantification and manual review of targeted measurements.
+links:
+  primary: https://github.com/kslynn128171/MRMQuant
+  repository: https://github.com/kslynn128171/MRMQuant
+  documentation: https://github.com/kslynn128171/MRMQuant#readme
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+- matlab
+resource_types:
+- software_application
+functions:
+  primary: quantification
+  capabilities:
+  - calibration_curve
+  - peak_detection
+access:
+  model: source_available
+  notes: Source and distributions are publicly available. An explicit software license was not identified
+    in the reviewed repository; the paper describes the tool as open source, but reuse terms should be
+    confirmed.
+data:
+  input_types:
+  - spectra
+  - compound_list
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - MRM mzML or text files and a target transition/retention-time list
+  other_output_formats:
+  - Quantitation results and reloadable MATLAB MAT analysis files
+common_uses:
+- Quantify targeted metabolites from MRM chromatograms.
+scope:
+  designed_for:
+  - MRMQuant provides a MATLAB graphical interface for MRM peak integration, calibration-based quantification
+    and manual review of targeted measurements.
+  not_designed_for:
+  - Untargeted structure discovery from arbitrary MS/MS data.
+  requirements:
+  - MRM measurements and target precursor/product m/z, retention times and tolerances.
+  - Known-concentration standards for absolute quantification; suitable controls for optional correction.
+  considerations:
+  - Review integration, coelution and calibration fits; automated results do not replace assay validation.
+publications:
+- doi: 10.1021/acs.analchem.4c02462
+  type: primary
+  citation: 'MRMQuant: Automated MRM Data Quantitation for Large-Scale Targeted Metabolomics Analysis.
+    Analytical Chemistry (2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake candidate checked against official documentation, license information and primary
+    publication on 2026-10-21. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-21'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-21'
+  updated_at: '2026-10-21'
+  last_verified: '2026-10-21'
+  last_editorial_review: '2026-10-21'
+analysis_types:
+- targeted
