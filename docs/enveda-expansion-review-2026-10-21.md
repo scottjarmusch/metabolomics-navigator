@@ -26,3 +26,14 @@ Nine-entry batch validation: schema and all CI-equivalent local checks passed fo
 - SEISMiQ: official prediction documentation/LICENSE and final 2025 Digital Discovery paper (10.1039/D5DD00115C), replacing the intake preprint. Apache-2.0 code; separate model/data terms remain distinct. Formula plus spectrum required. Drug-impurity domain and CASMI checkpoint support stated without claiming broad biological-metabolite validation. https://github.com/Boehringer-Ingelheim/seismiq
 
 Second batch validation: 177-tool strict build passed. Final link check: 8,964 links/fragments across 239 pages and 315 relationship links; SEO passed for 238 canonical pages.
+
+## Third expansion batch — 22 October 2026
+
+- Met4DX: https://github.com/ZhuMetLab/Met4DX and DOI 10.1021/jasms.4c00290 (2024). R/Docker processing for documented timsTOF PASEF and Agilent IM-AIF inputs. LICENCE is CC BY-NC-ND 4.0, so source available rather than unrestricted open source. Mode-specific precursor/calibration prerequisites retained.
+- GNN-RT: https://github.com/Qiong-Yang/GNN-RT and DOI 10.1021/acs.analchem.0c04071 (2021). Graph-based RT prediction as orthogonal small-molecule annotation evidence; chromatographic adaptation required. AGPL-3.0 metadata verified.
+- FastEI: https://github.com/Qiong-Yang/FastEI and DOI 10.1038/s41467-023-39279-7 (2023). EI matching, not LC-ESI-MS/MS or chromatogram deconvolution. Official example.py/test.py demonstrate two-column query spectra and ranked retrieval. Apache-2.0 LICENSE verified.
+- SMQVP: https://github.com/mzlab-research/SMQVP and DOI 10.3390/metabo15060354 (2025). Spatial peak tables, not raw imaging import. Requires pixel coordinates and extracted intensities. No explicit code license identified; hosted service not execution-tested.
+
+Crossref titles/years checked for all four. No shared primary DOI found against existing catalogue tool entries. All describe documented capabilities, not independently tested performance.
+
+Final 17-tool batch validation: 181 tools, 40 Strategies and 83 education resources pass the strict build and all CI-equivalent local checks. Post-build checks passed for 9,120 local links/fragments across 243 pages, 315 relationships, five SEO tests and 242 canonical pages. A transient Windows generated-file lock interrupted the first build; the retry completed successfully.
