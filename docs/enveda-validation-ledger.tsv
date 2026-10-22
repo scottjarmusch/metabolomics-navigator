@@ -12,7 +12,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 15	NetAurHPD	unreviewed		https://github.com/TamirBar-Tov/NetAurHPD-Network-Auralization-Hyperlink-Prediction-Method	https://arxiv.org/abs/2410.22030		Not yet reviewed.
 16	SMQVP	unreviewed		https://github.com/mzlab-research/SMQVP	https://www.mdpi.com/2218-1989/15/6/354		Not yet reviewed.
 17	MetHoS	unreviewed		https://methos.cebitec.uni-bielefeld.de/welcomeview	https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04793-w		Not yet reviewed.
-18	SEISMiQ	unreviewed		https://github.com/Boehringer-Ingelheim/seismiq	https://chemrxiv.org/engage/chemrxiv/article-details/67c0518081d2151a024875ed		Not yet reviewed.
+18	SEISMiQ	validated_pending_merge	seismiq	https://github.com/Boehringer-Ingelheim/seismiq	https://chemrxiv.org/engage/chemrxiv/article-details/67c0518081d2151a024875ed		Primary journal article, official prediction/analysis inputs, license and domain limits verified 2026-10-21. See expansion review; not execution-tested.
 19	MobiLipid	validated_pending_merge	mobilipid	https://github.com/FelinaHildebrand/MobiLipid	https://pubs.acs.org/doi/10.1021/acs.analchem.4c01253	ion_mobility_platform_dimension	Official documentation and primary publication verified 2026-10-21. See docs/enveda-specialist-review-2026-10-21.md; no execution test.
 20	QuantyFey	validated_pending_merge	quantyfey	https://github.com/CDLMarkus/QuantyFey	https://doi.org/10.1016/j.aca.2025.344571		Primary publication, official documentation, scope and access terms checked 2026-10-21. See Enveda expansion review; no execution test.
 21	AnnoMe	unreviewed		https://github.com/chrboku/AnnoMe	https://chemrxiv.org/engage/chemrxiv/article-details/6895a25a23be8e43d653f5e9		Not yet reviewed.
@@ -29,7 +29,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 34	MS2Planner	validated_pending_merge	ms2planner	https://github.com/mohimanilab/MS2Planner	https://academic.oup.com/bioinformatics/article/37/Supplement_1/i231/6319686		Primary publication, official documentation, scope and access terms checked 2026-10-21. See Enveda expansion review; no execution test.
 35	FluoroMatch IM	unreviewed		https://fluoromatch.com	https://academic.oup.com/exposome/article/2/1/osac006/6674510		Not yet reviewed.
 37	VInSMoC	unreviewed		https://github.com/mohimanilab/VInSMoC	https://www.nature.com/articles/s43588-025-00923-5		Not yet reviewed.
-38	MAMSI	unreviewed		https://pypi.org/project/mamsi/	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01327		Not yet reviewed.
+38	MAMSI	validated_pending_merge	mamsi	https://pypi.org/project/mamsi/	https://pubs.acs.org/doi/10.1021/acs.analchem.5c01327		Primary journal article, official prediction/analysis inputs, license and domain limits verified 2026-10-21. See expansion review; not execution-tested.
 39	GNN-RT	unreviewed		https://github.com/Qiong-Yang/GNN-RT	https://pubs.acs.org/doi/full/10.1021/acs.analchem.0c04071		Not yet reviewed.
 41	FastEI	unreviewed		https://github.com/Qiong-Yang/FastEI	https://www.nature.com/articles/s41467-023-39279-7		Not yet reviewed.
 42	SigmaCCS	unreviewed		https://github.com/zmzhang/SigmaCCS, https://github.com/yuxuanliao/SigmaCCS, https://github.com/YoujiaZhang/SigmaCCS	https://www.nature.com/articles/s42004-023-00939-w	ion_mobility_platform_dimension	Not yet reviewed.

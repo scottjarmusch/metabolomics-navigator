@@ -19,3 +19,10 @@ Each entry links the official documentation and DOI. Primary DOI/title/year chec
 Reconciled 15 previously validated rows against main as published. MSnLib, GNPS2, ChemWalker and Met-ID were already covered by canonical records; mark covered rather than create duplicates. Their intake publications are not automatically appended. Other rows retain their existing status. MolDiscovery remains unreviewed: the current repository README mainly redirects to an academic service, so deployment/access and implementation need further examination.
 
 Nine-entry batch validation: schema and all CI-equivalent local checks passed for 175 tools, 40 Strategies and 83 learning resources. Strict build passed; 8,886 links/fragments, 315 relationships, five SEO tests and metadata for 236 canonical pages passed. No shared tool-publication DOI duplicates found for these nine additions.
+
+## Second expansion batch
+
+- MAMSI: official PyPI package, GitHub README/LICENSE and 2025 primary paper (10.1021/acs.analchem.5c01327). BSD-3-Clause. Matched multiblock abundance data and modeled outcome required; annotation limited to documented NPC assays. https://github.com/kopeckylukas/py-mamsi
+- SEISMiQ: official prediction documentation/LICENSE and final 2025 Digital Discovery paper (10.1039/D5DD00115C), replacing the intake preprint. Apache-2.0 code; separate model/data terms remain distinct. Formula plus spectrum required. Drug-impurity domain and CASMI checkpoint support stated without claiming broad biological-metabolite validation. https://github.com/Boehringer-Ingelheim/seismiq
+
+Second batch validation: 177-tool strict build passed. Final link check: 8,964 links/fragments across 239 pages and 315 relationship links; SEO passed for 238 canonical pages.
