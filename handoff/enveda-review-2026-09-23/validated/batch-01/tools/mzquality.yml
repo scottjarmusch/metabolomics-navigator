@@ -1,0 +1,78 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mzquality
+name: mzQuality
+summary: An R package for metabolomics study quality control, including outlier detection, pooled-QC batch correction, reliability filtering, diagnostic visualization, and reporting.
+links:
+  primary: https://github.com/hankemeierlab/mzQuality
+  repository: https://github.com/hankemeierlab/mzQuality
+  documentation: https://hankemeierlab.github.io/mzQuality/
+resource_types:
+  - programming_package
+functions:
+  primary: quality_control
+  secondary:
+    - normalization
+    - visualization_reporting
+    - quantification
+  capabilities:
+    - batch_effect_correction
+    - qc_drift_correction
+    - calibration_curve
+    - interactive_dashboard
+platforms:
+  - platform_independent
+analysis_types:
+  - targeted
+  - untargeted
+interfaces:
+  - r_package
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems:
+    - windows
+    - macos
+    - linux
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - feature_table
+    - sample_metadata
+  output_types:
+    - feature_table
+    - report
+    - statistical_results
+  input_formats:
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1021/jasms.5c00073
+    type: primary
+common_uses:
+  - Flag unreliable compounds and samples before downstream analysis.
+  - Apply pooled-study-QC-based batch correction and inspect batch behavior.
+  - Generate QC plots and reporting outputs for processed metabolomics tables.
+maintenance:
+  status: active
+  repository_last_activity: '2026-08-11'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Quality assessment and filtering of processed metabolomics studies represented as tabular abundance data.
+  considerations:
+    - mzQuality acts on processed study tables rather than performing raw LC-MS feature extraction.

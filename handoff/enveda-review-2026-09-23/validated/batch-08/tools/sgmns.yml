@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: sgmns
+name: SGMNS
+summary: A structure-guided molecular-network strategy for spectral-library-independent annotation of untargeted UPLC-HRMS metabolomics data.
+links:
+  primary: https://github.com/DLUT-datas/SGMNS
+  repository: https://github.com/DLUT-datas/SGMNS
+resource_types: [software_application]
+functions:
+  primary: molecular_networking
+  secondary: [annotation_identification]
+  capabilities: [network_visualization, structure_database_search]
+platforms: [lc_ms]
+analysis_types: [untargeted]
+interfaces: [desktop_gui]
+access:
+  model: free_academic
+technical:
+  operating_systems: [windows]
+  programming_languages: [Python]
+data:
+  input_types: [feature_table, spectra]
+  output_types: [compound_list, statistical_results]
+maintenance:
+  status: active
+  repository_last_activity: '2025-05-17'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and user manual.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

@@ -1,0 +1,42 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mobilipid
+name: MobiLipid
+summary: An R-based workflow for quality control and correction of collision-cross-section bias in ion-mobility lipidomics using internal lipid standards.
+links:
+  primary: https://github.com/FelinaHildebrand/MobiLipid
+  repository: https://github.com/FelinaHildebrand/MobiLipid
+resource_types: [workflow_pipeline]
+functions:
+  primary: quality_control
+  secondary: [normalization]
+  capabilities: [qc_drift_correction]
+platforms: [lc_ms]
+analysis_types: [lipidomics]
+interfaces: [r_package]
+access:
+  model: source_available
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [R]
+data:
+  input_types: [feature_table, sample_metadata]
+  output_types: [feature_table, report]
+maintenance:
+  status: limited
+  repository_last_activity: '2024-05-14'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; the workflow is specialized for IM-MS lipidomics CCS bias assessment/correction.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels: [ms1]
+  strategies: [unspecified]
+  ion_mobility: required

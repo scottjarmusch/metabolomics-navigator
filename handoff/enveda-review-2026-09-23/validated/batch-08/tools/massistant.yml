@@ -1,0 +1,37 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: massistant
+name: MASSISTANT
+summary: A research deep-learning tool for predicting de novo SELFIES molecular representations from electron-ionization mass spectra.
+links:
+  primary: https://github.com/BartaLazar/MASSISTANT
+  repository: https://github.com/BartaLazar/MASSISTANT
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [machine_learning]
+  capabilities: [structure_elucidation]
+platforms: [gc_ms]
+interfaces: [python_package]
+access:
+  model: source_available
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [spectra]
+  output_types: [molecular_structures]
+maintenance:
+  status: limited
+  repository_last_activity: '2025-07-11'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official archive repository; pretrained models are not distributed because training used commercial NIST EI spectra.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

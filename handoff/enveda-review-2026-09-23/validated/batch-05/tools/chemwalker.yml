@@ -1,0 +1,54 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: chemwalker
+name: ChemWalker
+summary: A Python package that propagates spectral-library match identities through candidate structures from in-silico fragmentation using random-walk methods.
+links:
+  primary: https://github.com/computational-chemical-biology/ChemWalker
+  repository: https://github.com/computational-chemical-biology/ChemWalker
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - molecular_networking
+  capabilities:
+    - library_matching
+    - structure_database_search
+platforms:
+  - platform_independent
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - notebook
+access:
+  model: open_source
+  license: BSD-3-Clause
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - molecular_structures
+  output_types:
+    - compound_list
+common_uses:
+  - Propagate trusted spectral-library evidence through candidate-structure neighborhoods.
+maintenance:
+  status: active
+  repository_last_activity: '2026-02-20'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official active repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

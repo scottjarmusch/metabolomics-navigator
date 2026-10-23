@@ -1,0 +1,39 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: jpa
+name: JPA
+summary: An R package integrating LC-MS peak detection, alignment, ion annotation, MS/MS annotation, and targeted-list support.
+links:
+  primary: https://github.com/HuanLab/JPA
+  repository: https://github.com/HuanLab/JPA
+resource_types: [programming_package]
+functions:
+  primary: preprocessing
+  secondary: [annotation_identification]
+  capabilities: [peak_detection, retention_time_alignment, adduct_isotope_grouping, library_matching]
+platforms: [lc_ms]
+analysis_types: [targeted, untargeted]
+interfaces: [r_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [R]
+data:
+  input_types: [raw_instrument_data, feature_table, spectra]
+  output_types: [feature_table, compound_list]
+maintenance:
+  status: limited
+  repository_last_activity: '2023-04-06'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and detailed user manual.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

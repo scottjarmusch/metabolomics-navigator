@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: omicsmic
+name: omicsMIC
+summary: An interactive benchmarking platform for simulating missingness and comparing imputation methods across mass-spectrometry-based omics datasets.
+links:
+  primary: https://github.com/WQLin8/omicsMIC
+  repository: https://github.com/WQLin8/omicsMIC
+resource_types: [web_service, software_application]
+functions:
+  primary: statistics
+  secondary: [visualization_reporting]
+  capabilities: [interactive_dashboard]
+platforms: [platform_independent]
+analysis_types: [metabolite_profiling, multiomics]
+interfaces: [web_app]
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems: [browser, cross_platform]
+data:
+  input_types: [feature_table]
+  output_types: [statistical_results, report]
+maintenance:
+  status: active
+  repository_last_activity: '2025-02-13'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

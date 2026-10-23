@@ -1,0 +1,88 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lipidex-2
+name: LipiDex 2
+summary: A standalone LC-MS lipidomics suite for in-silico library generation, MS/MS and MSn spectral searching, lipid feature annotation, peak-table integration, and automated identification quality control.
+links:
+  primary: https://github.com/coongroup/LipiDex-2
+  repository: https://github.com/coongroup/LipiDex-2
+  documentation: https://github.com/coongroup/LipiDex-2/wiki
+  download: https://github.com/coongroup/LipiDex-2/releases/latest
+resource_types:
+  - software_application
+functions:
+  primary: annotation_identification
+  secondary:
+    - spectral_analysis
+    - quality_control
+    - quantification
+  capabilities:
+    - in_silico_spectra
+    - library_matching
+    - identification_confidence
+    - ms2_processing
+platforms:
+  - lc_ms
+analysis_types:
+  - lipidomics
+interfaces:
+  - desktop_gui
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - windows
+  programming_languages:
+    - C#
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+    - feature_table
+    - spectral_library
+  output_types:
+    - compound_list
+    - feature_table
+    - report
+  input_formats:
+    - vendor_raw
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1021/acs.analchem.4c00359
+    type: primary
+common_uses:
+  - Generate or search lipid spectral libraries and annotate LC-MS lipid features.
+  - Apply retention-time, spectral-match, linearity, QC-RSD, and other evidence to filter lipid identifications.
+maintenance:
+  status: active
+  repository_last_activity: '2026-08-17'
+  last_checked: '2026-10-06'
+  notes: LipiDex 2 is the maintained successor to the legacy LipiDex 1 repository.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository and primary publication; access model is conservative because repository licensing was not explicit.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - LC-MS lipid identification and quality-controlled lipidomics workflows.
+  requirements:
+    - Current LipiDex 2 releases are distributed as a Windows executable and require .NET 7.
+  considerations:
+    - Peak Finder has documented integration requirements for Compound Discoverer outputs.
+acquisition:
+  ms_levels:
+    - ms2
+    - msn
+  strategies:
+    - dda
+    - targeted_msms
+    - unspecified
+  ion_mobility: unspecified

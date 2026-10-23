@@ -1,0 +1,39 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: meteor
+name: MeTEor
+summary: An R Shiny application for exploratory and inferential analysis of longitudinal metabolomics data, including dimensionality reduction, mixed models, repeated-measures tests, predictive models, and network plots.
+links:
+  primary: https://github.com/scibiome/meteor
+  repository: https://github.com/scibiome/meteor
+resource_types: [software_application]
+functions:
+  primary: statistics
+  secondary: [visualization_reporting, machine_learning]
+  capabilities: [univariate_statistics, multivariate_statistics, interactive_dashboard]
+platforms: [platform_independent]
+analysis_types: [metabolite_profiling]
+interfaces: [r_package, web_app]
+access:
+  model: open_source
+  license: GPL-3.0
+technical:
+  operating_systems: [cross_platform, browser]
+  programming_languages: [R]
+data:
+  input_types: [feature_table, sample_metadata]
+  output_types: [statistical_results, report]
+maintenance:
+  status: limited
+  repository_last_activity: '2024-10-06'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and tutorial.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

@@ -1,0 +1,52 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: metdna3
+name: MetDNA3
+summary: A metabolite-annotation platform using knowledge-driven and data-driven two-layer networking with recursive annotation propagation for untargeted metabolomics.
+links:
+  primary: http://metdna.zhulab.cn/
+  web_app: http://metdna.zhulab.cn/
+  repository: https://github.com/ZhuMetLab/MrnAnnoAlgo3
+resource_types:
+  - web_service
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - molecular_networking
+  capabilities:
+    - network_visualization
+    - structure_database_search
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - web_app
+  - r_package
+access:
+  model: free_web_service
+  notes: The repository documents a free-registration web service and a non-commercial project license.
+data:
+  input_types:
+    - feature_table
+    - spectra
+  output_types:
+    - compound_list
+    - statistical_results
+common_uses:
+  - Propagate metabolite annotations across related LC-MS features using complementary network layers.
+maintenance:
+  status: active
+  repository_last_activity: '2025-06-27'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official MetDNA3 algorithm repository and web-server documentation.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

@@ -1,0 +1,81 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: metaboprep
+name: metaboprep
+summary: An R package for importing processed metabolomics data, applying standardized sample and feature quality-control filters, and generating summary tables and HTML reports.
+links:
+  primary: https://mrcieu.github.io/metaboprep/
+  homepage: https://mrcieu.github.io/metaboprep/
+  repository: https://github.com/MRCIEU/metaboprep
+  documentation: https://mrcieu.github.io/metaboprep/
+resource_types:
+  - programming_package
+functions:
+  primary: quality_control
+  secondary:
+    - visualization_reporting
+    - data_management_sharing
+  capabilities:
+    - feature_selection
+platforms:
+  - platform_independent
+analysis_types:
+  - targeted
+  - untargeted
+interfaces:
+  - r_package
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - windows
+    - macos
+    - linux
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - feature_table
+    - sample_metadata
+  output_types:
+    - feature_table
+    - statistical_results
+    - report
+  input_formats:
+    - csv_tsv
+    - other
+  output_formats:
+    - csv_tsv
+    - other
+  other_input_formats:
+    - Excel
+  other_output_formats:
+    - HTML report
+publications:
+  - doi: 10.1093/bioinformatics/btac059
+    type: methods
+common_uses:
+  - Apply missingness, total-abundance, and PCA-based QC rules to processed metabolomics datasets.
+  - Produce standardized QC summaries and reports before statistical analysis.
+maintenance:
+  status: active
+  repository_last_activity: '2026-04-17'
+  last_checked: '2026-10-06'
+  notes: The current repository labels the package lifecycle experimental.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository and documentation; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Quality control and filtering of already quantified metabolomics tables.
+  not_designed_for:
+    - Raw LC-MS chromatographic peak detection or feature extraction.

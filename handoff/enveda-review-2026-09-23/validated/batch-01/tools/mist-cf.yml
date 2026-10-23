@@ -1,0 +1,67 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: mist-cf
+name: MIST-CF
+summary: A machine-learning tool for ranking molecular formula and adduct assignments directly from MS/MS spectra using a transformer-based model without requiring spectral-library matching.
+links:
+  primary: https://github.com/samgoldman97/mist-cf
+  repository: https://github.com/samgoldman97/mist-cf
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - machine_learning
+  capabilities:
+    - molecular_formula_prediction
+platforms:
+  - platform_independent
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - command_line
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - linux
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+  output_types:
+    - compound_list
+  input_formats:
+    - mgf
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1021/acs.jcim.3c01082
+    type: primary
+common_uses:
+  - Rank chemical-formula and adduct candidates for unknown MS/MS spectra.
+  - Apply pretrained models to public natural-product or CASMI-style spectra.
+maintenance:
+  status: limited
+  repository_last_activity: '2023-09-20'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - De novo formula and adduct ranking from small-molecule MS/MS spectra.
+  requirements:
+    - The public workflow uses SIRIUS decomposition to enumerate candidate formulas.
+  considerations:
+    - The documented pretrained workflow is focused on positive-ion data and performance depends on training-domain coverage.

@@ -1,0 +1,73 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: autoccs
+name: AutoCCS
+summary: An open-source Python tool for calculating and calibrating experimental collision cross sections from ion-mobility mass-spectrometry data across drift-tube and traveling-wave workflows.
+links:
+  primary: https://github.com/PNNL-Comp-Mass-Spec/AutoCCS
+  repository: https://github.com/PNNL-Comp-Mass-Spec/AutoCCS
+resource_types:
+  - programming_package
+functions:
+  primary: preprocessing
+  secondary:
+    - annotation_identification
+  capabilities: []
+platforms:
+  - multi_platform
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - command_line
+access:
+  model: open_source
+  license: BSD-2-Clause
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - feature_table
+    - sample_metadata
+  output_types:
+    - feature_table
+  input_formats:
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1093/bioinformatics/btab429
+    type: primary
+common_uses:
+  - Calculate CCS values from stepped-field or single-field drift-tube IMS-MS measurements.
+  - Calibrate traveling-wave or SLIM ion-mobility measurements using reference compounds.
+maintenance:
+  status: active
+  repository_last_activity: '2024-12-13'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication. AutoCCS performs experimental CCS calculation/calibration and is intentionally not tagged with Navigator's ccs_prediction capability.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Processing ion-mobility measurements into calibrated collision cross sections.
+  not_designed_for:
+    - Predicting CCS directly from molecular structure.
+acquisition:
+  ms_levels:
+    - ms1
+  strategies:
+    - unspecified
+  ion_mobility: required

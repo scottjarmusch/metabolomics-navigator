@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lipidspace
+name: LipidSpace
+summary: A standalone tool for comparing lipidomes by graph-based structural distances between lipid species, with experiment-level comparison, visualization, and quality-control support.
+links:
+  primary: https://github.com/lifs-tools/lipidspace
+  repository: https://github.com/lifs-tools/lipidspace
+resource_types: [software_application]
+functions:
+  primary: statistics
+  secondary: [visualization_reporting, quality_control]
+  capabilities: [multivariate_statistics, network_visualization]
+platforms: [platform_independent]
+analysis_types: [lipidomics]
+interfaces: [desktop_gui]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [windows, macos, linux]
+data:
+  input_types: [feature_table, compound_list]
+  output_types: [statistical_results, report]
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-04'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

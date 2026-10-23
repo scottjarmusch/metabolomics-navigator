@@ -1,0 +1,43 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: vimms
+name: ViMMS
+summary: A programmable Python framework for simulating LC-MS/MS metabolomics acquisitions so fragmentation strategies can be developed, compared, and optimized before instrument experiments.
+links:
+  primary: https://github.com/glasgowcompbio/vimms
+  repository: https://github.com/glasgowcompbio/vimms
+resource_types: [programming_package]
+functions:
+  primary: data_acquisition
+  secondary: [workflow_reproducibility]
+  capabilities: [provenance_tracking]
+platforms: [lc_ms]
+analysis_types: [untargeted]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [spectra, feature_table]
+  output_types: [raw_instrument_data, spectra]
+maintenance:
+  status: active
+  repository_last_activity: '2026-07-03'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository. ViMMS simulates acquisition strategies; it does not directly control an instrument.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels: [ms1, ms2]
+  strategies: [dda, dia, targeted_msms]
+  ion_mobility: unspecified

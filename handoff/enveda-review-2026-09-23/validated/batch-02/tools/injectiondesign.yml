@@ -1,0 +1,65 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: injectiondesign
+name: InjectionDesign
+summary: A web service for designing LC-MS and GC-MS multi-omics injection sequences with QC placement, inter-batch balancing, intra-batch randomization, and downloadable worksheets.
+links:
+  primary: http://www.injection.design/
+  web_app: http://www.injection.design/
+  repository: https://github.com/CSi-Studio/InjectionDesign
+resource_types:
+  - web_service
+functions:
+  primary: quality_control
+  secondary:
+    - data_management_sharing
+  capabilities:
+    - metadata_contextualization
+platforms:
+  - lc_ms
+  - gc_ms
+analysis_types:
+  - multiomics
+interfaces:
+  - web_app
+access:
+  model: free_web_service
+technical:
+  operating_systems:
+    - browser
+    - cross_platform
+data:
+  input_types:
+    - sample_metadata
+  output_types:
+    - sample_metadata
+  input_formats:
+    - other
+  output_formats:
+    - other
+  other_input_formats:
+    - Excel worksheet
+  other_output_formats:
+    - Excel worksheet
+common_uses:
+  - Randomize and balance study samples across analytical batches.
+  - Place pooled, blank, solvent, reference, and custom QC samples within an injection sequence.
+maintenance:
+  status: limited
+  repository_last_activity: '2023-11-27'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and documented public web service; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Prospective injection-order design and QC placement before LC-MS or GC-MS acquisition.
+  not_designed_for:
+    - Post-acquisition correction of drift or batch effects.

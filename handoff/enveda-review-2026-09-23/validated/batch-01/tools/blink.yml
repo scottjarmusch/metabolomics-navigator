@@ -1,0 +1,79 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: blink
+name: BLINK
+summary: A Python package for efficient cosine-based similarity scoring and matching of large collections of fragmentation mass spectra, including analog-search workflows.
+links:
+  primary: https://github.com/biorack/blink
+  repository: https://github.com/biorack/blink
+resource_types:
+  - programming_package
+functions:
+  primary: spectral_analysis
+  secondary:
+    - annotation_identification
+  capabilities:
+    - library_matching
+    - ms2_processing
+platforms:
+  - platform_independent
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - command_line
+  - notebook
+access:
+  model: open_source
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - spectral_library
+  output_types:
+    - statistical_results
+  input_formats:
+    - mgf
+    - mzml
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1038/s41598-023-40496-9
+    type: primary
+common_uses:
+  - Calculate large numbers of MS/MS similarity scores efficiently.
+  - Perform library or analog searches using fragmentation spectra.
+maintenance:
+  status: active
+  repository_last_activity: '2025-01-16'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; repository README labels the command-line interface as experimental.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Fast spectral similarity and analog-search calculations on MS/MS data.
+  considerations:
+    - Similarity thresholds and interpretation remain dataset- and use-case-dependent.
+    - The repository describes its command-line interface as experimental.
+acquisition:
+  ms_levels:
+    - ms2
+  strategies:
+    - dda
+    - targeted_msms
+    - unspecified
+  ion_mobility: not_required

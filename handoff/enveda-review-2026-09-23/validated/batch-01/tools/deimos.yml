@@ -1,0 +1,88 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: deimos
+name: DEIMoS
+summary: An open-source Python and command-line toolkit for high-dimensional mass-spectrometry processing, including feature detection and alignment, CCS calibration, isotope detection, and MS/MS spectral deconvolution.
+links:
+  primary: https://deimos.readthedocs.io/
+  homepage: https://deimos.readthedocs.io/
+  repository: https://github.com/pnnl/deimos
+  documentation: https://deimos.readthedocs.io/
+resource_types:
+  - programming_package
+functions:
+  primary: preprocessing
+  secondary:
+    - spectral_analysis
+    - annotation_identification
+  capabilities:
+    - peak_detection
+    - retention_time_alignment
+    - spectral_deconvolution
+    - ccs_prediction
+    - ms2_processing
+platforms:
+  - multi_platform
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+  - command_line
+access:
+  model: open_source
+  license: BSD-3-Clause
+technical:
+  operating_systems:
+    - linux
+    - macos
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - feature_table
+  output_types:
+    - feature_table
+    - spectra
+  input_formats:
+    - mzml
+    - hdf5
+  output_formats:
+    - csv_tsv
+    - hdf5
+publications:
+  - doi: 10.1021/acs.analchem.1c05017
+    type: primary
+common_uses:
+  - Process multidimensional MS datasets using multiple measured dimensions simultaneously.
+  - Detect and align features while retaining ion-mobility or other separation dimensions.
+  - Perform CCS calibration and MS/MS spectral deconvolution.
+maintenance:
+  status: active
+  repository_last_activity: '2026-08-25'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository, documentation, and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - High-dimensional mass-spectrometry data processing where dimensions such as retention time and ion mobility improve separation.
+  considerations:
+    - DEIMoS is code-oriented and requires users to design or adapt a processing workflow around its API/CLI.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - dia
+    - unspecified
+  ion_mobility: supported

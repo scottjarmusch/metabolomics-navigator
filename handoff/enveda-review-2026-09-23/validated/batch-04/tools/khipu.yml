@@ -1,0 +1,58 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: khipu
+name: khipu
+summary: A Python library for low-level annotation of untargeted metabolomics and stable-isotope-tracing data by grouping degenerate ions and inferring neutral-mass relationships.
+links:
+  primary: https://github.com/shuzhao-li-lab/khipu
+  repository: https://github.com/shuzhao-li-lab/khipu
+resource_types:
+  - programming_package
+functions:
+  primary: isotope_tracing_flux
+  secondary:
+    - annotation_identification
+    - preprocessing
+  capabilities:
+    - adduct_isotope_grouping
+    - isotopologue_correction
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+  - stable_isotope_tracing
+interfaces:
+  - python_package
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - cross_platform
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - feature_table
+  output_types:
+    - compound_list
+    - isotope_tracing_data
+publications:
+  - doi: 10.1021/acs.analchem.2c05810
+    type: primary
+common_uses:
+  - Group adduct, isotope, and related ions into empirical-compound structures.
+  - Organize isotope-tracing features before downstream interpretation.
+maintenance:
+  status: active
+  repository_last_activity: '2025-07-30'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

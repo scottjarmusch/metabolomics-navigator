@@ -26,6 +26,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Validate tools, strategies, and cross-links
         run: python scripts/validate_catalogue.py
+      - name: Validate Enveda handoff drafts
+        run: python scripts/validate_enveda_handoff.py
       - name: Check form and vocabulary stay synchronized
         run: python scripts/check_form_sync.py
       - name: Test full static-site build

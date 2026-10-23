@@ -1,0 +1,70 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lpptiger2
+name: LPPtiger 2
+aliases:
+  - LPPtiger2
+summary: A graphical and scriptable tool for epilipidomics that predicts modified lipid candidates, generates in-silico fragmentation, prepares inclusion lists, and identifies oxidized or otherwise modified lipids from LC-MS data.
+links:
+  primary: https://github.com/LMAI-TUD/lpptiger2
+  repository: https://github.com/LMAI-TUD/lpptiger2
+  download: https://github.com/LMAI-TUD/lpptiger2/releases
+resource_types:
+  - software_application
+functions:
+  primary: annotation_identification
+  secondary:
+    - spectral_analysis
+  capabilities:
+    - in_silico_spectra
+    - structure_elucidation
+platforms:
+  - lc_ms
+analysis_types:
+  - lipidomics
+interfaces:
+  - desktop_gui
+  - python_package
+access:
+  model: free_academic
+  license: AGPL-3.0
+  notes: The repository documents AGPLv3 for academic/non-commercial use and asks commercial users to contact the developers.
+technical:
+  operating_systems:
+    - windows
+    - macos
+    - linux
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - spectra
+    - molecular_structures
+  output_types:
+    - spectra
+    - compound_list
+publications:
+  - doi: 10.1038/s42004-022-00778-1
+    type: primary
+common_uses:
+  - Predict and annotate oxidized or otherwise modified lipid species.
+  - Generate in-silico fragmentation and inclusion lists for epilipidomics workflows.
+maintenance:
+  status: limited
+  repository_last_activity: '2022-10-21'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official LPPtiger 2 repository. Publication mapping should receive a final citation check before promotion to the live catalogue.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Specialized annotation of modified lipids in LC-MS lipidomics.
+  considerations:
+    - This is a specialized epilipidomics tool rather than a general lipid identification platform.

@@ -1,0 +1,3 @@
+source_row	name	source_category	source_subcategory	tool_url	publication_url	year	programming_language	proposed_primary_function	proposed_platforms	proposed_analysis_types	proposed_interfaces	proposed_resource_type	flags
+57	AutonoMS	Ion Mobility MS		https://autonoms.readthedocs.io	https://pubs.acs.org/doi/10.1021/jasms.3c00396	2024	Python	workflow_reproducibility	platform_independent	untargeted	python_package	workflow_pipeline	ion_mobility_platform_dimension
+95	Tidy-Direct-to-MS	DIMS		https://github.com/griquelme/tidyms	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.3c00784	2024	Python	workflow_reproducibility	direct_infusion_ms	untargeted	python_package	workflow_pipeline	

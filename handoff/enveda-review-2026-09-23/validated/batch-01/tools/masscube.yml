@@ -1,0 +1,92 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: masscube
+name: MassCube
+summary: An integrated Python package for LC-MS data processing with nontargeted peak detection and segmentation, feature quality evaluation, feature-group annotation, and MS/MS library or analog searching.
+links:
+  primary: https://huaxuyu.github.io/masscubedocs/
+  homepage: https://huaxuyu.github.io/masscubedocs/
+  repository: https://github.com/huaxuyu/masscube
+  documentation: https://huaxuyu.github.io/masscubedocs/
+resource_types:
+  - programming_package
+functions:
+  primary: preprocessing
+  secondary:
+    - quality_control
+    - annotation_identification
+    - spectral_analysis
+  capabilities:
+    - chromatogram_building
+    - peak_detection
+    - gap_filling
+    - adduct_isotope_grouping
+    - library_matching
+    - ms2_processing
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: Apache-2.0
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+    - cross_platform
+  programming_languages:
+    - Python
+  package_managers:
+    - PyPI
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+  output_types:
+    - feature_table
+    - spectra
+    - compound_list
+  input_formats:
+    - mzml
+    - vendor_raw
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1038/s41467-025-60640-5
+    type: primary
+common_uses:
+  - Process LC-MS data from raw spectra to aligned quantitative features.
+  - Evaluate feature quality and group isotopes, adducts, and in-source fragments.
+  - Search MS/MS spectra against identity or analog references.
+maintenance:
+  status: active
+  repository_last_activity: '2026-08-25'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository, documentation, and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Integrated Python-based LC-MS preprocessing and feature-level annotation.
+  considerations:
+    - Vendor-format support is format-specific; check current documentation for supported raw-data readers.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - unspecified
+  ion_mobility: supported

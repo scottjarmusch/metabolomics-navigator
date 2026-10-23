@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: orbifragsnets
+name: OrbiFragsNets
+summary: A database-independent Python tool for annotating Orbitrap MS/MS spectra using fragment-network consistency as a selection criterion.
+links:
+  primary: https://github.com/EdwinChingate/OrbiFragsNets
+  repository: https://github.com/EdwinChingate/OrbiFragsNets
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [molecular_networking, spectral_analysis]
+  capabilities: [ms2_processing]
+platforms: [platform_independent]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [spectra]
+  output_types: [compound_list, statistical_results]
+maintenance:
+  status: active
+  repository_last_activity: '2026-05-29'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository and published method.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

@@ -1,0 +1,52 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: rawhummus
+name: RawHummus
+summary: An R Shiny application for assessing LC-MS system performance using instrument log files and project-level raw QC samples.
+links:
+  primary: https://github.com/YonghuiDong/RawHummus
+  repository: https://github.com/YonghuiDong/RawHummus
+resource_types:
+  - software_application
+  - web_service
+functions:
+  primary: quality_control
+  secondary:
+    - visualization_reporting
+  capabilities:
+    - interactive_dashboard
+platforms:
+  - lc_ms
+interfaces:
+  - r_package
+  - web_app
+access:
+  model: open_source
+technical:
+  operating_systems:
+    - browser
+    - cross_platform
+  programming_languages:
+    - R
+data:
+  input_types:
+    - raw_instrument_data
+    - sample_metadata
+  output_types:
+    - report
+common_uses:
+  - Monitor LC-MS system performance using QC samples and instrument logs.
+maintenance:
+  status: limited
+  repository_last_activity: '2022-11-29'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and CRAN-linked project documentation.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

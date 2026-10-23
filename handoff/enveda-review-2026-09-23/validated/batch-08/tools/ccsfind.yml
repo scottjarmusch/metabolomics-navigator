@@ -1,0 +1,44 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: ccsfind
+name: CCSfind
+summary: A tool for extracting and curating experimental small-molecule collision-cross-section records from LC-drift-tube-ion-mobility-MS measurements.
+links:
+  primary: https://github.com/sangeeta97/ccs_find
+  repository: https://github.com/sangeeta97/ccs_find
+resource_types: [software_application]
+functions:
+  primary: preprocessing
+  secondary: [annotation_identification, data_management_sharing]
+  capabilities: [adduct_isotope_grouping]
+platforms: [lc_ms]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [raw_instrument_data, compound_list]
+  output_types: [feature_table]
+  input_formats: [mzml]
+  output_formats: [csv_tsv]
+maintenance:
+  status: active
+  repository_last_activity: '2026-02-02'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official repository. CCSfind curates measured CCS; it does not predict CCS from structure.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+acquisition:
+  ms_levels: [ms1]
+  strategies: [full_scan]
+  ion_mobility: required

@@ -1,0 +1,94 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: metabonaut
+name: Metabonaut
+summary: An open educational and reproducible workflow resource for script-based untargeted LC-MS/MS metabolomics using R and Bioconductor packages across preprocessing, QC, statistics, and annotation.
+links:
+  primary: https://rformassspectrometry.github.io/Metabonaut/
+  homepage: https://rformassspectrometry.github.io/Metabonaut/
+  repository: https://github.com/rformassspectrometry/Metabonaut
+  documentation: https://rformassspectrometry.github.io/Metabonaut/
+resource_types:
+  - workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+    - preprocessing
+    - quality_control
+    - statistics
+    - annotation_identification
+  capabilities:
+    - provenance_tracking
+    - chromatogram_building
+    - peak_detection
+    - retention_time_alignment
+    - gap_filling
+    - library_matching
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+  - metabolite_profiling
+interfaces:
+  - r_package
+  - notebook
+access:
+  model: open_source
+  license: CC-BY-SA-4.0
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+    - containers
+  programming_languages:
+    - R
+  containers:
+    - Docker
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+    - sample_metadata
+  output_types:
+    - feature_table
+    - statistical_results
+    - compound_list
+    - report
+  input_formats:
+    - mzml
+    - csv_tsv
+publications:
+  - doi: 10.1007/s11306-026-02538-x
+    type: primary
+common_uses:
+  - Learn a reproducible end-to-end untargeted LC-MS/MS workflow in R.
+  - Reuse worked examples for preprocessing, quality control, statistics, and annotation.
+maintenance:
+  status: active
+  repository_last_activity: '2026-10-05'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and project documentation; classified as workflow/reproducibility rather than preprocessing because it spans multiple analytical stages.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Learning and reproducing script-based untargeted LC-MS/MS analysis with R/Bioconductor.
+  considerations:
+    - Metabonaut is primarily an educational workflow resource rather than a single processing engine.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - unspecified
+  ion_mobility: unspecified

@@ -1,0 +1,78 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: pyeva
+name: pyEVA
+aliases:
+  - EVA
+summary: A Python implementation of EVA for automated evaluation of extracted-ion chromatogram fidelity, using deep learning to classify LC-MS features as likely true or false signals.
+links:
+  primary: https://github.com/HuanLab/pyEVA
+  repository: https://github.com/HuanLab/pyEVA
+resource_types:
+  - software_application
+functions:
+  primary: quality_control
+  secondary:
+    - machine_learning
+  capabilities:
+    - feature_selection
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - command_line
+access:
+  model: source_available
+technical:
+  operating_systems:
+    - windows
+    - macos
+    - linux
+  programming_languages:
+    - Python
+    - R
+data:
+  input_types:
+    - raw_instrument_data
+    - feature_table
+  output_types:
+    - feature_table
+    - report
+  input_formats:
+    - mzml
+    - mzxml
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+publications:
+  - doi: 10.1021/acs.analchem.1c01309
+    type: primary
+common_uses:
+  - Automatically classify extracted-ion chromatograms as higher- or lower-fidelity metabolomic features.
+  - Filter feature tables after chromatographic peak detection.
+maintenance:
+  status: active
+  repository_last_activity: '2025-02-06'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official pyEVA repository. pyEVA is treated as the current implementation lineage of the EVA method rather than as a separate duplicated EVA entry.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Automated feature-fidelity assessment of LC-MS extracted-ion chromatograms.
+  considerations:
+    - Classifier outputs support feature filtering but should be inspected in the context of the acquisition and upstream peak-detection workflow.
+acquisition:
+  ms_levels:
+    - ms1
+  strategies:
+    - full_scan
+  ion_mobility: unspecified

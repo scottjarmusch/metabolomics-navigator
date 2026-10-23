@@ -1,0 +1,65 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: ms2decide
+name: MS2DECIDE
+summary: A Python library that applies decision-theory methods to prioritize competing metabolite annotations by integrating outputs from GNPS, ISDB-LOTUS, and SIRIUS-based workflows.
+links:
+  primary: https://github.com/MejriY/MS2DECIDE
+  repository: https://github.com/MejriY/MS2DECIDE
+resource_types:
+  - programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+    - statistics
+  capabilities:
+    - identification_confidence
+    - library_matching
+platforms:
+  - platform_independent
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - compound_list
+    - spectra
+  output_types:
+    - compound_list
+    - statistical_results
+publications:
+  - doi: 10.1002/cmtd.202400088
+    type: primary
+common_uses:
+  - Prioritize alternative annotations when multiple annotation engines return conflicting candidates.
+  - Integrate annotation evidence from GNPS, ISDB-LOTUS, and SIRIUS-family outputs.
+maintenance:
+  status: active
+  repository_last_activity: '2026-04-25'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Annotation prioritization when multiple spectral or in-silico tools yield competing candidates.
+  considerations:
+    - The recommendations depend on the quality and compatibility of the upstream annotation sources.

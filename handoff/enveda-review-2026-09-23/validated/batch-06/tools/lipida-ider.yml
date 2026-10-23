@@ -1,0 +1,38 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lipida-ider
+name: LipidA-IDER
+summary: An automated tool for high-resolution tandem-MS structural annotation of lipid A species, with both graphical and command-line interfaces.
+links:
+  primary: https://github.com/Systems-Biology-Of-Lipid-Metabolism-Lab/LipidA-IDER
+  repository: https://github.com/Systems-Biology-Of-Lipid-Metabolism-Lab/LipidA-IDER
+resource_types: [software_application]
+functions:
+  primary: annotation_identification
+  secondary: [spectral_analysis]
+  capabilities: [structure_elucidation, ms2_processing]
+platforms: [platform_independent]
+analysis_types: [lipidomics]
+interfaces: [desktop_gui, command_line]
+access:
+  model: source_available
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [spectra]
+  output_types: [compound_list]
+maintenance:
+  status: limited
+  repository_last_activity: '2022-12-12'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; specialized specifically for lipid A.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

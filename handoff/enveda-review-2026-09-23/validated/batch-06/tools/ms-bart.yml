@@ -1,0 +1,37 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: ms-bart
+name: MS-BART
+summary: A research language-model framework for de novo molecular-structure elucidation from mass spectra using unified modeling of spectra and molecular representations.
+links:
+  primary: https://github.com/OpenDFM/MS-BART
+  repository: https://github.com/OpenDFM/MS-BART
+resource_types: [programming_package]
+functions:
+  primary: annotation_identification
+  secondary: [machine_learning]
+  capabilities: [structure_elucidation]
+platforms: [platform_independent]
+interfaces: [python_package]
+access:
+  model: source_available
+technical:
+  operating_systems: [linux]
+  programming_languages: [Python]
+data:
+  input_types: [spectra]
+  output_types: [molecular_structures]
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-30'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the active official NeurIPS 2025 repository; research implementation rather than routine production annotation software.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'

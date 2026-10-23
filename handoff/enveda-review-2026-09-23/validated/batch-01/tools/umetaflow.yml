@@ -1,0 +1,97 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: umetaflow
+name: UmetaFlow
+summary: A Snakemake workflow for high-throughput untargeted metabolomics that combines file conversion, OpenMS preprocessing, SIRIUS-family annotation, GNPS export, spectral matching, and graph-based outputs.
+links:
+  primary: https://github.com/biosustain/snakemake_UmetaFlow
+  repository: https://github.com/biosustain/snakemake_UmetaFlow
+resource_types:
+  - workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+    - data_conversion
+    - preprocessing
+    - annotation_identification
+    - spectral_analysis
+    - molecular_networking
+  capabilities:
+    - provenance_tracking
+    - container_support
+    - peak_detection
+    - retention_time_alignment
+    - gap_filling
+    - library_matching
+    - molecular_formula_prediction
+    - compound_class_prediction
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - command_line
+  - workflow_language
+access:
+  model: open_source
+  license: Apache-2.0
+technical:
+  operating_systems:
+    - linux
+    - macos
+  programming_languages:
+    - Python
+    - Snakemake
+  package_managers:
+    - Conda
+data:
+  input_types:
+    - raw_instrument_data
+    - spectra
+    - sample_metadata
+  output_types:
+    - feature_table
+    - spectra
+    - compound_list
+  input_formats:
+    - vendor_raw
+    - mzml
+  output_formats:
+    - csv_tsv
+    - mgf
+publications:
+  - doi: 10.1186/s13321-023-00724-w
+    type: primary
+common_uses:
+  - Execute a reproducible untargeted LC-MS pipeline around OpenMS.
+  - Prepare outputs for SIRIUS-family annotation and GNPS feature-based molecular networking.
+maintenance:
+  status: limited
+  repository_last_activity: '2025-01-05'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official Snakemake workflow repository and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - High-throughput untargeted metabolomics workflows combining preprocessing and downstream annotation/export.
+  requirements:
+    - Snakemake-compatible environment and the workflow's external software dependencies.
+  considerations:
+    - Thermo RAW conversion is integrated; other vendor formats are expected to be converted independently to mzML.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - unspecified
+  ion_mobility: unspecified

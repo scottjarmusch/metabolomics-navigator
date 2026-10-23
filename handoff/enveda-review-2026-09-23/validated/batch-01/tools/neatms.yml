@@ -1,0 +1,65 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: neatms
+name: NeatMS
+summary: An open-source Python package that uses neural-network classification to label and filter false-positive MS1 peaks from untargeted LC-MS feature-detection workflows.
+links:
+  primary: https://github.com/bihealth/NeatMS
+  repository: https://github.com/bihealth/NeatMS
+  documentation: https://neatms.readthedocs.io/
+resource_types:
+  - programming_package
+functions:
+  primary: quality_control
+  secondary:
+    - machine_learning
+  capabilities:
+    - feature_selection
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - python_package
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - Python
+data:
+  input_types:
+    - feature_table
+    - raw_instrument_data
+  output_types:
+    - feature_table
+publications:
+  - doi: 10.1021/acs.analchem.1c02220
+    type: primary
+common_uses:
+  - Remove low-quality or false-positive LC-MS features after peak detection.
+  - Apply pretrained or user-trained neural-network classifiers to chromatographic signals.
+maintenance:
+  status: archived
+  repository_last_activity: '2021-08-19'
+  last_checked: '2026-10-06'
+  notes: The official GitHub repository is archived.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository and primary publication; retained for historical and methodological relevance despite archived maintenance status.
+status:
+  entry: archived
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - Automated LC-MS signal-quality classification and filtering after feature detection.
+  considerations:
+    - The official repository is archived, so users should evaluate compatibility with current Python environments and preprocessing tools.

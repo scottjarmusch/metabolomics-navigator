@@ -1,0 +1,94 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: pcpfm
+name: Python-Centric Pipeline for Metabolomics
+acronym: PCPFM
+summary: An open Python workflow for LC-MS metabolomics that converts supported raw data, performs feature extraction with Asari, applies QC and normalization, groups empirical compounds, and supports MS1/MS2 annotation.
+links:
+  primary: https://github.com/shuzhao-li-lab/PythonCentricPipelineForMetabolomics
+  repository: https://github.com/shuzhao-li-lab/PythonCentricPipelineForMetabolomics
+  documentation: https://pythoncentricpipelineformetabolomics.readthedocs.io/
+resource_types:
+  - workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+    - data_conversion
+    - preprocessing
+    - quality_control
+    - normalization
+    - annotation_identification
+  capabilities:
+    - provenance_tracking
+    - peak_detection
+    - blank_filtering
+    - batch_effect_correction
+    - adduct_isotope_grouping
+    - library_matching
+platforms:
+  - lc_ms
+analysis_types:
+  - untargeted
+interfaces:
+  - command_line
+  - python_package
+access:
+  model: open_source
+technical:
+  operating_systems:
+    - linux
+    - macos
+    - windows
+  programming_languages:
+    - Python
+  package_managers:
+    - PyPI
+data:
+  input_types:
+    - raw_instrument_data
+    - sample_metadata
+  output_types:
+    - feature_table
+    - compound_list
+    - report
+  input_formats:
+    - vendor_raw
+    - mzml
+    - csv_tsv
+  output_formats:
+    - csv_tsv
+    - json
+publications:
+  - doi: 10.1371/journal.pcbi.1011912
+    type: primary
+common_uses:
+  - Run a reproducible LC-MS metabolomics workflow from raw or mzML data to curated feature tables.
+  - Combine feature extraction, QC, normalization, empirical-compound grouping, and annotation in one Python workflow.
+maintenance:
+  status: active
+  repository_last_activity: '2026-09-30'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository, documentation, and primary publication; software execution was not assessed.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
+scope:
+  designed_for:
+    - End-to-end, Python-centric preprocessing and annotation of LC-MS metabolomics studies.
+  considerations:
+    - Thermo RAW conversion is integrated; support for other vendor raw formats is more limited and mzML is the general interchange format.
+acquisition:
+  ms_levels:
+    - ms1
+    - ms2
+  strategies:
+    - full_scan
+    - dda
+    - unspecified
+  ion_mobility: unspecified

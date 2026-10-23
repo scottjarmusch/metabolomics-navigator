@@ -1,0 +1,41 @@
+$schema: ../../../../../schemas/tool.schema.json
+slug: lipidfinder
+name: LipidFinder
+summary: An open-source Python workflow for cleaning preprocessed LC-MS lipidomics feature tables by removing noise, contaminants, adducts, and artifacts, then performing putative lipid-oriented database annotation.
+links:
+  primary: https://github.com/ODonnell-Lipidomics/LipidFinder
+  repository: https://github.com/ODonnell-Lipidomics/LipidFinder
+resource_types: [workflow_pipeline]
+functions:
+  primary: quality_control
+  secondary: [annotation_identification]
+  capabilities: [blank_filtering, adduct_isotope_grouping, structure_database_search]
+platforms: [lc_ms]
+analysis_types: [lipidomics, untargeted]
+interfaces: [python_package]
+access:
+  model: open_source
+  license: MIT
+technical:
+  operating_systems: [cross_platform]
+  programming_languages: [Python]
+data:
+  input_types: [feature_table]
+  output_types: [feature_table, compound_list]
+  input_formats: [csv_tsv]
+  output_formats: [csv_tsv]
+maintenance:
+  status: limited
+  repository_last_activity: '2021-02-14'
+  last_checked: '2026-10-06'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Validated against the official repository; LipidFinder consumes already-preprocessed feature tables.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-06'
+  updated_at: '2026-10-06'
+  last_verified: '2026-10-06'
+  last_editorial_review: '2026-10-06'
