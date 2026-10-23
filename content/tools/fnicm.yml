@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: fnicm
+name: FNICM
+summary: Prioritize core metabolite nodes from a perturbed metabolic network.
+description: FNICM propagates seed-node scores through a directed network, builds a ranked subnetwork
+  and identifies core nodes using controllability analysis.
+links:
+  primary: https://github.com/LiQi94/FNICM#readme
+  repository: https://github.com/LiQi94/FNICM
+  documentation: https://github.com/LiQi94/FNICM#readme
+platforms:
+- platform_independent
+interfaces:
+- desktop_gui
+resource_types:
+- software_application
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - feature_selection
+access:
+  model: unknown
+  notes: LICENSE and LICENSE.md state AFL-3.0, but the README restricts use to research and asks commercial
+    users to contact the author. Resolve these conflicting terms before reuse; no unrestricted open-source
+    claim is made.
+data:
+  input_types:
+  - pathway_data
+  - compound_list
+  output_types:
+  - pathway_data
+  - report
+  other_input_formats:
+  - Directed edge-list TXT and initial node scores
+  other_output_formats:
+  - TrustRank scores, subnetwork edges/nodes and core-node lists
+common_uses:
+- Prioritize core metabolite nodes from a perturbed metabolic network.
+scope:
+  designed_for:
+  - FNICM propagates seed-node scores through a directed network, builds a ranked subnetwork and identifies
+    core nodes using controllability analysis.
+  not_designed_for:
+  - Raw MS processing, molecular identification or demonstrated causal metabolite control.
+  requirements:
+  - Windows executable; a directed global network and seed scores aligned to its nodes.
+  - Choose the number of top-ranked nodes used to form the subnetwork.
+  considerations:
+  - Seed selection, network completeness and the chosen subnetwork size affect prioritization.
+  - Undetected nodes can be prioritized by propagation; this does not establish that they were measured
+    in the experiment.
+  - Only a Windows executable was identified in the repository; it was not downloaded or run.
+publications:
+- doi: 10.1021/acs.analchem.3c04131
+  type: primary
+  citation: 'FNICM: A New Methodology To Identify Core Metabolites Based on Significantly Perturbed Metabolic
+    Subnetworks. Analytical Chemistry (2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-23. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-23'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-23'
+  updated_at: '2026-10-23'
+  last_verified: '2026-10-23'
+  last_editorial_review: '2026-10-23'

@@ -1,0 +1,74 @@
+$schema: ../../schemas/tool.schema.json
+slug: vinsmoc
+name: VInSMoC
+summary: Search tandem spectra against candidate molecules and their mass-shifted variants.
+description: VInSMoC scores spectrum–molecule matches using exact or variable search and provides statistical
+  assessment of matches. Variable mode considers modifications consistent with precursor-mass differences.
+links:
+  primary: https://github.com/mohimanilab/VInSMoC#readme
+  repository: https://github.com/mohimanilab/VInSMoC
+  documentation: https://github.com/mohimanilab/VInSMoC#readme
+platforms:
+- lc_ms
+interfaces:
+- web_app
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  capabilities:
+  - structure_elucidation
+  - identification_confidence
+access:
+  model: source_available
+  license: CC-BY-NC-SA-4.0
+  notes: Repository license restricts reuse to noncommercial purposes with share-alike conditions. The
+    documented hosted workflow requires an account; service operation was not tested.
+data:
+  input_types:
+  - spectra
+  - molecular_structures
+  output_types:
+  - compound_list
+  - report
+  other_input_formats:
+  - MGF, mzML or mzXML spectra and a candidate-molecule database
+  other_output_formats:
+  - Scored spectrum–molecule hits; variable-mode candidate modifications
+common_uses:
+- Search tandem spectra against candidate molecules and their mass-shifted variants.
+scope:
+  designed_for:
+  - VInSMoC scores spectrum–molecule matches using exact or variable search and provides statistical assessment
+    of matches. Variable mode considers modifications consistent with precursor-mass differences.
+  not_designed_for:
+  - Reference-free de novo structure determination or definitive identification from a score alone.
+  requirements:
+  - Select candidate database, polarity, charge and precursor/product mass tolerances.
+  - Hosted account or local Rust build with the dependencies specified in code/README.md.
+  considerations:
+  - Candidate coverage and fragmentation settings constrain the search; examine statistical evidence and
+    competing candidates.
+  - Web and local implementations have different setup requirements. No installation or benchmark was
+    performed.
+publications:
+- doi: 10.1038/s43588-025-00923-5
+  type: primary
+  citation: Identifying variants of molecules through database search of mass spectra. Nature Computational
+    Science (2025).
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-23. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-23'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-23'
+  updated_at: '2026-10-23'
+  last_verified: '2026-10-23'
+  last_editorial_review: '2026-10-23'
