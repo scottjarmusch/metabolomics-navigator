@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: sigmaccs
+name: SigmaCCS
+summary: Predict collision cross sections from molecular structures and ion adducts.
+description: SigmaCCS uses molecular graphs with three-dimensional conformations and adduct information
+  to predict CCS for candidate annotation filtering.
+links:
+  primary: https://github.com/zmzhang/SigmaCCS#readme
+  repository: https://github.com/zmzhang/SigmaCCS
+  documentation: https://github.com/zmzhang/SigmaCCS#readme
+platforms:
+- platform_independent
+interfaces:
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  capabilities:
+  - ccs_prediction
+access:
+  model: open_source
+  license: MIT
+  notes: MIT code license checked. Separately distributed predicted datasets and model resources may carry
+    their own terms; no execution test.
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - report
+  other_input_formats:
+  - SMILES and adduct records plus model parameters and trained weights
+  other_output_formats:
+  - Predicted CCS values for candidate ions
+common_uses:
+- Predict collision cross sections from molecular structures and ion adducts.
+scope:
+  designed_for:
+  - SigmaCCS uses molecular graphs with three-dimensional conformations and adduct information to predict
+    CCS for candidate annotation filtering.
+  not_designed_for:
+  - Instrument CCS calibration or confirmation of a molecular identity from CCS alone.
+  requirements:
+  - Python, RDKit, TensorFlow and Spektral; molecular conformer generation and the supplied model/parameter
+    files.
+  considerations:
+  - The documented large predicted collection covers [M+H]+, [M+Na]+ and [M-H]-; do not assume support
+    for arbitrary adducts.
+  - Check applicability to the candidate chemistry and measurement conditions before using predicted CCS
+    as a filter.
+publications:
+- doi: 10.1038/s42004-023-00939-w
+  type: primary
+  citation: Highly accurate and large-scale collision cross sections prediction with graph neural networks.
+    Communications Chemistry (2023).
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'

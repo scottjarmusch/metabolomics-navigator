@@ -1,0 +1,79 @@
+$schema: ../../schemas/tool.schema.json
+slug: autonoms
+name: AutonoMS
+summary: Automate ion-mobility metabolomic fingerprinting on a configured RapidFire system.
+description: AutonoMS coordinates sample acquisition, raw-data handling, CCS calibration and Skyline analysis
+  for the documented Agilent RapidFire–6560 workflow.
+links:
+  primary: https://autonoms.readthedocs.io/en/latest/
+  repository: https://github.com/gkreder/autonoms
+  documentation: https://autonoms.readthedocs.io/en/latest/
+platforms:
+- direct_infusion_ms
+interfaces:
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: data_acquisition
+  capabilities:
+  - peak_detection
+access:
+  model: source_available
+  notes: Source and workflow documentation are public; an explicit repository software license was not
+    identified. Instrument/vendor software is required separately. Not execution-tested.
+data:
+  input_types:
+  - sample_metadata
+  - raw_instrument_data
+  - compound_list
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - Experiment XLSX and configuration TOML
+  - Target transitions, tune-ion standards and Skyline files
+  other_output_formats:
+  - Acquisition files and Skyline tabular signal/CCS reports
+common_uses:
+- Automate ion-mobility metabolomic fingerprinting on a configured RapidFire system.
+scope:
+  designed_for:
+  - AutonoMS coordinates sample acquisition, raw-data handling, CCS calibration and Skyline analysis for
+    the documented Agilent RapidFire–6560 workflow.
+  not_designed_for:
+  - A general instrument-control solution for arbitrary vendors or an autonomous AI scientist.
+  requirements:
+  - Configured Agilent RapidFire–6560 hardware, MassHunter, RapidFire UI, PNNL PreProcessor, MSConvert
+    and Skyline.
+  - A tune-ion injection with known CCS values at the start of each sequence; matching transition and
+    ion-mobility library files.
+  - Python 3.8 as specified in package metadata, with Prefect and DEIMoS dependencies.
+  considerations:
+  - The supplied implementation depends on specific vendor GUI layout and paths; review configuration
+    before instrument use.
+  - Target matching and fingerprints do not establish unambiguous metabolite identities.
+publications:
+- doi: 10.1021/jasms.3c00396
+  type: primary
+  citation: 'AutonoMS: Automated Ion Mobility Metabolomic Fingerprinting. Journal of the American Society
+    for Mass Spectrometry (2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'
+related_tools:
+- slug: skyline
+  relationship: dependency
+  note: Uses Skyline documents, transition lists and report templates for data analysis.

@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: mwformer
+name: MWFormer
+summary: Estimate molecular weight from electron-ionization spectra.
+description: MWFormer uses a transformer model to estimate molecular weight from EI peak patterns, providing
+  an additional constraint for candidate searches.
+links:
+  primary: https://github.com/zhanghailiangcsu/MWFormer#readme
+  repository: https://github.com/zhanghailiangcsu/MWFormer
+  documentation: https://github.com/zhanghailiangcsu/MWFormer#readme
+platforms:
+- gc_ms
+interfaces:
+- command_line
+- web_app
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  capabilities:
+  - spectral_data_io
+  - interactive_dashboard
+access:
+  model: open_source
+  license: MIT
+  notes: MIT license verified in the official source repository. Training datasets and model downloads
+    may have separate terms. No execution or independent performance benchmark.
+data:
+  input_types:
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - EI spectra in MSP or entered peak lists
+  other_output_formats:
+  - Predicted molecular weights; batch spreadsheet output
+common_uses:
+- Estimate molecular weight from electron-ionization spectra.
+scope:
+  designed_for:
+  - MWFormer uses a transformer model to estimate molecular weight from EI peak patterns, providing an
+    additional constraint for candidate searches.
+  not_designed_for:
+  - Molecular formula or complete structure identification, or LC-ESI-MS/MS prediction.
+  requirements:
+  - Python, PyTorch, RDKit and pretrained weights; local Streamlit interface or adapted example scripts.
+  considerations:
+  - Predicted weights are uncertain model estimates rather than measured molecular ions.
+  - Examples contain local paths that may need adaptation; retraining requires appropriately licensed
+    spectral data.
+publications:
+- doi: 10.1021/acs.analchem.4c03781
+  type: primary
+  citation: 'MWFormer: Estimation of Molecular Weights from Electron Ionization Mass Spectra for Improved
+    Library Searching. Analytical Chemistry (2025; online 2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'
