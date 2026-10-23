@@ -1,0 +1,72 @@
+$schema: ../../schemas/tool.schema.json
+slug: waveica
+name: WaveICA 2.0
+summary: Correct injection-order-associated variation in untargeted metabolomics tables.
+description: WaveICA 2.0 uses wavelet decomposition and independent-component analysis to adjust inter-
+  and intra-batch effects without requiring batch labels.
+links:
+  primary: https://github.com/dengkuistat/WaveICA_2.0/blob/master/man/WaveICA_2.0.Rd
+  repository: https://github.com/dengkuistat/WaveICA_2.0
+  documentation: https://github.com/dengkuistat/WaveICA_2.0/blob/master/man/WaveICA_2.0.Rd
+platforms:
+- lc_ms
+interfaces:
+- r_package
+resource_types:
+- software_application
+functions:
+  primary: normalization
+  capabilities:
+  - batch_effect_correction
+access:
+  model: open_source
+  license: MIT
+  notes: 'Repository LICENSE grants MIT terms; DESCRIPTION inconsistently says License: No. Check the
+    license file when reusing code. Not execution-tested.'
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Sample-by-peak numeric matrix and corresponding injection-order vector
+  other_output_formats:
+  - R result list containing corrected data
+common_uses:
+- Correct injection-order-associated variation in untargeted metabolomics tables.
+scope:
+  designed_for:
+  - WaveICA 2.0 uses wavelet decomposition and independent-component analysis to adjust inter- and intra-batch
+    effects without requiring batch labels.
+  not_designed_for:
+  - Raw-file peak detection or recovery of biology irretrievably confounded with acquisition order.
+  requirements:
+  - R with waveslim, ica, mgcv and the package dependencies.
+  - Reliable injection order aligned to each matrix row.
+  considerations:
+  - Review correction against QC samples and biological covariates; removal of order-associated variation
+    can also remove confounded biological effects.
+  - Batch labels are not required, but injection-order metadata is required.
+publications:
+- doi: 10.1007/s11306-021-01839-7
+  type: primary
+  citation: 'WaveICA 2.0: a novel batch effect removal method for untargeted metabolomics data without
+    using batch information. Metabolomics (2021).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'
+analysis_types:
+- untargeted

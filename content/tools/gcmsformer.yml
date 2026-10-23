@@ -1,0 +1,70 @@
+$schema: ../../schemas/tool.schema.json
+slug: gcmsformer
+name: GCMSFormer
+summary: Resolve overlapping GC-MS peaks into component spectra and profiles.
+description: GCMSFormer combines transformer predictions with orthogonal-projection resolution and least-squares
+  fitting to separate overlapping GC-MS signals.
+links:
+  primary: https://github.com/zxguocsu/GCMSFormer#readme
+  repository: https://github.com/zxguocsu/GCMSFormer
+  documentation: https://github.com/zxguocsu/GCMSFormer#readme
+platforms:
+- gc_ms
+interfaces:
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  capabilities:
+  - spectral_deconvolution
+access:
+  model: open_source
+  license: MIT
+  notes: MIT license verified in the official source repository. Training datasets and model downloads
+    may have separate terms. No execution or independent performance benchmark.
+data:
+  input_types:
+  - raw_instrument_data
+  - spectral_library
+  output_types:
+  - spectra
+  - feature_table
+  other_input_formats:
+  - GC-MS netCDF files plus trained model and reference vocabulary
+  other_output_formats:
+  - Resolved component spectra and chromatographic concentration profiles
+common_uses:
+- Resolve overlapping GC-MS peaks into component spectra and profiles.
+scope:
+  designed_for:
+  - GCMSFormer combines transformer predictions with orthogonal-projection resolution and least-squares
+    fitting to separate overlapping GC-MS signals.
+  not_designed_for:
+  - LC-MS/MS processing or guaranteed identification of components absent from model/reference coverage.
+  requirements:
+  - Python/PyTorch environment, trained model and matching reference vocabulary; see test.ipynb.
+  considerations:
+  - Training uses augmented overlapping-peak simulations; validate separation on representative experimental
+    mixtures.
+  - The provided reader works with netCDF; arbitrary vendor-native support is not established.
+publications:
+- doi: 10.1021/acs.analchem.3c05772
+  type: primary
+  citation: 'GCMSFormer: A Fully Automatic Method for the Resolution of Overlapping Peaks in Gas Chromatography–Mass
+    Spectrometry. Analytical Chemistry (2024).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'

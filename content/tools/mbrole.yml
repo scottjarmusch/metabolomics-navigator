@@ -1,0 +1,69 @@
+$schema: ../../schemas/tool.schema.json
+slug: mbrole
+name: MBROLE3
+summary: Test functional enrichment in lists of annotated metabolites.
+description: MBROLE3 tests overrepresentation of chemical and functional annotations, with identifier
+  conversion and separate direct and indirect annotation results.
+links:
+  primary: https://csbg.cnb.csic.es/mbrole3/
+  documentation: https://csbg.cnb.csic.es/mbrole3/help.php
+platforms:
+- platform_independent
+interfaces:
+- web_app
+resource_types:
+- software_application
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - pathway_enrichment
+access:
+  model: free_web_service
+  notes: The primary paper describes a free service without login. No software license or service execution
+    validation is asserted.
+data:
+  input_types:
+  - compound_list
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Compound IDs separated by tabs or newlines; optional background list
+  other_output_formats:
+  - Enrichment tables, TSV download and dot/bar plots
+common_uses:
+- Test functional enrichment in lists of annotated metabolites.
+scope:
+  designed_for:
+  - MBROLE3 tests overrepresentation of chemical and functional annotations, with identifier conversion
+    and separate direct and indirect annotation results.
+  not_designed_for:
+  - Identification of unknown spectra or direct testing of unannotated m/z features.
+  requirements:
+  - Mapped compound identifiers, selected annotation vocabularies and a suitable background set.
+  considerations:
+  - Use a background reflecting measurable compounds. Indirect literature/protein associations are not
+    direct experimental evidence of pathway activity.
+publications:
+- doi: 10.1093/nar/gkad405
+  type: primary
+  citation: 'MBROLE3: improved functional enrichment of chemical compounds for metabolomics data analysis.
+    Nucleic Acids Research (2023).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'
+aliases:
+- MBROLE
+- MBROLE 3

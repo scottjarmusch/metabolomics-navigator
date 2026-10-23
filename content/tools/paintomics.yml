@@ -1,0 +1,78 @@
+$schema: ../../schemas/tool.schema.json
+slug: paintomics
+name: PaintOmics
+summary: Visualize metabolomics alongside other omics layers on biological pathways.
+description: PaintOmics maps processed metabolite and other omics measurements onto KEGG, Reactome and
+  MapMan pathways for integrated enrichment and visualization.
+links:
+  primary: https://paintomics.org/
+  repository: https://github.com/ConesaLab/PaintOmics
+  documentation: https://github.com/ConesaLab/PaintOmics#readme
+platforms:
+- platform_independent
+interfaces:
+- web_app
+resource_types:
+- software_application
+functions:
+  primary: pathway_interpretation
+  capabilities:
+  - pathway_enrichment
+  - network_visualization
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 license verified in the official repository. External pathway databases and optional
+    AI services have separate terms; no service execution test.
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Processed omics matrices with compatible metabolite/gene identifiers
+  other_output_formats:
+  - Pathway visualizations and enrichment results
+common_uses:
+- Visualize metabolomics alongside other omics layers on biological pathways.
+scope:
+  designed_for:
+  - PaintOmics maps processed metabolite and other omics measurements onto KEGG, Reactome and MapMan pathways
+    for integrated enrichment and visualization.
+  not_designed_for:
+  - Raw MS processing or confirmation of metabolite identities.
+  requirements:
+  - Processed measurements with mapped identifiers and compatible experimental conditions across omics
+    layers.
+  - A supported organism/pathway database; ambiguous metabolite mappings require review.
+  considerations:
+  - This entry describes the published pathway-analysis core. The current release adds an AI interpretation
+    agent; that extension was not independently validated here.
+  - Enrichment and pathway co-occurrence do not demonstrate causal regulation or metabolic flux.
+publications:
+- doi: 10.1093/nar/gkac352
+  type: primary
+  citation: 'PaintOmics 4: new tools for the integrative analysis of multi-omics datasets supported by
+    multiple pathway databases. Nucleic Acids Research (2022).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'
+analysis_types:
+- multiomics
+aliases:
+- PaintOmics 4

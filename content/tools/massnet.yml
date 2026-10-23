@@ -1,0 +1,74 @@
+$schema: ../../schemas/tool.schema.json
+slug: massnet
+name: massNet
+summary: Learn spectral features and classify tissue regions in mass-spectrometry images.
+description: massNet combines learned spectral representations with supervised tissue classification and
+  exploration of discriminating peaks.
+links:
+  primary: https://github.com/wabdelmoula/massNet#readme
+  repository: https://github.com/wabdelmoula/massNet
+  documentation: https://github.com/wabdelmoula/massNet#readme
+platforms:
+- imaging_ms
+interfaces:
+- command_line
+resource_types:
+- software_application
+functions:
+  primary: machine_learning
+  capabilities:
+  - feature_selection
+access:
+  model: open_source
+  license: 3D Slicer Software License
+  notes: The repository supplies the 3D Slicer Software License agreement. This is research software;
+    no installation or performance validation was performed.
+data:
+  input_types:
+  - imaging_data
+  - sample_metadata
+  output_types:
+  - imaging_data
+  - statistical_results
+  other_input_formats:
+  - HDF5 spectra, m/z, tissue labels and pixel coordinates
+  other_output_formats:
+  - Classification probabilities, maps, learned features and plots
+common_uses:
+- Learn spectral features and classify tissue regions in mass-spectrometry images.
+scope:
+  designed_for:
+  - massNet combines learned spectral representations with supervised tissue classification and exploration
+    of discriminating peaks.
+  not_designed_for:
+  - A ready-to-use clinical diagnostic or direct raw-vendor-file importer.
+  requirements:
+  - Prepared arrays matching Main.py; labels for supervised training and evaluation.
+  - Legacy Python 3.6, Keras 2.2 and TensorFlow 1.8 environment documented by the authors; adaptation
+    may be needed.
+  considerations:
+  - The published example concerns tumor-bearing mouse-brain MSI; assess transfer to other tissues and
+    instruments.
+  - Keep independent specimens separate during evaluation to avoid leakage between correlated pixels.
+publications:
+- doi: 10.1093/bioinformatics/btac032
+  type: primary
+  citation: 'massNet: integrated processing and classification of spatially resolved mass spectrometry
+    data using deep learning for rapid tumor delineation. Bioinformatics (2022).'
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake checked against official documentation, license information and primary DOI/title/year
+    on 2026-10-22. Editorial review only; no execution or independent benchmark.
+maintenance:
+  status: unclear
+  last_checked: '2026-10-22'
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-22'
+  updated_at: '2026-10-22'
+  last_verified: '2026-10-22'
+  last_editorial_review: '2026-10-22'
+analysis_types:
+- spatial_metabolomics
