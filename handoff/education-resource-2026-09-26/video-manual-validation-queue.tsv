@@ -1,0 +1,59 @@
+candidate_title	url_or_hub	tool_hints	provider	source_type	validation_notes	validation_status
+MZmine introduction to LC-MS	https://www.youtube.com/watch?v=UnqVtZngzl0	mzmine	MZmine / EMBL-EBI training	official training link	Current MZmine training set; validate title/version/interface.	unreviewed
+MZmine multimodal data processing (GC-MS, MALDI-MS, lipids)	https://www.youtube.com/watch?v=cGA5WIKcMpM	mzmine	MZmine / EMBL-EBI training	official training link	Validate current scope/version.	unreviewed
+MZmine ion-mobility MS data processing	https://www.youtube.com/watch?v=Xp-G1HSozgM	mzmine	MZmine / EMBL-EBI training	official training link	MZmine 4.x-era webinar; strong candidate.	unreviewed
+MZmine MS-library generation	https://www.youtube.com/watch?v=SmEpFYV4_bY	mzmine	MZmine / EMBL-EBI training	official training link	Strong workflow-specific candidate.	unreviewed
+NTMSS2023 Day2 S2 - Data preprocessing in MZmine 3 I	https://www.youtube.com/watch?v=MmUY5qCz8eo	mzmine	Functional Metabolomics Lab	workshop recording	Summer-school session; check interface currency.	unreviewed
+NTMSS2023 Day2 BONUS - MZmine 3 New Features	https://www.youtube.com/watch?v=MdpUNf-xTmQ	mzmine	Functional Metabolomics Lab	workshop recording	Good supplementary resource.	unreviewed
+CMFI Mass Spec Seminar #7 - MZmine3 Hands-On Feature Finding	https://www.youtube.com/results?search_query=CMFI+Mass+Spec+Seminar+%237+MZmine3+Hands-On+Feature+Finding	mzmine	Functional Metabolomics Lab	workshop recording	Known title from MZmine issue/reference; exact watch URL still to validate.	needs_exact_url
+CMFI Mass Spec Seminar #10 - Metabolomics Data Analysis with pyOpenMS	https://www.youtube.com/watch?v=XWDFZXYp1qM	openms	Functional Metabolomics Lab	workshop recording	Hands-on pyOpenMS with Binder.	unreviewed
+NTMSS2023 Day3 S4 - Sirius+CSI:FingerID I	https://www.youtube.com/watch?v=Gj_h7fvzL_g	sirius;csi-fingerid	Functional Metabolomics Lab	workshop recording	Strong annotation resource.	unreviewed
+NTMSS2023 Day4 S5 - MS2LDA	https://www.youtube.com/watch?v=M6UlZA9JaY8	ms2lda	Functional Metabolomics Lab	workshop recording	Strong substructure-learning resource.	unreviewed
+NTMSS2022 Day3 S3 - MS2LDA and MolNetEnhancer	https://www.youtube.com/watch?v=Eg4cH93yViA	ms2lda;molnetenhancer	Functional Metabolomics Lab	workshop recording	Multi-tool resource.	unreviewed
+CMFI Molecular Networking seminar	https://youtu.be/s5y1XNKENbk	gnps;gnps-classical-molecular-networking	Functional Metabolomics Lab / GNPS	official workshop listing	Molecular networking seminar by Dorrestein/Petras.	unreviewed
+GNPS Nature Microbiome 2021 Workshop	https://www.youtube.com/watch?v=V3X7AMugMMc	gnps	GNPS	official workshop listing	Food, diet, microbiome workshop.	unreviewed
+MANA 2021 GNPS Workshop - Networking, Dashboard, MASST	https://www.youtube.com/watch?v=-XoVrHQxW9U	gnps;masst;gnps-dashboard	GNPS	official workshop listing	Broad GNPS workshop.	unreviewed
+GNPS Dashboard - Overview	https://www.youtube.com/watch?v=S3aAkGTMC-g	gnps-dashboard;gnps	GNPS	official workshop listing	Official dashboard overview.	unreviewed
+GNPS metabolomics principles + tools Portuguese Part 1	https://www.youtube.com/watch?v=QVw1K1dkpIc	gnps	GNPS community / official listing	official workshop listing	Portuguese-language tutorial.	unreviewed
+GNPS metabolomics principles + tools Portuguese Part 2	https://www.youtube.com/watch?v=OLRazw7Q-2M	gnps	GNPS community / official listing	official workshop listing	Portuguese-language tutorial.	unreviewed
+SIO262 Molecular Networking Intro	https://www.youtube.com/watch?v=DIItacY4VaE	gnps-classical-molecular-networking;gnps	GNPS	official workshop listing	Short instructional session.	unreviewed
+1st GNPS User Meeting	https://www.youtube.com/watch?v=4HMjK4Js8xI	gnps	GNPS	official workshop listing	May be broad/community rather than tutorial; assess utility.	unreviewed
+GNPS GC - Part 2	https://www.youtube.com/watch?v=EJipzmkK7oA	gnps	GNPS	official workshop listing	GC-MS focused; assess relation to current GNPS tools.	unreviewed
+GNPS Classical Molecular Networking in Portuguese	https://www.youtube.com/watch?v=Lba9e45ZAE0	gnps-classical-molecular-networking	GNPS community / official listing	official workshop listing	Portuguese-language tutorial.	unreviewed
+GNPS FBMN in Spanish Part 1	https://www.youtube.com/watch?v=0xWMAwM8x3U	gnps-feature-based-molecular-networking	GNPS	official workshop listing	Spanish-language FBMN.	unreviewed
+GNPS FBMN in Spanish Part 2	https://www.youtube.com/watch?v=l90j5T8EQbw	gnps-feature-based-molecular-networking	GNPS	official workshop listing	Spanish-language FBMN.	unreviewed
+Metabolomics Spectrum Resolver workshop	https://www.youtube.com/watch?v=JMJO8CAfCNI	gnps-spectrum-summary	GNPS	official workshop listing	Check exact Navigator mapping; likely spectrum resolver/summary.	unreviewed
+GNPS - MS2LDA	https://www.youtube.com/watch?v=0wKUmjPy40s	ms2lda;gnps	GNPS	official workshop listing	Official GNPS workshop.	unreviewed
+GNPS Classical Molecular Networking in Spanish	https://www.youtube.com/watch?v=hTZzZI3PtR0	gnps-classical-molecular-networking	GNPS	official workshop listing	Spanish-language tutorial.	unreviewed
+GNPS Merge Polarity Networks	https://www.youtube.com/watch?v=wHdr9coLmoQ	gnps	GNPS	official workshop listing	Check whether a dedicated Navigator entry exists/needed.	unreviewed
+GNPS MolNetEnhancer	https://www.youtube.com/watch?v=-4DE_ZfF2vc	molnetenhancer;gnps	GNPS	official workshop listing	Strong tool-specific candidate.	unreviewed
+GC-MS deconvolution, library search and molecular networking	https://www.youtube.com/watch?v=CXDlwC7evnk	gnps	GNPS	official workshop listing	GC-MS workflow training.	unreviewed
+Utilizing GNPS and MS2LDA for molecular networking discovery	https://www.youtube.com/watch?v=Cc6eKGZQ1Qw	gnps;ms2lda	GNPS	official workshop listing	Cross-tool workflow candidate.	unreviewed
+GNPS Ion-Identity Networking, Native Metabolomics	https://www.youtube.com/watch?v=tb7LxaeNvcw	gnps-feature-based-molecular-networking;mzmine	GNPS	official workshop listing	Strong but may need explicit IIN mapping/note.	unreviewed
+GNPS Feature Based Molecular Networking (MZmine2)	https://www.youtube.com/watch?v=MwdJ6mVkdJY	gnps-feature-based-molecular-networking;mzmine	GNPS	official workshop listing	Legacy MZmine2 interface; concepts still useful.	unreviewed
+GNPS ReDU	https://youtu.be/I-CdsHESLJ8	redu;gnps	GNPS	official workshop listing	Official ReDU workshop.	unreviewed
+GNPS Classical Molecular Networking	https://www.youtube.com/watch?v=PqTuex0nsGk	gnps-classical-molecular-networking;gnps	GNPS	official workshop listing	Strong foundational workshop.	unreviewed
+GNPS MASST	https://www.youtube.com/watch?v=14hGi6FtZIM	masst;gnps	GNPS	official workshop listing	Strong repository-scale search resource.	unreviewed
+GNPS Library Workshop/Hackathon	https://www.youtube.com/watch?v=IbXBpud57Z8	gnps	GNPS	official workshop listing	Assess if too broad/old for Education.	unreviewed
+MS-DIAL and GNPS in Portuguese	https://www.youtube.com/watch?v=IZoS3Lvto1M	ms-dial;gnps	GNPS community	official GNPS community listing	Community tutorial; manual quality check needed.	unreviewed
+GNPS Dashboard teaching/tutorial use case	https://www.youtube.com/watch?v=tT5b1IIJCE8	gnps-dashboard	GNPS	official documentation	Direct tutorial video linked in Dashboard teaching docs.	unreviewed
+GNPS FBMN - American Gut / MZmine2 tutorial	https://www.youtube.com/watch?v=5jjMllbwD-U	gnps-feature-based-molecular-networking;mzmine	Dorrestein Lab / GNPS	tutorial	Legacy MZmine2 interface.	unreviewed
+MetaboScape tutorial part 1 - Introduction and general concepts	https://www.youtube.com/watch?v=EkTYiDmchdg	metaboscape	Bruker Daltonics	official vendor tutorial	Tool not yet in Navigator main catalogue; retain for future intake.	unreviewed
+MetaboScape tutorial part 2 - Data processing	https://www.youtube.com/watch?v=lbNIAaKEbUg	metaboscape	Bruker Daltonics	official vendor tutorial	Tool not yet in Navigator main catalogue; retain for future intake.	unreviewed
+LC/MS data analysis with XCMS and MetFrag on PhenoMeNal	https://www.youtube.com/watch?v=vzcD0WnAuAQ	xcms;metfrag	EMBL-EBI	official training webinar	Older Galaxy/PhenoMeNal environment; concepts useful.	unreviewed
+Metabolomic Data Analysis Using MetaboAnalyst	https://www.youtube.com/watch?v=4CVC98KnlMA	metaboanalyst	Canadian Bioinformatics Workshops	workshop recording	Old MetaboAnalyst version; likely legacy-only.	unreviewed
+MetaboAnalyst 5.0 LC-MS and tandem-MS workshop Part 1	https://www.youtube.com/watch?v=FHvsbf4vNt8	metaboanalyst	Metabolomics Society	workshop recording	Verify exact workshop year/title and relevance.	unreviewed
+Skyline small molecule webinar/tutorial	https://skyline.ms/tutorial_small_molecule.url	skyline	Skyline project	official tutorial redirect	Resolve final video URL during validation.	needs_exact_url
+MS-DIAL 5 raw data viewer tutorial	https://www.youtube.com/watch?v=aApHc8Op4VY	ms-dial	MS-DIAL project	official tutorial	Embedded in current MS-DIAL 5 tutorial.	unreviewed
+MS-DIAL 5 LC-MS/MS DDA tutorial	https://www.youtube.com/watch?v=cZY7wqF5Wdo	ms-dial	MS-DIAL project	official tutorial	Metabolomics DDA walkthrough; verify current version context.	unreviewed
+MassQL in MS-DIAL 5	https://www.youtube.com/watch?v=otCq9s1PjAs	ms-dial;massql	MS-DIAL project	official tutorial	Strong integration-focused candidate.	unreviewed
+MS-DIAL 5 to MS-FINDER for unknown annotation	https://www.youtube.com/watch?v=moHIiTTVfGQ	ms-dial;ms-finder	MS-DIAL project	official tutorial	Strong tool-boundary candidate.	unreviewed
+Multivariate analysis in MS-DIAL 5	https://www.youtube.com/watch?v=wtOS7F1RgZs	ms-dial	MS-DIAL project	official tutorial	Statistics within MS-DIAL.	unreviewed
+SIRIUS + CSI:FingerID official video tutorials playlist	https://v6.docs.sirius-ms.io/	sirius;csi-fingerid;canopus	SIRIUS project	official documentation hub	Docs link to official YouTube playlist; extract individual videos manually.	needs_playlist_expansion
+OptimUS/OpenMS + SIRIUS + CSI:FingerID + GNPS workflow tutorial	https://bio.informatik.uni-jena.de/2017/12/call-for-tutorials-sirius-and-csifingerid/	openms;sirius;csi-fingerid;gnps	SIRIUS project / Louis-Felix Nothias	community tutorial referenced by official project	Official SIRIUS page references a YouTube tutorial; exact watch URL to extract.	needs_exact_url
+MZmine workshop series 2024 playlist	https://www.functional-metabolomics.com/resources	mzmine	Functional Metabolomics Lab	official resource hub	Expand playlist into individual videos during validation.	needs_playlist_expansion
+GNPS2 workshop series 2024 playlist	https://www.functional-metabolomics.com/resources	gnps	Functional Metabolomics Lab / GNPS	official resource hub	Expand multilingual playlist into individual videos.	needs_playlist_expansion
+Eco-Metabolomics Workshop 2024 playlist	https://www.functional-metabolomics.com/resources	gnps;mzmine	Functional Metabolomics Lab	official resource hub	Expand only tool-specific sessions.	needs_playlist_expansion
+VMOL Seminar Series - Advanced Metabolomics Methods	https://www.functional-metabolomics.com/resources	mzmine;gnps;sirius	Functional Metabolomics Lab	official resource hub	Expand relevant tool-focused videos.	needs_playlist_expansion
+NTMSS 2023 playlist	https://www.functional-metabolomics.com/resources	mzmine;sirius;ms2lda	Functional Metabolomics Lab	official resource hub	Expand beyond already captured sessions.	needs_playlist_expansion
+NTMSS 2022 playlist	https://www.functional-metabolomics.com/resources	mzmine;gnps;ms2lda;molnetenhancer	Functional Metabolomics Lab	official resource hub	Expand beyond already captured sessions.	needs_playlist_expansion

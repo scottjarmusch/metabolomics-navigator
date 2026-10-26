@@ -1,0 +1,12 @@
+title	url	tool_slugs	resource_kind	notes
+XCMS tutorials and workshops	https://github.com/jorainer/xcmsTutorials	xcms	written_hands_on	Current tutorial/workshop repository for LC-MS(/MS) preprocessing with XCMS; strong candidate when Education expands beyond video.
+Bioconductor untargeted LC-MS preprocessing with XCMS	https://www.bioconductor.org/help/course-materials/2019/CSAMA/materials/labs/lab-05-metabolomics/preprocessing-untargeted-metabolomics.html	xcms	written_hands_on	Detailed hands-on preprocessing workshop; older but technically useful.
+patRoon tutorial	https://rickhelmus.github.io/patRoon/articles/tutorial.html	patroon	written_hands_on	Current 2026 tutorial for a complete non-target analysis workflow.
+MetFrag Hands-on	https://ipb-halle.github.io/MetFragTraining/	metfrag	written_hands_on	Hands-on compound identification tutorial with MS/MS and metadata.
+MS-FINDER tutorial	https://systemsomicslab.github.io/mtbinfo.github.io/MS-FINDER/tutorial	ms-finder	written_hands_on	Official detailed MS-FINDER tutorial; older page but comprehensive.
+Workflow4Metabolomics HOW TO and training	https://workflow4metabolomics.org/howto	workflow4metabolomics	training_hub	Links Galaxy Training Network and Workflow4Experimenters materials.
+MetaboAnalyst tutorials	https://www.metaboanalyst.ca/docs/Tutorials.xhtml	metaboanalyst	training_hub	Current official tutorial index; useful companion to workshop videos.
+MZmine Learners corner	https://mzmine.github.io/mzmine_documentation/latest/learners_corner.html	mzmine	training_hub	Curated official page pointing to current MZmine videos, workshops, Functional Metabolomics Lab, and related channels.
+MZmine workshops	https://mzmine.github.io/mzmine_documentation/latest/workshops.html	mzmine	training_hub	Official workshop archive including recent VMOL webinars and non-target metabolomics summer schools.
+GNPS Workshops/Training	https://ccms-ucsd.github.io/GNPSDocumentation/workshops/	gnps	training_hub	Official hub for GNPS modules and recorded workshops covering networking, MASST, ReDU, MS2LDA, dashboard, libraries and more.
+MS-DIAL 5 official tutorial	https://systemsomicslab.github.io/msdial5tutorial/	ms-dial	training_hub	Current official tutorial with embedded videos across LC-MS, GC-MS, CE-MS, lipidomics and utilities.
