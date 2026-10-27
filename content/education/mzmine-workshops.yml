@@ -1,18 +1,20 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-workshops
-title: "MZmine workshops"
-summary: "MZmine workshop collection. Find training by analysis topic and check the demonstrated version before reproducing interface-specific steps."
-url: "https://mzmine.github.io/mzmine_documentation/latest/workshops.html"
+title: MZmine workshops
+summary: MZmine workshop collection. Find training by analysis topic and check the demonstrated version
+  before reproducing interface-specific steps.
+url: https://mzmine.github.io/mzmine_documentation/latest/workshops.html
 resource_type: training_hub
 tool_slugs:
-  - mzmine
-provider: "MZmine project"
+- mzmine
+provider: mzmine project
 experience_level: mixed
 language: en
-note: "Manual review of content and currentness is pending."
-validation_status: unreviewed
+note: Official workshop listing reviewed for dates, speakers and training topics, including the VMOL series.
+  Check each workshop version rather than assuming current menus.
+validation_status: validated
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published

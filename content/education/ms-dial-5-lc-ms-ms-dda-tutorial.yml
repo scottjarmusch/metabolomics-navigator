@@ -1,22 +1,23 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-5-lc-ms-ms-dda-tutorial
-title: "MS-DIAL 5 LC-MS/MS DDA tutorial"
-summary: "MS-DIAL 5 walkthrough for LC-MS/MS data acquired with data-dependent acquisition. Choose this tutorial when your acquisition type is DDA."
-url: "https://www.youtube.com/watch?v=cZY7wqF5Wdo"
+title: MS-DIAL 5 LC-MS/MS DDA tutorial
+summary: MS-DIAL 5 walkthrough for LC-MS/MS data acquired with data-dependent acquisition. Choose this
+  tutorial when your acquisition type is DDA.
+url: https://www.youtube.com/watch?v=cZY7wqF5Wdo
 resource_type: video
 tool_slugs:
-  - ms-dial
-provider: "MS-DIAL project"
+- ms-dial
+provider: MS-DIAL project
 experience_level: unspecified
 language: en
-note: "Metabolomics DDA walkthrough; verify current version context."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2024
 year_kind: published
 date_source: https://www.youtube.com/watch?v=cZY7wqF5Wdo

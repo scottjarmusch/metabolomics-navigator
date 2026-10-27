@@ -10,7 +10,7 @@
 
 <section class="section-wrap education-directory" data-education-directory>
   <div class="education-collection-note">
-    <strong>About these resources.</strong> These links are guides to external resources, not endorsements. Entries marked “Needs review” have not yet been manually checked end to end.
+    <strong>About these resources.</strong> “Reviewed” means the written resource was checked for scope and relevance. “Source checked” means a recording's provider, title and topic were checked; the video was not watched end to end. Exercises were not executed. Check the notes for older software versions. These external links are not endorsements.
   </div>
 
   <div class="education-controls">
@@ -43,7 +43,9 @@
           <h2><a href="{{ resource.url }}" rel="noopener noreferrer" data-umami-event="education-resource-open" data-umami-event-resource="{{ resource.slug }}" data-umami-event-provider="{{ resource.provider }}">{{ resource.title }}</a></h2>
         </div>
         {% if resource.validation_status == 'validated' %}
-          <span class="education-status validated">Validated</span>
+          <span class="education-status validated">Reviewed</span>
+        {% elif resource.validation_status == 'source_checked' %}
+          <span class="education-status">Source checked</span>
         {% else %}
           <span class="education-status">Needs review</span>
         {% endif %}

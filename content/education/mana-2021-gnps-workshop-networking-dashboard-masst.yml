@@ -1,24 +1,25 @@
 $schema: ../../schemas/education.schema.json
 slug: mana-2021-gnps-workshop-networking-dashboard-masst
-title: "MANA 2021 GNPS Workshop - Networking, Dashboard, MASST"
-summary: "MANA 2021 workshop spanning GNPS molecular networking, Dashboard and MASST. Compare resources for organizing spectra, inspecting data and searching public repositories."
-url: "https://www.youtube.com/watch?v=-XoVrHQxW9U"
+title: MANA 2021 GNPS Workshop - Networking, Dashboard, MASST
+summary: MANA 2021 workshop spanning GNPS molecular networking, Dashboard and MASST. Compare resources
+  for organizing spectra, inspecting data and searching public repositories.
+url: https://www.youtube.com/watch?v=-XoVrHQxW9U
 resource_type: workshop
 tool_slugs:
-  - gnps
-  - masst
-  - gnps-dashboard
-provider: "GNPS"
+- gnps
+- masst
+- gnps-dashboard
+provider: Dorrestein Lab
 experience_level: unspecified
 language: en
-note: "Broad GNPS workshop."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2021
 year_kind: published
 date_source: https://www.youtube.com/watch?v=-XoVrHQxW9U

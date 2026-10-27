@@ -1,23 +1,24 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-ms2lda
-title: "GNPS - MS2LDA"
-summary: "GNPS workshop on MS2LDA and its use in exploring recurring fragment and neutral-loss patterns. A resource for moving from spectra toward substructure-level interpretation."
-url: "https://www.youtube.com/watch?v=0wKUmjPy40s"
+title: GNPS - MS2LDA
+summary: GNPS workshop on MS2LDA and its use in exploring recurring fragment and neutral-loss patterns.
+  A resource for moving from spectra toward substructure-level interpretation.
+url: https://www.youtube.com/watch?v=0wKUmjPy40s
 resource_type: workshop
 tool_slugs:
-  - ms2lda
-  - gnps
-provider: "GNPS"
+- ms2lda
+- gnps
+provider: Dorrestein Lab
 experience_level: unspecified
 language: en
-note: "Official GNPS workshop."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2020
 year_kind: published
 date_source: https://www.youtube.com/watch?v=0wKUmjPy40s

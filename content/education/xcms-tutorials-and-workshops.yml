@@ -1,18 +1,20 @@
 $schema: ../../schemas/education.schema.json
 slug: xcms-tutorials-and-workshops
-title: "XCMS tutorials and workshops"
-summary: "XCMS tutorial and workshop collection. Find guidance for processing LC-MS data in R before selecting downstream annotation or statistical analysis."
-url: "https://github.com/jorainer/xcmsTutorials"
+title: XCMS tutorials and workshops
+summary: XCMS tutorial and workshop collection. Find guidance for processing LC-MS data in R before selecting
+  downstream annotation or statistical analysis.
+url: https://github.com/jorainer/xcmsTutorials
 resource_type: tutorial
 tool_slugs:
-  - xcms
-provider: "Training resource"
+- xcms
+provider: Johannes Rainer and Philippine Louail / Bioconductor
 experience_level: mixed
 language: en
-note: "Manual review of content and currentness is pending."
-validation_status: unreviewed
+note: 'README and workshop topics reviewed: Spectra/MsExperiment data access, centroiding, peak detection,
+  alignment and correspondence. Documented environment uses Bioconductor 3.22; code was not executed.'
+validation_status: validated
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published

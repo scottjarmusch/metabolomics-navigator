@@ -1,22 +1,23 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-library-workshop-hackathon
-title: "GNPS Library Workshop/Hackathon"
-summary: "GNPS spectral-library workshop and hackathon recording. Community training around library resources; the format is broader than a single step-by-step tutorial."
-url: "https://www.youtube.com/watch?v=IbXBpud57Z8"
+title: GNPS Library Workshop/Hackathon
+summary: GNPS spectral-library workshop and hackathon recording. Community training around library resources;
+  the format is broader than a single step-by-step tutorial.
+url: https://www.youtube.com/watch?v=IbXBpud57Z8
 resource_type: workshop
 tool_slugs:
-  - gnps
-provider: "GNPS"
+- gnps
+provider: Dorrestein Lab
 experience_level: unspecified
 language: en
-note: "Assess if too broad/old for Education."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2020
 year_kind: published
 date_source: https://www.youtube.com/watch?v=IbXBpud57Z8

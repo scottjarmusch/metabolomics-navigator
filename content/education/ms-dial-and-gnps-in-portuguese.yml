@@ -1,23 +1,24 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-and-gnps-in-portuguese
-title: "MS-DIAL and GNPS in Portuguese"
-summary: "Portuguese-language tutorial covering MS-DIAL and GNPS. A resource for researchers learning how these tools fit into metabolomics analysis."
-url: "https://www.youtube.com/watch?v=IZoS3Lvto1M"
+title: MS-DIAL and GNPS in Portuguese
+summary: Portuguese-language tutorial covering MS-DIAL and GNPS. A resource for researchers learning how
+  these tools fit into metabolomics analysis.
+url: https://www.youtube.com/watch?v=IZoS3Lvto1M
 resource_type: video
 tool_slugs:
-  - ms-dial
-  - gnps
-provider: "GNPS community"
+- ms-dial
+- gnps
+provider: Data Deconvolution Lab (GNPS community listing)
 experience_level: unspecified
 language: pt
-note: "Community tutorial; manual quality check needed."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2020
 year_kind: published
 date_source: https://www.youtube.com/watch?v=IZoS3Lvto1M

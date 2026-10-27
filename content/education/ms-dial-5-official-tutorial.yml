@@ -1,18 +1,20 @@
 $schema: ../../schemas/education.schema.json
 slug: ms-dial-5-official-tutorial
-title: "MS-DIAL 5 official tutorial"
-summary: "Official MS-DIAL 5 tutorial resource. A starting point for learning the software before selecting a walkthrough for your acquisition type and analysis task."
-url: "https://systemsomicslab.github.io/msdial5tutorial/"
+title: MS-DIAL 5 official tutorial
+summary: Official MS-DIAL 5 tutorial resource. A starting point for learning the software before selecting
+  a walkthrough for your acquisition type and analysis task.
+url: https://systemsomicslab.github.io/msdial5tutorial/
 resource_type: training_hub
 tool_slugs:
-  - ms-dial
-provider: "MS-DIAL project"
+- ms-dial
+provider: MS-DIAL project
 experience_level: mixed
 language: en
-note: "Manual review of content and currentness is pending."
-validation_status: unreviewed
+note: Version-5 guide reviewed for project setup, data types, reference databases, processing and export.
+  Version-specific instructions do not certify current software operation.
+validation_status: validated
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published

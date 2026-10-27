@@ -1,8 +1,8 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2026-day3-s4
 title: NTMSS2026 Day3 S4 - Runzhong Wang - ICEBERG
-summary: Runzhong Wang presents ICEBERG in the summer-school programme. A tool-focused
-  introduction for researchers exploring computational approaches to tandem mass spectra.
+summary: Runzhong Wang presents ICEBERG in the summer-school programme. A tool-focused introduction for
+  researchers exploring computational approaches to tandem mass spectra.
 url: https://www.youtube.com/watch?v=yBlXyzDe8dI
 resource_type: workshop
 tool_slugs:
@@ -10,15 +10,15 @@ tool_slugs:
 provider: Functional Metabolomics Lab
 experience_level: unspecified
 language: en
-note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
-  September 30, 2026. Description and tool links are based on recording metadata;
-  full content review is pending.
-validation_status: unreviewed
+note: 2026 summer-school recording; publication year is the upload year. Recording source, title and topic
+  association checked on 27 October 2026. The lecture was not watched end to end and its exercises were
+  not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-10-01'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published
 year: 2026
 year_kind: published
 date_source: https://www.youtube.com/watch?v=yBlXyzDe8dI

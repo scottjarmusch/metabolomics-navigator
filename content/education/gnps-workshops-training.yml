@@ -1,18 +1,20 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-workshops-training
-title: "GNPS Workshops/Training"
-summary: "GNPS training hub collecting workshop materials. Browse for a topic-specific session, then check its recording date and software interface before following it."
-url: "https://ccms-ucsd.github.io/GNPSDocumentation/workshops/"
+title: GNPS Workshops/Training
+summary: GNPS training hub collecting workshop materials. Browse for a topic-specific session, then check
+  its recording date and software interface before following it.
+url: https://ccms-ucsd.github.io/GNPSDocumentation/workshops/
 resource_type: training_hub
 tool_slugs:
-  - gnps
-provider: "GNPS"
+- gnps
+provider: GNPS project
 experience_level: mixed
 language: en
-note: "Manual review of content and currentness is pending."
-validation_status: unreviewed
+note: Workshop index reviewed for recording/topic associations. Includes historical GNPS interfaces; use
+  current documentation when reproducing steps.
+validation_status: validated
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published

@@ -1,23 +1,24 @@
 $schema: ../../schemas/education.schema.json
 slug: massql-in-ms-dial-5
-title: "MassQL in MS-DIAL 5"
-summary: "Tutorial on using MassQL within MS-DIAL 5. Relevant when you want to apply mass-spectrometry queries from an MS-DIAL workflow."
-url: "https://www.youtube.com/watch?v=otCq9s1PjAs"
+title: MassQL in MS-DIAL 5 (no audio)
+summary: Silent screen demonstration of MassQL within MS-DIAL 5. It shows the query interface rather than
+  providing narrated instruction; consult the current MassQL and MS-DIAL documentation alongside the recording.
+url: https://www.youtube.com/watch?v=otCq9s1PjAs
 resource_type: video
 tool_slugs:
-  - ms-dial
-  - massql
-provider: "MS-DIAL project"
+- ms-dial
+- massql
+provider: MS-DIAL project
 experience_level: unspecified
 language: en
-note: "Strong integration-focused candidate."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2022
 year_kind: published
 date_source: https://www.youtube.com/watch?v=otCq9s1PjAs

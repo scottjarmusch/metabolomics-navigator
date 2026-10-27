@@ -1,22 +1,24 @@
 $schema: ../../schemas/education.schema.json
 slug: metabolomic-data-analysis-using-metaboanalyst
-title: "Metabolomic Data Analysis Using MetaboAnalyst"
-summary: "Recorded introduction to metabolomic data analysis using MetaboAnalyst. It uses an older version; consult current tutorials for present-day menus and options."
-url: "https://www.youtube.com/watch?v=4CVC98KnlMA"
+title: Metabolomic Data Analysis Using MetaboAnalyst
+summary: Recorded introduction to metabolomic data analysis using MetaboAnalyst. It uses an older version;
+  consult current tutorials for present-day menus and options.
+url: https://www.youtube.com/watch?v=4CVC98KnlMA
 resource_type: workshop
 tool_slugs:
-  - metaboanalyst
-provider: "Canadian Bioinformatics Workshops"
+- metaboanalyst
+provider: Bioinformatics DotCa
 experience_level: unspecified
 language: en
-note: "Old MetaboAnalyst version; likely legacy-only."
-validation_status: unreviewed
+note: Historical/version-specific MetaboAnalyst recording. Recording source, title and topic association
+  checked on 27 October 2026. The lecture was not watched end to end and its exercises were not executed.
+  Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2016
 year_kind: published
 date_source: https://www.youtube.com/watch?v=4CVC98KnlMA
