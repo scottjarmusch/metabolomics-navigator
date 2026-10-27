@@ -20,8 +20,38 @@ def record(name='Jane Doe', orcid=None, consent=True, status='published'):
 class ContributorTests(unittest.TestCase):
     def test_consent_and_legacy(self):
         records = [record(), record('False', consent=False), record('String', consent='true'),
-                   record('Draft', status='stub'), {'provenance': {'submitter_name': 'Legacy'}}]
+                   record('Draft', status='draft'), {'provenance': {'submitter_name': 'Legacy'}}]
         self.assertEqual([p['name'] for p in build_contributors(records)], ['Jane Doe'])
+
+    def test_accepted_stub_contributors_are_credited_before_enrichment(self):
+        people = build_contributors([
+            record('Accepted contributor', status='stub'),
+            record('No consent', consent=False, status='stub'),
+            record('Unpublished', status='draft'),
+            record('Unknown status', status='unknown'),
+        ])
+        self.assertEqual([p['name'] for p in people], ['Accepted contributor'])
+
+    def test_current_catalogue_consent_is_reflected_in_directory(self):
+        from common import load_tools, load_strategies
+        records = [*load_tools(), *load_strategies()]
+        people = build_contributors(records)
+        ids = {p['orcid'] for p in people if p['orcid']}
+        eligible = [r for r in records
+                    if r.get('status', {}).get('entry') in ('published', 'stub')
+                    and r.get('provenance', {}).get('public_attribution_consent') is True]
+        for r in eligible:
+            oid = r['provenance'].get('submitter_orcid')
+            if oid:
+                self.assertIn(oid, ids, r['slug'])
+        env = Environment(loader=FileSystemLoader(ROOT / 'templates'), autoescape=select_autoescape())
+        env.globals['url'] = lambda p: '/metabolomics-navigator/' + p
+        page = env.get_template('submit.html').render(site={}, seo={'title':'Contribute','description':'Contribute','robots':'index,follow'}, contributors=people)
+        for person in people:
+            from html import escape
+            self.assertIn(escape(person['name']), page)
+            if person['orcid']:
+                self.assertIn('https://orcid.org/' + person['orcid'], page)
 
     def test_entry_credit(self):
         self.assertEqual(entry_submitter(record(status='stub'))['name'], 'Jane Doe')
