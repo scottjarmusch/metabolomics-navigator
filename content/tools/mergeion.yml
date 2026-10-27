@@ -1,0 +1,93 @@
+$schema: ../../schemas/tool.schema.json
+slug: mergeion
+name: MergeION
+summary: A workflow for extracting and merging LC-MS/MS spectra into local GNPS-style spectral libraries
+  with user metadata, plus local and public-library searching for annotation.
+links:
+  primary: https://github.com/daniellyz/meRgeION2
+  repository: https://github.com/daniellyz/meRgeION2
+  documentation: https://daniellyz.github.io/mergeion.github.io/Library_Generation_Tutorial.html
+resource_types:
+- workflow_pipeline
+functions:
+  primary: spectral_analysis
+  secondary:
+  - annotation_identification
+  - data_management_sharing
+  capabilities:
+  - reference_spectrum_selection
+  - library_matching
+  - spectral_data_io
+platforms:
+- lc_ms
+analysis_types:
+- targeted
+- untargeted
+interfaces:
+- r_package
+access:
+  model: unknown
+  notes: Package DESCRIPTION says only GNU without a version or complete grant; no precise unrestricted
+    license is inferred. Linked reference libraries have separate provenance and reuse terms.
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  - sample_metadata
+  output_types:
+  - spectral_library
+  - compound_list
+  other_input_formats:
+  - mzML/mzXML scans plus targets/metadata, or two-column query spectra
+  other_output_formats:
+  - R spectral-library objects, candidate match tables and mirror/network plots
+common_uses:
+- Build local LC-MS/MS spectral libraries without publishing confidential metadata.
+- Search unknown spectra against local or public reference libraries.
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-10-22'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  ion_mobility: unspecified
+description: MeRgeION builds local spectral libraries by extracting and combining MS scans around user-specified
+  compounds. Its R functions also support local spectral searching, analog analysis and network-oriented
+  exploration without requiring public deposition of the library.
+scope:
+  designed_for:
+  - A workflow for extracting and merging LC-MS/MS spectra into local GNPS-style spectral libraries with
+    user metadata, plus local and public-library searching for annotation.
+  not_designed_for:
+  - Reference-free structure determination or permission to redistribute third-party spectra included
+    in a local library.
+  requirements:
+  - R/Bioconductor dependencies and Java/OpenBabel components as documented; compatible mzML/mzXML DDA
+    or targeted-MS/MS data, target masses/optional retention times and library metadata.
+  considerations:
+  - Library quality depends on extraction/merging settings and metadata. The linked example library is
+    positive-ion; assess polarity and acquisition compatibility before transferring search thresholds.
+publications:
+- doi: 10.1021/acs.analchem.2c04343
+  type: primary
+  citation: 'MeRgeION: a Multifunctional R Pipeline for Small Molecule LC-MS/MS Data Processing, Searching,
+    and Organizing. Analytical Chemistry (2023).'

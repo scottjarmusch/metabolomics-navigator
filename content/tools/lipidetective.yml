@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidetective
+name: LipiDetective
+summary: A deep-learning framework for identifying molecular lipid species from tandem mass spectra.
+links:
+  primary: https://github.com/LipiTUM/lipidetective
+  repository: https://github.com/LipiTUM/lipidetective
+  documentation: https://lipitum.github.io/lipidetective/
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - structure_elucidation
+  - compound_class_prediction
+platforms:
+- platform_independent
+analysis_types:
+- lipidomics
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: BSD-3-Clause source distribution. External datasets, dependent packages and any hosted routes
+    retain their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  other_input_formats:
+  - mzML spectra for prediction; HDF5 data and YAML for training
+  other_output_formats:
+  - Predicted lipid shorthand annotations and model-dependent scores
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-08-09'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: LipiDetective predicts molecular lipid species in standardized shorthand notation from tandem
+  spectra using a transformer model. It offers model training with prepared data and inference for supported
+  spectra, providing a complementary source of annotation evidence.
+scope:
+  designed_for:
+  - A deep-learning framework for identifying molecular lipid species from tandem mass spectra.
+  not_designed_for:
+  - Confirming double-bond positions or stereochemistry not resolved by the model, or accepting every
+    generated lipid name without checking precursor compatibility.
+  requirements:
+  - Python environment, YAML configuration and trained checkpoint; the documented training route uses
+    HDF5 data and prediction uses mzML files.
+  considerations:
+  - Training-set lipid/adduct and instrument coverage affect performance. Inspect predictions against
+    precursor mass and diagnostic fragments; the current paper discusses training bias and missing hard
+    precursor-mass constraints.
+common_uses:
+- A deep-learning framework for identifying molecular lipid species from tandem mass spectra.
+publications:
+- doi: 10.1093/bib/bbag378
+  type: primary
+  citation: 'LipiDetective: a deep learning model for the identification of molecular lipid species in
+    tandem mass spectra. Briefings in Bioinformatics (2026).'

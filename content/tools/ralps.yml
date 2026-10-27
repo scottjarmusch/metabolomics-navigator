@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: ralps
+name: RALPS
+summary: An R-based regularized adversarial-learning method for harmonizing metabolomics batches using
+  shared reference samples while preserving biological similarity structure.
+links:
+  primary: https://github.com/zamboni-lab/RALPS
+  repository: https://github.com/zamboni-lab/RALPS
+  documentation: https://github.com/zamboni-lab/RALPS#readme
+resource_types:
+- programming_package
+functions:
+  primary: normalization
+  secondary:
+  - machine_learning
+  capabilities:
+  - batch_effect_correction
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Abundance CSV, batch/group/benchmark CSV and configuration CSV
+  other_output_formats:
+  - Normalized abundance CSV, model checkpoints and evaluation plots
+publications:
+- doi: 10.1093/bioinformatics/btad096
+  type: primary
+  citation: Regularized adversarial learning for normalization of multi-batch untargeted metabolomics
+    data. Bioinformatics (2023).
+common_uses:
+- Harmonize multiple metabolomics batches using embedded shared reference samples.
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-06-26'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - An R-based regularized adversarial-learning method for harmonizing metabolomics batches using shared
+    reference samples while preserving biological similarity structure.
+  not_designed_for:
+  - Replacing the preceding within-batch drift correction or inferring batch effects without the required
+    reference information.
+  requirements:
+  - The documented Python/PyTorch environment, an abundance CSV, batch/replicate metadata and configuration
+    file; reference replicate arrangements must connect the batches being harmonized.
+  considerations:
+  - Training and parameter selection affect the reconstructed data. Check reference-sample agreement,
+    variance and biological signal preservation; distinguish regularization replicates from evaluation
+    benchmarks.
+description: RALPS harmonizes batches of quantified metabolomics data using regularized adversarial learning
+  and shared reference measurements. It targets inter-batch variation after each batch has first been
+  normalized for within-batch problems.
