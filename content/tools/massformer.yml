@@ -1,0 +1,92 @@
+$schema: ../../schemas/tool.schema.json
+slug: massformer
+name: MassFormer
+summary: A research implementation of a graph-transformer model for predicting small-molecule tandem mass
+  spectra from molecular structures.
+links:
+  primary: https://github.com/Roestlab/massformer
+  repository: https://github.com/Roestlab/massformer
+  documentation: https://github.com/Roestlab/massformer#readme
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  secondary:
+  - machine_learning
+  capabilities:
+  - in_silico_spectra
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+- command_line
+access:
+  model: open_source
+  license: BSD-2-Clause
+  notes: BSD-2-Clause code. Public demo data and checkpoints are provided separately; reproducing NIST-based
+    experiments additionally requires separately licensed NIST data.
+technical:
+  operating_systems:
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - spectra
+  other_output_formats:
+  - CSV of predicted spectra and associated metadata
+  other_input_formats:
+  - CSV containing molecular identifiers and SMILES
+publications:
+- doi: 10.1038/s42256-024-00816-8
+  type: primary
+  citation: Tandem mass spectrum prediction for small molecules using graph transformers. Nature Machine
+    Intelligence (2024).
+common_uses:
+- Predict MS/MS spectra for small molecules from structure.
+- Evaluate or benchmark learned spectrum-prediction models.
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-08-26'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Research and benchmarking of learned small-molecule MS/MS spectrum prediction.
+  requirements:
+  - A Unix-like Python/PyTorch environment, model checkpoint and molecular SMILES. GPU acceleration is
+    recommended for larger jobs; documented CPU inference is also available.
+  considerations:
+  - Predictions depend on molecular and collision-condition coverage; unsupported or unparseable SMILES
+    can be omitted by the inference script.
+  not_designed_for:
+  - De novo recovery of a molecular structure from an experimental spectrum or automatic identification
+    without candidate comparison.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_applicable
+description: MassFormer predicts small-molecule tandem mass spectra from molecular structures with a graph-transformer
+  model. The research implementation includes inference scripts, pretrained checkpoints and training/evaluation
+  configurations; prediction takes candidate structures rather than an unknown experimental spectrum alone.

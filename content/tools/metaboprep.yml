@@ -1,0 +1,98 @@
+$schema: ../../schemas/tool.schema.json
+slug: metaboprep
+name: metaboprep
+summary: An R package for importing processed metabolomics data, applying standardized sample and feature
+  quality-control filters, and generating summary tables and HTML reports.
+links:
+  primary: https://mrcieu.github.io/metaboprep/
+  homepage: https://mrcieu.github.io/metaboprep/
+  repository: https://github.com/MRCIEU/metaboprep
+  documentation: https://mrcieu.github.io/metaboprep/
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  secondary:
+  - visualization_reporting
+  - data_management_sharing
+  capabilities:
+  - feature_selection
+platforms:
+- platform_independent
+analysis_types:
+- targeted
+- untargeted
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: MIT
+  notes: Package DESCRIPTION declares MIT plus the accompanying LICENSE file. Document the installed version
+    because current development interfaces can differ from the original paper.
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - statistical_results
+  - report
+  input_formats:
+  - csv_tsv
+  - other
+  output_formats:
+  - csv_tsv
+  - other
+  other_input_formats:
+  - Excel
+  other_output_formats:
+  - HTML report
+publications:
+- doi: 10.1093/bioinformatics/btac059
+  type: methods
+  citation: 'metaboprep: an R package for preanalysis data description and processing. Bioinformatics
+    (2022).'
+common_uses:
+- Apply missingness, total-abundance, and PCA-based QC rules to processed metabolomics datasets.
+- Produce standardized QC summaries and reports before statistical analysis.
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-04-17'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Quality control and filtering of already quantified metabolomics tables.
+  not_designed_for:
+  - Raw chromatographic peak detection or automatic correction of every analytical batch effect.
+  requirements:
+  - R and package dependencies, quantified abundance data and aligned sample/feature metadata; select
+    importer and QC thresholds appropriate to the input structure.
+  considerations:
+  - Missingness and outlier thresholds can remove biological signals; review exclusion reasons and compare
+    pre/post-QC data before statistical modelling.
+description: metaboprep prepares quantified metabolomics tables for downstream analysis by summarizing
+  data, filtering samples/features and reporting QC decisions. Its R interface supports abundance matrices
+  and vendor/service tabular exports with sample and feature annotations.

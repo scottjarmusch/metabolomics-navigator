@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: neatms
+name: NeatMS
+summary: An open-source Python package that uses neural-network classification to label and filter false-positive
+  MS1 peaks from untargeted LC-MS feature-detection workflows.
+links:
+  primary: https://github.com/bihealth/NeatMS
+  repository: https://github.com/bihealth/NeatMS
+  documentation: https://neatms.readthedocs.io/en/latest/
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  secondary:
+  - machine_learning
+  capabilities:
+  - feature_selection
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT code; the official repository is archived. Its documentation still says publication pending,
+    while the subsequently published primary paper is cited here.
+technical:
+  operating_systems:
+  - linux
+  - macos
+  - windows
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - feature_table
+  - raw_instrument_data
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Feature-detection results and chromatographic data via package objects
+  other_output_formats:
+  - Python feature objects with predicted peak-quality labels for filtering
+publications:
+- doi: 10.1021/acs.analchem.1c02220
+  type: primary
+  citation: Deep Learning-Assisted Peak Curation for Large-Scale LC-MS Metabolomics. Analytical Chemistry
+    (2022).
+common_uses:
+- Remove low-quality or false-positive LC-MS features after peak detection.
+- Apply pretrained or user-trained neural-network classifiers to chromatographic signals.
+maintenance:
+  status: archived
+  repository_last_activity: '2021-08-19'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Automated LC-MS signal-quality classification and filtering after feature detection.
+  considerations:
+  - Check compatibility with the older environment and upstream export format. Classifier suitability
+    depends on peak shapes and acquisition conditions.
+  not_designed_for:
+  - Initial feature extraction, molecular annotation or a guarantee that every rejected low-quality signal
+    is chemically irrelevant.
+  requirements:
+  - A compatible Python environment, detected feature information, corresponding raw LC-MS data and an
+    appropriate supplied or trained classification model; follow the package examples for the expected
+    import structure.
+description: NeatMS labels and filters detected LC-MS MS1 signals using a neural-network classifier of
+  peak quality. It is intended to follow upstream feature detection and uses raw chromatographic signal
+  information together with the reported features.

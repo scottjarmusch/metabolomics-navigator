@@ -1,0 +1,114 @@
+$schema: ../../schemas/tool.schema.json
+slug: nextflow4ms-dial
+name: Nextflow4MS-DIAL
+summary: A reproducible Nextflow workflow for LC-HRMS metabolomics that executes MS-DIAL-based processing
+  across local, containerized, and high-performance computing environments.
+links:
+  primary: https://github.com/Nextflow4Metabolomics/nextflow4ms-dial
+  repository: https://github.com/Nextflow4Metabolomics/nextflow4ms-dial
+  documentation: https://github.com/Nextflow4Metabolomics/nextflow4ms-dial#readme
+resource_types:
+- workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+  - preprocessing
+  - annotation_identification
+  capabilities:
+  - provenance_tracking
+  - container_support
+  - peak_detection
+  - retention_time_alignment
+  - library_matching
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- workflow_language
+- command_line
+access:
+  model: open_source
+  license: MIT
+  notes: MIT workflow code; bundled or invoked programs and reference libraries retain their own terms.
+    Use the documented execution profile and record the configuration.
+technical:
+  operating_systems:
+  - linux
+  - macos
+  - containers
+  programming_languages:
+  - Nextflow
+  containers:
+  - Docker
+  - Singularity
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  - spectral_library
+  output_types:
+  - feature_table
+  - compound_list
+  - report
+  input_formats:
+  - mzml
+  - other
+  other_input_formats:
+  - ABF
+  output_formats:
+  - csv_tsv
+publications:
+- doi: 10.1021/jasms.4c00364
+  type: primary
+  citation: 'Nextflow4MS-DIAL: A Reproducible Nextflow-Based Workflow for Liquid Chromatography–Mass Spectrometry
+    Metabolomics Data Processing. Journal of the American Society for Mass Spectrometry (2025).'
+common_uses:
+- Run MS-DIAL preprocessing reproducibly on local systems or HPC.
+- Preserve workflow configuration, execution logs, and containerized dependencies around an MS-DIAL analysis.
+related_tools:
+- slug: ms-dial
+  relationship: dependency
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-05-30'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Reproducible execution of MS-DIAL LC-HRMS workflows across local, container, and HPC environments.
+  requirements:
+  - Nextflow, Java and Docker or Singularity in the documented Linux/macOS setup, mzML/ABF data, MS-DIAL/MS-FLO
+    configuration files and appropriately named reference libraries.
+  not_designed_for:
+  - A new standalone feature-detection algorithm or conversion of every proprietary raw format without
+    external converters.
+  considerations:
+  - Results depend on MS-DIAL parameters and library compatibility. CPU/resource allocation and file naming
+    must follow the workflow guidance on the chosen platform.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - unspecified
+  ion_mobility: unspecified
+description: Nextflow4MS-DIAL orchestrates MS-DIAL and MS-FLO processing with Nextflow for reproducible
+  LC-HRMS analyses. Container profiles support local and HPC execution and produce feature/annotation
+  tables together with workflow reports.

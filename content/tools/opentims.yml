@@ -1,0 +1,91 @@
+$schema: ../../schemas/tool.schema.json
+slug: opentims
+name: OpenTIMS
+summary: Read Bruker timsTOF TDF data through C++, Python or R interfaces.
+links:
+  primary: https://github.com/michalsta/opentims
+  repository: https://github.com/michalsta/opentims
+  documentation: https://michalsta.github.io/opentims/
+resource_types:
+- programming_package
+functions:
+  primary: data_conversion
+  secondary: []
+  capabilities:
+  - spectral_data_io
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- r_package
+access:
+  model: open_source
+  notes: MIT core with third-party notices. The optional Bruker bridge distributes proprietary conversion
+    binaries under separate terms; current open-source conversion can also be selected.
+  license: MIT
+technical:
+  operating_systems:
+  - linux
+  - macos
+  - windows
+  programming_languages:
+  - C++
+  - Python
+  - R
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - spectra
+  input_formats:
+  - vendor_raw
+  other_output_formats:
+  - NumPy arrays, R data frames or C++ data structures with spectral coordinates
+publications:
+- doi: 10.1021/acs.jproteome.0c00962
+  type: primary
+  citation: 'OpenTIMS, TimsPy, and TimsR: Open and Easy Access to timsTOF Raw Data. Journal of Proteome
+    Research (2021).'
+common_uses:
+- Read timsTOF TDF data into Python or R for downstream analysis.
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-10-25'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Programmatic access to Bruker timsTOF TDF data.
+  considerations:
+  - Choose conversion/calibration behavior explicitly and record it. Large all-frame queries may exceed
+    memory; selected columns or frame iteration can reduce resource use.
+  not_designed_for:
+  - Complete metabolomics preprocessing, molecular annotation or universal support for all Bruker data
+    formats.
+  requirements:
+  - A TDF directory containing both analysis.tdf and analysis.tdf_bin, and an appropriate Python/R installation
+    or C++ build environment. Source builds need the documented compiler and library dependencies.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - unspecified
+  ion_mobility: supported
+description: OpenTIMS is a data-access library for Bruker timsTOF TDF files with Python and R bindings.
+  It exposes frame, scan, time-of-flight and intensity data, plus calibrated m/z and inverse-mobility
+  coordinates through the documented conversion routes.
