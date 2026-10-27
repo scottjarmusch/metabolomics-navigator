@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: concise
+name: ConCISE
+summary: ConCISE propagates consensus chemical-class annotations by combining molecular-network relationships,
+  library matches and in-silico class predictions.
+links:
+  primary: https://github.com/zquinlan/concise
+  repository: https://github.com/zquinlan/concise
+  documentation: https://zquinlan.github.io/conCISE/
+resource_types:
+- programming_package
+functions:
+  primary: molecular_networking
+  secondary:
+  - annotation_identification
+  capabilities:
+  - compound_class_prediction
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- command_line
+- desktop_gui
+- notebook
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - compound_list
+  - statistical_results
+  output_types:
+  - compound_list
+  - report
+  other_input_formats:
+  - GNPS library/task results, CANOPUS TSV and network information
+  other_output_formats:
+  - Consensus chemical-class annotation tables
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-11-15'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: ConCISE propagates consensus chemical-class annotations by combining molecular-network relationships,
+  library matches and in-silico class predictions. It accepts GNPS and CANOPUS-derived results through
+  graphical, command-line or notebook workflows.
+scope:
+  designed_for:
+  - ConCISE propagates consensus chemical-class annotations by combining molecular-network relationships,
+    library matches and in-silico class predictions.
+  not_designed_for:
+  - Confirmed molecular structures or class assignments independent of the quality of the underlying network
+    and source annotations.
+  requirements:
+  - Compatible library-match/GNPS task information, CANOPUS summary and network-node information with
+    consistent feature identifiers; choose ClassyFire or NPClassifier ontology inputs.
+  considerations:
+  - README documents missing ClassyFire fields from GNPS and provides NPClassifier/manual-merge workarounds.
+    Check ontology consistency and consensus thresholds; the macOS GUI is deprecated.
+common_uses:
+- ConCISE propagates consensus chemical-class annotations by combining molecular-network relationships,
+  library matches and in-silico class predictions.
+publications:
+- doi: 10.3390/metabo12121275
+  type: primary
+  citation: 'ConCISE: Consensus Annotation Propagation of Ion Features in Untargeted Tandem Mass Spectrometry
+    Combining Molecular Networking and In Silico Metabolite Structure Prediction. Metabolites (2022).'

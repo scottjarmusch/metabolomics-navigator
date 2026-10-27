@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: serda
+name: SERDA
+summary: SERDA applies denoising-autoencoder normalization to processed metabolomics data.
+links:
+  primary: https://github.com/slfan2013/SERDA
+  repository: https://github.com/slfan2013/SERDA
+  documentation: https://github.com/slfan2013/SERDA#readme
+resource_types:
+- programming_package
+functions:
+  primary: normalization
+  secondary:
+  - machine_learning
+  capabilities:
+  - batch_effect_correction
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+interfaces:
+- command_line
+access:
+  model: source_available
+  notes: Public R research runner; no repository-wide license grant was established. R, Python and dependent
+    neural-network packages require a compatible environment and retain their own terms.
+technical:
+  operating_systems:
+  - windows
+  programming_languages:
+  - R
+  - Python
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Example-formatted metabolomics XLSX abundance/metadata workbook
+  other_output_formats:
+  - Normalized abundance data and runner-generated evaluation results
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-02-06'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: SERDA applies denoising-autoencoder normalization to processed metabolomics data. Its R runner
+  connects to a Python/Keras environment and uses an example spreadsheet layout for large-scale GC-MS
+  normalization research.
+scope:
+  designed_for:
+  - SERDA applies denoising-autoencoder normalization to processed metabolomics data.
+  not_designed_for:
+  - Isotope-tracing analysis, raw GC-MS deconvolution or guaranteed removal of technical variation without
+    affecting biology.
+  requirements:
+  - A compatible R/reticulate/Keras/Python environment and input XLSX formatted according to the supplied
+    example; update the runner's data-file path before execution.
+  considerations:
+  - The documented stack is old and needs compatibility checking. Evaluate normalization with appropriate
+    QC and biological contrasts rather than relying only on a cleaner low-dimensional plot.
+common_uses:
+- SERDA applies denoising-autoencoder normalization to processed metabolomics data.
+publications:
+- doi: 10.3390/metabo13080944
+  type: primary
+  citation: Denoising Autoencoder Normalization for Large-Scale Untargeted Metabolomics by Gas Chromatography–Mass
+    Spectrometry. Metabolites (2023).

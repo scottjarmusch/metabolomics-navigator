@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: arcms
+name: arcMS
+summary: arcMS converts Waters UNIFI MS-E and HDMS-E data into tabular Parquet or HDF5 storage for analysis
+  in R or Python.
+links:
+  primary: https://github.com/leesulab/arcMS
+  repository: https://github.com/leesulab/arcMS
+  documentation: https://leesulab.github.io/arcMS/
+resource_types:
+- programming_package
+functions:
+  primary: data_conversion
+  secondary:
+  - data_management_sharing
+  capabilities:
+  - spectral_data_io
+platforms:
+- multi_platform
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - spectra
+  other_output_formats:
+  - Parquet plus JSON metadata, or HDF5 spectral/metadata datasets
+  other_input_formats:
+  - UNIFI API MS-E/HDMS-E data or supported mzML files
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-06-07'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: arcMS converts Waters UNIFI MS-E and HDMS-E data into tabular Parquet or HDF5 storage for
+  analysis in R or Python. It also documents mzML-to-Parquet conversion, metadata retrieval and access
+  to mobility/CCS information when available.
+scope:
+  designed_for:
+  - arcMS converts Waters UNIFI MS-E and HDMS-E data into tabular Parquet or HDF5 storage for analysis
+    in R or Python.
+  not_designed_for:
+  - Automatic feature detection, spectral deconvolution or molecular identification from the converted
+    data.
+  requirements:
+  - R and documented dependencies; UNIFI conversion requires configured API access and registered connection
+    credentials, while HDF5 use requires its supporting packages.
+  considerations:
+  - Keep acquisition metadata with exported arrays and distinguish measured mobility/CCS fields from predicted
+    values. The separate companion visualization app has its own setup.
+common_uses:
+- arcMS converts Waters UNIFI MS-E and HDMS-E data into tabular Parquet or HDF5 storage for analysis in
+  R or Python.
+publications:
+- doi: 10.1093/bioadv/vbae160
+  type: primary
+  citation: 'arcMS: transformation of multi-dimensional high-resolution mass spectrometry data to columnar
+    format for compact storage and fast access. Bioinformatics Advances (2024).'

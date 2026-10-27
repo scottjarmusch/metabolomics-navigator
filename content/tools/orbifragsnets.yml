@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: orbifragsnets
+name: OrbiFragsNets
+summary: OrbiFragsNets annotates Orbitrap data-dependent MS2 peaks with candidate fragment formulas using
+  peak-specific uncertainty and chemical-consistency networks.
+links:
+  primary: https://github.com/EdwinChingate/OrbiFragsNets
+  repository: https://github.com/EdwinChingate/OrbiFragsNets
+  documentation: https://github.com/EdwinChingate/OrbiFragsNets#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - molecular_networking
+  - spectral_analysis
+  capabilities:
+  - ms2_processing
+platforms:
+- platform_independent
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  - statistical_results
+  other_input_formats:
+  - Profile-mode Orbitrap mzML with precursor/formula constraints
+  other_output_formats:
+  - Annotated MS2 fragment-formula networks and spectral result tables
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-05-29'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: OrbiFragsNets annotates Orbitrap data-dependent MS2 peaks with candidate fragment formulas
+  using peak-specific uncertainty and chemical-consistency networks. Its workflow extracts profile-derived
+  spectral information before selecting consistent fragment-annotation networks.
+scope:
+  designed_for:
+  - OrbiFragsNets annotates Orbitrap data-dependent MS2 peaks with candidate fragment formulas using peak-specific
+    uncertainty and chemical-consistency networks.
+  not_designed_for:
+  - Universal centroid-spectrum annotation or full molecular-structure confirmation from a selected fragment
+    network.
+  requirements:
+  - Python dependencies and compatible profile-mode Orbitrap mzML data with precursor information and
+    appropriate elemental/formula constraints.
+  considerations:
+  - Profile information used for uncertainty is lost after centroiding. Elemental bounds and precursor
+    constraints determine the formula space and must match the experiment.
+common_uses:
+- OrbiFragsNets annotates Orbitrap data-dependent MS2 peaks with candidate fragment formulas using peak-specific
+  uncertainty and chemical-consistency networks.
+publications:
+- doi: 10.1016/j.mex.2023.102257
+  type: primary
+  citation: OrbiFragsNets. A tool for automatic annotation of orbitrap MS2 spectra using networks grade
+    as selection criteria. MethodsX (2023).

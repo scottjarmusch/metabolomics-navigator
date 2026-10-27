@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: lipidspace
+name: LipidSpace
+summary: LipidSpace compares lipidomes using graph-based distances between lipid structures and quantitative
+  information.
+links:
+  primary: https://github.com/lifs-tools/lipidspace
+  repository: https://github.com/lifs-tools/lipidspace
+  documentation: https://lifs-tools.org/tools/lipidspace.html
+resource_types:
+- software_application
+functions:
+  primary: statistics
+  secondary:
+  - visualization_reporting
+  - quality_control
+  capabilities:
+  - multivariate_statistics
+  - network_visualization
+platforms:
+- platform_independent
+analysis_types:
+- lipidomics
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+data:
+  input_types:
+  - feature_table
+  - compound_list
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - CSV/XLSX lipid tables or mzTab-M lipidomics records
+  other_output_formats:
+  - Lipidome distances, statistical/feature results and PDF visualizations
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-09-04'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: LipidSpace compares lipidomes using graph-based distances between lipid structures and quantitative
+  information. Its desktop interface supports experiment comparison, study-variable exploration, feature
+  selection and quality-control views.
+scope:
+  designed_for:
+  - LipidSpace compares lipidomes using graph-based distances between lipid structures and quantitative
+    information.
+  not_designed_for:
+  - Raw spectral lipid identification or proof of biological similarity independent of annotation quality
+    and structural resolution.
+  requirements:
+  - A supported desktop release and identified lipid abundance tables with compatible lipid nomenclature
+    and sample/study-variable annotations.
+  considerations:
+  - Lipid naming, structural detail, sn-position assumptions and distance/clustering settings influence
+    comparisons. This resource is distinct from the LORA paper incorrectly associated with its repository
+    in the intake.
+common_uses:
+- LipidSpace compares lipidomes using graph-based distances between lipid structures and quantitative
+  information.
+publications:
+- doi: 10.1021/acs.analchem.3c02449
+  type: primary
+  citation: 'LipidSpace: Simple Exploration, Reanalysis, and Quality Control of Large-Scale Lipidomics
+    Studies. Analytical Chemistry (2023).'

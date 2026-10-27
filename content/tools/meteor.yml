@@ -1,0 +1,91 @@
+$schema: ../../schemas/tool.schema.json
+slug: meteor
+name: MeTEor
+summary: MeTEor explores longitudinal metabolomics tables with repeated-measures statistical models, dimensionality
+  reduction, prediction models and interactive plots.
+links:
+  primary: https://github.com/scibiome/meteor
+  repository: https://github.com/scibiome/meteor
+  documentation: https://github.com/scibiome/meteor#readme
+resource_types:
+- software_application
+functions:
+  primary: statistics
+  secondary:
+  - visualization_reporting
+  - machine_learning
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+  - interactive_dashboard
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+interfaces:
+- r_package
+- web_app
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  - browser
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Processed longitudinal metabolomics tables with subject/time metadata
+  other_output_formats:
+  - Statistical/model results, network views and exploratory plots
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-10-06'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MeTEor explores longitudinal metabolomics tables with repeated-measures statistical models,
+  dimensionality reduction, prediction models and interactive plots. Its R/Shiny interface also supports
+  identifier/pathway mapping and network views.
+scope:
+  designed_for:
+  - MeTEor explores longitudinal metabolomics tables with repeated-measures statistical models, dimensionality
+    reduction, prediction models and interactive plots.
+  not_designed_for:
+  - Raw peak extraction or reliable longitudinal inference without accounting for study design, repeated
+    observations and missingness.
+  requirements:
+  - Docker or the documented R plus Miniconda environment and a processed abundance dataset with longitudinal
+    subject, time and group metadata.
+  considerations:
+  - Choose models consistent with the sampling structure and prevent leakage in prediction. Identifier
+    and pathway mapping can depend on external services.
+common_uses:
+- MeTEor explores longitudinal metabolomics tables with repeated-measures statistical models, dimensionality
+  reduction, prediction models and interactive plots.
+publications:
+- doi: 10.1093/bioadv/vbae178
+  type: primary
+  citation: 'MeTEor: an R Shiny app for exploring longitudinal metabolomics data. Bioinformatics Advances
+    (2024).'

@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: fiddle
+name: FIDDLE
+summary: FIDDLE predicts and rescores molecular-formula candidates from tandem mass spectra using deep
+  learning.
+links:
+  primary: https://github.com/JosieHong/FIDDLE
+  repository: https://github.com/JosieHong/FIDDLE
+  documentation: https://msfiddle.readthedocs.io
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - molecular_formula_prediction
+platforms:
+- platform_independent
+interfaces:
+- python_package
+- command_line
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  other_input_formats:
+  - MGF spectra with required precursor and collision-energy metadata
+  other_output_formats:
+  - CSV ranked formula candidates and scores, plus optional evaluation
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-10-24'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: FIDDLE predicts and rescores molecular-formula candidates from tandem mass spectra using
+  deep learning. Its command-line and Python workflows provide instrument-specific inference and ranked
+  formula outputs, with research training/evaluation scripts separately available.
+scope:
+  designed_for:
+  - FIDDLE predicts and rescores molecular-formula candidates from tandem mass spectra using deep learning.
+  not_designed_for:
+  - Full molecular-structure identification or guaranteed formula recovery outside the supported instrument
+    and chemical domains.
+  requirements:
+  - The inference package and downloaded models, plus MGF spectra containing the required title, precursor
+    mass/type and collision-energy metadata; select the appropriate instrument model.
+  considerations:
+  - Formula ranking and rescoring depend on spectral metadata and model selection. Optional BUDDY/SIRIUS
+    comparisons add separate software and account requirements.
+common_uses:
+- FIDDLE predicts and rescores molecular-formula candidates from tandem mass spectra using deep learning.
+publications:
+- doi: 10.1038/s41467-025-66060-9
+  type: primary
+  citation: 'FIDDLE: a deep learning method for chemical formulas prediction from tandem mass spectra.
+    Nature Communications (2025).'

@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: metapro
+name: MetaPro
+summary: MetaPro is a locally deployed web application for targeted LC-MS analysis, batch inspection and
+  spectral-library curation.
+links:
+  primary: https://github.com/CSi-Studio/MetaPro
+  repository: https://github.com/CSi-Studio/MetaPro
+  documentation: https://csi-studio.github.io/MetaPro/guide/user-manual.html
+resource_types:
+- software_application
+functions:
+  primary: quality_control
+  secondary:
+  - annotation_identification
+  - visualization_reporting
+  capabilities:
+  - library_matching
+  - interactive_dashboard
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- web_app
+access:
+  model: free_academic
+  notes: README restricts this version to academic use and asks commercial users to contact the developers.
+    Local deployment and supporting database/software requirements apply.
+technical:
+  operating_systems:
+  - windows
+  - linux
+  - macos
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - feature_table
+  - compound_list
+  - report
+  other_input_formats:
+  - DDA Aird files and formatted compound/spectral libraries
+  other_output_formats:
+  - Curated spectral libraries and targeted-analysis result exports
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-04-21'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MetaPro is a locally deployed web application for targeted LC-MS analysis, batch inspection
+  and spectral-library curation. Users inspect compound detections across runs and export curated libraries
+  and analysis results.
+scope:
+  designed_for:
+  - MetaPro is a locally deployed web application for targeted LC-MS analysis, batch inspection and spectral-library
+    curation.
+  not_designed_for:
+  - General DIA analysis or automatic validation of targeted detections without reviewing the batch evidence.
+  requirements:
+  - A supported local/server installation with MongoDB/Redis dependencies, AirdPro-converted DDA data
+    and a compound library in the required format; manual lists at least 16 GB RAM.
+  considerations:
+  - The manual restricts the documented workflow to DDA. Check compound-library content, integration and
+    spectrum quality before exporting curated results.
+common_uses:
+- MetaPro is a locally deployed web application for targeted LC-MS analysis, batch inspection and spectral-library
+  curation.
+publications:
+- doi: 10.1007/s11306-023-02018-6
+  type: primary
+  citation: 'MetaPro: a web-based metabolomics application for LC-MS data batch inspection and library
+    curation. Metabolomics (2023).'

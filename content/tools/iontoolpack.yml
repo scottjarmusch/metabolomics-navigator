@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: iontoolpack
+name: IonToolPack
+summary: IonToolPack groups graphical mass-spectrometry utilities for raw-data visualization, PeakQC quality
+  assessment, tandem-library matching, targeted MS1 extraction and feature-list comparison.
+links:
+  primary: https://github.com/pnnl/IonToolPack
+  repository: https://github.com/pnnl/IonToolPack
+  documentation: https://github.com/pnnl/IonToolPack#readme
+resource_types:
+- software_application
+functions:
+  primary: quality_control
+  secondary:
+  - visualization_reporting
+  capabilities:
+  - interactive_dashboard
+  - library_matching
+  - multivariate_statistics
+platforms:
+- multi_platform
+analysis_types:
+- untargeted
+- lipidomics
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: BSD-2-Clause
+  notes: BSD-2-Clause source distribution. External datasets, dependent packages and any hosted routes
+    retain their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - windows
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - feature_table
+  - compound_list
+  - report
+  other_input_formats:
+  - Supported vendor/mzML files, target lists and MSP/CSV libraries
+  other_output_formats:
+  - QC metrics, extracted peak tables, match results and PDF/CSV exports
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-10-24'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: IonToolPack groups graphical mass-spectrometry utilities for raw-data visualization, PeakQC
+  quality assessment, tandem-library matching, targeted MS1 extraction and feature-list comparison. The
+  suite supports LC-MS, ion-mobility and direct-infusion workflows through documented readers.
+scope:
+  designed_for:
+  - IonToolPack groups graphical mass-spectrometry utilities for raw-data visualization, PeakQC quality
+    assessment, tandem-library matching, targeted MS1 extraction and feature-list comparison.
+  not_designed_for:
+  - Automatic confirmation of library matches or calibrated concentration determination from peak abundance
+    alone.
+  requirements:
+  - A compatible desktop release and supported raw files; targeted extraction needs target settings and
+    tandem matching needs MSP or CSV reference libraries.
+  considerations:
+  - Module capabilities differ. Vendor-reader compatibility, QC thresholds and matching tolerances must
+    be checked for the acquisition; the listed primary paper describes PeakQC within the suite.
+common_uses:
+- IonToolPack groups graphical mass-spectrometry utilities for raw-data visualization, PeakQC quality
+  assessment, tandem-library matching, targeted MS1 extraction and feature-list comparison.
+publications:
+- doi: 10.1021/jasms.4c00146
+  type: primary
+  citation: 'PeakQC: A Software Tool for Omics-Agnostic Automated Quality Control of Mass Spectrometry
+    Data. Journal of the American Society for Mass Spectrometry (2024).'
+  note: PeakQC module within the IonToolPack suite; not a publication introducing every later suite component.

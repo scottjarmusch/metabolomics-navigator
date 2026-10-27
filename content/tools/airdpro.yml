@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: airdpro
+name: AirdPro
+summary: AirdPro converts mass-spectrometry vendor data into the Aird storage format through a graphical
+  batch-conversion workflow.
+links:
+  primary: https://github.com/CSi-Studio/AirdPro
+  repository: https://github.com/CSi-Studio/AirdPro
+  documentation: https://github.com/CSi-Studio/AirdPro#readme
+resource_types:
+- software_application
+functions:
+  primary: data_conversion
+  secondary: []
+  capabilities:
+  - spectral_data_io
+platforms:
+- multi_platform
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: MulanPSL-2.0
+  notes: MulanPSL-2.0 repository. Vendor readers, SDKs and associated software have their own compatibility
+    and licensing requirements.
+technical:
+  operating_systems:
+  - windows
+  programming_languages:
+  - C#
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - spectra
+  other_output_formats:
+  - Paired Aird spectral binary and JSON index files
+  other_input_formats:
+  - Vendor MS files through supported ProteoWizard readers
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-12-01'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: AirdPro converts mass-spectrometry vendor data into the Aird storage format through a graphical
+  batch-conversion workflow. Aird separates compressed spectral arrays from a JSON index for access through
+  the companion SDKs.
+scope:
+  designed_for:
+  - AirdPro converts mass-spectrometry vendor data into the Aird storage format through a graphical batch-conversion
+    workflow.
+  not_designed_for:
+  - Feature detection, metabolite identification or a guarantee that every vendor file is readable on
+    every operating system.
+  requirements:
+  - A compatible AirdPro installation and vendor readers supplied through ProteoWizard; preserve each
+    Aird binary together with its matching JSON index.
+  considerations:
+  - Select and document compression and precision settings. Precision-controlled lossy conversion requires
+    assessment against the downstream scientific use.
+common_uses:
+- AirdPro converts mass-spectrometry vendor data into the Aird storage format through a graphical batch-conversion
+  workflow.
+publications:
+- doi: 10.1186/s12859-021-04490-0
+  type: primary
+  citation: 'Aird: a computation-oriented mass spectrometry data format enables a higher compression ratio
+    and less decoding time. BMC Bioinformatics (2022).'
+  note: Aird format and associated conversion implementation; reader compatibility is installation-dependent.

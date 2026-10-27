@@ -1,0 +1,79 @@
+$schema: ../../schemas/tool.schema.json
+slug: lcmsworld
+name: lcmsWorld
+summary: lcmsWorld is an interactive three-dimensional viewer for LC-MS data.
+links:
+  primary: https://github.com/PGB-LIV/lcmsWorld
+  repository: https://github.com/PGB-LIV/lcmsWorld
+  documentation: https://github.com/PGB-LIV/lcmsWorld#readme
+resource_types:
+- software_application
+functions:
+  primary: visualization_reporting
+  secondary: []
+  capabilities:
+  - interactive_dashboard
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: AGPL-3.0
+  notes: AGPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - windows
+  - linux
+  - macos
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - report
+  other_input_formats:
+  - mzML or supported Thermo RAW data and optional annotation tables
+  other_output_formats:
+  - Interactive 3D LC-MS views and reusable lcms cache files
+maintenance:
+  status: unclear
+  repository_last_activity: '2021-11-23'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: lcmsWorld is an interactive three-dimensional viewer for LC-MS data. It converts supported
+  acquisitions into a streamed visualization file, allowing users to rotate and inspect the mass/retention-time
+  landscape and overlay supplied annotations.
+scope:
+  designed_for:
+  - lcmsWorld is an interactive three-dimensional viewer for LC-MS data.
+  not_designed_for:
+  - Automatic alignment, ion-mobility analysis or metabolite identification; these are not established
+    by the displayed data landscape.
+  requirements:
+  - OpenGL 3.0 or newer, adequate disk space and RAM; Windows releases are supplied, Linux requires compilation
+    and macOS builds are documented as needing attention.
+  considerations:
+  - Initial loading creates an lcms cache file. Thermo RAW reading additionally depends on the 64-bit
+    .NET reader and platform compatibility.
+common_uses:
+- lcmsWorld is an interactive three-dimensional viewer for LC-MS data.
+publications:
+- doi: 10.1021/acs.jproteome.0c00618
+  type: primary
+  citation: 'lcmsWorld: High-Performance 3D Visualization Software for Mass Spectrometry. Journal of Proteome
+    Research (2021).'

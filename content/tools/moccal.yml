@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: moccal
+name: MOCCal
+summary: MOCCal calibrates traveling-wave ion-mobility measurements and calculates class-specific experimental
+  CCS values.
+links:
+  primary: https://github.com/HinesLab/MOCCal
+  repository: https://github.com/HinesLab/MOCCal
+  documentation: https://github.com/HinesLab/MOCCal#readme
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  secondary:
+  - annotation_identification
+  capabilities:
+  - multivariate_statistics
+platforms:
+- multi_platform
+interfaces:
+- desktop_gui
+- command_line
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Template-formatted calibration/experimental data or raw-route inputs
+  other_output_formats:
+  - Calibration fits, biomolecular-class assignments and calculated CCS
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-01-24'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MOCCal calibrates traveling-wave ion-mobility measurements and calculates class-specific
+  experimental CCS values. It includes processed-drift-time and raw-calibration-data routes and can assign
+  biomolecular classes for class-specific calculations.
+scope:
+  designed_for:
+  - MOCCal calibrates traveling-wave ion-mobility measurements and calculates class-specific experimental
+    CCS values.
+  not_designed_for:
+  - Structure-to-CCS prediction or proof of molecular identity from biomolecular-class assignment.
+  requirements:
+  - Calibration/experimental data in the supplied templates; the raw-data route additionally requires
+    the documented DEIMoS environment, while the processed-data executable needs its Output directory.
+  considerations:
+  - TWIM arrival time and drift time differ physically even where the interface uses the terms interchangeably.
+    Calibrant choice, charge/adduct and class assumptions affect CCS results.
+common_uses:
+- MOCCal calibrates traveling-wave ion-mobility measurements and calculates class-specific experimental
+  CCS values.
+publications:
+- doi: 10.1021/acs.analchem.3c04290
+  type: primary
+  citation: 'MOCCal: A Multiomic CCS Calibrator for Traveling Wave Ion Mobility Mass Spectrometry. Analytical
+    Chemistry (2024).'
