@@ -107,12 +107,12 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 123	PharmMet DB	unreviewed		https://github.com/ClinicalBiomarkersLaborabory/PharmMet	https://www.sciencedirect.com/science/article/pii/S0090955625094929		Not yet reviewed.
 124	MS2Mol	unreviewed		https://doi.org/10.26434/chemrxiv-2023-vsmpx-v3	https://chemrxiv.org/engage/chemrxiv/article-details/6492507524989702c2b082fc		Not yet reviewed.
 125	Weighted spectral similarity for library search	unreviewed		https://github.com/enveda/weighting-spectral-similarity	https://pubs.acs.org/doi/full/10.1021/jasms.3c00353		Not yet reviewed.
-126	Mol2CCS	unreviewed		https://github.com/enveda/ccs-prediction	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00899-w	ion_mobility_platform_dimension	Not yet reviewed.
+126	Mol2CCS	validated_pending_merge	mol2ccs	https://github.com/enveda/ccs-prediction	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00899-w	ion_mobility_platform_dimension	Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 127	MS2Prop	unreviewed		NA	https://www.biorxiv.org/content/10.1101/2022.10.09.511482v1		Not yet reviewed.
 128	msiFlow	unreviewed		https://github.com/Immunodynamics-Engel-Lab/msiflow	https://www.nature.com/articles/s41467-024-55306-7		Not yet reviewed.
 129	SLAW	unreviewed		https://github.com/adelabriere/SLAW	https://pubs.acs.org/doi/10.1021/acs.analchem.1c02687	broad_source_bucket_manual_review	Not yet reviewed.
 130	rawrr R	unreviewed		https://github.com/fgcz/rawrr	https://pubs.acs.org/doi/10.1021/acs.jproteome.0c00866	scope_review_adjacent_field	Not yet reviewed.
-132	Regularized Adversarial Learning Preserving Similarity (RALPS)	unreviewed		https://github.com/zamboni-lab/RALPS	https://academic.oup.com/bioinformatics/article/39/3/btad096/7056639		Not yet reviewed.
+132	Regularized Adversarial Learning Preserving Similarity (RALPS)	validated_pending_merge	ralps	https://github.com/zamboni-lab/RALPS	https://academic.oup.com/bioinformatics/article/39/3/btad096/7056639		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 133	eMZed 3	unreviewed		https://emzed.ethz.ch	https://arxiv.org/abs/2510.21484	broad_source_bucket_manual_review	Not yet reviewed.
 134	LipidOracle	unreviewed		https://hub.docker.com/r/zambonilab/lipidoracle	https://chemrxiv.org/engage/chemrxiv/article-details/68208af7927d1c2e661238ab		Not yet reviewed.
 135	SpectriPy	unreviewed		https://github.com/rformassspectrometry/SpectriPy	https://joss.theoj.org/papers/10.21105/joss.08070		Not yet reviewed.
@@ -141,7 +141,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 162	scSpaMet	unreviewed		https://github.com/coskunlab/ScSpaMet	https://www.nature.com/articles/s41467-023-43917-5		Not yet reviewed.
 163	Multipass CCS Refiner	unreviewed		https://github.com/facundof2016/Multipass-CCS-Refiner; https://ericgier.shinyapps.io/Multipass-CCS-Refiner/	https://pubs.acs.org/doi/10.1021/jasms.5c00199	broad_source_bucket_manual_review	Not yet reviewed.
 164	MetaBench	unreviewed		https://github.com/metabench/metabench	https://arxiv.org/abs/2510.14944		Not yet reviewed.
-165	MAW	unreviewed		https://github.com/zmahnoor14/MAW	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00695-y	broad_source_bucket_manual_review	Not yet reviewed.
+165	MAW	validated_pending_merge	maw	https://github.com/zmahnoor14/MAW	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00695-y	broad_source_bucket_manual_review	Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 166	Maldi Transformer	unreviewed		https://github.com/gdewael/maldi-nn	https://linkinghub.elsevier.com/retrieve/pii/S0010482525000459	broad_source_bucket_manual_review	Not yet reviewed.
 167	Metanorm	unreviewed		https://github.com/UGent-LIMET/Metanorm	https://www.biorxiv.org/content/10.1101/2025.09.30.679445v1		Not yet reviewed.
 168	ALISTER	unreviewed		https://itmp.shinyapps.io/alister/; https://github.com/Fraunhofer-ITMP/alister	https://www.sciencedirect.com/science/article/pii/S0009898124000998		Not yet reviewed.
@@ -184,7 +184,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 208	IDSL_MINT	unreviewed		https://github.com/idslme/IDSL_MINT	https://link.springer.com/article/10.1186/s13321-024-00804-5		Not yet reviewed.
 210	ORA	unreviewed		https://github.com/cwieder/metabolomics-ORA	https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009105		Not yet reviewed.
 212	M2S	unreviewed		https://github.com/rjdossan/M2S	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03592	broad_source_bucket_manual_review	Not yet reviewed.
-213	MetaboAnnotatoR	unreviewed		https://github.com/gggraca/MetaboAnnotatoR	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03032		Not yet reviewed.
+213	MetaboAnnotatoR	validated_pending_merge	metaboannotator	https://github.com/gggraca/MetaboAnnotatoR	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03032		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 216	Kiphynet	unreviewed		http://pallab.cds.iisc.ac.in/kiphynet//	https://link.springer.com/article/10.1007/s11306-024-02151-w		Not yet reviewed.
 217	DuReS	unreviewed		https://github.com/BiosystemEngineeringLab-IITB/dures	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c01726		Not yet reviewed.
 218	MSOne	unreviewed		https://msone.claritybiosystems.com	https://chemrxiv.org/engage/chemrxiv/article-details/68fc99c25dd091524f7de8f9	broad_source_bucket_manual_review	Not yet reviewed.
@@ -195,7 +195,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 223	SalivaDB	unreviewed		https://webs.iiitd.edu.in/raghava/salivadb/	https://academic.oup.com/database/article/doi/10.1093/database/baad002/7030099		Not yet reviewed.
 224	FORUM	unreviewed		https://github.com/eMetaboHUB/Forum-DiseasesChem	https://academic.oup.com/bioinformatics/article/37/21/3896/6363786	broad_source_bucket_manual_review	Not yet reviewed.
 225	Mass2SMILES	unreviewed		https://github.com/volvox292/mass2smiles	https://www.biorxiv.org/content/10.1101/2023.07.06.547963v1		Not yet reviewed.
-226	RHermes	unreviewed		https://github.com/RogerGinBer/RHermes	https://www.nature.com/articles/s41592-021-01307-z		Not yet reviewed.
+226	RHermes	validated_pending_merge	rhermes	https://github.com/RogerGinBer/RHermes	https://www.nature.com/articles/s41592-021-01307-z		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 227	Easy-Amanida	unreviewed		https://github.com/mariallr/easy-amanida	https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1713	broad_source_bucket_manual_review	Not yet reviewed.
 228	GcDUO	unreviewed		https://github.com/mariallr/GcDuo	https://academic.oup.com/bib/article/26/2/bbaf080/8051527		Not yet reviewed.
 229	UCL-MetIsoLib	unreviewed		https://github.com/kserafimov10/UCLMetIsoLib	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03390		Not yet reviewed.
@@ -217,7 +217,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 245	khipu	published	khipu	https://github.com/shuzhao-li-lab/khipu	https://pubs.acs.org/doi/10.1021/acs.analchem.2c05810		Editorial source validation only; software not execution-tested. Reconciled with main 2026-10-21.
 247	mzrtsim	unreviewed		https://github.com/yufree/mzrtsim	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5c01213		Not yet reviewed.
 248	TransExION	unreviewed		https://github.com/banhdzui/TransExION	https://link.springer.com/article/10.1186/s13321-024-00858-5		Not yet reviewed.
-249	MeRgeION	unreviewed		https://github.com/daniellyz/meRgeION2	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c04343	broad_source_bucket_manual_review	Not yet reviewed.
+249	MeRgeION	validated_pending_merge	mergeion	https://github.com/daniellyz/meRgeION2	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c04343	broad_source_bucket_manual_review	Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 250	AsRTNet	unreviewed		https://github.com/piscookie/AS-RT	https://www.sciencedirect.com/science/article/pii/S2213343725046597		Not yet reviewed.
 251	HCMMD	unreviewed		NA	https://www.aging-us.com/full/205779	broad_source_bucket_manual_review	Not yet reviewed.
 252	Aird-MSI	unreviewed		https://github.com/CSi-Studio/mzmine3/tree/Aird2.0	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.5c00423		Not yet reviewed.
@@ -233,7 +233,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 262	NPFimg	unreviewed		http://github.com/poomcj/NPFimg	https://pubs.acs.org/doi/10.1021/acs.analchem.1c03163?ref=	broad_source_bucket_manual_review	Not yet reviewed.
 263	MetaHD	unreviewed		https://bookdown.org/a2delivera/MetaHD/	https://academic.oup.com/bioinformatics/article/40/7/btae470/7721025		Not yet reviewed.
 264	Punc’data	unreviewed		https://github.com/WTVoe/puncdata	https://pubs.acs.org/doi/10.1021/jasms.5c00151	broad_source_bucket_manual_review	Not yet reviewed.
-265	SIMILE	unreviewed		https://github.com/biorack/simile	https://www.nature.com/articles/s41467-022-30118-9		Not yet reviewed.
+265	SIMILE	validated_pending_merge	simile	https://github.com/biorack/simile	https://www.nature.com/articles/s41467-022-30118-9		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 266	BLINK	unreviewed		https://github.com/biorack/blink	https://www.nature.com/articles/s41598-023-40496-9		Not yet reviewed.
 267	ChemEcho	unreviewed		https://github.com/biorack/chemecho	https://pubs.acs.org/doi/10.1021/acs.analchem.5c02591	broad_source_bucket_manual_review	Not yet reviewed.
 268	mFAM	unreviewed		https://github.com/MassBank/MassBank-data/commit/a91b1ca4841aea536545f7c1d452c1f80d225e84	https://chemrxiv.org/engage/chemrxiv/article-details/68dfa95c5dd091524fb32f3f		Not yet reviewed.
@@ -268,7 +268,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 300	OmicsNet 2.0	unreviewed		https://www.omicsnet.ca	https://academic.oup.com/nar/article/50/W1/W527/6593602		Not yet reviewed.
 303	mGWAS-Explorer 2.0	unreviewed		https://www.mgwas.ca/	https://www.mdpi.com/2218-1989/13/7/826	broad_source_bucket_manual_review	Not yet reviewed.
 306	PeakMeister	unreviewed		https://github.com/PBM-Group/PeakMeister	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c03513		Not yet reviewed.
-307	imputomics	unreviewed		https://github.com/BioGenies/imputomics, https://imputomics.umb.edu.pl	https://academic.oup.com/bioinformatics/article/40/3/btae098/7611648		Not yet reviewed.
+307	imputomics	validated_pending_merge	imputomics	https://github.com/BioGenies/imputomics, https://imputomics.umb.edu.pl	https://academic.oup.com/bioinformatics/article/40/3/btae098/7611648		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 308	MeTEor	unreviewed		https://github.com/scibiome/meteor	https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae178/7900315		Not yet reviewed.
 309	PeakForest	unreviewed		https://github.com/peakforest/peakforest-webapp	https://link.springer.com/article/10.1007/s11306-022-01899-3	mixed_nmr_mentions	Not yet reviewed.
 310	iMAP	unreviewed		https://imap.metaboprofile.cloud/, https://github.com/IP4M/R-scripts-for-iMAP	https://www.frontiersin.org/articles/10.3389/fchem.2021.659656	broad_source_bucket_manual_review	Not yet reviewed.
@@ -276,7 +276,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 312	POMICS	unreviewed		https://www.pomics.org/	https://pubs.acs.org/doi/10.1021/jasms.1c00315	ion_mobility_platform_dimension	Not yet reviewed.
 313	Snakemake CCS	unreviewed		https://github.com/DasSusanta/snakemake_ccs	https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00890	ion_mobility_platform_dimension	Not yet reviewed.
 314	MSIannotator	unreviewed		https://github.com/Yingzhu96/MSIannotator	https://pubs.acs.org/doi/10.1021/acs.analchem.2c00557		Not yet reviewed.
-315	MSGo	unreviewed		http://github.com/aaronma2020/MSGO	https://www.nature.com/articles/s42256-025-01140-5		Not yet reviewed.
+315	MSGo	validated_pending_merge	msgo	http://github.com/aaronma2020/MSGO	https://www.nature.com/articles/s42256-025-01140-5		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 316	Graph-Based Multi-scale Learning (GMS)	unreviewed		NA	https://link.springer.com/chapter/10.1007/978-981-95-0030-7_2		Not yet reviewed.
 317	HExpMetDB	unreviewed		https://github.com/FangLabNTU/HExpMetDB	https://ehp.niehs.nih.gov/doi/10.1289/EHP7722		Not yet reviewed.
 318	CIL-ExPMRM	unreviewed		http://www.exposomemrm.com/	https://pubs.acs.org/doi/abs/10.1021/acs.est.3c01830		Not yet reviewed.
@@ -290,7 +290,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 329	LipidA-IDER	unreviewed		https://github.com/Systems-Biology-Of-Lipid-Metabolism-Lab/LipidA-IDER	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00520		Not yet reviewed.
 330	One Small Step / MIST + MolForge pipeline	unreviewed		NA	https://arxiv.org/abs/2508.04180		Not yet reviewed.
 331	PS2MS	unreviewed		https://github.com/jhhung/PS2MS	https://pubs.acs.org/doi/10.1021/acs.analchem.3c05019		Not yet reviewed.
-332	SMART 2.0	unreviewed		https://github.com/YuJenL/SMART	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03225		Not yet reviewed.
+332	SMART 2.0	validated_pending_merge	smart-metabolomics	https://github.com/YuJenL/SMART	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03225		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 334	mzQuality	unreviewed		https://github.com/hankemeierlab/mzQuality	https://pubs.acs.org/doi/full/10.1021/jasms.5c00073		Not yet reviewed.
 335	DWSA-PSO	unreviewed		NA	https://pubs.rsc.org/en/content/articlelanding/2023/an/d3an01042b	ion_mobility_platform_dimension	Not yet reviewed.
 336	MACS	unreviewed		NA	https://pubs.acs.org/doi/10.1021/jasms.3c00178		Not yet reviewed.
@@ -319,7 +319,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 369	CLAW-MRM	unreviewed		https://github.com/chopralab/CLAW	https://pubs.acs.org/doi/10.1021/acs.analchem.4c05039		Not yet reviewed.
 370	SpectraX	unreviewed		https://github.com/weantony/SpectraX	https://pubs.acs.org/doi/10.1021/jasms.3c00322		Not yet reviewed.
 371	MassVision	unreviewed		https://SlicerMassVision.readthedocs.io	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c04018		Not yet reviewed.
-372	TARDIS	unreviewed		https://github.com/UGent-LIMET/TARDIS	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00567		Not yet reviewed.
+372	TARDIS	validated_pending_merge	tardis	https://github.com/UGent-LIMET/TARDIS	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c00567		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 373	In silico infrared spectral library of human metabolites	unreviewed		https://zenodo.org/records/7706021	https://pubs.acs.org/doi/full/10.1021/acs.analchem.3c01078		Not yet reviewed.
 374	MSThunder	unreviewed		https://github.com/LQZ0123/MSThunder.git	https://www.sciencedirect.com/science/article/pii/S2590182625001171		Not yet reviewed.
 375	mzLearn	unreviewed		https://github.com/ReviveMed/mzEmbed	https://www.biorxiv.org/content/10.1101/2025.01.26.634927v3		Not yet reviewed.
@@ -351,7 +351,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 401	OSCA Finder	unreviewed		https://github.com/dawnmengsjtu/OSCA-Finder	https://www.sciencedirect.com/science/article/pii/S0039914023004964		Not yet reviewed.
 402	DBLiPro	unreviewed		http://lipid.cloudna.cn/home	https://link.springer.com/article/10.1007/s43657-023-00099-w		Not yet reviewed.
 403	MS-BART	unreviewed		https://github.com/OpenDFM/MS-BART	https://arxiv.org/abs/2510.20615		Not yet reviewed.
-404	MetDNA3	unreviewed		https://github.com/ZhuMetLab/MrnAnnoAlgo3, http://metdna.zhulab.cn/	https://www.nature.com/articles/s41467-025-63536-6	broad_source_bucket_manual_review	Not yet reviewed.
+404	MetDNA3	validated_pending_merge	metdna3	https://github.com/ZhuMetLab/MrnAnnoAlgo3, http://metdna.zhulab.cn/	https://www.nature.com/articles/s41467-025-63536-6	broad_source_bucket_manual_review	Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 405	SCMeTA	unreviewed		https://github.com/ChenLab/SCMeTA	https://academic.oup.com/bioinformatics/article/40/9/btae545/7750353	consider_single_cell_analysis_type	Not yet reviewed.
 406	MDSi	unreviewed		http://sky.sxau.edu.cn/MDSi.htm	https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-023-04238-3		Not yet reviewed.
 407	SMAnalyst	unreviewed		https://github.com/mzlab-research/SManalyst	https://www.preprints.org/frontend/manuscript/1dfd92632ea0a825e0f1d0b28c67541		Not yet reviewed.
@@ -366,16 +366,16 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 418	rtmsEcho	unreviewed		https://github.com/nathanieltwarog/rtmsEcho	https://pubs.acs.org/doi/full/10.1021/acs.analchem.5c03730		Not yet reviewed.
 419	massDatabase	unreviewed		https://massdatabase.tidymass.org/	https://academic.oup.com/bioinformatics/article/38/19/4650/6659093		Not yet reviewed.
 422	deepPseudoMSI	unreviewed		https://www.deeppseudomsi.org/	https://academic.oup.com/bib/article/23/5/bbac331/6659741		Not yet reviewed.
-424	IsoPairFinder	held_for_review		https://github.com/DoddLab/IsoPairFinder	https://www.biorxiv.org/content/10.1101/2025.08.18.670916v1		Verify publication status and separate core tool from web reimplementations.
+424	IsoPairFinder	validated_pending_merge	isopairfinder	https://github.com/DoddLab/IsoPairFinder	https://www.biorxiv.org/content/10.1101/2025.08.18.670916v1		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 425	Norm ISWSVR	unreviewed		https://github.com/Dingxian666/Norm-ISWSVR	https://pubs.acs.org/doi/10.1021/jasms.4c00467		Not yet reviewed.
 426	MODMS	unreviewed		https://modms.lzu.edu.cn	https://academic.oup.com/hr/article/11/1/uhad245/7452859		Not yet reviewed.
 427	PlantMetSuite	unreviewed		https://github.com/YaonanLab/PlantMetSuite	https://www.mdpi.com/2223-7747/12/15/2880	broad_source_bucket_manual_review	Not yet reviewed.
 428	DeepMSProfiler	unreviewed		https://github.com/yjdeng9/DeepMSProfiler	https://www.nature.com/articles/s41467-024-51433-3		Not yet reviewed.
-429	retention_time_gnn	unreviewed		https://github.com/seokhokang/retention_time_gnn	https://pubs.acs.org/doi/10.1021/acs.analchem.3c03177		Not yet reviewed.
+429	retention_time_gnn	validated_pending_merge	retention-time-gnn	https://github.com/seokhokang/retention_time_gnn	https://pubs.acs.org/doi/10.1021/acs.analchem.3c03177		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 431	Machine Learning-Based Retention Time Prediction Tool for Routine LC-MS Data Analysis	unreviewed		https://bitbucket.org/enaminedev/enaminert_prediction	https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c00514		Not yet reviewed.
 432	LINEX2⁠	unreviewed		https://gitlab.lrz.de/lipitum-projects/linex	https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbac572/6966533		Not yet reviewed.
 433	OrbiFragsNets	unreviewed		https://github.com/EdwinChingate/OrbiFragsNets	https://www.sciencedirect.com/science/article/pii/S2215016123002546		Not yet reviewed.
-434	LipiDetective	unreviewed		https://github.com/LipiTUM/lipidetective	https://www.biorxiv.org/content/10.1101/2024.10.07.617094v3		Not yet reviewed.
+434	LipiDetective	validated_pending_merge	lipidetective	https://github.com/LipiTUM/lipidetective	https://www.biorxiv.org/content/10.1101/2024.10.07.617094v3		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 435	MetaXtract	unreviewed		https://github.com/Rappsilber-Laboratory/MetaXtract	https://www.biorxiv.org/content/10.1101/2025.11.12.687968v1		Not yet reviewed.
 436	MACE	unreviewed		http://www.oc.tu-bs.de/schulz/html/MACE.html	https://pubs.acs.org/doi/10.1021/acs.jnatprod.4c01240		Not yet reviewed.
 437	CCWeights	unreviewed		https://github.com/YonghuiDong/CCWeights	https://academic.oup.com/bioinformaticsadvances/article/1/1/vbab029/6413624	broad_source_bucket_manual_review	Not yet reviewed.
@@ -387,7 +387,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 447	MCnebula	unreviewed		https://mcnebula.org/	https://pubs.acs.org/doi/10.1021/acs.analchem.3c01072	broad_source_bucket_manual_review	Not yet reviewed.
 448	PLSKO	unreviewed		https://github.com/guannan-yang/PLSKO	https://academic.oup.com/bioinformatics/article/41/9/btaf475/8244280		Not yet reviewed.
 449	LipidSuite	unreviewed		https://suite.lipidr.org/	https://academic.oup.com/nar/article/49/W1/W346/6266419		Not yet reviewed.
-451	hRUV	unreviewed		https://github.com/SydneyBioX/hRUV	https://www.nature.com/articles/s41467-021-25210-5		Not yet reviewed.
+451	hRUV	validated_pending_merge	hruv	https://github.com/SydneyBioX/hRUV	https://www.nature.com/articles/s41467-021-25210-5		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 452	AgeAnnoMO	unreviewed		https://relab.xidian.edu.cn/AgeAnnoMO/#/	https://academic.oup.com/nar/article/52/D1/D822/7321067		Not yet reviewed.
 453	iTraNet	unreviewed		https://itranet.streamlit.app	https://academic.oup.com/bioinformaticsadvances/article/2/1/vbac016/6544613		Not yet reviewed.
 454	RT-Ensemble Pred	unreviewed		https://gitlab.com/mikic93/rt-ensemble-pred	https://www.sciencedirect.com/science/article/pii/S0021967323005290		Not yet reviewed.
@@ -422,7 +422,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 486	rIDIMS	unreviewed		https://github.com/BioinovarLab/rIDIMS	https://www.sciencedirect.com/science/article/abs/pii/S0039914024016527		Not yet reviewed.
 487	GCIMS	unreviewed		https://github.com/sipss/GCIMS	https://www.sciencedirect.com/science/article/pii/S0169743923001880#cebib0010	ion_mobility_platform_dimension	Not yet reviewed.
 488	mWISE	unreviewed		https://github.com/b2slab/mWISE	https://pubs.acs.org/doi/full/10.1021/acs.analchem.1c00238		Not yet reviewed.
-489	MultiBaC	unreviewed		https://github.com/ConesaLab/MultiBaC	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac132/6541627		Not yet reviewed.
+489	MultiBaC	validated_pending_merge	multibac	https://github.com/ConesaLab/MultiBaC	https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac132/6541627		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 490	CloMet	unreviewed		https://github.com/rmallol/clomet	https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00602	mixed_nmr_mentions	Not yet reviewed.
 491	SingleFrag	unreviewed		https://github.com/MaribelPR/SingleFrag	https://www.biorxiv.org/content/10.1101/2024.11.04.621329v1		Not yet reviewed.
 495	Dbnorm	published	dbnorm	https://github.com/NBDZ/dbnorm	https://www.nature.com/articles/s41598-021-84824-3		Editorial source validation only; software not execution-tested. Reconciled with main 2026-10-21.
@@ -471,7 +471,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 549	MetaboliteChat	unreviewed		https://github.com/13501274828/MetaboliteChat	https://www.biorxiv.org/content/10.1101/2025.11.07.687008v1	broad_source_bucket_manual_review	Not yet reviewed.
 550	MS/MS spectral entropy similarity	unreviewed		https://github.com/YuanyueLi/MSEntropy	https://www.nature.com/articles/s41592-021-01331-z		Not yet reviewed.
 551	Metabolome atlas of the aging mouse brain	unreviewed		https://mouse.atlas.metabolomics.us/	https://www.nature.com/articles/s41467-021-26310-y		Not yet reviewed.
-552	Amanida	unreviewed		https://github.com/mariallr/amanida	https://academic.oup.com/bioinformatics/article/38/2/583/6354350	broad_source_bucket_manual_review	Not yet reviewed.
+552	Amanida	validated_pending_merge	amanida	https://github.com/mariallr/amanida	https://academic.oup.com/bioinformatics/article/38/2/583/6354350	broad_source_bucket_manual_review	Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 553	Flash entropy search	unreviewed		https://github.com/YuanyueLi/EntropySearch	https://www.nature.com/articles/s41592-023-02012-9		Not yet reviewed.
 554	BinDiscover database	unreviewed		https://github.com/metabolomics-us/bindiscover, https://bindiscover.metabolomics.us/	https://jcheminf.biomedcentral.com/articles/10.1186/s13321-023-00734-8		Not yet reviewed.
 555	SERDA	unreviewed		https://github.com/slfan2013/SERDA	https://www.mdpi.com/2218-1989/13/8/944		Not yet reviewed.
@@ -484,7 +484,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 563	MMSA	unreviewed		https://multiplealignment.gnps2.org/setscreation , https://github.com/Wang-Bioinformatics-Lab/NetworkFamily_MultipleAlignment_Website	https://pubs.acs.org/doi/abs/10.1021/jasms.5c00237		Not yet reviewed.
 564	MS-RT	unreviewed		https://github.com/XianghuWang-287/Metabolomics_Clustering_Benchmark	https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.4c00881	broad_source_bucket_manual_review	Not yet reviewed.
 567	IonFlow	unreviewed		https://github.com/wanchanglin/ionflow	https://link.springer.com/article/10.1007/s11306-021-01841-z	broad_source_bucket_manual_review;scope_review_adjacent_field	Not yet reviewed.
-568	RASSP	unreviewed		https://github.com/thejonaslab/rassp-public	https://pubs.acs.org/doi/10.1021/acs.analchem.2c02093		Not yet reviewed.
+568	RASSP	validated_pending_merge	rassp	https://github.com/thejonaslab/rassp-public	https://pubs.acs.org/doi/10.1021/acs.analchem.2c02093		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 569	SGMNS	unreviewed		https://github.com/DLUT-datas/SGMNS	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.3c00849		Not yet reviewed.
 570	EnzyMine	unreviewed		http://www.rxnfinder.org/enzymine/	https://academic.oup.com/database/article/doi/10.1093/database/baaa065/5909106		Not yet reviewed.
 571	SmartGate	unreviewed		https://github.com/zhanglabtools/SmartGate	https://academic.oup.com/bib/advance-article-abstract/doi/10.1093/bib/bbad141/7126351		Not yet reviewed.
@@ -504,7 +504,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 588	StreptomeDB 4.0	unreviewed		https://streptomedb.vm.uni-freiburg.de/streptomedb/	https://academic.oup.com/nar/article/53/D1/D724/7875978		Not yet reviewed.
 589	MultiOmicsIntegrator	unreviewed		https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses	https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae175/7900314		Not yet reviewed.
 590	MicroMap	unreviewed		https://dataverse.harvard.edu/dataverse/micromap	https://www.nature.com/articles/s41522-025-00853-0		Not yet reviewed.
-591	MolNotator	unreviewed		https://github.com/ZzakB/MolNotator	https://www.biorxiv.org/content/10.1101/2021.12.21.473622v1		Not yet reviewed.
+591	MolNotator	validated_pending_merge	molnotator	https://github.com/ZzakB/MolNotator	https://www.biorxiv.org/content/10.1101/2021.12.21.473622v1		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 592	Inventa	unreviewed		https://luigiquiros.github.io/inventa/	https://www.frontiersin.org/articles/10.3389/fmolb.2022.1028334		Not yet reviewed.
 593	Test-Time Tuned Language Models	unreviewed		NA	https://arxiv.org/abs/2510.23746		Not yet reviewed.
 595	MOCCal	unreviewed		https://github.com/HinesLab/MOCCal	https://pubs.acs.org/doi/10.1021/acs.analchem.3c04290	ion_mobility_platform_dimension	Not yet reviewed.
@@ -542,7 +542,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 632	Peak Pair Pruner	unreviewed		https://github.com/QibinZhangLab/Peak_Pair_Pruner	https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad044/7087097		Not yet reviewed.
 633	SimLipid	unreviewed		https://www.premierbiosoft.com/lipid/index.html	https://link.springer.com/protocol/10.1007/978-1-0716-1822-6_15		Not yet reviewed.
 634	MetaPhenotype	unreviewed		https://github.com/songyuan93/MetaPhenotype	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.4c02038	consider_single_cell_analysis_type	Not yet reviewed.
-635	Aerith	unreviewed		https://github.com/thepanlab/Aerith	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03207		Not yet reviewed.
+635	Aerith	validated_pending_merge	aerith	https://github.com/thepanlab/Aerith	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03207		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 636	RTStaR	unreviewed		http://www.neurolipidomics.ca/rtstar/rtstar.html	https://www.biorxiv.org/content/10.1101/2021.05.01.442266v1		Not yet reviewed.
 637	BATL	unreviewed		https://www.complimet.ca/shiny/batl//	https://academic.oup.com/bioinformatics/article/38/6/1593/6482739		Not yet reviewed.
 638	LipidQuant 1.0	unreviewed		https://holcapek.upce.cz/lipidquant.php	https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab644/6366545		Not yet reviewed.
@@ -592,7 +592,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 687	Isoreader	unreviewed		https://github.com/isoverse/isoreader	https://joss.theoj.org/papers/10.21105/joss.02878		Not yet reviewed.
 688	LipidQMap	unreviewed		https://github.com/swinnenteam/LipidQMap	https://www.biorxiv.org/content/10.1101/2025.10.15.682422v1		Not yet reviewed.
 689	MargheRita	unreviewed		https://github.com/emosca-cnr/margheRita	https://www.biorxiv.org/content/10.1101/2024.06.20.599545v1	broad_source_bucket_manual_review	Not yet reviewed.
-690	GetFeatistics	unreviewed		https://github.com/FrigerioGianfranco/GetFeatistics	https://doi.org/10.1515/jib-2025-0047		Not yet reviewed.
+690	GetFeatistics	validated_pending_merge	getfeatistics	https://github.com/FrigerioGianfranco/GetFeatistics	https://doi.org/10.1515/jib-2025-0047		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 691	NA	unreviewed		https://github.com/ViktoriiaTurkina/From-Spectra-to-Local-Networks-Evaluating-MS-Similarity	https://chemrxiv.org/engage/chemrxiv/article-details/6929724fa10c9f5ca12d55ee		Not yet reviewed.
 693	Paired Omics	unreviewed		https://github.com/iomega/paired-data-form	https://www.nature.com/articles/s41589-020-00724-z		Not yet reviewed.
 694	gutSMASH	held_for_review		https://gutsmash.bioinformatics.nl/ , https://github.com/victoriapascal/gutsmash	https://www.biorxiv.org/content/10.1101/2021.02.25.432841v1		Genome/metabolic cluster resource: validate MS-metabolomics scope and do not copy the isotope-flux mapping.
@@ -616,7 +616,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 715	HeuSMA	unreviewed		https://github.com/Lacterd/HeuSMA	https://pubs.acs.org/doi/full/10.1021/acs.analchem.4c05315		Not yet reviewed.
 716	NA	unreviewed		https://github.com/Chen-micslab/QCCAssisted4DSterol/tree/main	https://onlinelibrary.wiley.com/doi/10.1002/anie.202507483	ion_mobility_platform_dimension	Not yet reviewed.
 717	MS-IDF	unreviewed		NA	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.1c04719		Not yet reviewed.
-718	CordBat	unreviewed		https://github.com/BorchLab/CordBat	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c05748		Not yet reviewed.
+718	CordBat	validated_pending_merge	cordbat	https://github.com/BorchLab/CordBat	https://pubs.acs.org/doi/abs/10.1021/acs.analchem.2c05748		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 719	MDRB	unreviewed		https://github.com/933ZhangDD/MDRB	https://cmjournal.biomedcentral.com/articles/10.1186/s13020-024-01031-8		Not yet reviewed.
 720	MS-TDF Software	unreviewed		https://github.com/CaixiaYuan/MS-TDF	https://pubs.acs.org/doi/10.1021/acs.analchem.4c00527		Not yet reviewed.
 722	HyperCCS	unreviewed		https://github.com/NeoNexusX/HyperCCS	https://pubs.acs.org/doi/10.1021/acs.analchem.5c03492	ion_mobility_platform_dimension	Not yet reviewed.
@@ -625,7 +625,7 @@ source_row	name	review_status	target_slug	tool_url	publication_url	intake_flags	
 725	eROI	unreviewed		https://github.com/Gaozhuang-big/eROI	https://www.sciencedirect.com/science/article/abs/pii/S0003267025005653		Not yet reviewed.
 726	FluoroMatch 2.0	unreviewed		http://innovativeomics.com/software/fluoromatch-flow-covers-entire-pfas-workflow/	https://link.springer.com/article/10.1007/s00216-021-03392-7	broad_source_bucket_manual_review	Not yet reviewed.
 727	MS2Compound	unreviewed		https://github.com/beherasan/MS2Compound	https://www.liebertpub.com/doi/full/10.1089/omi.2021.0051		Not yet reviewed.
-728	MS2Lipid	unreviewed		https://github.com/systemsomicslab/ms2lipid/tree/main/notebooks	https://www.mdpi.com/2218-1989/14/11/602		Not yet reviewed.
+728	MS2Lipid	validated_pending_merge	ms2lipid	https://github.com/systemsomicslab/ms2lipid/tree/main/notebooks	https://www.mdpi.com/2218-1989/14/11/602		Batch 2: official documentation, primary publication identity, requirements and access terms reviewed 2026-10-27; see docs/enveda-expansion-review-2026-10-27-batch2.md. Editorial source review only; not executed or deployed.
 729	MS2toImg	unreviewed		https://github.com/jsehhs/MS2toImg-CNN	https://arxiv.org//2510.09716	broad_source_bucket_manual_review	Not yet reviewed.
 730	MPOD	unreviewed		http://mpod.ict.cn	https://onlinelibrary.wiley.com/doi/10.1111/pbi.13769		Not yet reviewed.
 731	MetaDb	unreviewed		http://medmetadb.ynau.edu.cn	https://link.springer.com/article/10.1186/s43897-024-00095-2		Not yet reviewed.

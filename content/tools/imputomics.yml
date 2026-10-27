@@ -1,0 +1,90 @@
+$schema: ../../schemas/tool.schema.json
+slug: imputomics
+name: imputomics
+summary: An R package and Shiny application for simulating and imputing missing values across omics datasets,
+  including metabolomics, with multiple imputation algorithms and evaluation utilities.
+links:
+  primary: https://github.com/BioGenies/imputomics
+  repository: https://github.com/BioGenies/imputomics
+  documentation: https://biogenies.info/imputomics/
+resource_types:
+- programming_package
+- web_service
+functions:
+  primary: statistics
+  secondary:
+  - visualization_reporting
+  capabilities:
+  - multivariate_statistics
+  - interactive_dashboard
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+- multiomics
+interfaces:
+- r_package
+- web_app
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 according to package DESCRIPTION. The hosted server and underlying imputation packages
+    have separate operational and dependency requirements; local analysis avoids uploading study data.
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - feature_table
+  - statistical_results
+  other_input_formats:
+  - R numeric matrices or tables containing missing values
+  other_output_formats:
+  - Imputed matrices, simulation/evaluation summaries and Shiny plots
+common_uses:
+- Compare and apply missing-value imputation methods to metabolomics tables.
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-11-07'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: imputomics wraps multiple missing-value imputation methods and provides simulations for comparing
+  their behavior. It supports R and Shiny interfaces for omics matrices, including metabolomics, with
+  missingness-mechanism scenarios and error summaries.
+scope:
+  designed_for:
+  - An R package and Shiny application for simulating and imputing missing values across omics datasets,
+    including metabolomics, with multiple imputation algorithms and evaluation utilities.
+  not_designed_for:
+  - Recovering the true unmeasured concentration with certainty or proving that simulated missingness
+    matches the study mechanism.
+  requirements:
+  - R and the selected method's dependencies; a numeric data matrix with correctly represented missing
+    values and suitable evaluation data for simulation-based comparison.
+  considerations:
+  - Choose imputation assumptions using acquisition and preprocessing context. Prevent train/test leakage
+    and evaluate how imputation changes downstream statistics rather than comparing reconstruction error
+    alone.
+publications:
+- doi: 10.1093/bioinformatics/btae098
+  type: primary
+  citation: 'imputomics: web server and R package for missing values imputation in metabolomics data.
+    Bioinformatics (2024).'

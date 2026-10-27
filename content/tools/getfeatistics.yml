@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: getfeatistics
+name: GetFeatistics
+summary: An R package for targeted and untargeted metabolomics feature-table processing, QC-aware analysis,
+  and advanced statistical modeling including regression and mixed-effects models.
+links:
+  primary: https://github.com/FrigerioGianfranco/GetFeatistics
+  repository: https://github.com/FrigerioGianfranco/GetFeatistics
+  documentation: https://frigeriogianfranco.github.io/GetFeatistics/articles/GF_vignette.html
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  secondary:
+  - quality_control
+  - visualization_reporting
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+platforms:
+- platform_independent
+analysis_types:
+- targeted
+- untargeted
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - R abundance tables plus sample legends and optional compound/calibration legends
+  other_output_formats:
+  - R concentration/statistical tables, model objects and ggplot figures
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-10-12'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: GetFeatistics elaborates already extracted targeted or untargeted metabolomics tables and
+  supports QC, calibration and downstream statistical analysis. Its R functions include targeted concentration
+  calculations and models such as linear or mixed-effects regression.
+scope:
+  designed_for:
+  - An R package for targeted and untargeted metabolomics feature-table processing, QC-aware analysis,
+    and advanced statistical modeling including regression and mixed-effects models.
+  not_designed_for:
+  - Extracting chromatographic features directly from raw MS files or choosing an appropriate statistical
+    design automatically.
+  requirements:
+  - R and architecture-matched Java dependencies; organize abundance tables with matching sample/feature
+    metadata and provide calibration/internal-standard information for targeted quantification.
+  considerations:
+  - Follow the separate targeted and untargeted table structures. Calibration, missing-value handling,
+    covariates and repeated-measure assumptions must reflect the experiment.
+common_uses:
+- An R package for targeted and untargeted metabolomics feature-table processing, QC-aware analysis, and
+  advanced statistical modeling including regression and mixed-effects models.
+publications:
+- doi: 10.1515/jib-2025-0047
+  type: primary
+  citation: 'Streamlining feature elaboration and statistics analysis in metabolomics: the GetFeatistics
+    R-package. Journal of Integrative Bioinformatics (2025).'

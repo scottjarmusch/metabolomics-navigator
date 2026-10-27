@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: cordbat
+name: CordBat
+summary: An R package implementing concordance-based batch-effect correction for large-scale metabolomics
+  studies.
+links:
+  primary: https://github.com/BorchLab/CordBat
+  repository: https://github.com/BorchLab/CordBat
+  documentation: https://github.com/BorchLab/CordBat/blob/main/vignettes/CordBat.Rmd
+resource_types:
+- programming_package
+functions:
+  primary: normalization
+  secondary: []
+  capabilities:
+  - batch_effect_correction
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: MIT
+  notes: Package DESCRIPTION, LICENSE and LICENSE.md specify MIT terms; this R implementation is distinguished
+    from the original method publication.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - R abundance matrix with batch/group vectors and reference-batch identifier
+  other_output_formats:
+  - Corrected R abundance matrix and fitted correction results
+publications:
+- doi: 10.1021/acs.analchem.2c05748
+  type: primary
+  citation: Concordance-Based Batch Effect Correction for Large-Scale Metabolomics. Analytical Chemistry
+    (2023).
+common_uses:
+- Correct batch effects in large metabolomics datasets while preserving concordance structure.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-05-08'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: CordBat implements concordance-based correction of batch effects in quantified metabolomics
+  matrices. Its R interface takes batch and biological-group information and a selected reference batch,
+  returning corrected measurements for further analysis.
+scope:
+  designed_for:
+  - An R package implementing concordance-based batch-effect correction for large-scale metabolomics studies.
+  not_designed_for:
+  - Raw feature extraction or reliable separation of biological and technical effects in an unidentifiable,
+    fully confounded design.
+  requirements:
+  - R, an appropriately transformed numeric sample-by-feature matrix, batch labels and the biological
+    grouping/reference-batch information expected by the documented function.
+  considerations:
+  - Check matrix orientation and transformation, reference-batch choice and preservation of biological
+    contrasts. A better batch-mixing plot alone does not establish a scientifically valid correction.

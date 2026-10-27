@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: maw
+name: MAW
+summary: A reproducible metabolome-annotation workflow combining spectral-database dereplication and compound-database
+  annotation from tandem mass-spectrometry data.
+links:
+  primary: https://github.com/zmahnoor14/MAW
+  repository: https://github.com/zmahnoor14/MAW
+  documentation: https://github.com/zmahnoor14/MAW#readme
+resource_types:
+- workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+  - annotation_identification
+  - spectral_analysis
+  capabilities:
+  - library_matching
+  - structure_database_search
+  - provenance_tracking
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- r_package
+- command_line
+access:
+  model: source_available
+  notes: Public code with an MIT-labelled README badge, but no standard repository-wide license file was
+    identified. External software, libraries and SIRIUS services retain separate licenses/access requirements.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  other_input_formats:
+  - MS2 mzML files, reference-library RData files and workflow configuration
+  other_output_formats:
+  - Candidate annotation tables and intermediate R/Python workflow artifacts
+maintenance:
+  status: limited
+  repository_last_activity: '2025-10-31'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MAW combines spectral-library dereplication and in-silico candidate ranking in an executable
+  tandem-MS annotation workflow. R and Python stages connect reference libraries with SIRIUS or MetFrag
+  and produce tentative candidate/class annotations with intermediate provenance.
+scope:
+  designed_for:
+  - A reproducible metabolome-annotation workflow combining spectral-database dereplication and compound-database
+    annotation from tandem mass-spectrometry data.
+  not_designed_for:
+  - Raw chromatographic feature extraction or a guarantee that consensus candidate selection confirms
+    molecular identity.
+  requirements:
+  - Supported mzML MS2 data, reference-library files and the configured R/Python/container environment;
+    CWL and Docker routes have different SIRIUS/MetFrag capabilities and external access needs.
+  considerations:
+  - The README marks the workflow as not maintained. Check older dependency and database compatibility;
+    CWL documentation specifies the MetFrag route while SIRIUS is documented through separate container
+    steps.
+common_uses:
+- A reproducible metabolome-annotation workflow combining spectral-database dereplication and compound-database
+  annotation from tandem mass-spectrometry data.
+publications:
+- doi: 10.1186/s13321-023-00695-y
+  type: primary
+  citation: 'MAW: the reproducible Metabolome Annotation Workflow for untargeted tandem mass spectrometry.
+    Journal of Cheminformatics (2023).'
