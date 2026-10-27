@@ -39,7 +39,8 @@ def parse_attribution(sections):
 def build_contributors(records):
     rows = []
     for record in records:
-        if record.get('status', {}).get('entry') != 'published':
+        # Accepted catalogue stubs are public while editorial enrichment is pending.
+        if record.get('status', {}).get('entry') not in ('published', 'stub'):
             continue
         p = record.get('provenance') or {}
         if p.get('public_attribution_consent') is not True:
