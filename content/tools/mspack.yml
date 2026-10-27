@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: mspack
+name: mspack
+summary: mspack provides lossless and configurable lossy compression of mass-spectrometry arrays through
+  a C++ API and example mzML/mzXML command-line implementation.
+links:
+  primary: https://github.com/fhanau/mspack
+  repository: https://github.com/fhanau/mspack
+  documentation: https://github.com/fhanau/mspack#readme
+resource_types:
+- programming_package
+functions:
+  primary: data_conversion
+  secondary:
+  - data_management_sharing
+  capabilities:
+  - spectral_data_io
+platforms:
+- platform_independent
+interfaces:
+- command_line
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - C++
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  other_input_formats:
+  - Supported mzML/mzXML files or arrays through the C++ API
+  other_output_formats:
+  - mgz/bsc compressed files and reconstructed spectral XML
+maintenance:
+  status: unclear
+  repository_last_activity: '2021-09-16'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: mspack provides lossless and configurable lossy compression of mass-spectrometry arrays through
+  a C++ API and example mzML/mzXML command-line implementation. It supports gzip and the optional bsc
+  compression backend.
+scope:
+  designed_for:
+  - mspack provides lossless and configurable lossy compression of mass-spectrometry arrays through a
+    C++ API and example mzML/mzXML command-line implementation.
+  not_designed_for:
+  - Guaranteed compatibility with all mzML encodings or ion-mobility arrays, or numerically lossless results
+    when lossy transforms are selected.
+  requirements:
+  - C++11-compatible build tools and gzip, with bsc optional; example readers require supported XML files
+    containing uncompressed raw mass/intensity arrays.
+  considerations:
+  - Mass values must increase in the example implementation. XML whitespace is not preserved, and mzXML
+    support is restricted to 32-bit data without block I/O.
+common_uses:
+- mspack provides lossless and configurable lossy compression of mass-spectrometry arrays through a C++
+  API and example mzML/mzXML command-line implementation.
+publications:
+- doi: 10.1093/bioinformatics/btab636
+  type: primary
+  citation: 'mspack: efficient lossless and lossy mass spectrometry data compression. Bioinformatics (2021).'

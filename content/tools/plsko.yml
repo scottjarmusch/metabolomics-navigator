@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: plsko
+name: PLSKO
+summary: PLSKO generates partial-least-squares-based knockoff variables and applies knockoff filtering
+  for omics feature selection.
+links:
+  primary: https://github.com/guannan-yang/PLSKO
+  repository: https://github.com/guannan-yang/PLSKO
+  documentation: https://guannan-yang.github.io/PLSKO/PLSKO.html
+resource_types:
+- programming_package
+functions:
+  primary: machine_learning
+  secondary:
+  - statistics
+  capabilities:
+  - feature_selection
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+- multiomics
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - statistical_results
+  other_input_formats:
+  - Numeric predictor matrix, response vector and target FDR level
+  other_output_formats:
+  - Knockoff matrices, importance statistics and selected-variable objects
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-08-29'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: PLSKO generates partial-least-squares-based knockoff variables and applies knockoff filtering
+  for omics feature selection. Its R workflow includes single and aggregated filtering routes, importance
+  statistics and selected-variable outputs.
+scope:
+  designed_for:
+  - PLSKO generates partial-least-squares-based knockoff variables and applies knockoff filtering for
+    omics feature selection.
+  not_designed_for:
+  - Causal biomarker discovery or unconditional false-discovery guarantees when knockoff/model assumptions
+    are violated.
+  requirements:
+  - R and documented knockoff/mixOmics dependencies, a numeric predictor matrix, response vector and target
+    false-discovery-rate setting; tune the knockoff construction for the data.
+  considerations:
+  - Assess exchangeability and model settings, distinguish predictive importance from causal effects and
+    keep tuning/evaluation data appropriately separated.
+common_uses:
+- PLSKO generates partial-least-squares-based knockoff variables and applies knockoff filtering for omics
+  feature selection.
+publications:
+- doi: 10.1093/bioinformatics/btaf475
+  type: primary
+  citation: 'PLSKO: a robust knockoff generator to control false discovery rate in omics variable selection.
+    Bioinformatics (2025).'

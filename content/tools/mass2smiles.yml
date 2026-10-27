@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: mass2smiles
+name: Mass2SMILES
+summary: Mass2SMILES uses deep learning to predict candidate molecular structures and functional groups
+  from tandem mass spectra.
+links:
+  primary: https://github.com/volvox292/mass2smiles
+  repository: https://github.com/volvox292/mass2smiles
+  documentation: https://github.com/volvox292/mass2smiles#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - structure_elucidation
+  - substructure_prediction
+platforms:
+- platform_independent
+interfaces:
+- python_package
+access:
+  model: source_available
+  notes: Public source and separately hosted artifacts are available; no repository-wide license grant
+    was established. README states a valid NIST license is required for the supplementary model/container
+    resources.
+technical:
+  operating_systems:
+  - linux
+  - containers
+  programming_languages:
+  - Python
+  containers:
+  - Docker
+data:
+  input_types:
+  - spectra
+  output_types:
+  - molecular_structures
+  other_input_formats:
+  - GNPS-style MGF tandem spectra
+  other_output_formats:
+  - Candidate SMILES structures and functional-group predictions
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-01-31'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: Mass2SMILES uses deep learning to predict candidate molecular structures and functional groups
+  from tandem mass spectra. The documented inference route reads GNPS-style MGF and uses containerized
+  models with a separate molecular-descriptor component.
+scope:
+  designed_for:
+  - Mass2SMILES uses deep learning to predict candidate molecular structures and functional groups from
+    tandem mass spectra.
+  not_designed_for:
+  - Confirmed structural identification from a prediction alone or unrestricted redistribution of NIST-derived
+    model resources.
+  requirements:
+  - Docker and downloaded model/container artifacts, compatible GPU/software settings for the chosen model
+    release and a valid NIST license where required by the supplied artifacts.
+  considerations:
+  - The project describes separate GPU model and CPU descriptor containers because of CUDA compatibility
+    limitations. Prediction reliability depends on spectral preparation and training-domain coverage.
+common_uses:
+- Mass2SMILES uses deep learning to predict candidate molecular structures and functional groups from
+  tandem mass spectra.
+publications:
+- doi: 10.1101/2023.07.06.547963
+  type: primary
+  citation: 'Mass2SMILES: deep learning based fast prediction of structures and functional groups directly
+    from high-resolution MS/MS spectra. bioRxiv preprint (2023). Preprint; not peer reviewed.'

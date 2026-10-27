@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: crisp
+name: CRISP
+summary: CRISP analyzes GC×GC-TOFMS contour images with modules for region selection/deep stacking, synthetic
+  contour generation, image enhancement and classifier training.
+links:
+  primary: https://github.com/vivekmathema/GCxGC-CRISP
+  repository: https://github.com/vivekmathema/GCxGC-CRISP
+  documentation: https://github.com/vivekmathema/GCxGC-CRISP#readme
+resource_types:
+- programming_package
+functions:
+  primary: machine_learning
+  secondary:
+  - visualization_reporting
+  capabilities:
+  - feature_selection
+platforms:
+- gc_ms
+analysis_types:
+- untargeted
+interfaces:
+- desktop_gui
+access:
+  model: source_available
+  notes: Public research toolkit, but no repository-wide license grant was established. Review dependencies
+    and supplied model/data terms before reuse.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - imaging_data
+  output_types:
+  - imaging_data
+  - statistical_results
+  - report
+  other_input_formats:
+  - Prepared GC×GC-TOFMS contour images and module-specific labels/models
+  other_output_formats:
+  - ROI/deep-stacked contours, generated/enhanced images and model artifacts
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-01-14'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: CRISP analyzes GC×GC-TOFMS contour images with modules for region selection/deep stacking,
+  synthetic contour generation, image enhancement and classifier training. Its graphical research toolkit
+  works on prepared contour representations rather than directly identifying metabolites.
+scope:
+  designed_for:
+  - CRISP analyzes GC×GC-TOFMS contour images with modules for region selection/deep stacking, synthetic
+    contour generation, image enhancement and classifier training.
+  not_designed_for:
+  - Molecular identification from raw spectra or evidence that synthetic contours create independent biological
+    samples.
+  requirements:
+  - The documented deep-learning environment, prepared GC×GC contour images and class labels or model
+    resources appropriate to the selected training/inference module.
+  considerations:
+  - Keep augmentation and evaluation separated to avoid leakage. Contour preprocessing, selected regions
+    and training-domain coverage determine classifier interpretation.
+common_uses:
+- CRISP analyzes GC×GC-TOFMS contour images with modules for region selection/deep stacking, synthetic
+  contour generation, image enhancement and classifier training.
+publications:
+- doi: 10.1093/bib/bbab550
+  type: primary
+  citation: 'CRISP: a deep learning architecture for GC × GC–TOFMS contour ROI identification, simulation
+    and analysis in imaging metabolomics. Briefings in Bioinformatics (2022).'

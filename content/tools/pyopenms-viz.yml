@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: pyopenms-viz
+name: pyOpenMS-viz
+summary: pyOpenMS-viz extends pandas plotting for mass-spectrometry data, including chromatograms, mobilograms,
+  spectra and two- or three-dimensional peak maps.
+links:
+  primary: https://github.com/OpenMS/pyopenms_viz
+  repository: https://github.com/OpenMS/pyopenms_viz
+  documentation: https://pyopenms-viz.readthedocs.io/en/latest/index.html
+resource_types:
+- programming_package
+functions:
+  primary: visualization_reporting
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - interactive_dashboard
+platforms:
+- platform_independent
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: BSD-3-Clause source distribution. External datasets, dependent packages and any hosted routes
+    retain their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+  package_managers:
+  - PyPI
+data:
+  input_types:
+  - spectra
+  - feature_table
+  output_types:
+  - report
+  other_input_formats:
+  - pandas DataFrames with m/z, time/mobility and intensity columns
+  other_output_formats:
+  - Static or interactive chromatogram, spectrum and peak-map figures
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-10-27'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: pyOpenMS-viz extends pandas plotting for mass-spectrometry data, including chromatograms,
+  mobilograms, spectra and two- or three-dimensional peak maps. It supports static matplotlib and interactive
+  Bokeh or Plotly backends.
+scope:
+  designed_for:
+  - pyOpenMS-viz extends pandas plotting for mass-spectrometry data, including chromatograms, mobilograms,
+    spectra and two- or three-dimensional peak maps.
+  not_designed_for:
+  - Raw feature detection, structural identification or automatic conversion of every vendor format into
+    a plot-ready table.
+  requirements:
+  - A compatible Python environment, pandas DataFrames with the dimensions required by the plot and the
+    selected plotting backend.
+  considerations:
+  - Data preparation and column selection remain the user's responsibility. Plot types and three-dimensional
+    support differ between backends.
+common_uses:
+- pyOpenMS-viz extends pandas plotting for mass-spectrometry data, including chromatograms, mobilograms,
+  spectra and two- or three-dimensional peak maps.
+publications:
+- doi: 10.1021/acs.jproteome.4c00873
+  type: primary
+  citation: 'pyOpenMS-viz: Streamlining Mass Spectrometry Data Visualization with pandas. Journal of Proteome
+    Research (2025).'

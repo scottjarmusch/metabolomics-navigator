@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: deepion
+name: DeepION
+summary: DeepION learns compact representations of MSI ion images for finding co-localized ions or candidate
+  isotope relationships.
+links:
+  primary: https://github.com/BioNet-XMU/DeepION
+  repository: https://github.com/BioNet-XMU/DeepION
+  documentation: https://github.com/BioNet-XMU/DeepION#readme
+resource_types:
+- programming_package
+functions:
+  primary: machine_learning
+  secondary:
+  - visualization_reporting
+  capabilities:
+  - multivariate_statistics
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+interfaces:
+- command_line
+access:
+  model: source_available
+  notes: Public research source; no repository-wide license grant was established from the reviewed metadata.
+    Check dependency and data terms separately.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - imaging_data
+  output_types:
+  - statistical_results
+  other_input_formats:
+  - Preprocessed MSI matrix, peak CSV, image dimensions and ion mode
+  other_output_formats:
+  - Learned image representations and co-localization/isotope search results
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-03-12'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: DeepION learns compact representations of MSI ion images for finding co-localized ions or
+  candidate isotope relationships. Separate COL and ISO modes use augmented images and learned embeddings
+  for downstream similarity analysis.
+scope:
+  designed_for:
+  - DeepION learns compact representations of MSI ion images for finding co-localized ions or candidate
+    isotope relationships.
+  not_designed_for:
+  - Direct raw-imzML processing, isotopologue abundance correction or proof that co-localized ions belong
+    to the same molecule.
+  requirements:
+  - The documented Python/PyTorch environment, a preprocessed pixel-by-ion matrix, peak list, image dimensions
+    and ionization-mode settings.
+  considerations:
+  - Image shape, preprocessing and missing pixels influence learned similarity. The documented legacy
+    dependency combination needs compatibility checking before a new installation.
+common_uses:
+- DeepION learns compact representations of MSI ion images for finding co-localized ions or candidate
+  isotope relationships.
+publications:
+- doi: 10.1021/acs.analchem.3c05002
+  type: primary
+  citation: 'DeepION: A Deep Learning-Based Low-Dimensional Representation Model of Ion Images for Mass
+    Spectrometry Imaging. Analytical Chemistry (2024).'

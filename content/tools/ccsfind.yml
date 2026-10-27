@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: ccsfind
+name: CCSfind
+summary: CCSfind builds experimentally derived small-molecule databases from LC-drift-tube-ion-mobility-MS
+  data.
+links:
+  primary: https://github.com/sangeeta97/ccs_find
+  repository: https://github.com/sangeeta97/ccs_find
+  documentation: https://github.com/sangeeta97/ccs_find#readme
+resource_types:
+- software_application
+functions:
+  primary: preprocessing
+  secondary:
+  - annotation_identification
+  - data_management_sharing
+  capabilities:
+  - adduct_isotope_grouping
+platforms:
+- lc_ms
+interfaces:
+- desktop_gui
+- command_line
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - raw_instrument_data
+  - compound_list
+  output_types:
+  - feature_table
+  - compound_list
+  other_input_formats:
+  - Profile LC-DTIM-MS mzML, formulas and calibration parameters
+  other_output_formats:
+  - Experimental ion/CCS database entries with SQL export
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-02-02'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: CCSfind builds experimentally derived small-molecule databases from LC-drift-tube-ion-mobility-MS
+  data. It searches supplied formulas and ion species, checks isotopologue evidence and separates chromatographic
+  or mobility-resolved candidates for database export.
+scope:
+  designed_for:
+  - CCSfind builds experimentally derived small-molecule databases from LC-drift-tube-ion-mobility-MS
+    data.
+  not_designed_for:
+  - Predicting CCS directly from an arbitrary molecular structure or universal support for all ion-mobility
+    platforms.
+  requirements:
+  - Python 3.9 dependencies or a compatible GUI build, profile-mode mzML, target formulas/ion species,
+    drift gas and single-field calibration coefficients Tfix and Beta.
+  considerations:
+  - The documented workflow targets drift-tube data. Calibration, isotope tolerances and peak-width settings
+    affect database entries and separation of isomers/protomers.
+common_uses:
+- CCSfind builds experimentally derived small-molecule databases from LC-drift-tube-ion-mobility-MS data.
+publications:
+- doi: 10.1002/jms.5040
+  type: primary
+  citation: 'CCSfind: A tool for chemically informed LC‐IM‐MS database building. Journal of Mass Spectrometry
+    (2024).'

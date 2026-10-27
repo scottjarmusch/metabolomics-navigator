@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: alister
+name: ALISTER
+summary: ALISTER provides literature-based information about pre-analytical metabolite and lipid stability
+  in EDTA plasma and serum.
+links:
+  primary: https://github.com/Fraunhofer-ITMP/alister
+  repository: https://github.com/Fraunhofer-ITMP/alister
+  web_app: https://itmp.shinyapps.io/alister/
+  documentation: https://github.com/Fraunhofer-ITMP/alister#readme
+resource_types:
+- web_service
+- database_knowledgebase
+functions:
+  primary: reference_data_search
+  secondary:
+  - quality_control
+  capabilities:
+  - metadata_contextualization
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+- lipidomics
+interfaces:
+- web_app
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - browser
+  programming_languages:
+  - R
+data:
+  input_types:
+  - sample_metadata
+  output_types:
+  - report
+  other_input_formats:
+  - Interactive matrix, temperature, processing-delay and analyte selections
+  other_output_formats:
+  - Stability-query CSV tables, references and sampling-method PDF/plots
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-05-15'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: ALISTER provides literature-based information about pre-analytical metabolite and lipid stability
+  in EDTA plasma and serum. Its Shiny interface supports sample-condition queries, analyte searches and
+  prospective sampling-method exploration.
+scope:
+  designed_for:
+  - ALISTER provides literature-based information about pre-analytical metabolite and lipid stability
+    in EDTA plasma and serum.
+  not_designed_for:
+  - Measuring actual sample integrity or generalizing supported conditions to every specimen matrix and
+    handling procedure.
+  requirements:
+  - A browser for the hosted application or a local R/Shiny installation; supply sample matrix, handling
+    delays, temperatures and analytes or classes of interest.
+  considerations:
+  - Evidence coverage and the application's generalization of input conditions constrain interpretation.
+    Review the underlying references and chosen change thresholds for each query.
+common_uses:
+- ALISTER provides literature-based information about pre-analytical metabolite and lipid stability in
+  EDTA plasma and serum.
+publications:
+- doi: 10.1016/j.cca.2024.117858
+  type: primary
+  citation: ALISTER – Application for lipid stability evaluation and research. Clinica Chimica Acta (2024).

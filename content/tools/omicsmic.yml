@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: omicsmic
+name: omicsMIC
+summary: omicsMIC provides an interactive framework for simulating missingness and comparing imputation
+  methods in mass-spectrometry-based omics matrices.
+links:
+  primary: https://github.com/WQLin8/omicsMIC
+  repository: https://github.com/WQLin8/omicsMIC
+  documentation: https://github.com/WQLin8/omicsMIC#readme
+resource_types:
+- web_service
+- software_application
+functions:
+  primary: statistics
+  secondary:
+  - visualization_reporting
+  capabilities:
+  - interactive_dashboard
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+- multiomics
+interfaces:
+- web_app
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - statistical_results
+  - report
+  other_input_formats:
+  - Processed numeric omics abundance tables and simulation settings
+  other_output_formats:
+  - Imputation comparisons, evaluation summaries and interactive plots
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-02-13'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: omicsMIC provides an interactive framework for simulating missingness and comparing imputation
+  methods in mass-spectrometry-based omics matrices. Its evaluation visualizations help users investigate
+  how method behavior varies with dataset and missingness assumptions.
+scope:
+  designed_for:
+  - omicsMIC provides an interactive framework for simulating missingness and comparing imputation methods
+    in mass-spectrometry-based omics matrices.
+  not_designed_for:
+  - Establishing the true missing-value mechanism or selecting a universally optimal imputation method
+    from one simulated benchmark.
+  requirements:
+  - The hosted application or downloaded local distribution, a compatible numeric omics dataset and simulation/evaluation
+    settings suitable for the intended comparison.
+  considerations:
+  - Compare downstream effects and avoid evaluation leakage. Hosted endpoint availability and local distribution
+    setup are separate from the published benchmarking method.
+common_uses:
+- omicsMIC provides an interactive framework for simulating missingness and comparing imputation methods
+  in mass-spectrometry-based omics matrices.
+publications:
+- doi: 10.1093/nargab/lqae071
+  type: primary
+  citation: 'omicsMIC: a comprehensive benchmarking platform for robust comparison of imputation methods
+    in mass spectrometry-based omics data. NAR Genomics and Bioinformatics (2024).'

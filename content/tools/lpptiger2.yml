@@ -1,0 +1,93 @@
+$schema: ../../schemas/tool.schema.json
+slug: lpptiger2
+name: LPPtiger 2
+aliases:
+- LPPtiger2
+summary: LPPtiger 2 supports epilipidomics by predicting modified lipid candidates and their fragmentation
+  patterns, preparing acquisition inclusion lists and annotating modified lipids in LC-MS experiments.
+links:
+  primary: https://github.com/LMAI-TUD/lpptiger2
+  repository: https://github.com/LMAI-TUD/lpptiger2
+  download: https://github.com/LMAI-TUD/lpptiger2/releases
+  documentation: https://github.com/LMAI-TUD/lpptiger2#readme
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - in_silico_spectra
+  - structure_elucidation
+platforms:
+- lc_ms
+analysis_types:
+- lipidomics
+interfaces:
+- desktop_gui
+- python_package
+access:
+  model: free_academic
+  license: AGPL-3.0
+  notes: README offers AGPLv3 for academic/non-commercial use and requests contact for commercial use.
+    This restricted statement is recorded rather than an unrestricted open-source grant.
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  - molecular_structures
+  output_types:
+  - spectra
+  - compound_list
+  other_input_formats:
+  - Lipid/modification configurations and manual-specified LC-MS data
+  other_output_formats:
+  - Predicted modified lipids, fragments, inclusion lists and annotations
+publications:
+- doi: 10.1038/s41467-022-33225-9
+  type: primary
+  citation: Analytical and computational workflow for in-depth analysis of oxidized complex lipids in
+    blood plasma. Nature Communications (2022).
+common_uses:
+- Predict and annotate oxidized or otherwise modified lipid species.
+- Generate in-silico fragmentation and inclusion lists for epilipidomics workflows.
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-10-21'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - LPPtiger 2 supports epilipidomics by predicting modified lipid candidates and their fragmentation
+    patterns, preparing acquisition inclusion lists and annotating modified lipids in LC-MS experiments.
+  not_designed_for:
+  - General identification of every lipid class or definitive localization of all oxidation and modification
+    sites.
+  requirements:
+  - A supported desktop executable or documented Python environment, configured lipid/modification rules
+    and LC-MS inputs organized according to the supplied manual and test data.
+  considerations:
+  - Candidate coverage depends on configured modification chemistry and fragmentation rules. Inspect diagnostic
+    evidence and competing assignments before reporting structures.
+description: LPPtiger 2 supports epilipidomics by predicting modified lipid candidates and their fragmentation
+  patterns, preparing acquisition inclusion lists and annotating modified lipids in LC-MS experiments.
+  Its interface includes a graphical application and Python source workflow.
