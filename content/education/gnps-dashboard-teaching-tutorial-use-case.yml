@@ -1,22 +1,23 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-dashboard-teaching-tutorial-use-case
-title: "GNPS Dashboard teaching/tutorial use case"
-summary: "Teaching example linked from the GNPS Dashboard documentation. Follow a tutorial use case to put the Dashboard overview into practical context."
-url: "https://www.youtube.com/watch?v=tT5b1IIJCE8"
+title: LC-MS data analysis with GNPS Dashboard — teaching example
+summary: Teaching example linked from the GNPS Dashboard documentation. Follow a tutorial use case to
+  put the Dashboard overview into practical context.
+url: https://www.youtube.com/watch?v=tT5b1IIJCE8
 resource_type: video
 tool_slugs:
-  - gnps-dashboard
-provider: "GNPS"
+- gnps-dashboard
+provider: Michael T. Marty (linked from GNPS documentation)
 experience_level: unspecified
 language: en
-note: "Direct tutorial video linked in Dashboard teaching docs."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2021
 year_kind: published
 date_source: https://www.youtube.com/watch?v=tT5b1IIJCE8

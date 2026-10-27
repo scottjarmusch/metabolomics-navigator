@@ -1,18 +1,20 @@
 $schema: ../../schemas/education.schema.json
 slug: metaboanalyst-tutorials
-title: "MetaboAnalyst tutorials"
-summary: "Official MetaboAnalyst tutorial collection. Choose a tutorial that matches your analysis objective and input data rather than treating every module as a required workflow step."
-url: "https://www.metaboanalyst.ca/docs/Tutorials.xhtml"
+title: MetaboAnalyst tutorials
+summary: Official MetaboAnalyst tutorial collection. Choose a tutorial that matches your analysis objective
+  and input data rather than treating every module as a required workflow step.
+url: https://www.metaboanalyst.ca/docs/Tutorials.xhtml
 resource_type: training_hub
 tool_slugs:
-  - metaboanalyst
-provider: "MetaboAnalyst"
+- metaboanalyst
+provider: MetaboAnalyst / Xia Lab
 experience_level: mixed
 language: en
-note: "Manual review of content and currentness is pending."
-validation_status: unreviewed
+note: Tutorial catalogue includes versions 6.0 and earlier. The provider warns that screenshots may be
+  outdated; choose the module and version appropriate to the data.
+validation_status: validated
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published

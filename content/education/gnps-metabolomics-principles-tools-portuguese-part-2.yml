@@ -1,22 +1,23 @@
 $schema: ../../schemas/education.schema.json
 slug: gnps-metabolomics-principles-tools-portuguese-part-2
-title: "GNPS metabolomics principles + tools Portuguese Part 2"
-summary: "Portuguese-language session on metabolomics principles and GNPS tools. Continue from part 1 for the second instalment."
-url: "https://www.youtube.com/watch?v=OLRazw7Q-2M"
+title: GNPS metabolomics principles + tools Portuguese Part 2
+summary: Portuguese-language session on metabolomics principles and GNPS tools. Continue from part 1 for
+  the second instalment.
+url: https://www.youtube.com/watch?v=OLRazw7Q-2M
 resource_type: workshop
 tool_slugs:
-  - gnps
-provider: "GNPS community / official listing"
+- gnps
+provider: Divisão de Produtos Naturais — SBQ (GNPS listing)
 experience_level: unspecified
 language: pt
-note: "Portuguese-language tutorial."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2021
 year_kind: published
 date_source: https://www.youtube.com/watch?v=OLRazw7Q-2M

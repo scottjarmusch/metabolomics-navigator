@@ -1,8 +1,8 @@
 $schema: ../../schemas/education.schema.json
 slug: ntmss2026-day1-s7
 title: NTMSS2026Day1 S7 - Robin Schmid - mzmine part2
-summary: Part 2 of Robin Schmid's mzmine workshop. Continue from part 1; a third session
-  follows on day 2 of the summer school.
+summary: Part 2 of Robin Schmid's mzmine workshop. Continue from part 1; a third session follows on day
+  2 of the summer school.
 url: https://www.youtube.com/watch?v=vK4tJb6UKsc
 resource_type: workshop
 tool_slugs:
@@ -10,15 +10,15 @@ tool_slugs:
 provider: Functional Metabolomics Lab
 experience_level: unspecified
 language: en
-note: Recorded at the University of Denver summer school, June 15–19, 2026; uploaded
-  September 30, 2026. Description and tool links are based on recording metadata;
-  full content review is pending.
-validation_status: unreviewed
+note: 2026 summer-school recording; publication year is the upload year. Recording source, title and topic
+  association checked on 27 October 2026. The lecture was not watched end to end and its exercises were
+  not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-10-01'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
+  entry: published
 year: 2026
 year_kind: published
 date_source: https://www.youtube.com/watch?v=vK4tJb6UKsc

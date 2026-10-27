@@ -1,22 +1,23 @@
 $schema: ../../schemas/education.schema.json
 slug: mzmine-multimodal-data-processing-gc-ms-maldi-ms-lipids
-title: "MZmine multimodal data processing (GC-MS, MALDI-MS, lipids)"
-summary: "MZmine workshop spanning GC-MS, MALDI-MS and lipid data processing. Browse for the modality that matches your experiment; these are distinct analytical contexts."
-url: "https://www.youtube.com/watch?v=cGA5WIKcMpM"
+title: VMOL mzmine series 2 — Multimodal data processing
+summary: MZmine workshop spanning GC-MS, MALDI-MS and lipid data processing. Browse for the modality that
+  matches your experiment; these are distinct analytical contexts.
+url: https://www.youtube.com/watch?v=cGA5WIKcMpM
 resource_type: video
 tool_slugs:
-  - mzmine
-provider: "MZmine / EMBL-EBI training"
+- mzmine
+provider: Functional Metabolomics Lab / VMOL
 experience_level: unspecified
 language: en
-note: "Validate current scope/version."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2024
 year_kind: published
 date_source: https://www.youtube.com/watch?v=cGA5WIKcMpM

@@ -113,7 +113,7 @@ def main():
     tool_by_slug={t['slug']:t for t in tools}
     strategies=sorted([enrich_strategy(r,labels,tool_by_slug) for r in strategies_raw],key=lambda x:x['name'].casefold())
     strategy_by_slug={p['slug']:p for p in strategies}
-    education=sorted([enrich_education(r,tool_by_slug) for r in education_raw],key=lambda x:((x['tools'][0]['name'] if x['tools'] else 'General concepts').casefold(),x['title'].casefold()))
+    education=sorted([enrich_education(r,tool_by_slug) for r in education_raw if education_is_visible(r)],key=lambda x:((x['tools'][0]['name'] if x['tools'] else 'General concepts').casefold(),x['title'].casefold()))
     education_by_tool={slug:[] for slug in tool_by_slug}
     for resource in education:
         for slug in resource['tool_slugs']:
@@ -315,6 +315,10 @@ def enrich_tool(record,labels):
 
 
 EDUCATION_TYPE_LABELS={'video':'Video','workshop':'Workshop','tutorial':'Tutorial','documentation':'Documentation','training_hub':'Training hub'}
+
+def education_is_visible(record):
+    return record.get('status',{}).get('entry') != 'archived' and record.get('validation_status') != 'rejected'
+
 
 def enrich_education(record,tool_by_slug):
     item=dict(record)

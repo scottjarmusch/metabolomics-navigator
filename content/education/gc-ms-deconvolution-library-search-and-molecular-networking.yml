@@ -1,22 +1,23 @@
 $schema: ../../schemas/education.schema.json
 slug: gc-ms-deconvolution-library-search-and-molecular-networking
-title: "GC-MS deconvolution, library search and molecular networking"
-summary: "Training focused on the GC-MS analysis sequence: deconvolution, spectral-library searching and molecular networking. Choose this resource for gas-chromatography data rather than an LC-MS workflow."
-url: "https://www.youtube.com/watch?v=CXDlwC7evnk"
+title: GC-MS deconvolution, library search and molecular networking
+summary: 'Training focused on the GC-MS analysis sequence: deconvolution, spectral-library searching and
+  molecular networking. Choose this resource for gas-chromatography data rather than an LC-MS workflow.'
+url: https://www.youtube.com/watch?v=CXDlwC7evnk
 resource_type: workshop
 tool_slugs:
-  - gnps
-provider: "GNPS"
+- gnps
+provider: Dorrestein Lab
 experience_level: unspecified
 language: en
-note: "GC-MS workflow training."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2020
 year_kind: published
 date_source: https://www.youtube.com/watch?v=CXDlwC7evnk

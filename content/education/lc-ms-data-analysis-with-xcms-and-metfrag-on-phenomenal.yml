@@ -1,23 +1,24 @@
 $schema: ../../schemas/education.schema.json
 slug: lc-ms-data-analysis-with-xcms-and-metfrag-on-phenomenal
-title: "LC/MS data analysis with XCMS and MetFrag on PhenoMeNal"
-summary: "LC-MS training combining XCMS data processing and MetFrag annotation in the PhenoMeNal environment. The platform is older, so use the workflow context alongside current software documentation."
-url: "https://www.youtube.com/watch?v=vzcD0WnAuAQ"
+title: LC/MS data analysis with XCMS and MetFrag on PhenoMeNal
+summary: LC-MS training combining XCMS data processing and MetFrag annotation in the PhenoMeNal environment.
+  The platform is older, so use the workflow context alongside current software documentation.
+url: https://www.youtube.com/watch?v=vzcD0WnAuAQ
 resource_type: video
 tool_slugs:
-  - xcms
-  - metfrag
-provider: "EMBL-EBI"
+- xcms
+- metfrag
+provider: EMBL's European Bioinformatics Institute EMBL-EBI
 experience_level: unspecified
 language: en
-note: "Older Galaxy/PhenoMeNal environment; concepts useful."
-validation_status: unreviewed
+note: Recording source, title and topic association checked on 27 October 2026. The lecture was not watched
+  end to end and its exercises were not executed. Compare version-specific steps with current documentation.
+validation_status: source_checked
 provenance:
   submitted_by: curator
-  last_checked: '2026-09-26'
+  last_checked: '2026-10-27'
 status:
-  entry: draft
-
+  entry: published
 year: 2017
 year_kind: published
 date_source: https://www.youtube.com/watch?v=vzcD0WnAuAQ
