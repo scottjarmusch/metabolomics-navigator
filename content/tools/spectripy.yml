@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: spectripy
+name: SpectriPy
+summary: An R package that connects the RforMassSpectrometry Spectra ecosystem with Python, enabling exchange
+  and joint analysis of mass-spectrometry data across R and Python workflows.
+links:
+  primary: https://github.com/rformassspectrometry/SpectriPy
+  repository: https://github.com/rformassspectrometry/SpectriPy
+  documentation: https://rformassspectrometry.github.io/SpectriPy/
+resource_types:
+- programming_package
+functions:
+  primary: data_conversion
+  secondary:
+  - spectral_analysis
+  - workflow_reproducibility
+  capabilities:
+  - spectral_data_io
+platforms:
+- platform_independent
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: Artistic-2.0
+  notes: Artistic-2.0 R package; Python dependencies have their own licenses and version constraints.
+    SpectriPy wraps their functionality rather than replacing the underlying methods.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - spectra
+  other_input_formats:
+  - R Spectra, Python matchms Spectrum and spectrum_utils objects
+  other_output_formats:
+  - Converted spectral objects and similarity/filter results returned to R
+publications:
+- doi: 10.21105/joss.08070
+  type: primary
+  citation: 'SpectriPy: Enhancing Cross-Language Mass Spectrometry Data Analysis with R and Python. Journal
+    of Open Source Software (2025).'
+common_uses:
+- Exchange spectral data between R Spectra objects and Python-based analysis code.
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-05-12'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: SpectriPy connects the R Spectra ecosystem to Python MS libraries through reticulate. It
+  translates spectral objects and exposes Python similarity, filtering and normalization functions inside
+  R workflows.
+scope:
+  designed_for:
+  - An R package that connects the RforMassSpectrometry Spectra ecosystem with Python, enabling exchange
+    and joint analysis of mass-spectrometry data across R and Python workflows.
+  not_designed_for:
+  - A standalone raw-data preprocessing engine or a guarantee that different similarity implementations
+    produce interchangeable scores.
+  requirements:
+  - R/Bioconductor Spectra, reticulate and a compatible Python environment with matchms, spectrum_utils
+    and NumPy. Follow the documented automatic or manual environment setup route.
+  considerations:
+  - Python environment selection and library versions matter. Data conversion and score parameters should
+    be recorded when mixing language ecosystems.

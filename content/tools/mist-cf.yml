@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: mist-cf
+name: MIST-CF
+summary: A machine-learning tool for ranking molecular formula and adduct assignments directly from MS/MS
+  spectra using a transformer-based model without requiring spectral-library matching.
+links:
+  primary: https://github.com/samgoldman97/mist-cf
+  repository: https://github.com/samgoldman97/mist-cf
+  documentation: https://github.com/samgoldman97/mist-cf#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - molecular_formula_prediction
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+- command_line
+access:
+  model: open_source
+  license: MIT
+  notes: MIT-licensed implementation. A public NPLIB1-trained model is linked; NIST20-trained model access
+    is separately restricted to users with a NIST license and is not equivalent to the public checkpoint.
+technical:
+  operating_systems:
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  input_formats:
+  - mgf
+  output_formats:
+  - csv_tsv
+publications:
+- doi: 10.1021/acs.jcim.3c01082
+  type: primary
+  citation: 'MIST-CF: Chemical Formula Inference from Tandem Mass Spectra. Journal of Chemical Information
+    and Modeling 64, 2421–2431 (2024; first online 2023).'
+common_uses:
+- Rank chemical-formula and adduct candidates for unknown MS/MS spectra.
+- Apply pretrained models to public natural-product or CASMI-style spectra.
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-09-20'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - De novo formula and adduct ranking from small-molecule MS/MS spectra.
+  requirements:
+  - Python environment, pretrained weights and positive-ion MS/MS input. The supplied workflow requires
+    SIRIUS decomposition; an interactive example also supports user-specified candidates.
+  considerations:
+  - Formula/adduct rankings remain hypotheses and depend on instrument and training-domain coverage. Public
+    and NIST-trained models should not be treated as interchangeable.
+  not_designed_for:
+  - Full molecular-structure identification or an established negative-ion workflow.
+description: MIST-CF ranks molecular-formula and adduct candidates using precursor mass and tandem spectral
+  evidence with a formula-transformer model. The documented workflow enumerates formulas using SIRIUS
+  decomposition and then scores them without constructing fragmentation trees.
