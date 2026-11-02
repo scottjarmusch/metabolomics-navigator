@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: deepgcn-rt
+name: DeepGCN-RT
+summary: DeepGCN-RT predicts small-molecule retention times from molecular graphs.
+links:
+  primary: https://github.com/kangqiyue/DeepGCN-RT
+  repository: https://github.com/kangqiyue/DeepGCN-RT
+  documentation: https://github.com/kangqiyue/DeepGCN-RT#readme
+resource_types:
+- programming_package
+functions:
+  primary: machine_learning
+  secondary:
+  - annotation_identification
+  capabilities:
+  - retention_time_prediction
+platforms:
+- lc_ms
+interfaces:
+- python_package
+- command_line
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - statistical_results
+  other_input_formats:
+  - Molecular SMILES and a trained model checkpoint
+  other_output_formats:
+  - Predicted retention times in seconds
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-08-19'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+    README distinguishes maintained pretrained inference from historical training code.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: DeepGCN-RT predicts small-molecule retention times from molecular graphs. The repository
+  provides a pretrained inference command alongside research training and transfer-learning code associated
+  with the published graph-convolutional model.
+scope:
+  designed_for:
+  - DeepGCN-RT predicts small-molecule retention times from molecular graphs.
+  not_designed_for:
+  - Universal retention-time prediction across chromatographic methods without calibration or experimental
+    validation.
+  requirements:
+  - The documented Python 3.9/3.10 environment, valid SMILES and the released checkpoint; select a compatible
+    CPU or CUDA device.
+  considerations:
+  - Predictions reflect the training chromatographic domain. The README distinguishes maintained inference
+    from historical training/transfer-learning scripts; the repository's smoke test is not an independent
+    scientific benchmark.
+common_uses:
+- DeepGCN-RT predicts small-molecule retention times from molecular graphs.
+publications:
+- doi: 10.1016/j.chroma.2023.464439
+  type: primary
+  citation: Deep graph convolutional network for small-molecule retention time prediction. Journal of
+    Chromatography A (2023).

@@ -1,0 +1,92 @@
+$schema: ../../schemas/tool.schema.json
+slug: msiflow
+name: msiFlow
+summary: msiFlow provides Snakemake workflows for MSI preprocessing, segmentation, registration to immunofluorescence
+  microscopy and region-based statistical or machine-learning analysis.
+links:
+  primary: https://github.com/Immunodynamics-Engel-Lab/msiflow
+  repository: https://github.com/Immunodynamics-Engel-Lab/msiflow
+  documentation: https://github.com/Immunodynamics-Engel-Lab/msiflow#readme
+resource_types:
+- workflow_pipeline
+functions:
+  primary: workflow_reproducibility
+  secondary:
+  - preprocessing
+  - visualization_reporting
+  - multiomics_integration
+  capabilities:
+  - container_support
+  - multivariate_statistics
+platforms:
+- imaging_ms
+analysis_types:
+- spatial_metabolomics
+- multiomics
+interfaces:
+- command_line
+- workflow_language
+- web_app
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - linux
+  - containers
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - imaging_data
+  output_types:
+  - imaging_data
+  - report
+  other_input_formats:
+  - Workflow-specific MSI data, microscopy images and region/configuration data
+  other_output_formats:
+  - Processed MSI features, registered/segmented images and analysis reports
+publications:
+- doi: 10.1038/s41467-024-55306-7
+  type: primary
+  citation: 'msiFlow: automated workflows for reproducible and scalable multimodal mass spectrometry imaging
+    and microscopy data analysis. Nature Communications (2025).'
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-03-17'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: msiFlow provides Snakemake workflows for MSI preprocessing, segmentation, registration to
+  immunofluorescence microscopy and region-based statistical or machine-learning analysis. Docker and
+  local routes offer graphical or command-line execution.
+scope:
+  designed_for:
+  - msiFlow provides Snakemake workflows for MSI preprocessing, segmentation, registration to immunofluorescence
+    microscopy and region-based statistical or machine-learning analysis.
+  not_designed_for:
+  - Guaranteed molecular identification or accurate cross-modal registration without inspecting image
+    alignment and experimental context.
+  requirements:
+  - Docker or the documented local environment, workflow-compatible MSI/microscopy data and configuration;
+    registration and region comparisons additionally require corresponding images and region/group information.
+  considerations:
+  - Different workflows require different prepared inputs. Check preprocessing, registration and region
+    definitions before interpreting spatial statistics or classifier results.
+common_uses:
+- msiFlow provides Snakemake workflows for MSI preprocessing, segmentation, registration to immunofluorescence
+  microscopy and region-based statistical or machine-learning analysis.

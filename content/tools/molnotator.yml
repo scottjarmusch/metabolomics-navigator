@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: molnotator
+name: MolNotator
+summary: A Python package that interprets LC-MS/MS ion relationships and spectral evidence to infer molecule-centric
+  networks rather than networks of individual ion signals.
+links:
+  primary: https://github.com/ZzakB/MolNotator
+  repository: https://github.com/ZzakB/MolNotator
+  documentation: https://github.com/ZzakB/MolNotator#readme
+resource_types:
+- programming_package
+functions:
+  primary: molecular_networking
+  secondary:
+  - annotation_identification
+  capabilities:
+  - ion_identity_networking
+  - library_matching
+  - network_visualization
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - feature_table
+  - spectra
+  output_types:
+  - compound_list
+  - statistical_results
+  other_input_formats:
+  - MGF spectra, CSV feature tables and YAML/adduct/reference tables
+  other_output_formats:
+  - CSV node/edge tables and simplified molecular-network results
+common_uses:
+- Collapse ion-level evidence into predicted molecule nodes.
+- Dereplicate candidates using spectral, exact-mass, retention-time, and adduct information.
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-02-02'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MolNotator groups LC-MS/MS ions into putative neutral-molecule nodes using adduct/fragment
+  relationships and combines these with spectral dereplication. Its outputs separate molecule-level hypotheses
+  from redundant measured ions in networks.
+scope:
+  designed_for:
+  - A Python package that interprets LC-MS/MS ion relationships and spectral evidence to infer molecule-centric
+    networks rather than networks of individual ion signals.
+  not_designed_for:
+  - Confirming exact molecular structures from neutral-mass triangulation or handling arbitrary multiply
+    charged ions without method validation.
+  requirements:
+  - The documented Python environment, MZmine-style MGF/CSV exports with matching identifiers, parameter/adduct
+    tables and any reference databases used for dereplication; positive and negative data can be combined.
+  considerations:
+  - The documented implementation recommends singly charged ions and older dependency versions. Adduct
+    rules and upstream feature quality affect inferred molecule nodes; the cited method remains a preprint.
+publications:
+- doi: 10.1101/2021.12.21.473622
+  type: primary
+  citation: 'From mass spectral features to molecules in molecular networks: a novel workflow for untargeted
+    metabolomics. bioRxiv preprint (2021). Preprint; not peer reviewed.'

@@ -1,0 +1,98 @@
+$schema: ../../schemas/tool.schema.json
+slug: smart-metabolomics
+name: SMART (Statistical Metabolomics Analysis)
+summary: Analyze metabolomics data with the SMART R/GUI processing, QC and statistical modules.
+links:
+  primary: https://github.com/YuJenL/SMART
+  repository: https://github.com/YuJenL/SMART
+  documentation: https://github.com/YuJenL/SMART#readme
+resource_types:
+- software_application
+functions:
+  primary: statistics
+  secondary:
+  - preprocessing
+  - quality_control
+  - annotation_identification
+  - visualization_reporting
+  capabilities:
+  - univariate_statistics
+  - multivariate_statistics
+platforms:
+- multi_platform
+analysis_types:
+- targeted
+- untargeted
+interfaces:
+- desktop_gui
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: The current GitHub repository carries GPL-3.0; legacy v1.1 documentation describes different
+    terms. This record describes the current repository and does not extend its terms to older downloads.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  - statistical_results
+  - report
+  other_input_formats:
+  - Module-dependent raw/mzXML files or processed R abundance tables
+  other_output_formats:
+  - R peak/statistical/calibration results and graphical analysis views
+common_uses:
+- Run integrated metabolomics statistics and visualization from raw or processed data.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-06-03'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: SMART is an R/GUI environment for metabolomics data processing, QC and statistical analysis.
+  Its modules connect data import and peak analysis with transformations, batch exploration, association/classification
+  analysis and optional concentration calibration.
+scope:
+  designed_for:
+  - An R-based graphical metabolomics analysis suite spanning data import, peak analysis and annotation,
+    preprocessing, quality control, batch-effect assessment, statistics, and visualization.
+  not_designed_for:
+  - The unrelated spatial-metabolomics SMART formula-ranking application or automatic justification of
+    every statistical model and vendor format.
+  requirements:
+  - The distribution's R/GUI environment, module-compatible raw or processed data and sample/design metadata;
+    calibration and targeted modules additionally require their corresponding reference information.
+  considerations:
+  - Import and analysis requirements vary by module and release. Current README citation text is stale
+    about SMART 2.0 publication; cite the verified published update and distinguish legacy distribution
+    terms.
+publications:
+- doi: 10.1021/acs.analchem.6b00603
+  type: primary
+  citation: 'SMART: Statistical Metabolomics Analysis—An R Tool. Analytical Chemistry (2016).'
+- doi: 10.1021/acs.analchem.5c03225
+  type: primary
+  citation: 'SMART 2.0 Statistical Metabolomics Analysis: An R Tool 2.0. Analytical Chemistry (2025).'
+aliases:
+- SMART 2.0
+- Statistical Metabolomics Analysis

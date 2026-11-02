@@ -1,0 +1,100 @@
+$schema: ../../schemas/tool.schema.json
+slug: pyeva
+name: pyEVA
+aliases:
+- EVA
+summary: A Python implementation of EVA for automated evaluation of extracted-ion chromatogram fidelity,
+  using deep learning to classify LC-MS features as likely true or false signals.
+links:
+  primary: https://github.com/HuanLab/pyEVA
+  repository: https://github.com/HuanLab/pyEVA
+  documentation: https://github.com/HuanLab/pyEVA#readme
+resource_types:
+- software_application
+functions:
+  primary: quality_control
+  secondary:
+  - machine_learning
+  capabilities:
+  - feature_selection
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- command_line
+access:
+  model: open_source
+  notes: MIT source distribution. The cited EVA paper describes the original method; the repository documents
+    the later Python implementation and its setup.
+  license: MIT
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  programming_languages:
+  - Python
+  - R
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  output_types:
+  - feature_table
+  - report
+  input_formats:
+  - mzml
+  - mzxml
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+publications:
+- doi: 10.1021/acs.analchem.1c01309
+  type: primary
+  citation: 'EVA: Evaluation of Metabolic Feature Fidelity Using a Deep Learning Model Trained With Over
+    25000 Extracted Ion Chromatograms. Analytical Chemistry (2021).'
+  note: Original EVA method paper; the official pyEVA repository documents its Python reimplementation.
+common_uses:
+- Automatically classify extracted-ion chromatograms as higher- or lower-fidelity metabolomic features.
+- Filter feature tables after chromatographic peak detection.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-02-06'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Automated feature-fidelity assessment of LC-MS extracted-ion chromatograms.
+  considerations:
+  - Smoothing and peak-shape domain affect classifications. Inspect EICs and prediction outcomes rather
+    than automatically interpreting every rejected feature as an artifact.
+  not_designed_for:
+  - Molecular identification or a replacement for acquisition-aware review of low-abundance and unusual
+    chromatographic peaks.
+  requirements:
+  - The documented Python environment plus R/xcms dependencies, raw mzML or mzXML files and a CSV whose
+    first two columns are m/z and retention time.
+acquisition:
+  ms_levels:
+  - ms1
+  strategies:
+  - full_scan
+  ion_mobility: unspecified
+description: pyEVA is a Python implementation of the EVA feature-fidelity workflow. It extracts chromatographic
+  traces around supplied LC-MS features, creates EIC plots and classifies them to assist detection of
+  false or unreliable features.

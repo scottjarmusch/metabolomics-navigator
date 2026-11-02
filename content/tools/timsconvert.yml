@@ -1,0 +1,91 @@
+$schema: ../../schemas/tool.schema.json
+slug: timsconvert
+name: TIMSCONVERT
+summary: An open-source workflow for converting Bruker timsTOF raw data, including trapped-ion-mobility
+  information, into open mzML and imzML formats for downstream analysis.
+links:
+  primary: https://github.com/gtluu/timsconvert
+  repository: https://github.com/gtluu/timsconvert
+  documentation: https://gtluu.github.io/timsconvert/
+resource_types:
+- workflow_pipeline
+functions:
+  primary: data_conversion
+  secondary: []
+  capabilities:
+  - spectral_data_io
+platforms:
+- multi_platform
+interfaces:
+- command_line
+- desktop_gui
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 workflow code includes components covered by separate Bruker proprietary terms. The
+    required TDF-SDK route is not compatible with macOS according to the project documentation.
+technical:
+  operating_systems:
+  - windows
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - raw_instrument_data
+  output_types:
+  - spectra
+  - imaging_data
+  input_formats:
+  - vendor_raw
+  output_formats:
+  - mzml
+  - imzml
+publications:
+- doi: 10.1093/bioinformatics/btac419
+  type: primary
+  citation: 'TIMSCONVERT: a workflow to convert trapped ion mobility data to open data formats. Bioinformatics
+    (2022).'
+common_uses:
+- Convert timsTOF data to open formats while preserving ion-mobility information.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-03-14'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - unspecified
+  ion_mobility: required
+description: TIMSCONVERT converts supported Bruker timsTOF raw acquisitions to open mzML or imzML while
+  retaining ion-mobility information where supported. It provides graphical and command-line routes to
+  data conversion for downstream analysis.
+scope:
+  designed_for:
+  - An open-source workflow for converting Bruker timsTOF raw data, including trapped-ion-mobility information,
+    into open mzML and imzML formats for downstream analysis.
+  not_designed_for:
+  - Feature extraction, metabolite identification or conversion of arbitrary proprietary vendor formats.
+  requirements:
+  - Supported timsTOF acquisition directories and the documented Windows/Linux environment with the required
+    Bruker TDF-SDK components; output mode must match LC-MS or imaging acquisition.
+  considerations:
+  - Conversion options and mobility handling must suit the acquisition and downstream reader. Preserve
+    original raw data and record conversion parameters.

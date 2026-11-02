@@ -1,0 +1,286 @@
+(() => {
+  const input = document.querySelector('#ask-query');
+  const searchButton = document.querySelector('#ask-search-button');
+  const results = document.querySelector('#ask-strategy-results');
+  const cards = [...document.querySelectorAll('.ask-strategy-card')];
+  const count = document.querySelector('#ask-result-count');
+  const empty = document.querySelector('#ask-empty');
+  const examples = [...document.querySelectorAll('[data-ask-example]')];
+  const namedToolPanel = document.querySelector('#ask-tool-matches');
+  const namedTools = [...document.querySelectorAll('[data-ask-tool]')];
+  const normalizeName = value => value.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  const ambiguousToolNames = new Set(['spectra','camera','massive','cardinal','coconut','lotus','mist','mint','skyline']);
+  const guidance = document.querySelector('#ask-guidance');
+  const mixedPanel = document.querySelector('#ask-mixed');
+  const intentButtons = [...document.querySelectorAll('[data-ask-intent]')];
+  // Deliberately narrow labels for existing curated searches, not inferred workflows.
+  const intents = [
+    {id:'qc', pattern:/\b(?:qc|quality control|drift|batch correction)\b/i},
+    {id:'flux', pattern:/\bflux(?:es)?\b/i},
+    {id:'pathways', pattern:/\bpathway(?:s)?\b/i},
+    {id:'families', pattern:/\b(?:molecular networking|molecular families|related molecules)\b/i},
+  ];
+  if (!input || !cards.length) return;
+
+  const stop = new Set(['a','an','and','are','for','from','i','in','into','my','of','on','the','to','with','have','has','want','need','find','using','use','can','how','what','when','most','is','am','do','me','data','metabolomics','method','methods','workflow','workflows','approach','approaches']);
+  const tokenize = value => [...new Set(value.toLowerCase()
+    .replace(/[^a-z0-9]+/g,' ').split(/\s+/)
+    .filter(x => x.length > 1 && !stop.has(x))
+    .map(x => x.length > 4 && x.endsWith('s') ? x.slice(0,-1) : x))];
+  const metadata = new Map(cards.map(card => [card, {
+    words: new Set(tokenize(card.dataset.search || '')),
+    name: new Set(tokenize(card.dataset.name || '')),
+    keywords: new Set(tokenize(card.dataset.keywords || '')),
+    phrases: (card.dataset.keywordPhrases || '').split('|').map(tokenize).filter(tokens=>tokens.length>=2),
+  }]));
+  const weight = token => 1 + Math.log((cards.length+1)/(1+cards.filter(c=>metadata.get(c).words.has(token)).length));
+  function scoreCard(card, tokens) {
+    const data=metadata.get(card);
+    const lexical=tokens.reduce((score,token)=>score + (data.words.has(token) ? weight(token)*(1 + (data.name.has(token)?1:0) + (data.keywords.has(token)?1:0)) : 0),0);
+    // Curated multiword method phrases distinguish related acquisition/analysis methods.
+    // Use only the strongest phrase, so repeated synonyms cannot inflate the score.
+    const query=' '+tokens.join(' ')+' ';
+    const phrase=Math.max(0,...data.phrases.filter(p=>query.includes(' '+p.join(' ')+' ')).map(p=>p.reduce((sum,t)=>sum+weight(t),0)));
+    return lexical+2*phrase;
+  }
+
+  const nextActions = document.querySelector('#ask-next-actions');
+  const actionLinks = [...document.querySelectorAll('[data-guide-action]')];
+  function showActions(names=[]) {
+    actionLinks.forEach(link => { link.hidden = !names.includes(link.dataset.guideAction); });
+    if (nextActions) nextActions.hidden = !names.length;
+  }
+
+  function runSearch(value) {
+    // Only common nontechnical spelling errors; never fuzzy-correct tool or chemical names.
+    value=value.replace(/\b(?:diferences|differnces|diffrences)\b/gi,'differences').replace(/\bcomparision\b/gi,'comparison');
+    showActions();
+    const relatedPanel = document.querySelector('#ask-related');
+    const relatedButtons = [...document.querySelectorAll('[data-ask-related]')];
+    if (relatedPanel) relatedPanel.hidden = true;
+    relatedButtons.forEach(button => { button.hidden = true; });
+    const customWorkflow = document.querySelector('#ask-custom-workflow');
+    if (customWorkflow) customWorkflow.open = false;
+    const guideMessage = document.querySelector('#ask-guide-message');
+    if (guideMessage) guideMessage.textContent = '';
+    const normalizedQuery = ' ' + normalizeName(value) + ' ';
+    const mentionedTools = namedTools.filter(tool => (tool.dataset.names || '').split('|').some(name => {
+      const normalized = normalizeName(name);
+      if (ambiguousToolNames.has(normalized) && !(name !== name.toLowerCase() && value.includes(name) && /\b(?:tool|package|software|library|repository)\b/i.test(value))) return false;
+      return normalized.length >= 4 && normalizedQuery.includes(' ' + normalized + ' ');
+    }));
+    namedTools.forEach(tool => { tool.hidden = !mentionedTools.includes(tool); });
+    if (namedToolPanel) namedToolPanel.hidden = !mentionedTools.length;
+    const tokens = tokenize(value);
+    let eligible=cards;
+    // Explicit tool requests must not turn incidental word overlap into a workflow claim.
+    if (mentionedTools.length) eligible=eligible.filter(card => mentionedTools.every(tool => (card.dataset.tools || '').split(' ').includes(tool.dataset.slug)));
+    const nmrOnly=/\bnmr\b/i.test(value) && (!/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value) || /\b(?:not|rather than|instead of)\s+(?:mass spectrometry|(?:lc-)?ms)\b/i.test(value));
+    if(nmrOnly) eligible=[];
+    const bulkMeasurements = /\bbulk\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy)\b/i.test(value);
+    if (bulkMeasurements) eligible=eligible.filter(card => !(card.dataset.platforms || '').split(' ').includes('imaging_ms'));
+    const flux=/\bflux(?:es)?\b/i.test(value);
+    const comparisonRequest = !mentionedTools.length && /\b(?:compar(?:e|ing|ison)|differences?|differ(?:s|ent|ing)?|distinguish|differential|changed?|changes|more abundant|less abundant)\b/i.test(value) && /\b(?:metabolites?|metabolomics|chemicals?|profiles?|levels?|abundan(?:ce|ces|t)|samples?|groups?|conditions?|treated|controls?)\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy|biotransformations?|transformations?|proportionality|ordered|loess|network(?:ing)?|pathways?|flux|isotop(?:e|es|ologue)|retention|annotation|annotate|derivatization|fragments?|bioactivity|enrichment|double.bond|isomers?)\b/i.test(value);
+    const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
+    const novice = generalOnly || /\b(?:beginner|can metabolomics help|where (?:do|should) we (?:start|begin)|before (?:i|we) collect|tell me which pathways changed)\b/i.test(value) || /\b(?:new to (?:metabolomics|lc-ms|mass spectrometry)|never used metabolomics|first metabolomics (?:study|experiment)|not sure|(?:do not|don['’]?t) (?:know|understand)|(?:where|how) (?:do|should) i (?:start|begin))\b/i.test(value);
+    // Exclusion and missing-input requests need clarification, not positive keyword matches.
+    const constrained = !novice && /\b(?:forgot|failed) to (?:measure|acquire|collect|include)|\b(?:no|not|without|avoid|exclude|excluding|cannot|can['’]?t|don['’]?t|doesn['’]?t|isn['’]?t)\b|\bunlabel(?:l)?ed\b/i.test(value);
+    const comparison = comparisonRequest && !novice && !constrained;
+    const generalStatistics = /\b(?:statistics|statistical analysis)\b/i.test(value) && /\b(?:locally|local|r|python)\b/i.test(value) && !/\b(?:flux|loess|chemrich|enrichment|drift|pls|pca)\b/i.test(value);
+    const requestedIntents = intents.filter(intent => intent.pattern.test(value));
+    const separateAims = /\b(?:and|then|plus|also|compare)\b|[+;]/i.test(value);
+    const mixed = !nmrOnly && !novice && !constrained && separateAims && requestedIntents.length > 1;
+    intentButtons.forEach(button => { button.hidden = !requestedIntents.some(intent => intent.id === button.dataset.askIntent); });
+    if (mixedPanel) mixedPanel.hidden = !mixed;
+    if (mixed || novice || constrained || generalStatistics || comparison) eligible=[];
+    if (comparison && !nmrOnly) {
+      if (guidance) guidance.open=true;
+      showActions(['prepare','qc','statistics','learn']);
+      if (guideMessage) guideMessage.textContent='For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.';
+    }
+    if (generalStatistics) { showActions(['statistics','learn']); if(guidance) guidance.open=true; }
+    if ((novice || constrained) && !nmrOnly) {
+      if (guidance) guidance.open=true;
+      const rawFiles = /\braw\b.*\b(?:files?|data)\b/i.test(value);
+      const qcConcern = /\b(?:qc|quality control|drift|batch effects?)\b/i.test(value);
+      showActions(rawFiles ? ['prepare','qc','learn'] : qcConcern ? ['qc','learn'] : ['learn']);
+      if (guideMessage) guideMessage.textContent = rawFiles
+        ? 'Start with data processing and quality control. Ask your MS facility which file format and acquisition type you have; then use the study guide to choose a downstream aim.'
+        : qcConcern ? 'Check your run sheet for controls, QC injections and injection order. The QC catalogue can help you inspect available evidence; a missing control cannot be assumed to exist.'
+        : 'Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.';
+    }
+    if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
+    const scored = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
+      .filter(x => x.score > 0)
+      .sort((a,b) => b.score - a.score || Number(b.card.dataset.year||0) - Number(a.card.dataset.year||0));
+
+    // Relative lexical cutoff suppresses incidental overlaps; it is not a confidence score.
+    const recognized = tokens.filter(token => eligible.some(card => metadata.get(card).words.has(token)));
+    const cutoff = recognized.length > 1 && scored.length ? scored[0].score * 0.4 : 0;
+    const ranked = scored.filter(x => x.score >= cutoff);
+
+    cards.forEach(card => card.hidden = true);
+    ranked.slice(0,6).forEach(x => {
+      results.appendChild(x.card);
+      x.card.hidden = false;
+    });
+
+    const shown = Math.min(ranked.length,6);
+    if (tokens.length && !shown && !comparison && !novice && !constrained && !mixed && !nmrOnly && !generalStatistics && !mentionedTools.length) {
+      showActions(['learn','browse']);
+      if (guidance) guidance.open=true;
+    }
+    if (!shown && mentionedTools.length && !nmrOnly && !novice && !constrained && !mixed && !generalStatistics) {
+      count.textContent = 'Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.';
+      empty.hidden = false;
+      return;
+    }
+    if (!tokens.length) {
+      count.textContent = 'Choose an example or describe your question.';
+      empty.hidden = true;
+    } else if (shown) {
+      count.textContent = shown + (ranked.length > shown ? ` of ${ranked.length}` : '') + ' matching published Strateg' + (shown === 1 ? 'y' : 'ies') + '.';
+      empty.hidden = true;
+    } else {
+      count.textContent = comparison && !nmrOnly ? 'Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.' : nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : novice ? 'Please use the study guide to clarify your scientific aim and available measurements.' : constrained ? 'Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.' : generalStatistics ? 'Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.' : mixed ? 'Your question spans several aims. Choose one to explore separately.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : 'No matching published Strategy in the current collection.';
+      empty.hidden = nmrOnly || mixed || novice || constrained || comparison;
+      if (!empty.hidden && !mentionedTools.length && !generalStatistics) {
+        const relatedTopics = [
+          {pattern:/\b(?:clean|noise|denois|normaliz|normalis|batch|quality|drift|qc)/i, query:'pooled QC LOESS signal drift'},
+          {pattern:/\b(?:cluster|similar|famil|network|dereplicat)/i, query:'feature based molecular networking'},
+          {pattern:/\b(?:biolog|interpret|enrich|pathway)/i, query:'pathway enrichment unidentified features'},
+          {pattern:/\b(?:tracer|labeling|labelling|flux)/i, query:'isotope labeling time course flux'}
+        ];
+        relatedButtons.forEach(button => {
+          const topic=relatedTopics.find(topic=>topic.query===button.dataset.askRelated);
+          button.hidden = !topic || !topic.pattern.test(value) || !cards.some(card=>scoreCard(card,tokenize(topic.query))>0);
+        });
+        if (relatedPanel) relatedPanel.hidden = !relatedButtons.some(button=>!button.hidden);
+      }
+    }
+  }
+
+  const aimField = document.querySelector('#ask-aim');
+  const qcEvidence = document.querySelector('#ask-qc-evidence');
+  const tracerEvidence = document.querySelector('#ask-tracer-evidence');
+  function updateEvidenceQuestions() {
+    const qcQuestion=document.querySelector('#ask-qc-question');
+    const tracerQuestion=document.querySelector('#ask-tracer-question');
+    if(qcQuestion) qcQuestion.hidden=aimField?.value !== 'qc';
+    if(tracerQuestion) tracerQuestion.hidden=aimField?.value !== 'flux';
+  }
+  aimField?.addEventListener('change', () => {
+    if(qcEvidence) qcEvidence.value='';
+    if(tracerEvidence) tracerEvidence.value='';
+    runSearch('');
+    const message=document.querySelector('#ask-guide-message');
+    if(message) message.textContent='';
+    updateEvidenceQuestions();
+  });
+  updateEvidenceQuestions();
+  ['#ask-stage','#ask-data','#ask-qc-evidence','#ask-tracer-evidence'].forEach(id => {
+    document.querySelector(id)?.addEventListener('change', () => {
+      runSearch('');
+      const message=document.querySelector('#ask-guide-message');
+      if(message) message.textContent='';
+    });
+  });
+
+  document.querySelector('#ask-guide-button')?.addEventListener('click', () => {
+    const stage = document.querySelector('#ask-stage').value;
+    const data = document.querySelector('#ask-data').value;
+    const aim = document.querySelector('#ask-aim').value;
+    const message = document.querySelector('#ask-guide-message');
+    // Starting a new guided request clears prior recommendations.
+    runSearch('');
+    if (!stage || !data || !aim) {
+      message.textContent = 'Choose a study stage, measurement type and aim. It is fine to select that you are not sure.';
+    } else if (stage === 'planning') {
+      showActions(['learn']);
+      message.textContent = 'Start with the guide and your MS facility: define the comparison, sample handling, controls and suitable measurements before choosing an analysis workflow.';
+    } else if (data === 'unknown' || data === 'other' || aim === 'unsure') {
+      showActions(['learn']);
+      message.textContent = 'Use the guide to clarify your measurement type and scientific aim. Your MS facility can help identify the files and measurements you have.';
+    } else if (stage === 'raw') {
+      showActions(['prepare','qc','learn']);
+      message.textContent = 'First prepare and quality-check your raw files. Explore data-processing tools in the catalogue and check instrument and file-format compatibility before selecting a downstream Strategy.';
+    } else if (aim === 'comparison') {
+      showActions(['qc','statistics','learn']);
+      message.textContent = 'Compare processed metabolite or feature abundances using sample metadata, biological replicates and a statistical model suited to your study design. Review QC and batch effects before testing group differences. A significant feature is not automatically an identified metabolite.';
+    } else if (aim === 'families' && data !== 'msms') {
+      showActions(['learn']);
+      message.textContent = 'Spectral molecular families need fragmentation spectra linked to precursors. A feature table alone does not provide that evidence; check whether MS/MS was acquired.';
+    } else if (aim === 'qc' && qcEvidence?.value !== 'yes') {
+      showActions(['qc','learn']);
+      message.textContent = qcEvidence?.value === 'no'
+        ? 'The pooled-QC drift-correction route needs repeated representative QC injections and injection order. Missing QC cannot be reconstructed by selecting this method. Review available controls and batch effects with your analyst.'
+        : 'Check the run sheet or ask your MS facility whether representative QC samples were injected repeatedly and injection order was recorded. Unknown QC availability is not confirmation that this method fits.';
+    } else if (aim === 'flux' && tracerEvidence?.value !== 'yes') {
+      showActions(['learn']);
+      message.textContent = tracerEvidence?.value === 'no'
+        ? 'Ordinary abundance measurements do not support these isotope-tracer flux methods. You can explore group differences or plan a suitable tracer experiment with a specialist.'
+        : 'Check whether isotope labeling measurements and sampling times are available. A metabolite table alone does not confirm that this was a tracer experiment.';
+    } else {
+      const queries = {families:'feature based molecular networking', pathways:'pathway enrichment unidentified features', qc:'pooled QC LOESS signal drift', flux:'isotope labeling time course flux'};
+      input.value = queries[aim];
+      runSearch(input.value);
+      showActions(aim === 'qc' ? ['qc','learn'] : aim === 'pathways' ? ['statistics','learn'] : ['learn']);
+      message.textContent = aim === 'flux' ? 'These flux methods require a suitable tracer experiment, time courses and model assumptions; ordinary group-comparison data are insufficient.' : aim === 'qc' ? 'QC drift correction requires repeated representative QC injections and recorded injection order. Check these requirements before using the published method.' : 'These are published precedents for your next analytical step. Review their requirements; they are not a complete study plan.';
+    }
+  });
+
+  // Study contexts open clarification; they never assume acquired data or select a method.
+  const studyContexts = {
+    cohort: 'Comparing groups of people? Start with the comparison you want to make, your sample types and whether measurements already exist. Group differences alone do not establish a cause.',
+    comparative: 'Comparing conditions, treatments or time points? Define the comparison and your study stage before choosing processing, statistics or interpretation.',
+    natural: 'Exploring natural products or drug discovery? Clarify whether you want to find known compounds, investigate unknown structures or connect measured activity to chemical features.',
+    exposomics: 'Studying chemical exposures? Clarify whether you have a list of candidate chemicals or want to explore unknown signals, and what measurements are available.',
+    lipids: 'Studying lipids? Clarify whether you need abundance comparisons, lipid-class annotation or structural detail such as double-bond position; these are different analytical questions.',
+    spatial: 'Studying chemistry across a tissue or cells? Clarify whether you have mass-spectrometry images and any matching microscopy. The current guided data choices are limited; choose Another MS measurement type when appropriate.'
+  };
+  const clearStudy = () => {
+    input.value = '';
+    runSearch('');
+    ['#ask-stage','#ask-data','#ask-aim','#ask-qc-evidence','#ask-tracer-evidence'].forEach(id => { const field=document.querySelector(id); if(field) field.value=''; });
+    updateEvidenceQuestions();
+    const message=document.querySelector('#ask-guide-message'); if(message) message.textContent='';
+    const context=document.querySelector('#ask-study-context'); if(context) context.textContent='';
+    document.querySelectorAll('[data-study-start]').forEach(button=>button.setAttribute('aria-pressed','false'));
+  };
+  document.querySelectorAll('[data-study-start]').forEach(button => {
+    button.setAttribute('aria-pressed','false');
+    button.addEventListener('click',()=>{
+      clearStudy();
+      button.setAttribute('aria-pressed','true');
+      document.querySelector('#ask-study-context').textContent=studyContexts[button.dataset.studyStart] || '';
+      if(guidance) guidance.open=true;
+      document.querySelector('#ask-stage')?.focus();
+    });
+  });
+  document.querySelector('#ask-start-over')?.addEventListener('click',()=>{clearStudy();document.querySelector('#ask-stage')?.focus();});
+
+  document.querySelector('#ask-build-workflow')?.addEventListener('click', () => {
+    if (guidance) guidance.open=true;
+    const outline=document.querySelector('#ask-custom-workflow');
+    if (outline) outline.open=true;
+    const message=document.querySelector('#ask-guide-message');
+    if (message) message.textContent='Build a planning outline for your question: '+input.value+'. Start by recording your stage, available measurements and analytical aim. No published Strategy has been selected.';
+    showActions(['prepare','qc','statistics','learn','browse']);
+    document.querySelector('#ask-stage')?.focus();
+  });
+  document.querySelectorAll('[data-ask-related]').forEach(button=>button.addEventListener('click',()=>{
+    input.value=button.dataset.askRelated;
+    runSearch(input.value);
+    count.textContent='Related published starting points, not direct matches to your original question. '+count.textContent;
+  }));
+
+  searchButton?.addEventListener('click', () => runSearch(input.value));
+  input.addEventListener('keydown', event => {
+    if (event.key === 'Enter') { event.preventDefault(); runSearch(input.value); }
+  });
+  examples.forEach(button => button.addEventListener('click', () => {
+    input.value = button.dataset.askExample || button.textContent.trim();
+    runSearch(input.value);
+    input.focus();
+  }));
+})();

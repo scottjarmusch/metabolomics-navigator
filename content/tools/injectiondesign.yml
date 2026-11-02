@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: injectiondesign
+name: InjectionDesign
+summary: A web service for designing LC-MS and GC-MS multi-omics injection sequences with QC placement,
+  inter-batch balancing, intra-batch randomization, and downloadable worksheets.
+links:
+  primary: http://www.injection.design/
+  web_app: http://www.injection.design/
+  repository: https://github.com/CSi-Studio/InjectionDesign
+  documentation: https://github.com/CSi-Studio/InjectionDesign#readme
+resource_types:
+- web_service
+functions:
+  primary: quality_control
+  secondary:
+  - data_management_sharing
+  capabilities:
+  - metadata_contextualization
+platforms:
+- lc_ms
+- gc_ms
+analysis_types:
+- multiomics
+interfaces:
+- web_app
+access:
+  model: free_web_service
+  notes: The repository carries MulanPSL-2.0 terms and describes a free hosted service. Hosted availability
+    and user-data handling were not operationally tested.
+  license: MulanPSL-2.0
+technical:
+  operating_systems:
+  - browser
+  - cross_platform
+data:
+  input_types:
+  - sample_metadata
+  output_types:
+  - sample_metadata
+  input_formats:
+  - other
+  output_formats:
+  - other
+  other_input_formats:
+  - Excel worksheet
+  other_output_formats:
+  - Excel worksheet
+common_uses:
+- Randomize and balance study samples across analytical batches.
+- Place pooled, blank, solvent, reference, and custom QC samples within an injection sequence.
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-11-27'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Prospective injection-order design and QC placement before LC-MS or GC-MS acquisition.
+  not_designed_for:
+  - Correcting instrument drift or batch effects after acquisition, or replacing experimental design review.
+  requirements:
+  - A sample Excel sheet using the provided template, grouping variables and desired plate/QC settings.
+    Local deployment uses Java, MongoDB and Redis; the hosted route uses a browser.
+  considerations:
+  - Balance and randomization dimensions must reflect the scientific design; inspect the exported sequence
+    and QC spacing before acquisition.
+description: InjectionDesign prepares acquisition sequences and plate layouts from sample metadata. It
+  combines inter-batch balancing, within-batch randomization and predefined QC placement before LC/GC-MS
+  measurements.
+publications:
+- doi: 10.1186/s12859-023-05598-1
+  type: primary
+  citation: 'Injectiondesign: web service of plate design with optimized stratified block randomization
+    for modern GC/LC-MS-based sample preparation. BMC Bioinformatics (2023).'

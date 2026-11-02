@@ -1,0 +1,87 @@
+$schema: ../../schemas/tool.schema.json
+slug: norm-iswsvr
+name: Norm-ISWSVR
+summary: Norm-ISWSVR normalizes metabolomics tables by combining internal-standard correction with support-vector-regression-based
+  adjustment.
+links:
+  primary: https://github.com/Dingxian666/Norm-ISWSVR
+  repository: https://github.com/Dingxian666/Norm-ISWSVR
+  documentation: https://github.com/Dingxian666/Norm-ISWSVR#readme
+resource_types:
+- programming_package
+functions:
+  primary: normalization
+  secondary:
+  - machine_learning
+  capabilities:
+  - batch_effect_correction
+  - qc_drift_correction
+platforms:
+- platform_independent
+analysis_types:
+- targeted
+- untargeted
+interfaces:
+- python_package
+access:
+  model: free_academic
+  notes: README states a patent application and strictly prohibits commercial use. No unrestricted open-source
+    grant is claimed.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - feature_table
+  - sample_metadata
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Abundance CSV and sample CSV with optional standard/run metadata
+  other_output_formats:
+  - Normalized abundance tables and validation/tuning results
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-04-05'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: Norm-ISWSVR normalizes metabolomics tables by combining internal-standard correction with
+  support-vector-regression-based adjustment. Its Python implementation supports matched or unmatched
+  internal-standard settings, cross-validation and hyperparameter search.
+scope:
+  designed_for:
+  - Norm-ISWSVR normalizes metabolomics tables by combining internal-standard correction with support-vector-regression-based
+    adjustment.
+  not_designed_for:
+  - Correcting every biological/technical confounding pattern or establishing accurate absolute concentrations
+    solely by normalization.
+  requirements:
+  - Documented Python dependencies, abundance and sample CSV tables, internal-standard information and
+    appropriate QC/run metadata for the selected mode.
+  considerations:
+  - Review matched-standard assignments, QC coverage and biological preservation. Injection-order and
+    batch columns are optional in the template but their absence limits corresponding diagnostics and
+    interpretation.
+common_uses:
+- Norm-ISWSVR normalizes metabolomics tables by combining internal-standard correction with support-vector-regression-based
+  adjustment.
+publications:
+- doi: 10.1021/acs.analchem.1c05502
+  type: primary
+  citation: 'Norm ISWSVR: A Data Integration and Normalization Approach for Large-Scale Metabolomics.
+    Analytical Chemistry (2022).'

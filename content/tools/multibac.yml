@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: multibac
+name: MultiBaC
+summary: A Bioconductor R package for batch-effect correction in single-omics and multi-omics datasets,
+  including metabolomics.
+links:
+  primary: https://bioconductor.org/packages/MultiBaC/
+  homepage: https://bioconductor.org/packages/MultiBaC/
+  repository: https://github.com/ConesaLab/MultiBaC
+  documentation: https://bioconductor.org/packages/release/bioc/html/MultiBaC.html
+resource_types:
+- programming_package
+functions:
+  primary: normalization
+  secondary:
+  - multiomics_integration
+  capabilities:
+  - batch_effect_correction
+platforms:
+- platform_independent
+analysis_types:
+- metabolite_profiling
+- multiomics
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  output_types:
+  - feature_table
+  other_input_formats:
+  - Multi-omics R assay matrices and batch/experimental-design objects
+  other_output_formats:
+  - Corrected R multi-omics data and diagnostic/model objects
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-01-21'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MultiBaC corrects batch effects in multi-omics datasets distributed across acquisition events
+  or laboratories. It uses a shared omic layer to transfer correction information between batches and
+  is implemented as an R/Bioconductor package.
+scope:
+  designed_for:
+  - A Bioconductor R package for batch-effect correction in single-omics and multi-omics datasets, including
+    metabolomics.
+  not_designed_for:
+  - Unconstrained correction of disjoint omics batches with no common layer, or raw MS preprocessing.
+  requirements:
+  - R/Bioconductor dependencies and correctly organized multi-omics assay/design objects; at least one
+    common omic data type must occur in every batch considered.
+  considerations:
+  - Shared-layer quality and experimental design constrain correction. Verify that biological contrasts
+    remain meaningful and do not treat corrected cross-omics association as causality.
+common_uses:
+- A Bioconductor R package for batch-effect correction in single-omics and multi-omics datasets, including
+  metabolomics.
+publications:
+- doi: 10.1093/bioinformatics/btac132
+  type: primary
+  citation: 'MultiBaC: an R package to remove batch effects in multi-omic experiments. Bioinformatics
+    (2022).'
+- doi: 10.1177/0962280220907365
+  type: primary
+  citation: 'MultiBaC: A strategy to remove batch effects between different omic data types. Statistical
+    Methods in Medical Research (2020).'

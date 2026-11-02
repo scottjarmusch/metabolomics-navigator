@@ -1,0 +1,84 @@
+$schema: ../../schemas/tool.schema.json
+slug: simile
+name: SIMILE
+summary: A Python library for relating fragmentation spectra using statistically assessed fragment and
+  neutral-loss relationships, including pairwise and multiple spectral matching.
+links:
+  primary: https://github.com/biorack/simile
+  repository: https://github.com/biorack/simile
+  documentation: https://github.com/biorack/simile#readme
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  secondary:
+  - annotation_identification
+  capabilities:
+  - ms2_processing
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+access:
+  model: source_available
+  license: Modified BSD (full terms not located)
+  notes: README and pyproject label the code Modified BSD, but the linked license.txt is absent from the
+    current repository. Exact terms need clarification; no precise SPDX license or unrestricted grant
+    is inferred. Record the implementation version because V2 changes matching/statistics.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - statistical_results
+  other_input_formats:
+  - Python fragment-mass arrays and optional precursor-mass arrays
+  other_output_formats:
+  - Similarity/matching matrices, p-values and matching-ion data frames
+publications:
+- doi: 10.1038/s41467-022-30118-9
+  type: primary
+  citation: SIMILE enables alignment of tandem mass spectra with statistical significance. Nature Communications
+    (2022).
+common_uses:
+- Detect significant relationships among MS/MS spectra despite multiple structural differences.
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-07-20'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: SIMILE compares fragmentation spectra through relationships among fragment ions and estimates
+  statistical significance of their alignment. Its Python implementation produces similarity/matching
+  matrices, scores and matching-ion reports for spectral interpretation.
+scope:
+  designed_for:
+  - A Python library for relating fragmentation spectra using statistically assessed fragment and neutral-loss
+    relationships, including pairwise and multiple spectral matching.
+  not_designed_for:
+  - Experimental validation of molecular identity or a general guarantee that a low p-value establishes
+    structural equivalence.
+  requirements:
+  - The documented Python environment, arrays of fragment m/z values with optional precursor masses, and
+    appropriate tolerances and significance-testing settings.
+  considerations:
+  - Interpret significance in the context of the null model and multiple comparisons. The current V2 matching
+    procedure differs from the original paper, and the supplied environment uses older dependencies.

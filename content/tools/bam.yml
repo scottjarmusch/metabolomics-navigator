@@ -1,0 +1,80 @@
+$schema: ../../schemas/tool.schema.json
+slug: bam
+name: BAM
+summary: BAM generates and ranks structural candidates for suspect metabolites by applying biotransformation
+  rules to known anchor structures.
+links:
+  primary: https://github.com/HassounLab/BAM
+  repository: https://github.com/HassounLab/BAM
+  documentation: https://github.com/HassounLab/BAM#readme
+resource_types:
+- workflow_pipeline
+functions:
+  primary: annotation_identification
+  secondary:
+  - molecular_networking
+  capabilities:
+  - structure_elucidation
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- command_line
+access:
+  model: source_available
+  notes: Public research code; no repository-wide license grant was established. PROXIMAL2, GNN-SOM and
+    reaction databases require separate installation and terms review.
+data:
+  input_types:
+  - compound_list
+  - molecular_structures
+  output_types:
+  - molecular_structures
+  - statistical_results
+  other_input_formats:
+  - Reaction/metabolite CSV data and mass/SMILES anchor-suspect pairs
+  other_output_formats:
+  - Generated and ranked candidate structures with evaluation artifacts
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-09-24'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: BAM generates and ranks structural candidates for suspect metabolites by applying biotransformation
+  rules to known anchor structures. It combines reaction-derived operators and site-of-metabolism prediction
+  with anchor-suspect relationships from molecular networks.
+scope:
+  designed_for:
+  - BAM generates and ranks structural candidates for suspect metabolites by applying biotransformation
+    rules to known anchor structures.
+  not_designed_for:
+  - Raw spectral network construction or confirmed structural identification without validating the generated
+    candidate and proposed transformation.
+  requirements:
+  - Separate PROXIMAL2 and GNN-SOM installations/environments, configured reaction/metabolite CSV tables
+    and anchor-suspect pairs containing masses and known anchor SMILES.
+  considerations:
+  - Reaction coverage, anchor correctness and site-of-metabolism predictions constrain candidate generation.
+    KEGG and RetroRules examples retain their own data terms.
+common_uses:
+- BAM generates and ranks structural candidates for suspect metabolites by applying biotransformation
+  rules to known anchor structures.
+publications:
+- doi: 10.1021/acs.analchem.4c01565
+  type: primary
+  citation: Molecular Structure Discovery for Untargeted Metabolomics Using Biotransformation Rules and
+    Global Molecular Networking. Analytical Chemistry (2025).

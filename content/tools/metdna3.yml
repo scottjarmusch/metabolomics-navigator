@@ -1,0 +1,85 @@
+$schema: ../../schemas/tool.schema.json
+slug: metdna3
+name: MetDNA3
+summary: A metabolite-annotation platform using knowledge-driven and data-driven two-layer networking
+  with recursive annotation propagation for untargeted metabolomics.
+links:
+  primary: http://metdna.zhulab.cn/
+  web_app: http://metdna.zhulab.cn/
+  repository: https://github.com/ZhuMetLab/MrnAnnoAlgo3
+  documentation: https://github.com/ZhuMetLab/MrnAnnoAlgo3#readme
+resource_types:
+- web_service
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - molecular_networking
+  capabilities:
+  - structure_database_search
+  - identification_confidence
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- r_package
+- web_app
+access:
+  model: source_available
+  notes: The core repository states CC-BY-NC-ND-4.0. Full web-service functionality and account access
+    are distinct from the public core package; no open-source or unrestricted-reuse claim is made.
+  license: CC-BY-NC-ND-4.0
+data:
+  input_types:
+  - feature_table
+  - spectra
+  output_types:
+  - compound_list
+  - statistical_results
+  other_input_formats:
+  - MRN3 MS1 tables, matched MS2 lists and seed-annotation tables
+  other_output_formats:
+  - Network-propagated candidate annotations and confidence/redundancy results
+common_uses:
+- Propagate metabolite annotations across related LC-MS features using complementary network layers.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-06-27'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MetDNA3 recursively annotates metabolites using interacting knowledge-driven and experimental-similarity
+  network layers. Its public MrnAnnoAlgo3 repository contains the core annotation algorithm; the registered
+  web service supplies the complete platform workflow.
+scope:
+  designed_for:
+  - A metabolite-annotation platform using knowledge-driven and data-driven two-layer networking with
+    recursive annotation propagation for untargeted metabolomics.
+  not_designed_for:
+  - A claim that installing the core R repository reproduces every web-service module or experimentally
+    confirms propagated candidates.
+  requirements:
+  - For the core algorithm, prepared MS1 feature data, matching MS2 lists and seed tables in MRN3 format
+    with suitable instrument/LC/polarity settings. The complete hosted route requires registration and
+    its documented uploads.
+  considerations:
+  - Seed reliability, network coverage and acquisition compatibility influence propagation. The core function
+    expects structured data rather than arbitrary raw files; evaluate confidence and alternative annotations.
+publications:
+- doi: 10.1038/s41467-025-63536-6
+  type: primary
+  citation: Knowledge and data-driven two-layer networking for accurate metabolite annotation in untargeted
+    metabolomics. Nature Communications (2025).

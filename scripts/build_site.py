@@ -144,7 +144,7 @@ def main():
 
     prepare_output()
     copy_public_files()
-    asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js'))).hexdigest()[:12]
+    asset_version=hashlib.sha256(b''.join((ROOT/'assets'/name).read_bytes() for name in ('site.css','product-refresh.css','site.js','catalogue.js','ask.js'))).hexdigest()[:12]
     context={'site':site,'repository_url':repository_url,'generated_at':generated_at,'asset_version':asset_version,'contributors':build_contributors([*tools_raw,*strategies_raw]),'umami_website_id':umami_website_id,'umami_script_url':umami_script_url}
 
     # Homepage
@@ -236,7 +236,8 @@ def main():
     render(env,'submit.html',OUT/'contribute/index.html',**context,active='contribute',tool_submission_url=tool_submit,strategy_submission_url=strategy_submit,tool_update_url=tool_update,strategy_update_url=strategy_update)
     for slug,page in pages.items():
         template=f'{slug}.html' if slug in ('about','ask','privacy') else 'static.html'
-        render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page)
+        extra={'strategies':strategies,'ask_tools':tools} if slug=='ask' else {}
+        render(env,template,OUT/f'{slug}/index.html',**context,active=slug,page=page,**extra)
     render(env,'404.html',OUT/'404.html',**context,active='')
 
     write_json(OUT/'tool-data.json',tools_raw); write_json(OUT/'strategy-data.json',strategies_raw); write_json(OUT/'education-data.json',education_raw)
@@ -352,6 +353,7 @@ def enrich_strategy(record,labels,tool_by_slug):
         x['alternative_functions']=[{'id':f,'label':labels['functions'].get(f,f)} for f in functions]
         steps.append(x)
     p['workflow_steps_enriched']=steps
+    p['ask_tool_slugs']=sorted({x['slug'] for x in p['resolved_tools'] if x.get('slug')} | {s for step in p.get('workflow_steps',[]) for s in step.get('tool_slugs',[])} | {s for impl in p.get('implementations',[]) for s in impl.get('tool_slugs',[])})
     implementations=[]
     for implementation in p.get('implementations',[]):
         x=dict(implementation)

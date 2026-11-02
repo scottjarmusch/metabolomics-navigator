@@ -1,0 +1,11 @@
+# Production release — 2 November 2026
+
+This release publishes the functional Ask Navigator alpha and the 96 source-reviewed tool additions from PRs #81, #82 and #83. The catalogue contains 290 tools and 40 Strategies. Existing Education review decisions, analytics, contributor credit and submission history are preserved.
+
+Ask uses the latest `codex/ask-education-alpha` controller and template, integrated into current main rather than replacing current production files with the older branch. It searches published Strategies and recorded tool relationships, offers study starters and guided clarification, and keeps measurement, QC and tracer requirements explicit.
+
+When a search has no Strategy result, users can choose a related analytical task when one is recognized and present in the collection, or open a from-scratch planning outline and the study guide. Related searches are labeled as broader starting points. Named-tool gaps also retain the planning route. Missing-input, mixed-aim and out-of-scope queries retain their clarification routes. This is an outline assembled by the user, not an automatic validated workflow generator.
+
+All three tool branches are merged with history retained. The intake ledger combines all three batches rather than allowing a later branch to overwrite earlier decisions. Previously pending rows whose tools are now present are reconciled as published, including earlier additions already on main. Unreviewed handoff candidates in PRs #60/#74 are not promoted as reviewed catalogue tools.
+
+Validation: all 290 tool, 40 Strategy and 83 Education source records validate; strict production-path build succeeds with 82 visible Education records. Ask controller tests include no-result recovery, related-search choice, custom outline, missing measurements, outside scope and reset. All 61 generated-page search questions pass against current Strategy and tool metadata. SEO tests pass and 351 canonical pages agree with the sitemap. Additional catalogue, Education, contributor, submission, terminology, implementation, brand, form and generated-link checks are recorded in the release verification. Automated checks do not establish scientific suitability or novice usability; no new browser visual review or human study is claimed.

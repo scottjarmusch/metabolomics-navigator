@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms2lipid
+name: MS2Lipid
+summary: A Python package for machine-learning prediction of lipid subclasses from tandem mass spectra
+  using curated lipid MS/MS reference data.
+links:
+  primary: https://github.com/systemsomicslab/ms2lipid
+  repository: https://github.com/systemsomicslab/ms2lipid
+  documentation: https://github.com/systemsomicslab/ms2lipid#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - compound_class_prediction
+  - ms2_processing
+platforms:
+- platform_independent
+analysis_types:
+- lipidomics
+interfaces:
+- python_package
+- notebook
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+  package_managers:
+  - PyPI
+data:
+  input_types:
+  - spectra
+  output_types:
+  - compound_list
+  other_input_formats:
+  - Spectrum peak arrays and metadata via the documented Python/Colab interface
+  other_output_formats:
+  - Predicted lipid subclasses and associated classifier results
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-11-18'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MS2Lipid predicts lipid subclasses from tandem mass spectra using a trained machine-learning
+  model. It provides an orthogonal class-level annotation signal for lipidomics and can be used through
+  Python or the supplied Colab example.
+scope:
+  designed_for:
+  - A Python package for machine-learning prediction of lipid subclasses from tandem mass spectra using
+    curated lipid MS/MS reference data.
+  not_designed_for:
+  - Full lipid molecular-species identification, acyl-chain assignment or structural confirmation from
+    a subclass label alone.
+  requirements:
+  - The documented compatible Python environment, trained model and spectra/precursor metadata arranged
+    according to the example notebook's input interface.
+  considerations:
+  - Class coverage and domain differences from the curated training spectra affect results. Inspect mixed/chimeric
+    spectra and score interpretation before using labels in downstream networks.
+common_uses:
+- A Python package for machine-learning prediction of lipid subclasses from tandem mass spectra using
+  curated lipid MS/MS reference data.
+publications:
+- doi: 10.3390/metabo14110602
+  type: primary
+  citation: 'MS2Lipid: A Lipid Subclass Prediction Program Using Machine Learning and Curated Tandem Mass
+    Spectral Data. Metabolites (2024).'

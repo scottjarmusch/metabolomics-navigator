@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: paccs
+name: PACCS
+summary: PACCS predicts CCS from molecular conformers using voxel-projected area, molecular-graph information,
+  mass-to-charge ratio and adduct encoding.
+links:
+  primary: https://github.com/yuxuanliao/PACCS
+  repository: https://github.com/yuxuanliao/PACCS
+  documentation: https://github.com/yuxuanliao/PACCS#readme
+resource_types:
+- programming_package
+functions:
+  primary: machine_learning
+  secondary:
+  - annotation_identification
+  capabilities:
+  - ccs_prediction
+platforms:
+- platform_independent
+interfaces:
+- python_package
+- notebook
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: BSD-3-Clause source distribution. External datasets, dependent packages and any hosted routes
+    retain their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - statistical_results
+  other_input_formats:
+  - Molecular SMILES/adduct tables, generated conformers and model weights
+  other_output_formats:
+  - Predicted CCS tables and model-training artifacts
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-03-05'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: PACCS predicts CCS from molecular conformers using voxel-projected area, molecular-graph
+  information, mass-to-charge ratio and adduct encoding. The Python/notebook workflow includes conformer
+  generation, model training and database-scale prediction.
+scope:
+  designed_for:
+  - PACCS predicts CCS from molecular conformers using voxel-projected area, molecular-graph information,
+    mass-to-charge ratio and adduct encoding.
+  not_designed_for:
+  - Experimental CCS calibration or an estimate independent of conformer and adduct assumptions.
+  requirements:
+  - Python with RDKit, PyTorch and PyG, SMILES/adduct inputs and a compatible trained model; conformer
+    generation and geometric feature calculation are required preprocessing steps.
+  considerations:
+  - Conformer generation, geometry optimization and training-domain coverage influence predictions. Compare
+    with experimental data for the intended ion species and drift-gas conditions.
+common_uses:
+- PACCS predicts CCS from molecular conformers using voxel-projected area, molecular-graph information,
+  mass-to-charge ratio and adduct encoding.
+publications:
+- doi: 10.1002/cem.70040
+  type: primary
+  citation: Accurate and Rational Collision Cross Section Prediction Using Voxel‐Projected Area and Deep
+    Learning. Journal of Chemometrics (2025).
