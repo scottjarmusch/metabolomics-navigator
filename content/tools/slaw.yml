@@ -1,0 +1,109 @@
+$schema: ../../schemas/tool.schema.json
+slug: slaw
+name: SLAW
+summary: A scalable, containerized workflow for untargeted LC-MS preprocessing with automated parameter
+  optimization, feature detection, alignment, gap filling, isotope/adduct grouping, and DDA MS/MS consolidation.
+links:
+  primary: https://github.com/zamboni-lab/SLAW
+  repository: https://github.com/zamboni-lab/SLAW
+  documentation: https://github.com/zamboni-lab/SLAW#readme
+resource_types:
+- workflow_pipeline
+functions:
+  primary: preprocessing
+  secondary:
+  - workflow_reproducibility
+  - quality_control
+  - spectral_analysis
+  capabilities:
+  - peak_detection
+  - retention_time_alignment
+  - gap_filling
+  - adduct_isotope_grouping
+  - ms2_processing
+  - container_support
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- command_line
+access:
+  model: open_source
+  license: GPL-2.0
+  notes: GPL-2.0 code with a documented container distribution. Container execution and dependency versions
+    should be recorded for reproducibility.
+technical:
+  operating_systems:
+  - linux
+  - windows
+  - containers
+  programming_languages:
+  - R
+  - Python
+  containers:
+  - Docker
+data:
+  input_types:
+  - raw_instrument_data
+  - sample_metadata
+  output_types:
+  - feature_table
+  - spectra
+  input_formats:
+  - mzml
+  - csv_tsv
+  output_formats:
+  - csv_tsv
+  - mgf
+publications:
+- doi: 10.1021/acs.analchem.1c02687
+  type: primary
+  citation: 'SLAW: A Scalable and Self-Optimizing Processing Workflow for Untargeted LC-MS. Analytical
+    Chemistry (2021).'
+common_uses:
+- Run reproducible preprocessing of large untargeted LC-MS studies.
+- Optimize peak picking, alignment, and gap-filling parameters using QC samples.
+- Produce feature tables and consolidated DDA MS/MS spectra for downstream analysis.
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-08-03'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Scalable untargeted LC-MS preprocessing from centroided mzML files.
+  requirements:
+  - Docker or a compatible Singularity workflow, centroided single-polarity mzML files and an edited parameters
+    file; representative pooled QCs and an injection-order sample table are recommended.
+  considerations:
+  - DIA-MS2 is skipped. If QCs are not specified, the workflow selects samples for optimization; the selected
+    reference material affects optimized parameters.
+  not_designed_for:
+  - DIA-MS2 deconvolution, direct processing of profile data or universal processing of mixed-polarity
+    acquisitions.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  ion_mobility: unspecified
+description: SLAW is a containerized untargeted LC-MS processing workflow that wraps multiple peak-picking
+  algorithms and optimizes processing parameters. It performs alignment, gap filling, ion grouping and
+  consolidation of DDA tandem spectra for downstream analysis.

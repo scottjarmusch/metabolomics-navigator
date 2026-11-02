@@ -1,0 +1,82 @@
+$schema: ../../schemas/tool.schema.json
+slug: idsl-mint
+name: IDSL_MINT
+summary: IDSL_MINT provides transformer-based workflows connecting tandem mass spectra and molecular representations.
+links:
+  primary: https://github.com/idslme/IDSL_MINT
+  repository: https://github.com/idslme/IDSL_MINT
+  documentation: https://github.com/idslme/IDSL_MINT#readme
+resource_types:
+- programming_package
+functions:
+  primary: machine_learning
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - substructure_prediction
+  - structure_elucidation
+  - in_silico_spectra
+platforms:
+- platform_independent
+interfaces:
+- python_package
+access:
+  model: source_available
+  notes: Source is publicly available, but a repository-wide license grant was not established from the
+    reviewed metadata; model and dataset terms must be checked separately.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - molecular_structures
+  - spectra
+  - statistical_results
+  other_input_formats:
+  - Module-specific MSP spectra, molecular representations and YAML config
+  other_output_formats:
+  - Fingerprints, candidate structures or predicted spectra by module
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-01-21'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: IDSL_MINT provides transformer-based workflows connecting tandem mass spectra and molecular
+  representations. Documented modules include MS/MS-to-fingerprint prediction, structure generation and
+  reverse spectrum prediction, with YAML-controlled training and prediction workflows.
+scope:
+  designed_for:
+  - IDSL_MINT provides transformer-based workflows connecting tandem mass spectra and molecular representations.
+  not_designed_for:
+  - Definitive structure confirmation or evidence that every documented module was evaluated in the original
+    fingerprint-prediction paper.
+  requirements:
+  - Python with PyTorch, RDKit and documented dependencies; prepared MSP/structure data, a module-specific
+    YAML configuration and suitable trained weights or training data.
+  considerations:
+  - Select the representation and model for the task. Fingerprint accuracy, structure generation and predicted
+    spectra have different validation needs and chemical-domain limits.
+common_uses:
+- IDSL_MINT provides transformer-based workflows connecting tandem mass spectra and molecular representations.
+publications:
+- doi: 10.1186/s13321-024-00804-5
+  type: primary
+  citation: 'IDSL_MINT: a deep learning framework to predict molecular fingerprints from mass spectra.
+    Journal of Cheminformatics (2024).'

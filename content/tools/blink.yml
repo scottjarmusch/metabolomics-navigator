@@ -1,0 +1,98 @@
+$schema: ../../schemas/tool.schema.json
+slug: blink
+name: BLINK
+summary: A Python package for efficient cosine-based similarity scoring and matching of large collections
+  of fragmentation mass spectra, including analog-search workflows.
+links:
+  primary: https://github.com/biorack/blink
+  repository: https://github.com/biorack/blink
+  documentation: https://github.com/biorack/blink#readme
+resource_types:
+- programming_package
+functions:
+  primary: spectral_analysis
+  secondary:
+  - annotation_identification
+  capabilities:
+  - library_matching
+  - ms2_processing
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+- command_line
+- notebook
+access:
+  model: open_source
+  notes: The repository includes a Berkeley Lab redistribution license with source/binary notice and non-endorsement
+    conditions. The command-line and pretrained-model interfaces are labelled experimental.
+  license: BSD-3-Clause-LBNL
+technical:
+  operating_systems:
+  - linux
+  - macos
+  - windows
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  - spectral_library
+  output_types:
+  - statistical_results
+  input_formats:
+  - mgf
+  - mzml
+  output_formats:
+  - csv_tsv
+publications:
+- doi: 10.1038/s41598-023-40496-9
+  type: primary
+  citation: BLINK enables ultrafast tandem mass spectrometry cosine similarity scoring. Scientific Reports
+    (2023).
+common_uses:
+- Calculate large numbers of MS/MS similarity scores efficiently.
+- Perform library or analog searches using fragmentation spectra.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-01-16'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Fast spectral similarity and analog-search calculations on MS/MS data.
+  considerations:
+  - Similarity thresholds and interpretation remain dataset- and use-case-dependent.
+  - The repository describes its command-line interface as experimental.
+  not_designed_for:
+  - Chromatographic feature extraction or definitive structure identification from similarity alone.
+  requirements:
+  - Python with the supplied conda environment; query and reference spectra. REM-BLINK additionally needs
+    polarity-specific models and the same ordered mass-difference list used for training.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - dda
+  - targeted_msms
+  - unspecified
+  ion_mobility: not_required
+description: BLINK computes cosine-based spectral similarities and matching-ion counts using a discretized
+  representation of fragmentation spectra. Its experimental REM-BLINK interface also supports analog comparisons
+  using specified mass differences and pretrained regression models.

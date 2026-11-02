@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: specxplore
+name: specXplore
+summary: An open-source Python resource for interactive exploration and visualization of mass-spectral
+  similarity relationships.
+links:
+  primary: https://github.com/kevinmildau/specXplore
+  repository: https://github.com/kevinmildau/specXplore
+  documentation: https://github.com/kevinmildau/specXplore#readme
+resource_types:
+- programming_package
+functions:
+  primary: visualization_reporting
+  secondary:
+  - spectral_analysis
+  - molecular_networking
+  capabilities:
+  - network_visualization
+  - interactive_dashboard
+platforms:
+- platform_independent
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+- notebook
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. Local preprocessing may download separate similarity models and libraries;
+    compatibility must follow the repository rather than a generic cross-platform claim.
+technical:
+  operating_systems:
+  - linux
+  - macos
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  - statistical_results
+  output_types:
+  - report
+  other_input_formats:
+  - MGF spectra with feature_id metadata, or a preprocessed session object
+  other_output_formats:
+  - Saved session objects and interactive dashboard/network views
+common_uses:
+- Explore spectral-similarity neighborhoods and relationships interactively.
+maintenance:
+  status: unclear
+  repository_last_activity: '2025-03-21'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: specXplore combines a spectral-similarity embedding with interactive network, heatmap and
+  fragment views. A notebook preprocessing stage creates a saved session object that is opened in the
+  dashboard for local and global exploration.
+scope:
+  designed_for:
+  - An open-source Python resource for interactive exploration and visualization of mass-spectral similarity
+    relationships.
+  not_designed_for:
+  - Confirming structures from t-SNE proximity or acting as a raw chromatographic peak detector.
+  requirements:
+  - MGF MS/MS data with feature_id metadata, a compatible Python/Jupyter environment and appropriate similarity-model/library
+    assets for the enabled importing pipeline.
+  considerations:
+  - The README contains conflicting Windows guidance and warns about affected macOS ARM ms2deepscore predictions.
+    Check the documented compatibility issue before trusting default similarity calculations.
+publications:
+- doi: 10.1021/acs.analchem.3c04444
+  type: primary
+  citation: Tailored Mass Spectral Data Exploration Using the SpecXplore Interactive Dashboard. Analytical
+    Chemistry (2024).

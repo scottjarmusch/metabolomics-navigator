@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: vimms
+name: ViMMS
+summary: ViMMS simulates LC-MS/MS acquisition at scan level so researchers can prototype and compare fragmentation
+  strategies.
+links:
+  primary: https://github.com/glasgowcompbio/vimms
+  repository: https://github.com/glasgowcompbio/vimms
+  documentation: https://glasgowcompbio.github.io/vimms/
+resource_types:
+- programming_package
+functions:
+  primary: data_acquisition
+  secondary:
+  - workflow_reproducibility
+  capabilities:
+  - spectral_data_io
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  - feature_table
+  output_types:
+  - raw_instrument_data
+  - spectra
+  other_input_formats:
+  - Empirical LC-MS data or configured virtual chemicals/controllers
+  other_output_formats:
+  - Simulated acquisition results and mzML scans
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-07-03'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: ViMMS simulates LC-MS/MS acquisition at scan level so researchers can prototype and compare
+  fragmentation strategies. It can generate virtual acquisitions from empirical or simulated chemical
+  data and export simulated scans for downstream processing.
+scope:
+  designed_for:
+  - ViMMS simulates LC-MS/MS acquisition at scan level so researchers can prototype and compare fragmentation
+    strategies.
+  not_designed_for:
+  - Proof that a strategy's simulated performance will reproduce on every physical mass spectrometer.
+  requirements:
+  - The documented Python environment, empirical data or configured virtual chemicals and an acquisition
+    controller; real-instrument experiments additionally require a compatible instrument API.
+  considerations:
+  - Chemical models, scan timing and instrument assumptions constrain simulation realism. Validate promising
+    strategies on the intended acquisition platform.
+common_uses:
+- ViMMS simulates LC-MS/MS acquisition at scan level so researchers can prototype and compare fragmentation
+  strategies.
+publications:
+- doi: 10.3390/metabo9100219
+  type: primary
+  citation: In Silico Optimization of Mass Spectrometry Fragmentation Strategies in Metabolomics. Metabolites
+    (2019).
+- doi: 10.21105/joss.03990
+  type: primary
+  citation: 'ViMMS 2.0: A framework to develop, test and optimise fragmentation strategies in LC-MS metabolomics.
+    Journal of Open Source Software (2022).'

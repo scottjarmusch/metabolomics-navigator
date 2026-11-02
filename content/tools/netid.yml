@@ -1,0 +1,105 @@
+$schema: ../../schemas/tool.schema.json
+slug: netid
+name: NetID
+summary: An R-based global network-optimization method for annotating untargeted LC-MS features using
+  measured masses, retention times, known chemical relationships, and optional MS/MS evidence.
+links:
+  primary: https://github.com/LiChenPU/NetID
+  repository: https://github.com/LiChenPU/NetID
+  documentation: https://github.com/LiChenPU/NetID#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - molecular_networking
+  capabilities:
+  - adduct_isotope_grouping
+  - library_matching
+  - structure_database_search
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution with example inputs and workflow guidance. User-supplied libraries
+    and reference data have their own usage terms.
+technical:
+  operating_systems:
+  - windows
+  - macos
+  - linux
+  programming_languages:
+  - R
+  - C
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  - spectra
+  - spectral_library
+  output_types:
+  - compound_list
+  - feature_table
+  input_formats:
+  - mzxml
+  - csv_tsv
+  - mgf
+  other_output_formats:
+  - R annotation/network objects and feature assignments for downstream inspection
+publications:
+- doi: 10.1038/s41592-021-01303-3
+  type: primary
+  citation: Metabolite discovery through global annotation of untargeted metabolomics data. Nature Methods
+    (2021).
+common_uses:
+- Improve annotation coverage by optimizing assignments across a connected LC-MS feature network.
+- Use adduct, isotope, fragmentation, and biochemical-transformation relationships to constrain candidate
+  assignments.
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-08-28'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Global annotation of untargeted LC-MS feature tables using network constraints.
+  requirements:
+  - R environment, mzXML data, CSV peak and transformation tables, and an RDS reference-compound library;
+    optional MS/MS matching also needs MGF spectra and an RDS spectral library.
+  considerations:
+  - Candidate coverage and transformation rules constrain the network. Incorrect seeds or feature relationships
+    can influence multiple assignments.
+  not_designed_for:
+  - Unconstrained de novo structure elucidation or experimental confirmation of every network-propagated
+    annotation.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - unspecified
+  ion_mobility: not_required
+description: NetID globally annotates LC-MS features using a network of mass differences representing
+  isotopes, adducts, fragments and biochemical transformations. Reference compounds and optional retention-time
+  or tandem-spectral evidence constrain the optimization.

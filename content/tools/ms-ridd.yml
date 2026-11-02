@@ -1,0 +1,94 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms-ridd
+name: MS-RIDD
+summary: An open-source Python application for interpreting radical-induced dissociation tandem mass spectra,
+  with current support focused on oxygen attachment dissociation for detailed lipid structural annotation.
+links:
+  primary: https://github.com/Metabolomics-CompMS/MS-RIDD
+  repository: https://github.com/Metabolomics-CompMS/MS-RIDD
+  documentation: https://github.com/Metabolomics-CompMS/MS-RIDD#readme
+resource_types:
+- software_application
+functions:
+  primary: annotation_identification
+  secondary:
+  - spectral_analysis
+  capabilities:
+  - structure_elucidation
+  - ms2_processing
+platforms:
+- lc_ms
+analysis_types:
+- lipidomics
+interfaces:
+- desktop_gui
+access:
+  model: open_source
+  license: LGPL-3.0-only (source); CC-BY-4.0 (assembly)
+  notes: The README specifies LGPL-3.0 for source code and CC-BY-4.0 for the distributed assembly. Keep
+    those scopes distinct when obtaining or redistributing the software.
+technical:
+  operating_systems:
+  - windows
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  - feature_table
+  output_types:
+  - compound_list
+  - report
+  input_formats:
+  - mzml
+  - csv_tsv
+  other_output_formats:
+  - Pickle project files with analysis tables and CID/OAD structural evidence
+publications:
+- doi: 10.1038/s42004-022-00778-1
+  type: primary
+  citation: Computational mass spectrometry accelerates C = C position-resolved untargeted lipidomics
+    using oxygen attachment dissociation. Communications Chemistry (2022).
+common_uses:
+- Interpret OAD-MS/MS spectra for detailed lipid structural annotation.
+- Consume MS-DIAL peak-list and alignment exports as inputs to a lipid-structure workflow.
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-06-22'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Lipid structural interpretation using radical-induced dissociation, currently documented for OAD-MS/MS.
+  requirements:
+  - The documented Python environment, OAD-MS/MS mzML files and MS-DIAL peak/alignment exports with CID-derived
+    lipid annotations. Batch work also requires the associated PeakID and per-sample peak lists.
+  considerations:
+  - Double-bond assignments depend on observed diagnostic fragments and the starting lipid annotations;
+    unresolved candidates require further evidence.
+  not_designed_for:
+  - General metabolite identification from ordinary CID spectra without the specialized OAD evidence.
+acquisition:
+  ms_levels:
+  - ms2
+  strategies:
+  - targeted_msms
+  - dda
+  ion_mobility: unspecified
+description: MS-RIDD interprets oxygen-attachment-dissociation spectra to prioritize lipid double-bond
+  positions. It combines OAD-MS/MS with MS-DIAL lipid annotations derived from CID measurements and supports
+  single-sample and batch projects.

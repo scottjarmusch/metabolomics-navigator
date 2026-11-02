@@ -1,0 +1,87 @@
+$schema: ../../schemas/tool.schema.json
+slug: isfrag
+name: ISFrag
+summary: ISFrag recognizes candidate in-source fragments in LC-MS data by combining feature relationships
+  and available MS/MS evidence.
+links:
+  primary: https://github.com/HuanLab/ISFrag
+  repository: https://github.com/HuanLab/ISFrag
+  documentation: https://github.com/HuanLab/ISFrag#readme
+resource_types:
+- programming_package
+functions:
+  primary: quality_control
+  secondary:
+  - annotation_identification
+  - preprocessing
+  capabilities:
+  - adduct_isotope_grouping
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - feature_table
+  - spectra
+  output_types:
+  - feature_table
+  - compound_list
+  other_input_formats:
+  - mzXML LC-MS files or CSV peak tables with m/z, RT and intensities
+  other_output_formats:
+  - Annotated feature tables and in-source-fragment relationship plots
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-09-06'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: ISFrag recognizes candidate in-source fragments in LC-MS data by combining feature relationships
+  and available MS/MS evidence. Its R workflow accepts XCMS-derived features or a custom peak table and
+  supports multiple levels of fragment annotation.
+scope:
+  designed_for:
+  - ISFrag recognizes candidate in-source fragments in LC-MS data by combining feature relationships and
+    available MS/MS evidence.
+  not_designed_for:
+  - Confirming a metabolite structure from a coeluting feature relationship alone or automatically deleting
+    all proposed fragments.
+  requirements:
+  - R and documented XCMS dependencies, mzXML files or correctly ordered CSV peak tables; retention times
+    must use seconds and MS/MS evidence must match the selected workflow.
+  considerations:
+  - Adduct/isotope processing through CAMERA belongs to the XCMS route. Distinguish evidence levels and
+    retain ambiguous coeluting alternatives.
+common_uses:
+- ISFrag recognizes candidate in-source fragments in LC-MS data by combining feature relationships and
+  available MS/MS evidence.
+publications:
+- doi: 10.1021/acs.analchem.1c01644
+  type: primary
+  citation: 'ISFrag: De Novo Recognition of In-Source Fragments for Liquid Chromatography–Mass Spectrometry
+    Data. Analytical Chemistry (2021).'

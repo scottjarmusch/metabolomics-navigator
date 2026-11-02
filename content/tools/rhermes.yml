@@ -1,0 +1,88 @@
+$schema: ../../schemas/tool.schema.json
+slug: rhermes
+name: RHermes
+summary: An R package for broad-scoped targeted and semi-targeted LC-MS metabolomics analysis designed
+  to deeply characterize biological and environmental samples.
+links:
+  primary: https://github.com/RogerGinBer/RHermes
+  repository: https://github.com/RogerGinBer/RHermes
+  documentation: https://rogerginber.github.io/RHermes/articles/RHermes_UserGuide.html
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - data_acquisition
+  - spectral_analysis
+  capabilities:
+  - chromatogram_building
+  - peak_detection
+platforms:
+- lc_ms
+analysis_types:
+- targeted
+- semi_targeted
+interfaces:
+- r_package
+- desktop_gui
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 source distribution. External datasets, dependent packages and any hosted routes retain
+    their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - raw_instrument_data
+  - compound_list
+  output_types:
+  - feature_table
+  - compound_list
+  other_input_formats:
+  - mzML LC-MS data and R molecular-formula/adduct databases
+  other_output_formats:
+  - R signal/annotation objects, inclusion lists and interactive plots
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-05-22'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: RHermes implements the HERMES formula-oriented workflow for LC-MS characterization and targeted
+  follow-up. It finds formula/adduct signals in MS1 data, identifies signals of interest and generates
+  acquisition inclusion lists for subsequent MS2 analysis.
+scope:
+  designed_for:
+  - An R package for broad-scoped targeted and semi-targeted LC-MS metabolomics analysis designed to deeply
+    characterize biological and environmental samples.
+  not_designed_for:
+  - Confirming exact structures from an MS1 formula match or automatically executing the follow-up experiment.
+  requirements:
+  - R/Bioconductor dependencies, centroided compatible LC-MS data, a formula/adduct database and suitable
+    processing parameters; inclusion-list follow-up requires access to a compatible MS acquisition method.
+  considerations:
+  - Formula-database selection constrains coverage and ambiguity. Inspect signals and MS2 evidence; distinguish
+    inclusion-list generation from quantitative calibration or complete structural identification.
+common_uses:
+- An R package for broad-scoped targeted and semi-targeted LC-MS metabolomics analysis designed to deeply
+  characterize biological and environmental samples.
+publications:
+- doi: 10.1038/s41592-021-01307-z
+  type: primary
+  citation: 'HERMES: a molecular-formula-oriented method to target the metabolome. Nature Methods (2021).'

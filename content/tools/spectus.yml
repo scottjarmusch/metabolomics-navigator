@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: spectus
+name: SpecTUS
+summary: SpecTUS translates GC-electron-ionization mass spectra into candidate SMILES structures using
+  a transformer pretrained on synthetic spectra and fine-tuned on experimental spectra.
+links:
+  primary: https://github.com/hejjack/SpecTUS
+  repository: https://github.com/hejjack/SpecTUS
+  documentation: https://github.com/hejjack/SpecTUS#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - structure_elucidation
+platforms:
+- gc_ms
+interfaces:
+- notebook
+- command_line
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source code. The final NIST20-trained model is withheld because of proprietary training data;
+    public synthetic data/pretraining checkpoints and hosted demo have separate terms and availability.
+technical:
+  operating_systems:
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - molecular_structures
+  other_input_formats:
+  - EI mass spectra, including documented MSP inference inputs
+  other_output_formats:
+  - Ranked candidate molecular structures as SMILES
+publications:
+- doi: 10.1021/acs.analchem.6c02423
+  type: primary
+  citation: 'SpecTUS: Spectral Translator for Unknown Structures Annotation from EI-MS Spectra. Analytical
+    Chemistry (2026).'
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-09-15'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: SpecTUS translates GC-electron-ionization mass spectra into candidate SMILES structures using
+  a transformer pretrained on synthetic spectra and fine-tuned on experimental spectra. The repository
+  provides research code, synthetic resources and a pretraining checkpoint.
+scope:
+  designed_for:
+  - SpecTUS translates GC-electron-ionization mass spectra into candidate SMILES structures using a transformer
+    pretrained on synthetic spectra and fine-tuned on experimental spectra.
+  not_designed_for:
+  - ESI tandem-spectrum identification or assured identification of unknowns from a generated candidate
+    alone.
+  requirements:
+  - The documented conda environment and trained checkpoint; the final NIST20-trained model is not distributed,
+    so reproducing it requires licensed NIST20 data and training.
+  considerations:
+  - Public pretraining resources and a hosted demonstration are distinct from access to the final trained
+    model. Assess candidate ranking and domain coverage against suitable reference data.
+common_uses:
+- SpecTUS translates GC-electron-ionization mass spectra into candidate SMILES structures using a transformer
+  pretrained on synthetic spectra and fine-tuned on experimental spectra.

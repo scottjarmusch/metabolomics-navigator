@@ -1,0 +1,115 @@
+$schema: ../../schemas/tool.schema.json
+slug: masscube
+name: MassCube
+summary: An integrated Python package for LC-MS data processing with nontargeted peak detection and segmentation,
+  feature quality evaluation, feature-group annotation, and MS/MS library or analog searching.
+links:
+  primary: https://huaxuyu.github.io/masscubedocs/docs/quickstart/
+  homepage: https://huaxuyu.github.io/masscubedocs/
+  repository: https://github.com/huaxuyu/masscube
+  documentation: https://huaxuyu.github.io/masscubedocs/docs/quickstart/
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  secondary:
+  - quality_control
+  - annotation_identification
+  - spectral_analysis
+  capabilities:
+  - chromatogram_building
+  - peak_detection
+  - gap_filling
+  - adduct_isotope_grouping
+  - library_matching
+  - ms2_processing
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+- command_line
+access:
+  model: open_source
+  license: Apache-2.0
+  notes: Apache-2.0 source distribution. Native Bruker reading is restricted to documented TDF2/DDA-PASEF
+    and calibration variants; it is not general support for every Bruker acquisition.
+technical:
+  operating_systems:
+  - linux
+  - macos
+  - windows
+  - cross_platform
+  programming_languages:
+  - Python
+  package_managers:
+  - PyPI
+data:
+  input_types:
+  - raw_instrument_data
+  - spectra
+  output_types:
+  - feature_table
+  - spectra
+  - compound_list
+  input_formats:
+  - mzml
+  - mzxml
+  - vendor_raw
+  output_formats:
+  - csv_tsv
+  - msp
+publications:
+- doi: 10.1038/s41467-025-60640-5
+  type: primary
+  citation: MassCube improves accuracy for metabolomics data processing from raw files to phenotype classifiers.
+    Nature Communications (2025).
+common_uses:
+- Process LC-MS data from raw spectra to aligned quantitative features.
+- Evaluate feature quality and group isotopes, adducts, and in-source fragments.
+- Search MS/MS spectra against identity or analog references.
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-08-25'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+scope:
+  designed_for:
+  - Integrated Python-based LC-MS preprocessing and feature-level annotation.
+  considerations:
+  - The native Bruker reader reports inverse mobility without proprietary per-frame pressure compensation.
+    Keep original acquisition files even when using workflow caches.
+  not_designed_for:
+  - Universal vendor-file conversion or confirming molecular structures from feature grouping or analog
+    matches.
+  requirements:
+  - Python, mzML or mzXML data, and workflow parameters. Supply sample/QC metadata for normalization and
+    statistics and a compatible MS/MS library for spectral annotation.
+acquisition:
+  ms_levels:
+  - ms1
+  - ms2
+  strategies:
+  - full_scan
+  - dda
+  - unspecified
+  ion_mobility: supported
+description: MassCube processes LC-MS data into aligned feature tables and supports feature-quality evaluation,
+  ion grouping and spectral-library annotation. Its command-line workflow combines raw files, sample information
+  and parameters; available normalization and annotation steps depend on the supplied metadata and reference
+  libraries.

@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: rassp
+name: RASSP
+summary: A research implementation for rapid prediction of electron-ionization mass spectra from molecular
+  structures using neural-network models.
+links:
+  primary: https://github.com/thejonaslab/rassp-public
+  repository: https://github.com/thejonaslab/rassp-public
+  documentation: https://github.com/thejonaslab/rassp-public#readme
+resource_types:
+- programming_package
+- api_service
+functions:
+  primary: spectral_analysis
+  secondary:
+  - machine_learning
+  capabilities:
+  - in_silico_spectra
+platforms:
+- gc_ms
+interfaces:
+- python_package
+- api
+access:
+  model: source_available
+  notes: Public research implementation and linked model files; no explicit repository-wide software license
+    was identified. README container routes are marked TBD and are not advertised here as available deployments.
+technical:
+  operating_systems:
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - molecular_structures
+  output_types:
+  - spectra
+  other_input_formats:
+  - Molecular SMILES/InChI lists or prepared molecular Parquet datasets
+  other_output_formats:
+  - Predicted EI spectra as text or SQLite/pickled spectrum records
+common_uses:
+- Predict EI spectra from molecular structures for GC-MS annotation research.
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-01-25'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: RASSP predicts electron-ionization mass spectra from candidate molecular structures using
+  subset/formula-based neural models. Its research implementation includes pretrained-model inference,
+  training and library-matching evaluation code.
+scope:
+  designed_for:
+  - A research implementation for rapid prediction of electron-ionization mass spectra from molecular
+    structures using neural-network models.
+  not_designed_for:
+  - Electrospray tandem-MS prediction or de novo structure determination from an experimental EI spectrum.
+  requirements:
+  - Compatible Python/PyTorch and compiled dependencies, model/meta files and molecular SMILES/InChI inputs;
+    assess the documented model atom limits and CPU/GPU environment.
+  considerations:
+  - FormulaNet and SubsetNet have different molecular-size limits. Older NumPy/compiled-library compatibility
+    matters; predicted spectra and library-search results remain model-dependent hypotheses.
+publications:
+- doi: 10.1021/acs.analchem.2c02093
+  type: primary
+  citation: Rapid Approximate Subset-Based Spectra Prediction for Electron Ionization–Mass Spectrometry.
+    Analytical Chemistry (2023).

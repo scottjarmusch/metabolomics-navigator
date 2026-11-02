@@ -1,0 +1,90 @@
+$schema: ../../schemas/tool.schema.json
+slug: tidyms
+name: TidyMS
+summary: A Python library for reading, processing, curating, and visualizing mass-spectrometry data in
+  metabolomics, including LC-MS feature detection, correspondence, and data-matrix curation.
+links:
+  primary: https://github.com/griquelme/tidyms
+  repository: https://github.com/griquelme/tidyms
+  documentation: https://tidyms.readthedocs.io/en/latest/
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  secondary:
+  - quality_control
+  - visualization_reporting
+  capabilities:
+  - chromatogram_building
+  - peak_detection
+  - retention_time_alignment
+platforms:
+- lc_ms
+analysis_types:
+- untargeted
+interfaces:
+- python_package
+access:
+  model: open_source
+  license: BSD-3-Clause
+  notes: BSD-3-Clause Python library with documentation and example notebooks. It is an API for composing
+    workflows, so users must select and record processing steps.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  output_types:
+  - feature_table
+  - report
+  other_input_formats:
+  - mzML files or supported processed tables imported into TidyMS objects
+  other_output_formats:
+  - Python feature/data-matrix objects and plotting objects
+common_uses:
+- Detect and align LC-MS features.
+- Curate metabolomics data matrices and inspect raw or processed data.
+maintenance:
+  status: unclear
+  repository_last_activity: '2024-07-13'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; recent commits alone do not establish ongoing maintenance or operational
+    compatibility.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official README/documentation, repository access terms and primary
+    publication metadata on 2026-10-27. Editorial source review only; no software execution or independent
+    benchmarking. See docs/enveda-expansion-review-2026-10-27.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: TidyMS provides Python building blocks for reading, processing and visualizing metabolomics
+  MS data. It supports chromatogram/spectrum construction, peak detection, LC-MS feature correspondence
+  and curation of processed data matrices.
+scope:
+  designed_for:
+  - A Python library for reading, processing, curating, and visualizing mass-spectrometry data in metabolomics,
+    including LC-MS feature detection, correspondence, and data-matrix curation.
+  not_designed_for:
+  - A turnkey structure-identification service or automatic applicability of one peak-picking configuration
+    to every acquisition.
+  requirements:
+  - A Python environment with TidyMS dependencies, mzML raw data or supported processed feature tables,
+    and analysis-specific parameters chosen through the documented API/notebook examples.
+  considerations:
+  - Upstream conversion, peak detection and data-matrix filtering influence results. Validate correspondence
+    and filtering decisions on representative samples.
+publications:
+- doi: 10.3390/metabo10100416
+  type: primary
+  citation: A Python-Based Pipeline for Preprocessing LC–MS Data for Untargeted Metabolomics Workflows.
+    Metabolites (2020).

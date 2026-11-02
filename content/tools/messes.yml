@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: messes
+name: MESSES
+summary: MESSES extracts tagged experimental metadata from spreadsheets or CSV into JSON, validates structured
+  metadata against schemas and converts supported records to mwTab for Metabolomics Workbench deposition.
+links:
+  primary: https://github.com/MoseleyBioinformaticsLab/MESSES
+  repository: https://github.com/MoseleyBioinformaticsLab/MESSES
+  documentation: https://moseleybioinformaticslab.github.io/MESSES/
+resource_types:
+- programming_package
+functions:
+  primary: data_management_sharing
+  secondary:
+  - data_conversion
+  - workflow_reproducibility
+  capabilities:
+  - metadata_contextualization
+  - provenance_tracking
+platforms:
+- platform_independent
+interfaces:
+- python_package
+- command_line
+access:
+  model: source_available
+  license: Modified Clear BSD with citation requirement
+  notes: Repository LICENSE adds a publication-citation condition to Clear BSD and grants no patent rights.
+    The custom text is identified explicitly rather than labelled standard BSD-3-Clause.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - Python
+  - Cython
+data:
+  input_types:
+  - sample_metadata
+  output_types:
+  - sample_metadata
+  other_input_formats:
+  - Tagged Excel/CSV metadata and extraction/schema directives
+  other_output_formats:
+  - Structured JSON metadata, validation messages and mwTab exports
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-06-23'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MESSES extracts tagged experimental metadata from spreadsheets or CSV into JSON, validates
+  structured metadata against schemas and converts supported records to mwTab for Metabolomics Workbench
+  deposition. Its command-line and Python interfaces separate extraction, validation and conversion.
+scope:
+  designed_for:
+  - MESSES extracts tagged experimental metadata from spreadsheets or CSV into JSON, validates structured
+    metadata against schemas and converts supported records to mwTab for Metabolomics Workbench deposition.
+  not_designed_for:
+  - Raw spectral processing or confirmation that scientifically incorrect metadata becomes correct merely
+    because it passes a schema.
+  requirements:
+  - Python dependencies, tagged source tables and the extraction directives and validation schemas appropriate
+    to the experiment and destination repository.
+  considerations:
+  - Tagging and schema setup require knowledge of the study. Review identifiers, units and repository-specific
+    fields after extraction and conversion.
+common_uses:
+- MESSES extracts tagged experimental metadata from spreadsheets or CSV into JSON, validates structured
+  metadata against schemas and converts supported records to mwTab for Metabolomics Workbench deposition.
+publications:
+- doi: 10.3390/metabo13070842
+  type: primary
+  citation: 'MESSES: Software for Transforming Messy Research Datasets into Clean Submissions to Metabolomics
+    Workbench for Public Sharing. Metabolites (2023).'

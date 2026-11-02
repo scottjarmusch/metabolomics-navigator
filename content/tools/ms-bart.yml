@@ -1,0 +1,81 @@
+$schema: ../../schemas/tool.schema.json
+slug: ms-bart
+name: MS-BART
+summary: MS-BART models molecular representations and mass-spectral information with a unified language-model
+  workflow for structure elucidation.
+links:
+  primary: https://github.com/OpenDFM/MS-BART
+  repository: https://github.com/OpenDFM/MS-BART
+  documentation: https://github.com/OpenDFM/MS-BART#readme
+resource_types:
+- programming_package
+functions:
+  primary: annotation_identification
+  secondary:
+  - machine_learning
+  capabilities:
+  - structure_elucidation
+platforms:
+- platform_independent
+interfaces:
+- python_package
+access:
+  model: source_available
+  notes: Public research code and separately hosted weights/data; no repository-wide license grant was
+    established from reviewed metadata. Consult artifact and dependency terms separately.
+technical:
+  operating_systems:
+  - linux
+  programming_languages:
+  - Python
+data:
+  input_types:
+  - spectra
+  output_types:
+  - molecular_structures
+  other_input_formats:
+  - Prepared spectral/fingerprint TSV data and module-specific MGF inputs
+  other_output_formats:
+  - Generated molecular candidates and training/evaluation artifacts
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-09-30'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MS-BART models molecular representations and mass-spectral information with a unified language-model
+  workflow for structure elucidation. Its research pipeline includes molecular pretraining, spectral fine-tuning,
+  chemical-feedback alignment and candidate generation.
+scope:
+  designed_for:
+  - MS-BART models molecular representations and mass-spectral information with a unified language-model
+    workflow for structure elucidation.
+  not_designed_for:
+  - A turnkey raw-MS identification application or guaranteed correct structures for spectra outside the
+    model domain.
+  requirements:
+  - The documented Python 3.9 environment, downloaded checkpoints/data and fingerprint preprocessing resources;
+    review configuration paths and evaluation-script settings before use.
+  considerations:
+  - README documents path and beam-variable issues in evaluation scripts. Preserve evaluation splits and
+    distinguish predicted fingerprints and generated structures from experimental confirmation.
+common_uses:
+- MS-BART models molecular representations and mass-spectral information with a unified language-model
+  workflow for structure elucidation.
+publications:
+- doi: 10.48550/arXiv.2510.20615
+  citation: 'Han et al. MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation.
+    arXiv:2510.20615 (2025). Authors identify the associated conference as NeurIPS 2025.'
+  type: primary

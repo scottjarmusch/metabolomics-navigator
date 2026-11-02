@@ -1,0 +1,89 @@
+$schema: ../../schemas/tool.schema.json
+slug: aerith
+name: Aerith
+summary: An R package for reading, annotating, scoring, and visualizing isotopic mass spectra in stable-isotope-probing
+  workflows for metabolites and peptides.
+links:
+  primary: https://github.com/thepanlab/Aerith
+  repository: https://github.com/thepanlab/Aerith
+  documentation: https://github.com/thepanlab/Aerith#readme
+resource_types:
+- programming_package
+functions:
+  primary: isotope_tracing_flux
+  secondary:
+  - spectral_analysis
+  - visualization_reporting
+  capabilities:
+  - in_silico_spectra
+  - spectral_data_io
+platforms:
+- multi_platform
+analysis_types:
+- stable_isotope_tracing
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: GPL-3.0
+  notes: GPL-3.0 repository. External raw-file converters and peptide-analysis tools used in examples
+    are separate dependencies rather than mandatory parts of every metabolite simulation.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+  - C++
+data:
+  input_types:
+  - spectra
+  - isotope_tracing_data
+  output_types:
+  - isotope_tracing_data
+  - report
+  other_input_formats:
+  - Molecular formulas and isotope abundances; FT1/FT2 scan files by module
+  other_output_formats:
+  - R isotope-pattern or scan objects and spectrum/TIC plots
+maintenance:
+  status: unclear
+  repository_last_activity: '2026-04-30'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch2.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: Aerith reads and visualizes MS scans and models isotope envelopes under stable-isotope enrichment.
+  Its metabolomics-facing functions calculate expected isotope patterns from molecular formulas; other
+  modules support peptide isotope-pattern and spectrum inspection.
+scope:
+  designed_for:
+  - An R package for reading, annotating, scoring, and visualizing isotopic mass spectra in stable-isotope-probing
+    workflows for metabolites and peptides.
+  not_designed_for:
+  - Metabolic flux inference, automatic correction of every isotope-tracing dataset or metabolite identification
+    from an envelope alone.
+  requirements:
+  - R with the documented compiled dependencies; supply molecular formulas and isotope abundances for
+    simulation, or supported scan files for experimental visualization.
+  considerations:
+  - Distinguish molecular-formula simulation from the peptide-oriented demonstration workflow. The chosen
+    isotope enrichment and elemental composition determine the theoretical envelope.
+common_uses:
+- An R package for reading, annotating, scoring, and visualizing isotopic mass spectra in stable-isotope-probing
+  workflows for metabolites and peptides.
+publications:
+- doi: 10.1021/acs.analchem.5c03207
+  type: primary
+  citation: 'Aerith: Visualization and Annotation of Isotopic Enrichment Patterns of Peptides and Metabolites
+    with Stable Isotope Labeling from Proteomics and Metabolomics. Analytical Chemistry (2025).'

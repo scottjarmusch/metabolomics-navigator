@@ -1,0 +1,86 @@
+$schema: ../../schemas/tool.schema.json
+slug: jpa
+name: JPA
+summary: JPA combines MS1 chromatographic peak picking with MS/MS-precursor-based feature extraction to
+  broaden LC-MS feature detection.
+links:
+  primary: https://github.com/HuanLab/JPA
+  repository: https://github.com/HuanLab/JPA
+  documentation: https://github.com/HuanLab/JPA#readme
+resource_types:
+- programming_package
+functions:
+  primary: preprocessing
+  secondary: []
+  capabilities:
+  - peak_detection
+  - retention_time_alignment
+platforms:
+- lc_ms
+analysis_types:
+- targeted
+- untargeted
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: MIT
+  notes: MIT source distribution. External datasets, dependent packages and any hosted routes retain their
+    own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - raw_instrument_data
+  - feature_table
+  - spectra
+  output_types:
+  - feature_table
+  other_input_formats:
+  - mzXML LC-MS/MS data and optional formatted CSV peak tables
+  other_output_formats:
+  - Jointly extracted and aligned LC-MS feature tables
+maintenance:
+  status: unclear
+  repository_last_activity: '2023-04-06'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: JPA combines MS1 chromatographic peak picking with MS/MS-precursor-based feature extraction
+  to broaden LC-MS feature detection. The R workflow supports alignment and downstream handling of the
+  jointly extracted feature set.
+scope:
+  designed_for:
+  - JPA combines MS1 chromatographic peak picking with MS/MS-precursor-based feature extraction to broaden
+    LC-MS feature detection.
+  not_designed_for:
+  - Metabolite structure identification or recovery of compounds lacking sufficient acquisition evidence.
+  requirements:
+  - R/XCMS dependencies and mzXML acquisition files with appropriate MS/MS precursor information; follow
+    the documented peak-table layout when supplying existing features.
+  considerations:
+  - Additional precursor-derived features still require quality review. Peak-picking, alignment and acquisition
+    thresholds affect the balance between added coverage and unwanted features.
+common_uses:
+- JPA combines MS1 chromatographic peak picking with MS/MS-precursor-based feature extraction to broaden
+  LC-MS feature detection.
+publications:
+- doi: 10.3390/metabo12030212
+  type: primary
+  citation: 'JPA: Joint Metabolic Feature Extraction Increases the Depth of Chemical Coverage for LC-MS-Based
+    Metabolomics and Exposomics. Metabolites (2022).'

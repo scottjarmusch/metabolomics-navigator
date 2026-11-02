@@ -1,0 +1,83 @@
+$schema: ../../schemas/tool.schema.json
+slug: mobilitytransformr
+name: MobilityTransformR
+summary: MobilityTransformR converts CE-MS migration times to an effective-mobility scale using added
+  mobility markers.
+links:
+  primary: https://github.com/LiesaSalzer/MobilityTransformR
+  repository: https://github.com/LiesaSalzer/MobilityTransformR
+  documentation: https://github.com/LiesaSalzer/MobilityTransformR/blob/main/vignettes/MobilityTransformR.Rmd
+resource_types:
+- programming_package
+functions:
+  primary: data_conversion
+  secondary: []
+  capabilities:
+  - spectral_data_io
+platforms:
+- ce_ms
+interfaces:
+- r_package
+access:
+  model: open_source
+  license: Artistic-2.0
+  notes: Artistic-2.0 source distribution. External datasets, dependent packages and any hosted routes
+    retain their own terms; software operation was not tested.
+technical:
+  operating_systems:
+  - cross_platform
+  programming_languages:
+  - R
+data:
+  input_types:
+  - spectra
+  - feature_table
+  output_types:
+  - spectra
+  - feature_table
+  other_input_formats:
+  - CE-MS numeric migration times or Spectra/OnDiskMSnExp objects
+  other_output_formats:
+  - Mobility-transformed R objects and mzML exports
+maintenance:
+  status: unclear
+  repository_last_activity: '2022-03-21'
+  last_checked: '2026-10-27'
+  notes: Repository state checked; commit recency is not operational validation or proof of ongoing support.
+provenance:
+  submitted_by: curator
+  developer_verified: false
+  notes: Enveda intake rechecked against official repository documentation, package/license metadata and
+    primary publication identity on 2026-10-27. Editorial source review only; no software execution or
+    independent benchmark. See docs/enveda-expansion-review-2026-10-27-batch3.md.
+status:
+  entry: published
+  review: editorially_reviewed
+  created_at: '2026-10-27'
+  updated_at: '2026-10-27'
+  last_verified: '2026-10-27'
+  last_editorial_review: '2026-10-27'
+description: MobilityTransformR converts CE-MS migration times to an effective-mobility scale using added
+  mobility markers. Its R/Bioconductor workflow transforms numeric vectors or supported spectral objects
+  and can export transformed runs for downstream analysis.
+scope:
+  designed_for:
+  - MobilityTransformR converts CE-MS migration times to an effective-mobility scale using added mobility
+    markers.
+  not_designed_for:
+  - Ion-mobility CCS prediction or correction without suitable electrophoretic marker and acquisition
+    information.
+  requirements:
+  - R 4.2 or newer with the documented Bioconductor packages, marker migration times and known mobility
+    information; voltage/capillary parameters are needed for relevant single-marker modes.
+  considerations:
+  - Identify marker peaks carefully and retain units. The exported time axis represents effective electrophoretic
+    mobility rather than ordinary chromatographic retention time.
+common_uses:
+- MobilityTransformR converts CE-MS migration times to an effective-mobility scale using added mobility
+  markers.
+publications:
+- doi: 10.1093/bioinformatics/btac441
+  type: primary
+  citation: 'MobilityTransformR: an R package for effective mobility transformation of CE-MS data. Bioinformatics
+    (2022).'
