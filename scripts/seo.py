@@ -21,7 +21,7 @@ def page_metadata(template, route, context, absolute_url):
         'submit.html': ('Contribute', 'Suggest a metabolomics tool or analytical strategy, improve an entry, and meet the community contributors.'),
         'browse.html': ('Browse categories', 'Browse metabolomics tools and analytical strategies by scientific function, platform and biological context.'),
         'about.html': ('About', 'Learn about Metabolomics Navigator, its MS-based scope, community contributions and editorial approach.'),
-        'ask.html': ('Ask Navigator · Alpha', 'Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.'),
+        'ask.html': ('Ask Navigator', 'Explore published metabolomics Strategies, check workflow requirements, and find tools, tutorials and guidance for your study.'),
         '404.html': ('Page not found', 'This page could not be found. Explore the Metabolomics Navigator catalogue.'),
     }
     title, description = defaults.get(template, (title, description))
