@@ -1,0 +1,67 @@
+$schema: ../../schemas/tool.schema.json
+slug: rodin
+name: Rodin
+aliases: []
+summary: Rodin is an open-source Python library for metabolomics data preprocessing, statistical analysis, machine learning, interactive visualization, and metabolic pathway analysis. It supports reproducible workflows for untargeted LC-MS metabolomics and other feature-based omics datasets, with an optional web interface for researchers who prefer not to code.
+links:
+  primary: https://github.com/BM-Boris/rodin
+  repository: https://github.com/BM-Boris/rodin
+resource_types:
+- programming_package
+functions:
+  primary: statistics
+  secondary:
+  - visualization_reporting
+  - pathway_interpretation
+  - preprocessing
+  - quality_control
+  - normalization
+  - machine_learning
+  capabilities: []
+platforms:
+- lc_ms
+- platform_independent
+analysis_types: []
+interfaces:
+- python_package
+- web_app
+- notebook
+access:
+  model: open_source
+publications:
+- doi: 10.1093/bioadv/vbaf088
+  type: primary
+common_uses: []
+scope: {}
+acquisition: {}
+related_tools: []
+maintenance:
+  status: unclear
+  last_checked: '2026-11-13'
+credits:
+- name: Boris Minasenko
+  role: developer
+  orcid: 0009-0007-2503-752X
+provenance:
+  submitted_by: developer
+  source_issue: https://github.com/scottjarmusch/metabolomics-navigator/issues/88
+  developer_verified: false
+  submitter_name: Boris Minasenko
+  public_attribution_consent: true
+  submitter_orcid: 0009-0007-2503-752X
+  notes: 'Rodin is an actively maintained, MIT-licensed Python package (Python 3.10+) with a complementary web application.
+
+
+    The toolkit supports analysis of processed metabolomics feature-intensity tables and sample metadata, including filtering, imputation, normalization, statistical testing (t-tests, ANOVA, and regression), machine learning (random forests), dimensionality reduction (PCA, UMAP, and t-SNE), interactive visualizations, and Mummichog-based metabolic pathway analysis.
+
+
+    Input files include CSV-formatted feature tables and sample metadata. Rodin focuses on downstream analysis of processed data rather than raw mass spectrometry peak detection. Although developed for LC-MS metabolomics, its general statistical and visualization functions can also be applied to other numerical omics datasets.
+
+
+    The software is described in a peer-reviewed publication in Bioinformatics Advances (2025), DOI: 10.1093/bioadv/vbaf088.'
+status:
+  entry: stub
+  review: unreviewed
+  created_at: '2026-11-13'
+  updated_at: '2026-11-13'
+  last_verified: '2026-11-13'
